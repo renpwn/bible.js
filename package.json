@@ -1,0 +1,72 @@
+{
+  "name": "@renpwn/alquran-js",
+  "version": "0.14.11",
+  "description": "Node.js library untuk mengakses Al-Qur'an dengan database SQLite + FTS5. Dilengkapi teks Arab, terjemahan, tafsir 6 sumber, transliterasi, dan audio. Ideal untuk bot WhatsApp/Telegram, aplikasi mobile, dan website Islamic.",
+  "keywords": [
+    "alquran",
+    "quran",
+    "islamic",
+    "tafsir",
+    "database",
+    "sqlite",
+    "fts5",
+    "api",
+    "nodejs",
+    "javascript",
+    "muslim",
+    "arabic",
+    "terjemahan",
+    "audio",
+    "hadis"
+  ],
+  "homepage": "https://github.com/renpwn/alquran.js",
+  "bugs": {
+    "url": "https://github.com/renpwn/alquran.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renpwn/alquran.js.git"
+  },
+  "license": "MIT",
+  "author": "Ardy Ren <renpwn@proton.me>",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./database": "./setting.db.js",
+    "./scraper": "./mt/quran.js"
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "mt"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "scrape:all": "node mt/quran.js -m 1 -b -c 5",
+    "scrape:surah": "node mt/quran.js -m 1 -S",
+    "migrate:json": "node mt/quran.js -m 3 -b",
+    "test": "node examples/test_lib.js",
+    "init-db": "node mt/db.js",
+    "rebuild-fts": "node -e \"import('./index.js').then(m => m.default('', {rebuildFTS: true}))\""
+  },
+  "bin": {
+    "alquran-scrape": "./mt/quran.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@renpwn/termux-sqlite3": "^1.0.3",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0"
+  },
+  "devDependencies": {},
+  "files": [
+    "index.js",
+    "setting.db.js",
+    "mt/",
+    "examples/",
+    "README.md",
+    "LICENSE"
+  ]
+}
