@@ -1,9 +1,13 @@
 import fs from 'fs/promises'
 import path from 'path'
-import { fileURLToPath } from 'url'
+import {
+  fileURLToPath
+} from 'url'
 import * as cheerio from 'cheerio'
 import axios from 'axios'
-import { openDB } from './db.js'
+import {
+  openDB
+} from './db.js'
 
 const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -85,18 +89,76 @@ const BibleBooks = [
 /* =========================
    VERSI ALKITAB YANG AKAN DIAMBIL
 ========================= */
-const BibleVersions = [
-  { id: 'tb', name: 'Alkitab Terjemahan Baru-LAI', language: 'id', category: 'core' },
-  { id: 'bis', name: 'Alkitab Kabar Baik (BIS-LAI)', language: 'id', category: 'core' },
-  { id: 'tl', name: 'Alkitab Terjemahan Lama', language: 'id', category: 'global' },
-  { id: 'ende', name: 'Alkitab Ende', language: 'id', category: 'global' },
-  { id: 'tb_itl_drf', name: 'TB Interlinear [draft]', language: 'id', category: 'advance', supports_strong: true },
-  { id: 'tl_itl_drf', name: 'TL Interlinear [draft]', language: 'id', category: 'advance', supports_strong: true },
-  { id: 'bbe', name: 'Bible in Basic English', language: 'en', category: 'global' },
-  { id: 'message', name: 'The Message Bible', language: 'en', category: 'global' },
-  { id: 'nkjv', name: 'New King James Version', language: 'en', category: 'global' },
-  { id: 'net', name: 'NET Bible [draft]', language: 'en', category: 'advance', supports_strong: true },
-  { id: 'net2', name: 'NET Bible [draft] Lab', language: 'en', category: 'advance', supports_strong: true }
+const BibleVersions = [{
+    id: 'tb',
+    name: 'Alkitab Terjemahan Baru-LAI',
+    language: 'id',
+    category: 'core'
+  },
+  {
+    id: 'bis',
+    name: 'Alkitab Kabar Baik (BIS-LAI)',
+    language: 'id',
+    category: 'core'
+  },
+  {
+    id: 'tl',
+    name: 'Alkitab Terjemahan Lama',
+    language: 'id',
+    category: 'global'
+  },
+  {
+    id: 'ende',
+    name: 'Alkitab Ende',
+    language: 'id',
+    category: 'global'
+  },
+  {
+    id: 'tb_itl_drf',
+    name: 'TB Interlinear [draft]',
+    language: 'id',
+    category: 'advance',
+    supports_strong: true
+  },
+  {
+    id: 'tl_itl_drf',
+    name: 'TL Interlinear [draft]',
+    language: 'id',
+    category: 'advance',
+    supports_strong: true
+  },
+  {
+    id: 'bbe',
+    name: 'Bible in Basic English',
+    language: 'en',
+    category: 'global'
+  },
+  {
+    id: 'message',
+    name: 'The Message Bible',
+    language: 'en',
+    category: 'global'
+  },
+  {
+    id: 'nkjv',
+    name: 'New King James Version',
+    language: 'en',
+    category: 'global'
+  },
+  {
+    id: 'net',
+    name: 'NET Bible [draft]',
+    language: 'en',
+    category: 'advance',
+    supports_strong: true
+  },
+  {
+    id: 'net2',
+    name: 'NET Bible [draft] Lab',
+    language: 'en',
+    category: 'advance',
+    supports_strong: true
+  }
 ]
 
 /* =========================
@@ -108,7 +170,8 @@ const BIBLE_DIR = "./json_bible"
 const BIBLE_DIR_MIN = "./json_bible_min"
 
 // Helper untuk mendapatkan __dirname di ES Module
-const __filename = fileURLToPath(import.meta.url)
+const __filename = fileURLToPath(
+  import.meta.url)
 const __dirname = path.dirname(__filename)
 
 // Helper untuk escape string SQL
@@ -210,14 +273,22 @@ class DatabaseQueue {
 
   async add(task) {
     return new Promise((resolve, reject) => {
-      this.queue.push({ task, resolve, reject })
+      this.queue.push({
+        task,
+        resolve,
+        reject
+      })
       this.process()
     })
   }
 
   async process() {
     while (this.queue.length > 0 && this.processing < this.maxConcurrent) {
-      const { task, resolve, reject } = this.queue.shift()
+      const {
+        task,
+        resolve,
+        reject
+      } = this.queue.shift()
       this.processing++
 
       task()
@@ -298,6 +369,67 @@ class BibleQueue {
   }
 }
 
+class LexiconQueue {
+  constructor(concurrency = 2) {
+    this.concurrency = concurrency
+    this.queue = []
+    this.processing = 0
+    this.completed = 0
+    this.failed = 0
+    this.total = 0
+    this.lexiconCache = new Map() // Cache untuk menghindari duplikasi request
+  }
+
+  add(strongNumber) {
+    if (!this.lexiconCache.has(strongNumber)) {
+      this.queue.push(strongNumber)
+      this.total++
+      this.lexiconCache.set(strongNumber, null)
+    }
+  }
+
+  async process(fetchFn) {
+    const workers = []
+
+    const worker = async () => {
+      while (this.queue.length > 0) {
+        const strongNumber = this.queue.shift()
+        if (!strongNumber) continue
+
+        this.processing++
+        try {
+          const data = await fetchFn(strongNumber)
+          this.lexiconCache.set(strongNumber, data)
+          this.completed++
+        } catch (error) {
+          this.failed++
+          console.error(`Lexicon error ${strongNumber}:`, error.message)
+        } finally {
+          this.processing--
+          this.showProgress()
+        }
+      }
+    }
+
+    for (let i = 0; i < Math.min(this.concurrency, this.total); i++) {
+      workers.push(worker())
+    }
+
+    await Promise.all(workers)
+    return this.lexiconCache
+  }
+
+  showProgress() {
+    const processed = this.completed + this.failed
+    const progress = Math.round(processed / this.total * 100)
+    process.stdout.write(`\r📚 Lexicon: ${processed}/${this.total} (${progress}%) | Active: ${this.processing} | Failed: ${this.failed}`)
+  }
+
+  getCache() {
+    return this.lexiconCache
+  }
+}
+
 /* =========================
    FUNGSI UMUM
 ========================= */
@@ -332,7 +464,7 @@ async function buildSabdaUrl(bookId, chapter, versions = BibleVersions) {
     .filter(v => v.id !== 'tb') // TB adalah versi utama
     .map(v => `altver%5B%5D=${v.id}`)
     .join('&')
-  
+
   const baseUrl = `https://sabdaweb.sabda.org/bible/chapter/`
   const params = new URLSearchParams({
     b: bookId,
@@ -344,20 +476,20 @@ async function buildSabdaUrl(bookId, chapter, versions = BibleVersions) {
     lang: 'indonesia',
     theme: 'clearsky'
   })
-  
+
   // Tambahkan altver parameters
   const altParams = altVersions ? `&${altVersions}` : ''
-  
+
   return `${baseUrl}?${params.toString()}${altParams}`
 }
 
-async function parseChapterHTML(html, bookId, chapter, targetVersions = BibleVersions) {
+async function parseChapterHTMLOri(html, bookId, chapter, targetVersions = BibleVersions) {
   const $ = cheerio.load(html)
   const verses = []
-  
+
   // Cari semua baris ayat dalam tabel
   const verseRows = $('tr[id="b"]')
-  
+
   // Jika tidak ditemukan dengan id="b", coba dengan class lain
   if (verseRows.length === 0) {
     $('tr').each((i, row) => {
@@ -366,63 +498,66 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions = BibleVer
       }
     })
   }
-  
+
   // Mapping urutan kolom ke versi (berdasarkan header)
   const headerRow = $('tr:contains("TB")').first()
   const versionOrder = []
-  
+
   headerRow.find('td[id="d"]').each((i, td) => {
     const versionText = $(td).text().trim()
-    const version = targetVersions.find(v => 
-      versionText.includes(v.name.split(' ')[0]) || 
+    const version = targetVersions.find(v =>
+      versionText.includes(v.name.split(' ')[0]) ||
       versionText.toLowerCase().includes(v.id)
     )
     if (version) {
       versionOrder.push(version.id)
     }
   })
-  
+
   // Jika tidak bisa detect header, gunakan urutan default
   if (versionOrder.length === 0) {
     versionOrder.push(...targetVersions.map(v => v.id))
   }
-  
+
   // Parse setiap ayat
   verseRows.each((rowIndex, row) => {
     const cells = $(row).find('td')
-    const verseData = { verse: rowIndex + 1, texts: {} }
-    
+    const verseData = {
+      verse: rowIndex + 1,
+      texts: {}
+    }
+
     // Kolom pertama biasanya berisi nomor ayat dan teks TB
     const firstCell = $(cells[0])
-    const verseNumMatch = firstCell.find('a[name]').attr('name') || 
-                         firstCell.find('b').text().match(/\d+:\d+/)
-    
+    const verseNumMatch = firstCell.find('a[name]').attr('name') ||
+      firstCell.find('b').text().match(/\d+:\d+/)
+
     if (verseNumMatch) {
-      const verseNum = typeof verseNumMatch === 'string' ? 
-                      verseNumMatch.split(':')[1] || verseNumMatch : 
-                      (rowIndex + 1)
+      const verseNum = typeof verseNumMatch === 'string' ?
+        verseNumMatch.split(':')[1] || verseNumMatch :
+        (rowIndex + 1)
       verseData.verse = parseInt(verseNum)
     }
-    
+
     // Ambil teks untuk setiap versi
     cells.each((cellIndex, cell) => {
       if (cellIndex < versionOrder.length) {
         const versionId = versionOrder[cellIndex]
         let text = $(cell).html() || $(cell).text()
-        
+
         // Hapus tag anchor dan bold
         text = text.replace(/<a[^>]*>.*?<\/a>/gi, '')
-                   .replace(/<b>.*?<\/b>/gi, '')
-                   .replace(/<\/?[^>]+(>|$)/g, '')
-                   .trim()
-        
+          .replace(/<b>.*?<\/b>/gi, '')
+          .replace(/<\/?[^>]+(>|$)/g, '')
+          .trim()
+
         // Hapus nomor ayat di awal (format "1:1 ")
         text = text.replace(/^\d+:\d+\s*/, '').trim()
-        
+
         verseData.texts[versionId] = text
       }
     })
-    
+
     // Juga parse interlinear jika ada
     verseData.interlinear = {}
     cells.each((cellIndex, cell) => {
@@ -432,12 +567,12 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions = BibleVer
         if (versionId.includes('itl') || versionId.includes('interlinear')) {
           const words = []
           const links = $(cell).find('a[href*="lexicon"]')
-          
+
           links.each((linkIndex, link) => {
             const href = $(link).attr('href')
             const wordText = $(link).text().trim()
             const strongMatch = href.match(/w=(\d+)/)
-            
+
             words.push({
               position: linkIndex + 1,
               word: wordText,
@@ -446,19 +581,19 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions = BibleVer
               morphology: null
             })
           })
-          
+
           if (words.length > 0) {
             verseData.interlinear[versionId] = words
           }
         }
       }
     })
-    
+
     if (verseData.texts && Object.keys(verseData.texts).length > 0) {
       verses.push(verseData)
     }
   })
-  
+
   return {
     bookId,
     chapter,
@@ -468,14 +603,105 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions = BibleVer
   }
 }
 
+async function parseChapterHTML(html, bookId, chapter, targetVersions) {
+  const $ = cheerio.load(html)
+  const verses = []
+  const strongNumbers = new Set()
+
+  // Cari semua baris ayat
+  $('tr[id="b"]').each((rowIndex, row) => {
+    const cells = $(row).find('td')
+    const verseData = {
+      verse: rowIndex + 1,
+      texts: {},
+      interlinear: {}
+    }
+
+    // Parse nomor ayat dari kolom pertama
+    const firstCell = $(cells[0])
+    const verseNumMatch = firstCell.find('a[name]').attr('name') ||
+      firstCell.find('b').text().match(/\d+:\d+/)
+
+    if (verseNumMatch) {
+      const verseNum = typeof verseNumMatch === 'string' ?
+        verseNumMatch.split(':')[1] || verseNumMatch :
+        (rowIndex + 1)
+      verseData.verse = parseInt(verseNum)
+    }
+
+    // Parse setiap kolom (versi)
+    cells.each((cellIndex, cell) => {
+      const cellHtml = $(cell).html()
+      const cellText = $(cell).text().trim()
+
+      // Cari versi yang sesuai dengan kolom ini
+      const version = findVersionForColumn(cellIndex, targetVersions)
+      if (!version) return
+
+      // Untuk teks biasa
+      let text = cellText
+      // Hapus nomor ayat di awal
+      text = text.replace(/^\d+:\d+\s*/, '').trim()
+      verseData.texts[version.id] = text
+
+      // Untuk versi interlinear, parse kata per kata
+      if (version.category === 'advance' && version.supports_strong) {
+        const words = []
+        const wordLinks = $(cell).find('a[href*="lexicon"]')
+
+        if (wordLinks.length > 0) {
+          wordLinks.each((wordIndex, link) => {
+            const wordHtml = $(link).html()
+            const wordText = $(link).text().trim()
+            const href = $(link).attr('href')
+            const strongMatch = href.match(/w=(\d+)/)
+
+            let strongNumber = null
+            if (strongMatch) {
+              const language = bookId <= 39 ? 'hebrew' : 'greek'
+              strongNumber = `${language === 'hebrew' ? 'H' : 'G'}${strongMatch[1]}`
+              strongNumbers.add(strongNumber)
+            }
+
+            words.push({
+              position: wordIndex + 1,
+              source_word: wordText,
+              strong: strongNumber,
+              lemma: null,
+              morphology: null,
+              gloss: null
+            })
+          })
+
+          if (words.length > 0) {
+            verseData.interlinear[version.id] = words
+          }
+        }
+      }
+    })
+
+    if (Object.keys(verseData.texts).length > 0) {
+      verses.push(verseData)
+    }
+  })
+
+  return {
+    bookId,
+    chapter,
+    verses,
+    totalVerses: verses.length,
+    strongNumbers: Array.from(strongNumbers)
+  }
+}
+
 async function getChapterData(bookId, chapter, targetVersions) {
   try {
     const url = await buildSabdaUrl(bookId, chapter, targetVersions)
     console.log(`🌐 Fetching: ${BibleBooks[bookId-1][0]} ${chapter}`)
-    
+
     const html = await fetchUrl(url)
     const chapterData = await parseChapterHTML(html, bookId, chapter, targetVersions)
-    
+
     return {
       success: true,
       data: chapterData
@@ -498,11 +724,11 @@ async function getChapterData(bookId, chapter, targetVersions) {
 async function processBook(bookId, concurrency = 3, resume = false, mode = 1, targetVersions = BibleVersions) {
   const bookInfo = BibleBooks[bookId - 1]
   const totalChapters = bookInfo[1]
-  
+
   console.log(`\n📖 Memproses kitab ${bookId}: ${bookInfo[0]}`)
   console.log(`📊 Total pasal: ${totalChapters}, Concurrency: ${concurrency}`)
   console.log(`📚 Versi: ${targetVersions.map(v => v.id).join(', ')}`)
-  
+
   // Buat struktur data untuk kitab
   const bookData = {
     id: bookId,
@@ -513,7 +739,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
     testament: bookId <= 39 ? 'OT' : 'NT',
     data: []
   }
-  
+
   // Cek pasal yang sudah ada jika resume
   const chaptersToProcess = []
   if (mode === 1 && resume) {
@@ -525,62 +751,64 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
       }
     }
   } else {
-    chaptersToProcess.push(...Array.from({length: totalChapters}, (_, i) => i + 1))
+    chaptersToProcess.push(...Array.from({
+      length: totalChapters
+    }, (_, i) => i + 1))
   }
-  
+
   if (chaptersToProcess.length === 0) {
     console.log(`✅ Semua pasal kitab ${bookId} sudah lengkap`)
     return true
   }
-  
+
   console.log(`🔄 Mengambil ${chaptersToProcess.length} pasal...`)
-  
+
   // Buat queue untuk pengambilan data
   const webQueue = new BibleQueue(concurrency)
-  
+
   for (const chapter of chaptersToProcess) {
     webQueue.add(async () => {
       const result = await getChapterData(bookId, chapter, targetVersions)
-      
+
       if (result.success) {
         bookData.data.push(result.data)
-        
+
         // Simpan ke database jika mode 1
         if (mode === 1) {
           await saveChapterToDB(result.data, targetVersions)
         }
       }
-      
+
       return result
     })
   }
-  
+
   // Proses queue
   await webQueue.process()
-  
+
   // Tunggu database queue jika mode 1
   if (mode === 1 && dbQueue) {
     console.log(`\n⏳ Menunggu operasi database selesai...`)
     await dbQueue.waitUntilEmpty()
   }
-  
+
   // Simpan ke file JSON
   const filename = `${BIBLE_DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`
   await fs.writeFile(filename, JSON.stringify(bookData, null, 2))
-  
+
   // Simpan versi minified
   const filenameMin = `${BIBLE_DIR_MIN}/Bible_${bookId}.min.json`
   await fs.writeFile(filenameMin, JSON.stringify(bookData))
-  
+
   console.log(`\n✅ Kitab ${bookId} selesai diproses`)
   console.log(`📊 Statistik: ${webQueue.completed} berhasil, ${webQueue.failed} gagal`)
-  
+
   return webQueue.failed === 0
 }
 
 async function checkChapterInDB(bookId, chapter, targetVersions) {
   if (!db) return false
-  
+
   try {
     // Cek apakah semua versi untuk pasal ini sudah ada
     const versionIds = targetVersions.map(v => `'${v.id}'`).join(',')
@@ -590,7 +818,7 @@ async function checkChapterInDB(bookId, chapter, targetVersions) {
       WHERE book_id = ${bookId} AND chapter = ${chapter}
       AND version IN (${versionIds})
     `)
-    
+
     return result && result.count >= targetVersions.length
   } catch (error) {
     return false
@@ -599,9 +827,13 @@ async function checkChapterInDB(bookId, chapter, targetVersions) {
 
 async function saveChapterToDB(chapterData, targetVersions) {
   if (!db) return
-  
-  const { bookId, chapter, verses } = chapterData
-  
+
+  const {
+    bookId,
+    chapter,
+    verses
+  } = chapterData
+
   for (const verseData of verses) {
     await dbQueue.add(async () => {
       try {
@@ -609,14 +841,14 @@ async function saveChapterToDB(chapterData, targetVersions) {
         for (const version of targetVersions) {
           const versionId = version.id
           const text = verseData.texts[versionId]
-          
+
           if (text && text.trim()) {
             // Insert ke tabel verses
             await db.run(`
               INSERT OR REPLACE INTO verses (book_id, chapter, verse, version, text)
               VALUES (?, ?, ?, ?, ?)
             `, [bookId, chapter, verseData.verse, versionId, text])
-            
+
             // Jika ini versi interlinear, simpan kata per kata
             if (verseData.interlinear && verseData.interlinear[versionId]) {
               const words = verseData.interlinear[versionId]
@@ -626,14 +858,14 @@ async function saveChapterToDB(chapterData, targetVersions) {
                   (book_id, chapter, verse, position, version, source_word, strong)
                   VALUES (?, ?, ?, ?, ?, ?, ?)
                 `, [
-                  bookId, chapter, verseData.verse, 
+                  bookId, chapter, verseData.verse,
                   word.position, versionId, word.word, word.strong
                 ])
               }
             }
           }
         }
-        
+
         return true
       } catch (error) {
         console.error(`❌ Gagal menyimpan ${bookId}:${chapter}:${verseData.verse}:`, error.message)
@@ -649,22 +881,22 @@ async function saveChapterToDB(chapterData, targetVersions) {
 
 async function migrateJSONtoDB(bookId) {
   console.log(`\n📁 Migrasi kitab ${bookId}...`)
-  
+
   const filename = `${BIBLE_DIR}/Bible_${bookId}_*.json`
   const files = await fs.readdir(BIBLE_DIR)
   const bookFile = files.find(f => f.startsWith(`Bible_${bookId}_`))
-  
+
   if (!bookFile) {
     console.error(`❌ File JSON untuk kitab ${bookId} tidak ditemukan`)
     return false
   }
-  
+
   const filePath = `${BIBLE_DIR}/${bookFile}`
-  
+
   try {
     const bookData = JSON.parse(await fs.readFile(filePath, "utf8"))
     console.log(`📊 Kitab: ${bookData.name}, Total pasal: ${bookData.data.length}`)
-    
+
     // Simpan informasi kitab
     await dbQueue.add(async () => {
       await db.run(`
@@ -679,34 +911,34 @@ async function migrateJSONtoDB(bookId) {
         bookData.testament
       ])
     })
-    
+
     // Proses setiap pasal
     let successCount = 0
     let failCount = 0
-    
+
     for (const chapterData of bookData.data) {
       try {
         await saveChapterToDB(chapterData, BibleVersions)
         successCount++
-        
+
         // Tampilkan progress
         if (successCount % 5 === 0 || successCount === bookData.data.length) {
           const progress = Math.round(successCount / bookData.data.length * 100)
           process.stdout.write(`\r📊 Progress: ${successCount}/${bookData.data.length} pasal (${progress}%)`)
         }
-        
+
       } catch (error) {
         console.error(`\n❌ Gagal migrasi pasal ${chapterData.chapter}:`, error.message)
         failCount++
       }
     }
-    
+
     // Tunggu database queue selesai
     await dbQueue.waitUntilEmpty()
-    
+
     console.log(`\n✅ Migrasi selesai: ${successCount} berhasil, ${failCount} gagal`)
     return failCount === 0
-    
+
   } catch (error) {
     console.error(`❌ Gagal migrasi kitab ${bookId}:`, error.message)
     return false
@@ -719,7 +951,7 @@ async function migrateJSONtoDB(bookId) {
 
 async function initializeDatabase() {
   console.log("\n📊 Inisialisasi database...")
-  
+
   // Insert versi-versi Alkitab
   for (const version of BibleVersions) {
     await dbQueue.add(async () => {
@@ -732,11 +964,11 @@ async function initializeDatabase() {
         version.language,
         version.category || 'global',
         version.supports_strong ? 1 : 0,
-        version.id === 'tb' ? 1 : 0  // TB sebagai default
+        version.id === 'tb' ? 1 : 0 // TB sebagai default
       ])
     })
   }
-  
+
   // Insert data kitab
   for (let i = 0; i < BibleBooks.length; i++) {
     const book = BibleBooks[i]
@@ -755,9 +987,222 @@ async function initializeDatabase() {
       ])
     })
   }
-  
+
   await dbQueue.waitUntilEmpty()
   console.log("✅ Database initialized")
+}
+
+/* =========================
+   STRONG 'S NUMBERS
+========================= */
+
+async function parseInterlinearWord(wordHtml, bookId) {
+  const $ = cheerio.load(wordHtml)
+  const wordData = {
+    source_word: '',
+    strong: null,
+    lemma: null,
+    morphology: null,
+    gloss: null
+  }
+
+  // Ambil kata sumber
+  wordData.source_word = $.text().trim()
+
+  // Cari link Strong's number
+  const strongLink = $('a[href*="lexicon"]')
+  if (strongLink.length > 0) {
+    const href = strongLink.attr('href')
+    const strongMatch = href.match(/w=(\d+)/)
+    if (strongMatch) {
+      wordData.strong = strongMatch[1]
+
+      // Tentukan bahasa berdasarkan kitab
+      const language = bookId <= 39 ? 'hebrew' : 'greek'
+      wordData.strong = `${language === 'hebrew' ? 'H' : 'G'}${wordData.strong}`
+    }
+  }
+
+  return wordData
+}
+
+async function fetchStrongLexicon(strongNumber) {
+  // Format: H7225 (Hebrew) atau G746 (Greek)
+  const prefix = strongNumber.charAt(0) // H atau G
+  const number = strongNumber.substring(1)
+
+  const url = `https://sabdaweb.sabda.org/tools/lexicon/?w=${number}`
+
+  try {
+    const html = await fetchUrl(url)
+    const $ = cheerio.load(html)
+
+    // Parse data leksikon dari halaman SABDAweb
+    const lexiconData = {
+      strong: strongNumber,
+      language: prefix === 'H' ? 'hebrew' : 'greek',
+      lemma: '',
+      translit: '',
+      definition: '',
+      phonetic: '',
+      pronunciation: '',
+      usage: '',
+      etymology: ''
+    }
+
+    // Cari tabel leksikon
+    const lexiconTable = $('table').filter((i, table) => {
+      return $(table).text().includes('Kata Asli') ||
+        $(table).text().includes('Transliterasi') ||
+        $(table).text().includes('Arti')
+    }).first()
+
+    if (lexiconTable.length > 0) {
+      // Parse baris-baris tabel
+      lexiconTable.find('tr').each((i, row) => {
+        const cells = $(row).find('td')
+        if (cells.length >= 2) {
+          const label = $(cells[0]).text().trim().toLowerCase()
+          const value = $(cells[1]).text().trim()
+
+          if (label.includes('kata asli') || label.includes('original word')) {
+            lexiconData.lemma = value
+          } else if (label.includes('transliterasi') || label.includes('transliteration')) {
+            lexiconData.translit = value
+          } else if (label.includes('arti') || label.includes('definition')) {
+            lexiconData.definition = value
+          } else if (label.includes('bunyi') || label.includes('phonetic')) {
+            lexiconData.phonetic = value
+          } else if (label.includes('pengucapan') || label.includes('pronunciation')) {
+            lexiconData.pronunciation = value
+          }
+        }
+      })
+    }
+
+    // Jika tidak ada tabel, coba ambil dari struktur lain
+    if (!lexiconData.lemma) {
+      // Coba ambil dari elemen lainnya
+      const headings = $('h2, h3, h4, b, strong')
+      headings.each((i, el) => {
+        const text = $(el).text().trim()
+        if (text.includes('Strong') && text.includes(strongNumber.substring(1))) {
+          const nextText = $(el).next().text()
+          lexiconData.definition = lexiconData.definition || nextText
+        }
+      })
+    }
+
+    console.log(`📖 Lexicon ${strongNumber}: ${lexiconData.lemma || 'N/A'}`)
+    return lexiconData
+
+  } catch (error) {
+    console.error(`❌ Gagal ambil lexicon ${strongNumber}:`, error.message)
+    return null
+  }
+}
+
+async function saveLexiconToDB(lexiconData) {
+  if (!lexiconData || !lexiconData.strong) return false
+
+  return dbQueue.add(async () => {
+    try {
+      await db.run(`
+        INSERT OR REPLACE INTO strong_lexicon 
+        (strong, language, lemma, translit, definition, phonetic, pronunciation)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `, [
+        lexiconData.strong,
+        lexiconData.language,
+        lexiconData.lemma,
+        lexiconData.translit,
+        lexiconData.definition,
+        lexiconData.phonetic,
+        lexiconData.pronunciation
+      ])
+
+      // Update interlinear_words dengan lemma dari lexicon
+      if (lexiconData.lemma) {
+        await db.run(`
+          UPDATE interlinear_words 
+          SET lemma = ?
+          WHERE strong = ? AND (lemma IS NULL OR lemma = '')
+        `, [lexiconData.lemma, lexiconData.strong])
+      }
+
+      return true
+    } catch (error) {
+      console.error(`❌ Gagal menyimpan lexicon ${lexiconData.strong}:`, error.message)
+      return false
+    }
+  })
+}
+
+async function processLexicons(strongNumbers, concurrency = 2) {
+  if (!strongNumbers || strongNumbers.length === 0) {
+    console.log("ℹ️  Tidak ada Strong's numbers untuk diproses")
+    return
+  }
+
+  console.log(`\n📚 Memproses ${strongNumbers.length} Strong's numbers...`)
+
+  const lexiconQueue = new LexiconQueue(concurrency)
+
+  // Tambahkan semua Strong's numbers ke queue
+  strongNumbers.forEach(strong => lexiconQueue.add(strong))
+
+  // Proses dengan concurrency terbatas
+  const cache = await lexiconQueue.process(async (strongNumber) => {
+    // Cek dulu di database
+    const existing = await dbQueue.add(async () => {
+      return await db.get(
+        'SELECT * FROM strong_lexicon WHERE strong = ?',
+        [strongNumber]
+      )
+    })
+
+    if (existing) {
+      console.log(`✅ Lexicon ${strongNumber} sudah ada di database`)
+      return existing
+    }
+
+    // Ambil dari web
+    const lexiconData = await fetchStrongLexicon(strongNumber)
+    if (lexiconData) {
+      await saveLexiconToDB(lexiconData)
+    }
+
+    return lexiconData
+  })
+
+  console.log(`\n✅ Lexicon processing selesai`)
+  console.log(`📊 Statistik: ${lexiconQueue.completed} berhasil, ${lexiconQueue.failed} gagal`)
+
+  return cache
+}
+
+function findVersionForColumn(columnIndex, targetVersions) {
+  // Mapping default kolom SABDAweb (berdasarkan file HTML)
+  const columnMapping = [
+    'tb', // Kolom 0: TB
+    'bis', // Kolom 1: BIS
+    'tl', // Kolom 2: TL
+    'ende', // Kolom 3: ENDE
+    'tb_itl_drf', // Kolom 4: TB Interlinear
+    'tl_itl_drf', // Kolom 5: TL Interlinear
+    'bbe', // Kolom 6: BBE
+    'message', // Kolom 7: Message
+    'nkjv', // Kolom 8: NKJV
+    'net', // Kolom 9: NET
+    'net2' // Kolom 10: NET2
+  ]
+
+  if (columnIndex < columnMapping.length) {
+    const versionId = columnMapping[columnIndex]
+    return targetVersions.find(v => v.id === versionId)
+  }
+
+  return null
 }
 
 /* =========================
@@ -768,17 +1213,17 @@ let dbQueue = null
 
 async function main() {
   const options = parseArgs()
-  
+
   console.log("=".repeat(60))
   console.log("📖 BIBLE SABDAWEB SCRAPER")
   console.log("=".repeat(60))
-  
+
   const modeNames = {
     1: "Web → JSON & DB",
     2: "Web → JSON",
     3: "JSON → DB"
   }
-  
+
   console.log(`Mode: ${options.mode} (${modeNames[options.mode]})`)
   console.log(`Start: kitab ${options.start}`)
   if (options.book) console.log(`Single book: ${options.book}`)
@@ -789,7 +1234,7 @@ async function main() {
     console.log(`Versions filter: ${options.versions.join(', ')}`)
   }
   console.log("=".repeat(60))
-  
+
   // Filter versi jika di-specified
   let targetVersions = BibleVersions
   if (options.versions.length > 0) {
@@ -799,35 +1244,39 @@ async function main() {
       return
     }
   }
-  
+
   // Buat folder output
   try {
     await fs.access(BIBLE_DIR)
   } catch {
-    await fs.mkdir(BIBLE_DIR, { recursive: true })
+    await fs.mkdir(BIBLE_DIR, {
+      recursive: true
+    })
   }
-  
+
   try {
     await fs.access(BIBLE_DIR_MIN)
   } catch {
-    await fs.mkdir(BIBLE_DIR_MIN, { recursive: true })
+    await fs.mkdir(BIBLE_DIR_MIN, {
+      recursive: true
+    })
   }
-  
+
   // Buka koneksi database untuk mode 1 & 3
   if (options.mode === 1 || options.mode === 3) {
     console.log("\n🚀 Opening database connection...")
     db = await openDB(DB_PATH)
     dbQueue = new DatabaseQueue(db, 1)
-    
+
     // Inisialisasi database
     await initializeDatabase()
     await sleep(1000)
   }
-  
+
   try {
     // Tentukan kitab yang akan diproses
     const booksToProcess = []
-    
+
     if (options.book) {
       if (options.book >= 1 && options.book <= BibleBooks.length) {
         booksToProcess.push(options.book)
@@ -842,51 +1291,51 @@ async function main() {
     } else {
       booksToProcess.push(options.start)
     }
-    
+
     console.log(`📋 Total kitab yang akan diproses: ${booksToProcess.length}`)
-    
+
     let totalSuccess = 0
     let totalFailed = 0
-    
+
     for (const bookId of booksToProcess) {
       const bookName = BibleBooks[bookId - 1][0]
-      
+
       console.log(`\n📖 ========================================`)
       console.log(`📖 Proses kitab ${bookId}: ${bookName}`)
       console.log(`📖 ========================================`)
-      
+
       let success = false
-      
+
       try {
         switch (options.mode) {
           case 1:
             success = await processBook(bookId, options.concurrency, options.resume, options.mode, targetVersions)
             break
-            
+
           case 2:
             success = await processBook(bookId, options.concurrency, options.resume, options.mode, targetVersions)
             break
-            
+
           case 3:
             success = await migrateJSONtoDB(bookId)
             break
-            
+
           default:
             console.error(`❌ Mode ${options.mode} tidak dikenali`)
             return
         }
-        
+
         if (success) {
           totalSuccess++
         } else {
           totalFailed++
         }
-        
+
       } catch (error) {
         console.error(`❌ Error memproses kitab ${bookId}:`, error.message)
         totalFailed++
       }
-      
+
       // Jeda antar kitab
       if (bookId !== booksToProcess[booksToProcess.length - 1]) {
         const delay = options.mode === 1 || options.mode === 2 ? 5000 : 2000
@@ -894,16 +1343,41 @@ async function main() {
         await sleep(delay)
       }
     }
-    
+
+    // Proses Strong's numbers jika mode 1 atau 3
+    if ((options.mode === 1 || options.mode === 3) && db) {
+      console.log("\n🔍 Mengumpulkan Strong's numbers dari database...")
+
+      // Kumpulkan semua Strong's numbers yang belum ada lemma-nya
+      const missingStrongs = await dbQueue.add(async () => {
+        const result = await db.all(`
+        SELECT DISTINCT strong 
+        FROM interlinear_words 
+        WHERE strong IS NOT NULL 
+          AND strong != ''
+          AND (lemma IS NULL OR lemma = '')
+      `)
+        return result.map(row => row.strong)
+      })
+
+      if (missingStrongs.length > 0) {
+        console.log(`📚 Ditemukan ${missingStrongs.length} Strong's numbers yang perlu diproses`)
+        await processLexicons(missingStrongs, Math.min(2, options.concurrency))
+      } else {
+        console.log("✅ Semua Strong's numbers sudah memiliki data lexicon")
+      }
+    }
+    // Strong 's numbers selesai diproses
+
     console.log("\n" + "=".repeat(60))
     console.log("🎉 PROSES SELESAI!")
     console.log("=".repeat(60))
     console.log(`📊 Statistik: ${totalSuccess} kitab berhasil, ${totalFailed} kitab gagal`)
     console.log(`📊 Mode: ${modeNames[options.mode]}`)
-    
+
     if (options.mode === 1 || options.mode === 3) {
       console.log(`💾 Database: ${DB_PATH}`)
-      
+
       // Update FTS
       console.log("\n🔄 Updating FTS tables...")
       try {
@@ -913,14 +1387,14 @@ async function main() {
         console.error("❌ Error updating FTS:", error.message)
       }
     }
-    
+
     if (options.mode === 1 || options.mode === 2) {
       console.log(`📁 JSON files: ${BIBLE_DIR}/`)
       console.log(`📁 Minified JSON: ${BIBLE_DIR_MIN}/`)
     }
-    
+
     console.log("=".repeat(60))
-    
+
   } catch (error) {
     console.error("\n❌ Error utama:", error.message)
     console.error(error.stack)
@@ -933,6 +1407,7 @@ async function main() {
 }
 
 // Jalankan aplikasi
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+if (process.argv[1] === fileURLToPath(
+    import.meta.url)) {
   main().catch(console.error)
 }
