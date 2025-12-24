@@ -166,8 +166,8 @@ const BibleVersions = [{
 ========================= */
 let db = null
 const DB_PATH = "./bible.db"
-const BIBLE_DIR = "./json_bible"
-const BIBLE_DIR_MIN = "./json_bible_min"
+const DIR = "./json"
+const DIR_MIN = "./json_min"
 
 // Helper untuk mendapatkan __dirname di ES Module
 const __filename = fileURLToPath(
@@ -737,7 +737,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
     totalVerses: bookInfo[2],
     pericopes: bookInfo[3],
     testament: bookId <= 39 ? 'OT' : 'NT',
-    data: []
+    data: new Array(totalChapters)
   }
 
   // Cek pasal yang sudah ada jika resume
@@ -771,7 +771,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
       const result = await getChapterData(bookId, chapter, targetVersions)
 
       if (result.success) {
-        bookData.data.push(result.data)
+        bookData.data[chapter-1] = [result.data]
 
         // Simpan ke database jika mode 1
         if (mode === 1) {
@@ -793,11 +793,11 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   }
 
   // Simpan ke file JSON
-  const filename = `${BIBLE_DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`
+  const filename = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`
   await fs.writeFile(filename, JSON.stringify(bookData, null, 2))
 
   // Simpan versi minified
-  const filenameMin = `${BIBLE_DIR_MIN}/Bible_${bookId}.min.json`
+  const filenameMin = `${DIR_MIN}/Bible_${bookId}.min.json`
   await fs.writeFile(filenameMin, JSON.stringify(bookData))
 
   console.log(`\n✅ Kitab ${bookId} selesai diproses`)
@@ -882,8 +882,8 @@ async function saveChapterToDB(chapterData, targetVersions) {
 async function migrateJSONtoDB(bookId) {
   console.log(`\n📁 Migrasi kitab ${bookId}...`)
 
-  const filename = `${BIBLE_DIR}/Bible_${bookId}_*.json`
-  const files = await fs.readdir(BIBLE_DIR)
+  const filename = `${DIR}/Bible_${bookId}_*.json`
+  const files = await fs.readdir(DIR)
   const bookFile = files.find(f => f.startsWith(`Bible_${bookId}_`))
 
   if (!bookFile) {
@@ -891,7 +891,7 @@ async function migrateJSONtoDB(bookId) {
     return false
   }
 
-  const filePath = `${BIBLE_DIR}/${bookFile}`
+  const filePath = `${DIR}/${bookFile}`
 
   try {
     const bookData = JSON.parse(await fs.readFile(filePath, "utf8"))
@@ -1247,17 +1247,17 @@ async function main() {
 
   // Buat folder output
   try {
-    await fs.access(BIBLE_DIR)
+    await fs.access(DIR)
   } catch {
-    await fs.mkdir(BIBLE_DIR, {
+    await fs.mkdir(DIR, {
       recursive: true
     })
   }
 
   try {
-    await fs.access(BIBLE_DIR_MIN)
+    await fs.access(DIR_MIN)
   } catch {
-    await fs.mkdir(BIBLE_DIR_MIN, {
+    await fs.mkdir(DIR_MIN, {
       recursive: true
     })
   }
@@ -1389,8 +1389,8 @@ async function main() {
     }
 
     if (options.mode === 1 || options.mode === 2) {
-      console.log(`📁 JSON files: ${BIBLE_DIR}/`)
-      console.log(`📁 Minified JSON: ${BIBLE_DIR_MIN}/`)
+      console.log(`📁 JSON files: ${DIR}/`)
+      console.log(`📁 Minified JSON: ${DIR_MIN}/`)
     }
 
     console.log("=".repeat(60))

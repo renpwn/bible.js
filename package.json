@@ -1,9 +1,9 @@
 {
-  "name": "@renpwn/alquran-js",
+  "name": "@renpwn/bible.js",
   "version": "0.14.11",
   "description": "Node.js library untuk mengakses Al-Qur'an dengan database SQLite + FTS5. Dilengkapi teks Arab, terjemahan, tafsir 6 sumber, transliterasi, dan audio. Ideal untuk bot WhatsApp/Telegram, aplikasi mobile, dan website Islamic.",
   "keywords": [
-    "alquran",
+    "bible",
     "quran",
     "islamic",
     "tafsir",
@@ -19,13 +19,13 @@
     "audio",
     "hadis"
   ],
-  "homepage": "https://github.com/renpwn/alquran.js",
+  "homepage": "https://github.com/renpwn/bible.js",
   "bugs": {
-    "url": "https://github.com/renpwn/alquran.js/issues"
+    "url": "https://github.com/renpwn/bible.js/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/renpwn/alquran.js.git"
+    "url": "git+https://github.com/renpwn/bible.js.git"
   },
   "license": "MIT",
   "author": "Ardy Ren <renpwn@proton.me>",
@@ -34,7 +34,7 @@
   "exports": {
     ".": "./index.js",
     "./database": "./setting.db.js",
-    "./scraper": "./mt/quran.js"
+    "./scraper": "./mt/bible.js"
   },
   "directories": {
     "example": "examples",
@@ -42,15 +42,15 @@
   },
   "scripts": {
     "start": "node index.js",
-    "scrape:all": "node mt/quran.js -m 1 -b -c 5",
-    "scrape:surah": "node mt/quran.js -m 1 -S",
-    "migrate:json": "node mt/quran.js -m 3 -b",
+    "scrape:all": "node mt/bible.js -m 1 -b -c 5",
+    "scrape:surah": "node mt/bible.js -m 1 -S",
+    "migrate:json": "node mt/bible.js -m 3 -b",
     "test": "node examples/test_lib.js",
     "init-db": "node mt/db.js",
     "rebuild-fts": "node -e \"import('./index.js').then(m => m.default('', {rebuildFTS: true}))\""
   },
   "bin": {
-    "alquran-scrape": "./mt/quran.js"
+    "bible-scrape": "./mt/bible.js"
   },
   "engines": {
     "node": ">=18.0.0"
