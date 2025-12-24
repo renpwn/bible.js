@@ -109,8 +109,8 @@ export async function openDB(dbFile = DEFAULT_DB) {
     position    INTEGER NOT NULL,
     version     TEXT NOT NULL,
 
-    source_lang TEXT NOT NULL,
-    source_word TEXT NOT NULL,
+    -- source_lang TEXT NOT NULL,
+    _word TEXT NOT NULL,
     lemma       TEXT,
     strong      TEXT,
     morphology  TEXT,
@@ -129,7 +129,9 @@ export async function openDB(dbFile = DEFAULT_DB) {
     language   TEXT NOT NULL,
     lemma      TEXT NOT NULL,
     translit   TEXT,
-    definition TEXT
+    definition TEXT,
+    phonetic   TEXT,
+    pronunciation TEXT
   );
 
   -- ===============================
@@ -243,8 +245,8 @@ CREATE INDEX IF NOT EXISTS idx_interlinear_book_chapter_verse
 CREATE INDEX IF NOT EXISTS idx_interlinear_version
   ON interlinear_words(version);
 
-CREATE INDEX IF NOT EXISTS idx_interlinear_source_lang
-  ON interlinear_words(source_lang);
+--CREATE INDEX IF NOT EXISTS idx_interlinear_source_lang
+--  ON interlinear_words(source_lang);
 
 CREATE INDEX IF NOT EXISTS idx_interlinear_position
   ON interlinear_words(book_id, chapter, verse, position);
