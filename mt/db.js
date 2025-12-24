@@ -3,29 +3,20 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-const DEFAULT_DB = './db/bible.db'
+const DEFAULT_DB = './bible.db' // Ganti dari quran.db ke bible.db
 
 export async function openDB(dbFile = DEFAULT_DB) {
   const __filename = fileURLToPath(import.meta.url)
   const __dirname = path.dirname(__filename)
 
-  const dbPath = path.resolve(__dirname, '..', 'db', 'bible.db')
+  // Gunakan path absolut
+  const dbPath = path.resolve(process.cwd(), dbFile)
 
-  // ===============================
-  // ENSURE DB DIRECTORY
-  // ===============================
+  // ✅ Pastikan folder ada
   const dbDir = path.dirname(dbPath)
   if (!fs.existsSync(dbDir)) {
     fs.mkdirSync(dbDir, { recursive: true })
     console.log('📁 Created DB directory:', dbDir)
-  }
-
-  // ===============================
-  // REMOVE OLD DB (DEV MODE)
-  // ===============================
-  if (fs.existsSync(dbPath)) {
-    console.log('🗑 Removing old database...')
-    fs.unlinkSync(dbPath)
   }
 
   console.log('🚀 Opening database:', dbPath)
@@ -40,7 +31,7 @@ export async function openDB(dbFile = DEFAULT_DB) {
   })
 
   // ===============================
-  // TEST CONNECTION
+  // TEST KONEKSI
   // ===============================
   try {
     await db.exec('SELECT 1')
@@ -50,649 +41,394 @@ export async function openDB(dbFile = DEFAULT_DB) {
   }
 
   // ===============================
-  // INIT SCHEMA
+  // INIT SCHEMA UNTUK ALKITAB
   // ===============================
-  console.log('📊 Initializing schema...')
+  console.log('📊 Initializing Bible schema...')
 
   const schemaSQL = `
+  -- Enable foreign keys and WAL mode for better performance
   PRAGMA foreign_keys = ON;
+  -- PRAGMA journal_mode = WAL;
+  -- PRAGMA synchronous = NORMAL;
+  -- PRAGMA cache_size = -10000; -- 10MB cache
 
-  -- ===============================
-  -- BOOKS
-  -- ===============================
-  CREATE TABLE IF NOT EXISTS books (
-    id            INTEGER PRIMARY KEY AUTOINCREMENT,
-    name          TEXT NOT NULL,
-    abbrev        TEXT,
-    chapters      INTEGER NOT NULL,
-    total_verses  INTEGER NOT NULL,
-    pericopes     INTEGER,
-    testament     TEXT CHECK (testament IN ('OT','NT')) NOT NULL,
-    position      INTEGER
-  );
-
-  -- ===============================
-  -- VERSIONS
-  -- ===============================
+  -- Tabel untuk versi Alkitab (TB, BIS, TL, dll)
   CREATE TABLE IF NOT EXISTS versions (
-    id              TEXT PRIMARY KEY,
-    name            TEXT NOT NULL,
-    language        TEXT NOT NULL,
-    category        TEXT CHECK (category IN ('core','global','advance')) NOT NULL,
-    supports_strong BOOLEAN DEFAULT 0,
-    is_default      BOOLEAN DEFAULT 0,
-    description     TEXT
+    id TEXT PRIMARY KEY,           -- kode singkat: tb, bis, tl, etc
+    name TEXT NOT NULL,            -- nama lengkap versi
+    language TEXT NOT NULL,        -- id, en, etc
+    category TEXT,                 -- core, global, advance
+    supports_strong INTEGER DEFAULT 0, -- 1 jika mendukung Strong's numbers
+    is_default INTEGER DEFAULT 0,  -- 1 untuk versi default (TB)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
 
-  -- ===============================
-  -- VERSES (CORE / GLOBAL)
-  -- ===============================
+  -- Tabel untuk kitab-kitab (Kejadian, Keluaran, ...)
+  CREATE TABLE IF NOT EXISTS books (
+    id INTEGER PRIMARY KEY,        -- 1-66
+    name TEXT NOT NULL,            -- Nama kitab
+    name_short TEXT,               -- Singkatan (optional)
+    chapters INTEGER NOT NULL,     -- Jumlah pasal
+    total_verses INTEGER NOT NULL, -- Total ayat
+    pericopes INTEGER,             -- Jumlah perikop
+    testament TEXT CHECK(testament IN ('OT', 'NT')), -- Perjanjian Lama/Baru
+    position INTEGER,              -- Urutan dalam Alkitab
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+
+  -- Tabel utama untuk ayat-ayat
   CREATE TABLE IF NOT EXISTS verses (
-    book_id   INTEGER NOT NULL,
-    chapter   INTEGER NOT NULL,
-    verse     INTEGER NOT NULL,
-    version   TEXT NOT NULL,
-    text      TEXT NOT NULL,
-
-    PRIMARY KEY (book_id, chapter, verse, version),
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    book_id INTEGER NOT NULL,
+    chapter INTEGER NOT NULL,
+    verse INTEGER NOT NULL,
+    version TEXT NOT NULL,         -- tb, bis, tl, etc
+    text TEXT NOT NULL,            -- Teks ayat
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE,
-    FOREIGN KEY (version) REFERENCES versions(id) ON DELETE CASCADE
+    FOREIGN KEY (version) REFERENCES versions(id) ON DELETE CASCADE,
+    UNIQUE(book_id, chapter, verse, version) -- Mencegah duplikat
   );
 
-  -- ===============================
-  -- INTERLINEAR (ADVANCE)
-  -- ===============================
+  -- Tabel untuk kata-kata interlinear (versi interlinear saja)
   CREATE TABLE IF NOT EXISTS interlinear_words (
-    book_id     INTEGER NOT NULL,
-    chapter     INTEGER NOT NULL,
-    verse       INTEGER NOT NULL,
-    position    INTEGER NOT NULL,
-    version     TEXT NOT NULL,
-
-    -- source_lang TEXT NOT NULL,
-    _word TEXT NOT NULL,
-    lemma       TEXT,
-    strong      TEXT,
-    morphology  TEXT,
-    gloss       TEXT,
-
-    PRIMARY KEY (book_id, chapter, verse, position, version),
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    book_id INTEGER NOT NULL,
+    chapter INTEGER NOT NULL,
+    verse INTEGER NOT NULL,
+    position INTEGER NOT NULL,     -- Urutan kata dalam ayat (1,2,3,...)
+    version TEXT NOT NULL,         -- tb_itl_drf, tl_itl_drf, etc
+    _word TEXT NOT NULL,           -- Kata asli (dari teks)
+    strong TEXT,                   -- Strong's number (H7225, G746)
+    lemma TEXT,                    -- Lemma/akar kata
+    translit TEXT,                 -- Transliterasi
+    morphology TEXT,               -- Info morfologi
+    gloss TEXT,                    -- Terjemahan kata
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE,
     FOREIGN KEY (version) REFERENCES versions(id) ON DELETE CASCADE
   );
 
-  -- ===============================
-  -- STRONG LEXICON
-  -- ===============================
+  -- Tabel leksikon Strong's numbers
   CREATE TABLE IF NOT EXISTS strong_lexicon (
-    strong     TEXT PRIMARY KEY,
-    language   TEXT NOT NULL,
-    lemma      TEXT NOT NULL,
-    translit   TEXT,
-    definition TEXT,
-    phonetic   TEXT,
-    pronunciation TEXT
+    strong TEXT PRIMARY KEY,       -- Format: H7225, G746
+    language TEXT NOT NULL,        -- hebrew/greek
+    lemma TEXT,                    -- Kata Ibrani/Yunani asli
+    translit TEXT,                 -- Transliterasi
+    definition TEXT,               -- Definisi lengkap
+    phonetic TEXT,                 -- Pengucapan
+    pronunciation TEXT,            -- Cara baca
+    part_of_speech TEXT,           -- Jenis kata (noun, verb, etc)
+    etymology TEXT,                -- Asal kata
+    av_summary TEXT,               -- Penggunaan dalam AV/KJV
+    occurrence INTEGER DEFAULT 0,  -- Jumlah kemunculan
+    source TEXT,                   -- Sumber (TWOT, etc)
+    strong_reference TEXT,         -- Referensi ke Strong lain
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (strong_reference) REFERENCES strong_lexicon(strong)
   );
 
-  -- ===============================
-  -- VERSE LINK (CORE → ADVANCE)
-  -- ===============================
-  CREATE TABLE IF NOT EXISTS verse_links (
-    book_id   INTEGER NOT NULL,
-    chapter   INTEGER NOT NULL,
-    verse     INTEGER NOT NULL,
-    from_ver  TEXT NOT NULL,
-    to_ver    TEXT NOT NULL,
-
-    PRIMARY KEY (book_id, chapter, verse, from_ver, to_ver)
-  );
-
-  -- ===============================
-  -- PERICOPES
-  -- ===============================
+  -- Tabel perikop (opsional, untuk struktur pembagian)
   CREATE TABLE IF NOT EXISTS pericopes (
-    book_id     INTEGER,
-    chapter     INTEGER,
-    verse_start INTEGER,
-    verse_end   INTEGER,
-    version     TEXT,
-    title       TEXT
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    book_id INTEGER NOT NULL,
+    start_chapter INTEGER NOT NULL,
+    start_verse INTEGER NOT NULL,
+    end_chapter INTEGER NOT NULL,
+    end_verse INTEGER NOT NULL,
+    title TEXT NOT NULL,           -- Judul perikop
+    subtitle TEXT,                 -- Subjudul (opsional)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
   );
 
-
-  -- ===============================
-  -- FOOTNOTES
-  -- ===============================
-  CREATE TABLE IF NOT EXISTS footnotes (
-  id        INTEGER PRIMARY KEY AUTOINCREMENT,
-  book_id   INTEGER NOT NULL,
-  chapter   INTEGER NOT NULL,
-  verse     INTEGER NOT NULL,
-  version   TEXT NOT NULL,
-  note      TEXT NOT NULL,
-
-  FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE,
-  FOREIGN KEY (version) REFERENCES versions(id) ON DELETE CASCADE
-);
+  -- Tabel pencarian silang (cross-references)
+  CREATE TABLE IF NOT EXISTS cross_references (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    source_book_id INTEGER NOT NULL,
+    source_chapter INTEGER NOT NULL,
+    source_verse INTEGER NOT NULL,
+    target_book_id INTEGER NOT NULL,
+    target_chapter INTEGER NOT NULL,
+    target_verse INTEGER NOT NULL,
+    strength INTEGER DEFAULT 1,    -- 1=weak, 2=medium, 3=strong
+    type TEXT,                     -- quotation, allusion, theme, etc
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (source_book_id) REFERENCES books(id),
+    FOREIGN KEY (target_book_id) REFERENCES books(id)
+  );
   `
-  // CREATE INDEX IF NOT EXISTS idx_books_position
-  //   ON books(position);
-
-  // CREATE INDEX IF NOT EXISTS idx_verses_lookup
-  //   ON verses(book_id, chapter, verse, version);
-
-  // CREATE INDEX IF NOT EXISTS idx_interlinear_strong
-  //   ON interlinear_words(strong);
-
-  // CREATE INDEX IF NOT EXISTS idx_footnotes_lookup
-  //   ON footnotes(book_id, chapter, verse, version);
-
-  const indexSQL = `
--- ===============================
--- BOOKS TABLE INDEXES
--- ===============================
-CREATE INDEX IF NOT EXISTS idx_books_position
-  ON books(position);
-
-CREATE INDEX IF NOT EXISTS idx_books_testament
-  ON books(testament);
-
-CREATE INDEX IF NOT EXISTS idx_books_name
-  ON books(name);
-
-CREATE INDEX IF NOT EXISTS idx_books_abbrev
-  ON books(abbrev);
-
--- ===============================
--- VERSIONS TABLE INDEXES
--- ===============================
-CREATE INDEX IF NOT EXISTS idx_versions_category
-  ON versions(category);
-
-CREATE INDEX IF NOT EXISTS idx_versions_language
-  ON versions(language);
-
-CREATE INDEX IF NOT EXISTS idx_versions_is_default
-  ON versions(is_default) WHERE is_default = 1;
-
--- ===============================
--- VERSES TABLE INDEXES
--- ===============================
-CREATE INDEX IF NOT EXISTS idx_verses_lookup
-  ON verses(book_id, chapter, verse, version);
-
-CREATE INDEX IF NOT EXISTS idx_verses_version
-  ON verses(version);
-
-CREATE INDEX IF NOT EXISTS idx_verses_book_chapter
-  ON verses(book_id, chapter);
-
-CREATE INDEX IF NOT EXISTS idx_verses_book_chapter_verse
-  ON verses(book_id, chapter, verse);
-
--- ===============================
--- INTERLINEAR WORDS TABLE INDEXES
--- ===============================
-CREATE INDEX IF NOT EXISTS idx_interlinear_strong
-  ON interlinear_words(strong);
-
-CREATE INDEX IF NOT EXISTS idx_interlinear_lemma
-  ON interlinear_words(lemma);
-
-CREATE INDEX IF NOT EXISTS idx_interlinear_book_chapter_verse
-  ON interlinear_words(book_id, chapter, verse);
-
-CREATE INDEX IF NOT EXISTS idx_interlinear_version
-  ON interlinear_words(version);
-
---CREATE INDEX IF NOT EXISTS idx_interlinear_source_lang
---  ON interlinear_words(source_lang);
-
-CREATE INDEX IF NOT EXISTS idx_interlinear_position
-  ON interlinear_words(book_id, chapter, verse, position);
-
--- ===============================
--- STRONG LEXICON TABLE INDEXES
--- ===============================
-CREATE INDEX IF NOT EXISTS idx_strong_language
-  ON strong_lexicon(language);
-
-CREATE INDEX IF NOT EXISTS idx_strong_lemma
-  ON strong_lexicon(lemma);
-
--- ===============================
--- VERSE LINKS TABLE INDEXES
--- ===============================
-CREATE INDEX IF NOT EXISTS idx_verse_links_from
-  ON verse_links(book_id, chapter, verse, from_ver);
-
-CREATE INDEX IF NOT EXISTS idx_verse_links_to
-  ON verse_links(book_id, chapter, verse, to_ver);
-
-CREATE INDEX IF NOT EXISTS idx_verse_links_cross
-  ON verse_links(from_ver, to_ver);
-
--- ===============================
--- PERICOPES TABLE INDEXES
--- ===============================
-CREATE INDEX IF NOT EXISTS idx_pericopes_book_chapter
-  ON pericopes(book_id, chapter);
-
-CREATE INDEX IF NOT EXISTS idx_pericopes_range
-  ON pericopes(book_id, chapter, verse_start, verse_end);
-
-CREATE INDEX IF NOT EXISTS idx_pericopes_version
-  ON pericopes(version);
-
-CREATE INDEX IF NOT EXISTS idx_pericopes_lookup
-  ON pericopes(book_id, chapter, verse_start, verse_end, version);
-
--- ===============================
--- FOOTNOTES TABLE INDEXES
--- ===============================
-CREATE INDEX IF NOT EXISTS idx_footnotes_lookup
-  ON footnotes(book_id, chapter, verse, version);
-
-CREATE INDEX IF NOT EXISTS idx_footnotes_version
-  ON footnotes(version);
-
--- ===============================
--- COMPOSITE INDEXES FOR COMMON QUERIES
--- ===============================
--- Untuk pencarian ayat dalam versi tertentu
-CREATE INDEX IF NOT EXISTS idx_verses_version_book_chapter_verse
-  ON verses(version, book_id, chapter, verse);
-
--- Untuk navigasi antar pasal
-CREATE INDEX IF NOT EXISTS idx_books_testament_position
-  ON books(testament, position);
-
--- Untuk query interlinear yang sering digunakan
-CREATE INDEX IF NOT EXISTS idx_interlinear_comprehensive
-  ON interlinear_words(book_id, chapter, verse, version, position);
-
--- Untuk pencarian Strong's numbers dengan filter bahasa
-CREATE INDEX IF NOT EXISTS idx_strong_comprehensive
-  ON strong_lexicon(strong, language, lemma);
-
--- ===============================
--- PARTIAL INDEXES (UNTUK DATA SPESIFIK)
--- ===============================
--- Untuk versi dengan dukungan Strong's
-CREATE INDEX IF NOT EXISTS idx_versions_supports_strong
-  ON versions(supports_strong) WHERE supports_strong = 1;
-
--- Untuk kata-kata interlinear dengan Strong's numbers
-CREATE INDEX IF NOT EXISTS idx_interlinear_has_strong
-  ON interlinear_words(strong) WHERE strong IS NOT NULL;
-
--- Untuk buku-buku Perjanjian Lama
-CREATE INDEX IF NOT EXISTS idx_books_ot
-  ON books(testament, position) WHERE testament = 'OT';
-
--- Untuk buku-buku Perjanjian Baru
-CREATE INDEX IF NOT EXISTS idx_books_nt
-  ON books(testament, position) WHERE testament = 'NT';
-`
-
-  // const ftsSQL = `
-  // -- ===============================
-  // -- FTS5 TABLES
-  // -- ===============================
-  // CREATE VIRTUAL TABLE IF NOT EXISTS verses_fts USING fts5(
-  //   text,
-  //   content='verses'
-  // );
-
-  // CREATE VIRTUAL TABLE IF NOT EXISTS strong_lexicon_fts USING fts5(
-  //   lemma, translit, definition,
-  //   content='strong_lexicon'
-  // );
-  // `
 
   const ftsSQL = `
--- ===============================
--- FTS5 TABLES WITH OPTIMIZED TOKENIZER
--- ===============================
-CREATE VIRTUAL TABLE IF NOT EXISTS verses_fts USING fts5(
-  book_id UNINDEXED,
-  chapter UNINDEXED,
-  verse UNINDEXED,
-  version UNINDEXED,
-  text,
-  content='verses',
-  content_rowid='rowid',
-  tokenize = 'unicode61 remove_diacritics 2'
-);
+  -- FTS5 TABLES untuk pencarian cepat
+  -- Teks ayat (semua versi)
+  CREATE VIRTUAL TABLE IF NOT EXISTS verses_fts USING fts5(
+    book_id, chapter, verse, version, text,
+    content='verses',
+    content_rowid='id',
+    tokenize='porter unicode61'
+  );
 
-CREATE VIRTUAL TABLE IF NOT EXISTS strong_lexicon_fts USING fts5(
-  strong UNINDEXED,
-  language UNINDEXED,
-  lemma,
-  translit,
-  definition,
-  content='strong_lexicon',
-  content_rowid='rowid',
-  tokenize = 'unicode61 remove_diacritics 2'
-);
+  -- Leksikon Strong's
+  CREATE VIRTUAL TABLE IF NOT EXISTS strong_lexicon_fts USING fts5(
+    strong, lemma, translit, definition,
+    content='strong_lexicon',
+    content_rowid='rowid',
+    tokenize='porter unicode61'
+  );
 
--- ===============================
--- FTS5 AUXILIARY TABLES FOR STATISTICS
--- ===============================
-CREATE TABLE IF NOT EXISTS fts_stat (
-  id INTEGER PRIMARY KEY,
-  value BLOB
-);
+  -- Pencarian interlinear
+  CREATE VIRTUAL TABLE IF NOT EXISTS interlinear_fts USING fts5(
+    book_id, chapter, verse, _word, strong, lemma,
+    content='interlinear_words',
+    content_rowid='id',
+    tokenize='porter unicode61'
+  );
+  `
 
--- ===============================
--- FTS5 TRIGGERS FOR AUTOMATIC SYNC
--- ===============================
-CREATE TRIGGER IF NOT EXISTS verses_ai AFTER INSERT ON verses BEGIN
-  INSERT INTO verses_fts(rowid, book_id, chapter, verse, version, text)
-  VALUES (new.rowid, new.book_id, new.chapter, new.verse, new.version, new.text);
-END;
+  const indexSQL = `
+  -- INDEXES untuk performa query
+  CREATE INDEX IF NOT EXISTS idx_verses_book_chapter_verse 
+    ON verses(book_id, chapter, verse);
 
-CREATE TRIGGER IF NOT EXISTS verses_ad AFTER DELETE ON verses BEGIN
-  INSERT INTO verses_fts(verses_fts, rowid, book_id, chapter, verse, version, text)
-  VALUES('delete', old.rowid, old.book_id, old.chapter, old.verse, old.version, old.text);
-END;
+  CREATE INDEX IF NOT EXISTS idx_verses_version 
+    ON verses(version);
 
-CREATE TRIGGER IF NOT EXISTS verses_au AFTER UPDATE ON verses BEGIN
-  INSERT INTO verses_fts(verses_fts, rowid, book_id, chapter, verse, version, text)
-  VALUES('delete', old.rowid, old.book_id, old.chapter, old.verse, old.version, old.text);
-  INSERT INTO verses_fts(rowid, book_id, chapter, verse, version, text)
-  VALUES (new.rowid, new.book_id, new.chapter, new.verse, new.version, new.text);
-END;
+  CREATE INDEX IF NOT EXISTS idx_verses_text_search 
+    ON verses(book_id, version, text COLLATE NOCASE);
 
-CREATE TRIGGER IF NOT EXISTS strong_lexicon_ai AFTER INSERT ON strong_lexicon BEGIN
-  INSERT INTO strong_lexicon_fts(rowid, strong, language, lemma, translit, definition)
-  VALUES (new.rowid, new.strong, new.language, new.lemma, new.translit, new.definition);
-END;
+  CREATE INDEX IF NOT EXISTS idx_interlinear_ref 
+    ON interlinear_words(book_id, chapter, verse, version);
 
-CREATE TRIGGER IF NOT EXISTS strong_lexicon_ad AFTER DELETE ON strong_lexicon BEGIN
-  INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rowid, strong, language, lemma, translit, definition)
-  VALUES('delete', old.rowid, old.strong, old.language, old.lemma, old.translit, old.definition);
-END;
+  CREATE INDEX IF NOT EXISTS idx_interlinear_strong 
+    ON interlinear_words(strong) WHERE strong IS NOT NULL;
 
-CREATE TRIGGER IF NOT EXISTS strong_lexicon_au AFTER UPDATE ON strong_lexicon BEGIN
-  INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rowid, strong, language, lemma, translit, definition)
-  VALUES('delete', old.rowid, old.strong, old.language, old.lemma, old.translit, old.definition);
-  INSERT INTO strong_lexicon_fts(rowid, strong, language, lemma, translit, definition)
-  VALUES (new.rowid, new.strong, new.language, new.lemma, new.translit, new.definition);
-END;
+  CREATE INDEX IF NOT EXISTS idx_strong_language 
+    ON strong_lexicon(language);
 
--- ===============================
--- FTS5 AUXILIARY FUNCTIONS
--- ===============================
-CREATE TABLE IF NOT EXISTS fts_config (
-  key TEXT PRIMARY KEY,
-  value TEXT
-);
+  CREATE INDEX IF NOT EXISTS idx_pericopes_book 
+    ON pericopes(book_id, start_chapter, start_verse);
 
-INSERT OR IGNORE INTO fts_config (key, value) VALUES
-  ('last_optimized', '0'),
-  ('tokenizer', 'unicode61_remove_diacritics_2'),
-  ('min_prefix_length', '2');
-`
+  CREATE INDEX IF NOT EXISTS idx_cross_references_source 
+    ON cross_references(source_book_id, source_chapter, source_verse);
 
-// Fungsi untuk memuat data ke FTS5 setelah import
-const ftsPopulateSQL = `
--- Populate FTS tables with existing data
-INSERT OR IGNORE INTO verses_fts(rowid, book_id, chapter, verse, version, text)
-SELECT rowid, book_id, chapter, verse, version, text FROM verses;
+  CREATE INDEX IF NOT EXISTS idx_cross_references_target 
+    ON cross_references(target_book_id, target_chapter, target_verse);
+  `
 
-INSERT OR IGNORE INTO strong_lexicon_fts(rowid, strong, language, lemma, translit, definition)
-SELECT rowid, strong, language, lemma, translit, definition FROM strong_lexicon;
+  const triggerSQL = `
+  -- TRIGGERS untuk mengupdate FTS tables
+  -- Verses FTS
+  CREATE TRIGGER IF NOT EXISTS verses_ai AFTER INSERT ON verses BEGIN
+    INSERT INTO verses_fts(rowid, book_id, chapter, verse, version, text)
+    VALUES (new.id, new.book_id, new.chapter, new.verse, new.version, new.text);
+  END;
 
--- Update statistics
-INSERT INTO fts_stat(id, value) VALUES(1, zeroblob(64))
-ON CONFLICT(id) DO UPDATE SET value=zeroblob(64);
-`
+  CREATE TRIGGER IF NOT EXISTS verses_ad AFTER DELETE ON verses BEGIN
+    INSERT INTO verses_fts(verses_fts, rowid, book_id, chapter, verse, version, text)
+    VALUES('delete', old.id, old.book_id, old.chapter, old.verse, old.version, old.text);
+  END;
 
-// Fungsi helper untuk query FTS5
-const ftsHelperFunctions = `
--- ===============================
--- FTS5 HELPER FUNCTIONS
--- ===============================
+  CREATE TRIGGER IF NOT EXISTS verses_au AFTER UPDATE ON verses BEGIN
+    INSERT INTO verses_fts(verses_fts, rowid, book_id, chapter, verse, version, text)
+    VALUES('delete', old.id, old.book_id, old.chapter, old.verse, old.version, old.text);
+    INSERT INTO verses_fts(rowid, book_id, chapter, verse, version, text)
+    VALUES (new.id, new.book_id, new.chapter, new.verse, new.version, new.text);
+  END;
 
--- Fungsi untuk mencari ayat dengan ranking BM25
-CREATE FUNCTION IF NOT EXISTS search_verses(query TEXT, version_filter TEXT DEFAULT NULL)
-RETURNS TABLE(book_id INT, chapter INT, verse INT, version TEXT, text TEXT, rank REAL) AS $$
-  SELECT 
-    v.book_id, v.chapter, v.verse, v.version, v.text,
-    bm25(verses_fts) AS rank
-  FROM verses_fts
-  JOIN verses v ON v.rowid = verses_fts.rowid
-  WHERE verses_fts MATCH query
-    AND (version_filter IS NULL OR v.version = version_filter)
-  ORDER BY rank
-$$;
+  -- Strong Lexicon FTS
+  CREATE TRIGGER IF NOT EXISTS strong_lexicon_ai AFTER INSERT ON strong_lexicon BEGIN
+    INSERT INTO strong_lexicon_fts(rowid, strong, lemma, translit, definition)
+    VALUES (new.rowid, new.strong, new.lemma, new.translit, new.definition);
+  END;
 
--- Fungsi untuk mencari kata Strong dengan wildcard support
-CREATE FUNCTION IF NOT EXISTS search_strong(query TEXT, lang_filter TEXT DEFAULT NULL)
-RETURNS TABLE(strong TEXT, language TEXT, lemma TEXT, translit TEXT, definition TEXT, rank REAL) AS $$
-  SELECT 
-    s.strong, s.language, s.lemma, s.translit, s.definition,
-    bm25(strong_lexicon_fts) AS rank
-  FROM strong_lexicon_fts
-  JOIN strong_lexicon s ON s.rowid = strong_lexicon_fts.rowid
-  WHERE strong_lexicon_fts MATCH query
-    AND (lang_filter IS NULL OR s.language = lang_filter)
-  ORDER BY rank
-$$;
+  CREATE TRIGGER IF NOT EXISTS strong_lexicon_ad AFTER DELETE ON strong_lexicon BEGIN
+    INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rowid, strong, lemma, translit, definition)
+    VALUES('delete', old.rowid, old.strong, old.lemma, old.translit, old.definition);
+  END;
 
--- Fungsi untuk mendapatkan highlight hasil pencarian
-CREATE FUNCTION IF NOT EXISTS highlight_verse(
-  book_id INT, 
-  chapter INT, 
-  verse INT, 
-  version TEXT, 
-  query TEXT,
-  start_tag TEXT DEFAULT '<mark>',
-  end_tag TEXT DEFAULT '</mark>'
-)
-RETURNS TEXT AS $$
-  SELECT highlight(verses_fts, 0, start_tag, end_tag)
-  FROM verses_fts
-  JOIN verses v ON v.rowid = verses_fts.rowid
-  WHERE v.book_id = book_id 
-    AND v.chapter = chapter 
-    AND v.verse = verse 
-    AND v.version = version
-    AND verses_fts MATCH query
-$$;
+  CREATE TRIGGER IF NOT EXISTS strong_lexicon_au AFTER UPDATE ON strong_lexicon BEGIN
+    INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rowid, strong, lemma, translit, definition)
+    VALUES('delete', old.rowid, old.strong, old.lemma, old.translit, old.definition);
+    INSERT INTO strong_lexicon_fts(rowid, strong, lemma, translit, definition)
+    VALUES (new.rowid, new.strong, new.lemma, new.translit, new.definition);
+  END;
 
--- Fungsi untuk mendapatkan konteks sekitar ayat (ayat sebelum & sesudah)
-CREATE FUNCTION IF NOT EXISTS get_verse_context(
-  book_id INT,
-  chapter INT,
-  verse INT,
-  version TEXT,
-  context_size INT DEFAULT 2
-)
-RETURNS TABLE(
-  book_id INT,
-  chapter INT,
-  verse INT,
-  text TEXT,
-  is_target BOOLEAN
-) AS $$
-  WITH target AS (
-    SELECT book_id, chapter, verse, version
-    FROM verses
-    WHERE book_id = book_id 
-      AND chapter = chapter 
-      AND verse = verse 
-      AND version = version
-  )
-  SELECT 
-    v.book_id,
-    v.chapter,
-    v.verse,
-    v.text,
-    (v.book_id = t.book_id AND v.chapter = t.chapter AND v.verse = t.verse) AS is_target
-  FROM verses v
-  CROSS JOIN target t
-  WHERE v.book_id = t.book_id
-    AND v.chapter = t.chapter
-    AND v.verse BETWEEN t.verse - context_size AND t.verse + context_size
-    AND v.version = t.version
-  ORDER BY v.verse
-$$;
-`
+  -- Interlinear FTS
+  CREATE TRIGGER IF NOT EXISTS interlinear_ai AFTER INSERT ON interlinear_words BEGIN
+    INSERT INTO interlinear_fts(rowid, book_id, chapter, verse, _word, strong, lemma)
+    VALUES (new.id, new.book_id, new.chapter, new.verse, new._word, new.strong, new.lemma);
+  END;
 
-// Fungsi untuk maintenance FTS5
-const ftsMaintenanceSQL = `
--- ===============================
--- FTS5 MAINTENANCE FUNCTIONS
--- ===============================
+  CREATE TRIGGER IF NOT EXISTS interlinear_ad AFTER DELETE ON interlinear_words BEGIN
+    INSERT INTO interlinear_fts(interlinear_fts, rowid, book_id, chapter, verse, _word, strong, lemma)
+    VALUES('delete', old.id, old.book_id, old.chapter, old.verse, old._word, old.strong, old.lemma);
+  END;
 
--- Optimize FTS tables
-CREATE PROCEDURE IF NOT EXISTS optimize_fts()
-BEGIN
-  INSERT INTO verses_fts(verses_fts) VALUES('optimize');
-  INSERT INTO strong_lexicon_fts(strong_lexicon_fts) VALUES('optimize');
-  UPDATE fts_config SET value = strftime('%s', 'now') WHERE key = 'last_optimized';
-END;
-
--- Rebuild FTS indexes
-CREATE PROCEDURE IF NOT EXISTS rebuild_fts()
-BEGIN
-  -- Rebuild verses_fts
-  INSERT INTO verses_fts(verses_fts, rank) VALUES('rebuild', 0);
-  
-  -- Rebuild strong_lexicon_fts
-  INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rank) VALUES('rebuild', 0);
-  
-  -- Update rebuild timestamp
-  INSERT OR REPLACE INTO fts_config (key, value) 
-  VALUES ('last_rebuild', strftime('%s', 'now'));
-END;
-
--- Get FTS statistics
-CREATE FUNCTION IF NOT EXISTS get_fts_stats()
-RETURNS TABLE(table_name TEXT, row_count INT, last_optimized TEXT) AS $$
-  SELECT 
-    'verses_fts' as table_name,
-    (SELECT COUNT(*) FROM verses_fts) as row_count,
-    (SELECT value FROM fts_config WHERE key = 'last_optimized') as last_optimized
-  UNION ALL
-  SELECT 
-    'strong_lexicon_fts',
-    (SELECT COUNT(*) FROM strong_lexicon_fts),
-    (SELECT value FROM fts_config WHERE key = 'last_optimized')
-$$;
-
--- Clean old FTS data (older than specified days)
-CREATE PROCEDURE IF NOT EXISTS cleanup_fts_old_data(days_old INT DEFAULT 30)
-BEGIN
-  -- Not applicable for external content tables
-  -- These tables only contain indexes, not data
-  -- Data cleanup should be done on the content tables
-  SELECT 'Use DELETE FROM verses WHERE ...' as note;
-END;
-`
-
-// Fungsi untuk query advanced FTS5
-const ftsAdvancedQueries = `
--- ===============================
--- ADVANCED FTS5 QUERY EXAMPLES
--- ===============================
-
--- Pencarian frasa exact
-CREATE FUNCTION IF NOT EXISTS search_exact_phrase(phrase TEXT, version TEXT DEFAULT NULL)
-RETURNS TABLE(book_id INT, chapter INT, verse INT, version TEXT, text TEXT) AS $$
-  SELECT v.book_id, v.chapter, v.verse, v.version, v.text
-  FROM verses_fts
-  JOIN verses v ON v.rowid = verses_fts.rowid
-  WHERE verses_fts MATCH '"' || phrase || '"'
-    AND (version IS NULL OR v.version = version)
-$$;
-
--- Pencarian dengan operator AND/OR
-CREATE FUNCTION IF NOT EXISTS search_with_operators(terms TEXT, version TEXT DEFAULT NULL)
-RETURNS TABLE(book_id INT, chapter INT, verse INT, version TEXT, text TEXT, rank REAL) AS $$
-  SELECT v.book_id, v.chapter, v.verse, v.version, v.text,
-    bm25(verses_fts) AS rank
-  FROM verses_fts
-  JOIN verses v ON v.rowid = verses_fts.rowid
-  WHERE verses_fts MATCH terms
-    AND (version IS NULL OR v.version = version)
-  ORDER BY rank
-$$;
-
--- Pencarian dengan prefix/wildcard
-CREATE FUNCTION IF NOT EXISTS search_with_prefix(prefix TEXT, version TEXT DEFAULT NULL)
-RETURNS TABLE(book_id INT, chapter INT, verse INT, version TEXT, text TEXT) AS $$
-  SELECT v.book_id, v.chapter, v.verse, v.version, v.text
-  FROM verses_fts
-  JOIN verses v ON v.rowid = verses_fts.rowid
-  WHERE verses_fts MATCH prefix || '*'
-    AND (version IS NULL OR v.version = version)
-$$;
-
--- Pencarian dengan proximity (kata berdekatan)
-CREATE FUNCTION IF NOT EXISTS search_with_proximity(term1 TEXT, term2 TEXT, distance INT DEFAULT 5)
-RETURNS TABLE(book_id INT, chapter INT, verse INT, version TEXT, text TEXT) AS $$
-  SELECT v.book_id, v.chapter, v.verse, v.version, v.text
-  FROM verses_fts
-  JOIN verses v ON v.rowid = verses_fts.rowid
-  WHERE verses_fts MATCH 'NEAR(' || term1 || ' ' || term2 || ', ' || distance || ')'
-$$;
-`
+  CREATE TRIGGER IF NOT EXISTS interlinear_au AFTER UPDATE ON interlinear_words BEGIN
+    INSERT INTO interlinear_fts(interlinear_fts, rowid, book_id, chapter, verse, _word, strong, lemma)
+    VALUES('delete', old.id, old.book_id, old.chapter, old.verse, old._word, old.strong, old.lemma);
+    INSERT INTO interlinear_fts(rowid, book_id, chapter, verse, _word, strong, lemma)
+    VALUES (new.id, new.book_id, new.chapter, new.verse, new._word, new.strong, new.lemma);
+  END;
+  `
 
   try {
+    // Eksekusi skema utama
     await db.exec(schemaSQL)
-    await db.exec(indexSQL)
-    console.log('✅ Schema & indexes created')
+    console.log('✅ Main schema created')
 
+    // Eksekusi FTS tables
     await db.exec(ftsSQL)
-    console.log('✅ FTS5 created')
+    console.log('✅ FTS5 tables created')
+
+    // Eksekusi indexes
+    await db.exec(indexSQL)
+    console.log('✅ Indexes created')
+
+    // Eksekusi triggers
+    await db.exec(triggerSQL)
+    console.log('✅ Triggers created')
+
   } catch (e) {
-    console.error('❌ Schema FAILED:', e)
+    console.error('❌ Schema creation FAILED:', e.message)
+    console.error('Full error:', e)
     throw e
   }
 
   // ===============================
-  // VERIFY TABLES
+  // VERIFIKASI TABEL
   // ===============================
-  const tables = await db.all(`
-    SELECT name FROM sqlite_master
-    WHERE type IN ('table','view')
-    ORDER BY name
-  `)
+  try {
+    const tables = await db.all(`
+      SELECT name, type 
+      FROM sqlite_master 
+      WHERE type IN ('table', 'view', 'trigger')
+      ORDER BY type, name
+    `)
 
-  if (!tables.length) {
-    throw new Error('Schema verification failed: no tables created')
+    if (!tables.length) {
+      throw new Error('Schema verification failed: no tables created')
+    }
+
+    console.log('\n📋 Database Objects Created:')
+    const byType = tables.reduce((acc, obj) => {
+      acc[obj.type] = acc[obj.type] || []
+      acc[obj.type].push(obj.name)
+      return acc
+    }, {})
+
+    for (const [type, names] of Object.entries(byType)) {
+      console.log(`  ${type.toUpperCase()}: ${names.length} items`)
+      // Tampilkan nama-nama jika tidak terlalu banyak
+      if (names.length <= 10) {
+        names.forEach(name => console.log(`    - ${name}`))
+      }
+    }
+
+  } catch (e) {
+    console.error('❌ Table verification failed:', e.message)
   }
 
-  console.log(
-    '📋 Tables:',
-    tables.map(t => t.name).join(', ')
-  )
-
   // ===============================
-  // RETURN DB WRAPPER
+  // RETURN DB OBJECT DENGAN METHOD YANG DIPERLUKAN
   // ===============================
   return {
+    // Basic methods
     exec: (sql) => db.exec(sql),
     run: (sql, params) => db.run(sql, params),
     get: (sql, params) => db.get(sql, params),
     all: (sql, params) => db.all(sql, params),
     prepare: (sql) => db.prepare(sql),
 
-    transaction(fn, options) {
-      return db.transaction(fn, options)
+    // Transaction support
+    transaction: (fn, options) => db.transaction(fn, options),
+
+    // Custom methods untuk operasi khusus Alkitab
+    async getBookInfo(bookId) {
+      return db.get('SELECT * FROM books WHERE id = ?', [bookId])
     },
 
+    async getChapter(bookId, chapter, version = 'tb') {
+      return db.all(
+        `SELECT verse, text FROM verses 
+         WHERE book_id = ? AND chapter = ? AND version = ? 
+         ORDER BY verse`,
+        [bookId, chapter, version]
+      )
+    },
+
+    async searchVerses(query, version = 'tb', limit = 50) {
+      return db.all(
+        `SELECT b.name, v.chapter, v.verse, v.text
+         FROM verses v
+         JOIN books b ON v.book_id = b.id
+         WHERE v.version = ? AND v.text LIKE ?
+         LIMIT ?`,
+        [version, `%${query}%`, limit]
+      )
+    },
+
+    async getStrongLexicon(strongNumber) {
+      return db.get('SELECT * FROM strong_lexicon WHERE strong = ?', [strongNumber])
+    },
+
+    async getInterlinearWords(bookId, chapter, verse, version) {
+      return db.all(
+        `SELECT * FROM interlinear_words 
+         WHERE book_id = ? AND chapter = ? AND verse = ? AND version = ?
+         ORDER BY position`,
+        [bookId, chapter, verse, version]
+      )
+    },
+
+    // Close dengan cleanup
     async close() {
       try {
+        // Checkpoint WAL untuk memastikan data tersimpan
         await db.exec('PRAGMA wal_checkpoint(FULL)')
-      } catch {}
-      await db.close()
-      console.log('✅ Database closed')
+      } catch (error) {
+        console.warn('⚠️ WAL checkpoint failed:', error.message)
+      }
+      
+      try {
+        await db.close()
+        console.log('✅ Database closed')
+      } catch (error) {
+        console.error('❌ Error closing database:', error.message)
+      }
     },
 
+    // Access to raw db object (for advanced use)
     _db: db
   }
+}
+
+// Optional: Export utility functions
+export async function resetDatabase(dbPath = DEFAULT_DB) {
+  const fullPath = path.resolve(process.cwd(), dbPath)
+  if (fs.existsSync(fullPath)) {
+    console.log(`🗑 Removing database: ${fullPath}`)
+    fs.unlinkSync(fullPath)
+  }
+  return openDB(dbPath)
+}
+
+export async function backupDatabase(srcPath = DEFAULT_DB, backupPath = null) {
+  const srcFull = path.resolve(process.cwd(), srcPath)
+  if (!fs.existsSync(srcFull)) {
+    throw new Error('Source database not found')
+  }
+
+  const backupFull = backupPath || 
+    path.resolve(process.cwd(), `./backup/bible_${Date.now()}.db`)
+  
+  const backupDir = path.dirname(backupFull)
+  if (!fs.existsSync(backupDir)) {
+    fs.mkdirSync(backupDir, { recursive: true })
+  }
+
+  fs.copyFileSync(srcFull, backupFull)
+  console.log(`💾 Database backed up to: ${backupFull}`)
+  return backupFull
 }
