@@ -665,7 +665,7 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
 
             words.push({
               position: wordIndex + 1,
-              source_word: wordText,
+              _word: wordText,
               strong: strongNumber,
               lemma: null,
               morphology: null,
@@ -696,8 +696,8 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
 
 async function getChapterData(bookId, chapter, targetVersions) {
   try {
-    const url = await buildSabdaUrl(bookId, chapter, targetVersions)
-    console.log(`🌐 Fetching: ${BibleBooks[bookId-1][0]} ${chapter}`)
+    const url = `https://sabdaweb.sabda.org/bible/chapter/?b=${bookId}&c=${chapter}&v=1&version=tb&altver%5B%5D=bis&altver%5B%5D=tl&altver%5B%5D=ende&altver%5B%5D=tb_itl_drf&altver%5B%5D=tl_itl_drf&altver%5B%5D=bbe&altver%5B%5D=message&altver%5B%5D=nkjv&altver%5B%5D=net&altver%5B%5D=net2&view=column&page=chapter&lang=indonesia&theme=clearsky`
+    console.log(`\r🌐 Fetching: ${BibleBooks[bookId-1][0]} ${chapter}`)
 
     const html = await fetchUrl(url)
     const chapterData = await parseChapterHTML(html, bookId, chapter, targetVersions)
@@ -855,11 +855,11 @@ async function saveChapterToDB(chapterData, targetVersions) {
               for (const word of words) {
                 await db.run(`
                   INSERT OR REPLACE INTO interlinear_words 
-                  (book_id, chapter, verse, position, version, source_word, strong)
+                  (book_id, chapter, verse, position, version, _word, strong)
                   VALUES (?, ?, ?, ?, ?, ?, ?)
                 `, [
                   bookId, chapter, verseData.verse,
-                  word.position, versionId, word.word, word.strong
+                  word.position, versionId, word._word, word.strong
                 ])
               }
             }
@@ -999,7 +999,7 @@ async function initializeDatabase() {
 async function parseInterlinearWord(wordHtml, bookId) {
   const $ = cheerio.load(wordHtml)
   const wordData = {
-    source_word: '',
+    _word: '',
     strong: null,
     lemma: null,
     morphology: null,
@@ -1007,7 +1007,7 @@ async function parseInterlinearWord(wordHtml, bookId) {
   }
 
   // Ambil kata sumber
-  wordData.source_word = $.text().trim()
+  wordData._word = $.text().trim()
 
   // Cari link Strong's number
   const strongLink = $('a[href*="lexicon"]')
