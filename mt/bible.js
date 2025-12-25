@@ -579,91 +579,6 @@ async function getChapterData(bookId, chapter, targetVersions) {
    MODE 1 & 2: WEB → JSON & DB
 ========================= */
 
-async function processBookori(bookId, concurrency = 3, resume = false, mode = 1, targetVersions = BibleVersions) {
-  const bookInfo = BibleBooks[bookId - 1]
-  const totalChapters = 1 //bookInfo[1]
-
-  console.log(`📖 Memproses kitab ${bookId}: ${bookInfo[0]}`)
-  console.log(`📊 Total pasal: ${totalChapters}, Concurrency: ${concurrency}`)
-  console.log(`📚 Versi: ${targetVersions.map(v => v.id).join(', ')}`)
-
-  // Buat struktur data untuk kitab
-  const bookData = {
-    id: bookId,
-    name: bookInfo[0],
-    chapters: totalChapters,
-    totalVerses: bookInfo[2],
-    pericopes: bookInfo[3],
-    testament: bookId <= 39 ? 'OT' : 'NT',
-    data: new Array(totalChapters)
-  }
-
-  // Cek pasal yang sudah ada jika resume
-  const chaptersToProcess = []
-  if (mode === 1 && resume) {
-    // Cek di database
-    for (let chapter = 1; chapter <= totalChapters; chapter++) {
-      const hasData = await checkChapterInDB(bookId, chapter, targetVersions)
-      if (!hasData) {
-        chaptersToProcess.push(chapter)
-      }
-    }
-  } else {
-    chaptersToProcess.push(...Array.from({
-      length: totalChapters
-    }, (_, i) => i + 1))
-  }
-
-  if (chaptersToProcess.length === 0) {
-    console.log(`✅ Semua pasal kitab ${bookId} sudah lengkap`)
-    return true
-  }
-
-  console.log(`🔄 Mengambil ${chaptersToProcess.length} pasal...`)
-
-  // Buat queue untuk pengambilan data
-  const webQueue = new BibleQueue(concurrency)
-
-  for (const chapter of chaptersToProcess) {
-    webQueue.add(async () => {
-      const result = await getChapterData(bookId, chapter, targetVersions)
-
-      if (result.success) {
-        bookData.data[chapter-1] = [result.data]
-
-        // Simpan ke database jika mode 1
-        if (mode === 1) {
-          await saveChapterToDB(result.data, targetVersions)
-        }
-      }
-
-      return result
-    })
-  }
-
-  // Proses queue
-  await webQueue.process()
-
-  // Tunggu database queue jika mode 1
-  if (mode === 1 && dbQueue) {
-    console.log(`\n⏳ Menunggu operasi database selesai...`)
-    await dbQueue.waitUntilEmpty()
-  }
-
-  // Simpan ke file JSON
-  const filename = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`
-  await fs.writeFile(filename, JSON.stringify(bookData, null, 2))
-
-  // Simpan versi minified
-  const filenameMin = `${DIR_MIN}/Bible_${bookId}.min.json`
-  await fs.writeFile(filenameMin, JSON.stringify(bookData))
-
-  console.log(`\n✅ Kitab ${bookId} selesai diproses`)
-  console.log(`📊 Statistik: ${webQueue.completed} berhasil, ${webQueue.failed} gagal`)
-
-  return webQueue.failed === 0
-}
-
 async function processBook(bookId, concurrency = 3, resume = false, mode = 1, targetVersions = BibleVersions) {
   const bookInfo = BibleBooks[bookId - 1];
   const totalChapters = 1; //bookInfo[1]
@@ -939,65 +854,46 @@ async function fetchStrongLexicon(strongNumber) {
     // Data dasar
     const lexiconData = {
       strong: strongNumber,
-      language: prefix === 'H' ? 'hebrew' : 'greek',
-      lemma: '',
-      translit: '',
-      definition: '',
-      phonetic: '',
+      word: '',
       pronunciation: '',
-      partOfSpeech: '',
       etymology: '',
+      strong_reference: '',
+      source: '',
+      partOfSpeech: '',
       avSummary: '',
       occurrence: 0,
-      source: '',
-      strong_reference: ''
+      definition: '',
     };
 
-    // 1. Kata Ibrani/Yunani (lemma)
-    lexiconData.lemma = $('span#h').text().trim() || '';
+    /// Hebrew / Greek → _*text*_
+    $('span#h').each((_, el) => {
+      $(el).replaceWith(`_*${$(el).text()}*_`)
+    })
 
-    // 2. Transliterasi
-    const translitElement = $('span#h').parent();
-    if (translitElement.length) {
-      const fullText = translitElement.text().trim();
-      lexiconData.translit = fullText.replace(lexiconData.lemma, '').trim();
+    const rows = $('td#b table tbody tr')
+      .map((_, row) => $(row).find('td').eq(1))
+      .get()
+
+    const getText = i =>
+      rows[i]?.text().replace(/\s+/g, ' ').trim() || ''
+    const getPre = i =>
+      rows[i]?.find('pre').text().trim() || getText(i)
+
+    lexiconData.word          = getText(1)
+    lexiconData.pronunciation = getText(2)
+    lexiconData.etymology     = getText(3)
+    lexiconData.source        = getText(4)
+    lexiconData.partOfSpeech  = getText(5)
+    lexiconData.avSummary     = getText(6)
+    lexiconData.occurrence    = parseInt(getText(7)) || 0
+    lexiconData.definition    = getPre(8)
+
+    const strongMatch = lexiconData.etymology.match(/\d+/)
+    if (strongMatch) {
+      lexiconData.strong_reference = prefix + strongMatch[0]
     }
 
-    // 3. Parse tabel data
-    const dataTable = $('td#b table table');
-    dataTable.find('tr').each((i, row) => {
-      const cells = $(row).find('td');
-      if (cells.length >= 2) {
-        const label = $(cells[0]).text().trim().toLowerCase();
-        const value = $(cells[1]).text().trim();
-
-        if (label.includes('pengucapan') || label.includes('pronunciation')) {
-          lexiconData.phonetic = value;
-          lexiconData.pronunciation = value;
-        } else if (label.includes('asal kata') || label.includes('etymology')) {
-          lexiconData.etymology = value;
-          // Ekstrak referensi Strong
-          const strongMatch = value.match(/\d+/);
-          if (strongMatch) {
-            lexiconData.strong_reference = prefix + strongMatch[0];
-          }
-        } else if (label.includes('sumber') || label.includes('source')) {
-          lexiconData.source = value;
-        } else if (label.includes('jenis kata') || label.includes('part of speech')) {
-          lexiconData.partOfSpeech = value;
-        } else if (label.includes('dalam av') || label.includes('kjv usage')) {
-          lexiconData.avSummary = value;
-        } else if (label.includes('jumlah') || label.includes('occurrence')) {
-          lexiconData.occurrence = parseInt(value) || 0;
-        } else if (label.includes('definisi') || label.includes('definition')) {
-          // Ambil dari <pre> tag jika ada
-          const preContent = $(cells[1]).find('pre').text().trim();
-          lexiconData.definition = preContent || value;
-        }
-      }
-    });
-
-    console.log(`✅ Lexicon ${strongNumber}: ${lexiconData.lemma} (${lexiconData.translit})`);
+    console.log(`✅ Lexicon ${strongNumber}: ${lexiconData.word} (${lexiconData.pronunciation})`);
     return lexiconData;
 
   } catch (error) {
@@ -1005,18 +901,15 @@ async function fetchStrongLexicon(strongNumber) {
     // Return data minimal jika gagal
     return {
       strong: strongNumber,
-      language: prefix === 'H' ? 'hebrew' : 'greek',
-      lemma: '',
-      translit: '',
-      definition: '',
-      phonetic: '',
+      word: '',
       pronunciation: '',
-      partOfSpeech: '',
       etymology: '',
+      strong_reference: '',
+      source: '',
+      partOfSpeech: '',
       avSummary: '',
       occurrence: 0,
-      source: '',
-      strong_reference: '',
+      definition: '',
       error: error.message
     };
   }
@@ -1135,8 +1028,9 @@ async function processLexicons(strongNumbers, concurrency = 2) {
     try {
       // Ambil data dari web
       const lexiconData = await fetchStrongLexicon(strongNumber);
+      console.log(`📥 Diterima lexicon`, lexiconData);
       
-      if (lexiconData && lexiconData.lemma) {
+      if (lexiconData && lexiconData.word) {
         // Simpan ke JSON
         const savedData = await saveLexiconToJSON(lexiconData);
         
@@ -1255,19 +1149,7 @@ async function saveLexiconToJSON(lexiconData) {
   try {
     // Struktur data lengkap
     const lexiconJSON = {
-      strong: lexiconData.strong,
-      language: lexiconData.language,
-      lemma: lexiconData.lemma || "",
-      translit: lexiconData.translit || "",
-      definition: lexiconData.definition || "",
-      phonetic: lexiconData.phonetic || "",
-      pronunciation: lexiconData.pronunciation || "",
-      partOfSpeech: lexiconData.partOfSpeech || "",
-      etymology: lexiconData.etymology || "",
-      avSummary: lexiconData.avSummary || "",
-      occurrence: lexiconData.occurrence || 0,
-      source: lexiconData.source || "",
-      strong_reference: lexiconData.strong_reference || "",
+      ...lexiconData,
       timestamp: new Date().toISOString()
     };
     
@@ -1320,18 +1202,16 @@ async function updateLexiconIndex(lexiconData) {
       // Update yang sudah ada
       index[existingIdx] = {
         strong: lexiconData.strong,
-        lemma: lexiconData.lemma || "",
-        translit: lexiconData.translit || "",
-        language: lexiconData.language,
+        word: lexiconData.word || "",
+        pronunciation: lexiconData.pronunciation || "",
         timestamp: new Date().toISOString()
       };
     } else {
       // Tambah baru
       index.push({
         strong: lexiconData.strong,
-        lemma: lexiconData.lemma || "",
-        translit: lexiconData.translit || "",
-        language: lexiconData.language,
+        word: lexiconData.word || "",
+        pronunciation: lexiconData.pronunciation || "",
         timestamp: new Date().toISOString()
       });
     }
