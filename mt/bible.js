@@ -1,8 +1,6 @@
 import fs from 'fs/promises'
 import path from 'path'
-import {
-  fileURLToPath
-} from 'url'
+import {fileURLToPath} from 'url'
 import * as cheerio from 'cheerio'
 import axios from 'axios'
 import {
@@ -168,6 +166,8 @@ let db = null
 const DB_PATH = "./bible.db"
 const DIR = "./json"
 const DIR_MIN = "./json_min"
+const DIR_LEXICON = "./lexicon";
+const DIR_LEXICON_MIN = "./lexicon_min";
 
 // Helper untuk mendapatkan __dirname di ES Module
 const __filename = fileURLToPath(
@@ -483,217 +483,73 @@ async function buildSabdaUrl(bookId, chapter, versions = BibleVersions) {
   return `${baseUrl}?${params.toString()}${altParams}`
 }
 
-async function parseChapterHTMLold(html, bookId, chapter, targetVersions = BibleVersions) {
-  const $ = cheerio.load(html)
-  const verses = []
-
-  // Cari semua baris ayat dalam tabel
-  const verseRows = $('tr[id="b"]')
-
-  // Jika tidak ditemukan dengan id="b", coba dengan class lain
-  if (verseRows.length === 0) {
-    $('tr').each((i, row) => {
-      if ($(row).find('td[id="l"]').length > 0) {
-        verseRows.push(row)
-      }
-    })
-  }
-
-  // Mapping urutan kolom ke versi (berdasarkan header)
-  const headerRow = $('tr:contains("TB")').first()
-  const versionOrder = []
-
-  headerRow.find('td[id="d"]').each((i, td) => {
-    const versionText = $(td).text().trim()
-    const version = targetVersions.find(v =>
-      versionText.includes(v.name.split(' ')[0]) ||
-      versionText.toLowerCase().includes(v.id)
-    )
-    if (version) {
-      versionOrder.push(version.id)
-    }
-  })
-
-  // Jika tidak bisa detect header, gunakan urutan default
-  if (versionOrder.length === 0) {
-    versionOrder.push(...targetVersions.map(v => v.id))
-  }
-
-  // Parse setiap ayat
-  verseRows.each((rowIndex, row) => {
-    const cells = $(row).find('td')
-    const verseData = {
-      verse: rowIndex + 1,
-      texts: {}
-    }
-
-    // Kolom pertama biasanya berisi nomor ayat dan teks TB
-    const firstCell = $(cells[0])
-    const verseNumMatch = firstCell.find('a[name]').attr('name') ||
-      firstCell.find('b').text().match(/\d+:\d+/)
-
-    if (verseNumMatch) {
-      const verseNum = typeof verseNumMatch === 'string' ?
-        verseNumMatch.split(':')[1] || verseNumMatch :
-        (rowIndex + 1)
-      verseData.verse = parseInt(verseNum)
-    }
-
-    // Ambil teks untuk setiap versi
-    cells.each((cellIndex, cell) => {
-      if (cellIndex < versionOrder.length) {
-        const versionId = versionOrder[cellIndex]
-        let text = $(cell).html() || $(cell).text()
-
-        // Hapus tag anchor dan bold
-        text = text.replace(/<a[^>]*>.*?<\/a>/gi, '')
-          .replace(/<b>.*?<\/b>/gi, '')
-          .replace(/<\/?[^>]+(>|$)/g, '')
-          .trim()
-
-        // Hapus nomor ayat di awal (format "1:1 ")
-        text = text.replace(/^\d+:\d+\s*/, '').trim()
-
-        verseData.texts[versionId] = text
-      }
-    })
-
-    // Juga parse interlinear jika ada
-    verseData.interlinear = {}
-    cells.each((cellIndex, cell) => {
-      const cellHtml = $(cell).html()
-      if (cellHtml && cellHtml.includes('../../tools/lexicon/')) {
-        const versionId = versionOrder[cellIndex]
-        if (versionId.includes('itl') || versionId.includes('interlinear')) {
-          const words = []
-          const links = $(cell).find('a[href*="lexicon"]')
-
-          links.each((linkIndex, link) => {
-            const href = $(link).attr('href')
-            const wordText = $(link).text().trim()
-            const strongMatch = href.match(/w=(\d+)/)
-
-            words.push({
-              position: linkIndex + 1,
-              word: wordText,
-              strong: strongMatch ? strongMatch[1] : null,
-              lemma: null, // Bisa di-parse dari halaman lexicon nanti
-              morphology: null
-            })
-          })
-
-          if (words.length > 0) {
-            verseData.interlinear[versionId] = words
-          }
-        }
-      }
-    })
-
-    if (verseData.texts && Object.keys(verseData.texts).length > 0) {
-      verses.push(verseData)
-    }
-  })
-
-  return {
-    bookId,
-    chapter,
-    verses,
-    totalVerses: verses.length,
-    versionOrder
-  }
-}
-
 async function parseChapterHTML(html, bookId, chapter, targetVersions) {
-  const $ = cheerio.load(html)
-  const verses = []
-  const strongNumbers = new Set()
+  const $ = cheerio.load(html);
+  const verses = [];
+  const strongNumbers = new Set(); // Hanya kumpulkan Strong Numbers
+
+  // Tentukan prefix berdasarkan kitab (OT/Ibrani atau NT/Yunani)
+  const prefix = bookId <= 39 ? 'H' : 'G';
 
   // Cari semua baris ayat
   $('tr[id="b"]').each((rowIndex, row) => {
-    const cells = $(row).find('td')
+    const cells = $(row).find('td');
     const verseData = {
       verse: rowIndex + 1,
-      texts: {},
-      interlinear: {}
-    }
+      texts: {}
+    };
 
-    // Parse nomor ayat dari kolom pertama
-    const firstCell = $(cells[0])
-    const verseNumMatch = firstCell.find('a[name]').attr('name') ||
-      firstCell.find('b').text().match(/\d+:\d+/)
-
+    // Parse nomor ayat
+    const firstCell = $(cells[0]);
+    const verseNumMatch = firstCell.find('a[name]').attr('name') || 
+                         firstCell.find('b').text().match(/\d+:\d+/);
+    
     if (verseNumMatch) {
-      const verseNum = typeof verseNumMatch === 'string' ?
-        verseNumMatch.split(':')[1] || verseNumMatch :
-        (rowIndex + 1)
-      verseData.verse = parseInt(verseNum)
+      const verseNum = typeof verseNumMatch === 'string' 
+        ? verseNumMatch.split(':')[1] || verseNumMatch 
+        : (rowIndex + 1);
+      verseData.verse = parseInt(verseNum);
     }
 
-    // Parse setiap kolom (versi)
+    // Parse teks untuk setiap versi (tanpa interlinear)
     cells.each((cellIndex, cell) => {
-      const cellHtml = $(cell).html()
-      const cellText = $(cell).text().trim()
-
-      // Cari versi yang sesuai dengan kolom ini
-      const version = findVersionForColumn(cellIndex, targetVersions)
-      if (!version) return
-
-      // Untuk teks biasa
-      let text = cellText
-      // Hapus nomor ayat di awal
-      text = text.replace(/^\d+:\d+\s*/, '').trim()
-      verseData.texts[version.id] = text
-
-      // Untuk versi interlinear, parse kata per kata
-      if (version.category === 'advance' && version.supports_strong) {
-        const words = []
-        const wordLinks = $(cell).find('a[href*="lexicon"]')
-
-        if (wordLinks.length > 0) {
-          wordLinks.each((wordIndex, link) => {
-            const wordHtml = $(link).html()
-            const wordText = $(link).text().trim()
-            const href = $(link).attr('href')
-            const strongMatch = href.match(/w=(\d+)/)
-
-            let strongNumber = null
-            if (strongMatch) {
-              const language = bookId <= 39 ? 'hebrew' : 'greek'
-              strongNumber = `${language === 'hebrew' ? 'H' : 'G'}${strongMatch[1]}`
-              strongNumbers.add(strongNumber)
-            }
-            
-            const inword = {
-              position: wordIndex + 1,
-              _word: wordText,
-              strong: strongNumber,
-              lemma: null,
-              morphology: null,
-              gloss: null
-            }
-            console.log(inword)
-            words.push(inword)
-          })
-
-          if (words.length > 0) {
-            verseData.interlinear[version.id] = words
-          }
+      const cellHtml = $(cell).html();
+      const cellText = $(cell).text().trim();
+      
+      // Cari versi yang sesuai
+      const version = findVersionForColumn(cellIndex, targetVersions);
+      if (!version) return;
+      
+      // Ambil teks biasa
+      let text = cellText;
+      text = text.replace(/^\d+:\d+\s*/, '').trim();
+      verseData.texts[version.id] = text;
+      
+      // Hanya kumpulkan Strong Numbers dari link lexicon (optional)
+      // Bisa dihapus jika tidak perlu mengumpulkan Strong Numbers dari teks
+      if (version.supports_strong && cellHtml) {
+        const strongMatches = cellHtml.match(/\/tools\/lexicon\/\?w=(\d+)/g);
+        if (strongMatches) {
+          strongMatches.forEach(match => {
+            const num = match.match(/\d+/)[0];
+            strongNumbers.add(prefix + num); // Tambah prefix H/G
+          });
         }
       }
-    })
+    });
 
     if (Object.keys(verseData.texts).length > 0) {
-      verses.push(verseData)
+      verses.push(verseData);
     }
-  })
+  });
 
   return {
     bookId,
     chapter,
     verses,
     totalVerses: verses.length,
-    strongNumbers: Array.from(strongNumbers)
-  }
+    strongNumbers: Array.from(strongNumbers) // Kembalikan array Strong Numbers
+  };
 }
 
 async function getChapterData(bookId, chapter, targetVersions) {
@@ -723,7 +579,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
    MODE 1 & 2: WEB → JSON & DB
 ========================= */
 
-async function processBook(bookId, concurrency = 3, resume = false, mode = 1, targetVersions = BibleVersions) {
+async function processBookori(bookId, concurrency = 3, resume = false, mode = 1, targetVersions = BibleVersions) {
   const bookInfo = BibleBooks[bookId - 1]
   const totalChapters = 1 //bookInfo[1]
 
@@ -808,6 +664,100 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   return webQueue.failed === 0
 }
 
+async function processBook(bookId, concurrency = 3, resume = false, mode = 1, targetVersions = BibleVersions) {
+  const bookInfo = BibleBooks[bookId - 1];
+  const totalChapters = 1; //bookInfo[1]
+
+  console.log(`📖 Memproses kitab ${bookId}: ${bookInfo[0]}`);
+  console.log(`📊 Total pasal: ${totalChapters}, Concurrency: ${concurrency}`);
+  console.log(`📚 Versi: ${targetVersions.map(v => v.id).join(', ')}`);
+
+  // Buat struktur data untuk kitab
+  const bookData = {
+    id: bookId,
+    name: bookInfo[0],
+    chapters: totalChapters,
+    totalVerses: bookInfo[2],
+    pericopes: bookInfo[3],
+    testament: bookId <= 39 ? 'OT' : 'NT',
+    data: new Array(totalChapters)
+  };
+
+  // Cek pasal yang sudah ada jika resume
+  const chaptersToProcess = [];
+  if (mode === 1 && resume) {
+    // Cek di database
+    for (let chapter = 1; chapter <= totalChapters; chapter++) {
+      const hasData = await checkChapterInDB(bookId, chapter, targetVersions);
+      if (!hasData) {
+        chaptersToProcess.push(chapter);
+      }
+    }
+  } else {
+    chaptersToProcess.push(...Array.from({
+      length: totalChapters
+    }, (_, i) => i + 1));
+  }
+
+  if (chaptersToProcess.length === 0) {
+    console.log(`✅ Semua pasal kitab ${bookId} sudah lengkap`);
+    return { success: true, strongNumbers: [] };
+  }
+
+  console.log(`🔄 Mengambil ${chaptersToProcess.length} pasal...`);
+
+  // Buat queue untuk pengambilan data
+  const webQueue = new BibleQueue(concurrency);
+  const bookStrongs = new Set(); // Untuk mengumpulkan Strong's numbers dari kitab ini
+
+  for (const chapter of chaptersToProcess) {
+    webQueue.add(async () => {
+      const result = await getChapterData(bookId, chapter, targetVersions);
+
+      if (result.success) {
+        bookData.data[chapter - 1] = [result.data];
+
+        // Kumpulkan Strong's numbers dari hasil parsing
+        if (result.data.strongNumbers && result.data.strongNumbers.length > 0) {
+          result.data.strongNumbers.forEach(s => bookStrongs.add(s));
+        }
+
+        // Simpan ke database jika mode 1
+        if (mode === 1) {
+          await saveChapterToDB(result.data, targetVersions);
+        }
+      }
+      return result;
+    });
+  }
+
+  // Proses queue
+  await webQueue.process();
+
+  // Tunggu database queue jika mode 1
+  if (mode === 1 && dbQueue) {
+    console.log("\n⏳ Menunggu operasi database selesai...");
+    await dbQueue.waitUntilEmpty();
+  }
+
+  // Simpan ke file JSON
+  const filename = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`;
+  await fs.writeFile(filename, JSON.stringify(bookData, null, 2));
+
+  // Simpan versi minified
+  const filenameMin = `${DIR_MIN}/Bible_${bookId}.min.json`;
+  await fs.writeFile(filenameMin, JSON.stringify(bookData));
+
+  console.log(`\n✅ Kitab ${bookId} selesai diproses`);
+  console.log(`📊 Statistik: ${webQueue.completed} berhasil, ${webQueue.failed} gagal`);
+  console.log(`📚 Strong's numbers ditemukan: ${bookStrongs.size}`);
+
+  return {
+    success: webQueue.failed === 0,
+    strongNumbers: Array.from(bookStrongs)
+  };
+}
+
 async function checkChapterInDB(bookId, chapter, targetVersions) {
   if (!db) return false
 
@@ -828,55 +778,34 @@ async function checkChapterInDB(bookId, chapter, targetVersions) {
 }
 
 async function saveChapterToDB(chapterData, targetVersions) {
-  if (!db) return
+  if (!db) return;
 
-  const {
-    bookId,
-    chapter,
-    verses
-  } = chapterData
+  const { bookId, chapter, verses } = chapterData;
 
   for (const verseData of verses) {
     await dbQueue.add(async () => {
       try {
-        // Simpan setiap versi untuk ayat ini
+        // Hanya simpan teks ayat (per versi) ke tabel verses
         for (const version of targetVersions) {
-          const versionId = version.id
-          const text = verseData.texts[versionId]
+          const versionId = version.id;
+          const text = verseData.texts[versionId];
 
           if (text && text.trim()) {
-            // Insert ke tabel verses
-            await db.run(`
-              INSERT OR REPLACE INTO verses (book_id, chapter, verse, version, text)
-              VALUES (?, ?, ?, ?, ?)
-            `, [bookId, chapter, verseData.verse, versionId, text])
-
-            // Jika ini versi interlinear, simpan kata per kata
-            if (verseData.interlinear && verseData.interlinear[versionId]) {
-              const words = verseData.interlinear[versionId]
-              for (const word of words) {
-                await db.run(`
-                  INSERT OR REPLACE INTO interlinear_words 
-                  (book_id, chapter, verse, position, version, _word, strong)
-                  VALUES (?, ?, ?, ?, ?, ?, ?)
-                `, [
-                  bookId, chapter, verseData.verse,
-                  word.position, versionId, word._word, word.strong
-                ])
-              }
-            }
+            await db.run(
+              `INSERT OR REPLACE INTO verses (book_id, chapter, verse, version, text) 
+               VALUES (?, ?, ?, ?, ?)`,
+              [bookId, chapter, verseData.verse, versionId, text]
+            );
           }
         }
-
-        return true
+        return true;
       } catch (error) {
-        console.error(`❌ Gagal menyimpan ${bookId}:${chapter}:${verseData.verse}:`, error.message)
-        throw error
+        console.error(`❌ Gagal menyimpan ${bookId}:${chapter}:${verseData.verse}:`, error.message);
+        throw error;
       }
-    })
+    });
   }
 }
-
 /* =========================
    MODE 3: JSON → DB
 ========================= */
@@ -999,101 +928,74 @@ async function initializeDatabase() {
 ========================= */
 
 async function fetchStrongLexicon(strongNumber) {
-  // Format: H7225 (Hebrew) atau G746 (Greek)
   const prefix = strongNumber.charAt(0);
   const number = strongNumber.substring(1);
   const url = `https://sabdaweb.sabda.org/tools/lexicon/?w=${number}`;
-  
+
   try {
     const html = await fetchUrl(url);
     const $ = cheerio.load(html);
-    
-    // Data leksikon berdasarkan struktur HTML yang diberikan
+
+    // Data dasar
     const lexiconData = {
       strong: strongNumber,
       language: prefix === 'H' ? 'hebrew' : 'greek',
-      lemma: '',           // Kata Ibrani/Yunani
-      translit: '',        // Transliterasi
-      definition: '',      // Definisi lengkap
-      phonetic: '',        // Pengucapan
-      pronunciation: '',   // Cara baca
-      partOfSpeech: '',    // Jenis kata (n f, v, adj, dll)
-      etymology: '',       // Asal kata (from the same as 07218)
-      avSummary: '',       // Penggunaan dalam AV (KJV)
-      occurrence: 0,       // Jumlah kemunculan
-      source: '',          // Sumber (TWOT - 2097e)
-      strong_reference: '' // Referensi Strong lain (07218)
+      lemma: '',
+      translit: '',
+      definition: '',
+      phonetic: '',
+      pronunciation: '',
+      partOfSpeech: '',
+      etymology: '',
+      avSummary: '',
+      occurrence: 0,
+      source: '',
+      strong_reference: ''
     };
 
-    // 1. AMBIL KATA IBANI (HEBREW WORD)
-    // Dari: <span id="h">tyvar</span> re'shiyth
+    // 1. Kata Ibrani/Yunani (lemma)
     lexiconData.lemma = $('span#h').text().trim() || '';
-    
-    // 2. AMBIL TRANSLITERASI - teks setelah span#h
+
+    // 2. Transliterasi
     const translitElement = $('span#h').parent();
     if (translitElement.length) {
       const fullText = translitElement.text().trim();
       lexiconData.translit = fullText.replace(lexiconData.lemma, '').trim();
     }
 
-    // 3. PARSE TABEL DATA LEKSIKON - sesuai struktur HTML
+    // 3. Parse tabel data
     const dataTable = $('td#b table table');
-    
     dataTable.find('tr').each((i, row) => {
       const cells = $(row).find('td');
       if (cells.length >= 2) {
         const label = $(cells[0]).text().trim().toLowerCase();
         const value = $(cells[1]).text().trim();
-        
-        if (label.includes('kata')) {
-          // Sudah diambil dari span#h
-        } else if (label.includes('pengucapan')) {
+
+        if (label.includes('pengucapan') || label.includes('pronunciation')) {
           lexiconData.phonetic = value;
           lexiconData.pronunciation = value;
-        } else if (label.includes('asal kata')) {
+        } else if (label.includes('asal kata') || label.includes('etymology')) {
           lexiconData.etymology = value;
-          // Ekstrak referensi Strong dari "from the same as 07218"
+          // Ekstrak referensi Strong
           const strongMatch = value.match(/\d+/);
           if (strongMatch) {
-            const refNum = strongMatch[0];
-            lexiconData.strong_reference = prefix + refNum;
+            lexiconData.strong_reference = prefix + strongMatch[0];
           }
-        } else if (label.includes('sumber')) {
+        } else if (label.includes('sumber') || label.includes('source')) {
           lexiconData.source = value;
-        } else if (label.includes('jenis kata')) {
+        } else if (label.includes('jenis kata') || label.includes('part of speech')) {
           lexiconData.partOfSpeech = value;
-        } else if (label.includes('dalam av')) {
+        } else if (label.includes('dalam av') || label.includes('kjv usage')) {
           lexiconData.avSummary = value;
-        } else if (label.includes('jumlah')) {
+        } else if (label.includes('jumlah') || label.includes('occurrence')) {
           lexiconData.occurrence = parseInt(value) || 0;
-        } else if (label.includes('definisi')) {
-          // Ambil dari <pre> tag
+        } else if (label.includes('definisi') || label.includes('definition')) {
+          // Ambil dari <pre> tag jika ada
           const preContent = $(cells[1]).find('pre').text().trim();
           lexiconData.definition = preContent || value;
         }
       }
     });
-
-    // Format definisi yang lebih rapi
-    if (lexiconData.definition) {
-      // Bersihkan format definisi
-      const cleanDefinition = lexiconData.definition
-        .replace(/\s+/g, ' ')
-        .replace(/\s+1\)/g, '\n1)')
-        .replace(/\s+([1-9]\)) /g, '\n$1 ')
-        .replace(/\s+([1-9][a-z])\)/g, '\n    $1)');
-      
-      lexiconData.definition = `
-${cleanDefinition}
-
----
-Part of Speech: ${lexiconData.partOfSpeech}
-Etymology: ${lexiconData.etymology}
-Source: ${lexiconData.source}
-KJV Usage: ${lexiconData.avSummary}
-Total Occurrences: ${lexiconData.occurrence}
-      `.trim();
-    }
 
     console.log(`✅ Lexicon ${strongNumber}: ${lexiconData.lemma} (${lexiconData.translit})`);
     return lexiconData;
@@ -1114,7 +1016,8 @@ Total Occurrences: ${lexiconData.occurrence}
       avSummary: '',
       occurrence: 0,
       source: '',
-      strong_reference: ''
+      strong_reference: '',
+      error: error.message
     };
   }
 }
@@ -1200,7 +1103,7 @@ async function processLexicons(strongNumbers, concurrency = 2) {
     console.log("ℹ️ Tidak ada Strong's numbers untuk diproses");
     return;
   }
-
+  
   console.log(`\n📚 Memproses ${strongNumbers.length} Strong's numbers...`);
   
   // Filter hanya nomor Strong yang valid
@@ -1210,7 +1113,10 @@ async function processLexicons(strongNumbers, concurrency = 2) {
     console.log("❌ Tidak ada Strong's numbers yang valid");
     return;
   }
-
+  
+  // Buat folder untuk lexicon JSON
+  await createLexiconDirectories();
+  
   const lexiconQueue = new LexiconQueue(concurrency);
   const uniqueStrongs = [...new Set(validStrongs)];
   
@@ -1219,23 +1125,57 @@ async function processLexicons(strongNumbers, concurrency = 2) {
   // Tambahkan semua ke queue
   uniqueStrongs.forEach(strong => lexiconQueue.add(strong));
   
-  // Proses dengan rate limiting untuk menghormati server
+  // Proses dengan rate limiting
   const cache = await lexiconQueue.process(async (strongNumber) => {
     // Delay untuk menghindari rate limit
     await sleep(1000);
     
-    console.log(`strongNumber ${strongNumber}`)
-    //throw null
-    const lexiconData = await fetchStrongLexicon(strongNumber);
-    if (lexiconData && lexiconData.lemma) {
-      await saveLexiconToDB(lexiconData);
-      return lexiconData;
+    console.log(`🌐 Mengambil lexicon ${strongNumber}...`);
+    
+    try {
+      // Ambil data dari web
+      const lexiconData = await fetchStrongLexicon(strongNumber);
+      
+      if (lexiconData && lexiconData.lemma) {
+        // Simpan ke JSON
+        const savedData = await saveLexiconToJSON(lexiconData);
+        
+        // Update index
+        if (savedData) {
+          await updateLexiconIndex(savedData);
+        }
+        
+        return lexiconData;
+      } else {
+        console.log(`⚠️ Lexicon ${strongNumber} tidak ditemukan atau kosong`);
+        return null;
+      }
+    } catch (error) {
+      console.error(`❌ Error mengambil lexicon ${strongNumber}:`, error.message);
+      return null;
     }
-    return null;
   });
   
   console.log(`\n✅ Lexicon processing selesai`);
   console.log(`📊 Statistik: ${lexiconQueue.completed} berhasil, ${lexiconQueue.failed} gagal`);
+  
+  // Tampilkan statistik akhir
+  try {
+    const indexPath = `${DIR_LEXICON}/index.json`;
+    await fs.access(indexPath);
+    const index = JSON.parse(await fs.readFile(indexPath, 'utf8'));
+    
+    const hebrewCount = index.filter(item => item.language === 'hebrew').length;
+    const greekCount = index.filter(item => item.language === 'greek').length;
+    
+    console.log(`\n📚 STATISTIK LEXICON:`);
+    console.log(`   Total: ${index.length} entries`);
+    console.log(`   Hebrew (H): ${hebrewCount}`);
+    console.log(`   Greek (G): ${greekCount}`);
+    console.log(`   JSON folder: ${DIR_LEXICON}/`);
+  } catch (error) {
+    console.log('📚 Lexicon index belum dibuat atau error');
+  }
   
   return cache;
 }
@@ -1293,13 +1233,147 @@ function findVersionForColumn(columnIndex, targetVersions) {
   return null
 }
 
+// Buat folder lexicon saat awal
+async function createLexiconDirectories() {
+  try {
+    await fs.access(DIR_LEXICON);
+  } catch {
+    await fs.mkdir(DIR_LEXICON, { recursive: true });
+  }
+  
+  try {
+    await fs.access(DIR_LEXICON_MIN);
+  } catch {
+    await fs.mkdir(DIR_LEXICON_MIN, { recursive: true });
+  }
+}
+
+// Simpan lexicon ke JSON
+async function saveLexiconToJSON(lexiconData) {
+  if (!lexiconData || !lexiconData.strong) return false;
+  
+  try {
+    // Struktur data lengkap
+    const lexiconJSON = {
+      strong: lexiconData.strong,
+      language: lexiconData.language,
+      lemma: lexiconData.lemma || "",
+      translit: lexiconData.translit || "",
+      definition: lexiconData.definition || "",
+      phonetic: lexiconData.phonetic || "",
+      pronunciation: lexiconData.pronunciation || "",
+      partOfSpeech: lexiconData.partOfSpeech || "",
+      etymology: lexiconData.etymology || "",
+      avSummary: lexiconData.avSummary || "",
+      occurrence: lexiconData.occurrence || 0,
+      source: lexiconData.source || "",
+      strong_reference: lexiconData.strong_reference || "",
+      timestamp: new Date().toISOString()
+    };
+    
+    // Nama file berdasarkan Strong number
+    const filename = `${lexiconData.strong}.json`;
+    
+    // Simpan versi full
+    await fs.writeFile(
+      `${DIR_LEXICON}/${filename}`,
+      JSON.stringify(lexiconJSON, null, 2),
+      'utf8'
+    );
+    
+    // Simpan versi minified
+    await fs.writeFile(
+      `${DIR_LEXICON_MIN}/${filename}`,
+      JSON.stringify(lexiconJSON),
+      'utf8'
+    );
+    
+    console.log(`💾 Saved lexicon JSON: ${lexiconData.strong}`);
+    return lexiconJSON;
+  } catch (error) {
+    console.error(`❌ Gagal menyimpan lexicon JSON ${lexiconData.strong}:`, error.message);
+    return false;
+  }
+}
+
+// Update index.json
+async function updateLexiconIndex(lexiconData) {
+  try {
+    const indexPath = `${DIR_LEXICON}/index.json`;
+    const indexMinPath = `${DIR_LEXICON_MIN}/index.json`;
+    
+    let index = [];
+    
+    // Baca index yang sudah ada
+    try {
+      const existingIndex = await fs.readFile(indexPath, 'utf8');
+      index = JSON.parse(existingIndex);
+    } catch {
+      // File tidak ada, buat baru
+      index = [];
+    }
+    
+    // Cek apakah lexicon sudah ada di index
+    const existingIdx = index.findIndex(item => item.strong === lexiconData.strong);
+    
+    if (existingIdx >= 0) {
+      // Update yang sudah ada
+      index[existingIdx] = {
+        strong: lexiconData.strong,
+        lemma: lexiconData.lemma || "",
+        translit: lexiconData.translit || "",
+        language: lexiconData.language,
+        timestamp: new Date().toISOString()
+      };
+    } else {
+      // Tambah baru
+      index.push({
+        strong: lexiconData.strong,
+        lemma: lexiconData.lemma || "",
+        translit: lexiconData.translit || "",
+        language: lexiconData.language,
+        timestamp: new Date().toISOString()
+      });
+    }
+    
+    // Urutkan: Hebrew (H) dulu, lalu Greek (G)
+    index.sort((a, b) => {
+      // Pisahkan prefix H/G
+      const prefixA = a.strong.charAt(0);
+      const prefixB = b.strong.charAt(0);
+      const numA = parseInt(a.strong.substring(1)) || 0;
+      const numB = parseInt(b.strong.substring(1)) || 0;
+      
+      // Urutkan berdasarkan prefix
+      if (prefixA !== prefixB) {
+        return prefixA === 'H' ? -1 : 1;
+      }
+      
+      // Kemudian urutkan berdasarkan angka
+      return numA - numB;
+    });
+    
+    // Simpan index versi full
+    await fs.writeFile(indexPath, JSON.stringify(index, null, 2), 'utf8');
+    
+    // Simpan index versi minified
+    await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
+    
+    console.log(`📝 Updated lexicon index: ${lexiconData.strong}`);
+    return true;
+  } catch (error) {
+    console.error('❌ Gagal update lexicon index:', error.message);
+    return false;
+  }
+}
+
 /* =========================
    FUNGSI UTAMA
 ========================= */
 
 let dbQueue = null
 
-async function main() {
+async function mainori() {
   const options = parseArgs()
 
   console.log("=".repeat(60))
@@ -1490,6 +1564,230 @@ async function main() {
     // Tutup koneksi database
     if (db) {
       await db.close()
+    }
+  }
+}
+
+async function main() {
+  const options = parseArgs();
+
+  console.log("=".repeat(60));
+  console.log("📖 BIBLE SABDAWEB SCRAPER");
+  console.log("=".repeat(60));
+
+  const modeNames = {
+    1: "Web → JSON & DB",
+    2: "Web → JSON",
+    3: "JSON → DB"
+  };
+
+  console.log(`Mode: ${options.mode} (${modeNames[options.mode]})`);
+  console.log(`Start: kitab ${options.start}`);
+  if (options.book) console.log(`Single book: ${options.book}`);
+  console.log(`Concurrency: ${options.concurrency}`);
+  console.log(`Batch mode: ${options.batch}`);
+  console.log(`Resume mode: ${options.resume}`);
+  if (options.versions.length > 0) {
+    console.log(`Versions filter: ${options.versions.join(', ')}`);
+  }
+  console.log("=".repeat(60));
+
+  // Filter versi jika di-specified
+  let targetVersions = BibleVersions;
+  if (options.versions.length > 0) {
+    targetVersions = BibleVersions.filter(v => options.versions.includes(v.id));
+    if (targetVersions.length === 0) {
+      console.error("❌ Tidak ada versi yang valid");
+      return;
+    }
+  }
+
+  // Buat folder output
+  try {
+    await fs.access(DIR);
+  } catch {
+    await fs.mkdir(DIR, { recursive: true });
+  }
+
+  try {
+    await fs.access(DIR_MIN);
+  } catch {
+    await fs.mkdir(DIR_MIN, { recursive: true });
+  }
+
+  // BUAT FOLDER LEXICON
+  await createLexiconDirectories();
+
+  // Buka koneksi database untuk mode 1 & 3
+  if (options.mode === 1 || options.mode === 3) {
+    console.log("\n🚀 Opening database connection...");
+    db = await openDB(DB_PATH);
+    dbQueue = new DatabaseQueue(db, 1);
+
+    // Inisialisasi database
+    await initializeDatabase();
+    await sleep(1000);
+  }
+
+  try {
+    // Tentukan kitab yang akan diproses
+    const booksToProcess = [];
+
+    if (options.book) {
+      if (options.book >= 1 && options.book <= BibleBooks.length) {
+        booksToProcess.push(options.book);
+      } else {
+        console.error(`❌ Kitab ${options.book} tidak valid`);
+        return;
+      }
+    } else if (options.batch) {
+      for (let i = options.start; i <= BibleBooks.length; i++) {
+        booksToProcess.push(i);
+      }
+    } else {
+      booksToProcess.push(options.start);
+    }
+
+    console.log(`📋 Total kitab yang akan diproses: ${booksToProcess.length}`);
+
+    let totalSuccess = 0;
+    let totalFailed = 0;
+    const allStrongs = new Set(); // Untuk mengumpulkan semua Strong's numbers
+
+    for (const bookId of booksToProcess) {
+      const bookName = BibleBooks[bookId - 1][0];
+
+      console.log(`\n📖 ========================================`);
+      console.log(`📖 Proses kitab ${bookId}: ${bookName}`);
+      console.log(`📖 ========================================`);
+
+      let success = false;
+      let bookStrongs = [];
+
+      try {
+        switch (options.mode) {
+          case 1:
+            const result1 = await processBook(bookId, options.concurrency, options.resume, options.mode, targetVersions);
+            success = result1.success;
+            if (result1.strongNumbers) {
+              result1.strongNumbers.forEach(s => allStrongs.add(s));
+            }
+            break;
+
+          case 2:
+            const result2 = await processBook(bookId, options.concurrency, options.resume, options.mode, targetVersions);
+            success = result2.success;
+            if (result2.strongNumbers) {
+              result2.strongNumbers.forEach(s => allStrongs.add(s));
+            }
+            break;
+
+          case 3:
+            success = await migrateJSONtoDB(bookId);
+            break;
+
+          default:
+            console.error(`❌ Mode ${options.mode} tidak dikenali`);
+            return;
+        }
+
+        if (success) {
+          totalSuccess++;
+        } else {
+          totalFailed++;
+        }
+
+      } catch (error) {
+        console.error(`❌ Error memproses kitab ${bookId}:`, error.message);
+        totalFailed++;
+      }
+
+      // Jeda antar kitab
+      if (bookId !== booksToProcess[booksToProcess.length - 1]) {
+        const delay = options.mode === 1 || options.mode === 2 ? 5000 : 2000;
+        console.log(`\n⏳ Menunggu ${delay/1000} detik sebelum kitab berikutnya...`);
+        await sleep(delay);
+      }
+    }
+
+    // PROSES LEXICONS (setelah semua buku selesai)
+    console.log("\n🔍 Mengumpulkan Strong's numbers...");
+    
+    // TAMBAHKAN: Strong's numbers yang sudah diketahui umum (opsional)
+    // Anda bisa menambahkan daftar Strong's numbers umum di sini jika perlu
+    const commonStrongs = [];
+    
+    // Gabungkan semua Strong's numbers
+    const allStrongNumbers = [...allStrongs, ...commonStrongs];
+    
+    if (allStrongNumbers.length > 0) {
+      console.log(`\n📚 Memproses ${allStrongNumbers.length} Strong's numbers...`);
+      await processLexicons(allStrongNumbers, Math.min(3, options.concurrency));
+    } else {
+      console.log("\nℹ️ Tidak ada Strong's numbers yang dikumpulkan.");
+      console.log("💡 Untuk mengumpulkan Strong's numbers, pastikan versi interlinear (tb_itl_drf, tl_itl_drf) termasuk dalam filter versi.");
+    }
+
+    // TAMPILKAN INFO LEXICON
+    try {
+      const indexPath = `${DIR_LEXICON}/index.json`;
+      await fs.access(indexPath);
+      const index = JSON.parse(await fs.readFile(indexPath, 'utf8'));
+      
+      console.log("\n" + "=".repeat(60));
+      console.log("📚 LEXICON JSON STATUS");
+      console.log("=".repeat(60));
+      console.log(`Total entries: ${index.length}`);
+      console.log(`Folder: ${DIR_LEXICON}/`);
+      console.log(`Minified: ${DIR_LEXICON_MIN}/`);
+      
+      // Tampilkan 5 contoh pertama
+      if (index.length > 0) {
+        console.log("\nContoh entries:");
+        index.slice(0, 5).forEach(item => {
+          console.log(`  ${item.strong}: ${item.lemma} (${item.translit})`);
+        });
+      }
+    } catch (error) {
+      console.log("\n⚠️ Lexicon index belum dibuat");
+    }
+
+    console.log("\n" + "=".repeat(60));
+    console.log("🎉 PROSES SELESAI!");
+    console.log("=".repeat(60));
+    console.log(`📊 Statistik: ${totalSuccess} kitab berhasil, ${totalFailed} kitab gagal`);
+    console.log(`📊 Mode: ${modeNames[options.mode]}`);
+
+    if (options.mode === 1 || options.mode === 3) {
+      console.log(`💾 Database: ${DB_PATH}`);
+
+      // Update FTS
+      console.log("\n🔄 Updating FTS tables...");
+      try {
+        await db.run("INSERT INTO verses_fts(verses_fts) VALUES ('rebuild')");
+        console.log("✅ FTS tables updated");
+      } catch (error) {
+        console.error("❌ Error updating FTS:", error.message);
+      }
+    }
+
+    if (options.mode === 1 || options.mode === 2) {
+      console.log(`📁 JSON files: ${DIR}/`);
+      console.log(`📁 Minified JSON: ${DIR_MIN}/`);
+    }
+
+    console.log(`📁 Lexicon JSON: ${DIR_LEXICON}/`);
+    console.log(`📁 Lexicon Minified: ${DIR_LEXICON_MIN}/`);
+
+    console.log("=".repeat(60));
+
+  } catch (error) {
+    console.error("\n❌ Error utama:", error.message);
+    console.error(error.stack);
+  } finally {
+    // Tutup koneksi database
+    if (db) {
+      await db.close();
     }
   }
 }

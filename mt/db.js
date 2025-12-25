@@ -18,6 +18,10 @@ export async function openDB(dbFile = DEFAULT_DB) {
     fs.mkdirSync(dbDir, { recursive: true })
     console.log('📁 Created DB directory:', dbDir)
   }
+    if (fs.existsSync(dbPath)) {
+      console.log('🗑 Removing old database...')
+      fs.unlinkSync(dbPath)
+    }
 
   console.log('🚀 Opening database:', dbPath)
 
@@ -124,8 +128,8 @@ export async function openDB(dbFile = DEFAULT_DB) {
     occurrence INTEGER DEFAULT 0,  -- Jumlah kemunculan
     source TEXT,                   -- Sumber (TWOT, etc)
     strong_reference TEXT,         -- Referensi ke Strong lain
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (strong_reference) REFERENCES strong_lexicon(strong)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    -- FOREIGN KEY (strong_reference) REFERENCES strong_lexicon(strong)
   );
 
   -- Tabel perikop (opsional, untuk struktur pembagian)
