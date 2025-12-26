@@ -1,16 +1,13 @@
 {
   "strong": "H02145",
-  "language": "hebrew",
-  "lemma": "rkz",
-  "translit": "zakar",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
-  "strong_reference": "",
-  "timestamp": "2025-12-25T12:48:35.418Z"
+  "word": "_*rkz*_ zakar",
+  "pronunciation": "zaw-kawr'",
+  "etymology": "from 02142",
+  "strong_reference": "H02142",
+  "source": "TWOT - 551e",
+  "partOfSpeech": "n m, adj",
+  "avSummary": "male 67, man 7, child 4, mankind 2, him 1",
+  "occurrence": 81,
+  "definition": "n m\n 1) male (of humans and animals)\n\n adj\n 2) male (of humans)",
+  "timestamp": "2025-12-26T20:35:17.019Z"
 }

@@ -1,16 +1,13 @@
 {
   "strong": "H05775",
-  "language": "hebrew",
-  "lemma": "Pwe",
-  "translit": "`owph",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
-  "strong_reference": "",
-  "timestamp": "2025-12-25T12:48:27.516Z"
+  "word": "_*Pwe*_ `owph",
+  "pronunciation": "ofe",
+  "etymology": "from 05774",
+  "strong_reference": "H05774",
+  "source": "TWOT - 1582a",
+  "partOfSpeech": "n m",
+  "avSummary": "fowl 59, bird 9, flying 2, flieth 1",
+  "occurrence": 71,
+  "definition": "1) flying creatures, fowl, insects, birds\n    1a) fowl, birds\n    1b) winged insects",
+  "timestamp": "2025-12-26T20:35:09.321Z"
 }

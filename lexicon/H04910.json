@@ -1,16 +1,13 @@
 {
   "strong": "H04910",
-  "language": "hebrew",
-  "lemma": "lvm",
-  "translit": "mashal",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
+  "word": "_*lvm*_ mashal",
+  "pronunciation": "maw-shal'",
+  "etymology": "a primitive root",
   "strong_reference": "",
-  "timestamp": "2025-12-25T12:48:25.190Z"
+  "source": "TWOT - 1259",
+  "partOfSpeech": "v",
+  "avSummary": "rule 38, ruler 19, reign 8, dominion 7, governor 4, ruled over 2, power 2, indeed 1",
+  "occurrence": 81,
+  "definition": "1) to rule, have dominion, reign\n    1a) (Qal) to rule, have dominion\n    1b) (Hiphil)\n        1b1) to cause to rule\n        1b2) to exercise dominion",
+  "timestamp": "2025-12-26T20:35:07.127Z"
 }

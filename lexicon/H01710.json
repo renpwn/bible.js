@@ -1,16 +1,13 @@
 {
   "strong": "H01710",
-  "language": "hebrew",
-  "lemma": "hgd",
-  "translit": "dagah",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
-  "strong_reference": "",
-  "timestamp": "2025-12-25T12:48:34.335Z"
+  "word": "_*hgd*_ dagah",
+  "pronunciation": "daw-gaw'",
+  "etymology": "from 01709",
+  "strong_reference": "H01709",
+  "source": "TWOT - 401b",
+  "partOfSpeech": "n f",
+  "avSummary": "fish 15",
+  "occurrence": 15,
+  "definition": "1) fish",
+  "timestamp": "2025-12-26T20:35:15.928Z"
 }

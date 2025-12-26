@@ -1,16 +1,13 @@
 {
   "strong": "H06212",
-  "language": "hebrew",
-  "lemma": "bse",
-  "translit": "`eseb",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
+  "word": "_*bse*_ `eseb",
+  "pronunciation": "eh'seb",
+  "etymology": "from an unused root meaning to glisten (or be green)",
   "strong_reference": "",
-  "timestamp": "2025-12-25T12:48:17.154Z"
+  "source": "TWOT - 1707a",
+  "partOfSpeech": "n m",
+  "avSummary": "herb 17, grass 16",
+  "occurrence": 33,
+  "definition": "1) herb, herbage, grass, green plants",
+  "timestamp": "2025-12-26T20:34:59.416Z"
 }

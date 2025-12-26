@@ -1,16 +1,13 @@
 {
   "strong": "H0914",
-  "language": "hebrew",
-  "lemma": "ldb",
-  "translit": "badal",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
+  "word": "_*ldb*_ badal",
+  "pronunciation": "baw-dal'",
+  "etymology": "a primitive root",
   "strong_reference": "",
-  "timestamp": "2025-12-25T12:48:07.970Z"
+  "source": "TWOT - 203",
+  "partOfSpeech": "v",
+  "avSummary": "separate 25, divide 8, difference 4, asunder 2, severed 2, sever out 1, separation 1, utterly 1 (inf. for emphasis)",
+  "occurrence": 42,
+  "definition": "1) to divide, separate\n    1a) (Hiphil)\n        1a1) to divide, separate, sever\n        1a2) to separate, set apart\n        1a3) to make a distinction, difference\n        1a4) to divide into parts\n    1b) (Niphal)\n        1b1) to separate oneself from (reflexive of 1a2)\n        1b2) to withdraw from\n        1b3) to separate oneself unto\n        1b4) to be separated\n        1b5) to be excluded\n        1b6) to be set apart",
+  "timestamp": "2025-12-26T20:34:50.620Z"
 }

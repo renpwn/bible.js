@@ -1,16 +1,13 @@
 {
   "strong": "H07992",
-  "language": "hebrew",
-  "lemma": "yvylv",
-  "translit": "sh@liyshiy",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
-  "strong_reference": "",
-  "timestamp": "2025-12-25T12:48:20.577Z"
+  "word": "_*yvylv*_ sh@liyshiy",
+  "pronunciation": "shel-ee-shee'",
+  "etymology": "ordinal from 07969",
+  "strong_reference": "H07969",
+  "source": "TWOT - 2403b",
+  "partOfSpeech": "adj",
+  "avSummary": "third 84, third part 18, three years old 2, three 2, third rank 1, third time 1",
+  "occurrence": 108,
+  "definition": "1) third, one third, third part, third time\n    1a) ordinal number",
+  "timestamp": "2025-12-26T20:35:02.710Z"
 }

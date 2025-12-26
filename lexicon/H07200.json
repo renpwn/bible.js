@@ -1,16 +1,13 @@
 {
   "strong": "H07200",
-  "language": "hebrew",
-  "lemma": "har",
-  "translit": "ra'ah",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
+  "word": "_*har*_ ra'ah",
+  "pronunciation": "raw-aw'",
+  "etymology": "a primitive root",
   "strong_reference": "",
-  "timestamp": "2025-12-25T12:49:45.584Z"
+  "source": "TWOT - 2095",
+  "partOfSpeech": "v",
+  "avSummary": "see 879, look 104, behold 83, shew 68, appear 66, consider 22, seer 12, spy 6, respect 5, perceive 5, provide 4, regard 4, enjoy 4, lo 3, foreseeth 2, heed 2, misc 74",
+  "occurrence": 1313,
+  "definition": "1) to see, look at, inspect, perceive, consider\n    1a) (Qal)\n        1a1) to see\n        1a2) to see, perceive\n        1a3) to see, have vision\n        1a4) to look at, see, regard, look after, see after, learn\n             about, observe, watch, look upon, look out, find out\n        1a5) to see, observe, consider, look at, give attention to,\n             discern, distinguish\n        1a6) to look at, gaze at\n    1b) (Niphal)\n        1b1) to appear, present oneself\n        1b2) to be seen\n        1b3) to be visible\n    1c) (Pual) to be seen\n    1d) (Hiphil)\n        1d1) to cause to see, show\n        1d2) to cause to look intently at, behold, cause to gaze at\n    1e) (Hophal)\n        1e1) to be caused to see, be shown\n        1e2) to be exhibited to\n    1f) (Hithpael) to look at each other, face",
+  "timestamp": "2025-12-26T20:34:49.500Z"
 }

@@ -1,15 +1,13 @@
 {
   "strong": "H0559",
-  "lemma": "",
-  "translit": "",
-  "definition": "1) to say, speak, utter\n    1a) (Qal) to say,  to answer, to say in one's heart, to think,\n        to command, to promise, to intend\n    1b) (Niphal) to be told, to be said, to be called\n    1c) (Hithpael) to boast, to act proudly\n    1d) (Hiphil) to avow, to avouch",
-  "phonetic": "",
+  "word": "_*rma*_ 'amar",
   "pronunciation": "aw-mar'",
-  "partOfSpeech": "",
-  "etymology": "",
+  "etymology": "a primitive root",
+  "strong_reference": "",
+  "source": "TWOT - 118",
+  "partOfSpeech": "v",
   "avSummary": "said 4874, speak 179, answer 99, command 30, tell 29, call 7, promised 6, misc. 84",
   "occurrence": 5308,
-  "source": "TWOT - 118",
-  "strong_reference": "",
-  "timestamp": "2025-12-25T20:26:01.220Z"
+  "definition": "1) to say, speak, utter\n    1a) (Qal) to say,  to answer, to say in one's heart, to think,\n        to command, to promise, to intend\n    1b) (Niphal) to be told, to be said, to be called\n    1c) (Hithpael) to boast, to act proudly\n    1d) (Hiphil) to avow, to avouch",
+  "timestamp": "2025-12-26T20:34:48.424Z"
 }

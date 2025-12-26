@@ -94,42 +94,21 @@ export async function openDB(dbFile = DEFAULT_DB) {
     UNIQUE(book_id, chapter, verse, version) -- Mencegah duplikat
   );
 
-  -- Tabel untuk kata-kata interlinear (versi interlinear saja)
-  CREATE TABLE IF NOT EXISTS interlinear_words (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    book_id INTEGER NOT NULL,
-    chapter INTEGER NOT NULL,
-    verse INTEGER NOT NULL,
-    position INTEGER NOT NULL,     -- Urutan kata dalam ayat (1,2,3,...)
-    version TEXT NOT NULL,         -- tb_itl_drf, tl_itl_drf, etc
-    _word TEXT NOT NULL,           -- Kata asli (dari teks)
-    strong TEXT,                   -- Strong's number (H7225, G746)
-    lemma TEXT,                    -- Lemma/akar kata
-    translit TEXT,                 -- Transliterasi
-    morphology TEXT,               -- Info morfologi
-    gloss TEXT,                    -- Terjemahan kata
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE,
-    FOREIGN KEY (version) REFERENCES versions(id) ON DELETE CASCADE
-  );
-
   -- Tabel leksikon Strong's numbers
   CREATE TABLE IF NOT EXISTS strong_lexicon (
-    strong TEXT PRIMARY KEY,       -- Format: H7225, G746
-    language TEXT NOT NULL,        -- hebrew/greek
-    lemma TEXT,                    -- Kata Ibrani/Yunani asli
-    translit TEXT,                 -- Transliterasi
-    definition TEXT,               -- Definisi lengkap
-    phonetic TEXT,                 -- Pengucapan
-    pronunciation TEXT,            -- Cara baca
-    part_of_speech TEXT,           -- Jenis kata (noun, verb, etc)
-    etymology TEXT,                -- Asal kata
-    av_summary TEXT,               -- Penggunaan dalam AV/KJV
-    occurrence INTEGER DEFAULT 0,  -- Jumlah kemunculan
-    source TEXT,                   -- Sumber (TWOT, etc)
-    strong_reference TEXT,         -- Referensi ke Strong lain
+    strong TEXT PRIMARY KEY,   -- Strong's number (H7225, G746)
+
+    word TEXT,                 -- lexiconData.word
+    pronunciation TEXT,        -- lexiconData.pronunciation
+
+    etymology TEXT,            -- lexiconData.etymology
+    strong_reference TEXT,     -- lexiconData.strong_reference
+    source TEXT,               -- lexiconData.source  
+    partOfSpeech TEXT,         -- lexiconData.partOfSpeech  
+    avSummary TEXT,            -- lexiconData.avSummary
+    occurrence INTEGER DEFAULT 0, -- lexiconData.occurrence
+    definition TEXT,           -- lexiconData.definition
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    -- FOREIGN KEY (strong_reference) REFERENCES strong_lexicon(strong)
   );
 
   -- Tabel perikop (opsional, untuk struktur pembagian)
@@ -175,17 +154,9 @@ export async function openDB(dbFile = DEFAULT_DB) {
 
   -- Leksikon Strong's
   CREATE VIRTUAL TABLE IF NOT EXISTS strong_lexicon_fts USING fts5(
-    strong, lemma, translit, definition,
+    strong, word, pronunciation, definition,
     content='strong_lexicon',
     content_rowid='rowid',
-    tokenize='porter unicode61'
-  );
-
-  -- Pencarian interlinear
-  CREATE VIRTUAL TABLE IF NOT EXISTS interlinear_fts USING fts5(
-    book_id, chapter, verse, _word, strong, lemma,
-    content='interlinear_words',
-    content_rowid='id',
     tokenize='porter unicode61'
   );
   `
@@ -201,14 +172,11 @@ export async function openDB(dbFile = DEFAULT_DB) {
   CREATE INDEX IF NOT EXISTS idx_verses_text_search 
     ON verses(book_id, version, text COLLATE NOCASE);
 
-  CREATE INDEX IF NOT EXISTS idx_interlinear_ref 
-    ON interlinear_words(book_id, chapter, verse, version);
+  CREATE INDEX IF NOT EXISTS idx_strong_word 
+    ON strong_lexicon(word);
 
-  CREATE INDEX IF NOT EXISTS idx_interlinear_strong 
-    ON interlinear_words(strong) WHERE strong IS NOT NULL;
-
-  CREATE INDEX IF NOT EXISTS idx_strong_language 
-    ON strong_lexicon(language);
+  CREATE INDEX IF NOT EXISTS idx_strong_reference 
+    ON strong_lexicon(strong_reference);
 
   CREATE INDEX IF NOT EXISTS idx_pericopes_book 
     ON pericopes(book_id, start_chapter, start_verse);
@@ -242,38 +210,20 @@ export async function openDB(dbFile = DEFAULT_DB) {
 
   -- Strong Lexicon FTS
   CREATE TRIGGER IF NOT EXISTS strong_lexicon_ai AFTER INSERT ON strong_lexicon BEGIN
-    INSERT INTO strong_lexicon_fts(rowid, strong, lemma, translit, definition)
-    VALUES (new.rowid, new.strong, new.lemma, new.translit, new.definition);
+    INSERT INTO strong_lexicon_fts(rowid, strong, word, pronunciation, definition)
+    VALUES (new.rowid, new.strong, new.word, new.pronunciation, new.definition);
   END;
 
   CREATE TRIGGER IF NOT EXISTS strong_lexicon_ad AFTER DELETE ON strong_lexicon BEGIN
-    INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rowid, strong, lemma, translit, definition)
-    VALUES('delete', old.rowid, old.strong, old.lemma, old.translit, old.definition);
+    INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rowid, strong, word, pronunciation, definition)
+    VALUES('delete', old.rowid, old.strong, old.word, old.pronunciation, old.definition);
   END;
 
   CREATE TRIGGER IF NOT EXISTS strong_lexicon_au AFTER UPDATE ON strong_lexicon BEGIN
-    INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rowid, strong, lemma, translit, definition)
-    VALUES('delete', old.rowid, old.strong, old.lemma, old.translit, old.definition);
-    INSERT INTO strong_lexicon_fts(rowid, strong, lemma, translit, definition)
-    VALUES (new.rowid, new.strong, new.lemma, new.translit, new.definition);
-  END;
-
-  -- Interlinear FTS
-  CREATE TRIGGER IF NOT EXISTS interlinear_ai AFTER INSERT ON interlinear_words BEGIN
-    INSERT INTO interlinear_fts(rowid, book_id, chapter, verse, _word, strong, lemma)
-    VALUES (new.id, new.book_id, new.chapter, new.verse, new._word, new.strong, new.lemma);
-  END;
-
-  CREATE TRIGGER IF NOT EXISTS interlinear_ad AFTER DELETE ON interlinear_words BEGIN
-    INSERT INTO interlinear_fts(interlinear_fts, rowid, book_id, chapter, verse, _word, strong, lemma)
-    VALUES('delete', old.id, old.book_id, old.chapter, old.verse, old._word, old.strong, old.lemma);
-  END;
-
-  CREATE TRIGGER IF NOT EXISTS interlinear_au AFTER UPDATE ON interlinear_words BEGIN
-    INSERT INTO interlinear_fts(interlinear_fts, rowid, book_id, chapter, verse, _word, strong, lemma)
-    VALUES('delete', old.id, old.book_id, old.chapter, old.verse, old._word, old.strong, old.lemma);
-    INSERT INTO interlinear_fts(rowid, book_id, chapter, verse, _word, strong, lemma)
-    VALUES (new.id, new.book_id, new.chapter, new.verse, new._word, new.strong, new.lemma);
+    INSERT INTO strong_lexicon_fts(strong_lexicon_fts, rowid, strong, word, pronunciation, definition)
+    VALUES('delete', old.rowid, old.strong, old.word, old.pronunciation, old.definition);
+    INSERT INTO strong_lexicon_fts(rowid, strong, word, pronunciation, definition)
+    VALUES (new.rowid, new.strong, new.word, new.pronunciation, new.definition);
   END;
   `
 

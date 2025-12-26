@@ -483,7 +483,18 @@ async function buildSabdaUrl(bookId, chapter, versions = BibleVersions) {
   return `${baseUrl}?${params.toString()}${altParams}`
 }
 
-async function parseChapterHTML(html, bookId, chapter, targetVersions) {
+/* =========================
+   SUPERSCRIPT
+========================= */
+function toSuperscript(num) {
+  const map = {
+    '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴',
+    '5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'
+  }
+  return num.split('').map(n => map[n] || n).join('')
+}
+
+async function parseChapterHTMLori(html, bookId, chapter, targetVersions) {
   const $ = cheerio.load(html);
   const verses = [];
   const strongNumbers = new Set(); // Hanya kumpulkan Strong Numbers
@@ -527,7 +538,7 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
       
       // Hanya kumpulkan Strong Numbers dari link lexicon (optional)
       // Bisa dihapus jika tidak perlu mengumpulkan Strong Numbers dari teks
-      if (version.supports_strong && cellHtml) {
+      if (version.supports_strong && cellHtml && version.id !== 'net2') {
         const strongMatches = cellHtml.match(/\/tools\/lexicon\/\?w=(\d+)/g);
         if (strongMatches) {
           strongMatches.forEach(match => {
@@ -549,6 +560,139 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
     verses,
     totalVerses: verses.length,
     strongNumbers: Array.from(strongNumbers) // Kembalikan array Strong Numbers
+  };
+}
+
+async function parseChapterHTML(html, bookId, chapter, targetVersions) {
+  const $ = cheerio.load(html);
+  const verses = [];
+  const strongNumbers = new Set();
+
+  const prefix = bookId <= 39 ? 'H' : 'G';
+
+  $('tr[id="b"]').each((rowIndex, row) => {
+    const cells = $(row).find('td');
+
+    const verseData = {
+      verse: rowIndex + 1,
+      texts: {},
+      notes: [] // ⬅️ TAMBAHAN
+    };
+
+    /* =========================
+       VERSE NUMBER
+    ========================= */
+    const firstCell = $(cells[0]);
+    const verseNumMatch =
+      firstCell.find('a[name]').attr('name') ||
+      firstCell.find('b').text().match(/\d+:\d+/);
+
+    if (verseNumMatch) {
+      const verseNum = typeof verseNumMatch === 'string'
+        ? verseNumMatch.split(':')[1] || verseNumMatch
+        : (rowIndex + 1);
+      verseData.verse = parseInt(verseNum);
+    }
+
+    /* =========================
+       CELLS
+    ========================= */
+    cells.each((cellIndex, cell) => {
+      const version = findVersionForColumn(cellIndex, targetVersions);
+      if (!version) return;
+
+      const cellHtml = $(cell).html();
+      if (!cellHtml) return;
+
+      // ===== KHUSUS NET
+      if (version.id === 'net2') {
+        const cell$ = cheerio.load(cellHtml);
+        const verseNode = cell$('td').length ? cell$('td') : cell$.root();
+
+        const notes = [];
+
+        /* ----- NOTES ----- */
+        verseNode.find('div[id^="n"]').each((_, el) => {
+          const $el = cell$(el);
+          const num = $el.attr('id').replace('n', '');
+
+          const type = $el.find('b').first().text().trim() || null;
+
+          let lang = null;
+          $el.find('i').each((_, iel) => {
+            const t = cell$(iel).text().trim();
+            if (t === 'Heb' || t === 'Grk') lang = t;
+          });
+
+          const body = $el.clone();
+          body.find('b').remove();
+          body.find('i').each((_, iel) => {
+            const t = cell$(iel).text().trim();
+            if (t === 'Heb' || t === 'Grk') cell$(iel).remove();
+          });
+
+          const text = body.text().replace(/\s+/g, ' ').trim();
+
+          notes.push({ num, type, lang, text });
+        });
+
+        /* ----- AYAT ----- */
+        verseNode.find('div').remove();
+        verseNode.find('a').remove();
+
+        verseNode.find('sup').each((_, el) => {
+          cell$(el).replaceWith(toSuperscript(cell$(el).text()));
+        });
+
+        let verseText = verseNode
+          .text()
+          .replace(/^\d+:\d+\s*/, '')
+          .replace(/\s+/g, ' ')
+          .trim();
+
+        /* ----- RENDER NOTE KE TEXT ----- */
+        if (notes.length) {
+          verseText += '\n\n> _*note*_\n';
+          for (const n of notes) {
+            const meta = [n.type, n.lang].filter(Boolean).join(', ');
+            verseText += `${n.num}${meta ? ` (${meta})` : ''}: ${n.text}\n`;
+          }
+          verseText = verseText.trimEnd();
+        }
+
+        verseData.texts[version.id] = verseText;
+        return;
+      }
+
+      /* =========================
+         VERSI NON-NET (AS IS)
+      ========================= */
+      const cellText = $(cell).text().trim();
+      let text = cellText.replace(/^\d+:\d+\s*/, '').trim();
+      verseData.texts[version.id] = text;
+
+      if (version.supports_strong && version.id !== 'net2') {
+        const strongMatches = cellHtml.match(/\/tools\/lexicon\/\?w=(\d+)/g);
+        if (strongMatches) {
+          strongMatches.forEach(m => {
+            const num = m.match(/\d+/)[0];
+            strongNumbers.add(prefix + num);
+          });
+        }
+      }
+    });
+
+    if (Object.keys(verseData.texts).length > 0) {
+      verses.push(verseData);
+    }
+  });
+
+  return {
+    bookId,
+    chapter,
+    verses,
+    totalVerses: verses.length,
+    strongNumbers: Array.from(strongNumbers)
   };
 }
 
@@ -920,69 +1064,28 @@ async function saveLexiconToDB(lexiconData) {
 
   return dbQueue.add(async () => {
     try {
-      // Periksa apakah lexicon sudah ada
-      const existing = await db.get(
-        'SELECT strong FROM strong_lexicon WHERE strong = ?',
-        [lexiconData.strong]
-      );
 
-      if (existing) {
-        // Update jika sudah ada
-        await db.run(`
-          UPDATE strong_lexicon 
-          SET lemma = ?, translit = ?, definition = ?, phonetic = ?, pronunciation = ?,
-              part_of_speech = ?, etymology = ?, av_summary = ?, occurrence = ?, 
-              source = ?, strong_reference = ?, language = ?
-          WHERE strong = ?
-        `, [
-          lexiconData.lemma,
-          lexiconData.translit,
-          lexiconData.definition,
-          lexiconData.phonetic,
-          lexiconData.pronunciation,
-          lexiconData.partOfSpeech,
-          lexiconData.etymology,
-          lexiconData.avSummary,
-          lexiconData.occurrence,
-          lexiconData.source,
-          lexiconData.strong_reference,
-          lexiconData.language,
-          lexiconData.strong
-        ]);
-      } else {
-        // Insert baru
-        await db.run(`
-          INSERT INTO strong_lexicon 
-          (strong, language, lemma, translit, definition, phonetic, pronunciation, 
-           part_of_speech, etymology, av_summary, occurrence, source, strong_reference)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        `, [
-          lexiconData.strong,
-          lexiconData.language,
-          lexiconData.lemma,
-          lexiconData.translit,
-          lexiconData.definition,
-          lexiconData.phonetic,
-          lexiconData.pronunciation,
-          lexiconData.partOfSpeech,
-          lexiconData.etymology,
-          lexiconData.avSummary,
-          lexiconData.occurrence,
-          lexiconData.source,
-          lexiconData.strong_reference
-        ]);
-      }
+      // Simpan atau update lexicon
+      await db.run(`
+        INSERT OR REPLACE INTO strong_lexicon 
+        (strong, word, pronunciation, etymology, strong_reference, source, 
+          part_of_speech, av_summary, occurrence, definition)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `, [
+        lexiconData.strong,
+        lexiconData.word,
+        lexiconData.pronunciation,
+        lexiconData.etymology,
+        lexiconData.strong_reference,
+        lexiconData.source,
+        lexiconData.partOfSpeech,
+        lexiconData.avSummary,
+        lexiconData.occurrence,
+        lexiconData.definition
+      ]);
 
-      // Update interlinear_words dengan lemma dari lexicon
-      if (lexiconData.lemma) {
-        await db.run(`
-          UPDATE interlinear_words 
-          SET lemma = ?, translit = ?
-          WHERE strong = ? AND (lemma IS NULL OR lemma = '')
-        `, [lexiconData.lemma, lexiconData.translit, lexiconData.strong]);
-      }
 
-      console.log(`💾 ${existing ? 'Updated' : 'Saved'} lexicon: ${lexiconData.strong}`);
+      console.log(`💾 Saved lexicon: ${lexiconData.strong}`);
       return true;
     } catch (error) {
       console.error(`❌ Gagal menyimpan lexicon ${lexiconData.strong}:`, error.message);

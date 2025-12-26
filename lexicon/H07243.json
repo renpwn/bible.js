@@ -1,16 +1,13 @@
 {
   "strong": "H07243",
-  "language": "hebrew",
-  "lemma": "yeybryebr",
-  "translit": "yeybr r@biy`iy or  yebr r@bi`iy",
-  "definition": "",
-  "phonetic": "",
-  "pronunciation": "",
-  "partOfSpeech": "",
-  "etymology": "",
-  "avSummary": "",
-  "occurrence": 0,
-  "source": "",
-  "strong_reference": "",
-  "timestamp": "2025-12-25T12:48:26.235Z"
+  "word": "_*yeybr*_ r@biy`iy or _*yebr*_ r@bi`iy",
+  "pronunciation": "reb-ee-ee' reb-ee-ee'",
+  "etymology": "from 07251",
+  "strong_reference": "H07251",
+  "source": "TWOT - 2107c",
+  "partOfSpeech": "adj",
+  "avSummary": "fourth 51, fourth part 4, foursquare 1",
+  "occurrence": 56,
+  "definition": "1) fourth\n    1a) fourth\n    1b) four square\n    1c) fourth part",
+  "timestamp": "2025-12-26T20:35:08.207Z"
 }
