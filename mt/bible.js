@@ -605,6 +605,14 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
       // ===== KHUSUS NET
       if (version.id === 'net2') {
         const cell$ = cheerio.load(cellHtml);
+
+        /* =========================
+          BOOK & TITLE
+        ========================= */
+        const book = cell$('p.book').first().text().trim()
+        const title = cell$('p.paragraphtitle').first().text().trim()
+
+
         const verseNode = cell$('td').length ? cell$('td') : cell$.root();
 
         const notes = [];
@@ -658,7 +666,7 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
           verseText = verseText.trimEnd();
         }
 
-        verseData.texts[version.id] = verseText;
+        verseData.texts[version.id] = `*${book}*\n\n_${title}_\n\n${verseText}`;
         return;
       }
 
