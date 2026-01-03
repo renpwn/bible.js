@@ -2,7 +2,6 @@ import fs from "fs";
 import * as cheerio from "cheerio";
 
 const isTermux = process.platform === "android";
-
 let fetchHtml;
 
 // ==== Termux → Axios ==== //
@@ -27,17 +26,16 @@ if (isTermux) {
           "Accept-Language": "en-US,en;q=0.9",
           "Cache-Control": "no-cache",
           Pragma: "no-cache",
-          Referer:
-            "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"
+          Referer: "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"
         },
         maxRedirects: 10,
         timeout: 20000
       });
-      console.log("HTTP STATUS:", res.status);
+      //console.log("HTTP STATUS:", res.status);
       return res.data;
     } catch (err) {
-      if (err.response) console.error("Status:", err.response.status);
-      else console.error("Error:", err.message);
+      if (err.response) console.error("🚨 Status:", err.response.status);
+      else console.error("🚨 Error:", err.message);
       return null;
     }
   };
@@ -132,17 +130,6 @@ const add2Pos = () => {
   if (idx >= 0) listTanakh[idx][2] = chapters, listTanakh[idx][3] = counter;
 };
 
-// ==== PUPPETEER FETCH ==== //
-const fetchPage = async (page, url) => {
-  try {
-    await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
-    return await page.content();
-  } catch (err) {
-    console.error("Gagal load:", err.message);
-    return null;
-  }
-};
-
 // ==== MAIN SCRAPER ==== //
 const ambilWeb = async (url) => {
   let nextUrl = url;
@@ -212,4 +199,4 @@ const ambilWeb = async (url) => {
 };
 
 // ==== START ==== //
-ambilWeb("https://www.chabad.org/library/bible_cdo/aid/8165/");
+ambilWeb("https://www.chabad.org/library/bible.aspx?aid=6289");

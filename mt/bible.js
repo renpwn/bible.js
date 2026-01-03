@@ -2,24 +2,11 @@ import fs from 'fs/promises'
 import path from 'path'
 import {fileURLToPath} from 'url'
 import * as cheerio from 'cheerio'
-import axios from 'axios'
-import https from 'https'
-import {
-  openDB
-} from './db.js'
+import {openDB} from './db.js'
 
 const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-/* =========================
-   HTTPS AGENT UNTUK BYPASS SSL
-========================= */
-const httpsAgent = new https.Agent({
-  rejectUnauthorized: false,
-  secureProtocol: 'TLSv1_2_method',
-  ciphers: 'DEFAULT:@SECLEVEL=1'
-});
 
 /* =========================
    DAFTAR KITAB ALKITAB
@@ -185,7 +172,8 @@ const BibleVersions = [{
     STRUKTUR TANAKH
 ========================= */
 function buildChabadUrl(aid) {
-  return `https://www.chabad.org/library/bible_cdo/aid/${aid}`
+  //return `https://www.chabad.org/library/bible_cdo/aid/${aid}`
+  return `https://www.chabad.org/library/bible.aspx?aid=${aid}`
 }
 
 function extractNextAid($) {
@@ -199,7 +187,7 @@ const Tanakh =[
       "id": "torah",
       "name": "Torah",
       "books": [
-        { "he": "Bereshit", "en": "Genesis", "id": "Kejadian", "aid": 8165 },
+        { "he": "Bereshit", "en": "Genesis", "id": "Kejadian", "aid": 6289 },
         { "he": "Shemot", "en": "Exodus", "id": "Keluaran", "aid": 8161 },
         { "he": "Vayikra", "en": "Leviticus", "id": "Imamat", "aid": 8162 },
         { "he": "Bamidbar", "en": "Numbers", "id": "Bilangan", "aid": 8163 },
@@ -253,7 +241,79 @@ const Tanakh =[
       ]
     }
   ]
+  
+/* =========================
+   FUNGSI UMUM
+========================= */
 
+const isTermux = process.platform === "android";
+let fetchUrl;
+
+// ==== Termux → Axios ==== //
+if (isTermux) {
+  console.log("Platform: Termux (Android) → pakai Axios");
+
+  const axios = await import("axios");
+  const { CookieJar } = await import("tough-cookie");
+  const { wrapper } = await import("axios-cookiejar-support");
+
+  const jar = new CookieJar();
+  const client = wrapper(axios.default.create({ jar }));
+
+  fetchUrl = async (url) => {
+    try {
+      const res = await client.get(url, {
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0",
+          Accept:
+            "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.9",
+          "Cache-Control": "no-cache",
+          Pragma: "no-cache",
+          Referer: "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"
+        },
+        maxRedirects: 10,
+        timeout: 20000
+      });
+      //console.log("HTTP STATUS:", res.status);
+      return res.data;
+    } catch (err) {
+      if (err.response) console.error("🚨 Status:", err.response.status);
+      else console.error("🚨 Error:", err.message);
+      return null;
+    }
+  };
+}
+
+// ==== Desktop → Puppeteer ==== //
+else {
+  console.log("Platform: Desktop → pakai Puppeteer");
+  const puppeteer = (await import("puppeteer")).default;
+
+  fetchUrl = async (url) => {
+    const browserOptions = {
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    };
+    const browser = await puppeteer.launch(browserOptions);
+    const page = await browser.newPage();
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/143.0.0.0 Safari/537.36"
+    );
+
+    try {
+      await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
+      const html = await page.content();
+      await browser.close();
+      return html;
+    } catch (err) {
+      console.error("Gagal load:", err.message);
+      await browser.close();
+      return null;
+    }
+  };
+}
 
 /* =========================
    KONFIGURASI
@@ -526,141 +586,6 @@ class LexiconQueue {
 }
 
 /* =========================
-   FUNGSI UMUM
-========================= */
-
-async function fetchUrl0(url, options = {}, retryCount = 3) {
-  for (let i = 0; i < retryCount; i++) {
-    try {
-      const res = await axios({
-        method: 'GET',
-        url,
-        headers: {
-          'user-agent': 'PostmanRuntime/7.49.1',
-          'cookie': '__cf_bm=c2KC9rOFkB7WVLHKHDJm4cfQ62EWXUsGv8XjehPlzLU-1767389679-1.0.1.1-vPBhytk7Tvg5NDh_CmfKS4PY2vmpyb94aAxPLWWefaym4jIlxvet7uLATbBUX80SAUqc_Y3F5jSVI6hthhvnajKT3Sk2CedhyTQ6USx4J2KQxGLXcebVEUoAQ6rG6DSu; _cfuvid=DDaUanJ4nCRwiEAidT0v3i9N0HMie0pEWVTo8OE6DEA-1767389565242-0.0.1.1-604800000',
-          'postman-token': '<calculated when request is sent>',
-          'host': '<calculated when request is sent>',
-          'accept': 'text/html,application/xhtml+xml,application/xml',
-          'accept-language': 'id-ID,id;q=0.9,en;q=0.8',
-          ...options.headers
-        },
-        timeout: 30000,
-        ...options
-      })
-      return res.data
-    } catch (err) {
-      console.log(`⏳ Retry ${i + 1}/${retryCount} untuk ${url}, error: ${err.message}`)
-      if (i === retryCount - 1) throw err
-      await sleep(5000 * (i + 1))
-    }
-  }
-}
-
-async function fetchUrl1(url, options = {}, retryCount = 3) {
-  for (let i = 0; i < retryCount; i++) {
-    try {
-      const isHttps = url.startsWith('https://');
-      const axiosConfig = {
-        method: 'GET',
-        url,
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-          'Accept-Language': 'en-US,en;q=0.5',
-          'Accept-Encoding': 'gzip, deflate, br',
-          'Connection': 'keep-alive',
-          'Upgrade-Insecure-Requests': '1',
-          'Sec-Fetch-Dest': 'document',
-          'Sec-Fetch-Mode': 'navigate',
-          'Sec-Fetch-Site': 'none',
-          'Sec-Fetch-User': '?1',
-          'Cache-Control': 'max-age=0',
-          ...options.headers
-        },
-        timeout: 30000,
-        ...options
-      };
-
-      // Gunakan agent khusus untuk HTTPS
-      if (isHttps) {
-        axiosConfig.httpsAgent = httpsAgent;
-        axiosConfig.httpAgent = httpsAgent;
-      }
-
-      const res = await axios(axiosConfig);
-      return res.data;
-    } catch (err) {
-      console.log(`⏳ Retry ${i + 1}/${retryCount} untuk ${url}, error: ${err.message}`);
-      if (i === retryCount - 1) throw err;
-      await sleep(5000 * (i + 1));
-    }
-  }
-}
-
-async function fetchUrl(url, options = {}, retryCount = 3) {
-  for (let i = 0; i < retryCount; i++) {
-    try {
-      const isHttps = url.startsWith('https://');
-      const isChabad = url.includes('chabad.org');
-      const axiosConfig = {
-        method: 'GET',
-        url,
-        headers: {
-          // Use a realistic, up-to-date user agent
-          'x-vary': 'User-Agent',
-          'user-agent': 'Solaretour/1.0.0',
-          // 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-          // 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-          // 'Accept-Language': 'en-US,en;q=0.5',
-          // 'Accept-Encoding': 'gzip, deflate, br',
-          // 'Connection': 'keep-alive',
-          // 'Upgrade-Insecure-Requests': '1',
-          // 'Sec-Fetch-Dest': 'document',
-          // 'Sec-Fetch-Mode': 'navigate',
-          // 'Sec-Fetch-Site': 'none',
-          // 'Sec-Fetch-User': '?1',
-          // 'Cache-Control': 'max-age=0',
-          ...options.headers
-        },
-        ...options
-      };
-
-      // Use the HTTPS agent that ignores SSL verification
-      if (isHttps) {
-        // axiosConfig.httpsAgent = httpsAgent;
-      }
-
-      if (isChabad) {
-        // axiosConfig.headers['Host'] = 'www.chabad.org';
-        // axiosConfig.headers['x-vary'] = 'User-Agent';
-        // axiosConfig.headers['user-agent'] = 'Solaretour/1.0.0';
-        // axiosConfig.headers['User-Agent'] = 'PostmanRuntime/7.49.1';
-        // axiosConfig.headers['Cookie'] = '__cf_bm=niT0ByevpUlbWnD07.21r9ff8VTEnhUrYraUYA7r4zo-1767391589-1.0.1.1-6qSfDLOAYqtmISbzxsmPuWiWYC0BjhEiXkAFW_.VU2ZbbtteFIdTTFARGdTvW8K8Awo5QZLGAz9ccvqQNGZvBrtKvtzIsvW.4SXmTpV_9tmZtMe4N6de7gODuR0XgTjf; _cfuvid=7mDp0G65YtyxZrnZF4JpxVPVh9iY9z6iKwIhAf4E3eY-1767391589236-0.0.1.1-604800000';
-      }
-
-      const res = await axios(axiosConfig);
-      return res.data;
-    } catch (err) {
-      // Check if it's a 403 error
-      console.log(err)
-      if (err.response && err.response.status === 403) {
-        console.log(`⛔ 403 Forbidden on try ${i + 1}/${retryCount} for ${url}`);
-        // Wait longer between retries on a 403 (exponential backoff)
-        const waitTime = 10000 * (i + 1); // 10 seconds, then 20, then 30
-        console.log(`⏳ Waiting ${waitTime/1000} seconds before retry...`);
-        await sleep(waitTime);
-      } else {
-        // For other errors, use the standard retry logic
-        console.log(`⏳ Retry ${i + 1}/${retryCount} for ${url}, error: ${err.message}`);
-        if (i === retryCount - 1) throw err;
-        await sleep(5000 * (i + 1));
-      }
-    }
-  }
-  throw new Error(`All ${retryCount} retry attempts failed for ${url}`);
-}
-
-/* =========================
    SUPERSCRIPT
 ========================= */
 function toSuperscript(num) {
@@ -768,7 +693,7 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
           verseData.notes = new Object();
           for (const n of notes) {
             const meta = [n.type, n.lang].filter(Boolean).join(', ');
-            verseData.notes[n.num] = `${n.num}${meta ? ` (${meta})` : ''}: ${n.text}`;
+            verseData.notes[n.num] = `${meta ? `(${meta})` : ''}: ${n.text}`.trim();
           }
         }
 
@@ -814,7 +739,7 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
 
 async function getChapterData(bookId, chapter, targetVersions) {
   try {
-    console.log(`🌐 Fetching: ${BibleBooks[bookId-1][0]} ${chapter}`)
+    console.log(`🌐 Sabda: ${BibleBooks[bookId-1][0]} ${chapter}`)
     
     let sabdaData = null;
     let chabadData = null;
@@ -969,6 +894,7 @@ async function parseChabadHTML(html, bookId, chapter, aid) {
 function extractRashiComment($, verseNum) {
   // Cari baris Rashi setelah ayat
   const rashiRow = $(`.Co_Rashi:has(a[href="#v${verseNum}"])`);
+  console.log(`rashii`, rashiRow.length)
   if (rashiRow.length) {
     // Kolom 0: Inggris, Kolom 2: Ibrani
     const englishRashi = rashiRow.find('td').eq(0).find('.co_RashiText').text().trim();
@@ -1014,12 +940,12 @@ async function combineChapterData(sabdaData, chabadData, bookId, chapter) {
         tn_he: v.tn_he,
         tn_en: v.tn_en
       },
-      notes: v.rashi ? { rashi: v.rashi } : {},
-      chabad: {
+      rashi: v.rashi ? { rashi: v.rashi } : {}
+      /*,chabad: {
         he: v.tn_he,
         en: v.tn_en,
         rashi: v.rashi
-      }
+      }*/
     }));
     baseData.totalVerses = chabadData.totalVerses;
     baseData.aid = chabadData.aid;
@@ -1056,8 +982,8 @@ async function combineChapterData(sabdaData, chabadData, bookId, chapter) {
           notes: {
             ...sabdaVerse.notes,
             rashi: chabadVerse.rashi
-          },
-          chabad: chabadVerse
+          }
+          //,chabad: chabadVerse
         };
       }
       
