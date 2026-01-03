@@ -509,6 +509,10 @@
           }
         ],
         "totalVerses": 31,
+        "sources": {
+          "sabda": true,
+          "chabad": false
+        },
         "strongNumbers": [
           "H07225",
           "H0430",

@@ -1,0 +1,363 @@
+{
+    "partsName": "Torah (The Pentateuch)",
+    "booksName": "Bereshit (Genesis)",
+    "chapter": 3,
+    "jumlah": 24,
+    "ayat": [
+        {
+            "no": 1,
+            "eng": "Now the serpent was cunning, more than all the beasts of the field that the Lord God had made, and it said to the woman, \"Did God indeed say, 'You shall not eat of any of the trees of the garden?'\"",
+            "hbw": "וְהַנָּחָשׁ֙ הָיָ֣ה עָר֔וּם מִכֹּל֙ חַיַּ֣ת הַשָּׂדֶ֔ה אֲשֶׁ֥ר עָשָׂ֖ה יְהֹוָ֣ה אֱלֹהִ֑ים וַיֹּ֨אמֶר֙ אֶל־הָ֣אִשָּׁ֔ה אַ֚ף כִּֽי־אָמַ֣ר אֱלֹהִ֔ים לֹ֣א תֹֽאכְל֔וּ מִכֹּ֖ל עֵ֥ץ הַגָּֽן:",
+            "rsh": [
+                {
+                    "eng": "*Now the serpent was cunning.* What is the connection of this matter here? Scripture should have juxtaposed (below verse 21): “And He made for Adam and for his wife shirts of skin, and He dressed them.” But it teaches you as a result of what plan the serpent thrust himself upon them. He saw them naked and engaging in intercourse before everyone’s eyes, and he desired her. — [from Gen. Rabbah 18:6]",
+                    "hbw": "*וְהַנָּחָשׁ הָיָה עָרוּם.* \nמָה עִנְיָן זֶה לְכָאן? הָיָה לוֹ לִסְמֹךְ וַיַּעַשׂ לְאָדָם וּלְאִשְׁתּוֹ כָּתְנוֹת עוֹר וַיַּלְבִּשֵׁם, אֶלָּא לִמֶּדְךָ מֵאֵיזוֹ עֵצָה קָפַץ הַנָּחַשׁ עֲלֵיהֶם, רָאָה אוֹתָם עֲרֻמִּים וְעוֹסְקִים בְּתַשְׁמִישׁ לְעֵין כֹּל וְנִתְאַוָּה לָהּ:\n"
+                },
+                {
+                    "eng": "*cunning, more than all.* Commensurate with its cunning and its greatness, was its downfall- [it was] cunning, more than all, [and it was] cursed, more than all. — [from Gen. Rabbah 19:1]",
+                    "hbw": "*עָרוּם מִכֹּל.* \nלְפִי עָרְמָתוֹ וּגְדֻלָּתוֹ הָיְתָה מַפָּלָתוֹ, עָרוּם מִכֹּל, אָרוּר מִכֹּל (בראשית רבה):\n"
+                },
+                {
+                    "eng": "*Did…indeed say, etc..* Did He say to you, “You shall not eat of any, etc.?” Even though he saw them eating of the other fruits, he spoke to her at length in order that she answer him and come to speak of that tree. — [from Pirkei d’Rabbi Eliezer , ed. Horowitz, ch. 13; Avoth d’Rabbi Nathan , ch. 1]",
+                    "hbw": "*אַף כִּֽי־אָמַר וגו'.* \nשֶׁמָּא אָמַר לָכֶם לֹא תֹאכְלוּ מִכֹּל וְגוֹ', וְאַף עַל פִּי שֶׁרָאָה אוֹתָם אוֹכְלִים מִשְּׁאָר פֵּרוֹת, הִרְבָּה עָלֶיהָ דְבָרִים כְּדֵי שֶׁתְּשִׁיבֶנּוּ וְיָבֹא לְדַבֵּר בְּאוֹתוֹ הָעֵץ:\n"
+                }
+            ]
+        },
+        {
+            "no": 2,
+            "eng": "And the woman said to the serpent, \"Of the fruit of the trees of the garden we may eat.",
+            "hbw": "וַתֹּ֥אמֶר הָֽאִשָּׁ֖ה אֶל־הַנָּחָ֑שׁ מִפְּרִ֥י עֵֽץ־הַגָּ֖ן נֹאכֵֽל:",
+            "rsh": []
+        },
+        {
+            "no": 3,
+            "eng": "But of the fruit of the tree that is in the midst of the garden, God said, \"You shall not eat of it, and you shall not touch it, lest you die.'\"",
+            "hbw": "וּמִפְּרִ֣י הָעֵץ֘ אֲשֶׁ֣ר בְּתֽוֹךְ־הַגָּן֒ אָמַ֣ר אֱלֹהִ֗ים לֹ֤א תֹֽאכְלוּ֙ מִמֶּ֔נּוּ וְלֹ֥א תִגְּע֖וּ בּ֑וֹ פֶּן־תְּמֻתֽוּן:",
+            "rsh": [
+                {
+                    "eng": "*and you shall not touch it.* She added to the command; therefore, she came to diminish it. That is what is stated (Prov. 30:6): “Do not add to His words.” - [from Sanh. 29a]",
+                    "hbw": "*וְלֹא תִגְּעוּ בּוֹ.* \nהוֹסִיפָה עַל הַצִּוּוּי, לְפִיכָךְ בָּאָה לִידֵי גֵרָעוֹן, הוּא שֶׁנֶּאֱמַר אַל תּוֹסְףְּ עַל דְּבָרָיו (משלי ל'):\n"
+                }
+            ]
+        },
+        {
+            "no": 4,
+            "eng": "And the serpent said to the woman, \"You will surely not die.",
+            "hbw": "וַיֹּ֥אמֶר הַנָּחָ֖שׁ אֶל־הָֽאִשָּׁ֑ה לֹא־מ֖וֹת תְּמֻתֽוּן:",
+            "rsh": [
+                {
+                    "eng": "*You will surely not die.* He pushed her until she touched it. He said to her, “Just as there is no death in touching, so is there no death in eating” (Gen. Rabbah 19:3).",
+                    "hbw": "*לֹא־מוֹת תמותון.* \nדְּחָפָהּ עַד שֶׁנָּגְעָה בוֹ, אָמַר לָהּ כְּשֵׁם שֶׁאֵין מִיתָה בִנְגִיעָה, כָּךְ אֵין מִיתָה בַאֲכִילָה (בראשית רבה):\n"
+                }
+            ]
+        },
+        {
+            "no": 5,
+            "eng": "For God knows that on the day that you eat thereof, your eyes will be opened, and you will be like angels, knowing good and evil.\"",
+            "hbw": "כִּ֚י יֹדֵ֣עַ אֱלֹהִ֔ים כִּ֗י בְּיוֹם֙ אֲכָלְכֶ֣ם מִמֶּ֔נּוּ וְנִפְקְח֖וּ עֵֽינֵיכֶ֑ם וִֽהְיִיתֶם֙ כֵּֽאלֹהִ֔ים יֹֽדְעֵ֖י ט֥וֹב וָרָֽע:",
+            "rsh": [
+                {
+                    "eng": "*For God knows.* Every craftsman hates his fellow craftsmen. He [God] ate of the tree and created the world (Gen. Rabbah 19:4).",
+                    "hbw": "*כִּי יֹדֵעַ.* \nכָּל אֻמָּן שׂוֹנֵא אֶת בְּנֵי אֻמָּנוּתוֹ, מִן הָעֵץ אָכַל וּבָרָא אֶת הָעוֹלָם (בראשית רבה):\n"
+                },
+                {
+                    "eng": "*and you will be like angels.* Creators of worlds. — [from Pirkei d’Rabbi Eliezer , ch. 13]",
+                    "hbw": "*וִֽהְיִיתֶם כֵּֽאלֹהִים.* \nיוֹצְרֵי עוֹלָמוֹת (בראשית רבה):\n"
+                }
+            ]
+        },
+        {
+            "no": 6,
+            "eng": "And the woman saw that the tree was good for food and that it was a delight to the eyes, and the tree was desirable to make one wise; so she took of its fruit, and she ate, and she gave also to her husband with her, and he ate.",
+            "hbw": "וַתֵּ֣רֶא הָֽאִשָּׁ֡ה כִּ֣י טוֹב֩ הָעֵ֨ץ לְמַֽאֲכָ֜ל וְכִ֧י תַֽאֲוָה־ה֣וּא לָֽעֵינַ֗יִם וְנֶחְמָ֤ד הָעֵץ֙ לְהַשְׂכִּ֔יל וַתִּקַּ֥ח מִפִּרְי֖וֹ וַתֹּאכַ֑ל וַתִּתֵּ֧ן גַּם־לְאִישָׁ֛הּ עִמָּ֖הּ וַיֹּאכַֽל:",
+            "rsh": [
+                {
+                    "eng": "*And the woman saw.* She understood the words of the serpent and they appealed to her; so she believed him (Gen. Rabbah 19:4).",
+                    "hbw": "*וַתֵּרֶא הָֽאִשָּׁה.* \nרָאֲתָה דְבָרָיו שֶׁל נָחָשׁ וְהֶנְאוּ לָהּ וְהֶאֱמִינַתּוּ (בראשית רבה):\n"
+                },
+                {
+                    "eng": "*that the tree was good.* to [cause them to] be like angels.",
+                    "hbw": "*כִּי טוֹב הָעֵץ.* \nלִהְיוֹת כֵּאלֹהִים:\n"
+                },
+                {
+                    "eng": "*and that it was a delight to the eyes.* As he had said to her, “and your eyes will be opened.”",
+                    "hbw": "*וְכִי תַֽאֲוָה־הוּא לָֽעֵינַיִם.* \nכְּמוֹ שֶׁאָמַר לָהּ וְנִפְקְחוּ עֵינֵיכֶם:\n"
+                },
+                {
+                    "eng": "*and that the tree was desirable to make one wise.* As he said to her, “knowing good and evil.”",
+                    "hbw": "*וְנֶחְמָד לְהַשְׂכִּיל.* \nכְּמוֹ שֶׁאָמַר לָהּ יוֹדְעֵי טוֹב וָרָע:\n"
+                },
+                {
+                    "eng": "*and she gave also to her husband.* lest she die and he live and marry someone else. — [from Pirkei d’Rabbi Eliezer , ch. 13]",
+                    "hbw": "*וַתִּתֵּן גַּם־לְאִישָׁהּ.* \nשֶׁלֹּא תָמוּת הִיא וְיִחְיֶה הוּא, וְיִשָּׂא אַחֶרֶת:\n"
+                },
+                {
+                    "eng": "*also.* to include the cattle and beasts - [from Gen. Rabbah 19:5].",
+                    "hbw": "*גַּם־.* \nלְרַבּוֹת בְּהֵמָה וְחַיָּה:\n"
+                }
+            ]
+        },
+        {
+            "no": 7,
+            "eng": "And the eyes of both of them were opened, and they knew that they were naked, and they sewed fig leaves and made themselves girdles.",
+            "hbw": "וַתִּפָּקַ֨חְנָה֙ עֵינֵ֣י שְׁנֵיהֶ֔ם וַיֵּ֣דְע֔וּ כִּ֥י עֵֽירֻמִּ֖ם הֵ֑ם וַיִּתְפְּרוּ֙ עֲלֵ֣ה תְאֵנָ֔ה וַיַּֽעֲשׂ֥וּ לָהֶ֖ם חֲגֹרֹֽת:",
+            "rsh": [
+                {
+                    "eng": "*And…were opened.* Scripture is referring to wisdom, and not to actual vision, and the end of the verse proves this. — [from Gen. Rabbah 19:7]",
+                    "hbw": "*וַתִּפָּקַחְנָה וגו'.* \nלְעִנְיַן הַחָכְמָה דִּבֵּר הַכָּתוּב וְלֹא לְעִנְיַן רְאִיָּה מַמָּשׁ, וְסוֹף הַמִּקְרָא מוֹכִיחַ:\n"
+                },
+                {
+                    "eng": "*and they knew that they were naked.* Even a blind man knows when he is naked! What then is the meaning of “and they knew that they were naked” ? They had one commandment in their possession, and they became denuded of it.",
+                    "hbw": "*וַיֵּדְעוּ כִּי עירמים הֵם.* \nאַף הַסּוּמָא יוֹדֵעַ כְּשֶׁהוּא עָרוּם, אֶלָּא מַהוּ וַיֵּדְעוּ כִּי עֵירֻמִּם הֵם? מִצְוָה אַחַת הָיְתָה בְיָדָם וְנִתְעַרְטְלוּ הֵימֶנָּה (בראשית רבה):\n"
+                },
+                {
+                    "eng": "*fig leaves.* That is the tree of which they had eaten. With that which they had sinned, they were rectified, but the other trees prevented them from taking their leaves. — [from Ber. 40a, Sanh. 70b] Now why was the tree not identified? Because the Holy One, blessed be He, does not wish to grieve any creature, so that [others] should not put it to shame and say, “This is [the tree] because of which the world suffered.” (Midrash of Rabbi Tanchuma, Vayera 14, Buber 32).",
+                    "hbw": "*עֲלֵה תְאֵנָה.* \nהוּא הָעֵץ שֶׁאָכְלוּ מִמֶּנּוּ, בַּדָּבָר שֶׁנִּתְקַלְקְלוּ בּוֹ נִתַּקְּנוּ (סנהדרין ע'), אֲבָל שְׁאָר הָעֵצִים מְנָעוּם מִלִּטֹּל עַלֵּיהֶם. וּמִפְּנֵי מָה לֹא נִתְפַּרְסֵם הָעֵץ? שֶׁאֵין הַקָּדוֹשׁ בָּרוּךְ הוּא חָפֵץ לְהוֹנוֹת בְּרִיָּה, שֶׁלֹּא יַכְלִימוּהָ וְיֹאמְרוּ זֶהוּ שֶׁלָּקָה הָעוֹלָם עַל יָדוֹ, מִדְרַשׁ רַבִּי תַנְחוּמָא:\n"
+                }
+            ]
+        },
+        {
+            "no": 8,
+            "eng": "And they heard the voice of the Lord God going in the garden to the direction of the sun, and the man and his wife hid from before the Lord God in the midst of the trees of the garden.",
+            "hbw": "וַיִּשְׁמְע֞וּ אֶת־ק֨וֹל יְהֹוָ֧ה אֱלֹהִ֛ים מִתְהַלֵּ֥ךְ בַּגָּ֖ן לְר֣וּחַ הַיּ֑וֹם וַיִּתְחַבֵּ֨א הָֽאָדָ֜ם וְאִשְׁתּ֗וֹ מִפְּנֵי֙ יְהֹוָ֣ה אֱלֹהִ֔ים בְּת֖וֹךְ עֵ֥ץ הַגָּֽן:",
+            "rsh": [
+                {
+                    "eng": "*And they heard.* There are many Aggadic midrashim, and our Sages already arranged them in their proper order in Genesis Rabbah and in other midrashim, but I have come only [to teach] the simple meaning of the Scripture and such Aggadah that clarifies the words of the verses, each word in its proper way.",
+                    "hbw": "*וַיִּשְׁמְעוּ.* \nיֵשׁ מִדְרְשֵׁי אַגָּדָה רַבִּים וּכְבָר סִדְּרוּם רַבּוֹתֵינוּ עַל מְכוֹנָם בּבְּרֵאשִׁית רַבָּה וּבִשְׁאָר מִדְרָשׁוֹת; וַאֲנִי לֹא בָאתִי אֶלָּא לִפְשׁוּטוֹ שֶׁל מִקְרָא וּלְאַגָּדָה הַמְיַשֶּׁבֶת דִּבְרֵי הַמִּקְרָא דָבָר דָּבוּר עַל אֳפַנָּיו:\n"
+                },
+                {
+                    "eng": "*And they heard.* What did they hear? They heard the voice of the Holy One, blessed be He, which was going in the garden. — [from Gen. Rabbah 19:7]",
+                    "hbw": "*וַיִּשְׁמְעוּ.* \nמַה שָּׁמְעוּ? שָׁמְעוּ אֶת קוֹל הַקָּדוֹשׁ בָּרוּךְ הוּא שֶׁהָיָה מִתְהַלֵּךְ בַּגַּן:\n"
+                },
+                {
+                    "eng": "*to the direction of the sun.* To that direction in which the sun sets, and this is the west, for toward evening, the sun is in the west, and they sinned in the tenth [hour]. — [from Gen. Rabbah 19:8, Sanh. 38b]",
+                    "hbw": "*לְרוּחַ הַיּוֹם.* \nלְאוֹתוֹ רוּחַ שֶׁהַשֶּׁמֶשׁ בָּאָה לְשָׁם, וְזוֹ הִיא מַעֲרָבִית; שֶׁלִּפְנוֹת עֶרֶב חַמָּה בַּמַּעֲרָב, וְהֵם סָרְחוּ בָּעֲשִׂירִית (סנהדרין ל\"ח):\n"
+                }
+            ]
+        },
+        {
+            "no": 9,
+            "eng": "And the Lord God called to man, and He said to him, \"Where are you?\"",
+            "hbw": "וַיִּקְרָ֛א יְהֹוָ֥ה אֱלֹהִ֖ים אֶל־הָֽאָדָ֑ם וַיֹּ֥אמֶר ל֖וֹ אַיֶּֽכָּה:",
+            "rsh": [
+                {
+                    "eng": "*Where are you.* He knew where he was, but [He asked him this] in order to enter into conversation with him, lest he be frightened to answer if He should punish him suddenly (Tanchuma Tazria 9). So with Cain, He said to him (below 4:9): “Where is your brother Abel?” And so with Balaam (Num. 22:9): “Who are these men with you?” for the purpose of entering a conversation with them, and so with Hezekiah, in regard to the emissaries of Merodach Baladan (Isa. 39:3) (Gen. Rabbah 19:11).",
+                    "hbw": "*אַיֶּֽכָּה.* \nיוֹדֵעַ הָיָה הֵיכָן הוּא אֶלָּא לִכָּנֵס עִמּוֹ בִּדְבָרִים, שֶׁלֹּא יְהֵא נִבְהָל לְהָשִׁיב אִם יַעֲנִישֵׁהוּ פִּתְאוֹם (בראשית רבה), וְכֵן בְּקַיִן אָמַר לוֹ אֵי הֶבֶל אָחִיךָ (בראשית ד), וְכֵן בְּבִלְעָם מִי הָאֲנָשִׁים הָאֵלֶּה עִמָּךְ (במדבר כ\"ב), לִכָּנֵס עִמָּהֶם בִּדְבָרִים, וְכֵן בְּחִזְקִיָּה בִּשְׁלוּחֵי מְרֹאדַךְ בַּלְאֲדָן:\n"
+                }
+            ]
+        },
+        {
+            "no": 10,
+            "eng": "And he said, \"I heard Your voice in the garden, and I was afraid because I am naked; so I hid.\"",
+            "hbw": "וַיֹּ֕אמֶר אֶת־קֹֽלְךָ֥ שָׁמַ֖עְתִּי בַּגָּ֑ן וָֽאִירָ֛א כִּֽי־עֵירֹ֥ם אָנֹ֖כִי וָאֵֽחָבֵֽא:",
+            "rsh": []
+        },
+        {
+            "no": 11,
+            "eng": "And He said, \"Who told you that you are naked? Have you eaten from the tree of which I commanded you not to eat?\"",
+            "hbw": "וַיֹּ֕אמֶר מִ֚י הִגִּ֣יד לְךָ֔ כִּ֥י עֵירֹ֖ם אָ֑תָּה הֲמִן־הָעֵ֗ץ אֲשֶׁ֧ר צִוִּיתִ֛יךָ לְבִלְתִּ֥י אֲכָל־מִמֶּ֖נּוּ אָכָֽלְתָּ:",
+            "rsh": [
+                {
+                    "eng": "*Who told you.* From where do you know what shame there is in standing naked?",
+                    "hbw": "*מִי הִגִּיד לְךָ.* \nמֵאַיִן לְךָ לָדַעַת מַה בֹּשֶׁת יֵשׁ בְּעוֹמֵד עָרֹם?\n"
+                },
+                {
+                    "eng": "*from the tree?.* Heb. הֲמִן. This is in the interrogative sense.",
+                    "hbw": "*הֲמִן־הָעֵץ.* \nבִּתְמִיהָ:\n"
+                }
+            ]
+        },
+        {
+            "no": 12,
+            "eng": "And the man said, \"The woman whom You gave [to be] with me she gave me of the tree; so I ate.\"",
+            "hbw": "וַיֹּ֖אמֶר הָֽאָדָ֑ם הָֽאִשָּׁה֙ אֲשֶׁ֣ר נָתַ֣תָּה עִמָּדִ֔י הִ֛וא נָֽתְנָה־לִּ֥י מִן־הָעֵ֖ץ וָֽאֹכֵֽל:",
+            "rsh": [
+                {
+                    "eng": "*whom You gave [to be] with me.* Here he [Adam] showed his ingratitude. — [from Avodah Zarah 5b]",
+                    "hbw": "*אֲשֶׁר נָתַתָּה עִמָּדִי.* \nכָּאן כָּפַר בַּטּוֹבָה (עבודה זרה ה):\n"
+                }
+            ]
+        },
+        {
+            "no": 13,
+            "eng": "And the Lord God said to the woman, \"What is this that you have done?\" And the woman said, \"The serpent enticed me, and I ate.\"",
+            "hbw": "וַיֹּ֨אמֶר יְהֹוָ֧ה אֱלֹהִ֛ים לָֽאִשָּׁ֖ה מַה־זֹּ֣את עָשִׂ֑ית וַתֹּ֨אמֶר֙ הָֽאִשָּׁ֔ה הַנָּחָ֥שׁ הִשִּׁיאַ֖נִי וָֽאֹכֵֽל:",
+            "rsh": [
+                {
+                    "eng": "*enticed me.* Heb. הִשִּׁיאַנִי, deceived me, like (II Chron. 32:15): “Let Hezekiah not deceive (יַשִּׁיא) you.” - [from Gen. Rabbah 19:2]",
+                    "hbw": "*הִשִּׁיאַנִי.* \nהִטְעַנִי, כְּמוֹ אַל יַשִּׁיא אֶתְכֶם חִזְקִיָּהוּ (דברי הימים ב' ל\"ב):\n"
+                }
+            ]
+        },
+        {
+            "no": 14,
+            "eng": "And the Lord God said to the serpent, \"Because you have done this, cursed be you more than all the cattle and more than all the beasts of the field; you shall walk on your belly, and you shall eat dust all the days of your life.",
+            "hbw": "וַיֹּ֩אמֶר֩ יְהֹוָ֨ה אֱלֹהִ֥ים | אֶל־הַנָּחָשׁ֘ כִּ֣י עָשִׂ֣יתָ זֹּאת֒ אָר֤וּר אַתָּה֙ מִכָּל־הַבְּהֵמָ֔ה וּמִכֹּ֖ל חַיַּ֣ת הַשָּׂדֶ֑ה עַל־גְּחֹֽנְךָ֣ תֵלֵ֔ךְ וְעָפָ֥ר תֹּאכַ֖ל כָּל־יְמֵ֥י חַיֶּֽיךָ:",
+            "rsh": [
+                {
+                    "eng": "*Because you have done this.* From here [we learn] that we may not intercede in favor of one who entices people [to idolatry], for had He asked him, “Why did you do this?” he could have answered, “The words of the master and the words of the pupil-whose words do we obey?” [i.e., Adam and Eve should have obeyed God rather than the serpent!]- [from Sanh. 29a]",
+                    "hbw": "*כִּי עָשִׂיתָ זֹּאת.* \nמִכָּאן שֶׁאֵין מְהַפְּכִים בִּזְכוּתוֹ שֶׁל מֵסִית, שֶׁאִלּוּ שְׁאָלוֹ לָמָּה עָשִׂיתָ זֹאת? הָיָה לוֹ לְהָשִׁיב דִּבְרֵי הָרַב וְדִבְרֵי הַתַּלְמִיד דִּבְרֵי מִי שׁוֹמְעִין? (סנהדרין כ\"ט):\n"
+                },
+                {
+                    "eng": "*more than all the cattle and more than all the beasts of the field.* If he was cursed more than the cattle [whose gestation period is long], he was surely cursed more than the beasts [whose gestation period is comparatively shorter]. Our Rabbis established this midrash in Tractate Bechoroth (8a) to teach that the gestation period of a serpent is seven years.",
+                    "hbw": "*מִכָּל־הַבְּהֵמָה וּמִכֹּל חַיַּת הַשָּׂדֶה.* \nאִם מִבְּהֵמָה נִתְקַלֵּל מֵחַיָּה לֹא כָּל שֶׁכֵּן, הֶעֱמִידוּ רַבּוֹתֵינוּ מִדְרָשׁ זֶה בְמַסֶּכֶת בְּכוֹרוֹת (דף ח') לְלַמֵּד שֶׁיְּמֵי עִבּוּרוֹ שֶׁל נָחָשׁ שֶׁבַע שָׁנִים:\n"
+                },
+                {
+                    "eng": "*you shall walk on your belly.* It had legs, but they were cut off. — [from Gen. Rabbah 20:5]",
+                    "hbw": "*עַל־גחונך תֵלֵךְ.* \nרַגְלַיִם הָיוּ לוֹ וְנִקְצְצוּ:\n"
+                }
+            ]
+        },
+        {
+            "no": 15,
+            "eng": "And I shall place hatred between you and between the woman, and between your seed and between her seed. He will crush your head, and you will bite his heel.\"",
+            "hbw": "וְאֵיבָ֣ה | אָשִׁ֗ית בֵּֽינְךָ֙ וּבֵ֣ין הָֽאִשָּׁ֔ה וּבֵ֥ין זַֽרְעֲךָ֖ וּבֵ֣ין זַרְעָ֑הּ ה֚וּא יְשֽׁוּפְךָ֣ רֹ֔אשׁ וְאַתָּ֖ה תְּשׁוּפֶ֥נּוּ עָקֵֽב:",
+            "rsh": [
+                {
+                    "eng": "*And I shall place hatred.* You intended that the man should die when he would eat first, and you would marry Eve, and you came to Eve first only because women are easily enticed, and they know how to entice their husbands. Therefore, “I shall place hatred.”",
+                    "hbw": "*וְאֵיבָה אָשִׁית.* \nאַתָּה לֹא נִתְכַּוַּנְתָּ אֶלָּא שֶׁיָּמוּת אָדָם כְּשֶׁיּאֹכַל הוּא תְּחִלָּה וְתִשָּׂא אֶת חַוָּה, וְלֹא בָאתָ לְדַבֵּר אֶל חַוָּה תְּחִלָּה אֶלָּא לְפִי שֶׁהַנָּשִׁים קַלּוֹת לְהִתְפַּתּוֹת וְיוֹדְעוֹת לְפַתּוֹת אֶת בַּעְלֵיהֶן, לְפִיכָךְ וְאֵיבָה אָשִׁית:\n"
+                },
+                {
+                    "eng": "*He will crush your head.* יְשׁוּפְךָ רֹאשׁ, lit. he will crush you the head. He will crush you, like (Deut. 9:21): “And I crushed it,” which is translated by the Targum as וְשָׁפִית יָתֵיהּ",
+                    "hbw": "*יְשֽׁוּפְךָ.* \nיְכַתֶּתְךָ (סוטה ט') כְּמוֹ וָאֶכֹּת אֹתוֹ (דברים ט), וְתַרְגּוּמוֹ וְשָׁפִית יָתֵי':\n"
+                },
+                {
+                    "eng": "*and you will bite his heel.* Heb. תְּשׁוּפֶנוּ. You will not stand upright and you will bite him on the heel, and even from there you will kill him. The expression תְּשׁוּפֶנוּ is like (Isa. 40:24): “He blew (נָשַׁף) on them.” When a snake comes to bite, it blows with a sort of hiss, and since the two expressions coincide [i.e., they sound alike], Scripture used the expression of נְשִׁיפָה in both cases.",
+                    "hbw": "*וְאַתָּה תְּשׁוּפֶנּוּ עָקֵֽב.* \nלֹא יְהֵא לְךָ קוֹמָה וְתִשְּׁכֶנּוּ בַּעֲקֵבוֹ, וְאַף מִשָּׁם תְּמִיתֶנּוּ, וּלְשׁוֹן תְּשׁוּפֶנּוּ כְּמוֹ נָשַׁף בָּהֶם (ישעיהו מ') כְּשֶׁהַנָּחָשׁ בָּא לִנְשֹׁך הוּא נוֹשֵׁף כְּמִין שְׁרִיקָה וּלְפִי שֶׁהַלָּשׁוֹן נוֹפֵל עַל הַלָּשָוֹן כְּתִיב לְשׁוֹן נְשִׁיפָה בִשְׁנֵיהֶם:\n"
+                }
+            ]
+        },
+        {
+            "no": 16,
+            "eng": "To the woman He said, \"I shall surely increase your sorrow and your pregnancy; in pain you shall bear children. And to your husband will be your desire, and he will rule over you.\"",
+            "hbw": "אֶל־הָֽאִשָּׁ֣ה אָמַ֗ר הַרְבָּ֤ה אַרְבֶּה֙ עִצְּבוֹנֵ֣ךְ וְהֵֽרֹנֵ֔ךְ בְּעֶ֖צֶב תֵּֽלְדִ֣י בָנִ֑ים וְאֶל־אִישֵׁךְ֙ תְּשׁ֣וּקָתֵ֔ךְ וְה֖וּא יִמְשָׁל־בָּֽךְ:",
+            "rsh": [
+                {
+                    "eng": "*your sorrow.* This refers to the pain of child rearing. — [from Eruv. 100b]",
+                    "hbw": "*עִצְּבוֹנֵךְ.* \nזֶה צַעַר גִּדּוּל בָּנִים (עירובין ק'):\n"
+                },
+                {
+                    "eng": "*and your pregnancy.* This refers to the pain of pregnancy. — [from above source]",
+                    "hbw": "*וְהֵֽרֹנֵךְ.* \nזֶה צַעַר הָעִבּוּר:\n"
+                },
+                {
+                    "eng": "*in pain you shall bear children.* This refers to the pain of childbirth. — [from Gen. Rabbah 20:6]",
+                    "hbw": "*בְּעֶצֶב תֵּֽלְדִי בָנִים.* \nזֶה צַעַר הַלֵּדָה:\n"
+                },
+                {
+                    "eng": "*And to your husband will be your desire.* for intimacy, but, nevertheless, you will not have the audacity to demand it of him with your mouth, but he will rule over you. Everything is from him and not from you. — [from Eruv. ad loc.]",
+                    "hbw": "*וְאֶל־אִישֵׁךְ תְּשׁוּקָתֵךְ.* \nלְתַשְׁמִישׁ, וְאַף עַל פִּי כֵן אֵין לָךְ מֵצַח לְתָבְעוֹ בַּפֶּה, אֶלָּא הוּא יִמְשָׁל בָּךְ, הַכֹּל מִמֶּנּוּ וְלֹא מִמֵּךְ:\n"
+                },
+                {
+                    "eng": "*your desire.* Heb. תְּשׁוּקָתֵךְ, your desire, like: (Isa. 29:8): “a yearning (שׁוֹקֵקָה) soul.” - [after Targum Onkelos]",
+                    "hbw": "*תְּשׁוּקָתֵךְ.* \nתַּאֲוָתֵךְ, כְּמוֹ נֶפֶשׁ שׁוֹקֵקָה (ישעיהו כ\"ט):\n"
+                }
+            ]
+        },
+        {
+            "no": 17,
+            "eng": "And to man He said, \"Because you listened to your wife, and you ate from the tree from which I commanded you saying, 'You shall not eat of it,' cursed be the ground for your sake; with toil shall you eat of it all the days of your life.",
+            "hbw": "וּלְאָדָ֣ם אָמַ֗ר כִּ֣י שָׁמַ֘עְתָּ֘ לְק֣וֹל אִשְׁתֶּ֒ךָ֒ וַתֹּ֨אכַל֙ מִן־הָעֵ֔ץ אֲשֶׁ֤ר צִוִּיתִ֨יךָ֙ לֵאמֹ֔ר לֹ֥א תֹאכַ֖ל מִמֶּ֑נּוּ אֲרוּרָ֤ה הָֽאֲדָמָה֙ בַּֽעֲבוּרֶ֔ךָ בְּעִצָּבוֹן֙ תֹּֽאכֲלֶ֔נָּה כֹּ֖ל יְמֵ֥י חַיֶּֽיךָ:",
+            "rsh": [
+                {
+                    "eng": "*cursed be the ground for your sake.* It will bring up cursed things for you, such as flies, fleas, and ants. This can be compared to one who falls into evil ways, and people curse the breasts from which he suckled. — [from Gen. Rabbah 20: 8]",
+                    "hbw": "*אֲרוּרָה הָֽאֲדָמָה בַּֽעֲבוּרֶךָ.* \nמַעֲלָה לְךָ דְּבָרִים אֲרוּרִים, כְּגוֹן זְבוּבִים, פַּרְעוֹשִׁים וּנְמָלִים, מָשָׁל לְיוֹצֵא לְתַרְבּוּת רָעָה וְהַבְּרִיּוֹת מְקַלְּלוֹת שָׁדַיִם שֶׁיָּנַק מֵהֶם:\n"
+                }
+            ]
+        },
+        {
+            "no": 18,
+            "eng": "And it will cause thorns and thistles to grow for you, and you shall eat the herbs of the field.",
+            "hbw": "וְק֥וֹץ וְדַרְדַּ֖ר תַּצְמִ֣יחַ לָ֑ךְ וְאָֽכַלְתָּ֖ אֶת־עֵ֥שֶׂב הַשָּׂדֶֽה:",
+            "rsh": [
+                {
+                    "eng": "*And it will cause thorns and thistles to grow for you.* The earth-when you sow it with various species of seeds-will sprout thorns and thistles, artichokes and cardoons, which are edible only after preparation. — [from Gen. Rabbah 20:10. See also Beizah 34a]",
+                    "hbw": "*וְקוֹץ וְדַרְדַּר תַּצְמִיחַ לָךְ.* \nהָאָרֶץ כְּשֶׁתִּזְרָעֶנָּה מִינֵי זְרָעִים, תַּצְמִיחַ קוֹץ וְדַרְדַּר קֻנְדָּס וְעַכָּבִיּוֹת, וְהֵן נֶאֱכָלִין עַל יְדֵי תִקּוּן (ביצה ל\"ד):\n"
+                },
+                {
+                    "eng": "*“and you shall eat the herbs of the field”.* Now what [kind of] curse is this? Was it not said to him in the blessing (above 1:29): “Behold I have given you every seed-bearing herb, etc? But what is stated here [refers to] the beginning of the section: ”Cursed be the ground for your sake; with toil shall you eat of it,“ and after the toil, ”And it will cause thorns and thistles to grow for you.\" When you sow it with legumes or garden vegetables, it will cause thorns and thistles and other grasses of the field, to grow for you, and you shall have no choice but to eat them.",
+                    "hbw": "*וְאָֽכַלְתָּ אֶת־עֵשֶׂב הַשָּׂדֶֽה.* \nוּמַה קְּלָלָה הִיא זוֹ? וַהֲלֹא בַּבְּרָכָה נֶאֱמַר לוֹ הִנֵּה נָתַתִּי לָכֶם אֶת כָּל עֵשֶׂב זֹרֵעַ זֶרַע וְגוֹ? אֶלָּא מָה אָמוּר כָּאן בְּרֹאשׁ הָעִנְיָן אֲרוּרָה הָאֲדָמָה בַּעֲבוּרֶךָ בְּעִצָּבוֹן תֹּאכְלֶנָּה, וְאַחַר הָעִצָּבוֹן וְקוֹץ וְדַרְדַּר תַּצְמִיחַ לָךְ, כְּשֶׁתִּזְרָעֶנָּה קִטְנִית אוֹ יַרְקוֹת גִּנָּה הִיא תַצְמִיחַ לְךָ קוֹצִים וְדַרְדָּרִים וּשְׁאָר עִשְׂבֵי הַשָׂדֶה וְעַל כָּרְחֲךָ תֹּאכְלֵם:\n"
+                }
+            ]
+        },
+        {
+            "no": 19,
+            "eng": "With the sweat of your face you shall eat bread, until you return to the ground, for you were taken therefrom, for dust you are, and to dust you will return.\"",
+            "hbw": "בְּזֵעַ֤ת אַפֶּ֨יךָ֙ תֹּ֣אכַל לֶ֔חֶם עַ֤ד שֽׁוּבְךָ֙ אֶל־הָ֣אֲדָמָ֔ה כִּ֥י מִמֶּ֖נָּה לֻקָּ֑חְתָּ כִּֽי־עָפָ֣ר אַ֔תָּה וְאֶל־עָפָ֖ר תָּשֽׁוּב:",
+            "rsh": [
+                {
+                    "eng": "*With the sweat of your face.* After you toil with it very much. — [Mid. Tadshei, Otzar Midrashim]",
+                    "hbw": "*בְּזֵעַת אַפֶּיךָ.* \nלְאַחַר שֶׁתִּטְרַח בּוֹ הַרְבֵּה:\n"
+                }
+            ]
+        },
+        {
+            "no": 20,
+            "eng": "And the man named his wife Eve, because she was the mother of all life.",
+            "hbw": "וַיִּקְרָ֧א הָֽאָדָ֛ם שֵׁ֥ם אִשְׁתּ֖וֹ חַוָּ֑ה כִּ֛י הִ֥וא הָֽיְתָ֖ה אֵ֥ם כָּל־חָֽי:",
+            "rsh": [
+                {
+                    "eng": "*And the man named.* Scripture returns to its previous topic (2:20): “And the man named,” and it interrupted only to teach you that through the giving of names, Eve was mated to him, as it is written (above 2:20): “but for man, he did not find a helpmate opposite him.” Therefore, (ibid. 21): “And He caused a deep sleep to fall,” and since Scripture wrote, (ibid. 25):“And they were naked,” it juxtaposed the section of the serpent, to let you know that because he saw her naked and saw them engaging in intercourse, he desired her and came upon them with a design and with guile.",
+                    "hbw": "*וַיִּקְרָא הָֽאָדָם.* \nחָזַר הַכָּתוּב לְעִנְיָנוֹ הָרִאשׁוֹן וַיִּקְרָא הָאָדָם שֵׁמוֹת, וְלֹא הִפְסִיק אֶלָּא לְלַמֶּדְךָ שֶׁעַל יְדֵי קְרִיאַת שֵׁמוֹת נִזְדַּוְּגָה לוֹ חַוָּה, כְּמוֹ שֶׁכָּתוּב וּלְאָדָם לֹא מָצָא עֵזֶר כְּנֶגְדּוֹ, לְפִיכָךְ, וַיַּפֵּל תַּרְדֵּמָה, וְעַל יְדֵי שֶׁכָּתַב וַיִּהְיוּ עֲרוּמִּים, סָמַךְ לוֹ פָּרָשַׁת הַנָּחָשׁ, לְהוֹדִיעֲךְ שֶׁמִּתּוֹךְ שֶׁרָאָה עֶרְוָתָהּ וְרָאָה אוֹתָם עֲסוּקִים בְּתַשְׁמִישׁ נִתְאַוָּה לָהּ וּבָא עֲלֵיהֶם בְּמַחֲשָׁבָה וּבְמִרְמָה:\n"
+                },
+                {
+                    "eng": "*Eve.* Heb. חַוָּה. This coincides with the expression of חַיָה, living, because she gives life to her offspring, as you say, (Ecc. 2:22):“For what does a man have (הֹוֶה) ?” with the expression“being” (הֹוֶה) . [i.e., The “vav” and the “yud” are interchangeable.]",
+                    "hbw": "*חַוָּה.* \nנוֹפֵל עַל לְשׁוֹן חַיָּה, שֶׁמְּחַיָּה אֶת וַלְדוֹתֶיהָ, כַּאֲשֶׁר תֹּאמַר מֶה הֹוֶה לָאָדָם (קהלת ב'), בִּלְשׁוֹן הָיָה:\n"
+                }
+            ]
+        },
+        {
+            "no": 21,
+            "eng": "And the Lord God made for Adam and for his wife shirts of skin, and He dressed them.",
+            "hbw": "וַיַּ֩עַשׂ֩ יְהֹוָ֨ה אֱלֹהִ֜ים לְאָדָ֧ם וּלְאִשְׁתּ֛וֹ כָּתְנ֥וֹת ע֖וֹר וַיַּלְבִּשֵֽׁם:",
+            "rsh": [
+                {
+                    "eng": "*shirts of skin.* Some Aggadic works say that they were as smooth as fingernails, fastened over their skin (Gen. Rabbah 20:12), and others say that they were a material that comes from the skin, like the wool of rabbits, which is soft and warm, and He made them shirts from it (Gen. Rabbah ad loc., Sotah 14a).",
+                    "hbw": "*כָּתְנוֹת עוֹר.* \nיֵשׁ דִּבְרֵי אַגָּדָה אוֹמְרִים חֲלָקִים כְּצִּפֹּרֶן הָיוּ מְדֻבָּקִים עַל עוֹרָן וְיֵשׁ אוֹמָרִים דָּבָר הַבָּא מִן הָעוֹר, כְּגוֹן צֶמֶר הָאַרְנָבִים שֶׁהוּא רַךְ וְחָם וְעָשָׂה לָהֶם כֻּתֳּנוֹת מִמֶּנּוּ:\n"
+                }
+            ]
+        },
+        {
+            "no": 22,
+            "eng": "Now the Lord God said, \"Behold man has become like one of us, having the ability of knowing good and evil, and now, lest he stretch forth his hand and take also from the Tree of Life and eat and live forever.\"",
+            "hbw": "וַיֹּ֣אמֶר | יְהֹוָ֣ה אֱלֹהִ֗ים הֵ֤ן הָֽאָדָם֙ הָיָה֙ כְּאַחַ֣ד מִמֶּ֔נּוּ לָדַ֖עַת ט֣וֹב וָרָ֑ע וְעַתָּ֣ה | פֶּן־יִשְׁלַ֣ח יָד֗וֹ וְלָקַח֙ גַּ֚ם מֵעֵ֣ץ הַֽחַיִּ֔ים וְאָכַ֖ל וָחַ֥י לְעֹלָֽם:",
+            "rsh": [
+                {
+                    "eng": "*has become like one of us, having the ability.* He is unique among the earthly beings, just as I am unique among the heavenly beings, and what is his uniqueness? To know good and evil, unlike the cattle and the beasts. — [from Targum Jonathan, Gen. Rabbah 21:5]",
+                    "hbw": "*הָיָה כְּאַחַד מִמֶּנּוּ.* \nהֲרֵי הוּא יָחִיד בַּתַּחְתּוֹנִים כְּמוֹ שֶׁאֲנִי יָחִיד בָּעֶלְיוֹנִים, וּמַה הִיא יְחִידוּתוֹ? לָדַעַת טוֹב וָרָע, מַה שֶּׁאֵין כֵּן בִּבְהֵמָה וְחַיָּה\n"
+                },
+                {
+                    "eng": "*and now, lest he stretch forth his hand, etc..* And if he were to live forever, he would be likely to mislead people to follow him and to say that he too is a deity (Gen. Rabbah 9:5). There are also Aggadic midrashim, but they cannot be reconciled with the simple meaning.",
+                    "hbw": "*וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ.* \nוּמִשֶּׁיִּחְיֶה לְעוֹלָם הֲרֵי הוּא קָרוֹב לְהַטְעוֹת הַבְּרִיּוֹת אַחֲרָיו, וְלוֹמַר אַף הוּא אֱלוֹהַּ. וְיֵשׁ מִדְרְשֵׁי אַגָּדָה, אֲבָל אֵין מְיֻשָּׁבִין עַל פְּשׁוּטוֹ:\n"
+                }
+            ]
+        },
+        {
+            "no": 23,
+            "eng": "And the Lord God sent him out of the Garden of Eden, to till the soil, whence he had been taken.",
+            "hbw": "וַיְשַׁלְּחֵ֛הוּ יְהֹוָ֥ה אֱלֹהִ֖ים מִגַּן־עֵ֑דֶן לַֽעֲבֹד֙ אֶת־הָ֣אֲדָמָ֔ה אֲשֶׁ֥ר לֻקַּ֖ח מִשָּֽׁם:",
+            "rsh": []
+        },
+        {
+            "no": 24,
+            "eng": "And He drove the man out, and He stationed from the east of the Garden of Eden the cherubim and the blade of the revolving sword, to guard the way to the Tree of Life.",
+            "hbw": "וַיְגָ֖רֶשׁ אֶת־הָֽאָדָ֑ם וַיַּשְׁכֵּן֩ מִקֶּ֨דֶם לְגַן־עֵ֜דֶן אֶת־הַכְּרֻבִ֗ים וְאֵ֨ת לַ֤הַט הַחֶ֨רֶב֙ הַמִּתְהַפֶּ֔כֶת לִשְׁמֹ֕ר אֶת־דֶּ֖רֶךְ עֵ֥ץ הַֽחַיִּֽים:",
+            "rsh": [
+                {
+                    "eng": "*east of the Garden of Eden.* in the east of the Garden of Eden, outside the garden. — [from Gen. Rabbah 21:9]",
+                    "hbw": "*מִקֶּדֶם לְגַן־עֵדֶן.* \nבְּמִזְרָחוֹ שֶׁל גַּן עֵדֶן חוּץ לַגַּן:\n"
+                },
+                {
+                    "eng": "*the cherubim.* Angels of destruction. — [from Exod. Rabbah 9:11]",
+                    "hbw": "*אֶת־הכרובים.* \nמַלְאֲכֵי חַבָּלָה:\n"
+                },
+                {
+                    "eng": "*the revolving sword.* It had a blade to frighten him from re-entering the garden. The Targum of לַהַט is שְׁנַן, like,“He drew the blade (שְׁנָנָא)” in Sanhedrin (82a), and in Old French it is lame. There are Aggadic midrashim, but I have come only to interpret its simple meaning.",
+                    "hbw": "*הַחֶרֶב הַמִּתְהַפֶּכֶת.* \nוְלָהּ לַהַט לְאַיֵּם עָלָיו מִלִּכָּנֵס עוֹד לַגַּן תַּרְגּוּם לַהַט שְׁנַן, כְּמוֹ שָׁלַף שְׁנָנָא וּבִלְשׁוֹן לַעַז לא\"מא וּמִדְרְשֵׁי אַגָּדָה יֵשׁ, וַאֲנִי אֵינִי בָא אֶלָּא לִפְשׁוּטוֹ:\n"
+                }
+            ]
+        }
+    ],
+    "parts": 1,
+    "books": 1
+}

@@ -1,0 +1,339 @@
+{
+    "partsName": "Torah (The Pentateuch)",
+    "booksName": "Bereshit (Genesis)",
+    "chapter": 2,
+    "jumlah": 25,
+    "ayat": [
+        {
+            "no": 1,
+            "eng": "Now the heavens and the earth were completed and all their host.",
+            "hbw": "וַיְכֻלּ֛וּ הַשָּׁמַ֥יִם וְהָאָ֖רֶץ וְכָל־צְבָאָֽם:",
+            "rsh": []
+        },
+        {
+            "no": 2,
+            "eng": "And God completed on the seventh day His work that He did, and He abstained on the seventh day from all His work that He did.",
+            "hbw": "וַיְכַ֤ל אֱלֹהִים֙ בַּיּ֣וֹם הַשְּׁבִיעִ֔י מְלַאכְתּ֖וֹ אֲשֶׁ֣ר עָשָׂ֑ה וַיִּשְׁבֹּת֙ בַּיּ֣וֹם הַשְּׁבִיעִ֔י מִכָּל־מְלַאכְתּ֖וֹ אֲשֶׁ֥ר עָשָֽׂה:",
+            "rsh": [
+                {
+                    "eng": "*And God completed on the seventh day.* Rabbi Shimon said: [A human being of] flesh and blood, who cannot [exactly] know his times and his moments, must add from the profane to the holy [i.e., he must add some time to the Sabbath.] The Holy One, blessed be He, Who knows His times and His moments [exactly], entered it [the Sabbath] within a hairbreadth, and it therefore appeared as if He completed it [His work] on that day. Another explanation: What was the world lacking? Rest. The Sabbath came, and so came rest. The work was completed and finished. — [from Gen. Rabbah 10:9]",
+                    "hbw": "*וַיְכַל אֱלֹהִים בַּיּוֹם הַשְּׁבִיעִי.* \nר' שִׁמְעוֹן אוֹמֵר בָּשָׂר וָדָם, שֶׁאֵינוֹ יוֹדֵעַ עִתָּיו וּרְגָעָיו צָרִיך לְהוֹסִיף מֵחֹל עַל הַקֹּדֶשׁ, הַקָּדוֹשׁ בָּרוּךְ הוּא שֶׁיּוֹדֵעַ עִתָּיו וּרְגָעָיו, נִכְנָס בֹּו כְּחוּט הַשַּׂעֲרָה, וְנִרְאֶה כְאִלּוּ כִלָּה בוֹ בַיֹּום. דָּבָר אַחֵר מֶה הָיָה הָעוֹלָם חָסֵר? מְנוּחָה, בָּאת שַׁבָּת בָּאת מְנוּחָה, כָּלְתָה וְנִגְמְרָה הַמְּלָאכָה:\n"
+                }
+            ]
+        },
+        {
+            "no": 3,
+            "eng": "And God blessed the seventh day and He hallowed it, for thereon He abstained from all His work that God created to do.",
+            "hbw": "וַיְבָ֤רֶךְ אֱלֹהִים֙ אֶת־י֣וֹם הַשְּׁבִיעִ֔י וַיְקַדֵּ֖שׁ אֹת֑וֹ כִּ֣י ב֤וֹ שָׁבַת֙ מִכָּל־מְלַאכְתּ֔וֹ אֲשֶׁר־בָּרָ֥א אֱלֹהִ֖ים לַֽעֲשֽׂוֹת:",
+            "rsh": [
+                {
+                    "eng": "*And…blessed…and hallowed.* He blessed it with manna, for on all the days of the week, it descended for them [in the amount of] an omer per person, whereas on the sixth day,[each one received] a double portion. And He hallowed it with manna, that it did not descend at all on the Sabbath. This verse is written with reference to the future. — [from Gen. Rabbah 11:2]",
+                    "hbw": "*וַיְבָרֶךְ וַיְקַדֵּשׁ.* \nבֵּרְכוֹ בַּמָּן, שֶׁכָּל יְמוֹת הַשָּׁבוּעַ יוֹרֵד לָהֶם עֹמֶר לַגֻּלְגֹּלֶת, וּבַשִּׁשִּׁי לֶחֶם מִשְׁנֶה, וְקִדְּשׁוֹ בַּמָּן, שֶׁלֹּא יָרַד כְּלָל בְּשַׁבָּת, וְהַמִּקְרָא כָּתוּב עַל הֶעָתִיד:\n"
+                },
+                {
+                    "eng": "*that God created to do.* The work that was fit to be done on the Sabbath, He doubled up and did it on the sixth [day], as is explained in Genesis Rabbah (11:9).",
+                    "hbw": "*אֲשֶׁר־בָּרָא אֱלֹהִים לַֽעֲשֽׂוֹת.* \nהַמְּלָאכָה שֶׁהָיְתָה רְאוּיָה לֵעָשׂוֹת בַּשַּׁבָּת, כָּפַל וַעֲשָׂאָהּ בַּשִּׁשִּׁי כְּמוֹ שֶׁמְּפֹרָשׁ בּבְּרֵאשִׁית רַבָּה:\n"
+                }
+            ]
+        },
+        {
+            "no": 4,
+            "eng": "These are the generations of the heavens and the earth when they were created, on the day that the Lord God made earth and heaven.",
+            "hbw": "אֵ֣לֶּה תֽוֹלְד֧וֹת הַשָּׁמַ֛יִם וְהָאָ֖רֶץ בְּהִ֣בָּֽרְאָ֑ם בְּי֗וֹם עֲשׂ֛וֹת יְהֹוָ֥ה אֱלֹהִ֖ים אֶ֥רֶץ וְשָׁמָֽיִם:",
+            "rsh": [
+                {
+                    "eng": "*These.* mentioned above.",
+                    "hbw": "*אֵלֶּה.* \nהָאֲמוּרִים לְמַעְלָה:\n"
+                },
+                {
+                    "eng": "*when they were created, on the day that the Lord…made.* This teaches you that they were all created on the first day (Gen. Rabbah 12:4). Another explanation of the word בְּהִבָּרְאָם He created them with the letter “hey,” as it is written (Isa. 26:4): “for in Yah (יָהּ), the Lord, is the Rock of eternity.” With these two letters [“yud” and “hey”] of the Name, He fashioned two worlds, and it teaches you here that this world was created with a “hey” (Men. 29b). (Other editions: It intimates that just as the “hey” is open at the bottom, so is the world open for the repentant. The World to Come was created with a “yud,” to tell you that the righteous at that [future] time, will be few as a “yud,” which is the smallest of the letters.) This intimates that the wicked will descend below to see the netherworld, like the [letter] “hey,” which is closed on all sides and open at the bottom, for them [the wicked] to descend through there. — [from Gen. Rabbah 12:10]",
+                    "hbw": "*תֽוֹלְדוֹת הַשָּׁמַיִם וְהָאָרֶץ בְּהִבָּֽרְאָם בְּיוֹם עֲשׂוֹת ה'.* \nלִמֶּדְךָ שֶׁכֻּלָּם נִבְרְאוּ בָרִאשׁוֹן. דָּבָר אַחֵר בְּהִבָּרְאָם, בְּה' בְרָאָם, שֶׁנ' בְיָהּ ה' צוּר עוֹלָמִים (ישעיהו כ\"ו), בְּב' אוֹתִיוֹת הַלָּלוּ שֶׁל הַשֵּׁם יָצַר שְׁנֵי עוֹלָמִים, וְלִמֶּדְךָ כָאן שֶׁהָעוֹלָם הַזֶּה נִבְרָא בְהֵ\"א, רֶמֶז שֶׁיָּרְדוּ לְמַטָּה לִרְאוֹת שַׁחַת כְּהֵ\"א זֹאת שֶׁסְּתוּמָה מִכָּל צְדָדִים וּפְתוּחָה לְמַטָּה לָרֶדֶת דֶּרֶךְ שָׁם:\n"
+                }
+            ]
+        },
+        {
+            "no": 5,
+            "eng": "Now no tree of the field was yet on the earth, neither did any herb of the field yet grow, because the Lord God had not brought rain upon the earth, and there was no man to work the soil.",
+            "hbw": "וְכֹ֣ל | שִׂ֣יחַ הַשָּׂדֶ֗ה טֶ֚רֶם יִֽהְיֶ֣ה בָאָ֔רֶץ וְכָל־עֵ֥שֶׂב הַשָּׂדֶ֖ה טֶ֣רֶם יִצְמָ֑ח כִּי֩ לֹ֨א הִמְטִ֜יר יְהֹוָ֤ה אֱלֹהִים֙ עַל־הָאָ֔רֶץ וְאָדָ֣ם אַ֔יִן לַֽעֲבֹ֖ד אֶת־הָֽאֲדָמָֽה:",
+            "rsh": [
+                {
+                    "eng": "*was yet on the earth.* Every טֶרֶם in Scripture has the meaning of “not yet,” and it does not mean“before,” and it cannot be made into a verb form, to say הִטְרִים, as one says הִקְדִּים This verse proves this, as well as another verse (Exod. 9:30): “כִּי טֶרֶם תִּירְאוּן, You will not yet fear.” This verse too should be explained to mean that [no tree] was yet on the earth (Targum Onkelos) when the creation of the world was completed on the sixth day, before man was created.",
+                    "hbw": "*טֶרֶם יִֽהְיֶה בָאָרֶץ.* \nכָּל טֶרֶם שֶׁבַּמִּקְרָא לְשׁוֹן עַד לֹא הוּא, וְאֵינוֹ לְשׁוֹן קֹדֶם, וְאֵינוֹ נִפְעָל לוֹמַר הִטְרִים, כַּאֲשֶׁר יֹאמַר הִקְדִים וְזֶה מוֹכִיחַ, וְעוֹד אַחֵר כִּי טֶרֶם תִּירְאוּן (שמות ט) עֲדַיִן לֹא תִירְאוּן, וְאַף זֶה תְפָרֵשׁ עֲדַיִן לֹא הָיָה בָאָרֶץ, כְּשֶׁנִּגְמְרָה בְרִיאַת הָעוֹלָם בַּשִּׁשִּׁי קֹדֶם שֶׁנִבְרָא אָדָם:\n"
+                },
+                {
+                    "eng": "*neither did any herb of the field yet grow.* [I.e.,] had not yet grown. And on the third [day], where it is written: “Let the earth bring forth,” they [the plants] had not yet emerged, but they stood at the entrance of the ground until the sixth day. And why?",
+                    "hbw": "*וְכָל עֵשֶׂב הַשָּׂדֶה טֶרֶם יִצְמַח.*  עֲדַיִן לֹא צָמַח, וּבְג' שֶׁכָּתוּב תּוֹצֵא הָאָרֶץ, לֹא יָצְאוּ, אֶלָּא עַל פֶּתַח קַרְקַע עָמְדוּ עַד יוֹם שִׁשִּׁי:\n"
+                },
+                {
+                    "eng": "*Because… not caused it to rain.* Because there was no man to work the soil, and no one recognized the benefit of rain, but when man came and understood that they were essential to the world, he prayed for them, and they fell, and the trees and the herbs sprouted. — [from Chul. 60b]",
+                    "hbw": "*כִּי לֹא הִמְטִיר.* \nוּמַאי טַמְעָא לֹא הִמְטִיר? לְפִי שֶׁאָדָם אַיִן לַעֲבֹד אֶת הָאֲדָמָה, וְאֵין מַכִּיר בְּטוֹבָתָם שֶׁל גְּשָׁמִים, וּכְשֶׁבָּא אָדָם וְיָדַע שֶׁהֵם צֹרֶךְ לָעוֹלָם, הִתְפַּלֵּל עֲלֵיהֶם וְיָרְדוּ וְצָמְחוּ הָאִילָנוֹת וְהַדְּשָׁאִים:\n"
+                },
+                {
+                    "eng": "*the Lord God.* יהוה is His name. אֱלֹהִים [means] that He is the Ruler and Judge over the entire world, and so is this defined everywhere according to its simple meaning: the Lord (יהוה ), Who is Ruler and Judge (אֱלֹהִים).",
+                    "hbw": "*ה' אֱלֹהִים.* \nה' הוּא שְׁמוֹ, אֱלֹהִים שֶׁהוּא שַׁלִּיט וְשׁוֹפֵט עַל כֹּל, וְכֵן פֵּרוּש זֶה בְּכָל מָקוֹם לְפִי פְּשׁוּטוֹ, ה' שֶׁהוּא אֱלֹהִים:\n"
+                }
+            ]
+        },
+        {
+            "no": 6,
+            "eng": "And a mist ascended from the earth and watered the entire surface of the ground.",
+            "hbw": "וְאֵ֖ד יַֽעֲלֶ֣ה מִן־הָאָ֑רֶץ וְהִשְׁקָ֖ה אֶת־כָּל־פְּנֵ֥י הָֽאֲדָמָֽה:",
+            "rsh": [
+                {
+                    "eng": "*And a mist ascended.* Concerning the creation of man, He brought up the [waters of the] deep and watered the clouds to soak the earth, and man was created; like the baker, who puts water [into the flour] and afterwards kneads the dough. Here too, “He watered,” and afterwards, “He formed” [man]. — [from Exod. Rabbah 30:113; Pirkei d’Rabbi Eliezer, ch. 5]",
+                    "hbw": "*וְאֵד יַֽעֲלֶה.* \nלְעִנְיַן בְּרִיאָתוֹ שֶׁל אָדָם, הֶעֱלָה הַתְּהוֹם וְהִשְׁקָה עֲנָנִים לִשְׁרוֹת הֶעָפָר וְנִבְרָא אָדָם, כְּגַבָּל זֶה, שֶׁנּוֹתֵן מַיִם וְאֲחַר כַּךְ לָשׁ אֶת הָעִסָּה, אַף כָּאן, וְהִשְׁקָה, וְאֲחַר כַּךְ וַיִּיצֶר:\n"
+                }
+            ]
+        },
+        {
+            "no": 7,
+            "eng": "And the Lord God formed man of dust from the ground, and He breathed into his nostrils the soul of life, and man became a living soul.",
+            "hbw": "וַיִּ֩יצֶר֩ יְהֹוָ֨ה אֱלֹהִ֜ים אֶת־הָֽאָדָ֗ם עָפָר֙ מִן־הָ֣אֲדָמָ֔ה וַיִּפַּ֥ח בְּאַפָּ֖יו נִשְׁמַ֣ת חַיִּ֑ים וַיְהִ֥י הָֽאָדָ֖ם לְנֶ֥פֶשׁ חַיָּֽה:",
+            "rsh": [
+                {
+                    "eng": "*formed.* [וַיִּיצֶר, with two “yuds,” hints at] two creations, a creation for this world and a creation for the [time of the] resurrection of the dead, but in connection with the animals, which do not stand in judgment, two“yuds” are not written in [the word וַיִּצֶר describing their creation. — [from Tan. Tazria 1]",
+                    "hbw": "*וַיִּיצֶר.* \nשְׁתֵּי יְצִירוֹת, יְצִירָה לָעוֹלָם הַזֶּה וִיצִירָה לִתְחִיַּת הַמֵּתִים, אֲבָל בַּבְּהֵמָה שֶׁאֵינָהּ עוֹמֶדֶת לַדִּין לֹא נִכְתַּב בִּיצִירָתָהּ שְׁנֵי יוֹדִי\"ן:\n"
+                },
+                {
+                    "eng": "*dust from the ground.* He gathered dust from the entire earth, from the four directions, so that wherever he [man] would die, it [the earth] would accept him for burial (Tan. Pekudei 3). Another explanation: He took his dust from the place of which it is said (Exod. 20:21): “You shall make Me an altar of earth.” If only it would be an atonement for him, so that he might endure! (Gen. Rabbah 14:8)",
+                    "hbw": "*עָפָר מִן־הָאֲדָמָה.* \nצָבַר עֲפְרוֹ מִכָּל הָאֲדָמָה מֵאַרְבַּע רוּחוֹת, שֶׁכָּל מָקוֹם שֶׁיָּמוּת שָׁם תְּהֵא קוֹלַטְתּוֹ לִקְבוּרָה. דָּבָר אַחֵר נָטַל עֲפָרוֹ מִמָּקוֹם שֶׁנֶּאֱמַר בּוֹ מִזְבַּח אֲדָמָה תַּעֲשֶׂה לִּי (שמות כ'), הַלְוַאי תִּהְיֶה לוֹ כַפָּרָה וְיוּכַל לַעֲמֹד:\n"
+                },
+                {
+                    "eng": "*and He breathed into his nostrils.* He made him of earthly matter and of heavenly matter: the body of earthly matter the soul of heavenly matter. Because on the first day, heaven and earth were created. On the second day, He created the firmament for the heavenly beings; on the third day [He commanded], “and let the dry land appear,” for the earthly beings; on the fourth day, He created luminaries for the heavenly beings; on the fifth day, [He commanded],“Let the waters swarm,” for the earthly beings; on the sixth day, it became necessary to create for both the heavenly and the earthly beings, for if not, there would be jealousy in the Creation, for these would exceed those by the creation of one day. — [from Gen. Rabbah 12:8]",
+                    "hbw": "*וַיִּפַּח בְּאַפָּיו.* \nעֲשָׂאוֹ מִן הַתַּחְתּוֹנִים וּמִן הָעֶלְיוֹנִים, גוּף מִן הַתַּחְתּוֹנִים וּנְשָׁמָה מִן הָעֶלְיוֹנִים, לְפִי שֶׁבְּיוֹם רִאשׁוֹן נִבְרְאוּ שָׁמַיִם וָאָרֶץ, בַּשֵּׁנִי בָּרָא רָקִיעַ לָעֶלְיוֹנִים, בַּשְּׁלִישִׁי תֵּרָאֶה הַיַּבָּשָׁה לַתַּחְתּוֹנִים, בָּרְבִיעִי בָּרָא מְאוֹרוֹת לָעֶלְיוֹנִים, בַּחֲמִישִׁי יִשְׁרְצוּ הַמַּיִם לַתַּחְתּוֹנִים, הֻזְקַק בַּשִּׁשִּׁי לִבְראוֹת בּוֹ בָעֶלְיוֹנִים וּבַתַּחְתּוֹנִים, וְאִם לָאו יֵשׁ קִנְאָה בְמַעֲשֵׂה בְרֵאשִׁית, שֶׁיִּהְיוּ אֵלּוּ רַבִּים עַל אֵלּוּ בִּבְרִיאַת יוֹם אֶחָד:\n"
+                },
+                {
+                    "eng": "*a living soul.* Cattle and beasts were also called living souls, but this one of man is the most alive of them all, because he was additionally given intelligence and speech.",
+                    "hbw": "*לְנֶפֶשׁ חַיָּֽה.* \nאַף בְּהֵמָה וְחַיָּה נִקְרְאוּ נֶפֶשׁ חַיָּה, אַךְ זוֹ שֶׁל אָדָם חַיָּה שֶׁבְּכֻלָּן, שֶׁנִתּוֹסֵף בּוֹ דֵּעָה וְדִבּוּר:\n"
+                }
+            ]
+        },
+        {
+            "no": 8,
+            "eng": "And the Lord God planted a garden in Eden from the east, and He placed there the man whom He had formed.",
+            "hbw": "וַיִּטַּ֞ע יְהֹוָ֧ה אֱלֹהִ֛ים גַּן־בְּעֵ֖דֶן מִקֶּ֑דֶם וַיָּ֣שֶׂם שָׁ֔ם אֶת־הָֽאָדָ֖ם אֲשֶׁ֥ר יָצָֽר:",
+            "rsh": [
+                {
+                    "eng": "*from the east.* Heb. מִקֶּדֶם. In the east of Eden, He planted the garden (Midrash Konen). Now if you ask: It has already been stated (above 1:27): “And He created man, etc.!” I saw in the Baraitha of Rabbi Eliezer the son of Rabbi Jose the Galilean concerning the thirty-two principles by which the Torah is expounded, and this is one of them [method 13]: A general statement followed by a specific act, the latter constitutes a specific [clarification] of the first [general statement]. “And He created man.” This is a general statement. It left obscure whence he was created, and it left His deeds obscure [i.e., how God created man]. The text repeats and explains: “And the Lord God formed, etc.,” and He made the Garden of Eden grow for him, and He placed him in the Garden of Eden, and He caused a deep sleep to fall upon him. The listener may think that this is another story, but it is only the detailed account of the former. Likewise, in the case of the animal, Scripture repeats and writes (below verse 19): “And the Lord God formed from the ground all the beasts of the field,” in order to explain, “and He brought [them] to man” to name them, and to teach about the fowl, that they were created from the mud.",
+                    "hbw": "*מִקֶּדֶם.* \nבְּמִזְרָחוֹ שֶׁל עֵדֶן נָטַע אֶת הַגָּן. וְאִם תֹּאמַר, הֲרֵי כְבָר כָּתַב וַיִּבְרְָא אֶת הָאָדָם וְגוֹ', רָאִיתִי בִּבְרַיְתָא שֶׁל ר\"א בְּנוֹ שֶׁל רַ' יוֹסֵי הַגְּלִילִי מל\"ב מִדּוֹת שֶׁהַתּוֹרָה נִדְרֶשֶׁת, וְזוֹ אַחַת מֵהֶן, כְּלָל שֶׁלְּאַחֲרָיו מַעֲשֶׂה הוּא פְרָטוֹ שֶׁל רִאשׁוֹן, וַיִּבְרָא אֶת הָאָדָם זֶהוּ כְּלָל, סָתַם בְּרִיאָתוֹ מֵהֵיכָן וְסָתַם מַעֲשָׂיו, חָזַר וּפֵרֵשׁ וַיִּיצֶר ה' אֱלֹהִים וְגוֹ', וַיַּצְמַח לוֹ גַּן עֵדֶן וַיַּנִּיחֵהוּ בְּגַן עֵדֶן וַיַּפֵּל עָלָיו תַּרְדֵּמָה, הַשּׁוֹמֵעַ סָבוּר שֶׁהוּא מַעֲשֶׂה אַחֵר, וְאֵינוֹ אֶלָּא פְרָטוֹ שֶׁל רִאשׁוֹן; וְכֵן אֵצֶל הַבְּהֵמָה חָזַר וְכָתַב וַיִּצֶר ה' וגו' מִן הָאֲדָמָה כָּל חַיַּת הַשָּׂדֶה, כְּדֵי לְפָרֵשׁ וַיָּבֵא אֶל הָאָדָם לִקְרוֹת שֵׁם וּלְלַמֵּד עַל הָעוֹפוֹת שֶׁנִּבְרְאוּ מִן הָרְקָק:\n"
+                }
+            ]
+        },
+        {
+            "no": 9,
+            "eng": "And the Lord God caused to sprout from the ground every tree pleasant to see and good to eat, and the Tree of Life in the midst of the garden, and the Tree of Knowledge of good and evil.",
+            "hbw": "וַיַּצְמַ֞ח יְהֹוָ֤ה אֱלֹהִים֙ מִן־הָ֣אֲדָמָ֔ה כָּל־עֵ֛ץ נֶחְמָ֥ד לְמַרְאֶ֖ה וְט֣וֹב לְמַֽאֲכָ֑ל וְעֵ֤ץ הַֽחַיִּים֙ בְּת֣וֹךְ הַגָּ֔ן וְעֵ֕ץ הַדַּ֖עַת ט֥וֹב וָרָֽע:",
+            "rsh": [
+                {
+                    "eng": "*And…caused to sprout.* Scripture speaks about the Garden. — [from Gen. Rabbah 13:1]",
+                    "hbw": "*וַיַּצְמַח.* \nלְעִנְיַן הַגַּן הַכָּתוּב מְדַבֵּר:\n"
+                },
+                {
+                    "eng": "*in the midst of the garden.* i.e., in the middle of the Garden. — [from Targumim]",
+                    "hbw": "*בְּתוֹךְ הַגָּן.* \nבָּאֶמְצַע:\n"
+                }
+            ]
+        },
+        {
+            "no": 10,
+            "eng": "And a river flowed out of Eden to water the garden, and from there it separated and became four heads.",
+            "hbw": "וְנָהָר֙ יֹצֵ֣א מֵעֵ֔דֶן לְהַשְׁק֖וֹת אֶת־הַגָּ֑ן וּמִשָּׁם֙ יִפָּרֵ֔ד וְהָיָ֖ה לְאַרְבָּעָ֥ה רָאשִֽׁים:",
+            "rsh": []
+        },
+        {
+            "no": 11,
+            "eng": "The name of one is Pishon; that is the one that encompasses all the land of Havilah, where there is gold.",
+            "hbw": "שֵׁ֥ם הָֽאֶחָ֖ד פִּישׁ֑וֹן ה֣וּא הַסֹּבֵ֗ב אֵ֚ת כָּל־אֶ֣רֶץ הַֽחֲוִילָ֔ה אֲשֶׁר־שָׁ֖ם הַזָּהָֽב:",
+            "rsh": [
+                {
+                    "eng": "*Pishon.* This is the Nile, the river of Egypt, and because its waters are blessed, and they rise and water the land, it is called Pishon, like Habakkuk 1:8):“and their riders shall increase (וּפָשׁוּ) .” (Unknown midrash, quoted by Zeror Hamor, below 41:1, Letters of Rabbi Akiva). Another explanation: [It is called] Pishon because it causes flax (פִשְׁתָן) to grow, as is stated in reference to Egypt (Isa. 19:9):“And those who work at flax (פִּשְׁתִּים)…shall be ashamed” (Gen. Rabbah 16:2).",
+                    "hbw": "*פִּישׁוֹן.* \nהוּא נִילוּס נְהַר מִצְרַיִם, וְעַל שֵׁם שֶׁמֵּימָיו מִתְבָּרְכִין וְעוֹלִין וּמַשְׁקִין אֶת הָאָרֶץ נִקְרָא פִישׁוֹן כְּמוֹ וּפָשׁוּ פָּרָשָׁיו (חבקוק א') דָּבָר אַחֵר פִּישׁוֹן, שֶׁהוּא מְגַדֵּל פִּשְׁתָּן, שֶׁנֶּאֱמַר עַל מִצְרַיִם (ישעיהו י\"ט) וּבֹשׁוּ עֹבְדֵי פִשְׁתִּים:\n"
+                }
+            ]
+        },
+        {
+            "no": 12,
+            "eng": "And the gold of that land is good; there is the crystal and the onyx stone.",
+            "hbw": "וּֽזֲהַ֛ב הָאָ֥רֶץ הַהִ֖וא ט֑וֹב שָׁ֥ם הַבְּדֹ֖לַח וְאֶ֥בֶן הַשֹּֽׁהַם:",
+            "rsh": []
+        },
+        {
+            "no": 13,
+            "eng": "And the name of the second river is Gihon; that is the one that encompasses all the land of Cush.",
+            "hbw": "וְשֵֽׁם־הַנָּהָ֥ר הַשֵּׁנִ֖י גִּיח֑וֹן ה֣וּא הַסּוֹבֵ֔ב אֵ֖ת כָּל־אֶ֥רֶץ כּֽוּשׁ:",
+            "rsh": [
+                {
+                    "eng": "*Gihon.* [It is named thus because] it flowed and roared, and its roaring was very great, like (Exod. 21: 28): “and if an [ox] gore (יִגַח),” for he gores and goes along and roars.",
+                    "hbw": "*גִּיחוֹן.* \nשֶׁהָיָה הוֹלֵךְ וְהוֹמֶה, וְהֶמְיָתוֹ גְדוֹלָה מְאֹד, כְּמוֹ וְכִי יִגַּח (שמות כ\"א), שֶׁמְּנַגֵּחַ וְהוֹלֵךְ וְהוֹמֶה:\n"
+                }
+            ]
+        },
+        {
+            "no": 14,
+            "eng": "And the name of the third river is Tigris; that is the one that flows to the east of Assyria, and the fourth river that is the Euphrates.",
+            "hbw": "וְשֵֽׁם־הַנָּהָ֤ר הַשְּׁלִישִׁי֙ חִדֶּ֔קֶל ה֥וּא הַֽהֹלֵ֖ךְ קִדְמַ֣ת אַשּׁ֑וּר וְהַנָּהָ֥ר הָֽרְבִיעִ֖י ה֥וּא פְרָֽת:",
+            "rsh": [
+                {
+                    "eng": "*Tigris.* Heb. חִדֶּקֶל, [thus called] because its waters are sharp (חַד) and light (קַל). - [from Ber. 59b.]",
+                    "hbw": "*חִדֶּקֶל.* \nשֶׁמֵּימָיו חַדִּין וְקַלִּין:\n"
+                },
+                {
+                    "eng": "*Euphrates.* Heb. פְרָת [thus called] because its waters are fruitful (פָרִין) and increase abundantly, and make people healthy (Bech. 55b, Keth. 77b).",
+                    "hbw": "*פְרָֽת.* \nשֶׁמֵּימָיו פָּרִין וְרָבִין וְמַבְרִין אֶת הָאָדָם:\n"
+                },
+                {
+                    "eng": "*Cush and Assyria.* These did not exist as yet, and Scripture wrote [their names] based on [the fact that they will exist in] the future. — [from Keth. 10b]",
+                    "hbw": "*כּוּשׁ וְאַשׁוּר.* \nעֲדַיִן לֹא הָיוּ, וְכָתַב הַמִּקְרָא עַל שֵׁם הֶעָתִיד:\n"
+                },
+                {
+                    "eng": "*to the east of Assyria.* Heb. קִדְמַת To the east of Assyria. — [from Targum Onkelos]",
+                    "hbw": "*קִדְמַת אַשּׁוּר.* \nלְמִזְרָחָהּ שֶׁל אַשּׁוּר:\n"
+                },
+                {
+                    "eng": "*that is the Euphrates.* The most important of all [the rivers] (Gen. Rabbah 16:3), [because it is] mentioned in conjunction with the Land of Israel (Shev. 47b).",
+                    "hbw": "*הוּא פְרָֽת.* הֶחָשׁוּב עַל כֻּלָּם, הַנִּזְכָּר עַל שֵׁם אֶרֶץ יִשְׂרָאֵל:\n"
+                }
+            ]
+        },
+        {
+            "no": 15,
+            "eng": "Now the Lord God took the man, and He placed him in the Garden of Eden to work it and to guard it.",
+            "hbw": "וַיִּקַּ֛ח יְהֹוָ֥ה אֱלֹהִ֖ים אֶת־הָֽאָדָ֑ם וַיַּנִּחֵ֣הוּ בְגַן־עֵ֔דֶן לְעָבְדָ֖הּ וּלְשָׁמְרָֽהּ:",
+            "rsh": [
+                {
+                    "eng": "*took.* He took him with pleasant words and enticed him to enter. — [Gen. Rabbah 16:5]",
+                    "hbw": "*וַיִּקַּח.* \nלְקָחוֹ בִדְבָרִים נָאִים וּפִתָּהוּ לִכָּנֵס (בראשית רבה):\n"
+                }
+            ]
+        },
+        {
+            "no": 16,
+            "eng": "And the Lord God commanded man, saying, \"Of every tree of the garden you may freely eat.",
+            "hbw": "וַיְצַו֙ יְהֹוָ֣ה אֱלֹהִ֔ים עַל־הָֽאָדָ֖ם לֵאמֹ֑ר מִכֹּ֥ל עֵֽץ־הַגָּ֖ן אָכֹ֥ל תֹּאכֵֽל:",
+            "rsh": []
+        },
+        {
+            "no": 17,
+            "eng": "But of the Tree of Knowledge of good and evil you shall not eat of it, for on the day that you eat thereof, you shall surely die.\"",
+            "hbw": "וּמֵעֵ֗ץ הַדַּ֨עַת֙ ט֣וֹב וָרָ֔ע לֹ֥א תֹאכַ֖ל מִמֶּ֑נּוּ כִּ֗י בְּי֛וֹם אֲכָלְךָ֥ מִמֶּ֖נּוּ מ֥וֹת תָּמֽוּת:",
+            "rsh": []
+        },
+        {
+            "no": 18,
+            "eng": "And the Lord God said, \"It is not good that man is alone; I shall make him a helpmate opposite him.\"",
+            "hbw": "וַיֹּ֨אמֶר֙ יְהֹוָ֣ה אֱלֹהִ֔ים לֹא־ט֛וֹב הֱי֥וֹת הָֽאָדָ֖ם לְבַדּ֑וֹ אֶֽעֱשֶׂה־לּ֥וֹ עֵ֖זֶר כְּנֶגְדּֽוֹ:",
+            "rsh": [
+                {
+                    "eng": "*It is not good, etc..* [Gen. Rabbah] Lest they [people] say, “There are two dominions: the Holy One, blessed be He, is alone among the heavenly beings, and He has no mate, and this one [man] among the earthly creatures, has no mate.”",
+                    "hbw": "*לֹא־טוֹב הֱיוֹת וגו'.* \nשֶׁלֹּא יֹאמְרוּ שְׁתֵּי רָשׁוּיוֹת הֵן, הַקָּדוֹשׁ בָּרוּךְ הוּא בָעֶליוֹנִים יָחִיד וְאֵין לוֹ זוּג, וְזֶה בַתַּחְתּוֹנִים וְאֵין לוֹ זוּג (בראשית רבה):\n"
+                },
+                {
+                    "eng": "*a helpmate opposite him.* If he is worthy, she will be a helpmate. If he is not worthy, she will be against him, to fight him. — [from Gen. Rabbah 17:3, Pirkei d’Rabbi Eliezer , ch. 12. See also Yev. 63a]",
+                    "hbw": "*עֵזֶר כְּנֶגְדּֽוֹ.* \nזָכָה – עֵזֶר; לֹא זָכָה – כְּנֶגְדּוֹ לְהִלָּחֵם:\n"
+                }
+            ]
+        },
+        {
+            "no": 19,
+            "eng": "And the Lord God formed from the earth every beast of the field and every fowl of the heavens, and He brought [it] to man to see what he would call it, and whatever the man called each living thing, that was its name.",
+            "hbw": "וַיִּ֩צֶר֩ יְהֹוָ֨ה אֱלֹהִ֜ים מִן־הָֽאֲדָמָ֗ה כָּל־חַיַּ֤ת הַשָּׂדֶה֙ וְאֵת֙ כָּל־ע֣וֹף הַשָּׁמַ֔יִם וַיָּבֵא֙ אֶל־הָ֣אָדָ֔ם לִרְא֖וֹת מַה־יִּקְרָא־ל֑וֹ וְכֹל֩ אֲשֶׁ֨ר יִקְרָא־ל֧וֹ הָֽאָדָ֛ם נֶ֥פֶשׁ חַיָּ֖ה ה֥וּא שְׁמֽוֹ:",
+            "rsh": [
+                {
+                    "eng": "*And God formed from the earth.* This “forming” is identical with the “making” mentioned above (1:25): “And God made the beasts of the earth, etc.” But it comes here to explain that the fowl were created from the mud, because it stated above that they were created from the water, and here it states that they were created from the earth (Chul. 27b). It also teaches you here that at the time of their forming, immediately on that day, He brought them to man to name them (Avoth d’Rabbi Nathan, ch. 1). And in the words of the Aggadah [Gen. Rabbah 17:4], this יְצִירה has the meaning of domination and conquest, like (Deut. 20:19):“When you besiege (תָצוּר) a city,” meaning that He subjugated them under man’s dominion.",
+                    "hbw": "*וַיִצֶר מִן־הָֽאֲדָמָה.* \nהִיא יְצִירָה הִיא עֲשִׂיָּה הָאֲמוּרָה לְמַעְלָה וַיַּעַשׂ אֱלֹהִים אֶת חַיַּת הָאָרֶץ וְגוֹ', אֶלָּא בָא וּפֵרֵשׁ שֶׁהָעוֹפוֹת נִבְרְאוּ מִן הָרְקָק, לְפִי שֶׁאָמַר לְמַעְלָה מִן הַמַּיִּם נִבְרְאוּ וְכָאן אָמַר מִן הָאָרֶץ נִבְרְאוּ (חולין כ\"ז), וְעוֹד לִמֶּדְךָ כָּאן שֶׁבִּשְׁעַת יְצִירָתָן מִיָּד בּוֹ בַיּוֹם הֱבִיאָם אֶל הָאָדָם לִקְרוֹת לָהֶם שֵׁם. וּבְדִבְרֵי אַגָּדָה יְצִירָה זוֹ לְשׁוֹן רִדּוּי וְכִבּוּשׁ, כְּמוֹ כִּי תָצוּר אֶל עִיר (דברים כ\"ד), שֶׁכְּבָשָׁן תַּחַת יָדוֹ שֶׁל אָדָם (בראשית רבה):\n"
+                },
+                {
+                    "eng": "*and whatever the man called each living thing..* Transpose it and explain it: Every living creature to which man would give a name-that was to be its name forever.",
+                    "hbw": "*וְכֹל אֲשֶׁר יִּקְרָא־לוֹ הָאָדָם נֶפֶשׁ חַיָּה וגו'.* \nסָרְסֵהוּ וּפָרְשֵׁהוּ, כֹּל נֶפֶשׁ חַיָּה אֲשֶׁר יִקְרָא לוֹ הָאָדָם שֵׁם, הוּא שְׁמוֹ לְעוֹלָם:\n"
+                }
+            ]
+        },
+        {
+            "no": 20,
+            "eng": "And man named all the cattle and the fowl of the heavens and all the beasts of the field, but for man, he did not find a helpmate opposite him.",
+            "hbw": "וַיִּקְרָ֨א הָֽאָדָ֜ם שֵׁמ֗וֹת לְכָל־הַבְּהֵמָה֙ וּלְע֣וֹף הַשָּׁמַ֔יִם וּלְכֹ֖ל חַיַּ֣ת הַשָּׂדֶ֑ה וּלְאָדָ֕ם לֹֽא־מָצָ֥א עֵ֖זֶר כְּנֶגְדּֽוֹ:",
+            "rsh": []
+        },
+        {
+            "no": 21,
+            "eng": "And the Lord God caused a deep sleep to fall upon man, and he slept, and He took one of his sides, and He closed the flesh in its place.",
+            "hbw": "וַיַּפֵּל֩ יְהֹוָ֨ה אֱלֹהִ֧ים | תַּרְדֵּמָ֛ה עַל־הָֽאָדָ֖ם וַיִּישָׁ֑ן וַיִּקַּ֗ח אַחַת֙ מִצַּלְעֹתָ֔יו וַיִּסְגֹּ֥ר בָּשָׂ֖ר תַּחְתֶּֽנָּה:",
+            "rsh": [
+                {
+                    "eng": "*And the Lord God caused a deep sleep to fall.* [Gen. Rabbah 17:4] When He brought them [the animals], He brought before him of every species, male and female. He (Adam) said, “Everyone has a mate, but I have no mate.” Immediately,“And God caused to fall.”",
+                    "hbw": "*ולאדם לא מצא עזר. וַיַּפֵּל ה' אֱלֹהִים תַּרְדֵּמָה.* \nכְּשֶׁהֱבִיאָן הֱבִיאָן לְפָנָיו כָּל מִין וָמִין זָכָר וּנְקֵבָה, אָמַר לְכֻלָּם יֵשׁ בֶּן זוּג וְלִי אֵין בֶּן זוּג, מִיָּד וַיַּפֵּל (בראשית רבה):\n"
+                },
+                {
+                    "eng": "*of his sides.* Heb. מִצַּלְעֹתיו, of his sides, like (Exod. 26:20):“And for the side (וּלְצֶלַע) of the Tabernacle.” This coincides with what they [the Rabbis] said: They were created with two faces. — [from Gen. Rabbah 8:1] See also Eruvin 18a, Ber. 61a.",
+                    "hbw": "*מִצַּלְעֹתָיו.* \nמִסְּטָרָיו, כְּמוֹ וּלְצֶלַע הַמִּשְׁכָּן (שמות כ\"ו), זֶהוּ שֶׁאָמְרוּ שְׁנֵי פַרְצוּפִים נִבְרְאוּ (עירובין י\"ז):\n"
+                },
+                {
+                    "eng": "*and He closed.* the place of the incision. — [from Ber. 61a, Eruv. 18a]",
+                    "hbw": "*וַיִּסְגֹּר.* \nמְקוֹם הַחֲתָךְ:\n"
+                },
+                {
+                    "eng": "*and he slept, and He took.* So that he should not see the piece of flesh from which she was created, lest she be repulsive to him. — [from Sanh. 39a]",
+                    "hbw": "*וַיִּישָׁן וַיִּקַּח.* \nשֶׁלֹּא יִרְאֶה חֲתִיכַת הַבָּשָׂר שֶׁמִּמֶּנוּ נִבְרֵאת וְתִתְבַּזֶּה עָלָיו:\n"
+                }
+            ]
+        },
+        {
+            "no": 22,
+            "eng": "And the Lord God built the side that He had taken from man into a woman, and He brought her to man.",
+            "hbw": "וַיִּ֩בֶן֩ יְהֹוָ֨ה אֱלֹהִ֧ים | אֶת־הַצֵּלָ֛ע אֲשֶׁר־לָקַ֥ח מִן־הָֽאָדָ֖ם לְאִשָּׁ֑ה וַיְבִאֶ֖הָ אֶל־הָֽאָדָֽם:",
+            "rsh": [
+                {
+                    "eng": "*[And He] built.* [He made her] like a building, broad at the bottom and narrow at the top, so that she can carry a fetus, like a storehouse of wheat, which is broad at the bottom and narrow on top, so that its burden should not weigh on its walls. — [from Ber. 61a, Eruv. 18a]",
+                    "hbw": "*וַיִּבֶן.* \nכְּבִִנְיָן, רְחָבָה מִלְּמַטָּה וּקְצָרָה מִלְּמַעְלָה לְקַבֵּל הַוָּלָד כְּאוֹצָר שֶׁל חִטִּים, שֶׁהוּא רָחָב מִלְּמַטָה וְקָצָר מִלְּמַעְלָה שֶׁלֹּא יַכְבִּיד מַשָּׂאוֹ עַל קִירוֹתָיו:\n"
+                },
+                {
+                    "eng": "*[And He] built the side…into a woman.* lit. to a woman, to become a woman, like (Jud. 8:27):“and Gideon made it into an ephod,” to be an ephod.",
+                    "hbw": "*וַיִּבֶן אֶת־הַצֵּלָע לְאִשָּׁה.* \nלִהְיוֹת אִשָּׁה, כְּמוֹ וַיַּעַשׂ אוֹתוֹ גִדְעוֹן לְאֵפוֹד (שופטים ח'), לִהְיוֹת אֵפוֹד:\n"
+                }
+            ]
+        },
+        {
+            "no": 23,
+            "eng": "And man said, \"This time, it is bone of my bones and flesh of my flesh. This one shall be called ishah (woman) because this one was taken from ish (man).\"",
+            "hbw": "וַיֹּ֘אמֶר֘ הָֽאָדָם֒ זֹ֣את הַפַּ֗עַם עֶ֚צֶם מֵֽעֲצָמַ֔י וּבָשָׂ֖ר מִבְּשָׂרִ֑י לְזֹאת֙ יִקָּרֵ֣א אִשָּׁ֔ה כִּ֥י מֵאִ֖ישׁ לֻֽקֳחָה־זֹּֽאת:",
+            "rsh": [
+                {
+                    "eng": "*This time.* This teaches us that Adam came to all the animals and the beasts [in search of a mate], but he was not satisfied until he found Eve. — [from Yev. 63a]",
+                    "hbw": "*זֹאת הַפַּעַם.* \nמְלַמֵּד שֶׁבָּא אָדָם עַל כָּל בְּהֵמָה וְחַיָּה, וְלֹא נִתְקָרְרָה דַעְתּוֹ בָּהֶם (יבמות ס\"ג):\n"
+                },
+                {
+                    "eng": "*This one shall be called ishah because, from ish.* One expression coincides with the other [i. e., the words אִישׁ and words אִשָּׁה have the same root]. From here is derived that the world was created with the Holy Tongue. — [from Gen. Rabbah 18:4]",
+                    "hbw": "*לְזֹאת יִקָּרֵא אִשָּׁה כִּי מֵאִישׁ וגו'.* \nלָשׁוֹן נוֹפֵל עַל לָשׁוֹן מִכָּאן שֶׁנִּבְרָא הָעוֹלָם בִּלְשׁוֹן הַקֹּדֶשׁ (בראשית רבה):\n"
+                }
+            ]
+        },
+        {
+            "no": 24,
+            "eng": "Therefore, a man shall leave his father and his mother, and cleave to his wife, and they shall become one flesh.",
+            "hbw": "עַל־כֵּן֙ יַֽעֲזָב־אִ֔ישׁ אֶת־אָבִ֖יו וְאֶת־אִמּ֑וֹ וְדָבַ֣ק בְּאִשְׁתּ֔וֹ וְהָי֖וּ לְבָשָׂ֥ר אֶחָֽד:",
+            "rsh": [
+                {
+                    "eng": "*Therefore, a man shall leave.* The Divine Spirit says this, to prohibit forbidden unions to the Noahides. — [from Sanh. 58a]",
+                    "hbw": "*עַל־כֵּן יַֽעֲזָב־אִישׁ.* \nרוּחַ הַקֹּדֶשׁ אוֹמְרָה כֵן לֶאֱסֹר עַל בְּנֵי נֹחַ הָעֲרָיוֹת (סנהדרין נ\"ז):\n"
+                },
+                {
+                    "eng": "*one flesh.* The fetus is formed by them both, and there [in the child] their flesh becomes one. — [from Sanh. 58a]",
+                    "hbw": "*לְבָשָׂר אֶחָֽד.* \nהַוָּלָד נוֹצָר עַל יְדֵי שְׁנֵיהֶם וְשָׁם נַעֲשֶׁה בְשָׂרָם אֶחָד (שם נ\"ח):\n"
+                }
+            ]
+        },
+        {
+            "no": 25,
+            "eng": "Now they were both naked, the man and his wife, but they were not ashamed.",
+            "hbw": "וַיִּֽהְי֤וּ שְׁנֵיהֶם֙ עֲרוּמִּ֔ים הָֽאָדָ֖ם וְאִשְׁתּ֑וֹ וְלֹ֖א יִתְבּשָֽׁשׁוּ:",
+            "rsh": [
+                {
+                    "eng": "*but they were not ashamed.* for they did not know the way of modesty, to distinguish between good and evil (Gen. Rabbah) (Targum Yerushalmi), and even though knowledge was granted him to call [all the creatures] names, he was not imbued with the evil inclination until he ate of the tree, and the evil inclination entered into him, and he knew the difference between good and evil (Gen. Rabbah) (Zohar, vol. 1, 36b; Mid. Tadshei 7).",
+                    "hbw": "*וְלֹא יתבוששו.* \nשֶׁלֹּא הָיוּ יוֹדְעִים דֶרֶךְ צְנִיעוּת לְהַבְחִין בֵּין טוֹב לָרָע, וְאַף עַל פִּי שֶׁנִּתְּנָה בוֹ דֵּעָה לִקְרוֹת לוֹ שֵׁמוֹת, לֹא נִתַּן בּוֹ יֵצֶר הָרָע עַד אָכְלוֹ מִן הָעֵץ וְנִכְנַס בּוֹ יֵצֶר הָרָע וְיָדַע מַה בֵּין טוֹב לָרָע (בראשית רבה):\n"
+                }
+            ]
+        }
+    ],
+    "parts": 1,
+    "books": 1
+}

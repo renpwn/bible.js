@@ -3,6 +3,7 @@ import path from 'path'
 import {fileURLToPath} from 'url'
 import * as cheerio from 'cheerio'
 import axios from 'axios'
+import https from 'https'
 import {
   openDB
 } from './db.js'
@@ -10,6 +11,15 @@ import {
 const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+/* =========================
+   HTTPS AGENT UNTUK BYPASS SSL
+========================= */
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false,
+  secureProtocol: 'TLSv1_2_method',
+  ciphers: 'DEFAULT:@SECLEVEL=1'
+});
 
 /* =========================
    DAFTAR KITAB ALKITAB
@@ -156,23 +166,108 @@ const BibleVersions = [{
     language: 'en',
     category: 'advance',
     supports_strong: true
+  },
+  {
+    id: 'nwt',
+    name: 'Terjemahan Dunia Baru',
+    language: 'id',
+    category: 'core'
+  },
+  {
+    id: 'tn',
+    name: 'Tanakh',
+    language: 'en,he',
+    category: 'core'
   }
 ]
+
+/* =========================
+    STRUKTUR TANAKH
+========================= */
+function buildChabadUrl(aid) {
+  return `https://www.chabad.org/library/bible_cdo/aid/${aid}`
+}
+
+function extractNextAid($) {
+  const href = $('a:contains("Next")').attr('href')
+  if (!href) return null
+  return Number(new URL(href, 'https://www.chabad.org').searchParams.get('aid'))
+}
+
+const Tanakh =[
+    {
+      "id": "torah",
+      "name": "Torah",
+      "books": [
+        { "he": "Bereshit", "en": "Genesis", "id": "Kejadian", "aid": 8165 },
+        { "he": "Shemot", "en": "Exodus", "id": "Keluaran", "aid": 8161 },
+        { "he": "Vayikra", "en": "Leviticus", "id": "Imamat", "aid": 8162 },
+        { "he": "Bamidbar", "en": "Numbers", "id": "Bilangan", "aid": 8163 },
+        { "he": "Devarim", "en": "Deuteronomy", "id": "Ulangan", "aid": 8164 }
+      ]
+    },
+    {
+      "id": "neviim",
+      "name": "Nevi'im",
+      "books": [
+        { "he": "Yehoshua", "en": "Joshua", "id": "Yosua", "aid": 15749 },
+        { "he": "Shoftim", "en": "Judges", "id": "Hakim-hakim", "aid": 15750 },
+        { "he": "Shmuel I", "en": "I Samuel", "id": "1 Samuel", "aid": 15751 },
+        { "he": "Shmuel II", "en": "II Samuel", "id": "2 Samuel", "aid": 15752 },
+        { "he": "Melachim I", "en": "I Kings", "id": "1 Raja-raja", "aid": 15753 },
+        { "he": "Melachim II", "en": "II Kings", "id": "2 Raja-raja", "aid": 15754 },
+        { "he": "Yeshayahu", "en": "Isaiah", "id": "Yesaya", "aid": 15755 },
+        { "he": "Yirmiyahu", "en": "Jeremiah", "id": "Yeremia", "aid": 15756 },
+        { "he": "Yechezkel", "en": "Ezekiel", "id": "Yehezkiel", "aid": 16098 },
+        { "he": "Hoshea", "en": "Hosea", "id": "Hosea", "aid": 15758 },
+        { "he": "Yoel", "en": "Joel", "id": "Yoel", "aid": 15759 },
+        { "he": "Amos", "en": "Amos", "id": "Amos", "aid": 15760 },
+        { "he": "Ovadiah", "en": "Obadiah", "id": "Obaja", "aid": 15761 },
+        { "he": "Yonah", "en": "Jonah", "id": "Yunus", "aid": 15762 },
+        { "he": "Michah", "en": "Micah", "id": "Mikha", "aid": 15763 },
+        { "he": "Nachum", "en": "Nahum", "id": "Nahum", "aid": 15764 },
+        { "he": "Chavakuk", "en": "Habakkuk", "id": "Habakuk", "aid": 15765 },
+        { "he": "Tzefaniah", "en": "Zephaniah", "id": "Zefanya", "aid": 15766 },
+        { "he": "Chaggai", "en": "Haggai", "id": "Hagai", "aid": 15767 },
+        { "he": "Zechariah", "en": "Zechariah", "id": "Zakharia", "aid": 15768 },
+        { "he": "Malachi", "en": "Malachi", "id": "Maleakhi", "aid": 15769 }
+      ]
+    },
+    {
+      "id": "ketuvim",
+      "name": "Ketuvim",
+      "books": [
+        { "he": "Tehillim", "en": "Psalms", "id": "Mazmur", "aid": 15770 },
+        { "he": "Mishlei", "en": "Proverbs", "id": "Amsal", "aid": 15771 },
+        { "he": "Iyov", "en": "Job", "id": "Ayub", "aid": 15772 },
+        { "he": "Shir Hashirim", "en": "Song of Songs", "id": "Kidung Agung", "aid": 15780 },
+        { "he": "Rut", "en": "Ruth", "id": "Rut", "aid": 15778 },
+        { "he": "Eichah", "en": "Lamentations", "id": "Ratapan", "aid": 15781 },
+        { "he": "Kohelet", "en": "Ecclesiastes", "id": "Pengkhotbah", "aid": 15779 },
+        { "he": "Esther", "en": "Esther", "id": "Ester", "aid": 15782 },
+        { "he": "Daniel", "en": "Daniel", "id": "Daniel", "aid": 15773 },
+        { "he": "Ezra", "en": "Ezra", "id": "Ezra", "aid": 15774 },
+        { "he": "Nechemiah", "en": "Nehemiah", "id": "Nehemia", "aid": 15775 },
+        { "he": "Divrei Hayamim I", "en": "Chronicles I", "id": "1 Tawarikh", "aid": 15776 },
+        { "he": "Divrei Hayamim II", "en": "Chronicles II", "id": "2 Tawarikh", "aid": 15777 }
+      ]
+    }
+  ]
+
 
 /* =========================
    KONFIGURASI
 ========================= */
 let db = null
-const DB_PATH = "./bible.db"
+const DB_PATH = "./db/bible.db"
 const DIR = "./json"
 const DIR_MIN = "./json_min"
 const DIR_LEXICON = "./lexicon";
 const DIR_LEXICON_MIN = "./lexicon_min";
 
 // Helper untuk mendapatkan __dirname di ES Module
-const __filename = fileURLToPath(
-  import.meta.url)
-const __dirname = path.dirname(__filename)
+// const __filename = fileURLToPath(import.meta.url)
+// const __dirname = path.dirname(__filename)
 
 // Helper untuk escape string SQL
 function esc(s = "") {
@@ -434,14 +529,17 @@ class LexiconQueue {
    FUNGSI UMUM
 ========================= */
 
-async function fetchUrl(url, options = {}, retryCount = 3) {
+async function fetchUrl0(url, options = {}, retryCount = 3) {
   for (let i = 0; i < retryCount; i++) {
     try {
       const res = await axios({
         method: 'GET',
         url,
         headers: {
-          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+          'user-agent': 'PostmanRuntime/7.49.1',
+          'cookie': '__cf_bm=c2KC9rOFkB7WVLHKHDJm4cfQ62EWXUsGv8XjehPlzLU-1767389679-1.0.1.1-vPBhytk7Tvg5NDh_CmfKS4PY2vmpyb94aAxPLWWefaym4jIlxvet7uLATbBUX80SAUqc_Y3F5jSVI6hthhvnajKT3Sk2CedhyTQ6USx4J2KQxGLXcebVEUoAQ6rG6DSu; _cfuvid=DDaUanJ4nCRwiEAidT0v3i9N0HMie0pEWVTo8OE6DEA-1767389565242-0.0.1.1-604800000',
+          'postman-token': '<calculated when request is sent>',
+          'host': '<calculated when request is sent>',
           'accept': 'text/html,application/xhtml+xml,application/xml',
           'accept-language': 'id-ID,id;q=0.9,en;q=0.8',
           ...options.headers
@@ -451,36 +549,115 @@ async function fetchUrl(url, options = {}, retryCount = 3) {
       })
       return res.data
     } catch (err) {
-      console.log(`⏳ Retry ${i + 1}/${retryCount} untuk ${url}`)
+      console.log(`⏳ Retry ${i + 1}/${retryCount} untuk ${url}, error: ${err.message}`)
       if (i === retryCount - 1) throw err
       await sleep(5000 * (i + 1))
     }
   }
 }
 
-async function buildSabdaUrl(bookId, chapter, versions = BibleVersions) {
-  // Parameter altver untuk versi tambahan
-  const altVersions = versions
-    .filter(v => v.id !== 'tb') // TB adalah versi utama
-    .map(v => `altver%5B%5D=${v.id}`)
-    .join('&')
+async function fetchUrl1(url, options = {}, retryCount = 3) {
+  for (let i = 0; i < retryCount; i++) {
+    try {
+      const isHttps = url.startsWith('https://');
+      const axiosConfig = {
+        method: 'GET',
+        url,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept-Encoding': 'gzip, deflate, br',
+          'Connection': 'keep-alive',
+          'Upgrade-Insecure-Requests': '1',
+          'Sec-Fetch-Dest': 'document',
+          'Sec-Fetch-Mode': 'navigate',
+          'Sec-Fetch-Site': 'none',
+          'Sec-Fetch-User': '?1',
+          'Cache-Control': 'max-age=0',
+          ...options.headers
+        },
+        timeout: 30000,
+        ...options
+      };
 
-  const baseUrl = `https://sabdaweb.sabda.org/bible/chapter/`
-  const params = new URLSearchParams({
-    b: bookId,
-    c: chapter,
-    v: 1,
-    version: 'tb',
-    view: 'column',
-    page: 'chapter',
-    lang: 'indonesia',
-    theme: 'clearsky'
-  })
+      // Gunakan agent khusus untuk HTTPS
+      if (isHttps) {
+        axiosConfig.httpsAgent = httpsAgent;
+        axiosConfig.httpAgent = httpsAgent;
+      }
 
-  // Tambahkan altver parameters
-  const altParams = altVersions ? `&${altVersions}` : ''
+      const res = await axios(axiosConfig);
+      return res.data;
+    } catch (err) {
+      console.log(`⏳ Retry ${i + 1}/${retryCount} untuk ${url}, error: ${err.message}`);
+      if (i === retryCount - 1) throw err;
+      await sleep(5000 * (i + 1));
+    }
+  }
+}
 
-  return `${baseUrl}?${params.toString()}${altParams}`
+async function fetchUrl(url, options = {}, retryCount = 3) {
+  for (let i = 0; i < retryCount; i++) {
+    try {
+      const isHttps = url.startsWith('https://');
+      const isChabad = url.includes('chabad.org');
+      const axiosConfig = {
+        method: 'GET',
+        url,
+        headers: {
+          // Use a realistic, up-to-date user agent
+          'x-vary': 'User-Agent',
+          'user-agent': 'Solaretour/1.0.0',
+          // 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          // 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+          // 'Accept-Language': 'en-US,en;q=0.5',
+          // 'Accept-Encoding': 'gzip, deflate, br',
+          // 'Connection': 'keep-alive',
+          // 'Upgrade-Insecure-Requests': '1',
+          // 'Sec-Fetch-Dest': 'document',
+          // 'Sec-Fetch-Mode': 'navigate',
+          // 'Sec-Fetch-Site': 'none',
+          // 'Sec-Fetch-User': '?1',
+          // 'Cache-Control': 'max-age=0',
+          ...options.headers
+        },
+        ...options
+      };
+
+      // Use the HTTPS agent that ignores SSL verification
+      if (isHttps) {
+        // axiosConfig.httpsAgent = httpsAgent;
+      }
+
+      if (isChabad) {
+        // axiosConfig.headers['Host'] = 'www.chabad.org';
+        // axiosConfig.headers['x-vary'] = 'User-Agent';
+        // axiosConfig.headers['user-agent'] = 'Solaretour/1.0.0';
+        // axiosConfig.headers['User-Agent'] = 'PostmanRuntime/7.49.1';
+        // axiosConfig.headers['Cookie'] = '__cf_bm=niT0ByevpUlbWnD07.21r9ff8VTEnhUrYraUYA7r4zo-1767391589-1.0.1.1-6qSfDLOAYqtmISbzxsmPuWiWYC0BjhEiXkAFW_.VU2ZbbtteFIdTTFARGdTvW8K8Awo5QZLGAz9ccvqQNGZvBrtKvtzIsvW.4SXmTpV_9tmZtMe4N6de7gODuR0XgTjf; _cfuvid=7mDp0G65YtyxZrnZF4JpxVPVh9iY9z6iKwIhAf4E3eY-1767391589236-0.0.1.1-604800000';
+      }
+
+      const res = await axios(axiosConfig);
+      return res.data;
+    } catch (err) {
+      // Check if it's a 403 error
+      console.log(err)
+      if (err.response && err.response.status === 403) {
+        console.log(`⛔ 403 Forbidden on try ${i + 1}/${retryCount} for ${url}`);
+        // Wait longer between retries on a 403 (exponential backoff)
+        const waitTime = 10000 * (i + 1); // 10 seconds, then 20, then 30
+        console.log(`⏳ Waiting ${waitTime/1000} seconds before retry...`);
+        await sleep(waitTime);
+      } else {
+        // For other errors, use the standard retry logic
+        console.log(`⏳ Retry ${i + 1}/${retryCount} for ${url}, error: ${err.message}`);
+        if (i === retryCount - 1) throw err;
+        await sleep(5000 * (i + 1));
+      }
+    }
+  }
+  throw new Error(`All ${retryCount} retry attempts failed for ${url}`);
 }
 
 /* =========================
@@ -631,17 +808,46 @@ async function parseChapterHTML(html, bookId, chapter, targetVersions) {
   };
 }
 
+/* =========================
+   GET CHAPTER DATA - DUAL SOURCE
+========================= */
+
 async function getChapterData(bookId, chapter, targetVersions) {
   try {
-    const url = `https://sabdaweb.sabda.org/bible/chapter/?b=${bookId}&c=${chapter}&v=1&version=tb&altver%5B%5D=bis&altver%5B%5D=tl&altver%5B%5D=ende&altver%5B%5D=tb_itl_drf&altver%5B%5D=tl_itl_drf&altver%5B%5D=bbe&altver%5B%5D=message&altver%5B%5D=nkjv&altver%5B%5D=net&altver%5B%5D=net2&view=column&page=chapter&lang=indonesia&theme=clearsky`
     console.log(`🌐 Fetching: ${BibleBooks[bookId-1][0]} ${chapter}`)
-
-    const html = await fetchUrl(url)
-    const chapterData = await parseChapterHTML(html, bookId, chapter, targetVersions)
-
+    
+    let sabdaData = null;
+    let chabadData = null;
+    
+    // Fetch dari SABDAweb
+    try {
+      const url = `https://sabdaweb.sabda.org/bible/chapter/?b=${bookId}&c=${chapter}&v=1&version=tb&altver%5B%5D=bis&altver%5B%5D=tl&altver%5B%5D=ende&altver%5B%5D=tb_itl_drf&altver%5B%5D=tl_itl_drf&altver%5B%5D=bbe&altver%5B%5D=message&altver%5B%5D=nkjv&altver%5B%5D=net&altver%5B%5D=net2&view=column&page=chapter&lang=indonesia&theme=clearsky`
+      const html = await fetchUrl(url)
+      sabdaData = await parseChapterHTML(html, bookId, chapter, targetVersions)
+    } catch (error) {
+      console.error(`❌ Gagal ambil dari SABDAweb ${bookId}:${chapter}:`, error.message)
+    }
+    
+    // Fetch dari Chabad.org untuk Tanakh
+    try {
+      const isTanakh = bookId <= 39; // Perjanjian Lama
+      if (isTanakh) {
+        chabadData = await fetchChabadData(bookId, chapter);
+      }
+    } catch (error) {
+      console.error(`❌ Gagal ambil dari Chabad ${bookId}:${chapter}:`, error.message)
+    }
+    
+    // Gabungkan data dari kedua sumber
+    const combinedData = await combineChapterData(sabdaData, chabadData, bookId, chapter);
+    
     return {
-      success: true,
-      data: chapterData
+      success: sabdaData || chabadData,
+      data: combinedData,
+      sources: {
+        sabda: !!sabdaData,
+        chabad: !!chabadData
+      }
     }
   } catch (error) {
     console.error(`❌ Gagal ambil ${bookId}:${chapter}:`, error.message)
@@ -652,6 +858,222 @@ async function getChapterData(bookId, chapter, targetVersions) {
       chapter
     }
   }
+}
+
+/* =========================
+   FETCH CHABAD DATA
+========================= */
+
+async function fetchChabadData(bookId, chapter) {
+  // Cari book info dari struktur Tanakh
+  const tanakhBook = findTanakhBook(bookId);
+  if (!tanakhBook) {
+    console.log(`⚠️ Kitab ${bookId} tidak ditemukan dalam Tanakh`);
+    return null;
+  }
+  
+  const { aid, he, en } = tanakhBook;
+  
+  try {
+    // Bangun URL Chabad
+    const url = buildChabadUrl(aid+(chapter - 1));
+    
+    console.log(`🌐 Chabad: ${he} (${en}) Pasal ${chapter} Aid ${aid+(chapter - 1)}`);
+
+    const html = await fetchUrl(url);
+
+    return await parseChabadHTML(html, bookId, chapter, aid);
+  } catch (error) {
+    throw error;
+  }
+}
+
+/* =========================
+   FIND TANAKH BOOK
+========================= */
+
+function findTanakhBook(bookId) {
+  // Mapping dari ID Alkitab ke kitab Tanakh
+  const bookName = BibleBooks[bookId - 1][0];
+  
+  // Cari di semua bagian Tanakh
+  for (const section of Tanakh) {
+    for (const book of section.books) {
+      if (book.id === bookName) {
+        return {
+          aid: book.aid,
+          he: book.he,
+          en: book.en,
+          id: book.id
+        };
+      }
+    }
+  }
+  
+  return null;
+}
+
+/* =========================
+   PARSE CHABAD HTML
+========================= */
+
+async function parseChabadHTML(html, bookId, chapter, aid) {
+  const $ = cheerio.load(html);
+  const verses = [];
+  
+  // Ekstrak teks Ibrani dan Inggris dari tabel Chabad
+  $('.Co_TanachTable tr.Co_Verse').each((index, row) => {
+    const cells = $(row).find('td');
+    
+    // Kolom 0: Inggris, Kolom 2: Ibrani
+    const englishCell = $(cells[0]);
+    const hebrewCell = $(cells[2]);
+    
+    // Ekstrak nomor ayat
+    const verseNumElement = englishCell.find('a.co_VerseNum');
+    const verseNum = parseInt(verseNumElement.attr('id')?.replace('v', '') || verseNumElement.text()) || (index + 1);
+    
+    // Ekstrak teks
+    const englishText = englishCell.find('.co_VerseText').text().trim();
+    const hebrewText = hebrewCell.find('.co_VerseText').text().trim();
+    
+    // Ekstrak komentar Rashi jika ada
+    const rashiComment = extractRashiComment($, verseNum);
+    
+    verses.push({
+      verse: verseNum,
+      tn_he: hebrewText,
+      tn_en: englishText,
+      rashi: rashiComment
+    });
+  });
+  
+  // Ekstrak next aid untuk navigasi
+  const nextAid = extractNextAid($);
+  
+  return {
+    bookId,
+    chapter,
+    aid,
+    nextAid,
+    verses,
+    totalVerses: verses.length,
+    source: 'chabad'
+  };
+}
+
+/* =========================
+   EXTRACT RASHI COMMENT
+========================= */
+
+function extractRashiComment($, verseNum) {
+  // Cari baris Rashi setelah ayat
+  const rashiRow = $(`.Co_Rashi:has(a[href="#v${verseNum}"])`);
+  if (rashiRow.length) {
+    // Kolom 0: Inggris, Kolom 2: Ibrani
+    const englishRashi = rashiRow.find('td').eq(0).find('.co_RashiText').text().trim();
+    const hebrewRashi = rashiRow.find('td').eq(2).find('.co_RashiText').text().trim();
+    
+    return {
+      en: englishRashi,
+      he: hebrewRashi
+    };
+  }
+  return null;
+}
+
+/* =========================
+   COMBINE CHAPTER DATA
+========================= */
+
+async function combineChapterData(sabdaData, chabadData, bookId, chapter) {
+  const baseData = {
+    bookId,
+    chapter,
+    verses: [],
+    totalVerses: 0,
+    sources: {},
+    strongNumbers: []
+  };
+  
+  // Jika hanya ada data dari SABDA
+  if (sabdaData && !chabadData) {
+    baseData.verses = sabdaData.verses;
+    baseData.totalVerses = sabdaData.totalVerses;
+    baseData.strongNumbers = sabdaData.strongNumbers || [];
+    baseData.sources = { sabda: true, chabad: false };
+    return baseData;
+  }
+  
+  // Jika hanya ada data dari Chabad
+  if (!sabdaData && chabadData) {
+    // Konversi format Chabad ke format SABDA
+    baseData.verses = chabadData.verses.map(v => ({
+      verse: v.verse,
+      texts: {
+        tn_he: v.tn_he,
+        tn_en: v.tn_en
+      },
+      notes: v.rashi ? { rashi: v.rashi } : {},
+      chabad: {
+        he: v.tn_he,
+        en: v.tn_en,
+        rashi: v.rashi
+      }
+    }));
+    baseData.totalVerses = chabadData.totalVerses;
+    baseData.aid = chabadData.aid;
+    baseData.nextAid = chabadData.nextAid;
+    baseData.sources = { sabda: false, chabad: true };
+    return baseData;
+  }
+  
+  // Jika ada data dari kedua sumber, gabungkan
+  if (sabdaData && chabadData) {
+    // Buat map dari data Chabad untuk memudahkan penggabungan
+    const chabadMap = {};
+    chabadData.verses.forEach(v => {
+      chabadMap[v.verse] = {
+        he: v.tn_he,
+        en: v.tn_en,
+        rashi: v.rashi
+      };
+    });
+    
+    // Gabungkan data SABDA dengan data Chabad
+    baseData.verses = sabdaData.verses.map(sabdaVerse => {
+      const chabadVerse = chabadMap[sabdaVerse.verse];
+      
+      if (chabadVerse) {
+        // Tambahkan data Chabad ke dalam texts
+        return {
+          ...sabdaVerse,
+          texts: {
+            ...sabdaVerse.texts,
+            tn_he: chabadVerse.he,
+            tn_en: chabadVerse.en
+          },
+          notes: {
+            ...sabdaVerse.notes,
+            rashi: chabadVerse.rashi
+          },
+          chabad: chabadVerse
+        };
+      }
+      
+      return sabdaVerse;
+    });
+    
+    baseData.totalVerses = Math.max(sabdaData.totalVerses, chabadData.totalVerses);
+    baseData.strongNumbers = sabdaData.strongNumbers || [];
+    baseData.aid = chabadData.aid;
+    baseData.nextAid = chabadData.nextAid;
+    baseData.sources = { sabda: true, chabad: true };
+    
+    return baseData;
+  }
+  
+  return baseData;
 }
 
 /* =========================
