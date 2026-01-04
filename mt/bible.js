@@ -260,7 +260,7 @@ if (isTermux) {
   const jar = new CookieJar();
   const client = wrapper(axios.default.create({ jar }));
 
-  fetchUrl = async (url) => {
+  fetchUrl = async (url, options = {}) => {
     try {
       const res = await client.get(url, {
         headers: {
@@ -271,7 +271,7 @@ if (isTermux) {
           "Accept-Language": "en-US,en;q=0.9",
           "Cache-Control": "no-cache",
           Pragma: "no-cache",
-          Referer: "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"
+          ...(options?.headers || {})
         },
         maxRedirects: 10,
         timeout: 20000
@@ -593,7 +593,9 @@ function toSuperscript(num) {
   return '⁽' + String(num).split('').map(n => sup[n]).join('') + '⁾'
 }
 
-async function parseChapterHTML(html, bookId, chapter, targetVersions) {
+async function fetchSabdaData(bookId, chapter, targetVersions) {
+  const url = `https://sabdaweb.sabda.org/bible/chapter/?b=${bookId}&c=${chapter}&v=1&version=tb&altver%5B%5D=bis&altver%5B%5D=tl&altver%5B%5D=ende&altver%5B%5D=tb_itl_drf&altver%5B%5D=tl_itl_drf&altver%5B%5D=bbe&altver%5B%5D=message&altver%5B%5D=nkjv&altver%5B%5D=net&altver%5B%5D=net2&view=column&page=chapter&lang=indonesia&theme=clearsky`
+  const html = await fetchUrl(url)
   const $ = cheerio.load(html);
   const verses = [];
   const strongNumbers = new Set();
@@ -742,15 +744,21 @@ async function getChapterData(bookId, chapter, targetVersions) {
     console.log(`🌐 Sabda: ${BibleBooks[bookId-1][0]} ${chapter}`)
     
     let sabdaData = null;
+    let nwtData = null;
     let chabadData = null;
     
     // Fetch dari SABDAweb
     try {
-      const url = `https://sabdaweb.sabda.org/bible/chapter/?b=${bookId}&c=${chapter}&v=1&version=tb&altver%5B%5D=bis&altver%5B%5D=tl&altver%5B%5D=ende&altver%5B%5D=tb_itl_drf&altver%5B%5D=tl_itl_drf&altver%5B%5D=bbe&altver%5B%5D=message&altver%5B%5D=nkjv&altver%5B%5D=net&altver%5B%5D=net2&view=column&page=chapter&lang=indonesia&theme=clearsky`
-      const html = await fetchUrl(url)
-      sabdaData = await parseChapterHTML(html, bookId, chapter, targetVersions)
+      sabdaData = await fetchSabdaData(bookId, chapter, targetVersions)
     } catch (error) {
       console.error(`❌ Gagal ambil dari SABDAweb ${bookId}:${chapter}:`, error.message)
+    }
+    
+    // Fetch dari JW.org untuk NWT
+    try {
+      nwtData = await fetchNWTData(bookId, chapter);
+    } catch (error) {
+      console.error(`❌ Gagal ambil dari NWT ${bookId}:${chapter}:`, error.message)
     }
     
     // Fetch dari Chabad.org untuk Tanakh
@@ -764,7 +772,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
     }
     
     // Gabungkan data dari kedua sumber
-    const combinedData = await combineChapterData(sabdaData, chabadData, bookId, chapter);
+    const combinedData = await combineChapterData(sabdaData, nwtData, chabadData, bookId, chapter);
     
     return {
       success: sabdaData || chabadData,
@@ -789,6 +797,82 @@ async function getChapterData(bookId, chapter, targetVersions) {
    FETCH CHABAD DATA
 ========================= */
 
+async function fetchNWTData(bookId, chapter){
+  const html = await fetchHtml(`https://wol.jw.org/id/wol/b/r25/lp-in/nwtsty/${bookId}/${chapter}#study=discover`);
+  if (!html) return null;
+
+  const $ = cheerio.load(html);
+  const versesMap = new Map();
+
+  $("span.v").each((_, el) => {
+    const $v = $(el);
+
+    // ==== ambil nomor ayat ====
+    let verse = null;
+
+    // dari <strong>
+    const strongNum = $v.find("strong").first().text().trim();
+    if (/^\d+$/.test(strongNum)) {
+      verse = Number(strongNum);
+    }
+
+    // dari <a> (tanpa child)
+    if (verse === null) {
+      const aNum = $v
+        .find("a")
+        .first()
+        .clone()
+        .children()
+        .remove()
+        .end()
+        .text()
+        .trim();
+      if (/^\d+$/.test(aNum)) verse = Number(aNum);
+    }
+
+    // fallback dari ID (PALING PENTING)
+    if (verse === null) {
+      const id = $v.attr("id"); // v24-3-2-4
+      const m = id && id.match(/^v\d+-\d+-(\d+)-\d+$/);
+      if (m) verse = Number(m[1]);
+    }
+
+    if (verse === null) return;
+
+    // ==== teks ayat ====
+    const text = $v
+      .clone()
+      .find("a, .fn, .b, .tt")
+      .remove()
+      .end()
+      .text()
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (!text) return;
+
+    // ==== gabungkan fragment ====
+    if (!versesMap.has(verse)) {
+      versesMap.set(verse, text);
+    } else {
+      versesMap.set(verse, versesMap.get(verse) + " " + text);
+    }
+  });
+
+  // ==== hasil akhir ====
+  const verses = [...versesMap.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([verse, text]) => ({ verse, text }));
+
+  console.log("JW verses:", verses.length);
+  //console.log(verses);
+  return verses;
+}
+
+/* =========================
+   FETCH CHABAD DATA
+========================= */
+
 async function fetchChabadData(bookId, chapter) {
   // Cari book info dari struktur Tanakh
   const tanakhBook = findTanakhBook(bookId);
@@ -805,7 +889,7 @@ async function fetchChabadData(bookId, chapter) {
     
     console.log(`🌐 Chabad: ${he} (${en}) Pasal ${chapter} Aid ${aid+(chapter - 1)}`);
 
-    const html = await fetchUrl(url);
+    const html = await fetchUrl(url, {headers: {Referer: "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"}});
 
     return await parseChabadHTML(html, bookId, chapter, aid);
   } catch (error) {
@@ -846,31 +930,42 @@ async function parseChabadHTML(html, bookId, chapter, aid) {
   const $ = cheerio.load(html);
   const verses = [];
   
+  const getRashi = (root) => {
+    const title = root.find("span.co_RashiTitle").text().trim()
+    const text  = root.find("span.co_RashiText").text()
+    return `*${title}* ${text}`
+ }
+  
   // Ekstrak teks Ibrani dan Inggris dari tabel Chabad
-  $('.Co_TanachTable tr.Co_Verse').each((index, row) => {
-    const cells = $(row).find('td');
-    
-    // Kolom 0: Inggris, Kolom 2: Ibrani
-    const englishCell = $(cells[0]);
-    const hebrewCell = $(cells[2]);
-    
-    // Ekstrak nomor ayat
-    const verseNumElement = englishCell.find('a.co_VerseNum');
-    const verseNum = parseInt(verseNumElement.attr('id')?.replace('v', '') || verseNumElement.text()) || (index + 1);
-    
-    // Ekstrak teks
-    const englishText = englishCell.find('.co_VerseText').text().trim();
-    const hebrewText = hebrewCell.find('.co_VerseText').text().trim();
-    
-    // Ekstrak komentar Rashi jika ada
-    const rashiComment = extractRashiComment($, verseNum);
-    
-    verses.push({
-      verse: verseNum,
-      tn_he: hebrewText,
-      tn_en: englishText,
-      rashi: rashiComment
-    });
+  $('.Co_TanachTable tr').each((index, row) => {
+    if ($(row).hasClass("Co_Verse")) {
+      const cells = $(row).find('td');
+      
+      // Kolom 0: Inggris, Kolom 2: Ibrani
+      const englishCell = $(cells[0]);
+      const hebrewCell = $(cells[2]);
+      
+      // Ekstrak nomor ayat
+      const verseNumElement = englishCell.find('a.co_VerseNum');
+      const verseNum = parseInt(verseNumElement.attr('id')?.replace('v', '') || verseNumElement.text()) || (index + 1);
+      
+      // Ekstrak teks
+      const englishText = englishCell.find('.co_VerseText').text().trim();
+      const hebrewText = hebrewCell.find('.co_VerseText').text().trim();
+      
+      verses.push({
+        verse: verseNum,
+        tn_he: hebrewText,
+        tn_en: englishText,
+        rashi: []
+      });
+    }else if($(row).hasClass("Co_Rashi")){
+      const eng = getRashi($(row).find("td:first-child > span"))
+      const heb = getRashi($(row).find("td.hebrew > span"))
+      
+      //console.log({eng, heb})
+      verses.at(-1).rashi.push({ heb, eng })
+    }
   });
   
   // Ekstrak next aid untuk navigasi
@@ -882,37 +977,16 @@ async function parseChabadHTML(html, bookId, chapter, aid) {
     aid,
     nextAid,
     verses,
-    totalVerses: verses.length,
-    source: 'chabad'
+    totalVerses: verses.length
+    //source: 'chabad'
   };
-}
-
-/* =========================
-   EXTRACT RASHI COMMENT
-========================= */
-
-function extractRashiComment($, verseNum) {
-  // Cari baris Rashi setelah ayat
-  const rashiRow = $(`.Co_Rashi:has(a[href="#v${verseNum}"])`);
-  console.log(`rashii`, rashiRow.length)
-  if (rashiRow.length) {
-    // Kolom 0: Inggris, Kolom 2: Ibrani
-    const englishRashi = rashiRow.find('td').eq(0).find('.co_RashiText').text().trim();
-    const hebrewRashi = rashiRow.find('td').eq(2).find('.co_RashiText').text().trim();
-    
-    return {
-      en: englishRashi,
-      he: hebrewRashi
-    };
-  }
-  return null;
 }
 
 /* =========================
    COMBINE CHAPTER DATA
 ========================= */
 
-async function combineChapterData(sabdaData, chabadData, bookId, chapter) {
+async function combineChapterData(sabdaData, nwtData, chabadData, bookId, chapter) {
   const baseData = {
     bookId,
     chapter,
@@ -940,7 +1014,7 @@ async function combineChapterData(sabdaData, chabadData, bookId, chapter) {
         tn_he: v.tn_he,
         tn_en: v.tn_en
       },
-      rashi: v.rashi ? { rashi: v.rashi } : {}
+      rashi: v.rashi
       /*,chabad: {
         he: v.tn_he,
         en: v.tn_en,
@@ -981,8 +1055,8 @@ async function combineChapterData(sabdaData, chabadData, bookId, chapter) {
           },
           notes: {
             ...sabdaVerse.notes,
-            rashi: chabadVerse.rashi
-          }
+          },
+          rashi: chabadVerse.rashi
           //,chabad: chabadVerse
         };
       }
@@ -1057,24 +1131,32 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   const bookStrongs = new Set(); // Untuk mengumpulkan Strong's numbers dari kitab ini
 
   // helper untuk clone + hapus field
-  const stripField = (chapter, field) =>
-  (Array.isArray(chapter) ? chapter : [chapter]).map(book => ({
-    ...book,
-    verses: (book.verses ?? []).map(({ [field]: _, ...v }) => v)
-  }))
+  const stripField = (chapter, fields) => {
+    const remove = new Set(Array.isArray(fields) ? fields : [fields])
+  
+    return (Array.isArray(chapter) ? chapter : [chapter]).map(book => ({
+      ...book,
+      verses: (book.verses ?? []).map(v =>
+        Object.fromEntries(
+          Object.entries(v).filter(([k]) => !remove.has(k))
+        )
+      )
+    }))
+  }
 
   for (const chapter of chaptersToProcess) {
     webQueue.add(async () => {
       const result = await getChapterData(bookId, chapter, targetVersions);
 
       if (result.success) {
-        bookData.data[chapter - 1] = stripField(result.data, 'notes'); // Simpan data pasal tanpa catatan
-        noteData.data[chapter - 1] = stripField(result.data, 'texts'); // Simpan data tanpa teks
-
         // Kumpulkan Strong's numbers dari hasil parsing
         if (result.data.strongNumbers && result.data.strongNumbers.length > 0) {
           result.data.strongNumbers.forEach(s => bookStrongs.add(s));
+          delete result.data.strongNumbers
         }
+        
+        bookData.data[chapter - 1] = stripField(result.data, ['notes', 'rashi']); // Simpan data pasal tanpa catatan
+        noteData.data[chapter - 1] = stripField(result.data, 'texts'); // Simpan data tanpa teks
 
         // Simpan ke database jika mode 1
         if (mode === 1) {

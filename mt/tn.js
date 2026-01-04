@@ -1,5 +1,6 @@
 import fs from "fs";
 import * as cheerio from "cheerio";
+import axios from "axios";
 
 const isTermux = process.platform === "android";
 let fetchHtml;
@@ -8,7 +9,7 @@ let fetchHtml;
 if (isTermux) {
   console.log("Platform: Termux (Android) → pakai Axios");
 
-  const axios = await import("axios");
+  //const axios = await import("axios");
   const { CookieJar } = await import("tough-cookie");
   const { wrapper } = await import("axios-cookiejar-support");
 
@@ -26,7 +27,8 @@ if (isTermux) {
           "Accept-Language": "en-US,en;q=0.9",
           "Cache-Control": "no-cache",
           Pragma: "no-cache",
-          Referer: "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"
+          //Referer: "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"
+          Referer: "https://www.jw.org/id/perpustakaan/alkitab/nwt/buku-alkitab/"
         },
         maxRedirects: 10,
         timeout: 20000
@@ -198,5 +200,191 @@ const ambilWeb = async (url) => {
   await browser.close();
 };
 
+const ambilNwt = async (url) => {
+  const html = await fetchHtml(url);
+  console.log(html)
+  const $ = cheerio.load(html);
+  const verses = [];
+
+  $("span.verse").each((_, el) => {
+    const $el = $(el);
+
+    // ambil nomor ayat (biasanya di <sup>)
+    let verse = null;
+    const sup = $el.find("sup").first().text().trim();
+    if (/^\d+$/.test(sup)) {
+      verse = Number(sup);
+    }
+
+    // clone supaya aman
+    const text = $el
+      .clone()
+      .find("sup, a, .footnote, .crossref, .parabreak")
+      .remove()
+      .end()
+      .text()
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (text) {
+      verses.push({ verse, text });
+    }
+  });
+
+  return verses;
+}
+
+const fetchNwtJson = async (url) => {
+  try {
+    const res = await axios.get(url, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0",
+        Accept: "application/json",
+        "Accept-Language": "id-ID,id;q=0.9,en;q=0.8",
+        Referer: "https://www.jw.org/id/perpustakaan/alkitab/nwt/buku-alkitab/"
+      },
+      timeout: 20000
+    });
+
+    return res.data;
+  } catch (err) {
+    if (err.response) {
+      console.error("🚨 HTTP", err.response.status);
+    } else {
+      console.error("🚨", err.message);
+    }
+    return null;
+  }
+};
+
+// Ambil dari cached version
+const fetchFromCache = async (url) => {
+  const cachedUrl =
+    `https://webcache.googleusercontent.com/search?q=cache:${encodeURIComponent(url)}&strip=1`;
+
+  const html = await axios.get(cachedUrl, {
+    timeout: 10000,
+    maxRedirects: 5,
+    headers: {
+      "user-agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "accept":
+        "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "accept-language": "en-US,en;q=0.9",
+      "cache-control": "no-cache",
+      "pragma": "no-cache"
+    },
+    validateStatus: s => s >= 200 && s < 500
+  });
+  
+  console.log(html.data)
+};
+
+const fetchViaProxy = async (url) => {
+    const proxies = [
+        //'https://cors-anywhere.herokuapp.com/',
+        'https://api.codetabs.com/v1/proxy/?quest='
+    ];
+    
+    for (const proxy of proxies) {
+        try {
+            const res = await axios.get(proxy + encodeURIComponent(url), {
+        timeout: 8000,
+        headers: {
+          "user-agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+            "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+          "accept": "text/html"
+        },
+        validateStatus: s => s >= 200 && s < 500
+      });
+            console.log(res.data)
+            return res.data;
+        } catch (e) {
+            continue;
+        }
+    }
+    return null;
+};
+
+const fetchJW = async (url) => {
+  const html = await fetchHtml(url);
+  if (!html) return null;
+
+  const $ = cheerio.load(html);
+  const versesMap = new Map();
+
+  $("span.v").each((_, el) => {
+    const $v = $(el);
+
+    // ==== ambil nomor ayat ====
+    let verse = null;
+
+    // 1️⃣ dari <strong>
+    const strongNum = $v.find("strong").first().text().trim();
+    if (/^\d+$/.test(strongNum)) {
+      verse = Number(strongNum);
+    }
+
+    // 2️⃣ dari <a> (tanpa child)
+    if (verse === null) {
+      const aNum = $v
+        .find("a")
+        .first()
+        .clone()
+        .children()
+        .remove()
+        .end()
+        .text()
+        .trim();
+      if (/^\d+$/.test(aNum)) verse = Number(aNum);
+    }
+
+    // 3️⃣ fallback dari ID (PALING PENTING)
+    if (verse === null) {
+      const id = $v.attr("id"); // v24-3-2-4
+      const m = id && id.match(/^v\d+-\d+-(\d+)-\d+$/);
+      if (m) verse = Number(m[1]);
+    }
+
+    if (verse === null) return;
+
+    // ==== teks ayat ====
+    const text = $v
+      .clone()
+      .find("a, .fn, .b, .tt")
+      .remove()
+      .end()
+      .text()
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (!text) return;
+
+    // ==== gabungkan fragment ====
+    if (!versesMap.has(verse)) {
+      versesMap.set(verse, text);
+    } else {
+      versesMap.set(verse, versesMap.get(verse) + " " + text);
+    }
+  });
+
+  // ==== hasil akhir ====
+  const verses = [...versesMap.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([verse, text]) => ({ verse, text }));
+
+  console.log("JW verses:", verses.length);
+  console.log(verses);
+  return verses;
+};
+
 // ==== START ==== //
-ambilWeb("https://www.chabad.org/library/bible.aspx?aid=6289");
+//ambilWeb("https://www.chabad.org/library/bible.aspx?aid=6289");
+//ambilNwt("https://www.jw.org/id/perpustakaan/alkitab/nwt/buku-alkitab/2-timotius/1/");
+//fetchNwtJson("https://www.jw.org/id/perpustakaan/alkitab/nwt/buku-alkitab/json/data/1001000-1001999");
+//fetchFromCache("https://www.jw.org/id/perpustakaan/alkitab/nwt/buku-alkitab/json/data/1001000-1001999");
+//fetchViaProxy("https://www.jw.org/id/perpustakaan/alkitab/nwt/buku-alkitab/json/data/1001000-1001999");
+fetchJW("https://wol.jw.org/id/wol/b/r25/lp-in/nwtsty/24/3#study=discover")
