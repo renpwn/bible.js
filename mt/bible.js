@@ -177,9 +177,14 @@ function buildChabadUrl(aid) {
 }
 
 function extractNextAid($) {
-  const href = $('a:contains("Next")').attr('href')
+  const href = $('a.next_article').attr('href')
   if (!href) return null
-  return Number(new URL(href, 'https://www.chabad.org').searchParams.get('aid'))
+
+  const pathname = new URL(href, 'https://www.chabad.org').pathname
+  const parts = pathname.split('/')
+  const aidIndex = parts.indexOf('aid')
+
+  return aidIndex !== -1 ? Number(parts[aidIndex + 1]) : null
 }
 
 const Tanakh =[
@@ -756,7 +761,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
     
     // Fetch dari JW.org untuk NWT
     try {
-      nwtData = await fetchNWTData(bookId, chapter);
+      nwtData = await fetchJWData(bookId, chapter);
     } catch (error) {
       console.error(`❌ Gagal ambil dari NWT ${bookId}:${chapter}:`, error.message)
     }
@@ -775,10 +780,11 @@ async function getChapterData(bookId, chapter, targetVersions) {
     const combinedData = await combineChapterData(sabdaData, nwtData, chabadData, bookId, chapter);
     
     return {
-      success: sabdaData || chabadData,
+      success: sabdaData || nwtData || chabadData,
       data: combinedData,
       sources: {
         sabda: !!sabdaData,
+        jw: !!nwtData,
         chabad: !!chabadData
       }
     }
@@ -794,11 +800,11 @@ async function getChapterData(bookId, chapter, targetVersions) {
 }
 
 /* =========================
-   FETCH CHABAD DATA
+   FETCH JW.ORG DATA
 ========================= */
 
-async function fetchNWTData(bookId, chapter){
-  const html = await fetchHtml(`https://wol.jw.org/id/wol/b/r25/lp-in/nwtsty/${bookId}/${chapter}#study=discover`);
+async function fetchJWData(bookId, chapter){
+  const html = await fetchUrl(`https://wol.jw.org/id/wol/b/r25/lp-in/nwtsty/${bookId}/${chapter}#study=discover`);
   if (!html) return null;
 
   const $ = cheerio.load(html);
@@ -864,7 +870,7 @@ async function fetchNWTData(bookId, chapter){
     .sort((a, b) => a[0] - b[0])
     .map(([verse, text]) => ({ verse, text }));
 
-  console.log("JW verses:", verses.length);
+  console.log("🌐 JW verses:", verses.length);
   //console.log(verses);
   return verses;
 }
@@ -986,7 +992,7 @@ async function parseChabadHTML(html, bookId, chapter, aid) {
    COMBINE CHAPTER DATA
 ========================= */
 
-async function combineChapterData(sabdaData, nwtData, chabadData, bookId, chapter) {
+async function combineChapterData0(sabdaData, nwtData, chabadData, bookId, chapter) {
   const baseData = {
     bookId,
     chapter,
@@ -1076,13 +1082,102 @@ async function combineChapterData(sabdaData, nwtData, chabadData, bookId, chapte
   return baseData;
 }
 
+async function combineChapterData1(sabdaData, nwtData, chabadData, bookId, chapter) {
+  const baseData = {
+    bookId,
+    chapter,
+    verses: [],
+    totalVerses: 0,
+    sources: {},
+    strongNumbers: []
+  };
+  
+  const result = []
+  
+  const sabda = sabdaData?.verses || []
+  const nwt = nwtData || []
+  const chabad = chabadData?.verses || []
+
+  const maxVerse = Math.max(
+    sabda.length,
+    nwt.length,
+    chabad.length
+  )
+  
+  for (let i = 0; i < maxVerse; i++) {
+    const s = sabda[i] || {};
+    const n = nwt[i] || {};
+    const c = chabad[i] || {};
+    
+    const texts = {
+      ...(s?.texts || {}),
+      ...(n?.text ? { nwt: n.text } : {}),
+      ...(c?.tn_he ? { tn_he: c.tn_he, tn_en: c.tn_en } : {})
+    };
+    
+    baseData.verses.push({
+      verse: i+1,
+      texts,
+      ...(s?.notes && Object.keys(s.notes).length && { notes: s.notes }),
+      ...(c?.rashi?.length && { rashi: c.rashi })
+    })
+  }
+  
+  baseData.strongNumbers = sabdaData.strongNumbers || [];
+  baseData.totalVerses = maxVerse;
+  Object.assign(baseData, {
+    ...(chabadData?.aid && { aid: chabadData.aid }),
+    ...(chabadData?.nextAid && { nextAid: chabadData.nextAid })
+  });
+  baseData.sources = { sabda: !!sabdaData, jw: !!nwtData, chabad: !!chabadData };
+  
+  return baseData;
+}
+
+async function combineChapterData(sabdaData, nwtData, chabadData, bookId, chapter) {
+  const s = sabdaData?.verses || []
+  const n = nwtData || []
+  const c = chabadData?.verses || []
+  const verses = []
+
+  const maxVerse = Math.max(s.length, n.length, c.length)
+  if (!maxVerse) return null;
+  
+  for (let i = 0; i < maxVerse; i++) {
+    const texts = {
+      ...(s[i]?.texts || {}),
+      ...(n[i]?.text ? { nwt: n[i].text } : {}),
+      ...(c[i]?.tn_he ? { tn_he: c[i].tn_he, tn_en: c[i].tn_en } : {})
+    };
+    if (!Object.keys(texts).length) continue;
+    
+    verses.push({
+      verse: i+1,
+      texts,
+      ...(s[i]?.notes && Object.keys(s[i].notes).length && { notes: s[i].notes }),
+      ...(c[i]?.rashi?.length && { rashi: c[i].rashi })
+    })
+  }
+  
+  return {
+    bookId,
+    chapter,
+    verses,
+    totalVerses: maxVerse,
+    ...(chabadData?.aid && { aid: chabadData.aid }),
+    ...(chabadData?.nextAid && { nextAid: chabadData.nextAid }),
+    sources: { sabda: !!sabdaData, jw: !!nwtData, chabad: !!chabadData },
+    strongNumbers: sabdaData.strongNumbers || []
+  };
+}
+
 /* =========================
    MODE 1 & 2: WEB → JSON & DB
 ========================= */
 
 async function processBook(bookId, concurrency = 3, resume = false, mode = 1, targetVersions = BibleVersions) {
   const bookInfo = BibleBooks[bookId - 1];
-  const totalChapters = 1; //bookInfo[1]
+  const totalChapters = 3; //bookInfo[1]
 
   console.log(`📖 Memproses kitab ${bookId}: ${bookInfo[0]}`);
   console.log(`📊 Total pasal: ${totalChapters}, Concurrency: ${concurrency}`);

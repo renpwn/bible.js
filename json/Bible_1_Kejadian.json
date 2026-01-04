@@ -1,7 +1,7 @@
 {
   "id": 1,
   "name": "Kejadian",
-  "chapters": 1,
+  "chapters": 3,
   "totalVerses": 1533,
   "pericopes": 81,
   "testament": "OT",
@@ -25,6 +25,7 @@
               "nkjv": "In the beginning God created the heavens and the earth.",
               "net": "In the beginning* God* created* the heavens and the earth.*",
               "net2": "*Genesis*\n\n_The Creation of the World_\n\nGenesisThe Creation of the World 1:1 In the beginning⁽¹⁾ God⁽²⁾ created⁽³⁾ the heavens and the earth.⁽⁴⁾",
+              "nwt": "Pada mulanya Allah menciptakan langit dan bumi.",
               "tn_he": "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ:",
               "tn_en": "In the beginning of God's creation of the heavens and the earth."
             }
@@ -43,6 +44,7 @@
               "nkjv": "The earth was without form, and void; and darkness [was] on the face of the deep. And the Spirit of God was hovering over the face of the waters.",
               "net": "Now* the earth* was without shape and empty,* and darkness* was over the surface of the watery deep,* but the Spirit of God* was moving* over the surface* of the water.*",
               "net2": "**\n\n__\n\nNow⁽⁵⁾ the earth⁽⁶⁾ was without shape and empty,⁽⁷⁾ and darkness⁽⁸⁾ was over the surface of the watery deep,⁽⁹⁾ but the Spirit of God⁽¹⁰⁾ was moving⁽¹¹⁾ over the surface⁽¹²⁾ of the water.⁽¹³⁾",
+              "nwt": "Di bumi belum ada apa-apa dan kosong, yang ada hanya kegelapan menutupi air yang dalam, dan tenaga Allah bergerak ke sana kemari di atas permukaan air.",
               "tn_he": "וְהָאָ֗רֶץ הָֽיְתָ֥ה תֹ֨הוּ֙ וָבֹ֔הוּ וְח֖שֶׁךְ עַל־פְּנֵ֣י תְה֑וֹם וְר֣וּחַ אֱלֹהִ֔ים מְרַחֶ֖פֶת עַל־פְּנֵ֥י הַמָּֽיִם:",
               "tn_en": "Now the earth was astonishingly empty, and darkness was on the face of the deep, and the spirit of God was hovering over the face of the water."
             }
@@ -61,6 +63,7 @@
               "nkjv": "Then God said, \"Let there be light\"; and there was light.",
               "net": "God said,* “Let there be* light.”* And there was light!",
               "net2": "**\n\n__\n\nGod said,⁽¹⁴⁾ “Let there be⁽¹⁵⁾ light.”⁽¹⁶⁾ And there was light!",
+              "nwt": "Allah berkata, ”Jadilah terang.” Lalu terang pun ada.",
               "tn_he": "וַיֹּ֥אמֶר אֱלֹהִ֖ים יְהִי־א֑וֹר וַֽיְהִי־אֽוֹר:",
               "tn_en": "And God said, \"Let there be light,\" and there was light."
             }
@@ -79,6 +82,7 @@
               "nkjv": "And God saw the light, that [it was] good; and God divided the light from the darkness.",
               "net": "God saw* that the light was good,* so God separated* the light from the darkness.",
               "net2": "**\n\n__\n\nGod saw⁽¹⁷⁾ that the light was good,⁽¹⁸⁾ so God separated⁽¹⁹⁾ the light from the darkness.",
+              "nwt": "Setelah itu, Allah melihat bahwa terang itu baik, dan Allah mulai memisahkan terang dan gelap.",
               "tn_he": "וַיַּ֧רְא אֱלֹהִ֛ים אֶת־הָא֖וֹר כִּי־ט֑וֹב וַיַּבְדֵּ֣ל אֱלֹהִ֔ים בֵּ֥ין הָא֖וֹר וּבֵ֥ין הַחֽשֶׁךְ:",
               "tn_en": "And God saw the light that it was good, and God separated between the light and between the darkness."
             }
@@ -97,6 +101,7 @@
               "nkjv": "God called the light Day, and the darkness He called Night. So the evening and the morning were the first day.",
               "net": "God called* the light “day” and the darkness* “night.” There was evening, and there was morning, marking the first day.*",
               "net2": "**\n\n__\n\nGod called⁽²⁰⁾ the light “day” and the darkness⁽²¹⁾ “night.” There was evening, and there was morning, marking the first day.⁽²²⁾",
+              "nwt": "Allah menyebut terang itu Siang, dan gelap itu Malam. Malam tiba dan pagi pun tiba, itulah hari pertama.",
               "tn_he": "וַיִּקְרָ֨א אֱלֹהִ֤ים | לָאוֹר֙ י֔וֹם וְלַח֖שֶׁךְ קָ֣רָא לָ֑יְלָה וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם אֶחָֽד:",
               "tn_en": "And God called the light day, and the darkness He called night, and it was evening and it was morning, one day."
             }
@@ -115,6 +120,7 @@
               "nkjv": "Then God said, \"Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.\"",
               "net": "God said, “Let there be an expanse* in the midst of the waters and let it separate water* from water.",
               "net2": "**\n\n__\n\nGod said, “Let there be an expanse⁽²³⁾ in the midst of the waters and let it separate water⁽²⁴⁾ from water.",
+              "nwt": "Lalu Allah berkata, ”Jadilah ruang yang luas di antara air, yang memisahkan air menjadi dua bagian.”",
               "tn_he": "וַיֹּ֣אמֶר אֱלֹהִ֔ים יְהִ֥י רָקִ֖יעַ בְּת֣וֹךְ הַמָּ֑יִם וִיהִ֣י מַבְדִּ֔יל בֵּ֥ין מַ֖יִם לָמָֽיִם:",
               "tn_en": "And God said, \"Let there be an expanse in the midst of the water, and let it be a separation between water and water.\""
             }
@@ -133,6 +139,7 @@
               "nkjv": "Thus God made the firmament, and divided the waters which [were] under the firmament from the waters which [were] above the firmament; and it was so.",
               "net": "So God made the expanse and separated the water under the expanse from the water above it.* It was so.*",
               "net2": "**\n\n__\n\nSo God made the expanse and separated the water under the expanse from the water above it.⁽²⁵⁾ It was so.⁽²⁶⁾",
+              "nwt": "Kemudian, Allah membuat ruang yang luas untuk memisahkan air yang ada di bawah ruang itu dari air yang ada di atasnya. Dan itulah yang terjadi.",
               "tn_he": "וַיַּ֣עַשׂ אֱלֹהִים֘ אֶת־הָֽרָקִיעַ֒ וַיַּבְדֵּ֗ל בֵּ֤ין הַמַּ֨יִם֙ אֲשֶׁר֙ מִתַּ֣חַת לָֽרָקִ֔יעַ וּבֵ֣ין הַמַּ֔יִם אֲשֶׁ֖ר מֵעַ֣ל לָֽרָקִ֑יעַ וַֽיְהִי־כֵֽן:",
               "tn_en": "And God made the expanse and it separated between the water that was below the expanse and the water that was above the expanse, and it was so."
             }
@@ -151,6 +158,7 @@
               "nkjv": "And God called the firmament Heaven. So the evening and the morning were the second day.",
               "net": "God called the expanse “sky.”* There was evening, and there was morning, a second day.",
               "net2": "**\n\n__\n\nGod called the expanse “sky.”⁽²⁷⁾ There was evening, and there was morning, a second day.",
+              "nwt": "Allah menyebut ruang yang luas itu Langit. Malam tiba dan pagi pun tiba, itulah hari kedua.",
               "tn_he": "וַיִּקְרָ֧א אֱלֹהִ֛ים לָֽרָקִ֖יעַ שָׁמָ֑יִם וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם שֵׁנִֽי:",
               "tn_en": "And God called the expanse Heaven, and it was evening, and it was morning, a second day."
             }
@@ -169,6 +177,7 @@
               "nkjv": "Then God said, \"Let the waters under the heavens be gathered together into one place, and let the dry [land] appear\"; and it was so.",
               "net": "God said, “Let the water under the sky be gathered to one place* and let dry ground appear.”* It was so.",
               "net2": "**\n\n__\n\nGod said, “Let the water under the sky be gathered to one place⁽²⁸⁾ and let dry ground appear.”⁽²⁹⁾ It was so.",
+              "nwt": "Lalu Allah berkata, ”Terkumpullah air yang ada di bawah langit ke satu tempat; muncullah tanah yang kering.” Dan itulah yang terjadi.",
               "tn_he": "וַיֹּ֣אמֶר אֱלֹהִ֗ים יִקָּו֨וּ הַמַּ֜יִם מִתַּ֤חַת הַשָּׁמַ֨יִם֙ אֶל־מָק֣וֹם אֶחָ֔ד וְתֵֽרָאֶ֖ה הַיַּבָּשָׁ֑ה וַֽיְהִי־כֵֽן:",
               "tn_en": "And God said, \"Let the water that is beneath the heavens gather into one place, and let the dry land appear,\" and it was so."
             }
@@ -187,6 +196,7 @@
               "nkjv": "And God called the dry [land] Earth, and the gathering together of the waters He called Seas. And God saw that [it was] good.",
               "net": "God called the dry ground “land”* and the gathered waters he called “seas.” God saw that it was good.",
               "net2": "**\n\n__\n\nGod called the dry ground “land”⁽³⁰⁾ and the gathered waters he called “seas.” God saw that it was good.",
+              "nwt": "Allah menyebut tanah yang kering itu Darat, dan kumpulan air itu Laut. Dan Allah melihat bahwa hal itu baik.",
               "tn_he": "וַיִּקְרָ֨א אֱלֹהִ֤ים | לַיַּבָּשָׁה֙ אֶ֔רֶץ וּלְמִקְוֵ֥ה הַמַּ֖יִם קָרָ֣א יַמִּ֑ים וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב:",
               "tn_en": "And God called the dry land earth, and the gathering of the waters He called seas, and God saw that it was good."
             }
@@ -205,6 +215,7 @@
               "nkjv": "Then God said, \"Let the earth bring forth grass, the herb [that] yields seed, [and] the fruit tree [that] yields fruit according to its kind, whose seed [is] in itself, on the earth\"; and it was so.",
               "net": "God said, “Let the land produce vegetation:* plants yielding seeds according to their kinds,* and* trees bearing fruit with seed in it according to their kinds.” It was so.",
               "net2": "**\n\n__\n\nGod said, “Let the land produce vegetation:⁽³¹⁾ plants yielding seeds according to their kinds,⁽³²⁾ and⁽³³⁾ trees bearing fruit with seed in it according to their kinds.” It was so.",
+              "nwt": "Lalu Allah berkata, ”Tumbuhlah rumput di tanah, juga berbagai jenis tumbuhan berbiji dan pohon buah, yang menghasilkan buah yang berbiji.” Dan itulah yang terjadi.",
               "tn_he": "וַיֹּ֣אמֶר אֱלֹהִ֗ים תַּדְשֵׁ֤א הָאָ֨רֶץ֙ דֶּ֗שֶׁא עֵ֚שֶׂב מַזְרִ֣יעַ זֶ֔רַע עֵ֣ץ פְּרִ֞י עֹ֤שֶׂה פְּרִי֙ לְמִינ֔וֹ אֲשֶׁ֥ר זַרְעוֹ־ב֖וֹ עַל־הָאָ֑רֶץ וַֽיְהִי־כֵֽן:",
               "tn_en": "And God said, \"Let the earth sprout vegetation, seed yielding herbs and fruit trees producing fruit according to its kind in which its seed is found, on the earth,\" and it was so."
             }
@@ -223,6 +234,7 @@
               "nkjv": "And the earth brought forth grass, the herb [that] yields seed according to its kind, and the tree [that] yields fruit, whose seed [is] in itself according to its kind. And God saw that [it was] good.",
               "net": "The land produced vegetation – plants yielding seeds according to their kinds, and trees bearing fruit with seed in it according to their kinds. God saw that it was good.",
               "net2": "**\n\n__\n\nThe land produced vegetation – plants yielding seeds according to their kinds, and trees bearing fruit with seed in it according to their kinds. God saw that it was good.",
+              "nwt": "Berbagai jenis rumput, tumbuhan berbiji dan pohon yang menghasilkan buah yang berbiji mulai tumbuh dari tanah. Lalu Allah melihat bahwa hal itu baik.",
               "tn_he": "וַתּוֹצֵ֨א הָאָ֜רֶץ דֶּשֶׁא עֵ֣שֶׂב מַזְרִ֤יעַ זֶ֨רַע֙ לְמִינֵ֔הוּ וְעֵ֧ץ עֹֽשֶׂה־פְּרִ֛י אֲשֶׁ֥ר זַרְעוֹ־ב֖וֹ לְמִינֵ֑הוּ וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב:",
               "tn_en": "And the earth gave forth vegetation, seed yielding herbs according to its kind, and trees producing fruit, in which its seed is found, according to its kind, and God saw that it was good."
             }
@@ -241,6 +253,7 @@
               "nkjv": "So the evening and the morning were the third day.",
               "net": "There was evening, and there was morning, a third day.",
               "net2": "**\n\n__\n\nThere was evening, and there was morning, a third day.",
+              "nwt": "Malam tiba dan pagi pun tiba, itulah hari ketiga.",
               "tn_he": "וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם שְׁלִישִֽׁי:",
               "tn_en": "And it was evening, and it was morning, a third day."
             }
@@ -259,6 +272,7 @@
               "nkjv": "Then God said, \"Let there be lights in the firmament of the heavens to divide the day from the night; and let them be for signs and seasons, and for days and years;",
               "net": "God said, “Let there be lights* in the expanse* of the sky to separate the day from the night, and let them be signs* to indicate seasons and days and years,",
               "net2": "**\n\n__\n\nGod said, “Let there be lights⁽³⁴⁾ in the expanse⁽³⁵⁾ of the sky to separate the day from the night, and let them be signs⁽³⁶⁾ to indicate seasons and days and years,",
+              "nwt": "Lalu Allah berkata, ”Jadilah benda-benda penerang di langit untuk membedakan siang dan malam. Semua itu juga akan menjadi tanda untuk menunjukkan musim, hari, dan tahun.",
               "tn_he": "וַיֹּ֣אמֶר אֱלֹהִ֗ים יְהִ֤י מְאֹרֹת֙ בִּרְקִ֣יעַ הַשָּׁמַ֔יִם לְהַבְדִּ֕יל בֵּ֥ין הַיּ֖וֹם וּבֵ֣ין הַלָּ֑יְלָה וְהָי֤וּ לְאֹתֹת֙ וּלְמ֣וֹעֲדִ֔ים וּלְיָמִ֖ים וְשָׁנִֽים:",
               "tn_en": "And God said, \"Let there be luminaries in the expanse of the heavens, to separate between the day and between the night, and they shall be for signs and for appointed seasons and for days and years."
             }
@@ -277,6 +291,7 @@
               "nkjv": "\"and let them be for lights in the firmament of the heavens to give light on the earth\"; and it was so.",
               "net": "and let them serve as lights in the expanse of the sky to give light on the earth.” It was so.",
               "net2": "**\n\n__\n\nand let them serve as lights in the expanse of the sky to give light on the earth.” It was so.",
+              "nwt": "Semua itu akan menjadi benda penerang di langit untuk menerangi bumi.” Dan itulah yang terjadi.",
               "tn_he": "וְהָי֤וּ לִמְאוֹרֹת֙ בִּרְקִ֣יעַ הַשָּׁמַ֔יִם לְהָאִ֖יר עַל־הָאָ֑רֶץ וַֽיְהִי־כֵֽן:",
               "tn_en": "And they shall be for luminaries in the expanse of the heavens to shed light upon the earth.\" And it was so."
             }
@@ -295,6 +310,7 @@
               "nkjv": "Then God made two great lights: the greater light to rule the day, and the lesser light to rule the night. [He made] the stars also.",
               "net": "God made two great lights* – the greater light to rule over the day and the lesser light to rule over the night. He made the stars also.*",
               "net2": "**\n\n__\n\nGod made two great lights⁽³⁷⁾ – the greater light to rule over the day and the lesser light to rule over the night. He made the stars also.⁽³⁸⁾",
+              "nwt": "Kemudian, Allah membuat dua benda penerang yang besar, penerang yang lebih besar untuk bersinar di siang hari dan yang lebih kecil untuk bersinar di malam hari. Allah juga membuat bintang-bintang.",
               "tn_he": "וַיַּ֣עַשׂ אֱלֹהִ֔ים אֶת־שְׁנֵ֥י הַמְּאֹרֹ֖ת הַגְּדֹלִ֑ים אֶת־הַמָּא֤וֹר הַגָּדֹל֙ לְמֶמְשֶׁ֣לֶת הַיּ֔וֹם וְאֶת־הַמָּא֤וֹר הַקָּטֹן֙ לְמֶמְשֶׁ֣לֶת הַלַּ֔יְלָה וְאֵ֖ת הַכּֽוֹכָבִֽים:",
               "tn_en": "And God made the two great luminaries: the great luminary to rule the day and the lesser luminary to rule the night, and the stars."
             }
@@ -313,6 +329,7 @@
               "nkjv": "God set them in the firmament of the heavens to give light on the earth,",
               "net": "God placed the lights* in the expanse of the sky to shine on the earth,",
               "net2": "**\n\n__\n\nGod placed the lights⁽³⁹⁾ in the expanse of the sky to shine on the earth,",
+              "nwt": "Maka Allah menaruh semua itu di langit untuk menerangi bumi,",
               "tn_he": "וַיִּתֵּ֥ן אֹתָ֛ם אֱלֹהִ֖ים בִּרְקִ֣יעַ הַשָּׁמָ֑יִם לְהָאִ֖יר עַל־הָאָֽרֶץ:",
               "tn_en": "And God placed them in the expanse of the heavens to shed light upon the earth."
             }
@@ -331,6 +348,7 @@
               "nkjv": "and to rule over the day and over the night, and to divide the light from the darkness. And God saw that [it was] good.",
               "net": "to preside over the day and the night, and to separate the light from the darkness.* God saw that it was good.",
               "net2": "**\n\n__\n\nto preside over the day and the night, and to separate the light from the darkness.⁽⁴⁰⁾ God saw that it was good.",
+              "nwt": "untuk bersinar pada siang dan malam hari, dan untuk memisahkan terang dan gelap. Lalu Allah melihat bahwa hal itu baik.",
               "tn_he": "וְלִמְשֹׁל֙ בַּיּ֣וֹם וּבַלַּ֔יְלָה וּֽלֲהַבְדִּ֔יל בֵּ֥ין הָא֖וֹר וּבֵ֣ין הַח֑שֶׁךְ וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב:",
               "tn_en": "And to rule over the day and over the night, and to separate between the light and between the darkness, and God saw that it was good."
             }
@@ -349,6 +367,7 @@
               "nkjv": "So the evening and the morning were the fourth day.",
               "net": "There was evening, and there was morning, a fourth day.",
               "net2": "**\n\n__\n\nThere was evening, and there was morning, a fourth day.",
+              "nwt": "Malam tiba dan pagi pun tiba, itulah hari keempat.",
               "tn_he": "וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם רְבִיעִֽי:",
               "tn_en": "And it was evening, and it was morning, a fourth day."
             }
@@ -367,6 +386,7 @@
               "nkjv": "Then God said, \"Let the waters abound with an abundance of living creatures, and let birds fly above the earth across the face of the firmament of the heavens.\"",
               "net": "God said, “Let the water swarm with swarms* of living creatures and let birds fly* above the earth across the expanse of the sky.”",
               "net2": "**\n\n__\n\nGod said, “Let the water swarm with swarms⁽⁴¹⁾ of living creatures and let birds fly⁽⁴²⁾ above the earth across the expanse of the sky.”",
+              "nwt": "Lalu Allah berkata, ”Jadilah berbagai binatang yang memenuhi air, dan jadilah berbagai binatang terbang yang terbang di langit.”",
               "tn_he": "וַיֹּ֣אמֶר אֱלֹהִ֔ים יִשְׁרְצ֣וּ הַמַּ֔יִם שֶׁ֖רֶץ נֶ֣פֶשׁ חַיָּ֑ה וְעוֹף֙ יְעוֹפֵ֣ף עַל־הָאָ֔רֶץ עַל־פְּנֵ֖י רְקִ֥יעַ הַשָּׁמָֽיִם:",
               "tn_en": "And God said, \"Let the waters swarm a swarming of living creatures, and let fowl fly over the earth, across the expanse of the heavens.\""
             }
@@ -385,6 +405,7 @@
               "nkjv": "So God created great sea creatures and every living thing that moves, with which the waters abounded, according to their kind, and every winged bird according to its kind. And God saw that [it was] good.",
               "net": "God created the great sea creatures* and every living and moving thing with which the water swarmed, according to their kinds, and every winged bird according to its kind. God saw that it was good.",
               "net2": "**\n\n__\n\nGod created the great sea creatures⁽⁴³⁾ and every living and moving thing with which the water swarmed, according to their kinds, and every winged bird according to its kind. God saw that it was good.",
+              "nwt": "Allah pun menciptakan berbagai jenis binatang laut yang sangat besar, binatang yang hidup di dalam air, dan berbagai jenis binatang terbang yang bersayap. Dan Allah melihat bahwa hal itu baik.",
               "tn_he": "וַיִּבְרָ֣א אֱלֹהִ֔ים אֶת־הַתַּנִּינִ֖ם הַגְּדֹלִ֑ים וְאֵ֣ת כָּל־נֶ֣פֶשׁ הַֽחַיָּ֣ה | הָֽרֹמֶ֡שֶׂת אֲשֶׁר֩ שָֽׁרְצ֨וּ הַמַּ֜יִם לְמִֽינֵהֶ֗ם וְאֵ֨ת כָּל־ע֤וֹף כָּנָף֙ לְמִינֵ֔הוּ וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב:",
               "tn_en": "And God created the great sea monsters, and every living creature that crawls, with which the waters swarmed, according to their kind, and every winged fowl, according to its kind, and God saw that it was good."
             }
@@ -403,6 +424,7 @@
               "nkjv": "And God blessed them, saying, \"Be fruitful and multiply, and fill the waters in the seas, and let birds multiply on the earth.\"",
               "net": "God blessed them* and said, “Be fruitful and multiply and fill the water in the seas, and let the birds multiply on the earth.”*",
               "net2": "**\n\n__\n\nGod blessed them⁽⁴⁴⁾ and said, “Be fruitful and multiply and fill the water in the seas, and let the birds multiply on the earth.”⁽⁴⁵⁾",
+              "nwt": "Lalu Allah memberkati mereka dengan berkata, ”Berkembangbiaklah dan bertambah banyak dan penuhilah lautan. Juga biarlah binatang terbang semakin banyak di bumi.”",
               "tn_he": "וַיְבָ֧רֶךְ אֹתָ֛ם אֱלֹהִ֖ים לֵאמֹ֑ר פְּר֣וּ וּרְב֗וּ וּמִלְא֤וּ אֶת־הַמַּ֨יִם֙ בַּיַּמִּ֔ים וְהָע֖וֹף יִ֥רֶב בָּאָֽרֶץ:",
               "tn_en": "And God blessed them, saying, \"Be fruitful and multiply, and fill the waters of the seas, and let the fowl multiply upon the earth.\""
             }
@@ -421,6 +443,7 @@
               "nkjv": "So the evening and the morning were the fifth day.",
               "net": "There was evening, and there was morning, a fifth day.",
               "net2": "**\n\n__\n\nThere was evening, and there was morning, a fifth day.",
+              "nwt": "Malam tiba dan pagi pun tiba, itulah hari kelima.",
               "tn_he": "וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם חֲמִישִֽׁי:",
               "tn_en": "And it was evening, and it was morning, a fifth day."
             }
@@ -439,6 +462,7 @@
               "nkjv": "Then God said, \"Let the earth bring forth the living creature according to its kind: cattle and creeping thing and beast of the earth, [each] according to its kind\"; and it was so.",
               "net": "God said, “Let the land produce living creatures according to their kinds: cattle, creeping things, and wild animals, each according to its kind.”* It was so.",
               "net2": "**\n\n__\n\nGod said, “Let the land produce living creatures according to their kinds: cattle, creeping things, and wild animals, each according to its kind.”⁽⁴⁶⁾ It was so.",
+              "nwt": "Lalu Allah berkata, ”Jadilah berbagai jenis binatang di bumi, yaitu berbagai jenis binatang peliharaan, binatang liar, dan binatang lainnya.” Dan itulah yang terjadi.",
               "tn_he": "וַיֹּ֣אמֶר אֱלֹהִ֗ים תּוֹצֵ֨א הָאָ֜רֶץ נֶ֤פֶשׁ חַיָּה֙ לְמִינָ֔הּ בְּהֵמָ֥ה וָרֶ֛מֶשׂ וְחַֽיְתוֹ־אֶ֖רֶץ לְמִינָ֑הּ וַֽיְהִי־כֵֽן:",
               "tn_en": "And God said, \"Let the earth bring forth living creatures according to their kind, cattle and creeping things and the beasts of the earth according to their kind,\" and it was so."
             }
@@ -457,6 +481,7 @@
               "nkjv": "And God made the beast of the earth according to its kind, cattle according to its kind, and everything that creeps on the earth according to its kind. And God saw that [it was] good.",
               "net": "God made the wild animals according to their kinds, the cattle according to their kinds, and all the creatures that creep along the ground according to their kinds. God saw that it was good.",
               "net2": "**\n\n__\n\nGod made the wild animals according to their kinds, the cattle according to their kinds, and all the creatures that creep along the ground according to their kinds. God saw that it was good.",
+              "nwt": "Kemudian, Allah membuat berbagai jenis binatang liar, berbagai jenis binatang peliharaan, dan berbagai jenis binatang lainnya. Dan Allah melihat bahwa hal itu baik.",
               "tn_he": "וַיַּ֣עַשׂ אֱלֹהִים֩ אֶת־חַיַּ֨ת הָאָ֜רֶץ לְמִינָ֗הּ וְאֶת־הַבְּהֵמָה֙ לְמִינָ֔הּ וְאֵ֛ת כָּל־רֶ֥מֶשׂ הָֽאֲדָמָ֖ה לְמִינֵ֑הוּ וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב:",
               "tn_en": "And God made the beasts of the earth according to their kind and the cattle according to their kind, and all the creeping things of the ground according to their kind, and God saw that it was good."
             }
@@ -475,6 +500,7 @@
               "nkjv": "Then God said, \"Let Us make man in Our image, according to Our likeness; let them have dominion over the fish of the sea, over the birds of the air, and over the cattle, over all the earth and over every creeping thing that creeps on the earth.\"",
               "net": "Then God said, “Let us make* humankind* in our image, after our likeness,* so they may rule* over the fish of the sea and the birds of the air, over the cattle, and over all the earth,* and over all the creatures that move* on the earth.”",
               "net2": "**\n\n__\n\nThen God said, “Let us make⁽⁴⁷⁾ humankind⁽⁴⁸⁾ in our image, after our likeness,⁽⁴⁹⁾ so they may rule⁽⁵⁰⁾ over the fish of the sea and the birds of the air, over the cattle, and over all the earth,⁽⁵¹⁾ and over all the creatures that move⁽⁵²⁾ on the earth.”",
+              "nwt": "Lalu Allah berkata, ”Mari kita membuat manusia yang mirip dengan kita, yang punya kesamaan dengan kita. Mereka akan berkuasa atas ikan di laut, binatang yang terbang, binatang peliharaan, dan segala binatang lain di bumi, juga atas seluruh bumi.”",
               "tn_he": "וַיֹּ֣אמֶר אֱלֹהִ֔ים נַֽעֲשֶׂ֥ה אָדָ֛ם בְּצַלְמֵ֖נוּ כִּדְמוּתֵ֑נוּ וְיִרְדּוּ֩ בִדְגַ֨ת הַיָּ֜ם וּבְע֣וֹף הַשָּׁמַ֗יִם וּבַבְּהֵמָה֙ וּבְכָל־הָאָ֔רֶץ וּבְכָל־הָרֶ֖מֶשׂ הָֽרֹמֵ֥שׂ עַל־הָאָֽרֶץ:",
               "tn_en": "And God said, \"Let us make man in our image, after our likeness, and they shall rule over the fish of the sea and over the fowl of the heaven and over the animals and over all the earth and over all the creeping things that creep upon the earth.\""
             }
@@ -493,6 +519,7 @@
               "nkjv": "So God created man in His [own] image; in the image of God He created him; male and female He created them.",
               "net": "God created humankind* in his own image, in the image of God he created them,* male and female he created them.*",
               "net2": "**\n\n__\n\nGod created humankind⁽⁵³⁾ in his own image, in the image of God he created them,⁽⁵⁴⁾ male and female he created them.⁽⁵⁵⁾",
+              "nwt": "Kemudian, Allah menciptakan manusia yang mirip dengan-Nya. Dia menciptakan laki-laki dan perempuan, yang mirip dengan-Nya.",
               "tn_he": "וַיִּבְרָ֨א אֱלֹהִ֤ים | אֶת־הָֽאָדָם֙ בְּצַלְמ֔וֹ בְּצֶ֥לֶם אֱלֹהִ֖ים בָּרָ֣א אֹת֑וֹ זָכָ֥ר וּנְקֵבָ֖ה בָּרָ֥א אֹתָֽם:",
               "tn_en": "And God created man in His image; in the image of God He created him; male and female He created them."
             }
@@ -511,6 +538,7 @@
               "nkjv": "Then God blessed them, and God said to them, \"Be fruitful and multiply; fill the earth and subdue it; have dominion over the fish of the sea, over the birds of the air, and over every living thing that moves on the earth.\"",
               "net": "God blessed* them and said* to them, “Be fruitful and multiply! Fill the earth and subdue it!* Rule over the fish of the sea and the birds of the air and every creature that moves on the ground.”*",
               "net2": "**\n\n__\n\nGod blessed⁽⁵⁶⁾ them and said⁽⁵⁷⁾ to them, “Be fruitful and multiply! Fill the earth and subdue it!⁽⁵⁸⁾ Rule over the fish of the sea and the birds of the air and every creature that moves on the ground.”⁽⁵⁹⁾",
+              "nwt": "Selanjutnya, Allah memberkati mereka dan berkata kepada mereka, ”Beranakcuculah dan bertambah banyak, penuhilah bumi dan kuasailah itu, dan berkuasalah atas ikan di laut, binatang yang terbang, dan binatang yang hidup di darat.”",
               "tn_he": "וַיְבָ֣רֶךְ אֹתָם֘ אֱלֹהִים֒ וַיֹּ֨אמֶר לָהֶ֜ם אֱלֹהִ֗ים פְּר֥וּ וּרְב֛וּ וּמִלְא֥וּ אֶת־הָאָ֖רֶץ וְכִבְשֻׁ֑הָ וּרְד֞וּ בִּדְגַ֤ת הַיָּם֙ וּבְע֣וֹף הַשָּׁמַ֔יִם וּבְכָל־חַיָּ֖ה הָֽרֹמֶ֥שֶׂת עַל־הָאָֽרֶץ:",
               "tn_en": "And God blessed them, and God said to them, \"Be fruitful and multiply and fill the earth and subdue it, and rule over the fish of the sea and over the fowl of the sky and all the living creatures that crawl on the earth.\""
             }
@@ -529,6 +557,7 @@
               "nkjv": "And God said, \"See, I have given you every herb [that] yields seed which [is] on the face of all the earth, and every tree whose fruit yields seed; to you it shall be for food.",
               "net": "Then God said, “I now* give you every seed-bearing plant on the face of the entire earth and every tree that has fruit with seed in it. They will be yours for food.*",
               "net2": "**\n\n__\n\nThen God said, “I now⁽⁶⁰⁾ give you every seed-bearing plant on the face of the entire earth and every tree that has fruit with seed in it. They will be yours for food.⁽⁶¹⁾",
+              "nwt": "Lalu Allah berkata, ”Aku memberi kalian segala tumbuhan berbiji di seluruh bumi dan segala pohon yang buahnya berbiji. Itulah makanan kalian.",
               "tn_he": "וַיֹּ֣אמֶר אֱלֹהִ֗ים הִנֵּה֩ נָתַ֨תִּי לָכֶ֜ם אֶת־כָּל־עֵ֣שֶׂב | זֹרֵ֣עַ זֶ֗רַע אֲשֶׁר֙ עַל־פְּנֵ֣י כָל־הָאָ֔רֶץ וְאֶת־כָּל־הָעֵ֛ץ אֲשֶׁר־בּ֥וֹ פְרִי־עֵ֖ץ זֹרֵ֣עַ זָ֑רַע לָכֶ֥ם יִֽהְיֶ֖ה לְאָכְלָֽה:",
               "tn_en": "And God said, \"Behold, I have given you every seed bearing herb, which is upon the surface of the entire earth, and every tree that has seed bearing fruit; it will be yours for food."
             }
@@ -547,6 +576,7 @@
               "nkjv": "\"Also, to every beast of the earth, to every bird of the air, and to everything that creeps on the earth, in which [there is] life, [I have given] every green herb for food\"; and it was so.",
               "net": "And to all the animals of the earth, and to every bird of the air, and to all the creatures that move on the ground – everything that has the breath of life in it – I give* every green plant for food.” It was so.",
               "net2": "**\n\n__\n\nAnd to all the animals of the earth, and to every bird of the air, and to all the creatures that move on the ground – everything that has the breath of life in it – I give⁽⁶²⁾ every green plant for food.” It was so.",
+              "nwt": "Dan Aku memberikan segala tumbuhan hijau sebagai makanan untuk semua binatang liar, semua binatang yang terbang, dan semua binatang yang hidup dan bergerak di bumi.” Dan itulah yang terjadi.",
               "tn_he": "וּלְכָל־חַיַּ֣ת הָ֠אָ֠רֶץ וּלְכָל־ע֨וֹף הַשָּׁמַ֜יִם וּלְכֹ֣ל | רוֹמֵ֣שׂ עַל־הָאָ֗רֶץ אֲשֶׁר־בּוֹ֙ נֶ֣פֶשׁ חַיָּ֔ה אֶת־כָּל־יֶ֥רֶק עֵ֖שֶׂב לְאָכְלָ֑ה וַֽיְהִי־כֵֽן:",
               "tn_en": "And to all the beasts of the earth and to all the fowl of the heavens, and to everything that moves upon the earth, in which there is a living spirit, every green herb to eat,\" and it was so."
             }
@@ -565,18 +595,879 @@
               "nkjv": "Then God saw everything that He had made, and indeed [it was] very good. So the evening and the morning were the sixth day.",
               "net": "God saw all that he had made – and it was very good!* There was evening, and there was morning, the sixth day.",
               "net2": "**\n\n__\n\nGod saw all that he had made – and it was very good!⁽⁶³⁾ There was evening, and there was morning, the sixth day.",
+              "nwt": "Setelah itu, Allah melihat bahwa semua yang Dia buat sangat baik. Malam tiba dan pagi pun tiba, itulah hari keenam.",
               "tn_he": "וַיַּ֤רְא אֱלֹהִים֙ אֶת־כָּל־אֲשֶׁ֣ר עָשָׂ֔ה וְהִנֵּה־ט֖וֹב מְאֹ֑ד וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם הַשִּׁשִּֽׁי:",
               "tn_en": "And God saw all that He had made, and behold it was very good, and it was evening and it was morning, the sixth day."
             }
           }
         ],
         "totalVerses": 31,
+        "aid": 6289,
+        "nextAid": 8166,
         "sources": {
           "sabda": true,
+          "jw": true,
           "chabad": true
-        },
-        "aid": 6289,
-        "nextAid": 0
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 1,
+        "chapter": 2,
+        "verses": [
+          {
+            "verse": 1,
+            "texts": {
+              "tb": "Demikianlah diselesaikan langit dan bumi dan segala isinya.",
+              "bis": "Maka selesailah penciptaan seluruh alam semesta.",
+              "tl": "Demikianlah sudah dijadikan langit dan bumi serta dengan segala isinya.",
+              "ende": "Demikianlah diselesaikanlah langit dan bumi serta segala isinja.",
+              "tb_itl_drf": "Demikianlah diselesaikan <03615> langit <08064> dan bumi <0776> dan segala <03605> isinya <06635>.",
+              "tl_itl_drf": "Demikianlah sudah dijadikan <03615> langit <08064> dan bumi <0776> serta dengan segala <03605> isinya <06635>.",
+              "bbe": "And the heaven and the earth and all things in them were complete.",
+              "message": "Heaven and Earth were finished, down to the last detail.",
+              "nkjv": "Thus the heavens and the earth, and all the host of them, were finished.",
+              "net": "The heavens and the earth* were completed with everything that was in them.*",
+              "net2": "**\n\n__\n\nThe heavens and the earth⁽⁶⁴⁾ were completed with everything that was in them.⁽⁶⁵⁾",
+              "nwt": "Maka langit dan bumi serta segala isinya selesai diciptakan. Menjelang hari ketujuh, Allah menyelesaikan pekerjaan-Nya, dan pada hari ketujuh Dia mulai beristirahat dari semua yang Dia kerjakan."
+            }
+          },
+          {
+            "verse": 2,
+            "texts": {
+              "tb": "Ketika Allah pada hari ketujuh telah menyelesaikan pekerjaan yang dibuat-Nya itu, berhentilah Ia pada hari ketujuh dari segala pekerjaan yang telah dibuat-Nya itu.",
+              "bis": "Pada hari yang ketujuh Allah telah menyelesaikan pekerjaan-Nya itu, lalu Ia beristirahat.",
+              "tl": "Maka pada hari yang ketujuh setelah sudah disampaikan Allah pekerjaan-Nya, yang telah diperbuat-Nya itu, maka berhentilah Ia pada hari yang ketujuh itu dari pada pekerjaan-Nya, yang telah diperbuat-Nya.",
+              "ende": "Dan pada hari jang ketudjuh Allah menjelesaikan karja jang telah ditjiptakanNja dan pada hari ketudjuh itu Ia beristirahat dari seluruh pekerdjaan jang telah dilakukanNja.",
+              "tb_itl_drf": "Ketika <03615> Allah <0430> pada hari <03117> ketujuh <07637> telah menyelesaikan <03615> pekerjaan <04399> yang <0834> dibuat-Nya <06213> itu, berhentilah <07673> Ia pada hari <03117> ketujuh <07637> dari segala <03605> pekerjaan <04399> yang <0834> telah dibuat-Nya <06213> itu.",
+              "tl_itl_drf": "Maka pada hari <03117> yang ketujuh <07637> setelah sudah disampaikan <03615> Allah <0430> pekerjaan-Nya <04399>, yang telah <0834> diperbuat-Nya <06213> itu, maka berhentilah <07673> Ia pada hari <03117> yang ketujuh <07637> itu dari pada pekerjaan-Nya <04399>, yang telah <0834> diperbuat-Nya <06213>.",
+              "bbe": "And on the seventh day God came to the end of all his work; and on the seventh day he took his rest from all the work which he had done.",
+              "message": "By the seventh day God had finished his work. On the seventh day he rested from all his work.",
+              "nkjv": "And on the seventh day God ended His work which He had done, and He rested on the seventh day from all His work which He had done.",
+              "net": "By* the seventh day God finished the work that he had been doing,* and he ceased* on the seventh day all the work that he had been doing.",
+              "net2": "**\n\n__\n\nBy⁽⁶⁶⁾ the seventh day God finished the work that he had been doing,⁽⁶⁷⁾ and he ceased⁽⁶⁸⁾ on the seventh day all the work that he had been doing.",
+              "nwt": "Kemudian, Allah memberkati hari ketujuh itu dan menyatakan hari itu suci, karena pada hari itu Allah beristirahat dari pekerjaan-Nya untuk menciptakan semua yang Dia kehendaki."
+            }
+          },
+          {
+            "verse": 3,
+            "texts": {
+              "tb": "Lalu Allah memberkati hari ketujuh itu dan menguduskannya, karena pada hari itulah Ia berhenti dari segala pekerjaan penciptaan yang telah dibuat-Nya itu.",
+              "bis": "Maka diberkati-Nya hari yang ketujuh itu dan dijadikan-Nya hari yang khusus, karena pada hari itu Allah beristirahat setelah menyelesaikan pekerjaan-Nya.",
+              "tl": "Maka diberkati Allah akan hari yang ketujuh itu serta disucikannya, karena dalamnya telah Ia berhenti dari pada pekerjaan-Nya, yang telah diperbuat-Nya, akan menyempurnakan dia.",
+              "ende": "Allah memberkati hari ketudjuh itu dan menguduskannja, sebab pada hari itu Ia beristirahat dari segala pekerdjaan jang ditjiptakanNja.",
+              "tb_itl_drf": "Lalu Allah <0430> memberkati <01288> hari <03117> ketujuh <07637> itu dan menguduskannya <06942>, karena <03588> pada hari itulah Ia berhenti <07673> dari segala <03605> pekerjaan <04399> penciptaan <0430> <01254> yang telah <0834> dibuat-Nya <06213> <01254> itu.",
+              "tl_itl_drf": "Maka diberkati <01288> Allah <0430> akan hari <03117> yang ketujuh <07637> itu serta disucikannya <06942>, karena <03588> dalamnya <0> telah Ia berhenti <07673> dari pada pekerjaan-Nya <04399>, yang telah <0834> diperbuat-Nya <06213> <01254>, akan menyempurnakan dia <01254>.",
+              "bbe": "And God gave his blessing to the seventh day and made it holy: because on that day he took his rest from all the work which he had made and done.",
+              "message": "God blessed the seventh day. He made it a Holy Day Because on that day he rested from his work, all the creating God had done.",
+              "nkjv": "Then God blessed the seventh day and sanctified it, because in it He rested from all His work which God had created and made.",
+              "net": "God blessed the seventh day and made it holy* because on it he ceased all the work that he* had been doing in creation.*",
+              "net2": "**\n\n_The Creation of Man and Woman_\n\nGod blessed the seventh day and made it holy⁽⁶⁹⁾ because on it he ceased all the work that he⁽⁷⁰⁾ had been doing in creation.⁽⁷¹⁾ The Creation of Man and Woman",
+              "nwt": "Itulah sejarah langit dan bumi pada waktu semuanya diciptakan, pada hari Allah Yehuwa membuat bumi dan langit."
+            }
+          },
+          {
+            "verse": 4,
+            "texts": {
+              "tb": "Demikianlah riwayat langit dan bumi pada waktu diciptakan. Ketika TUHAN Allah menjadikan bumi dan langit, --",
+              "bis": "Itulah riwayat penciptaan alam semesta. Ketika TUHAN Allah membuat alam semesta,",
+              "tl": "Maka demikianlah asalnya langit dan bumi pada masa ia itu dijadikan, tatkala diperbuat Tuhan Allah akan langit dan bumi:",
+              "ende": "(2-4a) Itulah kissah kedjadian langit dan bumi, waktu ditjiptakan. (2-4b) Tatkala Jahwe Allah mendjadikan bumi dan langit,",
+              "tb_itl_drf": "Demikianlah <0428> riwayat <08435> langit <08064> dan bumi <0776> pada waktu <03117> diciptakan <01254>. Ketika <03117> TUHAN <03068> Allah <0430> menjadikan <06213> bumi <0776> dan langit <08064>, --",
+              "tl_itl_drf": "Maka demikianlah <0428> asalnya <08435> langit <08064> dan bumi <0776> pada masa ia itu dijadikan <01254>, tatkala <03117> diperbuat <06213> Tuhan <03068> Allah <0430> akan langit <08064> dan bumi <0776>:",
+              "bbe": "These are the generations of the heaven and the earth when they were made.",
+              "message": "This is the story of how it all started, of Heaven and Earth when they were created.",
+              "nkjv": "This [is] the history of the heavens and the earth when they were created, in the day that the LORD God made the earth and the heavens,",
+              "net": "This is the account* of the heavens and the earth* when they were created – when the Lord God* made the earth and heavens.*",
+              "net2": "**\n\n__\n\nThis is the account⁽⁷²⁾ of the heavens and the earth⁽⁷³⁾ when they were created – when the Lord God⁽⁷⁴⁾ made the earth and heavens.⁽⁷⁵⁾",
+              "nwt": "Di bumi, belum ada semak di padang dan belum ada tumbuhan yang bertunas, karena Allah Yehuwa belum menurunkan hujan ke bumi dan belum ada manusia untuk mengolah tanah."
+            }
+          },
+          {
+            "verse": 5,
+            "texts": {
+              "tb": "belum ada semak apapun di bumi, belum timbul tumbuh-tumbuhan apapun di padang, sebab TUHAN Allah belum menurunkan hujan ke bumi, dan belum ada orang untuk mengusahakan tanah itu;",
+              "bis": "belum ada benih yang bertunas dan belum ada tanam-tanaman di bumi, karena TUHAN belum menurunkan hujan dan belum ada orang untuk mengerjakan tanah itu.",
+              "tl": "pada masa itulah belum ada tumbuh-tumbuhan di atas bumi dan tiada pokok bertunas di padang, karena belum lagi diturunkan Tuhan Allah hujan kepada bumi dan belum ada orang akan membelakan tanah itu;",
+              "ende": "belum ada semak-semakpun diatas bumi dan belum tumbuh hidjau-hidjauan dipadang, sebab Jahwe Allah belum menurunkan hudjan dibumi dan manusiapun belum ada untuk mengolah tanah.",
+              "tb_itl_drf": "belum <02962> ada semak <07880> apapun <03605> di <07704> bumi <0776>, belum <02962> timbul <06779> tumbuh-tumbuhan <06212> apapun <03605> di padang <07704>, sebab <03588> TUHAN <03068> Allah <0430> belum <03808> menurunkan <04305> hujan ke bumi <0776>, dan belum ada <0369> orang untuk mengusahakan <05647> <0369> mengusahakan <0120> tanah <0127> itu;",
+              "tl_itl_drf": "pada masa itulah belum <02962> ada <01961> tumbuh-tumbuhan <07704> <06212> di atas bumi <0776> dan tiada <03808> pokok <06212> bertunas <07880> di <07704> padang <07704>, karena <03588> belum <02962> <02962> lagi diturunkan <04305> Tuhan <03068> Allah <0430> hujan kepada <05921> bumi <0776> dan belum ada orang <0120> akan membelakan <05647> <0369> <0120> tanah <0127> itu;",
+              "bbe": "In the day when the Lord God made earth and heaven there were no plants of the field on the earth, and no grass had come up: for the Lord God had not sent rain on the earth and there was no man to do work on the land.",
+              "message": "At the time GOD made Earth and Heaven, before any grasses or shrubs had sprouted from the ground--GOD hadn't yet sent rain on Earth, nor was there anyone around to work the ground",
+              "nkjv": "before any plant of the field was in the earth and before any herb of the field had grown. For the LORD God had not caused it to rain on the earth, and [there was] no man to till the ground;",
+              "net": "Now* no shrub of the field had yet grown on the earth, and no plant of the field* had yet sprouted, for the Lord God had not caused it to rain on the earth, and there was no man to cultivate the ground.*",
+              "net2": "**\n\n__\n\nNow⁽⁷⁶⁾ no shrub of the field had yet grown on the earth, and no plant of the field⁽⁷⁷⁾ had yet sprouted, for the Lord God had not caused it to rain on the earth, and there was no man to cultivate the ground.⁽⁷⁸⁾",
+              "nwt": "Tapi ada kabut yang naik dari tanah dan membasahi seluruh permukaan tanah."
+            }
+          },
+          {
+            "verse": 6,
+            "texts": {
+              "tb": "tetapi ada kabut naik ke atas dari bumi dan membasahi seluruh permukaan bumi itu--",
+              "bis": "Tetapi air mulai merembes dari bawah dan membasahi permukaan bumi.",
+              "tl": "melainkan naiklah uap dari bumi serta membasahkan segala tanah itu.",
+              "ende": "Tetapi kabut naik dari tanah dan membasahi seluruh permukaan bumi.",
+              "tb_itl_drf": "tetapi ada kabut <0108> naik <05927> ke atas dari <04480> bumi <0776> dan membasahi <08248> seluruh <03605> permukaan <06440> bumi <0127> itu--",
+              "tl_itl_drf": "melainkan naiklah <05927> uap <0108> dari <04480> bumi <0776> serta membasahkan <08248> segala <03605> tanah <0127> itu.",
+              "bbe": "But a mist went up from the earth, watering all the face of the land.",
+              "message": "(the whole Earth was watered by underground springs)--",
+              "nkjv": "but a mist went up from the earth and watered the whole face of the ground.",
+              "net": "Springs* would well up* from the earth and water* the whole surface of the ground.*",
+              "net2": "**\n\n__\n\nSprings⁽⁷⁹⁾ would well up⁽⁸⁰⁾ from the earth and water⁽⁸¹⁾ the whole surface of the ground.⁽⁸²⁾",
+              "nwt": "Kemudian, Allah Yehuwa membentuk manusia dari debu tanah dan mengembuskan napas hidup ke lubang hidungnya, dan manusia itu menjadi orang yang hidup."
+            }
+          },
+          {
+            "verse": 7,
+            "texts": {
+              "tb": "ketika itulah TUHAN Allah membentuk manusia itu dari debu tanah dan menghembuskan nafas hidup ke dalam hidungnya; demikianlah manusia itu menjadi makhluk yang hidup.",
+              "bis": "Kemudian TUHAN Allah mengambil sedikit tanah, membentuknya menjadi seorang manusia, lalu menghembuskan napas yang memberi hidup ke dalam lubang hidungnya; maka hiduplah manusia itu.",
+              "tl": "Maka dirupakan Tuhan Allah akan manusia itu dari pada lebu tanah dihembuskan-Nya nafas hidup ke lubang hidungnya; demikianlah manusia itu menjadi suatu nyawa yang hidup adanya.",
+              "ende": "Maka Jahwe Allah membentuk manusia dari debu tanah dan menghembuskan kedalam hidungnja nafas kehidupan, dan manusia djadi machluk jang hidup.",
+              "tb_itl_drf": "ketika itulah TUHAN <03068> Allah <0430> membentuk <03335> manusia <0120> itu dari debu <06083> tanah <0127> dan menghembuskan <05301> nafas <05397> hidup <02416> ke dalam hidungnya <0639>; demikianlah manusia <0120> itu menjadi makhluk <05315> yang hidup <02416>.",
+              "tl_itl_drf": "Maka dirupakan <03335> Tuhan <03068> Allah <0430> akan manusia <0120> itu dari pada <04480> lebu <06083> tanah <0127> dihembuskan-Nya <05301> nafas <05397> hidup <02416> ke lubang hidungnya <0639>; demikianlah <01961> manusia <0120> itu menjadi suatu <01961> nyawa <05315> yang hidup <02416> adanya.",
+              "bbe": "And the Lord God made man from the dust of the earth, breathing into him the breath of life: and man became a living soul.",
+              "message": "GOD formed Man out of dirt from the ground and blew into his nostrils the breath of life. The Man came alive--a living soul!",
+              "nkjv": "And the LORD God formed man [of] the dust of the ground, and breathed into his nostrils the breath of life; and man became a living being.",
+              "net": "The Lord God formed* the man from the soil of the ground* and breathed into his nostrils the breath of life,* and the man became a living being.*",
+              "net2": "**\n\n__\n\nThe Lord God formed⁽⁸³⁾ the man from the soil of the ground⁽⁸⁴⁾ and breathed into his nostrils the breath of life,⁽⁸⁵⁾ and the man became a living being.⁽⁸⁶⁾",
+              "nwt": "Selanjutnya, Allah Yehuwa membuat sebuah taman di Eden, ke arah timur, dan di sana Dia menaruh manusia yang Dia ciptakan itu."
+            }
+          },
+          {
+            "verse": 8,
+            "texts": {
+              "tb": "Selanjutnya TUHAN Allah membuat taman di Eden, di sebelah timur; disitulah ditempatkan-Nya manusia yang dibentuk-Nya itu.",
+              "bis": "Selanjutnya TUHAN Allah membuat taman di Eden, di sebelah timur, dan ditempatkan-Nya di situ manusia yang sudah dibentuk-Nya itu.",
+              "tl": "Maka diperbuat Tuhan Allah pula suatu taman dalam Eden, di sebelah timur, maka di sanalah ditaruh-Nya akan manusia, yang telah dirupakan-Nya itu.",
+              "ende": "Jahwe Allah mengadakan suatu taman di Eden, disebelah timur, dan disitu ditempatkanNja manusia jang telah dibentukNja.",
+              "tb_itl_drf": "Selanjutnya <05193> TUHAN <03068> Allah <0430> membuat taman <01588> di Eden <05731>, di sebelah timur <06924>; disitulah <07760> ditempatkan-Nya <08033> manusia <0120> yang <0834> dibentuk-Nya <03335> itu.",
+              "tl_itl_drf": "Maka diperbuat <05193> Tuhan <03068> Allah <0430> pula suatu taman <01588> dalam Eden <05731>, di sebelah timur <06924>, maka di sanalah <08033> ditaruh-Nya <07760> akan manusia <0120>, yang telah <0834> dirupakan-Nya <03335> itu.",
+              "bbe": "And the Lord God made a garden in the east, in Eden; and there he put the man whom he had made.",
+              "message": "Then GOD planted a garden in Eden, in the east. He put the Man he had just made in it.",
+              "nkjv": "The LORD God planted a garden eastward in Eden, and there He put the man whom He had formed.",
+              "net": "The Lord God planted an orchard* in the east,* in Eden;* and there he placed the man he had formed.*",
+              "net2": "**\n\n__\n\nThe Lord God planted an orchard⁽⁸⁷⁾ in the east,⁽⁸⁸⁾ in Eden;⁽⁸⁹⁾ and there he placed the man he had formed.⁽⁹⁰⁾",
+              "nwt": "Lalu, Allah Yehuwa membuat tanah menumbuhkan pohon-pohon yang indah dan yang buahnya bisa dimakan, juga pohon kehidupan di tengah-tengah taman itu dan pohon pengetahuan tentang yang baik dan yang jahat."
+            }
+          },
+          {
+            "verse": 9,
+            "texts": {
+              "tb": "Lalu TUHAN Allah menumbuhkan berbagai-bagai pohon dari bumi, yang menarik dan yang baik untuk dimakan buahnya; dan pohon kehidupan di tengah-tengah taman itu, serta pohon pengetahuan tentang yang baik dan yang jahat.",
+              "bis": "TUHAN Allah menumbuhkan segala macam pohon yang indah, yang menghasilkan buah-buahan yang baik. Di tengah-tengah taman tumbuhlah pohon yang memberi hidup, dan pohon yang memberi pengetahuan tentang yang baik dan yang jahat.",
+              "tl": "Maka di sana ditumbuhkan Tuhan Allah dari pada tanah berbagai-bagai pohon yang permai kepada pemandangan mata dan baik akan dimakan, dan lagi adalah pohon alhayat di tengah-tengah taman itu dan pohon pengetahuan akan hal baik dan jahatpun.",
+              "ende": "Jahwe Allah menumbuhkan dari tanah itu segala djenis pohon, jang indah dilihat dan baik dimakan buahnja, dan lagi pohon kehidupan ditengah-tengah taman itu serta pohon pengertian baik dan djahat.",
+              "tb_itl_drf": "Lalu TUHAN <03068> Allah <0430> menumbuhkan <06779> berbagai-bagai <04758> pohon <06086> dari <04480> bumi <0127>, yang menarik <02530> dan yang baik <02896> untuk dimakan <03978> buahnya; dan pohon <06086> kehidupan <02416> di tengah-tengah <08432> taman <01588> itu, serta pohon <06086> pengetahuan <01847> tentang yang baik <02896> dan yang jahat <07451>.",
+              "tl_itl_drf": "Maka di sana ditumbuhkan <06779> Tuhan <03068> Allah <0430> dari <04480> pada tanah <0127> berbagai-bagai <03605> pohon <06086> yang permai <02530> kepada pemandangan <04758> mata dan baik <02896> akan dimakan <03978>, dan lagi adalah pohon <06086> alhayat <02416> di tengah-tengah <08432> taman <01588> itu dan pohon <06086> pengetahuan <01847> akan hal baik <02896> dan jahatpun <07451>.",
+              "bbe": "And out of the earth the Lord made every tree to come, delighting the eye and good for food; and in the middle of the garden, the tree of life and the tree of the knowledge of good and evil.",
+              "message": "GOD made all kinds of trees grow from the ground, trees beautiful to look at and good to eat. The Tree-of-Life was in the middle of the garden, also the Tree-of-Knowledge-of-Good-and-Evil.",
+              "nkjv": "And out of the ground the LORD God made every tree grow that is pleasant to the sight and good for food. The tree of life [was] also in the midst of the garden, and the tree of the knowledge of good and evil.",
+              "net": "The Lord God made all kinds of trees grow from the soil,* every tree that was pleasing to look at* and good for food. (Now* the tree of life* and the tree of the knowledge of good and evil* were in the middle of the orchard.)",
+              "net2": "**\n\n__\n\nThe Lord God made all kinds of trees grow from the soil,⁽⁹¹⁾ every tree that was pleasing to look at⁽⁹²⁾ and good for food. (Now⁽⁹³⁾ the tree of life⁽⁹⁴⁾ and the tree of the knowledge of good and evil⁽⁹⁵⁾ were in the middle of the orchard.)",
+              "nwt": "Ada sungai yang mengalir dari Eden untuk mengairi taman itu, dan dari sana sungai itu terbagi menjadi empat sungai."
+            }
+          },
+          {
+            "verse": 10,
+            "texts": {
+              "tb": "Ada suatu sungai mengalir dari Eden untuk membasahi taman itu, dan dari situ sungai itu terbagi menjadi empat cabang.",
+              "bis": "Sebuah sungai mengalir dari Eden, membasahi taman itu; dan di luar Eden sungai itu terbagi menjadi empat cabang.",
+              "tl": "Maka dari pada Eden mengalirlah suatu sungai akan membasahkan taman itu, maka dari pada tempat itulah dibagikan sungai itu empat batangnya.",
+              "ende": "Ada suatu sungai mengalir dari Eden untuk mengairi taman itu, dan dari situ sungai terbagi djadi empat tjabang.",
+              "tb_itl_drf": "Ada suatu <01961> sungai <05104> mengalir <03318> dari Eden <05731> untuk membasahi <08248> taman <01588> itu, dan dari situ <08033> sungai itu terbagi <06504> menjadi <01961> empat <0702> cabang <07218>.",
+              "tl_itl_drf": "Maka dari <03318> pada Eden <05731> mengalirlah <03318> suatu sungai <05104> akan <0853> membasahkan <08248> taman <01588> itu, maka dari pada tempat <08033> itulah dibagikan <06504> sungai itu empat <0702> batangnya <07218>.",
+              "bbe": "And a river went out of Eden giving water to the garden; and from there it was parted and became four streams.",
+              "message": "A river flows out of Eden to water the garden and from there divides into four rivers.",
+              "nkjv": "Now a river went out of Eden to water the garden, and from there it parted and became four riverheads.",
+              "net": "Now* a river flows* from Eden* to water the orchard, and from there it divides* into four headstreams.*",
+              "net2": "**\n\n__\n\nNow⁽⁹⁶⁾ a river flows⁽⁹⁷⁾ from Eden⁽⁹⁸⁾ to water the orchard, and from there it divides⁽⁹⁹⁾ into four headstreams.⁽¹⁰⁰⁾",
+              "nwt": "Yang pertama bernama Pisyon; itulah sungai yang mengelilingi seluruh tanah Hawila, tempat adanya emas."
+            }
+          },
+          {
+            "verse": 11,
+            "texts": {
+              "tb": "Yang pertama, namanya Pison, yakni yang mengalir mengelilingi seluruh tanah Hawila, tempat emas ada.",
+              "bis": "Yang pertama bernama Pison; sungai itu mengalir mengelilingi tanah Hawila.",
+              "tl": "Adapun nama sungai yang pertama itu Pison; ia itulah yang melengkung seluruh tanah Hawilah, tempat ada emas.",
+              "ende": "Jang pertama bernama Pisjon, jaitu jang mengitari seluruh tanah Chawila, dimana terdapat emas.",
+              "tb_itl_drf": "Yang pertama <0259>, namanya <08034> Pison <06376>, yakni <01931> yang mengalir mengelilingi <05437> seluruh <03605> tanah <0776> Hawila <02341>, tempat <08033> <0834> emas <02091> ada.",
+              "tl_itl_drf": "Adapun nama <08034> sungai yang pertama <0259> itu Pison <06376>; ia itulah <01931> yang melengkung <05437> seluruh <03605> tanah <0776> Hawilah <02341>, tempat <08033> ada emas <02091>.",
+              "bbe": "The name of the first is Pishon, which goes round about all the land of Havilah where there is gold.",
+              "message": "The first is named Pishon; it flows through Havilah where there is gold.",
+              "nkjv": "The name of the first [is] Pishon; it [is] the one which skirts the whole land of Havilah, where [there is] gold.",
+              "net": "The name of the first is Pishon; it runs through* the entire land of Havilah, where there is gold.",
+              "net2": "**\n\n__\n\nThe name of the first is Pishon; it runs through⁽¹⁰¹⁾ the entire land of Havilah, where there is gold.",
+              "nwt": "Emas di tanah itu bagus. Di situ juga ada getah wangi dan batu oniks."
+            }
+          },
+          {
+            "verse": 12,
+            "texts": {
+              "tb": "Dan emas dari negeri itu baik; di sana ada damar bedolah dan batu krisopras.",
+              "bis": "Di situ terdapat emas murni dan juga wangi-wangian yang sulit diperoleh, serta batu-batu permata.",
+              "tl": "Maka emas dari tanah itu baik adanya, dan di sanapun ada hablur dan permata unam.",
+              "ende": "Adapun emas dari tanah itu baik; disitupun terdapat getah bedolah dan batu akik.",
+              "tb_itl_drf": "Dan emas <02091> dari negeri <0776> itu <01931> baik <02896>; di sana <08033> ada damar bedolah <0916> dan batu <068> krisopras <07718>.",
+              "tl_itl_drf": "Maka emas <02091> dari tanah <0776> itu baik <02896> adanya, dan di sanapun <08033> ada hablur <0916> dan permata <068> unam <07718>.",
+              "bbe": "And the gold of that land is good: there is bdellium and the onyx stone.",
+              "message": "The gold of this land is good. The land is also known for a sweet-scented resin and the onyx stone.",
+              "nkjv": "And the gold of that land [is] good. Bdellium and the onyx stone [are] there.",
+              "net": "(The gold of that land is pure;* pearls* and lapis lazuli* are also there).",
+              "net2": "**\n\n__\n\n(The gold of that land is pure;⁽¹⁰²⁾ pearls⁽¹⁰³⁾ and lapis lazuli⁽¹⁰⁴⁾ are also there).",
+              "nwt": "Sungai yang kedua bernama Gihon; itulah sungai yang mengelilingi seluruh tanah Kus."
+            }
+          },
+          {
+            "verse": 13,
+            "texts": {
+              "tb": "Nama sungai yang kedua ialah Gihon, yakni yang mengalir mengelilingi seluruh tanah Kush.",
+              "bis": "Sungai yang kedua bernama Gihon; airnya mengalir mengelilingi tanah Kus.",
+              "tl": "Maka nama sungai yang kedua itu Gihon; ia itu melengkung seluruh tanah Kusy.",
+              "ende": "Nama sungai jang kedua ialah Gichon, jaitu jang mengitari tanah Kusj.",
+              "tb_itl_drf": "Nama <08034> sungai <05104> yang kedua <08145> ialah Gihon <01521>, yakni <01931> yang mengalir mengelilingi <05437> seluruh <03605> tanah <0776> Kush <03568>.",
+              "tl_itl_drf": "Maka nama <08034> sungai <05104> yang kedua <08145> itu Gihon <01521>; ia <01931> itu melengkung <05437> seluruh <03605> tanah <0776> Kusy <03568>.",
+              "bbe": "And the name of the second river is Gihon: this river goes round all the land of Cush.",
+              "message": "The second river is named Gihon; it flows through the land of Cush.",
+              "nkjv": "The name of the second river [is] Gihon; it [is] the one which goes around the whole land of Cush.",
+              "net": "The name of the second river is Gihon; it runs through* the entire land of Cush.*",
+              "net2": "**\n\n__\n\nThe name of the second river is Gihon; it runs through⁽¹⁰⁵⁾ the entire land of Cush.⁽¹⁰⁶⁾",
+              "nwt": "Sungai yang ketiga bernama Tigris; itulah sungai yang mengalir ke sebelah timur Asiria. Dan sungai yang keempat adalah Efrat."
+            }
+          },
+          {
+            "verse": 14,
+            "texts": {
+              "tb": "Nama sungai yang ketiga ialah Tigris, yakni yang mengalir di sebelah timur Asyur. Dan sungai yang keempat ialah Efrat.",
+              "bis": "Sungai yang ketiga bernama Tigris dan mengalir di sebelah timur Asyur. Sungai yang keempat bernama Efrat.",
+              "tl": "Maka nama sungai yang ketiga itu Hidekel; ia itu mengalir ke sebelah timur benua Asyur. Dan nama sungai yang keempat itu Ferat.",
+              "ende": "Nama sungai jang ketiga ialah Tigris, jaitu jang mengalir disebelah timur Asjur; dan sungai jang keempat ialah Eufrat.",
+              "tb_itl_drf": "Nama <08034> sungai <05104> yang ketiga <07992> ialah Tigris <02313>, yakni <01931> yang mengalir <01980> di sebelah timur <06926> Asyur <0804>. Dan sungai <05104> yang keempat <07243> ialah Efrat <06578>.",
+              "tl_itl_drf": "Maka nama <08034> sungai <05104> yang ketiga <07992> itu Hidekel <02313>; ia <01931> itu mengalir ke <01980> sebelah timur <06926> benua Asyur <0804>. Dan nama sungai <05104> yang keempat <07243> itu Ferat <06578>.",
+              "bbe": "And the name of the third river is Tigris, which goes to the east of Assyria. And the fourth river is Euphrates.",
+              "message": "The third river is named Hiddekel and flows east of Assyria. The fourth river is the Euphrates.",
+              "nkjv": "The name of the third river [is] Hiddekel; it [is] the one which goes toward the east of Assyria. The fourth river [is] the Euphrates.",
+              "net": "The name of the third river is Tigris; it runs along the east side of Assyria.* The fourth river is the Euphrates.",
+              "net2": "**\n\n__\n\nThe name of the third river is Tigris; it runs along the east side of Assyria.⁽¹⁰⁷⁾ The fourth river is the Euphrates.",
+              "nwt": "Allah Yehuwa menempatkan pria itu di Taman Eden untuk menggarap dan mengurus taman itu."
+            }
+          },
+          {
+            "verse": 15,
+            "texts": {
+              "tb": "TUHAN Allah mengambil manusia itu dan menempatkannya dalam taman Eden untuk mengusahakan dan memelihara taman itu.",
+              "bis": "Kemudian TUHAN Allah menempatkan manusia itu di taman Eden untuk mengerjakan dan memelihara taman itu.",
+              "tl": "Maka diambil oleh Tuhan Allah akan manusia, ditaruh-Nya dalam taman Eden itu, supaya diusahakannya dan dipeliharakannya akan dia.",
+              "ende": "Jahwe Allah mengambil manusia dan menempatkannja ditaman Eden, untuk mengolah dan mendjaganja.",
+              "tb_itl_drf": "TUHAN <03068> Allah <0430> mengambil <03947> manusia <0120> itu dan menempatkannya <03240> dalam taman <01588> Eden <05731> untuk mengusahakan <05647> dan memelihara <08104> taman itu.",
+              "tl_itl_drf": "Maka diambil <03947> oleh Tuhan <03068> Allah <0430> akan manusia <0120>, ditaruh-Nya <03240> dalam taman <01588> Eden <05731> itu, supaya diusahakannya <05647> dan dipeliharakannya <08104> akan dia.",
+              "bbe": "And the Lord God took the man and put him in the garden of Eden to do work in it and take care of it.",
+              "message": "GOD took the Man and set him down in the Garden of Eden to work the ground and keep it in order.",
+              "nkjv": "Then the LORD God took the man and put him in the garden of Eden to tend and keep it.",
+              "net": "The Lord God took the man and placed* him in the orchard in* Eden to care for it and to maintain it.*",
+              "net2": "**\n\n__\n\nThe Lord God took the man and placed⁽¹⁰⁸⁾ him in the orchard in⁽¹⁰⁹⁾ Eden to care for it and to maintain it.⁽¹¹⁰⁾",
+              "nwt": "Allah Yehuwa juga memerintahkan pria itu, ”Buah dari setiap pohon di taman ini boleh kamu makan sepuasnya."
+            }
+          },
+          {
+            "verse": 16,
+            "texts": {
+              "tb": "Lalu TUHAN Allah memberi perintah ini kepada manusia: \"Semua pohon dalam taman ini boleh kaumakan buahnya dengan bebas,",
+              "bis": "TUHAN berkata kepada manusia itu, \"Engkau boleh makan buah-buahan dari semua pohon di taman ini,",
+              "tl": "Maka berfirmanlah Tuhan Allah kepada manusia, kata-Nya: Adapun buah-buah segala pohon yang dalam taman ini boleh engkau makan sesukamu,",
+              "ende": "Dan Jahwe Allah memerintahkan kepada manusia: \"Segala pohon taman ini bolehlah kau makan buahnja,",
+              "tb_itl_drf": "Lalu TUHAN <03068> Allah <0430> memberi perintah <06680> ini kepada manusia <0120>: \"Semua <03605> pohon <06086> dalam taman <01588> ini boleh <0398> kaumakan <0398> buahnya dengan bebas,",
+              "tl_itl_drf": "Maka berfirmanlah <06680> Tuhan <03068> Allah <0430> kepada manusia <0120>, kata-Nya <0559>: Adapun buah-buah segala <03605> pohon <06086> yang dalam taman <01588> ini boleh <0398> engkau makan sesukamu <0398> <0398>,",
+              "bbe": "And the Lord God gave the man orders, saying, You may freely take of the fruit of every tree of the garden:",
+              "message": "GOD commanded the Man, \"You can eat from any tree in the garden,",
+              "nkjv": "And the LORD God commanded the man, saying, \"Of every tree of the garden you may freely eat;",
+              "net": "Then the Lord God commanded* the man, “You may freely eat* fruit* from every tree of the orchard,",
+              "net2": "**\n\n__\n\nThen the Lord God commanded⁽¹¹¹⁾ the man, “You may freely eat⁽¹¹²⁾ fruit⁽¹¹³⁾ from every tree of the orchard,",
+              "nwt": "Tapi buah dari pohon pengetahuan tentang yang baik dan yang jahat tidak boleh kamu makan, karena pada hari kamu memakannya, kamu pasti akan mati.”"
+            }
+          },
+          {
+            "verse": 17,
+            "texts": {
+              "tb": "tetapi pohon pengetahuan tentang yang baik dan yang jahat itu, janganlah kaumakan buahnya, sebab pada hari engkau memakannya, pastilah engkau mati.\"",
+              "bis": "kecuali dari pohon yang memberi pengetahuan tentang yang baik dan yang jahat. Buahnya tidak boleh engkau makan; jika engkau memakannya, engkau pasti akan mati pada hari itu juga.\"",
+              "tl": "tetapi buah pohon pengetahuan akan hal baik dan jahat itu janganlah engkau makan, karena pada hari engkau makan dari padanya engkau akan mati.",
+              "ende": "tetapi pohon pengertian baik dan djahat djanganlah kaumakan buahnja, sebab pada hari engkau makannja, pastilah engkau akan mati.\"",
+              "tb_itl_drf": "tetapi pohon <06086> pengetahuan <01847> tentang yang baik <02896> dan yang jahat <07451> itu, janganlah <03808> kaumakan <0398> buahnya <04480>, sebab <03588> pada hari <03117> engkau memakannya <0398>, pastilah <04191> engkau mati <04191>.\"",
+              "tl_itl_drf": "tetapi buah pohon <06086> pengetahuan <01847> akan hal baik <02896> dan jahat <07451> itu janganlah <03808> engkau makan <0398>, karena <03588> pada hari <03117> engkau makan <0398> dari <04480> padanya engkau akan mati <04191>.",
+              "bbe": "But of the fruit of the tree of the knowledge of good and evil you may not take; for on the day when you take of it, death will certainly come to you.",
+              "message": "except from the Tree-of-Knowledge-of-Good-and-Evil. Don't eat from it. The moment you eat from that tree, you're dead.\"",
+              "nkjv": "\"but of the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die.\"",
+              "net": "but* you must not eat* from the tree of the knowledge of good and evil, for when* you eat from it you will surely die.”*",
+              "net2": "**\n\n__\n\nbut⁽¹¹⁴⁾ you must not eat⁽¹¹⁵⁾ from the tree of the knowledge of good and evil, for when⁽¹¹⁶⁾ you eat from it you will surely die.”⁽¹¹⁷⁾",
+              "nwt": "Lalu Allah Yehuwa berkata, ”Tidak baik kalau pria itu terus sendirian. Aku akan membuat seorang penolong bagi dia, sebagai pelengkap baginya.”"
+            }
+          },
+          {
+            "verse": 18,
+            "texts": {
+              "tb": "TUHAN Allah berfirman: \"Tidak baik, kalau manusia itu seorang diri saja. Aku akan menjadikan penolong baginya, yang sepadan dengan dia.\"",
+              "bis": "Lalu TUHAN Allah berkata, \"Tidak baik manusia hidup sendirian. Aku akan membuat teman yang cocok untuk membantunya.\"",
+              "tl": "Dan lagi berfirmanlah Tuhan Allah demikian: Tiada baik manusia itu seorang orangnya, bahwa Aku hendak memperbuat akan dia seorang penolong yang sejodoh dengan dia.",
+              "ende": "Lalu Jahwe Allah bersabda: \"Tidak baiklah manusia seorang diri sadja; Aku hendak mengadakan pembantu jang sedjadjar dengan dia\".",
+              "tb_itl_drf": "TUHAN <03068> Allah <0430> berfirman <0559>: \"Tidak <03808> baik <02896>, kalau manusia <0120> itu seorang diri saja <0905>. Aku akan menjadikan <06213> penolong <05828> baginya, yang sepadan <05048> dengan dia.\"",
+              "tl_itl_drf": "Dan lagi berfirmanlah <0559> Tuhan <03068> Allah <0430> demikian <01961>: Tiada <03808> baik <02896> manusia <0120> itu seorang orangnya <0905>, bahwa Aku hendak memperbuat <06213> akan dia seorang penolong <05828> yang sejodoh <05048> dengan dia.",
+              "bbe": "And the Lord God said, It is not good for the man to be by himself: I will make one like himself as a help to him",
+              "message": "GOD said, \"It's not good for the Man to be alone; I'll make him a helper, a companion.\"",
+              "nkjv": "And the LORD God said, \"[It is] not good that man should be alone; I will make him a helper comparable to him.\"",
+              "net": "The Lord God said, “It is not good for the man to be alone.* I will make a companion* for him who corresponds to him.”*",
+              "net2": "**\n\n__\n\nThe Lord God said, “It is not good for the man to be alone.⁽¹¹⁸⁾ I will make a companion⁽¹¹⁹⁾ for him who corresponds to him.”⁽¹²⁰⁾",
+              "nwt": "Allah Yehuwa telah membentuk dari tanah segala binatang liar dan segala binatang yang terbang. Lalu Allah membawa mereka kepada pria itu karena ingin tahu sebutan apa yang akan dia berikan kepada mereka. Sebutan apa pun yang dia berikan akan menjadi nama setiap binatang itu."
+            }
+          },
+          {
+            "verse": 19,
+            "texts": {
+              "tb": "Lalu TUHAN Allah membentuk dari tanah segala binatang hutan dan segala burung di udara. Dibawa-Nyalah semuanya kepada manusia itu untuk melihat, bagaimana ia menamainya; dan seperti nama yang diberikan manusia itu kepada tiap-tiap makhluk yang hidup, demikianlah nanti nama makhluk itu.",
+              "bis": "Maka Ia mengambil sedikit tanah dan membentuk segala macam binatang darat dan binatang udara. Semuanya dibawa Allah kepada manusia itu untuk melihat nama apa yang akan diberikannya kepada binatang-binatang itu. Itulah asal mulanya binatang di darat dan di udara mendapat namanya masing-masing.",
+              "tl": "Karena setelah dijadikan Tuhan Allah akan segala binatang yang di atas bumi dan segala unggas yang di udara dari pada tanah, maka didatangkannya sekaliannya itu kepada Adam, hendak melihat bagaimana dinamai Adam akan dia, maka sebagaimana dinamai Adam akan segala nyawa yang hidup itu, begitu juga akan jadi namanya.",
+              "ende": "Dan Jahwe Allah membentuk dari tanah segala binatang dipadang dan segala burung diudara, dan Ia mengantarnja kedepan manusia, untuk melihat, bagaimana ia akan menamai mereka; sebab tiap-tiap nama, jang diberikan manusia kepada machluk hidup, itulah namanja.",
+              "tb_itl_drf": "Lalu TUHAN <03068> Allah <0430> membentuk <03335> dari <04480> tanah <0127> segala <03605> binatang <02416> hutan <07704> dan segala <03605> burung <05775> di udara <08064>. Dibawa-Nyalah <0935> semuanya kepada <0413> manusia <0120> itu untuk melihat <07200>, bagaimana <04100> ia menamainya <07121>; dan seperti nama yang <0834> diberikan <07121> manusia <0120> itu kepada tiap-tiap <03605> makhluk <05315> yang hidup <02416>, demikianlah <01931> nanti nama <08034> makhluk itu.",
+              "tl_itl_drf": "Karena setelah dijadikan <03335> Tuhan <03068> Allah <0430> akan segala <03605> binatang <02416> yang di <07704> atas bumi <0127> dan segala <03605> unggas <05775> yang di udara <08064> dari <04480> pada tanah <07704>, maka didatangkannya <0935> sekaliannya <08064> itu kepada <0413> Adam <0120>, hendak melihat <07200> bagaimana <04100> dinamai <07121> Adam akan dia <0>, maka sebagaimana <0834> dinamai <07121> Adam <0120> akan segala nyawa <05315> yang hidup <02416> itu, begitu juga <01931> akan jadi namanya <08034>.",
+              "bbe": "And from the earth the Lord God made every beast of the field and every bird of the air, and took them to the man to see what names he would give them: and whatever name he gave to any living thing, that was its name.",
+              "message": "So GOD formed from the dirt of the ground all the animals of the field and all the birds of the air. He brought them to the Man to see what he would name them. Whatever the Man called each living creature, that was its name.",
+              "nkjv": "Out of the ground the LORD God formed every beast of the field and every bird of the air, and brought [them] to Adam to see what he would call them. And whatever Adam called each living creature, that [was] its name.",
+              "net": "The Lord God formed* out of the ground every living animal of the field and every bird of the air. He brought them to the man to see what he would* name them, and whatever the man called each living creature, that was its name.",
+              "net2": "**\n\n__\n\nThe Lord God formed⁽¹²¹⁾ out of the ground every living animal of the field and every bird of the air. He brought them to the man to see what he would⁽¹²²⁾ name them, and whatever the man called each living creature, that was its name.",
+              "nwt": "Maka pria itu menamai semua binatang peliharaan, binatang yang terbang, dan setiap binatang liar. Tapi bagi pria itu, tidak ada penolong yang bisa menjadi pelengkap baginya."
+            }
+          },
+          {
+            "verse": 20,
+            "texts": {
+              "tb": "Manusia itu memberi nama kepada segala ternak, kepada burung-burung di udara dan kepada segala binatang hutan, tetapi baginya sendiri ia tidak menjumpai penolong yang sepadan dengan dia.",
+              "bis": "Demikianlah manusia itu memberi nama kepada semua binatang di darat dan di udara. Tetapi tidak satu pun di antaranya bisa menjadi teman yang cocok untuk membantunya.",
+              "tl": "Lalu dinamai oleh Adam akan segala binatang yang jinak dan akan segala unggas yang di udara dan akan segala margasatwa, akan tetapi bagi manusia tiada didapatinya akan seorang penolong yang sejodoh dengan dia.",
+              "ende": "Manusia memberi nama kepada segala ternak, burung-burung diudara dan binatang-binatang liar. Adapun manusia tidak mendapati pembantu jang sedjadjar dengan dirinja.",
+              "tb_itl_drf": "Manusia <0120> itu memberi <07121> nama <08034> kepada segala <03605> ternak <0929>, kepada burung-burung <05775> di udara <08064> dan kepada segala <03605> binatang <02416> hutan <07704>, tetapi baginya <0120> sendiri ia tidak <03808> menjumpai <04672> penolong <05828> yang sepadan <05048> dengan dia.",
+              "tl_itl_drf": "Lalu dinamai <07121> oleh Adam <0120> akan segala <03605> binatang <0929> yang jinak dan akan segala unggas <05775> yang di udara <08064> dan akan segala <03605> margasatwa <02416>, akan tetapi <07704> bagi manusia <0120> tiada <03808> didapatinya <04672> akan seorang penolong <05828> yang sejodoh <05048> dengan dia.",
+              "bbe": "And the man gave names to all cattle and to the birds of the air and to every beast of the field; but Adam had no one like himself as a help.",
+              "message": "The Man named the cattle, named the birds of the air, named the wild animals; but he didn't find a suitable companion.",
+              "nkjv": "So Adam gave names to all cattle, to the birds of the air, and to every beast of the field. But for Adam there was not found a helper comparable to him.",
+              "net": "So the man named all the animals, the birds of the air, and the living creatures of the field, but for Adam* no companion who corresponded to him was found.*",
+              "net2": "**\n\n__\n\nSo the man named all the animals, the birds of the air, and the living creatures of the field, but for Adam⁽¹²³⁾ no companion who corresponded to him was found.⁽¹²⁴⁾",
+              "nwt": "Maka Allah Yehuwa membuat pria itu tidur nyenyak. Sementara dia tidur, Allah mengambil salah satu rusuknya, lalu menutup bagian itu dengan daging."
+            }
+          },
+          {
+            "verse": 21,
+            "texts": {
+              "tb": "Lalu TUHAN Allah membuat manusia itu tidur nyenyak; ketika ia tidur, TUHAN Allah mengambil salah satu rusuk dari padanya, lalu menutup tempat itu dengan daging.",
+              "bis": "Lalu TUHAN Allah membuat manusia tidur nyenyak, dan selagi ia tidur, TUHAN Allah mengeluarkan salah satu rusuk dari tubuh manusia itu, lalu menutup bekasnya dengan daging.",
+              "tl": "Maka didatangkan Tuhan Allah atas Adam itu tidur yang lelap, lalu tertidurlah ia. Maka diambil Allah sebilah tulang rusuknya, lalu ditutupkan-Nya pula tempat itu dengan daging.",
+              "ende": "Maka Jahwe Allah mendatangkan tidur njenjak atas manusia, sehingga ia tertidur. Lalu Ia mengambil salah satu rusuknja dan menutup tempat itu dengan daging.",
+              "tb_itl_drf": "Lalu <05307> TUHAN <03068> Allah <0430> membuat manusia <0120> itu tidur <03462> nyenyak <08639>; ketika ia tidur <03462>, TUHAN Allah <03462> <03068> mengambil <03947> salah satu <0259> rusuk <06763> dari padanya, lalu menutup <05462> tempat <08478> itu dengan daging <01320>.",
+              "tl_itl_drf": "Maka didatangkan <05307> Tuhan <03068> Allah <0430> atas <05921> Adam <0120> itu tidur yang lelap <08639>, lalu tertidurlah <03462> ia. Maka diambil <03947> Allah sebilah tulang <06763> rusuknya <0259>, lalu ditutupkan-Nya pula tempat <08478> <05462> <06763> itu dengan daging <01320>.",
+              "bbe": "And the Lord God sent a deep sleep on the man, and took one of the bones from his side while he was sleeping, joining up the flesh again in its place:",
+              "message": "GOD put the Man into a deep sleep. As he slept he removed one of his ribs and replaced it with flesh.",
+              "nkjv": "And the LORD God caused a deep sleep to fall on Adam, and he slept; and He took one of his ribs, and closed up the flesh in its place.",
+              "net": "So the Lord God caused the man to fall into a deep sleep,* and while he was asleep,* he took part of the man’s side* and closed up the place with flesh.*",
+              "net2": "**\n\n__\n\nSo the Lord God caused the man to fall into a deep sleep,⁽¹²⁵⁾ and while he was asleep,⁽¹²⁶⁾ he took part of the man’s side⁽¹²⁷⁾ and closed up the place with flesh.⁽¹²⁸⁾",
+              "nwt": "Dengan tulang rusuk yang Dia ambil dari pria itu, Allah Yehuwa membuat seorang wanita dan mengantarnya kepada pria itu."
+            }
+          },
+          {
+            "verse": 22,
+            "texts": {
+              "tb": "Dan dari rusuk yang diambil TUHAN Allah dari manusia itu, dibangun-Nyalah seorang perempuan, lalu dibawa-Nya kepada manusia itu.",
+              "bis": "Dari rusuk itu TUHAN membentuk seorang perempuan, lalu membawanya kepada manusia itu.",
+              "tl": "Maka dari pada tulang yang telah dikeluarkan-Nya dari dalam Adam itu diperbuat Tuhan seorang perempuan, lalu dibawa-Nya akan dia kepada Adam.",
+              "ende": "Jahwe Allah membentuk rusuk, jang diambilNja dari manusia itu, djadi wanita, lalu diantarNja kepada manusia.",
+              "tb_itl_drf": "Dan dari rusuk <06763> yang <0834> diambil <03947> TUHAN <03068> Allah <0430> dari <04480> manusia <0120> itu, dibangun-Nyalah seorang perempuan <0802>, lalu dibawa-Nya <0935> kepada <0413> manusia <0120> itu.",
+              "tl_itl_drf": "Maka dari pada <04480> tulang yang telah <0834> dikeluarkan-Nya <01129> dari <04480> dalam Adam <0120> itu diperbuat <0802> <01129> Tuhan <03068> seorang perempuan <0802>, lalu <0935> dibawa-Nya <06763> akan dia kepada <0413> Adam <0120>.",
+              "bbe": "And the bone which the Lord God had taken from the man he made into a woman, and took her to the man.",
+              "message": "GOD then used the rib that he had taken from the Man to make Woman and presented her to the Man.",
+              "nkjv": "Then the rib which the LORD God had taken from man He made into a woman, and He brought her to the man.",
+              "net": "Then the Lord God made* a woman from the part he had taken out of the man, and he brought her to the man.",
+              "net2": "**\n\n__\n\nThen the Lord God made⁽¹²⁹⁾ a woman from the part he had taken out of the man, and he brought her to the man.",
+              "nwt": "Lalu pria itu berkata, ”Inilah akhirnya tulang dari tulangku Dan daging dari dagingku. Dia akan disebut Wanita Karena dari pria dia diambil.”"
+            }
+          },
+          {
+            "verse": 23,
+            "texts": {
+              "tb": "Lalu berkatalah manusia itu: \"Inilah dia, tulang dari tulangku dan daging dari dagingku. Ia akan dinamai perempuan, sebab ia diambil dari laki-laki.\"",
+              "bis": "Maka berkatalah manusia itu, \"Ini dia, orang yang sama dengan aku--tulang dari tulangku, dan daging dari dagingku. Kunamakan dia perempuan, karena ia diambil dari laki-laki.\"",
+              "tl": "Maka kata Adam: Bahwa sekarang tulang ini dari pada tulangku dan daging ini dari pada dagingku; maka ia akan dinamai perempuan, sebab ia telah dikeluarkan dari dalam orang laki-laki adanya.",
+              "ende": "Maka kata manusia: \"Nah, dia inilah sesungguhnja tulang dari tulangku,dan daging dari dagingku! Dia akan dinamai wanita, sebab dia inilah diambil dari pria\".",
+              "tb_itl_drf": "Lalu berkatalah <0559> manusia <0120> itu: \"Inilah <02063> dia, tulang <06106> <06471> dari tulangku <06106> dan daging <01320> dari dagingku <01320>. Ia akan dinamai <07121> perempuan <0802>, sebab <03588> ia diambil <03947> dari laki-laki <0376>.\"",
+              "tl_itl_drf": "Maka kata <0559> Adam <0120>: Bahwa sekarang <06471> tulang <06106> ini <02063> dari pada tulangku <06106> dan daging <01320> ini <02063> dari pada dagingku <01320>; maka ia akan dinamai <07121> perempuan <0802>, sebab <03588> ia telah dikeluarkan <03947> dari dalam orang laki-laki <0376> adanya <02063>.",
+              "bbe": "And the man said, This is now bone of my bone and flesh of my flesh: let her name be Woman because she was taken out of Man.",
+              "message": "The Man said, \"Finally! Bone of my bone, flesh of my flesh! Name her Woman for she was made from Man.\"",
+              "nkjv": "And Adam said: \"This [is] now bone of my bones And flesh of my flesh; She shall be called Woman, Because she was taken out of Man.\"",
+              "net": "Then the man said, “This one at last* is bone of my bones and flesh of my flesh; this one will be called* ‘woman,’ for she was taken out of* man.”*",
+              "net2": "**\n\n__\n\nThen the man said, “This one at last⁽¹³⁰⁾ is bone of my bones and flesh of my flesh; this one will be called⁽¹³¹⁾ ‘woman,’ for she was taken out of⁽¹³²⁾ man.”⁽¹³³⁾",
+              "nwt": "Itulah alasannya seorang pria akan meninggalkan ayah dan ibunya dan akan terus bersama istrinya, dan mereka akan menjadi satu."
+            }
+          },
+          {
+            "verse": 24,
+            "texts": {
+              "tb": "Sebab itu seorang laki-laki akan meninggalkan ayahnya dan ibunya dan bersatu dengan isterinya, sehingga keduanya menjadi satu daging.",
+              "bis": "Itulah sebabnya orang laki-laki meninggalkan ayah dan ibunya, dan bersatu dengan istrinya, lalu keduanya menjadi satu.",
+              "tl": "Maka sebab itulah tak dapat tiada orang akan meninggalkan ibu bapanya dan berdamping pada isterinya, maka keduanya itu menjadi sedaging jua adanya.",
+              "ende": "Itulah sebabnja pria akan meninggalkan ibu-bapanja dan berlekat pada isterinja, maka mereka itu akan mendjadi satu daging.",
+              "tb_itl_drf": "Sebab <03651> itu seorang laki-laki <0376> akan meninggalkan <05800> ayahnya <01> dan ibunya <0517> dan bersatu <01692> dengan isterinya <0802>, sehingga keduanya menjadi <01961> satu <0259> daging <01320>.",
+              "tl_itl_drf": "Maka sebab <03651> itulah tak dapat tiada orang akan meninggalkan <05800> ibu <0517> bapanya <01> dan berdamping <01692> pada isterinya <0802>, maka keduanya itu menjadi <01961> sedaging <01320> jua <0259> adanya.",
+              "bbe": "For this cause will a man go away from his father and his mother and be joined to his wife; and they will be one flesh.",
+              "message": "Therefore a man leaves his father and mother and embraces his wife. They become one flesh.",
+              "nkjv": "Therefore a man shall leave his father and mother and be joined to his wife, and they shall become one flesh.",
+              "net": "That is why* a man leaves* his father and mother and unites with* his wife, and they become a new family.*",
+              "net2": "**\n\n__\n\nThat is why⁽¹³⁴⁾ a man leaves⁽¹³⁵⁾ his father and mother and unites with⁽¹³⁶⁾ his wife, and they become a new family.⁽¹³⁷⁾",
+              "nwt": "Pria itu dan istrinya tetap telanjang, tapi mereka berdua tidak merasa malu."
+            }
+          },
+          {
+            "verse": 25,
+            "texts": {
+              "tb": "Mereka keduanya telanjang, manusia dan isterinya itu, tetapi mereka tidak merasa malu.",
+              "bis": "Laki-laki dan perempuan itu telanjang, tetapi mereka tidak merasa malu.",
+              "tl": "Hata, maka keduanyapun bertelanjang tubuhnya, baik Adam baik Hawa, maka tiada malu ia.",
+              "ende": "Adapun mereka berdua adalah telandjang, jaitu manusia dan isterinja, tetapi mereka tidak merasa malu satu sama lain.",
+              "tb_itl_drf": "Mereka keduanya <08147> telanjang <06174>, manusia <0120> dan isterinya <0802> itu, tetapi mereka tidak <03808> merasa malu <0954>.",
+              "tl_itl_drf": "Hata <01961>, maka keduanyapun <08147> bertelanjang <06174> tubuhnya, baik Adam <0120> baik Hawa <0802>, maka tiada <03808> malu <0954> ia.",
+              "bbe": "And the man and his wife were without clothing, and they had no sense of shame.",
+              "message": "The two of them, the Man and his Wife, were naked, but they felt no shame.",
+              "nkjv": "And they were both naked, the man and his wife, and were not ashamed.",
+              "net": "The man and his wife were both naked,* but they were not ashamed.*",
+              "net2": "**\n\n_The Temptation and the Fall_\n\nThe man and his wife were both naked,⁽¹³⁸⁾ but they were not ashamed.⁽¹³⁹⁾ The Temptation and the Fall"
+            }
+          }
+        ],
+        "totalVerses": 25,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 1,
+        "chapter": 3,
+        "verses": [
+          {
+            "verse": 1,
+            "texts": {
+              "tb": "Adapun ular ialah yang paling cerdik dari segala binatang di darat yang dijadikan oleh TUHAN Allah. Ular itu berkata kepada perempuan itu: \"Tentulah Allah berfirman: Semua pohon dalam taman ini jangan kamu makan buahnya, bukan?\"",
+              "bis": "Ular adalah binatang yang paling licik dari segala binatang yang dibuat oleh TUHAN Allah. Ular itu bertanya kepada perempuan itu, \"Apakah Allah benar-benar melarang kalian makan buah-buahan dari segala pohon di taman ini?\"",
+              "tl": "Sebermula, maka ular itu terlebih cerdik dari pada segala binatang di atas bumi yang telah dijadikan Tuhan Allah. Maka kata ular kepada perempuan itu: Barangkali firman Allah begini: Jangan kamu makan buah-buah segala pohon yang dalam taman ini?",
+              "ende": "Adapun ular itu lebih litjin daripada segala binatang liar, jang telah didjadikan Jahwe Allah. Katanja kepada wanita: \"Betulkah Allah telah berfirman: segala pohon taman ini djangan kamu makan buahnja?\"",
+              "tb_itl_drf": "Adapun ular <05175> ialah yang paling cerdik <06175> dari segala <03605> binatang <02416> di darat <07704> yang <0834> dijadikan <06213> oleh TUHAN <03068> Allah <0430>. Ular itu berkata <0559> kepada <0413> perempuan <0802> itu: \"Tentulah <0637> Allah <0430> berfirman <0559>: Semua <03605> pohon <06086> dalam taman <01588> ini jangan <03808> kamu makan <0398> buahnya, bukan?\"",
+              "tl_itl_drf": "Sebermula, maka ular <05175> itu terlebih cerdik <06175> dari pada segala <03605> binatang <02416> di <07704> atas bumi <07704> yang telah <0834> dijadikan <06213> Tuhan <03068> Allah <0430>. Maka kata <0559> ular kepada <0413> perempuan <0802> itu: Barangkali <0637> firman <0559> Allah <0430> begini: Jangan <03808> kamu makan <0398> buah-buah segala <03605> pohon <06086> yang dalam taman <01588> ini?",
+              "bbe": "Now the snake was wiser than any beast of the field which the Lord God had made. And he said to the woman, Has God truly said that you may not take of the fruit of any tree in the garden?",
+              "message": "The serpent was clever, more clever than any wild animal GOD had made. He spoke to the Woman: \"Do I understand that God told you not to eat from any tree in the garden?\"",
+              "nkjv": "Now the serpent was more cunning than any beast of the field which the LORD God had made. And he said to the woman, \"Has God indeed said, `You shall not eat of every tree of the garden' ?\"",
+              "net": "Now* the serpent* was more shrewd* than any of the wild animals* that the Lord God had made. He said to the woman, “Is it really true that* God* said, ‘You must not eat from any tree of the orchard’?”*",
+              "net2": "**\n\n__\n\nNow⁽¹⁴⁰⁾ the serpent⁽¹⁴¹⁾ was more shrewd⁽¹⁴²⁾ than any of the wild animals⁽¹⁴³⁾ that the Lord God had made. He said to the woman, “Is it really true that⁽¹⁴⁴⁾ God⁽¹⁴⁵⁾ said, ‘You must not eat from any tree of the orchard’?”⁽¹⁴⁶⁾",
+              "nwt": "Wanita itu berkata kepada ular, ”Kami boleh makan buah dari pohon-pohon di taman ini."
+            }
+          },
+          {
+            "verse": 2,
+            "texts": {
+              "tb": "Lalu sahut perempuan itu kepada ular itu: \"Buah pohon-pohonan dalam taman ini boleh kami makan,",
+              "bis": "\"Kami boleh makan buah-buahan dari setiap pohon di dalam taman ini,\" jawab perempuan itu,",
+              "tl": "Maka sahut perempuan itu kepada ular: Boleh kami makan buah-buah segala pohon yang dalam taman ini,",
+              "ende": "Sahut wanita kepada ular: \"Kami boleh makan buah pohon-pohon taman ini;",
+              "tb_itl_drf": "Lalu sahut <0559> perempuan <0802> itu kepada <0413> ular <05175> itu: \"Buah <06529> pohon-pohonan <06086> dalam taman <01588> ini boleh kami makan <0398>,",
+              "tl_itl_drf": "Maka sahut <0559> perempuan <0802> itu kepada <0413> ular <05175>: Boleh kami makan <0398> buah-buah <06529> segala pohon <06086> yang dalam taman <01588> ini,",
+              "bbe": "And the woman said, We may take of the fruit of the trees in the garden:",
+              "message": "The Woman said to the serpent, \"Not at all. We can eat from the trees in the garden.",
+              "nkjv": "And the woman said to the serpent, \"We may eat the fruit of the trees of the garden;",
+              "net": "The woman said to the serpent, “We may eat* of the fruit from the trees of the orchard;",
+              "net2": "**\n\n__\n\nThe woman said to the serpent, “We may eat⁽¹⁴⁷⁾ of the fruit from the trees of the orchard;",
+              "nwt": "Ular adalah binatang yang paling berhati-hati dari semua binatang liar yang Allah Yehuwa buat. Ular berkata kepada wanita itu, ”Apa benar Allah berkata bahwa kalian tidak boleh makan buah dari semua pohon di taman ini?” Tapi tentang buah dari pohon di tengah taman, Allah berkata, ’Kalian tidak boleh memakannya, kalian tidak boleh menyentuhnya. Kalau kalian lakukan itu, kalian akan mati.’”"
+            }
+          },
+          {
+            "verse": 3,
+            "texts": {
+              "tb": "tetapi tentang buah pohon yang ada di tengah-tengah taman, Allah berfirman: Jangan kamu makan ataupun raba buah itu, nanti kamu mati.\"",
+              "bis": "\"kecuali dari pohon yang ada di tengah-tengah taman. Allah melarang kami makan buah dari pohon itu ataupun menyentuhnya; jika kami melakukannya, kami akan mati.\"",
+              "tl": "akan tetapi akan buah pohon yang di tengah taman itu adalah firman Allah: Jangan engkau makan atau jamah akan dia, supaya jangan engkau mati.",
+              "ende": "hanjalah tentang buah pohon jang ada ditengah-tengah taman itu Allah telah berfirman: Kamu djangan makan buah itu, merabapun djangan, nanti matilah kamu\".",
+              "tb_itl_drf": "tetapi tentang buah <06529> pohon <06086> yang <0834> ada di tengah-tengah <08432> taman <01588>, Allah <0430> berfirman <0559>: Jangan <03808> kamu makan <0398> ataupun <03808> raba buah <05060> itu, nanti <06435> kamu mati <04191>.\"",
+              "tl_itl_drf": "akan tetapi akan buah <06529> pohon <06086> yang <0834> di tengah <08432> taman <01588> itu adalah firman <0559> Allah <0430>: Jangan <03808> engkau makan <0398> atau <03808> jamah <05060> akan dia <0>, supaya jangan <06435> engkau mati <04191>.",
+              "bbe": "But of the fruit of the tree in the middle of the garden, God has said, If you take of it or put your hands on it, death will come to you.",
+              "message": "It's only about the tree in the middle of the garden that God said, 'Don't eat from it; don't even touch it or you'll die.'\"",
+              "nkjv": "\"but of the fruit of the tree which [is] in the midst of the garden, God has said, `You shall not eat it, nor shall you touch it, lest you die.'\"",
+              "net": "but concerning the fruit of the tree that is in the middle of the orchard God said, ‘You must not eat from it, and you must not touch it,* or else you will die.’”*",
+              "net2": "**\n\n__\n\nbut concerning the fruit of the tree that is in the middle of the orchard God said, ‘You must not eat from it, and you must not touch it,⁽¹⁴⁸⁾ or else you will die.’”⁽¹⁴⁹⁾",
+              "nwt": "Ular berkata kepada wanita itu, ”Kalian pasti tidak akan mati."
+            }
+          },
+          {
+            "verse": 4,
+            "texts": {
+              "tb": "Tetapi ular itu berkata kepada perempuan itu: \"Sekali-kali kamu tidak akan mati,",
+              "bis": "Ular itu menjawab, \"Itu tidak benar; kalian tidak akan mati.",
+              "tl": "Lalu kata ular kepada perempuan itu: Niscaya tiada kamu akan mati,",
+              "ende": "Maka kata ular itu kepada wanita: \"Bukan, kamu tidak akan mati!",
+              "tb_itl_drf": "Tetapi ular <05175> itu berkata <0559> kepada <0413> perempuan <0802> itu: \"Sekali-kali <04191> kamu tidak <03808> akan mati <04191>,",
+              "tl_itl_drf": "Lalu kata <0559> ular <05175> kepada <0413> perempuan <0802> itu: Niscaya <04191> tiada <03808> kamu akan mati <04191>,",
+              "bbe": "And the snake said, Death will not certainly come to you:",
+              "message": "The serpent told the Woman, \"You won't die.",
+              "nkjv": "Then the serpent said to the woman, \"You will not surely die.",
+              "net": "The serpent said to the woman, “Surely you will not die,*",
+              "net2": "**\n\n__\n\nThe serpent said to the woman, “Surely you will not die,⁽¹⁵⁰⁾",
+              "nwt": "Sebenarnya Allah tahu bahwa kalau kalian makan buah itu, hari itu juga mata kalian akan terbuka dan kalian akan menjadi seperti Allah, tahu tentang yang baik dan yang jahat.”"
+            }
+          },
+          {
+            "verse": 5,
+            "texts": {
+              "tb": "tetapi Allah mengetahui, bahwa pada waktu kamu memakannya matamu akan terbuka, dan kamu akan menjadi seperti Allah, tahu tentang yang baik dan yang jahat.\"",
+              "bis": "Allah mengatakan itu karena dia tahu jika kalian makan buah itu, pikiran kalian akan terbuka; kalian akan menjadi seperti Allah dan mengetahui apa yang baik dan apa yang jahat.\"",
+              "tl": "melainkan telah diketahui Allah akan hal, jika engkau makan buah itu, tak dapat tiada pada ketika itu juga celiklah matamu dan engkau jadi seperti Allah, sebab mengetahui baik dan jahat.",
+              "ende": "Tetapi Allah tahu, bahwa pada hari kamu makan buahnja, matamu akan terbuka dan kamu akan mendjadi sedjadjar dengan Allah mengerti akan baik dan djahat\".",
+              "tb_itl_drf": "tetapi <03588> Allah <0430> mengetahui <03045>, bahwa <03588> pada waktu <03117> kamu memakannya <0398> matamu <05869> akan terbuka <06491>, dan kamu akan menjadi <01961> seperti Allah <0430>, tahu <03045> tentang yang baik <02896> dan yang jahat <07451>.\"",
+              "tl_itl_drf": "melainkan <03588> telah diketahui <03045> Allah <0430> akan hal <03588>, jika <03117> engkau makan <0398> buah <04480> itu, tak dapat tiada pada ketika itu juga celiklah <06491> matamu <05869> dan engkau jadi <01961> seperti Allah <0430>, sebab mengetahui <03045> baik <02896> dan jahat <07451>.",
+              "bbe": "For God sees that on the day when you take of its fruit, your eyes will be open, and you will be as gods, having knowledge of good and evil.",
+              "message": "God knows that the moment you eat from that tree, you'll see what's really going on. You'll be just like God, knowing everything, ranging all the way from good to evil.\"",
+              "nkjv": "\"For God knows that in the day you eat of it your eyes will be opened, and you will be like God, knowing good and evil.\"",
+              "net": "for God knows that when you eat from it your eyes will open* and you will be like divine beings who know* good and evil.”*",
+              "net2": "**\n\n__\n\nfor God knows that when you eat from it your eyes will open⁽¹⁵¹⁾ and you will be like divine beings who know⁽¹⁵²⁾ good and evil.”⁽¹⁵³⁾",
+              "nwt": "Maka, wanita itu melihat bahwa buah pohon itu baik untuk dimakan dan kelihatan sangat menarik, bahkan sangat memikat. Dia pun memetik dan memakannya. Lalu, dia memberikan buah itu kepada suaminya saat mereka sedang bersama, dan suaminya pun memakannya."
+            }
+          },
+          {
+            "verse": 6,
+            "texts": {
+              "tb": "Perempuan itu melihat, bahwa buah pohon itu baik untuk dimakan dan sedap kelihatannya, lagipula pohon itu menarik hati karena memberi pengertian. Lalu ia mengambil dari buahnya dan dimakannya dan diberikannya juga kepada suaminya yang bersama-sama dengan dia, dan suaminyapun memakannya.",
+              "bis": "Perempuan itu melihat bahwa pohon itu indah, dan buahnya nampaknya enak untuk dimakan. Dan ia berpikir alangkah baiknya jika dia menjadi arif. Sebab itu ia memetik buah pohon itu, lalu memakannya, dan memberi juga kepada suaminya, dan suaminya pun memakannya.",
+              "tl": "Maka dilihat oleh perempuan itu bahwa buah pohon itu baik akan dimakan dan sedap kepada pemandangan mata, yaitu sebatang pohon asyik akan mendatangkan budi, maka diambilnya dari pada buahnya, lalu dimakannya, serta diberikannya pula kepada lakinya, maka iapun makanlah.",
+              "ende": "Adapun wanita itu melihat, bahwa pohon itu baik untuk dimakan buahnja dan lagi sedap dimata dan merangsang keinginan akan pengertian. Maka ia memetik buahnja, lalu dimakannja, dan diberikan djuga kepada suaminja jang ada disampingnja, dan diapun makan.",
+              "tb_itl_drf": "Perempuan <0802> itu melihat <07200>, bahwa <03588> buah pohon <06086> itu baik <02896> untuk dimakan <03978> dan sedap kelihatannya, lagipula <05869> <02530> <08378> pohon <06086> itu menarik hati <08378> <02530> karena <03588> memberi <08378> pengertian <07919>. Lalu ia mengambil <03947> dari buahnya <06529> dan dimakannya <0398> dan diberikannya <05414> juga <01571> kepada suaminya <0582> yang bersama-sama <05973> dengan dia, dan suaminyapun <08378> memakannya <0398>.",
+              "tl_itl_drf": "Maka dilihat <07200> oleh perempuan <0802> itu bahwa <03588> buah pohon <06086> itu baik <02896> akan dimakan <03978> dan sedap <08378> kepada pemandangan <05869> mata, yaitu <02530> sebatang pohon <06086> asyik <01571> <02530> <08378> <03978> akan mendatangkan budi <07919>, maka diambilnya <03947> dari pada buahnya <06529>, lalu dimakannya <0398>, serta diberikannya <05414> pula <01571> kepada lakinya <0582>, maka iapun makanlah <0398>.",
+              "bbe": "And when the woman saw that the tree was good for food, and a delight to the eyes, and to be desired to make one wise, she took of its fruit, and gave it to her husband.",
+              "message": "When the Woman saw that the tree looked like good eating and realized what she would get out of it--she'd know everything!--she took and ate the fruit and then gave some to her husband, and he ate.",
+              "nkjv": "So when the woman saw that the tree [was] good for food, that it [was] pleasant to the eyes, and a tree desirable to make [one] wise, she took of its fruit and ate. She also gave to her husband with her, and he ate.",
+              "net": "When* the woman saw that the tree produced fruit that was good for food,* was attractive* to the eye, and was desirable for making one wise,* she took some of its fruit and ate it.* She also gave some of it to her husband who was with her, and he ate it.*",
+              "net2": "**\n\n__\n\nWhen⁽¹⁵⁴⁾ the woman saw that the tree produced fruit that was good for food,⁽¹⁵⁵⁾ was attractive⁽¹⁵⁶⁾ to the eye, and was desirable for making one wise,⁽¹⁵⁷⁾ she took some of its fruit and ate it.⁽¹⁵⁸⁾ She also gave some of it to her husband who was with her, and he ate it.⁽¹⁵⁹⁾",
+              "nwt": "Lalu terbukalah mata mereka, dan mereka sadar bahwa mereka telanjang. Jadi, mereka menjalin daun-daun ara untuk menutupi pinggang mereka."
+            }
+          },
+          {
+            "verse": 7,
+            "texts": {
+              "tb": "Maka terbukalah mata mereka berdua dan mereka tahu, bahwa mereka telanjang; lalu mereka menyemat daun pohon ara dan membuat cawat.",
+              "bis": "Segera sesudah makan buah itu, pikiran mereka terbuka dan mereka sadar bahwa mereka telanjang. Sebab itu mereka menutupi tubuh mereka dengan daun ara yang mereka rangkaikan.",
+              "tl": "Lalu keduanyapun celiklah matanya, diketahuinyalah akan hal ia bertelanjang, lalu disematnya daun pokok ara, diperbuatnya cawat.",
+              "ende": "Maka terbukalah mata mereka berdua dan merekapun sadar, bahwa mereka itu telandjang, lalu mereka menganjam daun-daun ara dan membuat tjawat bagi dirinja sendiri.",
+              "tb_itl_drf": "Maka terbukalah <06491> mata <05869> mereka berdua <08147> dan mereka tahu <03045>, bahwa <03588> mereka telanjang <05903>; lalu mereka <01992> menyemat <08609> daun <05929> pohon ara <08384> dan membuat <06213> cawat <02290>.",
+              "tl_itl_drf": "Lalu keduanyapun <08147> celiklah <06491> matanya <05869>, diketahuinyalah <03045> akan hal <03588> ia bertelanjang <05903>, lalu disematnya <08609> daun <05929> pokok ara <08384>, diperbuatnya <06213> cawat <02290>.",
+              "bbe": "And their eyes were open and they were conscious that they had no clothing and they made themselves coats of leaves stitched together.",
+              "message": "Immediately the two of them did \"see what's really going on\"--saw themselves naked! They sewed fig leaves together as makeshift clothes for themselves.",
+              "nkjv": "Then the eyes of both of them were opened, and they knew that they [were] naked; and they sewed fig leaves together and made themselves coverings.",
+              "net": "Then the eyes of both of them opened, and they knew they were naked; so they sewed fig leaves together and made coverings for themselves.",
+              "net2": "**\n\n_The Judgment Oracles of God at the Fall_\n\nThen the eyes of both of them opened, and they knew they were naked; so they sewed fig leaves together and made coverings for themselves. The Judgment Oracles of God at the Fall",
+              "nwt": "Kemudian, pada waktu angin bertiup sepoi-sepoi, mereka mendengar suara Allah Yehuwa saat Dia berjalan di taman itu. Maka pria itu dan istrinya bersembunyi dari Allah Yehuwa di antara pepohonan di taman itu."
+            }
+          },
+          {
+            "verse": 8,
+            "texts": {
+              "tb": "Ketika mereka mendengar bunyi langkah TUHAN Allah, yang berjalan-jalan dalam taman itu pada waktu hari sejuk, bersembunyilah manusia dan isterinya itu terhadap TUHAN Allah di antara pohon-pohonan dalam taman.",
+              "bis": "Petang itu mereka mendengar TUHAN Allah berjalan di dalam taman, lalu mereka berdua bersembunyi di antara pohon-pohon supaya tidak dilihat oleh TUHAN.",
+              "tl": "Maka kedengaranlah kepada mereka itu suara Tuhan Allah, yang berjalan-jalan dalam taman pada masa angin silir, maka Adam dan Hawapun menyembunyikan dirinya dari hadirat Tuhan Allah dalam belukar taman itu.",
+              "ende": "Mereka mendengar bunji langkah Jahwe Allah jang berdjalan-djalan ditaman waktu hari sedjuk, lalu manusia dan isterinja bersembunji ditengah pohon-pohon taman itu terhadap Jahwe Allah.",
+              "tb_itl_drf": "Ketika mereka mendengar <08085> bunyi <06963> langkah TUHAN <03068> Allah <0430>, yang berjalan-jalan <01980> dalam taman <01588> itu pada waktu hari <03117> sejuk <07307>, bersembunyilah <02244> manusia <0120> dan isterinya <0802> itu terhadap <06440> TUHAN <03068> Allah <0430> di antara <08432> pohon-pohonan <06086> dalam taman <01588>.",
+              "tl_itl_drf": "Maka kedengaranlah <08085> kepada <0853> mereka itu suara <06963> Tuhan <03068> Allah <0430>, yang berjalan-jalan <01980> dalam taman <01588> pada masa angin <07307> silir <03117>, maka Adam <0120> dan Hawapun <0802> menyembunyikan <02244> dirinya dari hadirat <06440> Tuhan <03068> Allah <0430> dalam <08432> belukar <06086> taman <01588> itu.",
+              "bbe": "And there came to them the sound of the Lord God walking in the garden in the evening wind: and the man and his wife went to a secret place among the trees of the garden, away from the eyes of the Lord God.",
+              "message": "When they heard the sound of GOD strolling in the garden in the evening breeze, the Man and his Wife hid in the trees of the garden, hid from GOD.",
+              "nkjv": "And they heard the sound of the LORD God walking in the garden in the cool of the day, and Adam and his wife hid themselves from the presence of the LORD God among the trees of the garden.",
+              "net": "Then the man and his wife heard the sound of the Lord God moving about* in the orchard at the breezy time* of the day, and they hid* from the Lord God among the trees of the orchard.",
+              "net2": "**\n\n__\n\nThen the man and his wife heard the sound of the Lord God moving about⁽¹⁶⁰⁾ in the orchard at the breezy time⁽¹⁶¹⁾ of the day, and they hid⁽¹⁶²⁾ from the Lord God among the trees of the orchard.",
+              "nwt": "Allah Yehuwa memanggil-manggil pria itu, ”Kamu di mana?”"
+            }
+          },
+          {
+            "verse": 9,
+            "texts": {
+              "tb": "Tetapi TUHAN Allah memanggil manusia itu dan berfirman kepadanya: \"Di manakah engkau?\"",
+              "bis": "Tetapi TUHAN Allah berseru kepada laki-laki itu, \"Di manakah engkau?\"",
+              "tl": "Maka Tuhan Allah berseru akan Adam, kata-Nya: Di manakah engkau?",
+              "ende": "Tetapi Jahwe Allah memanggil manusia dan bersabda kepadanja: \"Dimanakah engkau itu?\"",
+              "tb_itl_drf": "Tetapi TUHAN <03068> Allah <0430> memanggil <07121> manusia <0120> itu dan berfirman <0559> kepadanya <0>: \"Di manakah <0335> engkau?\"",
+              "tl_itl_drf": "Maka Tuhan <03068> Allah <0430> berseru <07121> akan Adam <0120>, kata-Nya <0559>: Di manakah <0335> engkau?",
+              "bbe": "And the voice of the Lord God came to the man, saying, Where are you?",
+              "message": "GOD called to the Man: \"Where are you?\"",
+              "nkjv": "Then the LORD God called to Adam and said to him, \"Where [are] you?\"",
+              "net": "But the Lord God called to* the man and said to him, “Where are you?”*",
+              "net2": "**\n\n__\n\nBut the Lord God called to⁽¹⁶³⁾ the man and said to him, “Where are you?”⁽¹⁶⁴⁾",
+              "nwt": "Akhirnya dia menjawab, ”Aku dengar suara-Mu di taman, tapi aku takut karena aku telanjang, jadi aku sembunyi.”"
+            }
+          },
+          {
+            "verse": 10,
+            "texts": {
+              "tb": "Ia menjawab: \"Ketika aku mendengar, bahwa Engkau ada dalam taman ini, aku menjadi takut, karena aku telanjang; sebab itu aku bersembunyi.\"",
+              "bis": "Laki-laki itu menjawab, \"Saya mendengar Engkau di taman; saya takut, jadi saya bersembunyi karena telanjang.\"",
+              "tl": "Maka sahut Adam: Bahwa kudengar suara-Mu dalam taman, maka takutlah aku, karena aku telanjang, sebab itu aku bersembunyi.",
+              "ende": "Sahutnja: \"Kudengar bunji langkahMu ditaman, maka ketakutanlah aku, sebab aku ini telandjang, dan aku bersembunji\".",
+              "tb_itl_drf": "Ia menjawab <0559>: \"Ketika <06963> aku mendengar <08085>, bahwa Engkau ada dalam taman <01588> ini, aku menjadi takut <03372>, karena <03588> aku telanjang <05903>; sebab itu aku <0595> bersembunyi <02244>.\"",
+              "tl_itl_drf": "Maka sahut <0559> Adam: Bahwa kudengar <08085> suara-Mu <06963> dalam taman <01588>, maka takutlah <03372> aku, karena <03588> aku telanjang <05903>, sebab itu aku <0595> bersembunyi <02244>.",
+              "bbe": "And he said, Hearing your voice in the garden I was full of fear, because I was without clothing: and I kept myself from your eyes.",
+              "message": "He said, \"I heard you in the garden and I was afraid because I was naked. And I hid.\"",
+              "nkjv": "So he said, \"I heard Your voice in the garden, and I was afraid because I was naked; and I hid myself.\"",
+              "net": "The man replied,* “I heard you moving about* in the orchard, and I was afraid because I was naked, so I hid.”",
+              "net2": "**\n\n__\n\nThe man replied,⁽¹⁶⁵⁾ “I heard you moving about⁽¹⁶⁶⁾ in the orchard, and I was afraid because I was naked, so I hid.”",
+              "nwt": "Lalu Allah bertanya, ”Siapa yang memberi tahu kamu bahwa kamu telanjang? Apa kamu makan buah dari pohon yang Aku larang itu?”"
+            }
+          },
+          {
+            "verse": 11,
+            "texts": {
+              "tb": "Firman-Nya: \"Siapakah yang memberitahukan kepadamu, bahwa engkau telanjang? Apakah engkau makan dari buah pohon, yang Kularang engkau makan itu?\"",
+              "bis": "\"Siapa yang mengatakan kepadamu bahwa engkau telanjang?\" Allah bertanya. \"Apakah engkau makan buah yang Kularang engkau makan itu?\"",
+              "tl": "Maka firman Allah: Siapa gerangan memberitahu engkau, bahwa engkau telanjang? Sudahkah engkau makan dari pohon, yang telah Kupesan jangan engkau makan buahnya?",
+              "ende": "Maka Jahwe Allah bersabda: \"Siapakah memberitahukan kepadamu, bahwa engkau itu telandjang? Apakah engkau makan buah pohon jang telah Kuperintahkan supaja djangan engkau makan buahnja?\"",
+              "tb_itl_drf": "Firman-Nya <0559>: \"Siapakah <04310> yang memberitahukan <05046> kepadamu <0>, bahwa <03588> engkau telanjang <05903>? Apakah engkau <0859> makan <0398> dari <04480> <04480> buah pohon <06086>, yang <0834> Kularang <01115> <06680> engkau makan <0398> itu?\"",
+              "tl_itl_drf": "Maka firman <0559> Allah: Siapa <04310> gerangan memberitahu <05046> engkau, bahwa <03588> engkau telanjang <05903>? Sudahkah engkau <0859> makan <0398> dari <04480> pohon <06086>, yang telah <0834> Kupesan <06680> jangan <01115> engkau makan <0398> buahnya?",
+              "bbe": "And he said, Who gave you the knowledge that you were without clothing? Have you taken of the fruit of the tree which I said you were not to take?",
+              "message": "GOD said, \"Who told you you were naked? Did you eat from that tree I told you not to eat from?\"",
+              "nkjv": "And He said, \"Who told you that you [were] naked? Have you eaten from the tree of which I commanded you that you should not eat?\"",
+              "net": "And the Lord God* said, “Who told you that you were naked?* Did you eat from the tree that I commanded you not to eat from?”*",
+              "net2": "**\n\n__\n\nAnd the Lord God⁽¹⁶⁷⁾ said, “Who told you that you were naked?⁽¹⁶⁸⁾ Did you eat from the tree that I commanded you not to eat from?”⁽¹⁶⁹⁾",
+              "nwt": "Pria itu menjawab, ”Wanita yang Engkau berikan untukku, dia yang memberi aku buah itu. Jadi aku makan.”"
+            }
+          },
+          {
+            "verse": 12,
+            "texts": {
+              "tb": "Manusia itu menjawab: \"Perempuan yang Kautempatkan di sisiku, dialah yang memberi dari buah pohon itu kepadaku, maka kumakan.\"",
+              "bis": "Laki-laki itu menjawab, \"Perempuan yang Engkau berikan untuk menemani saya, telah memberi buah itu kepada saya, lalu saya memakannya.\"",
+              "tl": "Maka sahut Adam: Adapun perempuan yang telah Tuhan karuniakan kepadaku itu, ia itu memberikan daku buah pohon itu, lalu kumakan.",
+              "ende": "Djawab manusia: \"Wanita, jang Kausertakan padaku, telah memberikan kepadaku buah pohon itu, dan akupun telah makan\".",
+              "tb_itl_drf": "Manusia <0120> itu menjawab <0559>: \"Perempuan <0802> yang <0834> Kautempatkan <05414> di sisiku <05978>, dialah <01931> yang memberi <05414> dari <04480> buah pohon <06086> itu kepadaku, maka kumakan <0398>.\"",
+              "tl_itl_drf": "Maka sahut <0559> Adam <0120>: Adapun perempuan <0802> yang telah <0834> Tuhan karuniakan <05978> kepadaku itu, ia <01931> itu memberikan <05414> daku buah <04480> pohon <06086> itu, lalu kumakan <0398>.",
+              "bbe": "And the man said, The woman whom you gave to be with me, she gave me the fruit of the tree and I took it.",
+              "message": "The Man said, \"The Woman you gave me as a companion, she gave me fruit from the tree, and, yes, I ate it.\"",
+              "nkjv": "Then the man said, \"The woman whom You gave [to be] with me, she gave me of the tree, and I ate.\"",
+              "net": "The man said, “The woman whom you gave me, she gave* me some fruit* from the tree and I ate it.”",
+              "net2": "**\n\n__\n\nThe man said, “The woman whom you gave me, she gave⁽¹⁷⁰⁾ me some fruit⁽¹⁷¹⁾ from the tree and I ate it.”",
+              "nwt": "Lalu Allah Yehuwa bertanya kepada wanita itu, ”Kenapa kamu lakukan ini?” Wanita itu menjawab, ”Ular itu menipu aku. Jadi aku makan buah itu.”"
+            }
+          },
+          {
+            "verse": 13,
+            "texts": {
+              "tb": "Kemudian berfirmanlah TUHAN Allah kepada perempuan itu: \"Apakah yang telah kauperbuat ini?\" Jawab perempuan itu: \"Ular itu yang memperdayakan aku, maka kumakan.\"",
+              "bis": "TUHAN Allah bertanya kepada perempuan itu, \"Mengapa kaulakukan itu?\" Jawabnya, \"Saya ditipu ular, sehingga saya makan buah itu.\"",
+              "tl": "Maka firman Tuhan Allah kepada perempuan itu: Apakah ini yang telah kauperbuat? Maka sahut perempuan itu: Si ular itu menipukan daku, lalu aku makan.",
+              "ende": "Maka Jahwe Allah bersabda kepada wanita: \"Apakah jang kauperbuat?\" Djawab wanita: \"Ular telah memperdajakan aku, lalu aku makan\".",
+              "tb_itl_drf": "Kemudian berfirmanlah <0559> TUHAN <03068> Allah <0430> kepada perempuan <0802> itu: \"Apakah <04100> yang telah kauperbuat <06213> ini <02063>?\" Jawab <0559> perempuan <0802> itu: \"Ular <05175> itu yang memperdayakan <05377> aku, maka kumakan <0398>.\"",
+              "tl_itl_drf": "Maka firman <0559> Tuhan <03068> Allah <0430> kepada perempuan <0802> itu: Apakah <04100> ini <02063> yang telah kauperbuat <06213>? Maka sahut <0559> perempuan <0802> itu: Si ular <05175> itu menipukan <05377> daku, lalu aku makan <0398>.",
+              "bbe": "And the Lord God said to the woman, What have you done? And the woman said, I was tricked by the deceit of the snake and I took it.",
+              "message": "GOD said to the Woman, \"What is this that you've done?\" \"The serpent seduced me,\" she said, \"and I ate.\"",
+              "nkjv": "And the LORD God said to the woman, \"What [is] this you have done?\" The woman said, \"The serpent deceived me, and I ate.\"",
+              "net": "So the Lord God said to the woman, “What is this* you have done?” And the woman replied, “The serpent* tricked* me, and I ate.”",
+              "net2": "**\n\n__\n\nSo the Lord God said to the woman, “What is this⁽¹⁷²⁾ you have done?” And the woman replied, “The serpent⁽¹⁷³⁾ tricked⁽¹⁷⁴⁾ me, and I ate.”",
+              "nwt": "Lalu Allah Yehuwa berkata kepada ular, ”Karena perbuatanmu ini, terkutuklah kamu di antara semua binatang peliharaan dan binatang liar. Kamu akan merayap dengan perut dan makan debu seumur hidup."
+            }
+          },
+          {
+            "verse": 14,
+            "texts": {
+              "tb": "Lalu berfirmanlah TUHAN Allah kepada ular itu: \"Karena engkau berbuat demikian, terkutuklah engkau di antara segala ternak dan di antara segala binatang hutan; dengan perutmulah engkau akan menjalar dan debu tanahlah akan kaumakan seumur hidupmu.",
+              "bis": "Sesudah itu TUHAN Allah berkata kepada ular itu, \"Engkau akan dihukum karena perbuatanmu itu; dari segala binatang hanya engkau saja yang harus menanggung kutukan ini: Mulai sekarang engkau akan menjalar dengan perutmu, dan makan debu seumur hidupmu.",
+              "tl": "Maka firman Tuhan Allah kepada ular itu: Sebab telah engkau berbuat yang demikian, maka terkutuklah engkau dari pada segala binatang yang jinak dan dari pada segala binatang hutan, maka engkau akan menyulur dengan perutmu, dan engkaupun akan makan lebu tanah sepanjang umur hidupmu.",
+              "ende": "Kemudian Jahwe Allah bersabda kepada ular: \"Karena engkau telah berbuat demikian, terkutuklah engkau diantara segala ternak dan segala binatang liar. Engkau akan merajap dengan perutmu, dan makan debu sepandjang hidupmu.",
+              "tb_itl_drf": "Lalu berfirmanlah <0559> TUHAN <03068> Allah <0430> kepada <0413> ular <05175> itu: \"Karena <03588> engkau berbuat <06213> demikian <02063>, terkutuklah <0779> engkau <0859> di antara segala <03605> ternak <0929> dan di antara segala <03605> binatang <02416> hutan <07704>; dengan perutmulah <01512> engkau akan menjalar <01980> dan debu tanahlah <06083> akan kaumakan <0398> seumur <03117> <03605> hidupmu <02416>.",
+              "tl_itl_drf": "Maka firman <0559> Tuhan <03068> Allah <0430> kepada <0413> ular <05175> itu: Sebab <03588> telah engkau berbuat <06213> yang demikian <02063>, maka terkutuklah <0779> engkau <0859> dari pada segala <03605> binatang <0929> yang jinak <03605> dan dari pada segala <03605> binatang <02416> hutan <07704>, maka engkau akan menyulur <01512> dengan perutmu <01980>, dan engkaupun akan makan <0398> lebu <06083> tanah sepanjang <03605> umur <03117> hidupmu <02416>.",
+              "bbe": "And the Lord God said to the snake, Because you have done this you are cursed more than all cattle and every beast of the field; you will go flat on the earth, and dust will be your food all the days of your life:",
+              "message": "GOD told the serpent: \"Because you've done this, you're cursed, cursed beyond all cattle and wild animals, Cursed to slink on your belly and eat dirt all your life.",
+              "nkjv": "So the LORD God said to the serpent: \"Because you have done this, You [are] cursed more than all cattle, And more than every beast of the field; On your belly you shall go, And you shall eat dust All the days of your life.",
+              "net": "The Lord God said to the serpent,* “Because you have done this, cursed* are you above all the wild beasts and all the living creatures of the field! On your belly you will crawl* and dust you will eat* all the days of your life.",
+              "net2": "**\n\n__\n\nThe Lord God said to the serpent,⁽¹⁷⁵⁾ “Because you have done this, cursed⁽¹⁷⁶⁾ are you above all the wild beasts and all the living creatures of the field! On your belly you will crawl⁽¹⁷⁷⁾ and dust you will eat⁽¹⁷⁸⁾ all the days of your life.",
+              "nwt": "Aku akan membuat kamu dan wanita itu bermusuhan, begitu juga keturunanmu dan keturunannya. Dia akan menghancurkan kepalamu, dan kamu akan melukai tumitnya.”"
+            }
+          },
+          {
+            "verse": 15,
+            "texts": {
+              "tb": "Aku akan mengadakan permusuhan antara engkau dan perempuan ini, antara keturunanmu dan keturunannya; keturunannya akan meremukkan kepalamu, dan engkau akan meremukkan tumitnya.\"",
+              "bis": "Engkau dan perempuan itu akan saling membenci, keturunannya dan keturunanmu akan selalu bermusuhan. Keturunannya akan meremukkan kepalamu, dan engkau akan menggigit tumit mereka.\"",
+              "tl": "Maka Aku akan mengadakan perseteruan antaramu dengan perempuan ini, dan antara benihmu dengan benihnya; maka ia akan meremukkan kepalamu dan engkaupun akan mematukkan tumitnya.",
+              "ende": "Aku akan mengadakan permusuhan antara engkau dan wanita itu, antara keturunanmu dan keturunannja. Ia akan meremukkan kepalamu, dan engkau akan memagut dia pada tumitnja\".",
+              "tb_itl_drf": "Aku akan mengadakan <07896> permusuhan <0342> antara <0996> engkau dan perempuan <0802> ini, antara <0996> keturunanmu <02233> dan keturunannya <02233>; keturunannya <02233> akan meremukkan <07779> kepalamu <07218>, dan engkau <0859> akan meremukkan <07779> tumitnya <06119>.\"",
+              "tl_itl_drf": "Maka Aku akan mengadakan perseteruan <0342> antaramu dengan <0996> <0996> <07896> perempuan <0802> ini, dan antara <0996> benihmu <02233> dengan <0996> benihnya <02233>; maka ia <01931> akan meremukkan <07779> kepalamu <07218> dan engkaupun <0859> akan mematukkan <07779> tumitnya <06119>.",
+              "bbe": "And there will be war between you and the woman and between your seed and her seed: by him will your head be crushed and by you his foot will be wounded.",
+              "message": "I'm declaring war between you and the Woman, between your offspring and hers. He'll wound your head, you'll wound his heel.\"",
+              "nkjv": "And I will put enmity Between you and the woman, And between your seed and her Seed; He shall bruise your head, And you shall bruise His heel.\"",
+              "net": "And I will put hostility* between you and the woman and between your offspring and her offspring;* her offspring will attack* your head, and* you* will attack her offspring’s heel.”*",
+              "net2": "**\n\n__\n\nAnd I will put hostility⁽¹⁷⁹⁾ between you and the woman and between your offspring and her offspring;⁽¹⁸⁰⁾ her offspring will attack⁽¹⁸¹⁾ your head, and⁽¹⁸²⁾ you⁽¹⁸³⁾ will attack her offspring’s heel.”⁽¹⁸⁴⁾",
+              "nwt": "Allah berkata kepada wanita itu, ”Kamu akan sangat menderita selama kamu hamil. Kamu akan kesakitan saat melahirkan. Kamu juga akan merasa sangat membutuhkan suamimu, dan dia akan menguasaimu.”"
+            }
+          },
+          {
+            "verse": 16,
+            "texts": {
+              "tb": "Firman-Nya kepada perempuan itu: \"Susah payahmu waktu mengandung akan Kubuat sangat banyak; dengan kesakitan engkau akan melahirkan anakmu; namun engkau akan berahi kepada suamimu dan ia akan berkuasa atasmu.\"",
+              "bis": "Lalu kata TUHAN kepada perempuan itu, \"Aku akan menambah kesakitanmu selagi engkau hamil dan pada waktu engkau melahirkan. Tetapi meskipun demikian, engkau masih tetap berahi kepada suamimu, namun engkau akan tunduk kepadanya.\"",
+              "tl": "Maka firman Tuhan kepada perempuan itu: Bahwa Aku akan menambahi sangat kesusahanmu pada masa engkau mengandung, maka dengan kesusahanpun engkau akan beranak, dan engkau akan takluk kepada lakimu dan iapun akan memerintahkan dikau.",
+              "ende": "Dan kepada wanita Ia bersabda: \"Aku akan melipatgandakan deritamu waktu mengandung; dalam kesakitan engkau akan melahirkan anakmu; hasratmu akan tertudju kepada suamimu, dan ia akan berkuasa atas dirimu\".",
+              "tb_itl_drf": "Firman-Nya <0559> kepada <0413> perempuan <0802> itu: \"Susah payahmu <06089> <06093> payahmu <07235> <07235> waktu mengandung <02032> akan Kubuat sangat banyak <07235>; dengan kesakitan engkau <06089> <06093> akan melahirkan <03205> anakmu <01121>; namun engkau akan berahi kepada <0413> suamimu <08669> dan ia <01931> akan berkuasa <04910> atasmu.\"",
+              "tl_itl_drf": "Maka firman Tuhan <0559> kepada <0413> perempuan <0802> itu: Bahwa <07235> <0559> Aku <07235> akan menambahi <07235> sangat kesusahanmu <07235> pada masa engkau mengandung <02032>, maka dengan <06089> kesusahanpun <06093> engkau akan beranak <03205>, dan engkau akan takluk kepada <0413> lakimu <08669> dan iapun <01931> akan memerintahkan <04910> dikau <0>.",
+              "bbe": "To the woman he said, Great will be your pain in childbirth; in sorrow will your children come to birth; still your desire will be for your husband, but he will be your master.",
+              "message": "He told the Woman: \"I'll multiply your pains in childbirth; you'll give birth to your babies in pain. You'll want to please your husband, but he'll lord it over you.\"",
+              "nkjv": "To the woman He said: \"I will greatly multiply your sorrow and your conception; In pain you shall bring forth children; Your desire [shall be] for your husband, And he shall rule over you.\"",
+              "net": "To the woman he said, “I will greatly increase* your labor pains;* with pain you will give birth to children. You will want to control your husband,* but he will dominate* you.”",
+              "net2": "**\n\n__\n\nTo the woman he said, “I will greatly increase⁽¹⁸⁵⁾ your labor pains;⁽¹⁸⁶⁾ with pain you will give birth to children. You will want to control your husband,⁽¹⁸⁷⁾ but he will dominate⁽¹⁸⁸⁾ you.”",
+              "nwt": "Allah berkata kepada Adam, ”Aku sudah memberimu perintah ini, ’Kamu tidak boleh makan buah pohon itu’, tapi kamu menuruti istrimu dan makan buah pohon itu. Maka terkutuklah tanah karena kamu. Untuk memakan hasilnya, kamu harus bersusah payah sepanjang hidupmu."
+            }
+          },
+          {
+            "verse": 17,
+            "texts": {
+              "tb": "Lalu firman-Nya kepada manusia itu: \"Karena engkau mendengarkan perkataan isterimu dan memakan dari buah pohon, yang telah Kuperintahkan kepadamu: Jangan makan dari padanya, maka terkutuklah tanah karena engkau; dengan bersusah payah engkau akan mencari rezekimu dari tanah seumur hidupmu:",
+              "bis": "Lalu kata TUHAN kepada laki-laki itu, \"Engkau mendengarkan kata-kata istrimu lalu makan buah yang telah Kularang engkau makan. Karena perbuatanmu itu, terkutuklah tanah. Engkau harus bekerja keras seumur hidupmu agar tanah ini bisa menghasilkan cukup makanan bagimu.",
+              "tl": "Lalu firman Allah kepada Adam: Bahwa sebab telah engkau mendengar akan kata binimu serta sudah makan buah pohon, yang telah Kupesan kepadamu jangan engkau makan dia, maka terkutuklah bumi itu karena sebab engkau, maka dengan kesusahan engkau akan makan hasilnya seumur hidupmu.",
+              "ende": "Dan kepada manusia Ia bersabda: \"Karena engkau telah mendengarkan suara isterimu, dan makan buah pohon, meskipun telah Kuperintahkan: djangan kaumakan buahnja! maka terkutuklah tanah karenamu; dengan djerih-pajah engkau akan makan daripadanja sepandjang hidupmu.",
+              "tb_itl_drf": "Lalu firman-Nya kepada manusia <0121> itu: \"Karena <03588> engkau mendengarkan <08085> perkataan <06963> isterimu <0802> dan memakan <0398> dari <04480> buah pohon <06086>, yang <0834> telah Kuperintahkan <06680> kepadamu: Jangan <03808> makan <0398> dari padanya <04480>, maka terkutuklah <0779> tanah <0127> karena <05668> engkau; dengan bersusah payah engkau akan mencari rezekimu <06093> dari tanah <0398> seumur <03117> <03605> hidupmu <02416>:",
+              "tl_itl_drf": "Lalu firman Allah kepada Adam <0121>: Bahwa <0559> sebab <03588> telah engkau mendengar <08085> akan kata <06963> binimu <0802> serta sudah makan <0398> buah <04480> pohon <06086>, yang telah <0834> Kupesan <06680> kepadamu jangan <03808> engkau makan <0398> dia, maka terkutuklah <0779> bumi <0127> itu karena sebab <05668> engkau, maka dengan kesusahan <06093> engkau akan makan <0398> hasilnya seumur <03117> <03605> hidupmu <02416>.",
+              "bbe": "And to Adam he said, Because you gave ear to the voice of your wife and took of the fruit of the tree which I said you were not to take, the earth is cursed on your account; in pain you will get your food from it all your life.",
+              "message": "He told the Man: \"Because you listened to your wife and ate from the tree That I commanded you not to eat from, 'Don't eat from this tree,' The very ground is cursed because of you; getting food from the ground Will be as painful as having babies is for your wife; you'll be working in pain all your life long.",
+              "nkjv": "Then to Adam He said, \"Because you have heeded the voice of your wife, and have eaten from the tree of which I commanded you, saying, `You shall not eat of it':\"Cursed [is] the ground for your sake; In toil you shall eat [of] it All the days of your life.",
+              "net": "But to Adam* he said, “Because you obeyed* your wife and ate from the tree about which I commanded you, ‘You must not eat from it,’ cursed is the ground* thanks to you;* in painful toil you will eat* of it all the days of your life.",
+              "net2": "**\n\n__\n\nBut to Adam⁽¹⁸⁹⁾ he said, “Because you obeyed⁽¹⁹⁰⁾ your wife and ate from the tree about which I commanded you, ‘You must not eat from it,’ cursed is the ground⁽¹⁹¹⁾ thanks to you;⁽¹⁹²⁾ in painful toil you will eat⁽¹⁹³⁾ of it all the days of your life.",
+              "nwt": "Tanah akan menumbuhkan tanaman berduri dan rumput liar, dan tumbuhan di padang akan menjadi makananmu."
+            }
+          },
+          {
+            "verse": 18,
+            "texts": {
+              "tb": "semak duri dan rumput duri yang akan dihasilkannya bagimu, dan tumbuh-tumbuhan di padang akan menjadi makananmu;",
+              "bis": "Semak dan duri akan dihasilkan tanah ini bagimu, dan tumbuh-tumbuhan liar akan menjadi makananmu.",
+              "tl": "Maka bumi itu akan menumbuhkan bagimu duri dan onak, dan sayur-sayuran di ladang akan menjadi makananmu.",
+              "ende": "Duri dan onak akan dihasilkannja bagimu, dan engkau akan makan tumbuh-tumbuhan dipadang.",
+              "tb_itl_drf": "semak duri <06975> dan rumput duri <01863> yang akan dihasilkannya <06779> <01863> bagimu <0>, dan tumbuh-tumbuhan <06212> di padang <07704> akan menjadi makananmu <0398>;",
+              "tl_itl_drf": "Maka bumi <01863> itu akan menumbuhkan <06779> bagimu <0> duri <06975> dan onak <01863>, dan sayur-sayuran <06212> di ladang <07704> akan menjadi makananmu <0398>.",
+              "bbe": "Thorns and waste plants will come up, and the plants of the field will be your food;",
+              "message": "The ground will sprout thorns and weeds, you'll get your food the hard way, Planting and tilling and harvesting,",
+              "nkjv": "Both thorns and thistles it shall bring forth for you, And you shall eat the herb of the field.",
+              "net": "It will produce thorns and thistles for you, but you will eat the grain* of the field.",
+              "net2": "**\n\n__\n\nIt will produce thorns and thistles for you, but you will eat the grain⁽¹⁹⁴⁾ of the field.",
+              "nwt": "Kamu harus berkeringat dan bekerja keras untuk bisa makan, sampai kamu kembali ke tanah, karena kamu berasal dari situ. Kamu debu dan kamu akan kembali ke debu.”"
+            }
+          },
+          {
+            "verse": 19,
+            "texts": {
+              "tb": "dengan berpeluh engkau akan mencari makananmu, sampai engkau kembali lagi menjadi tanah, karena dari situlah engkau diambil; sebab engkau debu dan engkau akan kembali menjadi debu.\"",
+              "bis": "Engkau akan bekerja dengan susah payah dan berkeringat untuk membuat tanah ini menghasilkan sesuatu, sampai engkau kembali kepada tanah, sebab dari tanahlah engkau dibentuk. Engkau dijadikan dari tanah, dan akan kembali ke tanah.\"",
+              "tl": "Maka dengan berpeluh mukamu engkau akan makan rezekimu sehingga engkau kembali pula kepada tanah, karena dari padanya engkau telah diambil; bahwa abulah adamu, maka kepada abupun engkau akan kembali juga.",
+              "ende": "Dengan muka berpeluh engkau akan makan redjekimu, sampai engkau kembali ketanah, karena engkau diambil daripadanja, sebab engkau itu debu dan akan kembali mendjadi debu\".",
+              "tb_itl_drf": "dengan berpeluh <02188> engkau akan mencari makananmu <03899>, sampai <05704> engkau kembali <07725> lagi menjadi tanah <0127>, karena <03588> dari <04480> situlah engkau diambil <03947>; sebab <03588> engkau debu <06083> dan engkau <0859> akan kembali <07725> menjadi debu <06083>.\"",
+              "tl_itl_drf": "Maka dengan berpeluh <02188> mukamu engkau akan makan <0398> rezekimu <03899> sehingga <05704> engkau kembali <07725> pula kepada <0413> tanah <0127>, karena <03588> dari <04480> padanya engkau telah diambil <03947>; bahwa <03588> abulah <06083> adamu <0859>, maka kepada <0413> abupun <06083> engkau akan kembali <07725> juga.",
+              "bbe": "With the hard work of your hands you will get your bread till you go back to the earth from which you were taken: for dust you are and to the dust you will go back.",
+              "message": "sweating in the fields from dawn to dusk, Until you return to that ground yourself, dead and buried; you started out as dirt, you'll end up dirt.\"",
+              "nkjv": "In the sweat of your face you shall eat bread Till you return to the ground, For out of it you were taken; For dust you [are], And to dust you shall return.\"",
+              "net": "By the sweat of your brow* you will eat food until you return to the ground,* for out of it you were taken; for you are dust, and to dust you will return.”*",
+              "net2": "**\n\n__\n\nBy the sweat of your brow⁽¹⁹⁵⁾ you will eat food until you return to the ground,⁽¹⁹⁶⁾ for out of it you were taken; for you are dust, and to dust you will return.”⁽¹⁹⁷⁾",
+              "nwt": "Setelah itu Adam menamai istrinya Hawa, karena dia akan menjadi ibu dari semua orang yang hidup."
+            }
+          },
+          {
+            "verse": 20,
+            "texts": {
+              "tb": "Manusia itu memberi nama Hawa kepada isterinya, sebab dialah yang menjadi ibu semua yang hidup.",
+              "bis": "Adam menamakan istrinya Hawa, karena perempuan itu menjadi ibu seluruh umat manusia.",
+              "tl": "Hata, maka dipanggil Adam akan bininya itu Hawa, sebab ialah ibu segala orang yang hidup.",
+              "ende": "Maka manusia memberi nama isterinja Chawa, sebab ia mendjadi ibu semua jang berhajat.",
+              "tb_itl_drf": "Manusia <0120> itu memberi <07121> nama <08034> Hawa <02332> kepada isterinya <0802>, sebab <03588> dialah <01931> yang menjadi <01961> ibu <0517> semua <03605> yang hidup <02416>.",
+              "tl_itl_drf": "Hata, maka dipanggil <07121> Adam <0120> akan bininya <0802> itu Hawa <02332>, sebab <03588> ialah <01931> ibu <0517> segala <03605> orang yang hidup <02416>.",
+              "bbe": "And the man gave his wife the name of Eve because she was the mother of all who have life.",
+              "message": "The Man, known as Adam, named his wife Eve because she was the mother of all the living.",
+              "nkjv": "And Adam called his wife's name Eve, because she was the mother of all living.",
+              "net": "The man* named his wife Eve,* because* she was the mother of all the living.*",
+              "net2": "**\n\n__\n\nThe man⁽¹⁹⁸⁾ named his wife Eve,⁽¹⁹⁹⁾ because⁽²⁰⁰⁾ she was the mother of all the living.⁽²⁰¹⁾",
+              "nwt": "Allah Yehuwa membuat pakaian panjang dari kulit untuk Adam dan istrinya, dan mereka pun memakainya."
+            }
+          },
+          {
+            "verse": 21,
+            "texts": {
+              "tb": "Dan TUHAN Allah membuat pakaian dari kulit binatang untuk manusia dan untuk isterinya itu, lalu mengenakannya kepada mereka.",
+              "bis": "Maka TUHAN Allah membuat pakaian dari kulit binatang untuk Adam dan istrinya, lalu mengenakan-Nya kepada mereka.",
+              "tl": "Maka diperbuat Tuhan Allah akan Adam dan Hawa itu sarung dari pada kulit, lalu dikenakan-Nya pada mereka itu.",
+              "ende": "Dan Jahwe Allah membuat pakaian kulit untuk manusia serta isterinja dan mengenakannja pada mereka.",
+              "tb_itl_drf": "Dan TUHAN <03068> Allah <0430> membuat <06213> pakaian dari kulit <05785> binatang untuk <03801> manusia <0120> dan untuk isterinya <0802> itu, lalu mengenakannya <03847> kepada mereka.",
+              "tl_itl_drf": "Maka diperbuat <06213> Tuhan <03068> Allah <0430> akan Adam <0120> dan Hawa <0802> itu sarung <03801> dari pada kulit <05785>, lalu dikenakan-Nya <03847> pada mereka itu.",
+              "bbe": "And the Lord God made for Adam and for his wife coats of skins for their clothing.",
+              "message": "GOD made leather clothing for Adam and his wife and dressed them.",
+              "nkjv": "Also for Adam and his wife the LORD God made tunics of skin, and clothed them.",
+              "net": "The Lord God made garments from skin* for Adam and his wife, and clothed them.",
+              "net2": "**\n\n__\n\nThe Lord God made garments from skin⁽²⁰²⁾ for Adam and his wife, and clothed them.",
+              "nwt": "Lalu Allah Yehuwa berkata, ”Manusia itu sudah menjadi seperti kita, tahu tentang yang baik dan yang jahat. Supaya dia tidak mengambil buah pohon kehidupan juga dan memakannya, lalu hidup selamanya,—”"
+            }
+          },
+          {
+            "verse": 22,
+            "texts": {
+              "tb": "Berfirmanlah TUHAN Allah: \"Sesungguhnya manusia itu telah menjadi seperti salah satu dari Kita, tahu tentang yang baik dan yang jahat; maka sekarang jangan sampai ia mengulurkan tangannya dan mengambil pula dari buah pohon kehidupan itu dan memakannya, sehingga ia hidup untuk selama-lamanya.\"",
+              "bis": "TUHAN Allah berkata, \"Sekarang manusia telah menjadi seperti Kita dan mempunyai pengetahuan tentang yang baik dan yang jahat. Jadi perlu dicegah dia makan buah pohon yang memberi hidup, supaya dia jangan hidup untuk selama-lamanya.\"",
+              "tl": "Maka firman Tuhan Allah: Bahwasanya manusia ini telah menjadi bagaikan seorang Kita, sebab diketahuinya akan baik dan jahat; maka sekarangpun jangan ia mengedangkan tangannya lalu mengambil lagi buah pohon alhayat itu dan makan dia dan ia hidup selama-lamanya.",
+              "ende": "Lalu Jahwe Allah bersabda: \"Lihatlah, manusia telah mendjadi seperti salah satu dari kita, tahu akan baik dan djahat. Dan sekarang djanganlah ia sampai mengulurkan tangannja dan memetik buah dari pohon kehidupan, untuk dimakannja dan untuk hidup selama-lamanja!\"",
+              "tb_itl_drf": "Berfirmanlah <0559> TUHAN <03068> Allah <0430>: \"Sesungguhnya <02005> manusia <0120> itu telah menjadi <01961> seperti salah satu <0259> dari <04480> Kita, tahu <03045> tentang yang baik <02896> dan yang jahat <07451>; maka sekarang <06258> jangan <06435> sampai ia mengulurkan <07971> tangannya <03027> dan mengambil <03947> pula <01571> dari buah pohon <06086> kehidupan <02416> itu dan memakannya <0398>, sehingga ia hidup <02425> untuk selama-lamanya <05769>.\"",
+              "tl_itl_drf": "Maka firman <0559> Tuhan <03068> Allah <0430>: Bahwasanya <02005> manusia <0120> ini telah menjadi <01961> bagaikan seorang <0259> Kita, sebab diketahuinya <03045> akan baik <02896> dan jahat <07451>; maka sekarangpun <06258> jangan <06435> ia mengedangkan <07971> tangannya <03027> lalu mengambil <03947> lagi <01571> buah pohon <06086> alhayat <02416> itu dan makan <0398> dia dan ia hidup <02425> selama-lamanya <05769>.",
+              "bbe": "And the Lord God said, Now the man has become like one of us, having knowledge of good and evil; and now if he puts out his hand and takes of the fruit of the tree of life, he will go on living for ever.",
+              "message": "GOD said, \"The Man has become like one of us, capable of knowing everything, ranging from good to evil. What if he now should reach out and take fruit from the Tree-of-Life and eat, and live forever? Never--this cannot happen!\"",
+              "nkjv": "Then the LORD God said, \"Behold, the man has become like one of Us, to know good and evil. And now, lest he put out his hand and take also of the tree of life, and eat, and live forever\"",
+              "net": "And the Lord God said, “Now* that the man has become like one of us,* knowing* good and evil, he must not be allowed* to stretch out his hand and take also from the tree of life and eat, and live forever.”",
+              "net2": "**\n\n__\n\nAnd the Lord God said, “Now⁽²⁰³⁾ that the man has become like one of us,⁽²⁰⁴⁾ knowing⁽²⁰⁵⁾ good and evil, he must not be allowed⁽²⁰⁶⁾ to stretch out his hand and take also from the tree of life and eat, and live forever.”",
+              "nwt": "Maka, Allah Yehuwa mengusir dia dari Taman Eden untuk mengolah tanah yang darinya dia dibuat."
+            }
+          },
+          {
+            "verse": 23,
+            "texts": {
+              "tb": "Lalu TUHAN Allah mengusir dia dari taman Eden supaya ia mengusahakan tanah dari mana ia diambil.",
+              "bis": "Maka TUHAN Allah mengusir manusia dari taman Eden dan menyuruhnya mengusahakan tanah yang menjadi asalnya itu.",
+              "tl": "Maka sebab itu disuruh Tuhan Allah akan dia keluar dari dalam taman Eden, supaya diusahakannya tanah yang telah ia dijadikan dari padanya.",
+              "ende": "Maka Jahwe Allah mengeluarkan dia dari taman Eden, agar ia mengolah tanah, dari mana ia telah diambil.",
+              "tb_itl_drf": "Lalu <07971> TUHAN <03068> Allah <0430> mengusir <01588> dia dari taman <01588> Eden <05731> supaya ia mengusahakan <05647> tanah <0127> dari mana <0834> ia diambil <03947>.",
+              "tl_itl_drf": "Maka sebab itu disuruh <07971> Tuhan <03068> Allah <0430> akan dia keluar dari dalam taman <01588> Eden <05731>, supaya diusahakannya <05647> tanah <0127> yang telah <0834> ia dijadikan <03947> dari padanya <08033>.",
+              "bbe": "So the Lord God sent him out of the garden of Eden to be a worker on the earth from which he was taken.",
+              "message": "So GOD expelled them from the Garden of Eden and sent them to work the ground, the same dirt out of which they'd been made.",
+              "nkjv": "therefore the LORD God sent him out of the garden of Eden to till the ground from which he was taken.",
+              "net": "So the Lord God expelled him* from the orchard in Eden to cultivate the ground from which he had been taken.",
+              "net2": "**\n\n__\n\nSo the Lord God expelled him⁽²⁰⁷⁾ from the orchard in Eden to cultivate the ground from which he had been taken.",
+              "nwt": "Begitulah Allah mengusir manusia itu. Di timur Taman Eden, Dia menempatkan kerub-kerub dan sebuah pedang berapi yang terus berputar untuk menghalangi jalan menuju pohon kehidupan."
+            }
+          },
+          {
+            "verse": 24,
+            "texts": {
+              "tb": "Ia menghalau manusia itu dan di sebelah timur taman Eden ditempatkan-Nyalah beberapa kerub dengan pedang yang bernyala-nyala dan menyambar-nyambar, untuk menjaga jalan ke pohon kehidupan.",
+              "bis": "Kemudian, di sebelah timur taman itu di depan pintu masuk, TUHAN Allah menempatkan kerub-kerub, dan sebilah pedang berapi yang berputar ke segala arah, untuk menjaga jalan ke pohon yang memberi hidup itu. Dengan demikian tak seorang pun dapat masuk dan mendekati pohon itu.",
+              "tl": "Lalu dihalaukan-Nya manusia itu ke luar dan ditaruh-Nya beberapa kerubiun arah ke sebelah timur taman Eden itu serta dengan sebilah mata pedang yang bernyala-nyala dan yang dilayamkan akan menunggui jalan kepada pohon alhayat itu adanya.",
+              "ende": "Ia mengusir manusia dan dimuka taman Eden ditempatkanNja kerub dan njala pedang jang berkilat-kilat, untuk mendjaga djalan jang menudju kepohon kehidupan.",
+              "tb_itl_drf": "Ia menghalau <01644> manusia <0120> itu dan di <07931> sebelah timur <06924> taman <01588> Eden <05731> ditempatkan-Nyala <03858> beberapa kerub <03742> dengan pedang <02719> yang bernyala-nyala dan menyambar-nyambar <02015>, untuk menjaga <08104> jalan <01870> ke pohon <06086> kehidupan <02416>.",
+              "tl_itl_drf": "Lalu dihalaukan-Nya <01644> manusia <0120> itu ke luar dan ditaruh-Nya <07931> beberapa kerubiun <03742> arah ke sebelah timur <06924> taman <01588> Eden <05731> itu serta <0853> dengan sebilah <03858> mata pedang <02719> yang bernyala-nyala dan yang dilayamkan <02015> akan menunggui <08104> jalan <01870> kepada pohon <06086> alhayat <02416> itu adanya <0>.",
+              "bbe": "So he sent the man out; and at the east of the garden of Eden he put winged ones and a flaming sword turning every way to keep the way to the tree of life.",
+              "message": "He threw them out of the garden and stationed angel-cherubim and a revolving sword of fire east of it, guarding the path to the Tree-of-Life.",
+              "nkjv": "So He drove out the man; and He placed cherubim at the east of the garden of Eden, and a flaming sword which turned every way, to guard the way to the tree of life.",
+              "net": "When he drove* the man out, he placed on the eastern side* of the orchard in Eden angelic sentries* who used the flame of a whirling sword* to guard the way to the tree of life.",
+              "net2": "**\n\n_The Story of Cain and Abel_\n\nWhen he drove⁽²⁰⁸⁾ the man out, he placed on the eastern side⁽²⁰⁹⁾ of the orchard in Eden angelic sentries⁽²¹⁰⁾ who used the flame of a whirling sword⁽²¹¹⁾ to guard the way to the tree of life. The Story of Cain and Abel"
+            }
+          }
+        ],
+        "totalVerses": 24,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
       }
     ]
   ]
