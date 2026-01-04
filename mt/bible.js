@@ -169,83 +169,67 @@ const BibleVersions = [{
 ]
 
 /* =========================
-    STRUKTUR TANAKH
+    DAFTAR KITAB TANAKH
 ========================= */
-function buildChabadUrl(aid) {
-  //return `https://www.chabad.org/library/bible_cdo/aid/${aid}`
-  return `https://www.chabad.org/library/bible.aspx?aid=${aid}`
-}
-
-function extractNextAid($) {
-  const href = $('a.next_article').attr('href')
-  if (!href) return null
-
-  const pathname = new URL(href, 'https://www.chabad.org').pathname
-  const parts = pathname.split('/')
-  const aidIndex = parts.indexOf('aid')
-
-  return aidIndex !== -1 ? Number(parts[aidIndex + 1]) : null
-}
-
-const Tanakh =[
-    {
-      "id": "torah",
-      "name": "Torah",
-      "books": [
-        { "he": "Bereshit", "en": "Genesis", "id": "Kejadian", "aid": 6289 },
-        { "he": "Shemot", "en": "Exodus", "id": "Keluaran", "aid": 8161 },
-        { "he": "Vayikra", "en": "Leviticus", "id": "Imamat", "aid": 8162 },
-        { "he": "Bamidbar", "en": "Numbers", "id": "Bilangan", "aid": 8163 },
-        { "he": "Devarim", "en": "Deuteronomy", "id": "Ulangan", "aid": 8164 }
-      ]
-    },
-    {
-      "id": "neviim",
-      "name": "Nevi'im",
-      "books": [
-        { "he": "Yehoshua", "en": "Joshua", "id": "Yosua", "aid": 15749 },
-        { "he": "Shoftim", "en": "Judges", "id": "Hakim-hakim", "aid": 15750 },
-        { "he": "Shmuel I", "en": "I Samuel", "id": "1 Samuel", "aid": 15751 },
-        { "he": "Shmuel II", "en": "II Samuel", "id": "2 Samuel", "aid": 15752 },
-        { "he": "Melachim I", "en": "I Kings", "id": "1 Raja-raja", "aid": 15753 },
-        { "he": "Melachim II", "en": "II Kings", "id": "2 Raja-raja", "aid": 15754 },
-        { "he": "Yeshayahu", "en": "Isaiah", "id": "Yesaya", "aid": 15755 },
-        { "he": "Yirmiyahu", "en": "Jeremiah", "id": "Yeremia", "aid": 15756 },
-        { "he": "Yechezkel", "en": "Ezekiel", "id": "Yehezkiel", "aid": 16098 },
-        { "he": "Hoshea", "en": "Hosea", "id": "Hosea", "aid": 15758 },
-        { "he": "Yoel", "en": "Joel", "id": "Yoel", "aid": 15759 },
-        { "he": "Amos", "en": "Amos", "id": "Amos", "aid": 15760 },
-        { "he": "Ovadiah", "en": "Obadiah", "id": "Obaja", "aid": 15761 },
-        { "he": "Yonah", "en": "Jonah", "id": "Yunus", "aid": 15762 },
-        { "he": "Michah", "en": "Micah", "id": "Mikha", "aid": 15763 },
-        { "he": "Nachum", "en": "Nahum", "id": "Nahum", "aid": 15764 },
-        { "he": "Chavakuk", "en": "Habakkuk", "id": "Habakuk", "aid": 15765 },
-        { "he": "Tzefaniah", "en": "Zephaniah", "id": "Zefanya", "aid": 15766 },
-        { "he": "Chaggai", "en": "Haggai", "id": "Hagai", "aid": 15767 },
-        { "he": "Zechariah", "en": "Zechariah", "id": "Zakharia", "aid": 15768 },
-        { "he": "Malachi", "en": "Malachi", "id": "Maleakhi", "aid": 15769 }
-      ]
-    },
-    {
-      "id": "ketuvim",
-      "name": "Ketuvim",
-      "books": [
-        { "he": "Tehillim", "en": "Psalms", "id": "Mazmur", "aid": 15770 },
-        { "he": "Mishlei", "en": "Proverbs", "id": "Amsal", "aid": 15771 },
-        { "he": "Iyov", "en": "Job", "id": "Ayub", "aid": 15772 },
-        { "he": "Shir Hashirim", "en": "Song of Songs", "id": "Kidung Agung", "aid": 15780 },
-        { "he": "Rut", "en": "Ruth", "id": "Rut", "aid": 15778 },
-        { "he": "Eichah", "en": "Lamentations", "id": "Ratapan", "aid": 15781 },
-        { "he": "Kohelet", "en": "Ecclesiastes", "id": "Pengkhotbah", "aid": 15779 },
-        { "he": "Esther", "en": "Esther", "id": "Ester", "aid": 15782 },
-        { "he": "Daniel", "en": "Daniel", "id": "Daniel", "aid": 15773 },
-        { "he": "Ezra", "en": "Ezra", "id": "Ezra", "aid": 15774 },
-        { "he": "Nechemiah", "en": "Nehemiah", "id": "Nehemia", "aid": 15775 },
-        { "he": "Divrei Hayamim I", "en": "Chronicles I", "id": "1 Tawarikh", "aid": 15776 },
-        { "he": "Divrei Hayamim II", "en": "Chronicles II", "id": "2 Tawarikh", "aid": 15777 }
-      ]
-    }
-  ]
+const Tanakh = [
+  {
+    "id": "torah",
+    "name": "Torah",
+    "books": [
+      { "he": "Bereshit", "en": "Genesis", "id": "Kejadian", "aid": 8165 },
+      { "he": "Shemot", "en": "Exodus", "id": "Keluaran", "aid": 9862 },
+      { "he": "Vayikra", "en": "Leviticus", "id": "Imamat", "aid": 9902 },
+      { "he": "Bamidbar", "en": "Numbers", "id": "Bilangan", "aid": 9929 },
+      { "he": "Devarim", "en": "Deuteronomy", "id": "Ulangan", "aid": 9965 }
+    ]
+  },
+  {
+    "id": "neviim",
+    "name": "Nevi'im",
+    "books": [
+      { "he": "Yehoshua", "en": "Joshua", "id": "Yosua", "aid": 15785 },
+      { "he": "Shoftim", "en": "Judges", "id": "Hakim-hakim", "aid": 15809 },
+      { "he": "Shmuel I", "en": "I Samuel", "id": "1 Samuel", "aid": 15830 },
+      { "he": "Shmuel II", "en": "II Samuel", "id": "2 Samuel", "aid": 15861 },
+      { "he": "Melachim I", "en": "I Kings", "id": "1 Raja-raja", "aid": 15885 },
+      { "he": "Melachim II", "en": "II Kings", "id": "2 Raja-raja", "aid": 15907 },
+      { "he": "Yeshayahu", "en": "Isaiah", "id": "Yesaya", "aid": 15932 },
+      { "he": "Yirmiyahu", "en": "Jeremiah", "id": "Yeremia", "aid": 15998 },
+      { "he": "Yechezkel", "en": "Ezekiel", "id": "Yehezkiel", "aid": 16099 },
+      { "he": "Hoshea", "en": "Hosea", "id": "Hosea", "aid": 16155 },
+      { "he": "Yoel", "en": "Joel", "id": "Yoel", "aid": 16169 },
+      { "he": "Amos", "en": "Amos", "id": "Amos", "aid": 16173 },
+      { "he": "Ovadiah", "en": "Obadiah", "id": "Obaja", "aid": 16182 },
+      { "he": "Yonah", "en": "Jonah", "id": "Yunus", "aid": 16183 },
+      { "he": "Michah", "en": "Micah", "id": "Mikha", "aid": 16187 },
+      { "he": "Nachum", "en": "Nahum", "id": "Nahum", "aid": 16194 },
+      { "he": "Chavakuk", "en": "Habakkuk", "id": "Habakuk", "aid": 16197 },
+      { "he": "Tzefaniah", "en": "Zephaniah", "id": "Zefanya", "aid": 16200 },
+      { "he": "Chaggai", "en": "Haggai", "id": "Hagai", "aid": 16203 },
+      { "he": "Zechariah", "en": "Zechariah", "id": "Zakharia", "aid": 16205 },
+      { "he": "Malachi", "en": "Malachi", "id": "Maleakhi", "aid": 16219 }
+    ]
+  },
+  {
+    "id": "ketuvim",
+    "name": "Ketuvim",
+    "books": [
+      { "he": "Tehillim", "en": "Psalms", "id": "Mazmur", "aid": 16222 },
+      { "he": "Mishlei", "en": "Proverbs", "id": "Amsal", "aid": 16372 },
+      { "he": "Iyov", "en": "Job", "id": "Ayub", "aid": 16403 },
+      { "he": "Shir Hashirim", "en": "Song of Songs", "id": "Kidung Agung", "aid": 16445 },
+      { "he": "Rut", "en": "Ruth", "id": "Rut", "aid": 16453 },
+      { "he": "Eichah", "en": "Lamentations", "id": "Ratapan", "aid": 16457 },
+      { "he": "Kohelet", "en": "Ecclesiastes", "id": "Pengkhotbah", "aid": 16462 },
+      { "he": "Esther", "en": "Esther", "id": "Ester", "aid": 16474 },
+      { "he": "Daniel", "en": "Daniel", "id": "Daniel", "aid": 16484 },
+      { "he": "Ezra", "en": "Ezra", "id": "Ezra", "aid": 16498 },
+      { "he": "Nechemiah", "en": "Nehemiah", "id": "Nehemia", "aid": 16508 },
+      { "he": "Divrei Hayamim I", "en": "Chronicles I", "id": "1 Tawarikh", "aid": 16521 },
+      { "he": "Divrei Hayamim II", "en": "Chronicles II", "id": "2 Tawarikh", "aid": 16550 }
+    ]
+  }
+];
   
 /* =========================
    FUNGSI UMUM
@@ -524,8 +508,18 @@ class BibleQueue {
 
   showProgress() {
     const processed = this.completed + this.failed
-    const progress = Math.round(processed / this.total * 100)
-    process.stdout.write(`📊 Progress: ${processed}/${this.total} pasal (${progress}%) | Active: ${this.processing} | Failed: ${this.failed}\n`)
+    const percent = this.total ? processed / this.total : 0
+    
+    const barLength = 30
+    const filled = Math.round(barLength * percent)
+    const bar = '█'.repeat(filled) + ' '.repeat(barLength - filled)
+
+    process.stdout.write(`\r📊 Progress: [${bar}] ${processed}/${this.total} pasal (${Math.round(percent * 100)}%) | Active: ${this.processing} | Failed: ${this.failed}\n`)
+    
+    // newline kalau sudah selesai
+    if (processed === this.total) {
+      process.stdout.write('\n')
+    }
   }
 }
 
@@ -534,6 +528,7 @@ class LexiconQueue {
     this.concurrency = concurrency
     this.queue = []
     this.processing = 0
+    this.lexi = ""
     this.completed = 0
     this.failed = 0
     this.total = 0
@@ -554,6 +549,7 @@ class LexiconQueue {
     const worker = async () => {
       while (this.queue.length > 0) {
         const strongNumber = this.queue.shift()
+        this.lexi = strongNumber
         if (!strongNumber) continue
 
         this.processing++
@@ -581,9 +577,22 @@ class LexiconQueue {
 
   showProgress() {
     const processed = this.completed + this.failed
-    const progress = Math.round(processed / this.total * 100)
-    process.stdout.write(`📚 Lexicon: ${processed}/${this.total} (${progress}%) | Active: ${this.processing} | Failed: ${this.failed}\n`)
+    const percent = this.total ? processed / this.total : 0
+
+    const barLength = 30
+    const filled = Math.round(barLength * percent)
+    const bar = '█'.repeat(filled) + ' '.repeat(barLength - filled)
+
+    process.stdout.write(
+      `\r📚 Lexicon ${this.lexi} [${bar}] ${processed}/${this.total} (${Math.round(percent * 100)}%) | Active: ${this.processing} | Failed: ${this.failed}   `
+    )
+
+    // newline kalau sudah selesai
+    if (processed === this.total) {
+      process.stdout.write('\n')
+    }
   }
+
 
   getCache() {
     return this.lexiconCache
@@ -803,6 +812,11 @@ async function getChapterData(bookId, chapter, targetVersions) {
    FETCH JW.ORG DATA
 ========================= */
 
+function buildChabadUrl(aid) {
+  return `https://www.chabad.org/library/bible_cdo/aid/${aid}`
+  // return `https://www.chabad.org/library/bible.aspx?aid=${aid}`
+}
+
 async function fetchJWData(bookId, chapter){
   const html = await fetchUrl(`https://wol.jw.org/id/wol/b/r25/lp-in/nwtsty/${bookId}/${chapter}#study=discover`);
   if (!html) return null;
@@ -975,7 +989,7 @@ async function parseChabadHTML(html, bookId, chapter, aid) {
   });
   
   // Ekstrak next aid untuk navigasi
-  const nextAid = extractNextAid($);
+  const nextAid = $('a.next_article').attr('href')?.match(/\/aid\/(\d+)/)?.[1] * 1 || null
   
   return {
     bookId,
@@ -1472,7 +1486,7 @@ async function fetchStrongLexicon(strongNumber) {
     const $ = cheerio.load(html);
 
     // Data dasar
-    const lexiconData = {
+    let lexiconData = {
       strong: strongNumber,
       word: '',
       pronunciation: '',
@@ -1483,9 +1497,48 @@ async function fetchStrongLexicon(strongNumber) {
       avSummary: '',
       occurrence: 0,
       definition: '',
+      special_cases: []
     };
 
-    /// Hebrew / Greek → _*text*_
+    // 1. Cek apakah ada konten <pre> khusus
+    const preContent = $('td#b pre, tr[valign="top"] pre').first();
+    
+    if (preContent.length > 0) {
+      const preText = preContent.text().trim();
+      
+      // Deteksi halaman khusus (dalam bahasa Inggris)
+      if (preText.includes('The original word in the Greek or Hebrew') ||
+          preText.includes('Strong\'s No.') ||
+          preText.includes('e.g.')) {
+        
+            
+        // Simpan seluruh konten sebagai string definition
+        lexiconData.isSpecialCase = true;
+        lexiconData.definition = preText;
+        lexiconData.word = '[SPECIAL CASE - Explanatory Page]';
+        
+        // Coba ekstrak Strong's number dari contoh pertama
+        // const strongMatch = preText.match(/Strong'?s? No\.?\s*(\d+)/i);
+        // if (strongMatch) {
+        //   // Simpan dengan prefix yang sesuai
+        //   lexiconData.strong_reference = prefix + strongMatch[1];
+        // }
+        
+        // // Cari kata kunci dalam contoh
+        // const wordMatch = preText.match(/to\s+([a-z\s]+?)\s+(?:English|send|bendeth)/i);
+        // if (wordMatch) {
+        //   lexiconData.word = wordMatch[1].trim();
+        // }
+        
+        // // Proses contoh khusus
+        // lexiconData = processSpecialCasesInDefinition(lexiconData);
+        
+        console.log(`✅ Special case page for ${strongNumber} saved as string`);
+        return lexiconData;
+      }
+    }
+
+    // 2. Parsing untuk halaman lexicon normal
     $('span#h').each((_, el) => {
       $(el).replaceWith(`_*${$(el).text()}*_`)
     })
@@ -1494,45 +1547,214 @@ async function fetchStrongLexicon(strongNumber) {
       .map((_, row) => $(row).find('td').eq(1))
       .get()
 
-    const getText = i =>
-      rows[i]?.text().replace(/\s+/g, ' ').trim() || ''
-    const getPre = i =>
-      rows[i]?.find('pre').text().trim() || getText(i)
-
-    lexiconData.word          = getText(1)
-    lexiconData.pronunciation = getText(2)
-    lexiconData.etymology     = getText(3)
-    lexiconData.source        = getText(4)
-    lexiconData.partOfSpeech  = getText(5)
-    lexiconData.avSummary     = getText(6)
-    lexiconData.occurrence    = parseInt(getText(7)) || 0
-    lexiconData.definition    = getPre(8)
-
-    const strongMatch = lexiconData.etymology.match(/\d+/)
-    if (strongMatch) {
-      lexiconData.strong_reference = prefix + strongMatch[0]
+    // Jika tidak ada tabel, coba alternatif
+    if (rows.length === 0) {
+      const altRows = $('table[cellpadding="3"] tbody tr')
+        .map((_, row) => $(row).find('td').eq(1))
+        .get()
+      
+      if (altRows.length > 0) {
+        // Gunakan fungsi parsing tabel
+        return parseTableStructure(altRows, lexiconData);
+      }
+      
+      // Fallback: ambil teks langsung
+      const textContent = $('td#b').text().trim();
+      if (textContent) {
+        lexiconData.definition = textContent;
+      }
+      return lexiconData;
     }
 
-    console.log(`✅ Lexicon ${strongNumber}: ${lexiconData.word} (${lexiconData.pronunciation})`);
+    // Parsing tabel normal
+    const getText = i => rows[i]?.text().replace(/\s+/g, ' ').trim() || '';
+    const getPre = i => rows[i]?.find('pre').text().trim() || getText(i);
+
+    lexiconData.word          = getText(1);
+    lexiconData.pronunciation = getText(2);
+    lexiconData.etymology     = getText(3);
+    lexiconData.source        = getText(4);
+    lexiconData.partOfSpeech  = getText(5);
+    lexiconData.avSummary     = getText(6);
+    lexiconData.occurrence    = parseInt(getText(7)) || 0;
+    lexiconData.definition    = getPre(8);
+
+    // Ekstrak referensi Strong
+    const strongMatch = lexiconData.etymology.match(/\d+/);
+    if (strongMatch) {
+      lexiconData.strong_reference = prefix + strongMatch[0];
+    }
+
     return lexiconData;
 
   } catch (error) {
-    console.error(`❌ Gagal ambil lexicon ${strongNumber}:`, error.message);
-    // Return data minimal jika gagal
+    console.error(`❌ Failed to fetch lexicon ${strongNumber}:`, error.message);
     return {
       strong: strongNumber,
-      word: '',
-      pronunciation: '',
-      etymology: '',
-      strong_reference: '',
-      source: '',
-      partOfSpeech: '',
-      avSummary: '',
-      occurrence: 0,
-      definition: '',
       error: error.message
     };
   }
+}
+
+// Fungsi helper untuk parsing struktur tabel
+function parseTableStructure(rows, lexiconData) {
+  const getText = i => rows[i]?.text().replace(/\s+/g, ' ').trim() || '';
+  const getPre = i => rows[i]?.find('pre').text().trim() || getText(i);
+  
+  // Coba berbagai struktur tabel
+  if (rows.length >= 8) {
+    // Struktur standar
+    lexiconData.word          = getText(1);
+    lexiconData.pronunciation = getText(2);
+    lexiconData.etymology     = getText(3);
+    lexiconData.source        = getText(4);
+    lexiconData.partOfSpeech  = getText(5);
+    lexiconData.avSummary     = getText(6);
+    lexiconData.occurrence    = parseInt(getText(7)) || 0;
+    lexiconData.definition    = getPre(8);
+  } else if (rows.length >= 6) {
+    // Struktur alternatif
+    lexiconData.word          = getText(0);
+    lexiconData.pronunciation = getText(1);
+    lexiconData.etymology     = getText(2);
+    lexiconData.partOfSpeech  = getText(3);
+    lexiconData.occurrence    = parseInt(getText(4)) || 0;
+    lexiconData.definition    = getPre(5);
+  } else if (rows.length >= 3) {
+    // Struktur minimal
+    lexiconData.word          = getText(0);
+    lexiconData.pronunciation = getText(1);
+    lexiconData.definition    = getPre(2);
+  }
+  
+  return lexiconData;
+}
+
+// Fungsi baru untuk menangani contoh-contoh khusus dalam definition
+function processSpecialCasesInDefinition(lexiconData) {
+  if (!lexiconData.definition) return lexiconData;
+  
+  const def = lexiconData.definition;
+  const examples = [];
+  
+  // 1. Deteksi semua contoh ayat dengan format Inggris
+  // Pola: #Kitab(singkatan) Pasal: Ayat
+  const versePattern = /#([A-Za-z]{1,4})\s+(\d+:\d+)/g;
+  
+  let match;
+  while ((match = versePattern.exec(def)) !== null) {
+    const reference = match[0].substring(1); // Hapus #
+    const bookAbbr = match[1];
+    const verse = match[2];
+    
+    // Konversi singkatan ke nama kitab lengkap
+    const bookMap = {
+      'Mt': 'Matthew', 'Mr': 'Mark', 'Lk': 'Luke', 'Jn': 'John',
+      'Jer': 'Jeremiah', 'Nu': 'Numbers', '2Sa': '2 Samuel',
+      'Gen': 'Genesis', 'Ex': 'Exodus', 'Lev': 'Leviticus',
+      'Dt': 'Deuteronomy', 'Ps': 'Psalms', 'Pr': 'Proverbs',
+      'Is': 'Isaiah', 'Ezk': 'Ezekiel', 'Dan': 'Daniel',
+      'Hos': 'Hosea', 'Jl': 'Joel', 'Am': 'Amos',
+      'Ob': 'Obadiah', 'Jon': 'Jonah', 'Mic': 'Micah',
+      'Hab': 'Habakkuk', 'Zep': 'Zephaniah', 'Hag': 'Haggai',
+      'Zec': 'Zechariah', 'Mal': 'Malachi'
+    };
+    
+    const bookName = bookMap[bookAbbr] || bookAbbr;
+    
+    // 2. Ambil contoh teks terkait (dari posisi match hingga baris kosong atau contoh berikutnya)
+    const startIndex = match.index;
+    let endIndex = def.indexOf('#', startIndex + 1);
+    if (endIndex === -1) endIndex = def.length;
+    
+    let exampleText = def.substring(startIndex, endIndex).trim();
+    
+    // 3. Ekstrak Strong's numbers dari contoh
+    const strongNumbers = [];
+    const strongPattern = /\b(\d{3,5})\b/g;
+    
+    let strongMatch;
+    while ((strongMatch = strongPattern.exec(exampleText)) !== null) {
+      const num = strongMatch[1];
+      // Pastikan bukan bagian dari angka 0 (zero)
+      if (num !== '0' && !strongNumbers.includes(num)) {
+        strongNumbers.push(num);
+      }
+    }
+    
+    // 4. Ekstrak kata/frasa kunci
+    let keyPhrase = '';
+    
+    // Pola: "to [kata kerja] ..."
+    const toPhraseMatch = exampleText.match(/to\s+([a-z\s]+?)(?=\s+(?:English|send|bendeth|$))/i);
+    if (toPhraseMatch) {
+      keyPhrase = toPhraseMatch[1].trim();
+    }
+    
+    // Pola: kata dalam tanda kutip
+    const quotedMatch = exampleText.match(/"([^"]+)"/);
+    if (quotedMatch) {
+      keyPhrase = quotedMatch[1];
+    }
+    
+    // 5. Ambil baris dengan format tabel "send 630 0 her 846 away 630"
+    const tableLineMatch = exampleText.match(/([a-z]+\s+\d+\s+\d+\s+[a-z]+\s+\d+\s+[a-z]+\s+\d+)/i);
+    let tableFormat = '';
+    if (tableLineMatch) {
+      tableFormat = tableLineMatch[1];
+    }
+    
+    // 6. Simpan contoh
+    examples.push({
+      reference: reference,
+      book_abbreviation: bookAbbr,
+      book_name: bookName,
+      verse: verse,
+      strong_numbers: strongNumbers,
+      key_phrase: keyPhrase || exampleText.substring(0, 50).replace(/\n/g, ' ') + '...',
+      table_format: tableFormat,
+      full_text: exampleText.substring(0, 300) // Potong panjang teks
+    });
+  }
+  
+  // 7. Juga cari pola "Strong's No. XXXX"
+  const strongNoPattern = /Strong'?s? No\.?\s*(\d+)/gi;
+  const strongNoMatches = [...def.matchAll(strongNoPattern)];
+  
+  if (strongNoMatches.length > 0) {
+    const mentionedStrongs = strongNoMatches.map(m => m[1]);
+    lexiconData.strong_reference = lexiconData.strong.charAt(0) + mentionedStrongs[0];
+    
+    if (!lexiconData.special_cases) {
+      lexiconData.special_cases = [];
+    }
+    
+    // Tambahkan entri khusus untuk Strong's numbers yang disebutkan
+    lexiconData.special_cases.push({
+      type: 'mentioned_strong_numbers',
+      strong_numbers: mentionedStrongs
+    });
+  }
+  
+  // 8. Jika ada contoh yang ditemukan, tambahkan ke lexiconData
+  if (examples.length > 0) {
+    if (!lexiconData.special_cases) {
+      lexiconData.special_cases = [];
+    }
+    
+    lexiconData.special_cases.push({
+      type: 'split_translation_examples',
+      description: `Cases where one original word is translated by multiple separated English words (${examples.length} examples)`,
+      examples: examples
+    });
+    
+    // Tambahkan catatan di awal definition
+    if (!lexiconData.definition.includes('[NOTE:')) {
+      lexiconData.definition = `[NOTE: This page explains special cases of split translations. Found ${examples.length} biblical references.]\n\n${def}`;
+    }
+  }
+  
+  return lexiconData;
 }
 
 async function saveLexiconToDB(lexiconData) {
@@ -1540,13 +1762,12 @@ async function saveLexiconToDB(lexiconData) {
 
   return dbQueue.add(async () => {
     try {
-
       // Simpan atau update lexicon
       await db.run(`
         INSERT OR REPLACE INTO strong_lexicon 
         (strong, word, pronunciation, etymology, strong_reference, source, 
-          part_of_speech, av_summary, occurrence, definition)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          part_of_speech, av_summary, occurrence, definition, special_cases)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `, [
         lexiconData.strong,
         lexiconData.word,
@@ -1557,17 +1778,51 @@ async function saveLexiconToDB(lexiconData) {
         lexiconData.partOfSpeech,
         lexiconData.avSummary,
         lexiconData.occurrence,
-        lexiconData.definition
+        lexiconData.definition,
+        JSON.stringify(lexiconData.special_cases || [])
       ]);
 
-
-      console.log(`💾 Saved lexicon: ${lexiconData.strong}`);
       return true;
     } catch (error) {
       console.error(`❌ Gagal menyimpan lexicon ${lexiconData.strong}:`, error.message);
       return false;
     }
   });
+}
+
+// Simpan lexicon ke JSON
+async function saveLexiconToJSON(lexiconData) {
+  if (!lexiconData || !lexiconData.strong) return false;
+  
+  try {    
+    // Struktur data lengkap
+    const lexiconJSON = {
+      ...lexiconData,
+      timestamp: new Date().toISOString()
+    };
+    
+    // Nama file berdasarkan Strong number
+    const filename = `${lexiconData.strong}.json`;
+    
+    // Simpan versi full
+    await fs.writeFile(
+      `${DIR_LEXICON}/${filename}`,
+      JSON.stringify(lexiconJSON, null, 2),
+      'utf8'
+    );
+    
+    // Simpan versi minified
+    await fs.writeFile(
+      `${DIR_LEXICON_MIN}/${filename}`,
+      JSON.stringify(lexiconJSON),
+      'utf8'
+    );
+    
+    return lexiconJSON;
+  } catch (error) {
+    console.error(`❌ Gagal menyimpan lexicon JSON ${lexiconData.strong}:`, error.message);
+    return false;
+  }
 }
 
 async function processLexicons(strongNumbers, concurrency = 2) {
@@ -1602,14 +1857,12 @@ async function processLexicons(strongNumbers, concurrency = 2) {
     // Delay untuk menghindari rate limit
     await sleep(1000);
     
-    console.log(`🌐 Mengambil lexicon ${strongNumber}...`);
-    
     try {
       // Ambil data dari web
       const lexiconData = await fetchStrongLexicon(strongNumber);
       // console.log(`📥 Diterima lexicon`, lexiconData);
       
-      if (lexiconData && lexiconData.word) {
+      if (lexiconData && (lexiconData.word || lexiconData.is_specialcase)) {
         // Simpan ke JSON
         const savedData = await saveLexiconToJSON(lexiconData);
         
@@ -1621,6 +1874,8 @@ async function processLexicons(strongNumbers, concurrency = 2) {
         return lexiconData;
       } else {
         console.log(`⚠️ Lexicon ${strongNumber} tidak ditemukan atau kosong`);
+        console.log(lexiconData.definition)
+        console.log(lexiconData.special_cases)
         return null;
       }
     } catch (error) {
@@ -1721,42 +1976,6 @@ async function createLexiconDirectories() {
   }
 }
 
-// Simpan lexicon ke JSON
-async function saveLexiconToJSON(lexiconData) {
-  if (!lexiconData || !lexiconData.strong) return false;
-  
-  try {
-    // Struktur data lengkap
-    const lexiconJSON = {
-      ...lexiconData,
-      timestamp: new Date().toISOString()
-    };
-    
-    // Nama file berdasarkan Strong number
-    const filename = `${lexiconData.strong}.json`;
-    
-    // Simpan versi full
-    await fs.writeFile(
-      `${DIR_LEXICON}/${filename}`,
-      JSON.stringify(lexiconJSON, null, 2),
-      'utf8'
-    );
-    
-    // Simpan versi minified
-    await fs.writeFile(
-      `${DIR_LEXICON_MIN}/${filename}`,
-      JSON.stringify(lexiconJSON),
-      'utf8'
-    );
-    
-    console.log(`💾 Saved lexicon JSON: ${lexiconData.strong}`);
-    return lexiconJSON;
-  } catch (error) {
-    console.error(`❌ Gagal menyimpan lexicon JSON ${lexiconData.strong}:`, error.message);
-    return false;
-  }
-}
-
 // Update index.json
 async function updateLexiconIndex(lexiconData) {
   try {
@@ -1818,7 +2037,7 @@ async function updateLexiconIndex(lexiconData) {
     // Simpan index versi minified
     await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
     
-    console.log(`📝 Updated lexicon index: ${lexiconData.strong}`);
+    // console.log(`📝 Updated lexicon index: ${lexiconData.strong}`);
     return true;
   } catch (error) {
     console.error('❌ Gagal update lexicon index:', error.message);
