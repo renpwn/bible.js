@@ -514,7 +514,7 @@ class BibleQueue {
     const filled = Math.round(barLength * percent)
     const bar = '█'.repeat(filled) + ' '.repeat(barLength - filled)
 
-    process.stdout.write(`\r📊 Progress: [${bar}] ${processed}/${this.total} pasal (${Math.round(percent * 100)}%) | Active: ${this.processing} | Failed: ${this.failed}\n`)
+    process.stdout.write(`\r📊 Progress: [${bar}] ${processed}/${this.total} pasal (${Math.round(percent * 100)}%) | Active: ${this.processing} | Failed: ${this.failed}`)
     
     // newline kalau sudah selesai
     if (processed === this.total) {
@@ -754,23 +754,24 @@ async function fetchSabdaData(bookId, chapter, targetVersions) {
 ========================= */
 
 async function getChapterData(bookId, chapter, targetVersions) {
-  try {
-    console.log(`🌐 Sabda: ${BibleBooks[bookId-1][0]} ${chapter}`)
-    
+  try {    
+    const bookName = BibleBooks[bookId-1][0];
     let sabdaData = null;
     let nwtData = null;
     let chabadData = null;
     
     // Fetch dari SABDAweb
     try {
-      sabdaData = await fetchSabdaData(bookId, chapter, targetVersions)
+      sabdaData = await fetchSabdaData(bookId, chapter, targetVersions)      
+      console.log(`🌐 Sabda: ${bookName} ${chapter} (${sabdaData.totalVerses} ayat)`);
     } catch (error) {
       console.error(`❌ Gagal ambil dari SABDAweb ${bookId}:${chapter}:`, error.message)
     }
     
     // Fetch dari JW.org untuk NWT
     try {
-      nwtData = await fetchJWData(bookId, chapter);
+      nwtData = await fetchJWData(bookId, chapter);      
+      console.log(`🌐 JW: ${bookName} ${chapter} (${nwtData.length} ayat)`);
     } catch (error) {
       console.error(`❌ Gagal ambil dari NWT ${bookId}:${chapter}:`, error.message)
     }
@@ -779,7 +780,9 @@ async function getChapterData(bookId, chapter, targetVersions) {
     try {
       const isTanakh = bookId <= 39; // Perjanjian Lama
       if (isTanakh) {
+        const tanakhBook = findTanakhBook(bookId);
         chabadData = await fetchChabadData(bookId, chapter);
+        console.log(`🌐 Chabad: ${tanakhBook.id} - ${tanakhBook.he} (${tanakhBook.en}) ${chapter} (${chabadData.totalVerses} ayat) Aid ${chabadData.aid}`);
       }
     } catch (error) {
       console.error(`❌ Gagal ambil dari Chabad ${bookId}:${chapter}:`, error.message)
@@ -884,8 +887,6 @@ async function fetchJWData(bookId, chapter){
     .sort((a, b) => a[0] - b[0])
     .map(([verse, text]) => ({ verse, text }));
 
-  console.log("🌐 JW verses:", verses.length);
-  //console.log(verses);
   return verses;
 }
 
@@ -1497,7 +1498,7 @@ async function fetchStrongLexicon(strongNumber) {
       avSummary: '',
       occurrence: 0,
       definition: '',
-      special_cases: []
+      isSpecialCase: false
     };
 
     // 1. Cek apakah ada konten <pre> khusus
@@ -1517,23 +1518,7 @@ async function fetchStrongLexicon(strongNumber) {
         lexiconData.definition = preText;
         lexiconData.word = '[SPECIAL CASE - Explanatory Page]';
         
-        // Coba ekstrak Strong's number dari contoh pertama
-        // const strongMatch = preText.match(/Strong'?s? No\.?\s*(\d+)/i);
-        // if (strongMatch) {
-        //   // Simpan dengan prefix yang sesuai
-        //   lexiconData.strong_reference = prefix + strongMatch[1];
-        // }
-        
-        // // Cari kata kunci dalam contoh
-        // const wordMatch = preText.match(/to\s+([a-z\s]+?)\s+(?:English|send|bendeth)/i);
-        // if (wordMatch) {
-        //   lexiconData.word = wordMatch[1].trim();
-        // }
-        
-        // // Proses contoh khusus
-        // lexiconData = processSpecialCasesInDefinition(lexiconData);
-        
-        console.log(`✅ Special case page for ${strongNumber} saved as string`);
+        // console.log(`✅ Special case page for ${strongNumber} saved as string`);
         return lexiconData;
       }
     }
@@ -1630,133 +1615,6 @@ function parseTableStructure(rows, lexiconData) {
   return lexiconData;
 }
 
-// Fungsi baru untuk menangani contoh-contoh khusus dalam definition
-function processSpecialCasesInDefinition(lexiconData) {
-  if (!lexiconData.definition) return lexiconData;
-  
-  const def = lexiconData.definition;
-  const examples = [];
-  
-  // 1. Deteksi semua contoh ayat dengan format Inggris
-  // Pola: #Kitab(singkatan) Pasal: Ayat
-  const versePattern = /#([A-Za-z]{1,4})\s+(\d+:\d+)/g;
-  
-  let match;
-  while ((match = versePattern.exec(def)) !== null) {
-    const reference = match[0].substring(1); // Hapus #
-    const bookAbbr = match[1];
-    const verse = match[2];
-    
-    // Konversi singkatan ke nama kitab lengkap
-    const bookMap = {
-      'Mt': 'Matthew', 'Mr': 'Mark', 'Lk': 'Luke', 'Jn': 'John',
-      'Jer': 'Jeremiah', 'Nu': 'Numbers', '2Sa': '2 Samuel',
-      'Gen': 'Genesis', 'Ex': 'Exodus', 'Lev': 'Leviticus',
-      'Dt': 'Deuteronomy', 'Ps': 'Psalms', 'Pr': 'Proverbs',
-      'Is': 'Isaiah', 'Ezk': 'Ezekiel', 'Dan': 'Daniel',
-      'Hos': 'Hosea', 'Jl': 'Joel', 'Am': 'Amos',
-      'Ob': 'Obadiah', 'Jon': 'Jonah', 'Mic': 'Micah',
-      'Hab': 'Habakkuk', 'Zep': 'Zephaniah', 'Hag': 'Haggai',
-      'Zec': 'Zechariah', 'Mal': 'Malachi'
-    };
-    
-    const bookName = bookMap[bookAbbr] || bookAbbr;
-    
-    // 2. Ambil contoh teks terkait (dari posisi match hingga baris kosong atau contoh berikutnya)
-    const startIndex = match.index;
-    let endIndex = def.indexOf('#', startIndex + 1);
-    if (endIndex === -1) endIndex = def.length;
-    
-    let exampleText = def.substring(startIndex, endIndex).trim();
-    
-    // 3. Ekstrak Strong's numbers dari contoh
-    const strongNumbers = [];
-    const strongPattern = /\b(\d{3,5})\b/g;
-    
-    let strongMatch;
-    while ((strongMatch = strongPattern.exec(exampleText)) !== null) {
-      const num = strongMatch[1];
-      // Pastikan bukan bagian dari angka 0 (zero)
-      if (num !== '0' && !strongNumbers.includes(num)) {
-        strongNumbers.push(num);
-      }
-    }
-    
-    // 4. Ekstrak kata/frasa kunci
-    let keyPhrase = '';
-    
-    // Pola: "to [kata kerja] ..."
-    const toPhraseMatch = exampleText.match(/to\s+([a-z\s]+?)(?=\s+(?:English|send|bendeth|$))/i);
-    if (toPhraseMatch) {
-      keyPhrase = toPhraseMatch[1].trim();
-    }
-    
-    // Pola: kata dalam tanda kutip
-    const quotedMatch = exampleText.match(/"([^"]+)"/);
-    if (quotedMatch) {
-      keyPhrase = quotedMatch[1];
-    }
-    
-    // 5. Ambil baris dengan format tabel "send 630 0 her 846 away 630"
-    const tableLineMatch = exampleText.match(/([a-z]+\s+\d+\s+\d+\s+[a-z]+\s+\d+\s+[a-z]+\s+\d+)/i);
-    let tableFormat = '';
-    if (tableLineMatch) {
-      tableFormat = tableLineMatch[1];
-    }
-    
-    // 6. Simpan contoh
-    examples.push({
-      reference: reference,
-      book_abbreviation: bookAbbr,
-      book_name: bookName,
-      verse: verse,
-      strong_numbers: strongNumbers,
-      key_phrase: keyPhrase || exampleText.substring(0, 50).replace(/\n/g, ' ') + '...',
-      table_format: tableFormat,
-      full_text: exampleText.substring(0, 300) // Potong panjang teks
-    });
-  }
-  
-  // 7. Juga cari pola "Strong's No. XXXX"
-  const strongNoPattern = /Strong'?s? No\.?\s*(\d+)/gi;
-  const strongNoMatches = [...def.matchAll(strongNoPattern)];
-  
-  if (strongNoMatches.length > 0) {
-    const mentionedStrongs = strongNoMatches.map(m => m[1]);
-    lexiconData.strong_reference = lexiconData.strong.charAt(0) + mentionedStrongs[0];
-    
-    if (!lexiconData.special_cases) {
-      lexiconData.special_cases = [];
-    }
-    
-    // Tambahkan entri khusus untuk Strong's numbers yang disebutkan
-    lexiconData.special_cases.push({
-      type: 'mentioned_strong_numbers',
-      strong_numbers: mentionedStrongs
-    });
-  }
-  
-  // 8. Jika ada contoh yang ditemukan, tambahkan ke lexiconData
-  if (examples.length > 0) {
-    if (!lexiconData.special_cases) {
-      lexiconData.special_cases = [];
-    }
-    
-    lexiconData.special_cases.push({
-      type: 'split_translation_examples',
-      description: `Cases where one original word is translated by multiple separated English words (${examples.length} examples)`,
-      examples: examples
-    });
-    
-    // Tambahkan catatan di awal definition
-    if (!lexiconData.definition.includes('[NOTE:')) {
-      lexiconData.definition = `[NOTE: This page explains special cases of split translations. Found ${examples.length} biblical references.]\n\n${def}`;
-    }
-  }
-  
-  return lexiconData;
-}
-
 async function saveLexiconToDB(lexiconData) {
   if (!lexiconData || !lexiconData.strong) return false;
 
@@ -1766,7 +1624,7 @@ async function saveLexiconToDB(lexiconData) {
       await db.run(`
         INSERT OR REPLACE INTO strong_lexicon 
         (strong, word, pronunciation, etymology, strong_reference, source, 
-          part_of_speech, av_summary, occurrence, definition, special_cases)
+          partOfSpeech, avSummary, occurrence, definition, isSpecialCase)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `, [
         lexiconData.strong,
@@ -1779,7 +1637,7 @@ async function saveLexiconToDB(lexiconData) {
         lexiconData.avSummary,
         lexiconData.occurrence,
         lexiconData.definition,
-        JSON.stringify(lexiconData.special_cases || [])
+        lexiconData.isSpecialCase
       ]);
 
       return true;
@@ -1790,42 +1648,44 @@ async function saveLexiconToDB(lexiconData) {
   });
 }
 
-// Simpan lexicon ke JSON
-async function saveLexiconToJSON(lexiconData) {
-  if (!lexiconData || !lexiconData.strong) return false;
-  
-  try {    
-    // Struktur data lengkap
-    const lexiconJSON = {
-      ...lexiconData,
-      timestamp: new Date().toISOString()
-    };
-    
-    // Nama file berdasarkan Strong number
-    const filename = `${lexiconData.strong}.json`;
-    
-    // Simpan versi full
+// Simpan lexicon ke JSON (auto H / G)
+async function saveLexiconToJSON(lexiconData, overwrite = true) {
+  if (!lexiconData?.strong) return false;
+
+  try {
+    const prefix = lexiconData.strong[0]; // H / G
+    const data = { ...lexiconData, timestamp: new Date().toISOString() };
+    const file = `${lexiconData.strong}.json`;
+
+    // skip jika overwrite=false & file sudah ada
+    if (!overwrite) {
+      try {
+        await fs.access(path.join(DIR_LEXICON, prefix, file));
+        return false;
+      } catch {}
+    }
+
     await fs.writeFile(
-      `${DIR_LEXICON}/${filename}`,
-      JSON.stringify(lexiconJSON, null, 2),
+      path.join(DIR_LEXICON, prefix, file),
+      JSON.stringify(data, null, 2),
       'utf8'
     );
-    
-    // Simpan versi minified
+
     await fs.writeFile(
-      `${DIR_LEXICON_MIN}/${filename}`,
-      JSON.stringify(lexiconJSON),
+      path.join(DIR_LEXICON_MIN, prefix, file),
+      JSON.stringify(data),
       'utf8'
     );
-    
-    return lexiconJSON;
-  } catch (error) {
-    console.error(`❌ Gagal menyimpan lexicon JSON ${lexiconData.strong}:`, error.message);
+
+    return data;
+  } catch (e) {
+    console.error(`❌ Gagal simpan ${lexiconData.strong}:`, e.message);
     return false;
   }
 }
 
-async function processLexicons(strongNumbers, concurrency = 2) {
+
+async function processLexicons(strongNumbers, concurrency = 2, mode) {
   if (!strongNumbers || strongNumbers.length === 0) {
     console.log("ℹ️ Tidak ada Strong's numbers untuk diproses");
     return;
@@ -1860,16 +1720,16 @@ async function processLexicons(strongNumbers, concurrency = 2) {
     try {
       // Ambil data dari web
       const lexiconData = await fetchStrongLexicon(strongNumber);
-      // console.log(`📥 Diterima lexicon`, lexiconData);
       
       if (lexiconData && (lexiconData.word || lexiconData.is_specialcase)) {
         // Simpan ke JSON
-        const savedData = await saveLexiconToJSON(lexiconData);
+        mode !== 3 && await saveLexiconToJSON(lexiconData);
+        mode !== 2 && await saveLexiconToDB(lexiconData);
         
         // Update index
-        if (savedData) {
-          await updateLexiconIndex(savedData);
-        }
+        // if (savedData) {
+        //   await updateLexiconIndex(savedData);
+        // }
         
         return lexiconData;
       } else {
@@ -1961,20 +1821,22 @@ function findVersionForColumn(columnIndex, targetVersions) {
   return null
 }
 
-// Buat folder lexicon saat awal
+// Buat folder lexicon dengan struktur H & G
 async function createLexiconDirectories() {
-  try {
-    await fs.access(DIR_LEXICON);
-  } catch {
-    await fs.mkdir(DIR_LEXICON, { recursive: true });
+  const bases = [DIR_LEXICON, DIR_LEXICON_MIN]
+  const subs  = ['H', 'G']
+
+  for (const base of bases) {
+    for (const sub of subs) {
+      const dir = path.join(base, sub)
+      await fs.mkdir(dir, { recursive: true })
+      console.log(`📁 ${dir}`)
+    }
   }
-  
-  try {
-    await fs.access(DIR_LEXICON_MIN);
-  } catch {
-    await fs.mkdir(DIR_LEXICON_MIN, { recursive: true });
-  }
+
+  console.log('✅ Struktur direktori lexicon siap')
 }
+
 
 // Update index.json
 async function updateLexiconIndex(lexiconData) {
@@ -2204,7 +2066,7 @@ async function main() {
     
     if (allStrongNumbers.length > 0) {
       console.log(`\n📚 Memproses ${allStrongNumbers.length} Strong's numbers...`);
-      await processLexicons(allStrongNumbers, Math.min(3, options.concurrency));
+      await processLexicons(allStrongNumbers, Math.min(3, options.concurrency),  options.mode);
     } else {
       console.log("\nℹ️ Tidak ada Strong's numbers yang dikumpulkan.");
       console.log("💡 Untuk mengumpulkan Strong's numbers, pastikan versi interlinear (tb_itl_drf, tl_itl_drf) termasuk dalam filter versi.");

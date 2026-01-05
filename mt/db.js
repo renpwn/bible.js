@@ -108,7 +108,7 @@ export async function openDB(dbFile = DEFAULT_DB) {
     avSummary TEXT,            -- lexiconData.avSummary
     occurrence INTEGER DEFAULT 0, -- lexiconData.occurrence
     definition TEXT,           -- lexiconData.definition    
-    special_cases TEXT,        -- JSON string untuk kasus khusus
+    isSpecialCase INTEGER NOT NULL DEFAULT 0, -- 0=false, 1=true
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
 
