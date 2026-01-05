@@ -1,0 +1,1520 @@
+[
+  {
+    "strong": "H0",
+    "word": "[SPECIAL CASE - Explanatory Page]",
+    "pronunciation": "",
+    "timestamp": "2026-01-05T20:13:27.371Z"
+  },
+  {
+    "strong": "H01",
+    "word": "_*ba*_ 'ab",
+    "pronunciation": "awb",
+    "timestamp": "2026-01-05T20:16:02.470Z"
+  },
+  {
+    "strong": "H068",
+    "word": "_*Nba*_ 'eben",
+    "pronunciation": "eh'-ben",
+    "timestamp": "2026-01-05T20:15:21.302Z"
+  },
+  {
+    "strong": "H0108",
+    "word": "_*da*_ 'ed",
+    "pronunciation": "ade",
+    "timestamp": "2026-01-05T20:14:45.599Z"
+  },
+  {
+    "strong": "H0120",
+    "word": "_*Mda*_ 'adam",
+    "pronunciation": "aw-dawm'",
+    "timestamp": "2026-01-05T20:14:08.352Z"
+  },
+  {
+    "strong": "H0121",
+    "word": "_*Mda*_ 'Adam",
+    "pronunciation": "aw-dawm'",
+    "timestamp": "2026-01-05T20:16:58.544Z"
+  },
+  {
+    "strong": "H0127",
+    "word": "_*hmda*_ 'adamah",
+    "pronunciation": "ad-aw-maw'",
+    "timestamp": "2026-01-05T20:14:07.968Z"
+  },
+  {
+    "strong": "H0215",
+    "word": "_*rwa*_ 'owr",
+    "pronunciation": "ore",
+    "timestamp": "2026-01-05T20:13:36.941Z"
+  },
+  {
+    "strong": "H0216",
+    "word": "_*rwa*_ 'owr",
+    "pronunciation": "ore",
+    "timestamp": "2026-01-05T20:12:50.023Z"
+  },
+  {
+    "strong": "H0226",
+    "word": "_*twa*_ 'owth",
+    "pronunciation": "oth",
+    "timestamp": "2026-01-05T20:13:32.098Z"
+  },
+  {
+    "strong": "H0259",
+    "word": "_*dxa*_ 'echad",
+    "pronunciation": "ekh-awd'",
+    "timestamp": "2026-01-05T20:13:03.118Z"
+  },
+  {
+    "strong": "H0335",
+    "word": "_*ya*_ 'ay",
+    "pronunciation": "ah'ee",
+    "timestamp": "2026-01-05T20:16:34.657Z"
+  },
+  {
+    "strong": "H0342",
+    "word": "_*hbya*_ 'eybah",
+    "pronunciation": "ay-baw'",
+    "timestamp": "2026-01-05T20:16:47.859Z"
+  },
+  {
+    "strong": "H0369",
+    "word": "_*Nya*_ 'ayin",
+    "pronunciation": "ah'-yin",
+    "timestamp": "2026-01-05T20:14:42.082Z"
+  },
+  {
+    "strong": "H0376",
+    "word": "_*vya*_ 'iysh",
+    "pronunciation": "eesh",
+    "timestamp": "2026-01-05T20:15:59.731Z"
+  },
+  {
+    "strong": "H0398",
+    "word": "_*lka*_ 'akal",
+    "pronunciation": "aw-kal'",
+    "timestamp": "2026-01-05T20:15:37.832Z"
+  },
+  {
+    "strong": "H0402",
+    "word": "_*hlka*_ 'oklah",
+    "pronunciation": "ok-law'",
+    "timestamp": "2026-01-05T20:14:19.187Z"
+  },
+  {
+    "strong": "H0413",
+    "word": "_*la*_ 'el (but only used in the shortened constructive form _*la*_ 'el",
+    "pronunciation": "ale el)",
+    "timestamp": "2026-01-05T20:13:14.294Z"
+  },
+  {
+    "strong": "H0428",
+    "word": "_*hl-la*_ 'el-leh",
+    "pronunciation": "ale'-leh",
+    "timestamp": "2026-01-05T20:14:31.287Z"
+  },
+  {
+    "strong": "H0430",
+    "word": "_*Myhla*_ 'elohiym",
+    "pronunciation": "el-o-heem'",
+    "timestamp": "2026-01-05T20:12:31.971Z"
+  },
+  {
+    "strong": "H0517",
+    "word": "_*Ma*_ 'em",
+    "pronunciation": "ame",
+    "timestamp": "2026-01-05T20:16:03.446Z"
+  },
+  {
+    "strong": "H0559",
+    "word": "_*rma*_ 'amar",
+    "pronunciation": "aw-mar'",
+    "timestamp": "2026-01-05T20:12:46.361Z"
+  },
+  {
+    "strong": "H0582",
+    "word": "_*vwna*_ 'enowsh",
+    "pronunciation": "en-oshe'",
+    "timestamp": "2026-01-05T20:16:20.659Z"
+  },
+  {
+    "strong": "H0595",
+    "word": "_*ykna*_ 'anokiy (sometimes",
+    "pronunciation": "aw-no-kee' aw-no'-kee)",
+    "timestamp": "2026-01-05T20:16:36.594Z"
+  },
+  {
+    "strong": "H0637",
+    "word": "_*Pa*_ 'aph",
+    "pronunciation": "af",
+    "timestamp": "2026-01-05T20:16:10.804Z"
+  },
+  {
+    "strong": "H0639",
+    "word": "_*Pa*_ 'aph",
+    "pronunciation": "af",
+    "timestamp": "2026-01-05T20:14:55.708Z"
+  },
+  {
+    "strong": "H0702",
+    "word": "_*ebra*_ 'arba` masculine _*hebra*_ 'arba`ah",
+    "pronunciation": "ar-bah' ar-baw-aw'",
+    "timestamp": "2026-01-05T20:15:11.048Z"
+  },
+  {
+    "strong": "H0776",
+    "word": "_*Ura*_ 'erets",
+    "pronunciation": "eh'-rets",
+    "timestamp": "2026-01-05T20:12:36.092Z"
+  },
+  {
+    "strong": "H0779",
+    "word": "_*rra*_ 'arar",
+    "pronunciation": "aw-rar'",
+    "timestamp": "2026-01-05T20:16:43.912Z"
+  },
+  {
+    "strong": "H0802",
+    "word": "_*hva*_ 'ishshah",
+    "pronunciation": "ish-shaw'",
+    "timestamp": "2026-01-05T20:15:53.213Z"
+  },
+  {
+    "strong": "H0804",
+    "word": "_*rwva*_ 'Ashshuwr or _*rva*_ 'Ashshur",
+    "pronunciation": "ash-shoor' ash-shoor'",
+    "timestamp": "2026-01-05T20:15:31.571Z"
+  },
+  {
+    "strong": "H0834",
+    "word": "_*rva*_ 'aher",
+    "pronunciation": "ash-er'",
+    "timestamp": "2026-01-05T20:13:07.086Z"
+  },
+  {
+    "strong": "H0853",
+    "word": "_*ta*_ 'eth",
+    "pronunciation": "ayth",
+    "timestamp": "2026-01-05T20:13:40.499Z"
+  },
+  {
+    "strong": "H0859",
+    "word": "_*hta*_ 'attah or (shortened) _*ta*_ 'atta or _*ta*_ 'ath feminine (irregular) sometimes _*yta*_ 'attiy plural masculine _*Mta*_ 'attem feminine _*Nta*_ 'atten or _*hnta*_ 'attenah or _*hnta*_ 'attennah",
+    "pronunciation": "at-taw' at-taw' ath, at-tee' at-tem' at-ten' at-tay'naw at-tane'-naw",
+    "timestamp": "2026-01-05T20:16:39.867Z"
+  },
+  {
+    "strong": "H0905",
+    "word": "_*db*_ bad",
+    "pronunciation": "bad",
+    "timestamp": "2026-01-05T20:15:38.728Z"
+  },
+  {
+    "strong": "H0914",
+    "word": "_*ldb*_ badal",
+    "pronunciation": "baw-dal'",
+    "timestamp": "2026-01-05T20:12:53.889Z"
+  },
+  {
+    "strong": "H0916",
+    "word": "_*xldb*_ b@dolach",
+    "pronunciation": "bed-o'-lakh",
+    "timestamp": "2026-01-05T20:15:21.816Z"
+  },
+  {
+    "strong": "H0922",
+    "word": "_*whb*_ bohuw",
+    "pronunciation": "bo'-hoo",
+    "timestamp": "2026-01-05T20:12:39.265Z"
+  },
+  {
+    "strong": "H0929",
+    "word": "_*hmhb*_ b@hemah",
+    "pronunciation": "be-hay-maw'",
+    "timestamp": "2026-01-05T20:14:05.146Z"
+  },
+  {
+    "strong": "H0935",
+    "word": "_*awb*_ bow'",
+    "pronunciation": "bo",
+    "timestamp": "2026-01-05T20:15:42.439Z"
+  },
+  {
+    "strong": "H0954",
+    "word": "_*vwb*_ buwsh",
+    "pronunciation": "boosh",
+    "timestamp": "2026-01-05T20:16:07.089Z"
+  },
+  {
+    "strong": "H0996",
+    "word": "_*Nyb*_ beyn",
+    "pronunciation": "bane",
+    "timestamp": "2026-01-05T20:12:56.572Z"
+  },
+  {
+    "strong": "H01115",
+    "word": "_*ytlb*_ biltiy",
+    "pronunciation": "bil-tee'",
+    "timestamp": "2026-01-05T20:16:40.812Z"
+  },
+  {
+    "strong": "H01121",
+    "word": "_*Nb*_ ben",
+    "pronunciation": "bane",
+    "timestamp": "2026-01-05T20:16:58.296Z"
+  },
+  {
+    "strong": "H01129",
+    "word": "_*hnb*_ banah",
+    "pronunciation": "baw-naw'",
+    "timestamp": "2026-01-05T20:15:55.528Z"
+  },
+  {
+    "strong": "H01242",
+    "word": "_*rqb*_ boqer",
+    "pronunciation": "bo'-ker",
+    "timestamp": "2026-01-05T20:13:00.867Z"
+  },
+  {
+    "strong": "H01254",
+    "word": "_*arb*_ bara'",
+    "pronunciation": "baw-raw'",
+    "timestamp": "2026-01-05T20:12:31.927Z"
+  },
+  {
+    "strong": "H01288",
+    "word": "_*Krb*_ barak",
+    "pronunciation": "baw-rak'",
+    "timestamp": "2026-01-05T20:14:00.389Z"
+  },
+  {
+    "strong": "H01320",
+    "word": "_*rsb*_ basar",
+    "pronunciation": "baw-sawr'",
+    "timestamp": "2026-01-05T20:15:53.157Z"
+  },
+  {
+    "strong": "H01419",
+    "word": "_*lwdg*_ gadowl or (shortened) _*ldg*_ gadol",
+    "pronunciation": "gaw-dole' gaw-dole'",
+    "timestamp": "2026-01-05T20:13:39.576Z"
+  },
+  {
+    "strong": "H01512",
+    "word": "_*Nwxg*_ gachown",
+    "pronunciation": "gaw-khone'",
+    "timestamp": "2026-01-05T20:16:47.243Z"
+  },
+  {
+    "strong": "H01521",
+    "word": "_*Nwxyg*_ Giychown or (shortened) _*Nwxg*_ Gichown",
+    "pronunciation": "ghee-khone' ghee-khone'",
+    "timestamp": "2026-01-05T20:15:24.981Z"
+  },
+  {
+    "strong": "H01571",
+    "word": "_*Mg*_ gam",
+    "pronunciation": "gam",
+    "timestamp": "2026-01-05T20:16:19.882Z"
+  },
+  {
+    "strong": "H01588",
+    "word": "_*Ng*_ gan",
+    "pronunciation": "gan",
+    "timestamp": "2026-01-05T20:14:56.101Z"
+  },
+  {
+    "strong": "H01644",
+    "word": "_*vrg*_ garash",
+    "pronunciation": "gaw-rash'",
+    "timestamp": "2026-01-05T20:17:20.998Z"
+  },
+  {
+    "strong": "H01692",
+    "word": "_*qbd*_ dabaq",
+    "pronunciation": "daw-bak'",
+    "timestamp": "2026-01-05T20:16:03.641Z"
+  },
+  {
+    "strong": "H01710",
+    "word": "_*hgd*_ dagah",
+    "pronunciation": "daw-gaw'",
+    "timestamp": "2026-01-05T20:14:13.408Z"
+  },
+  {
+    "strong": "H01823",
+    "word": "_*twmd*_ d@muwth",
+    "pronunciation": "dem-ooth'",
+    "timestamp": "2026-01-05T20:14:11.023Z"
+  },
+  {
+    "strong": "H01847",
+    "word": "_*ted*_ da`ath",
+    "pronunciation": "dah'-ath",
+    "timestamp": "2026-01-05T20:15:07.515Z"
+  },
+  {
+    "strong": "H01863",
+    "word": "_*rdrd*_ dardar",
+    "pronunciation": "dar-dar'",
+    "timestamp": "2026-01-05T20:17:01.811Z"
+  },
+  {
+    "strong": "H01870",
+    "word": "_*Krd*_ derek",
+    "pronunciation": "deh'-rek",
+    "timestamp": "2026-01-05T20:17:28.194Z"
+  },
+  {
+    "strong": "H01876",
+    "word": "_*avd*_ dasha",
+    "pronunciation": "daw-shaw'",
+    "timestamp": "2026-01-05T20:13:18.676Z"
+  },
+  {
+    "strong": "H01877",
+    "word": "_*avd*_ deshe'",
+    "pronunciation": "deh'-sheh",
+    "timestamp": "2026-01-05T20:13:20.690Z"
+  },
+  {
+    "strong": "H01931",
+    "word": "_*awh*_ huw' of which the fem. (beyond the Pentateuch) _*ayh*_ is hiy'",
+    "pronunciation": "hoo he",
+    "timestamp": "2026-01-05T20:15:16.674Z"
+  },
+  {
+    "strong": "H01961",
+    "word": "_*hyh*_ hayah",
+    "pronunciation": "haw-yaw",
+    "timestamp": "2026-01-05T20:12:49.346Z"
+  },
+  {
+    "strong": "H01980",
+    "word": "_*Klh*_ halak",
+    "pronunciation": "haw-lak'",
+    "timestamp": "2026-01-05T20:15:28.630Z"
+  },
+  {
+    "strong": "H01992",
+    "word": "_*Mh*_ hem or (prolonged) _*hmh*_ hemmah",
+    "pronunciation": "haym haym'-maw",
+    "timestamp": "2026-01-05T20:16:24.720Z"
+  },
+  {
+    "strong": "H02005",
+    "word": "_*Nh*_ hen",
+    "pronunciation": "hane",
+    "timestamp": "2026-01-05T20:17:14.062Z"
+  },
+  {
+    "strong": "H02009",
+    "word": "_*hnh*_ hinneh",
+    "pronunciation": "hin-nay'",
+    "timestamp": "2026-01-05T20:14:19.050Z"
+  },
+  {
+    "strong": "H02015",
+    "word": "_*Kph*_ haphak",
+    "pronunciation": "haw-fak'",
+    "timestamp": "2026-01-05T20:17:27.839Z"
+  },
+  {
+    "strong": "H02032",
+    "word": "_*Nwrh*_ herown or _*Nwyrh*_ herayown",
+    "pronunciation": "hay-rone' hay-raw-yone'",
+    "timestamp": "2026-01-05T20:16:54.887Z"
+  },
+  {
+    "strong": "H02063",
+    "word": "_*taz*_ zo'th",
+    "pronunciation": "zothe'",
+    "timestamp": "2026-01-05T20:15:56.504Z"
+  },
+  {
+    "strong": "H02091",
+    "word": "_*bhz*_ zahab",
+    "pronunciation": "zaw-hawb'",
+    "timestamp": "2026-01-05T20:15:20.371Z"
+  },
+  {
+    "strong": "H02145",
+    "word": "_*rkz*_ zakar",
+    "pronunciation": "zaw-kawr'",
+    "timestamp": "2026-01-05T20:14:15.120Z"
+  },
+  {
+    "strong": "H02188",
+    "word": "_*hez*_ ze`ah",
+    "pronunciation": "zay-aw'",
+    "timestamp": "2026-01-05T20:17:05.369Z"
+  },
+  {
+    "strong": "H02232",
+    "word": "_*erz*_ zara`",
+    "pronunciation": "zaw-rah'",
+    "timestamp": "2026-01-05T20:13:24.401Z"
+  },
+  {
+    "strong": "H02233",
+    "word": "_*erz*_ zera`",
+    "pronunciation": "zeh'-rah",
+    "timestamp": "2026-01-05T20:13:23.741Z"
+  },
+  {
+    "strong": "H02244",
+    "word": "_*abx*_ chaba'",
+    "pronunciation": "khaw-baw'",
+    "timestamp": "2026-01-05T20:16:32.632Z"
+  },
+  {
+    "strong": "H02290",
+    "word": "_*hrwgx*_ chagowr or _*rgx*_ chagor and (fem.) _*hrwgx*_ chagowrah or _*hrgx*_ chagorah",
+    "pronunciation": "khag-ore' khag-ore' khag-o-raw' khag-o-raw'",
+    "timestamp": "2026-01-05T20:16:28.753Z"
+  },
+  {
+    "strong": "H02313",
+    "word": "_*lqdx*_ Chiddeqel",
+    "pronunciation": "khid-deh'-kel",
+    "timestamp": "2026-01-05T20:15:27.756Z"
+  },
+  {
+    "strong": "H02332",
+    "word": "_*hwx*_ Chavvah",
+    "pronunciation": "khav-vaw'",
+    "timestamp": "2026-01-05T20:17:09.709Z"
+  },
+  {
+    "strong": "H02341",
+    "word": "_*hlywx*_ Chaviylah",
+    "pronunciation": "khav-ee-law'",
+    "timestamp": "2026-01-05T20:15:17.202Z"
+  },
+  {
+    "strong": "H02416",
+    "word": "_*yx*_ chay",
+    "pronunciation": "khah'-ee",
+    "timestamp": "2026-01-05T20:13:50.244Z"
+  },
+  {
+    "strong": "H02425",
+    "word": "_*yyx*_ chayay",
+    "pronunciation": "khaw-yah'-ee",
+    "timestamp": "2026-01-05T20:17:20.880Z"
+  },
+  {
+    "strong": "H02530",
+    "word": "_*dmx*_ chamad",
+    "pronunciation": "khaw-mad'",
+    "timestamp": "2026-01-05T20:15:04.055Z"
+  },
+  {
+    "strong": "H02549",
+    "word": "_*yvymx*_ chamiyshiy or _*yvmx*_ chamishshiy",
+    "pronunciation": "kham-ee-shee' kham-ish-shee'",
+    "timestamp": "2026-01-05T20:14:04.775Z"
+  },
+  {
+    "strong": "H02719",
+    "word": "_*brx*_ chereb",
+    "pronunciation": "kheh'-reb",
+    "timestamp": "2026-01-05T20:17:27.705Z"
+  },
+  {
+    "strong": "H02822",
+    "word": "_*Kvx*_ choshek",
+    "pronunciation": "kho-shek'",
+    "timestamp": "2026-01-05T20:12:39.322Z"
+  },
+  {
+    "strong": "H02896",
+    "word": "_*bwj*_ towb",
+    "pronunciation": "tobe",
+    "timestamp": "2026-01-05T20:12:53.839Z"
+  },
+  {
+    "strong": "H02962",
+    "word": "_*Mrj*_ terem",
+    "pronunciation": "teh'-rem",
+    "timestamp": "2026-01-05T20:14:34.467Z"
+  },
+  {
+    "strong": "H02974",
+    "word": "_*lay*_ ya'al",
+    "pronunciation": "yaw-al'",
+    "timestamp": "2026-01-05T20:13:35.818Z"
+  },
+  {
+    "strong": "H03004",
+    "word": "_*hvby*_ yabbashah",
+    "pronunciation": "yab-baw-shaw'",
+    "timestamp": "2026-01-05T20:13:14.828Z"
+  },
+  {
+    "strong": "H03027",
+    "word": "_*dy*_ yad",
+    "pronunciation": "yawd",
+    "timestamp": "2026-01-05T20:17:17.848Z"
+  },
+  {
+    "strong": "H03045",
+    "word": "_*edy*_ yada`",
+    "pronunciation": "yaw-dah'",
+    "timestamp": "2026-01-05T20:16:14.486Z"
+  },
+  {
+    "strong": "H03068",
+    "word": "_*hwhy*_ Y@hovah",
+    "pronunciation": "yeh-ho-vaw'",
+    "timestamp": "2026-01-05T20:14:33.603Z"
+  },
+  {
+    "strong": "H03117",
+    "word": "_*Mwy*_ yowm",
+    "pronunciation": "yome",
+    "timestamp": "2026-01-05T20:12:57.551Z"
+  },
+  {
+    "strong": "H03205",
+    "word": "_*dly*_ yalad",
+    "pronunciation": "yaw-lad'",
+    "timestamp": "2026-01-05T20:16:55.581Z"
+  },
+  {
+    "strong": "H03220",
+    "word": "_*My*_ yam",
+    "pronunciation": "yawm",
+    "timestamp": "2026-01-05T20:13:17.862Z"
+  },
+  {
+    "strong": "H03240",
+    "word": "_*xny*_ yanach",
+    "pronunciation": "yaw-nakh'",
+    "timestamp": "2026-01-05T20:15:34.630Z"
+  },
+  {
+    "strong": "H03318",
+    "word": "_*auy*_ yatsa'",
+    "pronunciation": "yaw-tsaw'",
+    "timestamp": "2026-01-05T20:13:28.317Z"
+  },
+  {
+    "strong": "H03335",
+    "word": "_*ruy*_ yatsar",
+    "pronunciation": "yaw-tsar'",
+    "timestamp": "2026-01-05T20:14:48.956Z"
+  },
+  {
+    "strong": "H03372",
+    "word": "_*ary*_ yare'",
+    "pronunciation": "yaw-ray'",
+    "timestamp": "2026-01-05T20:16:36.511Z"
+  },
+  {
+    "strong": "H03418",
+    "word": "_*qry*_ yereq",
+    "pronunciation": "yeh'-rek",
+    "timestamp": "2026-01-05T20:14:21.227Z"
+  },
+  {
+    "strong": "H03462",
+    "word": "_*Nvy*_ yashen",
+    "pronunciation": "yaw-shane'",
+    "timestamp": "2026-01-05T20:15:48.964Z"
+  },
+  {
+    "strong": "H03533",
+    "word": "_*vbk*_ kabash",
+    "pronunciation": "kaw-bash'",
+    "timestamp": "2026-01-05T20:14:17.380Z"
+  },
+  {
+    "strong": "H03556",
+    "word": "_*bkwk*_ kowkab",
+    "pronunciation": "ko-kawb'",
+    "timestamp": "2026-01-05T20:13:43.636Z"
+  },
+  {
+    "strong": "H03568",
+    "word": "_*vwk*_ Kuwsh",
+    "pronunciation": "koosh",
+    "timestamp": "2026-01-05T20:15:25.700Z"
+  },
+  {
+    "strong": "H03588",
+    "word": "_*yk*_ kiy",
+    "pronunciation": "kee",
+    "timestamp": "2026-01-05T20:12:52.977Z"
+  },
+  {
+    "strong": "H03605",
+    "word": "_*lk*_ kol or (#Jer 33:8) _*lwk*_ kowl",
+    "pronunciation": "kole kole",
+    "timestamp": "2026-01-05T20:13:56.663Z"
+  },
+  {
+    "strong": "H03615",
+    "word": "_*hlk*_ kalah",
+    "pronunciation": "kaw-law'",
+    "timestamp": "2026-01-05T20:14:25.269Z"
+  },
+  {
+    "strong": "H03651",
+    "word": "_*Nk*_ ken",
+    "pronunciation": "kane",
+    "timestamp": "2026-01-05T20:13:09.882Z"
+  },
+  {
+    "strong": "H03671",
+    "word": "_*Pnk*_ kanaph",
+    "pronunciation": "kaw-nawf'",
+    "timestamp": "2026-01-05T20:13:57.844Z"
+  },
+  {
+    "strong": "H03742",
+    "word": "_*bwrk*_ k@ruwb",
+    "pronunciation": "ker-oob'",
+    "timestamp": "2026-01-05T20:17:24.515Z"
+  },
+  {
+    "strong": "H03801",
+    "word": "_*tntk*_ k@thoneth or _*tntk*_ kuttoneth",
+    "pronunciation": "keth-o'-neth koot-to'-neth",
+    "timestamp": "2026-01-05T20:17:13.222Z"
+  },
+  {
+    "strong": "H03808",
+    "word": "_*al*_ lo' or _*wl*_ low' or _*hl*_ loh (#De 3:11)",
+    "pronunciation": "lo lo lo",
+    "timestamp": "2026-01-05T20:14:41.290Z"
+  },
+  {
+    "strong": "H03847",
+    "word": "_*vbl*_ labash or _*vbl*_ labesh",
+    "pronunciation": "law-bash' law-bashe'",
+    "timestamp": "2026-01-05T20:17:13.478Z"
+  },
+  {
+    "strong": "H03858",
+    "word": "_*jhl*_ lahat",
+    "pronunciation": "lah'-hat",
+    "timestamp": "2026-01-05T20:17:24.473Z"
+  },
+  {
+    "strong": "H03899",
+    "word": "_*Mxl*_ lechem",
+    "pronunciation": "lekh'-em",
+    "timestamp": "2026-01-05T20:17:05.485Z"
+  },
+  {
+    "strong": "H03915",
+    "word": "_*lyl*_ layil or (#Isa 21:11) _*lyl*_ leyl also _*hlyl*_ lay@lah",
+    "pronunciation": "lah'-yil lale lah'-yel-aw",
+    "timestamp": "2026-01-05T20:13:00.226Z"
+  },
+  {
+    "strong": "H03947",
+    "word": "_*xql*_ laqach",
+    "pronunciation": "law-kakh'",
+    "timestamp": "2026-01-05T20:15:32.600Z"
+  },
+  {
+    "strong": "H03966",
+    "word": "_*dam*_ m@`od",
+    "pronunciation": "meh-ode'",
+    "timestamp": "2026-01-05T20:14:23.105Z"
+  },
+  {
+    "strong": "H03974",
+    "word": "_*rwam*_ ma'owr or _*ram*_ ma'or also (in pl.) fem. _*hrwam*_ m@'owrah or _*hram*_ m@orah",
+    "pronunciation": "maw-ore' maw-ore' meh-o-raw' meh-o-raw'",
+    "timestamp": "2026-01-05T20:13:30.252Z"
+  },
+  {
+    "strong": "H03978",
+    "word": "_*lkam*_ ma'akal",
+    "pronunciation": "mah-ak-awl'",
+    "timestamp": "2026-01-05T20:15:06.889Z"
+  },
+  {
+    "strong": "H04100",
+    "word": "_*hm*_ mah or _*hm*_ mah or _*m*_ ma or _*m*_ ma also _*hm*_ meh",
+    "pronunciation": "maw mah maw mah meh",
+    "timestamp": "2026-01-05T20:15:45.281Z"
+  },
+  {
+    "strong": "H04150",
+    "word": "_*dewm*_ mow`ed or _*dem*_ mo`ed or (fem.) _*hdewm*_ mow`adah (#2Ch 8:13)",
+    "pronunciation": "mo-ade' mo-ade' mo-aw-daw'",
+    "timestamp": "2026-01-05T20:13:33.227Z"
+  },
+  {
+    "strong": "H04191",
+    "word": "_*twm*_ muwth",
+    "pronunciation": "mooth",
+    "timestamp": "2026-01-05T20:15:37.983Z"
+  },
+  {
+    "strong": "H04305",
+    "word": "_*rjm*_ matar",
+    "pronunciation": "maw-tar'",
+    "timestamp": "2026-01-05T20:14:41.484Z"
+  },
+  {
+    "strong": "H04310",
+    "word": "_*ym*_ miy",
+    "pronunciation": "me",
+    "timestamp": "2026-01-05T20:16:37.854Z"
+  },
+  {
+    "strong": "H04325",
+    "word": "_*Mym*_ mayim",
+    "pronunciation": "mah'-yim",
+    "timestamp": "2026-01-05T20:12:46.310Z"
+  },
+  {
+    "strong": "H04327",
+    "word": "_*Nym*_ miyn",
+    "pronunciation": "meen",
+    "timestamp": "2026-01-05T20:13:22.268Z"
+  },
+  {
+    "strong": "H04390",
+    "word": "_*alm*_ male' or _*alm*_ mala' (#Es 7:5)",
+    "pronunciation": "maw-lay' maw-law'",
+    "timestamp": "2026-01-05T20:14:04.182Z"
+  },
+  {
+    "strong": "H04399",
+    "word": "_*hkalm*_ m@la'kah",
+    "pronunciation": "mel-aw-kaw'",
+    "timestamp": "2026-01-05T20:14:28.282Z"
+  },
+  {
+    "strong": "H04475",
+    "word": "_*hlvmm*_ memshalah",
+    "pronunciation": "mem-shaw-law'",
+    "timestamp": "2026-01-05T20:13:41.400Z"
+  },
+  {
+    "strong": "H04480",
+    "word": "_*Nm*_ min or _*ynm*_ minniy or _*ynm*_ minney (constructive pl.) (#Isa 30:11)",
+    "pronunciation": "min min-nee' min-nay'",
+    "timestamp": "2026-01-05T20:14:48.775Z"
+  },
+  {
+    "strong": "H04672",
+    "word": "_*aum*_ matsa'",
+    "pronunciation": "maw-tsaw'",
+    "timestamp": "2026-01-05T20:15:45.558Z"
+  },
+  {
+    "strong": "H04723",
+    "word": "_*hwqm*_ miqveh or _*hwqm*_ miqveh (#1Ki 10:28) or _*awqm*_ miqve' (#2Ch 1:16)",
+    "pronunciation": "mik-veh' mik-vay' mik-vay'",
+    "timestamp": "2026-01-05T20:13:17.026Z"
+  },
+  {
+    "strong": "H04725",
+    "word": "_*Mwqm*_ maqowm or _*Mqm*_ maqom also (fem.) _*hmwqm*_ m@qowmah _*hmqm*_ m@qomah",
+    "pronunciation": "maw-kome' maw-kome' mek-o-mah'mek-o-mah'",
+    "timestamp": "2026-01-05T20:13:13.411Z"
+  },
+  {
+    "strong": "H04758",
+    "word": "_*harm*_ mar'eh",
+    "pronunciation": "mar-eh'",
+    "timestamp": "2026-01-05T20:15:03.829Z"
+  },
+  {
+    "strong": "H04910",
+    "word": "_*lvm*_ mashal",
+    "pronunciation": "maw-shal'",
+    "timestamp": "2026-01-05T20:13:46.165Z"
+  },
+  {
+    "strong": "H05046",
+    "word": "_*dgn*_ nagad",
+    "pronunciation": "naw-gad'",
+    "timestamp": "2026-01-05T20:16:39.827Z"
+  },
+  {
+    "strong": "H05048",
+    "word": "_*dgn*_ neged",
+    "pronunciation": "neh'-ghed",
+    "timestamp": "2026-01-05T20:15:41.741Z"
+  },
+  {
+    "strong": "H05060",
+    "word": "_*egn*_ naga`",
+    "pronunciation": "naw-gah'",
+    "timestamp": "2026-01-05T20:16:11.294Z"
+  },
+  {
+    "strong": "H05104",
+    "word": "_*rhn*_ nahar",
+    "pronunciation": "naw-hawr'",
+    "timestamp": "2026-01-05T20:15:10.265Z"
+  },
+  {
+    "strong": "H05175",
+    "word": "_*vxn*_ nachash",
+    "pronunciation": "naw-khawsh'",
+    "timestamp": "2026-01-05T20:16:07.420Z"
+  },
+  {
+    "strong": "H05193",
+    "word": "_*ejn*_ nata`",
+    "pronunciation": "naw-tah'",
+    "timestamp": "2026-01-05T20:14:56.053Z"
+  },
+  {
+    "strong": "H05301",
+    "word": "_*xpn*_ naphach",
+    "pronunciation": "naw-fakh'",
+    "timestamp": "2026-01-05T20:14:52.520Z"
+  },
+  {
+    "strong": "H05307",
+    "word": "_*lpn*_ naphal",
+    "pronunciation": "naw-fal'",
+    "timestamp": "2026-01-05T20:15:46.312Z"
+  },
+  {
+    "strong": "H05315",
+    "word": "_*vpn*_ nephesh",
+    "pronunciation": "neh'-fesh",
+    "timestamp": "2026-01-05T20:13:49.644Z"
+  },
+  {
+    "strong": "H05347",
+    "word": "_*hbqn*_ n@qebah",
+    "pronunciation": "nek-ay-baw'",
+    "timestamp": "2026-01-05T20:14:15.322Z"
+  },
+  {
+    "strong": "H05377",
+    "word": "_*avn*_ nasha'",
+    "pronunciation": "naw-shaw'",
+    "timestamp": "2026-01-05T20:16:43.323Z"
+  },
+  {
+    "strong": "H05397",
+    "word": "_*hmvn*_ n@shamah",
+    "pronunciation": "nesh-aw-maw'",
+    "timestamp": "2026-01-05T20:14:52.608Z"
+  },
+  {
+    "strong": "H05414",
+    "word": "_*Ntn*_ nathan",
+    "pronunciation": "naw-than'",
+    "timestamp": "2026-01-05T20:13:44.175Z"
+  },
+  {
+    "strong": "H05437",
+    "word": "_*bbo*_ cabab",
+    "pronunciation": "saw-bab'",
+    "timestamp": "2026-01-05T20:15:16.885Z"
+  },
+  {
+    "strong": "H05462",
+    "word": "_*rgo*_ cagar",
+    "pronunciation": "saw-gar'",
+    "timestamp": "2026-01-05T20:15:52.579Z"
+  },
+  {
+    "strong": "H05647",
+    "word": "_*dbe*_ `abad",
+    "pronunciation": "aw-bad'",
+    "timestamp": "2026-01-05T20:14:44.970Z"
+  },
+  {
+    "strong": "H05668",
+    "word": "_*rwbe*_ `abuwr or _*rbe*_ `abur",
+    "pronunciation": "aw-boor' aw-boor'",
+    "timestamp": "2026-01-05T20:17:01.677Z"
+  },
+  {
+    "strong": "H05704",
+    "word": "_*de*_ `ad",
+    "pronunciation": "ad",
+    "timestamp": "2026-01-05T20:17:05.436Z"
+  },
+  {
+    "strong": "H05731",
+    "word": "_*Nde*_ `Eden",
+    "pronunciation": "ay'-den",
+    "timestamp": "2026-01-05T20:14:59.451Z"
+  },
+  {
+    "strong": "H05769",
+    "word": "_*Mlwe*_ `owlam or _*Mle*_ `olam",
+    "pronunciation": "o-lawm' o-lawm'",
+    "timestamp": "2026-01-05T20:17:20.917Z"
+  },
+  {
+    "strong": "H05774",
+    "word": "_*Pwe*_ `uwph",
+    "pronunciation": "oof",
+    "timestamp": "2026-01-05T20:13:53.422Z"
+  },
+  {
+    "strong": "H05775",
+    "word": "_*Pwe*_ `owph",
+    "pronunciation": "ofe",
+    "timestamp": "2026-01-05T20:13:52.824Z"
+  },
+  {
+    "strong": "H05785",
+    "word": "_*rwe*_ `owr",
+    "pronunciation": "ore",
+    "timestamp": "2026-01-05T20:17:10.315Z"
+  },
+  {
+    "strong": "H05800",
+    "word": "_*bze*_ `azab",
+    "pronunciation": "aw-zab'",
+    "timestamp": "2026-01-05T20:15:59.765Z"
+  },
+  {
+    "strong": "H05828",
+    "word": "_*rze*_ `ezer",
+    "pronunciation": "ay'-zer",
+    "timestamp": "2026-01-05T20:15:41.603Z"
+  },
+  {
+    "strong": "H05869",
+    "word": "_*Nye*_ `ayin",
+    "pronunciation": "ah'-yin",
+    "timestamp": "2026-01-05T20:16:14.663Z"
+  },
+  {
+    "strong": "H05903",
+    "word": "_*Mrye*_ `eyrom or _*Mre*_ `erom",
+    "pronunciation": "ay-rome' ay-rome'",
+    "timestamp": "2026-01-05T20:16:22.903Z"
+  },
+  {
+    "strong": "H05921",
+    "word": "_*le*_ `al",
+    "pronunciation": "al",
+    "timestamp": "2026-01-05T20:12:42.604Z"
+  },
+  {
+    "strong": "H05927",
+    "word": "_*hle*_ `alah",
+    "pronunciation": "aw-law'",
+    "timestamp": "2026-01-05T20:14:45.902Z"
+  },
+  {
+    "strong": "H05929",
+    "word": "_*hle*_ `aleh",
+    "pronunciation": "aw-leh'",
+    "timestamp": "2026-01-05T20:16:26.758Z"
+  },
+  {
+    "strong": "H05973",
+    "word": "_*Me*_ `im",
+    "pronunciation": "eem",
+    "timestamp": "2026-01-05T20:16:21.036Z"
+  },
+  {
+    "strong": "H05978",
+    "word": "_*dme*_ `immad",
+    "pronunciation": "im-mawd'",
+    "timestamp": "2026-01-05T20:16:43.258Z"
+  },
+  {
+    "strong": "H06083",
+    "word": "_*rpe*_ `aphar",
+    "pronunciation": "aw-fawr'",
+    "timestamp": "2026-01-05T20:14:52.459Z"
+  },
+  {
+    "strong": "H06086",
+    "word": "_*Ue*_ `ets",
+    "pronunciation": "ates",
+    "timestamp": "2026-01-05T20:13:25.391Z"
+  },
+  {
+    "strong": "H06089",
+    "word": "_*bue*_ `etseb",
+    "pronunciation": "eh'-tseb",
+    "timestamp": "2026-01-05T20:16:51.595Z"
+  },
+  {
+    "strong": "H06093",
+    "word": "_*Nwbue*_ `itstsabown",
+    "pronunciation": "its-tsaw-bone'",
+    "timestamp": "2026-01-05T20:16:54.728Z"
+  },
+  {
+    "strong": "H06106",
+    "word": "_*Mue*_ `etsem",
+    "pronunciation": "eh'tsem",
+    "timestamp": "2026-01-05T20:15:56.458Z"
+  },
+  {
+    "strong": "H06119",
+    "word": "_*bqe*_ `aqeb or (fem.) _*hbqe*_ `iqq@bah",
+    "pronunciation": "aw-kabe' ik-keb-aw'",
+    "timestamp": "2026-01-05T20:16:51.065Z"
+  },
+  {
+    "strong": "H06153",
+    "word": "_*bre*_ `ereb",
+    "pronunciation": "eh'-reb",
+    "timestamp": "2026-01-05T20:13:00.915Z"
+  },
+  {
+    "strong": "H06174",
+    "word": "_*Mwre*_ `arowm or _*Mre*_ `arom",
+    "pronunciation": "aw-rome' aw-rome'",
+    "timestamp": "2026-01-05T20:16:06.148Z"
+  },
+  {
+    "strong": "H06175",
+    "word": "_*Mwre*_ `aruwm",
+    "pronunciation": "aw-room'",
+    "timestamp": "2026-01-05T20:16:09.888Z"
+  },
+  {
+    "strong": "H06212",
+    "word": "_*bse*_ `eseb",
+    "pronunciation": "eh'seb",
+    "timestamp": "2026-01-05T20:13:21.460Z"
+  },
+  {
+    "strong": "H06213",
+    "word": "_*hse*_ `asah",
+    "pronunciation": "aw-saw'",
+    "timestamp": "2026-01-05T20:13:06.316Z"
+  },
+  {
+    "strong": "H06258",
+    "word": "_*hte*_ `attah",
+    "pronunciation": "at-taw'",
+    "timestamp": "2026-01-05T20:17:16.969Z"
+  },
+  {
+    "strong": "H06376",
+    "word": "_*Nwvyp*_ Piyshown",
+    "pronunciation": "pee-shone'",
+    "timestamp": "2026-01-05T20:15:14.041Z"
+  },
+  {
+    "strong": "H06435",
+    "word": "_*Np*_ pen",
+    "pronunciation": "pane",
+    "timestamp": "2026-01-05T20:16:13.612Z"
+  },
+  {
+    "strong": "H06440",
+    "word": "_*Mynp*_ paniym pl. (but always as sing.) of an unused noun _*hnp*_ paneh",
+    "pronunciation": "paw-neem' paw-neh'",
+    "timestamp": "2026-01-05T20:12:39.574Z"
+  },
+  {
+    "strong": "H06471",
+    "word": "_*Mep*_ pa`am or (fem.) _*hmep*_ pa`amah",
+    "pronunciation": "pah'-am pah-am-aw'",
+    "timestamp": "2026-01-05T20:15:58.754Z"
+  },
+  {
+    "strong": "H06491",
+    "word": "_*xqp*_ paqach",
+    "pronunciation": "paw-kakh'",
+    "timestamp": "2026-01-05T20:16:16.647Z"
+  },
+  {
+    "strong": "H06504",
+    "word": "_*drp*_ parad",
+    "pronunciation": "paw-rad'",
+    "timestamp": "2026-01-05T20:15:10.409Z"
+  },
+  {
+    "strong": "H06509",
+    "word": "_*hrp*_ parah",
+    "pronunciation": "paw-raw'",
+    "timestamp": "2026-01-05T20:14:01.027Z"
+  },
+  {
+    "strong": "H06529",
+    "word": "_*yrp*_ p@riy",
+    "pronunciation": "per-ee'",
+    "timestamp": "2026-01-05T20:13:26.586Z"
+  },
+  {
+    "strong": "H06578",
+    "word": "_*trp*_ P@rath",
+    "pronunciation": "per-awth'",
+    "timestamp": "2026-01-05T20:15:31.741Z"
+  },
+  {
+    "strong": "H06635",
+    "word": "_*abu*_ tsaba' or (fem.) _*habu*_ ts@ba'ah",
+    "pronunciation": "tsaw-baw' tseb-aw-aw'",
+    "timestamp": "2026-01-05T20:14:26.926Z"
+  },
+  {
+    "strong": "H06680",
+    "word": "_*hwu*_ tsavah",
+    "pronunciation": "tsaw-vaw'",
+    "timestamp": "2026-01-05T20:15:35.799Z"
+  },
+  {
+    "strong": "H06754",
+    "word": "_*Mlu*_ tselem",
+    "pronunciation": "tseh'-lem",
+    "timestamp": "2026-01-05T20:14:10.345Z"
+  },
+  {
+    "strong": "H06763",
+    "word": "_*elu*_ tsela` or (fem.) _*helu*_ tsal`ah",
+    "pronunciation": "tsay-law' tsal-aw'",
+    "timestamp": "2026-01-05T20:15:50.015Z"
+  },
+  {
+    "strong": "H06779",
+    "word": "_*xmu*_ tsamach",
+    "pronunciation": "tsaw-makh'",
+    "timestamp": "2026-01-05T20:14:38.307Z"
+  },
+  {
+    "strong": "H06924",
+    "word": "_*Mdq*_ qedem or _*hmdq*_ qedmah",
+    "pronunciation": "keh'-dem kayd'-maw",
+    "timestamp": "2026-01-05T20:15:00.186Z"
+  },
+  {
+    "strong": "H06926",
+    "word": "_*hmdq*_ qidmah",
+    "pronunciation": "kid-maw'",
+    "timestamp": "2026-01-05T20:15:29.587Z"
+  },
+  {
+    "strong": "H06942",
+    "word": "_*vdq*_ qadash",
+    "pronunciation": "kaw-dash'",
+    "timestamp": "2026-01-05T20:14:30.358Z"
+  },
+  {
+    "strong": "H06960",
+    "word": "_*hwq*_ qavah",
+    "pronunciation": "kaw-vaw'",
+    "timestamp": "2026-01-05T20:13:11.033Z"
+  },
+  {
+    "strong": "H06963",
+    "word": "_*lwq*_ qowl or _*lq*_ qol",
+    "pronunciation": "kole kole",
+    "timestamp": "2026-01-05T20:16:32.438Z"
+  },
+  {
+    "strong": "H06975",
+    "word": "_*Uwq*_ qowts or _*Uq*_ qots",
+    "pronunciation": "kotse kotse",
+    "timestamp": "2026-01-05T20:17:01.739Z"
+  },
+  {
+    "strong": "H06996",
+    "word": "_*Njq*_ qatan or _*Njq*_ qaton",
+    "pronunciation": "kaw-tawn' kaw-tone'",
+    "timestamp": "2026-01-05T20:13:43.216Z"
+  },
+  {
+    "strong": "H07121",
+    "word": "_*arq*_ qara'",
+    "pronunciation": "kaw-raw'",
+    "timestamp": "2026-01-05T20:12:57.489Z"
+  },
+  {
+    "strong": "H07200",
+    "word": "_*har*_ ra'ah",
+    "pronunciation": "raw-aw'",
+    "timestamp": "2026-01-05T20:12:50.095Z"
+  },
+  {
+    "strong": "H07218",
+    "word": "_*var*_ ro'sh",
+    "pronunciation": "roshe",
+    "timestamp": "2026-01-05T20:15:13.517Z"
+  },
+  {
+    "strong": "H07225",
+    "word": "_*tyvar*_ re'shiyth",
+    "pronunciation": "ray-sheeth'",
+    "timestamp": "2026-01-05T20:12:32.013Z"
+  },
+  {
+    "strong": "H07235",
+    "word": "_*hbr*_ rabah",
+    "pronunciation": "raw-baw'",
+    "timestamp": "2026-01-05T20:14:01.755Z"
+  },
+  {
+    "strong": "H07243",
+    "word": "_*yeybr*_ r@biy`iy or _*yebr*_ r@bi`iy",
+    "pronunciation": "reb-ee-ee' reb-ee-ee'",
+    "timestamp": "2026-01-05T20:13:46.604Z"
+  },
+  {
+    "strong": "H07287",
+    "word": "_*hdr*_ radah",
+    "pronunciation": "raw-daw'",
+    "timestamp": "2026-01-05T20:14:11.365Z"
+  },
+  {
+    "strong": "H07307",
+    "word": "_*xwr*_ ruwach",
+    "pronunciation": "roo'-akh",
+    "timestamp": "2026-01-05T20:12:42.925Z"
+  },
+  {
+    "strong": "H07363",
+    "word": "_*Pxr*_ rachaph",
+    "pronunciation": "raw-khaf'",
+    "timestamp": "2026-01-05T20:12:45.745Z"
+  },
+  {
+    "strong": "H07430",
+    "word": "_*smr*_ ramas",
+    "pronunciation": "raw-mas'",
+    "timestamp": "2026-01-05T20:13:57.282Z"
+  },
+  {
+    "strong": "H07431",
+    "word": "_*smr*_ remes",
+    "pronunciation": "reh'-mes",
+    "timestamp": "2026-01-05T20:14:07.300Z"
+  },
+  {
+    "strong": "H07451",
+    "word": "_*er*_ ra`",
+    "pronunciation": "rah",
+    "timestamp": "2026-01-05T20:15:07.993Z"
+  },
+  {
+    "strong": "H07549",
+    "word": "_*eyqr*_ raqiya`",
+    "pronunciation": "raw-kee'-ah",
+    "timestamp": "2026-01-05T20:13:04.107Z"
+  },
+  {
+    "strong": "H07637",
+    "word": "_*yeybv*_ sh@biy`iy or _*yebv*_ sh@bi`iy",
+    "pronunciation": "sheb-ee-ee' sheb-ee-ee'",
+    "timestamp": "2026-01-05T20:14:26.902Z"
+  },
+  {
+    "strong": "H07673",
+    "word": "_*tbv*_ shabath",
+    "pronunciation": "shaw-bath'",
+    "timestamp": "2026-01-05T20:14:30.322Z"
+  },
+  {
+    "strong": "H07704",
+    "word": "_*hds*_ sadeh or _*yds*_ saday",
+    "pronunciation": "saw-deh' saw-dah'-ee",
+    "timestamp": "2026-01-05T20:14:37.629Z"
+  },
+  {
+    "strong": "H07718",
+    "word": "_*Mhv*_ shoham",
+    "pronunciation": "sho'-ham",
+    "timestamp": "2026-01-05T20:15:24.076Z"
+  },
+  {
+    "strong": "H07725",
+    "word": "_*bwv*_ shuwb",
+    "pronunciation": "shoob",
+    "timestamp": "2026-01-05T20:17:09.480Z"
+  },
+  {
+    "strong": "H07760",
+    "word": "_*Mws*_ suwm or _*Mys*_ siym",
+    "pronunciation": "soom seem",
+    "timestamp": "2026-01-05T20:15:00.134Z"
+  },
+  {
+    "strong": "H07779",
+    "word": "_*Pwv*_ shuwph",
+    "pronunciation": "shoof",
+    "timestamp": "2026-01-05T20:16:50.978Z"
+  },
+  {
+    "strong": "H07880",
+    "word": "_*xys*_ siyach",
+    "pronunciation": "see'-akh",
+    "timestamp": "2026-01-05T20:14:37.536Z"
+  },
+  {
+    "strong": "H07896",
+    "word": "_*tyv*_ shiyth",
+    "pronunciation": "sheeth",
+    "timestamp": "2026-01-05T20:16:47.177Z"
+  },
+  {
+    "strong": "H07919",
+    "word": "_*lks*_ sakal",
+    "pronunciation": "saw-kal'",
+    "timestamp": "2026-01-05T20:16:17.791Z"
+  },
+  {
+    "strong": "H07931",
+    "word": "_*Nkv*_ shakan",
+    "pronunciation": "shaw-kan'",
+    "timestamp": "2026-01-05T20:17:24.281Z"
+  },
+  {
+    "strong": "H07971",
+    "word": "_*xlv*_ shalach",
+    "pronunciation": "shaw-lakh'",
+    "timestamp": "2026-01-05T20:17:17.582Z"
+  },
+  {
+    "strong": "H07992",
+    "word": "_*yvylv*_ sh@liyshiy",
+    "pronunciation": "shel-ee-shee'",
+    "timestamp": "2026-01-05T20:13:29.490Z"
+  },
+  {
+    "strong": "H08033",
+    "word": "_*Mv*_ sham",
+    "pronunciation": "shawm",
+    "timestamp": "2026-01-05T20:15:03.116Z"
+  },
+  {
+    "strong": "H08034",
+    "word": "_*Mv*_ shem",
+    "pronunciation": "shame",
+    "timestamp": "2026-01-05T20:15:13.634Z"
+  },
+  {
+    "strong": "H08064",
+    "word": "_*Mymv*_ shamayim dual of an unused singular _*hmv*_ shameh",
+    "pronunciation": "shaw-mah'-yim shaw-meh'",
+    "timestamp": "2026-01-05T20:12:35.860Z"
+  },
+  {
+    "strong": "H08085",
+    "word": "_*emv*_ shama`",
+    "pronunciation": "shaw-mah'",
+    "timestamp": "2026-01-05T20:16:30.711Z"
+  },
+  {
+    "strong": "H08104",
+    "word": "_*rmv*_ shamar",
+    "pronunciation": "shaw-mar'",
+    "timestamp": "2026-01-05T20:15:34.849Z"
+  },
+  {
+    "strong": "H08141",
+    "word": "_*hnv*_ shaneh (in pl. only), or (fem.) _*hnv*_ shanah",
+    "pronunciation": "shaw-neh' shaw-naw'",
+    "timestamp": "2026-01-05T20:13:34.056Z"
+  },
+  {
+    "strong": "H08145",
+    "word": "_*ynv*_ sheniy",
+    "pronunciation": "shay-nee'",
+    "timestamp": "2026-01-05T20:13:10.766Z"
+  },
+  {
+    "strong": "H08147",
+    "word": "_*Mynv*_ sh@nayim or (fem.) _*Mytv*_ sh@ttayim",
+    "pronunciation": "shen-ah'-yim shet-tah'-yim",
+    "timestamp": "2026-01-05T20:13:37.757Z"
+  },
+  {
+    "strong": "H08248",
+    "word": "_*hqv*_ shaqah",
+    "pronunciation": "shaw-kaw'",
+    "timestamp": "2026-01-05T20:14:48.839Z"
+  },
+  {
+    "strong": "H08317",
+    "word": "_*Urv*_ sharats",
+    "pronunciation": "shaw-rats'",
+    "timestamp": "2026-01-05T20:13:47.129Z"
+  },
+  {
+    "strong": "H08318",
+    "word": "_*Urv*_ sherets",
+    "pronunciation": "sheh'-rets",
+    "timestamp": "2026-01-05T20:13:49.206Z"
+  },
+  {
+    "strong": "H08345",
+    "word": "_*yvv*_ shishshiy",
+    "pronunciation": "shish-shee'",
+    "timestamp": "2026-01-05T20:14:23.207Z"
+  },
+  {
+    "strong": "H08378",
+    "word": "_*hwat*_ ta'avah",
+    "pronunciation": "tah-av-aw'",
+    "timestamp": "2026-01-05T20:16:17.466Z"
+  },
+  {
+    "strong": "H08384",
+    "word": "_*Nat*_ t@'en or (in the sing., fem.) _*hnat*_ t@'enah",
+    "pronunciation": "teh-ane' teh-ay-naw'",
+    "timestamp": "2026-01-05T20:16:28.568Z"
+  },
+  {
+    "strong": "H08414",
+    "word": "_*wht*_ tohuw",
+    "pronunciation": "to'-hoo",
+    "timestamp": "2026-01-05T20:12:35.922Z"
+  },
+  {
+    "strong": "H08415",
+    "word": "_*Mwht*_ t@howm or _*Mht*_ t@hom",
+    "pronunciation": "teh-home' teh-home'",
+    "timestamp": "2026-01-05T20:12:42.823Z"
+  },
+  {
+    "strong": "H08432",
+    "word": "_*Kwt*_ tavek",
+    "pronunciation": "taw'-vek",
+    "timestamp": "2026-01-05T20:13:04.216Z"
+  },
+  {
+    "strong": "H08435",
+    "word": "_*hdlwt*_ towl@dah or _*hdlt*_ tol@dah",
+    "pronunciation": "to-led-aw' to-led-aw'",
+    "timestamp": "2026-01-05T20:14:33.646Z"
+  },
+  {
+    "strong": "H08478",
+    "word": "_*txt*_ tachath",
+    "pronunciation": "takh'-ath",
+    "timestamp": "2026-01-05T20:13:07.321Z"
+  },
+  {
+    "strong": "H08577",
+    "word": "_*Nynt*_ tanniyn or _*Mynt*_ tanniym (#Eze 29:3)",
+    "pronunciation": "tan-neen' tan-neem'",
+    "timestamp": "2026-01-05T20:13:54.069Z"
+  },
+  {
+    "strong": "H08609",
+    "word": "_*rpt*_ taphar",
+    "pronunciation": "taw-far'",
+    "timestamp": "2026-01-05T20:16:24.885Z"
+  },
+  {
+    "strong": "H08639",
+    "word": "_*hmdrt*_ tardemah",
+    "pronunciation": "tar-day-maw'",
+    "timestamp": "2026-01-05T20:15:49.327Z"
+  },
+  {
+    "strong": "H08669",
+    "word": "_*hqwvt*_ t@shuwqah",
+    "pronunciation": "tesh-oo-kaw'",
+    "timestamp": "2026-01-05T20:16:58.245Z"
+  }
+]

@@ -1656,7 +1656,7 @@ async function saveLexiconToJSON(lexiconData, overwrite = true) {
     const prefix = lexiconData.strong[0]; // H / G
     const data = { ...lexiconData, timestamp: new Date().toISOString() };
     const file = `${lexiconData.strong}.json`;
-
+    
     // skip jika overwrite=false & file sudah ada
     if (!overwrite) {
       try {
@@ -1664,6 +1664,8 @@ async function saveLexiconToJSON(lexiconData, overwrite = true) {
         return false;
       } catch {}
     }
+
+    await updateLexiconIndex(lexiconData);
 
     await fs.writeFile(
       path.join(DIR_LEXICON, prefix, file),
@@ -1753,8 +1755,12 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
     await fs.access(indexPath);
     const index = JSON.parse(await fs.readFile(indexPath, 'utf8'));
     
-    const hebrewCount = index.filter(item => item.language === 'hebrew').length;
-    const greekCount = index.filter(item => item.language === 'greek').length;
+   let hebrewCount = 0, greekCount = 0;
+
+    for (const i of index) {
+      if (i.strong[0] === 'H') hebrewCount++;
+      else if (i.strong[0] === 'G') greekCount++;
+    }
     
     console.log(`\n📚 STATISTIK LEXICON:`);
     console.log(`   Total: ${index.length} entries`);
@@ -1836,7 +1842,6 @@ async function createLexiconDirectories() {
 
   console.log('✅ Struktur direktori lexicon siap')
 }
-
 
 // Update index.json
 async function updateLexiconIndex(lexiconData) {
