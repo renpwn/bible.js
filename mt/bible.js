@@ -413,9 +413,12 @@ class DatabaseQueue {
     this.processing = 0
     this.completed = 0
     this.failed = 0
+    this.total = 0
   }
 
   async add(task) {
+    this.total++;
+    
     return new Promise((resolve, reject) => {
       this.queue.push({
         task,
@@ -447,8 +450,48 @@ class DatabaseQueue {
         })
         .finally(() => {
           this.processing--
+          this.showProgress()
           this.process()
         })
+    }
+  }
+  
+  showProgress0() {
+    const processed = this.completed + this.failed
+    const percent = this.total ? processed / this.total : 0
+    
+    const barLength = 30
+    const filled = Math.round(barLength * percent)
+    const bar = '█'.repeat(filled) + ' '.repeat(barLength - filled)
+
+    process.stdout.write(`\r📊 Progress: [${bar}] ${processed}/${this.total} Queue (${Math.round(percent * 100)}%) | Active: ${this.processing} | Failed: ${this.failed}`)
+    
+    // newline kalau sudah selesai
+    if (processed === this.total) {
+      process.stdout.write('\n')
+    }
+  }
+  
+  showProgress() {
+    const processed = this.completed + this.failed;
+    const total = this.total || 1;
+    const percent = processed / total;
+  
+    const barLength = 30;
+    const filled = Math.floor(barLength * percent);
+    const bar = '█'.repeat(filled) + ' '.repeat(barLength - filled);
+  
+    const line =
+      `📊 DB Queue: [${bar}] ${processed}/${total} ` +
+      `(${Math.floor(percent * 100)}%) | ` +
+      `Active: ${this.processing} | Failed: ${this.failed}`;
+  
+    process.stdout.clearLine(0);
+    process.stdout.cursorTo(0);
+    process.stdout.write(line);
+  
+    if (processed === total && this.processing === 0) {
+      process.stdout.write('\n');
     }
   }
 
@@ -1665,7 +1708,7 @@ async function saveLexiconToJSON(lexiconData, overwrite = true) {
       } catch {}
     }
 
-    await updateLexiconIndex(lexiconData);
+    //await updateLexiconIndex(lexiconData);
 
     await fs.writeFile(
       path.join(DIR_LEXICON, prefix, file),
@@ -1714,10 +1757,17 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
   // Tambahkan semua ke queue
   uniqueStrongs.forEach(strong => lexiconQueue.add(strong));
   
+  //LEXICON INDEX READ 1 TIME
+  const indexPath = `${DIR_LEXICON}/_index.json`;
+  const indexMinPath = `${DIR_LEXICON_MIN}/_index.json`;
+  let index = await fs.readFile(indexPath, 'utf8')
+    .then(JSON.parse)
+    .catch(() => []);
+  
   // Proses dengan rate limiting
   const cache = await lexiconQueue.process(async (strongNumber) => {
     // Delay untuk menghindari rate limit
-    await sleep(1000);
+    await sleep(300);
     
     try {
       // Ambil data dari web
@@ -1725,13 +1775,13 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
       
       if (lexiconData && (lexiconData.word || lexiconData.is_specialcase)) {
         // Simpan ke JSON
-        mode !== 3 && await saveLexiconToJSON(lexiconData);
+        const savedData = mode !== 3 && await saveLexiconToJSON(lexiconData);
         mode !== 2 && await saveLexiconToDB(lexiconData);
         
         // Update index
-        // if (savedData) {
-        //   await updateLexiconIndex(savedData);
-        // }
+        if (savedData) {
+          index = await updateLexiconIndex(index, savedData);
+        }
         
         return lexiconData;
       } else {
@@ -1745,6 +1795,12 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
       return null;
     }
   });
+  
+    
+  // Simpan index versi full
+  await fs.writeFile(indexPath, JSON.stringify(index, null, 2), 'utf8');
+  // Simpan index versi minified
+  await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
   
   console.log(`\n✅ Lexicon processing selesai`);
   console.log(`📊 Statistik: ${lexiconQueue.completed} berhasil, ${lexiconQueue.failed} gagal`);
@@ -1844,22 +1900,8 @@ async function createLexiconDirectories() {
 }
 
 // Update index.json
-async function updateLexiconIndex(lexiconData) {
+async function updateLexiconIndex(index, lexiconData) {
   try {
-    const indexPath = `${DIR_LEXICON}/_index.json`;
-    const indexMinPath = `${DIR_LEXICON_MIN}/_index.json`;
-    
-    let index = [];
-    
-    // Baca index yang sudah ada
-    try {
-      const existingIndex = await fs.readFile(indexPath, 'utf8');
-      index = JSON.parse(existingIndex);
-    } catch {
-      // File tidak ada, buat baru
-      index = [];
-    }
-    
     // Cek apakah lexicon sudah ada di index
     const existingIdx = index.findIndex(item => item.strong === lexiconData.strong);
     
@@ -1898,14 +1940,7 @@ async function updateLexiconIndex(lexiconData) {
       return numA - numB;
     });
     
-    // Simpan index versi full
-    await fs.writeFile(indexPath, JSON.stringify(index, null, 2), 'utf8');
-    
-    // Simpan index versi minified
-    await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
-    
-    // console.log(`📝 Updated lexicon index: ${lexiconData.strong}`);
-    return true;
+    return index;
   } catch (error) {
     console.error('❌ Gagal update lexicon index:', error.message);
     return false;
@@ -2071,7 +2106,7 @@ async function main() {
     
     if (allStrongNumbers.length > 0) {
       console.log(`\n📚 Memproses ${allStrongNumbers.length} Strong's numbers...`);
-      await processLexicons(allStrongNumbers, Math.min(3, options.concurrency),  options.mode);
+      await processLexicons(allStrongNumbers, options.concurrency,  options.mode);
     } else {
       console.log("\nℹ️ Tidak ada Strong's numbers yang dikumpulkan.");
       console.log("💡 Untuk mengumpulkan Strong's numbers, pastikan versi interlinear (tb_itl_drf, tl_itl_drf) termasuk dalam filter versi.");
