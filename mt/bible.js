@@ -58,11 +58,11 @@ class LogManager {
   }
 
   remove(name) {
-    this.bars.delete(name);
-    this.refreshProgressBars();
+    // this.bars.delete(name);
+    // this.refreshProgressBars();
   }
 
-  refreshProgressBars() {
+  refreshProgressBars0() {
     if (!this.isTTY || this.bars.size === 0) return;
 
     const Y_prog_start = this.Y_log + this.progressOffset;
@@ -79,6 +79,36 @@ class LogManager {
       process.stdout.write(barStr);
       i++;
     }
+  }
+
+  refreshProgressBars() {
+    if (!this.isTTY || this.bars.size === 0) return;
+
+    const Y_prog_start = this.Y_log + this.progressOffset;
+
+    // line kosong sebelum bar pertama
+    this.moveCursor(0, this.Y_log + 1);
+    this.clearLine();
+    process.stdout.write('\n');
+
+    // cetak semua bar bertumpuk
+    let i = 0;
+    for (let [key, bar] of this.bars) {
+      this.moveCursor(0, Y_prog_start + i + 1);
+      this.clearLine();
+
+      const percent = Math.floor((bar.current / bar.total) * 100);
+      const filled = Math.floor(percent / 5); // bar 20 char
+      const barStr = `⏳ ${key} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
+      process.stdout.write(barStr);
+
+      i++;
+    }
+
+    // line kosong setelah semua bar
+    this.moveCursor(0, Y_prog_start + i + 2);
+    this.clearLine();
+    process.stdout.write('\n');
   }
 }
 
@@ -1216,7 +1246,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
 
   // Tunggu database queue jika mode 1
   if (mode === 1 && dbQueue) {
-    log("\n⏳ Menunggu operasi database selesai...");
+    log("⏳ Menunggu operasi database selesai...");
     await dbQueue.waitUntilEmpty();
   }
 
@@ -1232,7 +1262,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   const filenameMinNotes = `${DIR_MIN}/Bible_${bookId}.notes.min.json`;
   await fs.writeFile(filenameMinNotes, JSON.stringify(noteData));
 
-  log(`\n✅ Kitab ${bookId} selesai diproses`);
+  log(`✅ Kitab ${bookId} selesai diproses`);
   log(`📊 Statistik: ${webQueue.completed} berhasil, ${webQueue.failed} gagal`);
   log(`📚 Strong's numbers ditemukan: ${bookStrongs.size}`);
 
@@ -1296,7 +1326,7 @@ async function saveChapterToDB(chapterData, targetVersions) {
 ========================= */
 
 async function migrateJSONtoDB(bookId) {
-  log(`\n📁 Migrasi kitab ${bookId}...`)
+  log(`📁 Migrasi kitab ${bookId}...`)
 
   const filename = `${DIR}/Bible_${bookId}_*.json`
   const files = await fs.readdir(DIR)
@@ -1352,7 +1382,7 @@ async function migrateJSONtoDB(bookId) {
     // Tunggu database queue selesai
     await dbQueue.waitUntilEmpty()
 
-    log(`\n✅ Migrasi selesai: ${successCount} berhasil, ${failCount} gagal`)
+    log(`✅ Migrasi selesai: ${successCount} berhasil, ${failCount} gagal`)
     return failCount === 0
 
   } catch (error) {
@@ -1366,7 +1396,7 @@ async function migrateJSONtoDB(bookId) {
 ========================= */
 
 async function initializeDatabase() {
-  log("\n📊 Inisialisasi database...")
+  log("📊 Inisialisasi database...")
 
   // Insert versi-versi Alkitab
   for (const version of BibleVersions) {
@@ -1615,7 +1645,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
     return;
   }
   
-  log(`\n📚 Memproses ${strongNumbers.length} Strong's numbers...`);
+  log(`📚 Memproses ${strongNumbers.length} Strong's numbers...`);
   
   const validStrongs = strongNumbers.filter(s => s && s.match(/^[HG]\d+$/));
   
@@ -1667,7 +1697,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
   await fs.writeFile(indexPath, JSON.stringify(index, null, 2), 'utf8');
   await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
   
-  log(`\n✅ Lexicon processing selesai`);
+  log(`✅ Lexicon processing selesai`);
   log(`📊 Statistik: ${lexiconQueue.completed} berhasil, ${lexiconQueue.failed} gagal`);
   
   try {
@@ -1680,7 +1710,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
       else if (i.strong[0] === 'G') greekCount++;
     }
     
-    log(`\n📚 STATISTIK LEXICON:`);
+    log(`📚 STATISTIK LEXICON:`);
     log(`   Total: ${index.length} entries`);
     log(`   Hebrew (H): ${hebrewCount}`);
     log(`   Greek (G): ${greekCount}`);
@@ -1850,8 +1880,8 @@ async function main() {
 
   // Buka koneksi database untuk mode 1 & 3
   if (options.mode === 1 || options.mode === 3) {
-    log("\n🚀 Opening database connection...");
-    db = await openDB(DB_PATH);
+    log("🚀 Opening database connection...");
+    db = await openDB(DB_PATH, log);
     dbQueue = new DatabaseQueue(db, 1);
 
     await initializeDatabase();
@@ -1885,7 +1915,7 @@ async function main() {
     for (const bookId of booksToProcess) {
       const bookName = BibleBooks[bookId - 1][0];
 
-      log(`\n📖 ========================================`);
+      log(`📖 ========================================`);
       log(`📖 Proses kitab ${bookId}: ${bookName}`);
       log(`📖 ========================================`);
 
@@ -1931,25 +1961,25 @@ async function main() {
 
       if (bookId !== booksToProcess[booksToProcess.length - 1]) {
         const delay = options.mode === 1 || options.mode === 2 ? 5000 : 2000;
-        log(`\n⏳ Menunggu ${delay/1000} detik sebelum kitab berikutnya...`);
+        log(`⏳ Menunggu ${delay/1000} detik sebelum kitab berikutnya...`);
         await sleep(delay);
       }
     }
 
     // PROSES LEXICONS
-    log("\n🔍 Mengumpulkan Strong's numbers...");
+    log("🔍 Mengumpulkan Strong's numbers...");
     
     const commonStrongs = [];
     const allStrongNumbers = [...allStrongs, ...commonStrongs];
     
     if (allStrongNumbers.length > 0) {
-      log(`\n📚 Memproses ${allStrongNumbers.length} Strong's numbers...`);
+      log(`📚 Memproses ${allStrongNumbers.length} Strong's numbers...`);
       await processLexicons(allStrongNumbers, options.concurrency,  options.mode);
     } else {
-      log("\nℹ️ Tidak ada Strong's numbers yang dikumpulkan.");
+      log("ℹ️ Tidak ada Strong's numbers yang dikumpulkan.");
     }
 
-    log("\n" + "=".repeat(60));
+    log("=".repeat(60));
     log("🎉 PROSES SELESAI!");
     log("=".repeat(60));
     log(`📊 Statistik: ${totalSuccess} kitab berhasil, ${totalFailed} kitab gagal`);

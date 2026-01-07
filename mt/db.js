@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 
 const DEFAULT_DB = './bible.db' // Ganti dari quran.db ke bible.db
 
-export async function openDB(dbFile = DEFAULT_DB) {
+export async function openDB(dbFile = DEFAULT_DB, log = console.log) {
   const __filename = fileURLToPath(import.meta.url)
   const __dirname = path.dirname(__filename)
 
@@ -16,14 +16,14 @@ export async function openDB(dbFile = DEFAULT_DB) {
   const dbDir = path.dirname(dbPath)
   if (!fs.existsSync(dbDir)) {
     fs.mkdirSync(dbDir, { recursive: true })
-    console.log('📁 Created DB directory:', dbDir)
+    log('📁 Created DB directory:', dbDir)
   }
     if (fs.existsSync(dbPath)) {
-      console.log('🗑 Removing old database...')
+      log('🗑 Removing old database...')
       fs.unlinkSync(dbPath)
     }
 
-  console.log('🚀 Opening database:', dbPath)
+  log('🚀 Opening database:', dbPath)
 
   // ===============================
   // OPEN DATABASE
@@ -39,7 +39,7 @@ export async function openDB(dbFile = DEFAULT_DB) {
   // ===============================
   try {
     await db.exec('SELECT 1')
-    console.log('✅ Database connection OK')
+    log('✅ Database connection OK')
   } catch (e) {
     throw new Error('Database open failed: ' + e.message)
   }
@@ -47,7 +47,7 @@ export async function openDB(dbFile = DEFAULT_DB) {
   // ===============================
   // INIT SCHEMA UNTUK ALKITAB
   // ===============================
-  console.log('📊 Initializing Bible schema...')
+  log('📊 Initializing Bible schema...')
 
   const schemaSQL = `
   -- Enable foreign keys and WAL mode for better performance
@@ -231,19 +231,19 @@ export async function openDB(dbFile = DEFAULT_DB) {
   try {
     // Eksekusi skema utama
     await db.exec(schemaSQL)
-    console.log('✅ Main schema created')
+    log('✅ Main schema created')
 
     // Eksekusi FTS tables
     await db.exec(ftsSQL)
-    console.log('✅ FTS5 tables created')
+    log('✅ FTS5 tables created')
 
     // Eksekusi indexes
     await db.exec(indexSQL)
-    console.log('✅ Indexes created')
+    log('✅ Indexes created')
 
     // Eksekusi triggers
     await db.exec(triggerSQL)
-    console.log('✅ Triggers created')
+    log('✅ Triggers created')
 
   } catch (e) {
     console.error('❌ Schema creation FAILED:', e.message)
@@ -266,7 +266,7 @@ export async function openDB(dbFile = DEFAULT_DB) {
       throw new Error('Schema verification failed: no tables created')
     }
 
-    console.log('\n📋 Database Objects Created:')
+    log('📋 Database Objects Created:')
     const byType = tables.reduce((acc, obj) => {
       acc[obj.type] = acc[obj.type] || []
       acc[obj.type].push(obj.name)
@@ -274,10 +274,10 @@ export async function openDB(dbFile = DEFAULT_DB) {
     }, {})
 
     for (const [type, names] of Object.entries(byType)) {
-      console.log(`  ${type.toUpperCase()}: ${names.length} items`)
+      log(`  ${type.toUpperCase()}: ${names.length} items`)
       // Tampilkan nama-nama jika tidak terlalu banyak
       if (names.length <= 10) {
-        names.forEach(name => console.log(`    - ${name}`))
+        names.forEach(name => log(`    - ${name}`))
       }
     }
 
@@ -348,7 +348,7 @@ export async function openDB(dbFile = DEFAULT_DB) {
       
       try {
         await db.close()
-        console.log('✅ Database closed')
+        log('✅ Database closed')
       } catch (error) {
         console.error('❌ Error closing database:', error.message)
       }
@@ -363,7 +363,7 @@ export async function openDB(dbFile = DEFAULT_DB) {
 export async function resetDatabase(dbPath = DEFAULT_DB) {
   const fullPath = path.resolve(process.cwd(), dbPath)
   if (fs.existsSync(fullPath)) {
-    console.log(`🗑 Removing database: ${fullPath}`)
+    log(`🗑 Removing database: ${fullPath}`)
     fs.unlinkSync(fullPath)
   }
   return openDB(dbPath)
@@ -384,6 +384,6 @@ export async function backupDatabase(srcPath = DEFAULT_DB, backupPath = null) {
   }
 
   fs.copyFileSync(srcFull, backupFull)
-  console.log(`💾 Database backed up to: ${backupFull}`)
+  log(`💾 Database backed up to: ${backupFull}`)
   return backupFull
 }
