@@ -280,6 +280,7 @@ export async function openDB(dbFile = DEFAULT_DB, log = console.log) {
         names.forEach(name => log(`    - ${name}`))
       }
     }
+    log('')
 
   } catch (e) {
     console.error('❌ Table verification failed:', e.message)

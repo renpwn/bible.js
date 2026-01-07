@@ -47,11 +47,6 @@ class LogManager {
     }
   }
 
-  // Alias untuk updateProgress (untuk kompatibilitas dengan kode existing)
-  update(name, current, total, text = '') {
-    this.updateProgress(name, current, total, text);
-  }
-
   updateProgress(name, current, total, text = '') {
     this.bars.set(name, { current, total, text });
     this.refreshProgressBars();
@@ -75,7 +70,7 @@ class LogManager {
 
       const percent = Math.floor((bar.current / bar.total) * 100);
       const filled = Math.floor(percent / 5); // bar 20 char
-      const barStr = `⏳ ${key} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
+      const barStr = `⏳ ${key} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${bar.current}/${bar.total} ${percent}% ${bar.text}`;
       process.stdout.write(barStr);
       i++;
     }
@@ -99,7 +94,7 @@ class LogManager {
 
       const percent = Math.floor((bar.current / bar.total) * 100);
       const filled = Math.floor(percent / 5); // bar 20 char
-      const barStr = `⏳ ${key} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
+      const barStr = `${key} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
       process.stdout.write(barStr);
 
       i++;
@@ -110,6 +105,193 @@ class LogManager {
     this.clearLine();
     process.stdout.write('\n');
   }
+}
+
+/* =========================
+   LOG MANAGER (IMPROVED)
+========================= */
+class LogManager1 {
+    constructor() {
+        this.isTTY = process.stdout.isTTY && !process.env.CI;
+        this.bars = new Map(); // Map untuk progress bars
+        this.logCount = 0;     // Hitungan log biasa
+        this.barCount = 0;     // Hitungan progress bars
+        this.barPositions = new Map(); // Menyimpan posisi tiap progress bar
+        
+        if (this.isTTY) {
+            // Tidak clear screen, biarkan terminal seperti biasa
+            process.stdout.write('\n'); // Beri jarak awal
+        }
+    }
+
+    // Method untuk log biasa (selalu di atas progress bars)
+    log(...args) {
+        if (this.isTTY) {
+            // Simpan posisi cursor saat ini
+            const cursor = process.stdout.rows ? 
+                process.stdout.rows - this.barCount : 0;
+            
+            // Hapus progress bars sementara
+            this.clearProgressBars();
+            
+            // Tampilkan log
+            console.log(...args);
+            this.logCount++;
+            
+            // Restore progress bars
+            this.redrawProgressBars();
+        } else {
+            console.log(...args);
+        }
+    }
+
+    // Update progress bar
+    updateProgress(name, current, total, text = '') {
+        this.bars.set(name, { current, total, text });
+        
+        if (this.isTTY) {
+            if (!this.barPositions.has(name)) {
+                // Assign posisi baru untuk progress bar
+                this.barPositions.set(name, this.barCount);
+                this.barCount++;
+            }
+            this.redrawProgressBars();
+        }
+    }
+
+    // Remove progress bar
+    remove(name) {
+        this.bars.delete(name);
+        if (this.barPositions.has(name)) {
+            // Shift semua posisi setelah yang dihapus
+            const removedPos = this.barPositions.get(name);
+            this.barPositions.delete(name);
+            
+            // Update posisi progress bars yang lain
+            for (const [key, pos] of this.barPositions) {
+                if (pos > removedPos) {
+                    this.barPositions.set(key, pos - 1);
+                }
+            }
+            this.barCount--;
+        }
+        
+        if (this.isTTY) {
+            this.redrawProgressBars();
+        }
+    }
+
+    // Clear semua progress bars
+    clearProgressBars() {
+        if (!this.isTTY || this.barCount === 0) return;
+        
+        for (let i = 0; i < this.barCount; i++) {
+            process.stdout.write('\x1b[1A'); // Naik 1 baris
+            process.stdout.write('\x1b[2K'); // Clear baris
+        }
+    }
+
+    // Redraw semua progress bars
+    redrawProgressBars() {
+        if (!this.isTTY || this.barCount === 0) return;
+        
+        const barsArray = Array.from(this.bars.entries())
+            .sort(([aName], [bName]) => {
+                const aPos = this.barPositions.get(aName) || 0;
+                const bPos = this.barPositions.get(bName) || 0;
+                return aPos - bPos;
+            });
+        
+        // Tampilkan semua progress bars
+        barsArray.forEach(([name, bar]) => {
+            const percent = Math.floor((bar.current / bar.total) * 100);
+            const filled = Math.floor(percent / 5);
+            const barStr = `${name} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
+            console.log(barStr);
+        });
+    }
+
+    // Alias untuk kompatibilitas
+    update(name, current, total, text = '') {
+        this.updateProgress(name, current, total, text);
+    }
+}
+
+/* =========================
+   LOG MANAGER (SIMPLE VERSION)
+========================= */
+class LogManager2 {
+    constructor() {
+        this.isTTY = process.stdout.isTTY && !process.env.CI;
+        this.bars = new Map();
+        this.logLines = 0;
+        
+        // Inisialisasi area untuk progress bars
+        if (this.isTTY) {
+            // Beri jarak untuk area progress bars
+            process.stdout.write('\n'.repeat(2));
+        }
+    }
+
+    // Method untuk log biasa (selalu di atas progress bars)
+    log(...args) {
+      if (this.isTTY) {
+          this.Y_log++;
+          this.moveCursor(0, this.Y_log);
+          this.clearLine();
+          process.stdout.write(...args.join(' '));
+          this.refreshProgressBars();
+      } else {
+          console.log(...args);
+      }
+    }
+
+    // Update progress bar
+    updateProgress(name, current, total, text = '') {
+        this.bars.set(name, { current, total, text });
+        
+        if (this.isTTY) {
+            this.showProgressBars();
+        }
+    }
+
+    // Remove progress bar
+    remove(name) {
+        this.bars.delete(name);
+        if (this.isTTY) {
+            this.showProgressBars();
+        }
+    }
+
+    // Clear semua progress bars
+    clearProgressBars() {
+        if (!this.isTTY || this.bars.size === 0) return;
+        
+        // Naik ke posisi progress bars pertama
+        for (let i = 0; i < this.bars.size; i++) {
+            process.stdout.write('\x1b[1A'); // Cursor up 1 line
+            process.stdout.write('\x1b[2K'); // Clear line
+        }
+    }
+
+    // Tampilkan semua progress bars
+    showProgressBars() {
+        if (!this.isTTY || this.bars.size === 0) return;
+        
+        const barsArray = Array.from(this.bars.entries());
+        
+        barsArray.forEach(([name, bar]) => {
+            const percent = Math.floor((bar.current / bar.total) * 100);
+            const filled = Math.floor(percent / 5);
+            const barStr = `⏳ ${name} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
+            console.log(barStr);
+        });
+    }
+
+    // Alias untuk kompatibilitas
+    update(name, current, total, text = '') {
+        this.updateProgress(name, current, total, text);
+    }
 }
 
 // Singleton instance
@@ -567,7 +749,8 @@ class DatabaseQueue {
   showProgress() {
     const processed = this.completed + this.failed;
     const total = this.total || 1; // Perbaikan: tambahkan deklarasi variabel total
-    logManager.update("📊 DB Queue", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
+    
+    logManager.updateProgress("📊 DB Queue", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
     
     if (processed === total && this.processing === 0) {
       setTimeout(() => {
@@ -639,7 +822,7 @@ class BibleQueue {
   showProgress() {
     const processed = this.completed + this.failed;
     const total = this.total || 1;
-    logManager.update("🌐 Scraping", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
+    logManager.updateProgress("🌐 Scraping", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
   }
 }
 
@@ -704,7 +887,7 @@ class LexiconQueue {
   showProgress() {
     const processed = this.completed + this.failed;
     const total = this.total || 1;
-    logManager.update("📚 Lexicon", processed, total, `${this.currentLexi || '...'} | ⏳ ${this.processing} | ❌ ${this.failed}`);
+    logManager.updateProgress("📚 Lexicon", processed, total, `${this.currentLexi || '...'} | ⏳ ${this.processing} | ❌ ${this.failed}`);
   }
 
   getCache() {
@@ -1162,6 +1345,8 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   log(`📖 Memproses kitab ${bookId}: ${bookInfo[0]}`);
   log(`📊 Total pasal: ${totalChapters}, Concurrency: ${concurrency}`);
   log(`📚 Versi: ${targetVersions.map(v => v.id).join(', ')}`);
+  log(`🔄 Mengambil ${totalChapters} pasal...`);
+  log('');
 
   // Buat struktur data untuk kitab
   const createBookBase = () => ({
@@ -1197,8 +1382,6 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
     log(`✅ Semua pasal kitab ${bookId} sudah lengkap`);
     return { success: true, strongNumbers: [] };
   }
-
-  log(`🔄 Mengambil ${chaptersToProcess.length} pasal...`);
 
   // Buat queue untuk pengambilan data
   const webQueue = new BibleQueue(concurrency);
@@ -1397,6 +1580,16 @@ async function migrateJSONtoDB(bookId) {
 
 async function initializeDatabase() {
   log("📊 Inisialisasi database...")
+
+  // Hitung total task untuk database queue
+  const totalVersions = BibleVersions.length;
+  const totalBooks = BibleBooks.length;
+  const totalTasks = totalVersions + totalBooks;
+  
+  // Set total task untuk database queue
+  if (dbQueue) {
+    dbQueue.total = totalTasks;
+  }
 
   // Insert versi-versi Alkitab
   for (const version of BibleVersions) {
