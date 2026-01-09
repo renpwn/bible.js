@@ -79,7 +79,7 @@ const logManager = new LogManager();
 
 async function runSimulation() {
   let a = 0, b = 0, c = 0;
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i <= 150; i++) {
         logManager.log(`Log biasa: ${i}`);
 
         logManager.updateProgress("DB Queue", a++, 100, "Proses DB...");

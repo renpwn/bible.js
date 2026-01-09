@@ -5,7 +5,11 @@ import { fileURLToPath } from 'url'
 
 const DEFAULT_DB = './bible.db' // Ganti dari quran.db ke bible.db
 
-export async function openDB(dbFile = DEFAULT_DB, log = console.log) {
+const dLog = (...args) => {
+  console.log(...args);
+}
+
+export async function openDB(dbFile = DEFAULT_DB, log = dLog) {
   const __filename = fileURLToPath(import.meta.url)
   const __dirname = path.dirname(__filename)
 
@@ -246,8 +250,8 @@ export async function openDB(dbFile = DEFAULT_DB, log = console.log) {
     log('✅ Triggers created')
 
   } catch (e) {
-    console.error('❌ Schema creation FAILED:', e.message)
-    console.error('Full error:', e)
+    log('❌ Schema creation FAILED:', e.message)
+    log('Full error:', e)
     throw e
   }
 
@@ -283,7 +287,7 @@ export async function openDB(dbFile = DEFAULT_DB, log = console.log) {
     log('')
 
   } catch (e) {
-    console.error('❌ Table verification failed:', e.message)
+    log('❌ Table verification failed:', e.message)
   }
 
   // ===============================
@@ -351,7 +355,7 @@ export async function openDB(dbFile = DEFAULT_DB, log = console.log) {
         await db.close()
         log('✅ Database closed')
       } catch (error) {
-        console.error('❌ Error closing database:', error.message)
+        log('❌ Error closing database:', error.message)
       }
     },
 

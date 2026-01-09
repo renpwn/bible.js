@@ -3,6 +3,7 @@ import path from 'path'
 import {fileURLToPath} from 'url'
 import * as cheerio from 'cheerio'
 import {openDB} from './db.js'
+import readline from "node:readline";
 
 const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -11,17 +12,181 @@ const sleep = async (ms) => {
 /* =========================
    LOG MANAGER (DIPERBAIKI)
 ========================= */
-class LogManager {
-    constructor() {
+class LogManager5 {
+  constructor() {
     this.isTTY = process.stdout.isTTY && !process.env.CI;
-    this.Y_log = 0;        // posisi log terakhir
-    this.bars = new Map(); // status progress bar
-    this.progressOffset = 1; // line kosong sebelum bar pertama
 
-    // Clear terminal awal
+    this.headerHeight = 3;
+    this.footerHeight = 4;
+
+    this.logLine = this.headerHeight + 1;
+    this.logCount = 0;
+
+    this.slots = [
+      "🌐 Scraping",
+      "📊 DB Queue",
+      "📚 Lexicon"
+    ];
+
+    this.bars = new Map();
+
     if (this.isTTY) {
-      process.stdout.write('\x1b[2J'); // clear screen
-      process.stdout.write('\x1b[0;0H'); // cursor ke pojok kiri atas
+      process.stdout.write("\x1b[2J");
+      process.stdout.write("\x1b[1;1H");
+    }
+
+    this.renderHeader();
+    this.renderFooter();
+  }
+
+  /* ========== HEADER ========== */
+  renderHeader() {
+    if (!this.isTTY) return;
+
+    readline.cursorTo(process.stdout, 0, 1);
+    readline.clearLine(process.stdout, 0);
+    process.stdout.write("📘 Bible Scraper UI");
+
+    readline.cursorTo(process.stdout, 0, 2);
+    readline.clearLine(process.stdout, 0);
+    process.stdout.write("━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+
+    readline.cursorTo(process.stdout, 0, 3);
+    readline.clearLine(process.stdout, 0);
+    process.stdout.write("Status: RUNNING");
+  }
+
+  /* ========== LOG AREA ========== */
+  log(...args) {
+    console.log(
+      `#${++this.logCount} | ${args.join(" ")}`
+    );
+
+    this.renderFooter();
+  }
+
+  /* ========== FOOTER ========== */
+  update(name, current, total, text = "") {
+    this.bars.set(name, { current, total, text });
+    this.renderFooter();
+  }
+
+  renderFooter() {
+    if (!this.isTTY) return;
+
+    const rows = process.stdout.rows || 24;
+    const startY = rows - this.footerHeight + 1;
+
+    // separator
+    readline.cursorTo(process.stdout, 0, startY - 1);
+    readline.clearLine(process.stdout, 0);
+    process.stdout.write("━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+
+    this.slots.forEach((name, i) => {
+      const y = startY + i;
+
+      readline.cursorTo(process.stdout, 0, y);
+      readline.clearLine(process.stdout, 0);
+
+      const bar = this.bars.get(name);
+      let line;
+
+      if (!bar) {
+        line = `${name} [░░░░░░░░░░░░░░░░░░] (0/0) 0%`;
+      } else {
+        const percent = bar.total
+          ? Math.floor(bar.current / bar.total * 100)
+          : 0;
+        const filled = Math.floor(percent / 5);
+
+        line =
+          `${name} [` +
+          "█".repeat(filled) +
+          "░".repeat(20 - filled) +
+          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text}`;
+      }
+
+      process.stdout.write(line);
+    });
+
+    readline.cursorTo(process.stdout, 0, startY + this.footerHeight);
+  }
+}
+
+/* =========================
+   LOG MANAGER (FIXED)
+========================= */
+class LogManager7 {
+  constructor() {
+    this.isTTY = process.stdout.isTTY;
+    this.logs = [];
+    this.bars = new Map();
+
+    this.slots = ["🌐 Scraping", "📊 DB Queue", "📚 Lexicon"];
+
+    if (this.isTTY) {
+      process.stdout.write("\x1b[2J\x1b[1;1H");
+    }
+  }
+
+  log(...args) {
+    this.logs.push(args.join(" "));
+    this.render();
+  }
+
+  update(name, cur, total, text = "") {
+    this.bars.set(name, { cur, total, text });
+    this.render();
+  }
+  
+  remove(x){}
+
+  render() {
+    if (!this.isTTY) return;
+
+    readline.cursorTo(process.stdout, 0, 0);
+    readline.clearScreenDown(process.stdout);
+
+    const rows = process.stdout.rows || 24;
+    const footer = this.slots.length + 1;
+    const maxLogs = rows - footer - 1;
+
+    const visibleLogs = this.logs.slice(-maxLogs);
+
+    visibleLogs.forEach((l, i) => {
+      process.stdout.write(`#${this.logs.length - visibleLogs.length + i + 1} | ${l}\n`);
+    });
+
+    process.stdout.write("\n");
+
+    this.slots.forEach(name => {
+      const b = this.bars.get(name) || { cur: 0, total: 0, text: "" };
+      const p = b.total ? Math.floor(b.cur / b.total * 100) : 0;
+      const f = Math.floor(p / 5);
+      process.stdout.write(
+        `${name} [${"█".repeat(f)}${"░".repeat(20 - f)}] (${b.cur}/${b.total}) ${p}% ${b.text}\n`
+      );
+    });
+  }
+}
+
+class LogManager {
+  constructor() {
+    this.isTTY = process.stdout.isTTY && !process.env.CI;
+    this.Y_log = 0;
+
+    this.progressSlots = [
+      "🌐 Scraping",
+      "📊 DB Queue",
+      "📚 Lexicon"
+    ];
+
+    this.bars = new Map();
+    this.progressOffset = 2; // 1 baris jarak
+
+    if (this.isTTY) {
+      process.stdout.write('\x1b[2J');
+      process.stdout.write('\x1b[0;0H');
     }
   }
 
@@ -36,262 +201,148 @@ class LogManager {
   }
 
   log(...args) {
-    if (this.isTTY) {
-      this.Y_log++;
-      this.moveCursor(0, this.Y_log);
-      this.clearLine();
-      process.stdout.write(`${args.join(' ')}\n`);
-      this.refreshProgressBars();
-    } else {
+    return
+    if (!this.isTTY) {
       console.log(...args);
+      return;
     }
+
+    this.Y_log++;
+    this.moveCursor(0, this.Y_log);
+    this.clearLine();
+    process.stdout.write(`#${this.Y_log} | ${args.join(" ")}\n`);
+
+    this.refreshProgressBars();
   }
 
-  updateProgress(name, current, total, text = '') {
+  update(name, current, total, text = "") {
     this.bars.set(name, { current, total, text });
     this.refreshProgressBars();
   }
 
   remove(name) {
-    // this.bars.delete(name);
-    // this.refreshProgressBars();
-  }
-
-  refreshProgressBars0() {
-    if (!this.isTTY || this.bars.size === 0) return;
-
-    const Y_prog_start = this.Y_log + this.progressOffset;
-
-    // cetak semua bar bertumpuk
-    let i = 0;
-    for (let [key, bar] of this.bars) {
-      this.moveCursor(0, Y_prog_start + i);
-      this.clearLine();
-
-      const percent = Math.floor((bar.current / bar.total) * 100);
-      const filled = Math.floor(percent / 5); // bar 20 char
-      const barStr = `⏳ ${key} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${bar.current}/${bar.total} ${percent}% ${bar.text}`;
-      process.stdout.write(barStr);
-      i++;
-    }
+    this.bars.delete(name);
+    this.refreshProgressBars();
   }
 
   refreshProgressBars() {
-    if (!this.isTTY || this.bars.size === 0) return;
+    if (!this.isTTY) return;
 
-    const Y_prog_start = this.Y_log + this.progressOffset;
+    const baseY = this.Y_log + this.progressOffset;
 
-    // line kosong sebelum bar pertama
-    this.moveCursor(0, this.Y_log + 1);
-    this.clearLine();
-    process.stdout.write('\n');
-
-    // cetak semua bar bertumpuk
-    let i = 0;
-    for (let [key, bar] of this.bars) {
-      this.moveCursor(0, Y_prog_start + i + 1);
+    // clear 3 fixed slots
+    for (let i = 0; i < this.progressSlots.length; i++) {
+      this.moveCursor(0, baseY + i);
       this.clearLine();
-
-      const percent = Math.floor((bar.current / bar.total) * 100);
-      const filled = Math.floor(percent / 5); // bar 20 char
-      const barStr = `${key} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
-      process.stdout.write(barStr);
-
-      i++;
     }
+    
+    let line
 
-    // line kosong setelah semua bar
-    this.moveCursor(0, Y_prog_start + i + 2);
-    this.clearLine();
-    process.stdout.write('\n');
+    // render fixed order
+    this.progressSlots.forEach((name, i) => {
+      const bar = this.bars.get(name);
+      if (!bar) {
+        // SLOT KOSONG TETAP DICETAK
+        line = `${name} [░░░░░░░░░░░░░░░░░░] (0/0) 0%`;
+      } else {
+        const percent = bar.total
+          ? Math.floor((bar.current / bar.total) * 100)
+          : 0;
+  
+        const filled = Math.floor(percent / 5);
+  
+        line =
+          `${name} [` +
+          "█".repeat(filled) +
+          "░".repeat(20 - filled) +
+          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text || ""}`;
+      }
+
+      this.moveCursor(0, baseY + i);
+      process.stdout.write(line);
+    });
+
+    // cursor aman di bawah progress
+    this.moveCursor(0, baseY + this.progressSlots.length);
   }
 }
 
-/* =========================
-   LOG MANAGER (IMPROVED)
-========================= */
-class LogManager1 {
-    constructor() {
-        this.isTTY = process.stdout.isTTY && !process.env.CI;
-        this.bars = new Map(); // Map untuk progress bars
-        this.logCount = 0;     // Hitungan log biasa
-        this.barCount = 0;     // Hitungan progress bars
-        this.barPositions = new Map(); // Menyimpan posisi tiap progress bar
-        
-        if (this.isTTY) {
-            // Tidak clear screen, biarkan terminal seperti biasa
-            process.stdout.write('\n'); // Beri jarak awal
-        }
+class LogManager3 {
+  constructor() {
+    this.isTTY = process.stdout.isTTY && !process.env.CI;
+    this.logLine = 0;
+
+    this.slots = [
+      "🌐 Scraping",
+      "📊 DB Queue",
+      "📚 Lexicon"
+    ];
+
+    this.bars = new Map();
+    this.offset = 2;
+
+    if (this.isTTY) {
+      process.stdout.write("\x1b[2J");
+      process.stdout.write("\x1b[1;1H");
+    }
+  }
+
+  log(...msg) {
+    if (!this.isTTY) {
+      console.log(...msg);
+      return;
     }
 
-    // Method untuk log biasa (selalu di atas progress bars)
-    log(...args) {
-        if (this.isTTY) {
-            // Simpan posisi cursor saat ini
-            const cursor = process.stdout.rows ? 
-                process.stdout.rows - this.barCount : 0;
-            
-            // Hapus progress bars sementara
-            this.clearProgressBars();
-            
-            // Tampilkan log
-            console.log(...args);
-            this.logCount++;
-            
-            // Restore progress bars
-            this.redrawProgressBars();
-        } else {
-            console.log(...args);
-        }
-    }
+    this.logLine++;
+    readline.cursorTo(process.stdout, 0, this.logLine);
+    readline.clearLine(process.stdout, 0);
+    process.stdout.write(`#${this.logLine} | ${msg.join(" ")}`);
 
-    // Update progress bar
-    updateProgress(name, current, total, text = '') {
-        this.bars.set(name, { current, total, text });
-        
-        if (this.isTTY) {
-            if (!this.barPositions.has(name)) {
-                // Assign posisi baru untuk progress bar
-                this.barPositions.set(name, this.barCount);
-                this.barCount++;
-            }
-            this.redrawProgressBars();
-        }
-    }
+    this.render();
+  }
 
-    // Remove progress bar
-    remove(name) {
-        this.bars.delete(name);
-        if (this.barPositions.has(name)) {
-            // Shift semua posisi setelah yang dihapus
-            const removedPos = this.barPositions.get(name);
-            this.barPositions.delete(name);
-            
-            // Update posisi progress bars yang lain
-            for (const [key, pos] of this.barPositions) {
-                if (pos > removedPos) {
-                    this.barPositions.set(key, pos - 1);
-                }
-            }
-            this.barCount--;
-        }
-        
-        if (this.isTTY) {
-            this.redrawProgressBars();
-        }
-    }
+  update(name, current, total, text = "") {
+    this.bars.set(name, { current, total, text });
+    this.render();
+  }
+  
+  remove(name) {
+    //this.bars.delete(name);
+    //this.refreshProgressBars();
+  }
 
-    // Clear semua progress bars
-    clearProgressBars() {
-        if (!this.isTTY || this.barCount === 0) return;
-        
-        for (let i = 0; i < this.barCount; i++) {
-            process.stdout.write('\x1b[1A'); // Naik 1 baris
-            process.stdout.write('\x1b[2K'); // Clear baris
-        }
-    }
+  render() {
+    if (!this.isTTY) return;
 
-    // Redraw semua progress bars
-    redrawProgressBars() {
-        if (!this.isTTY || this.barCount === 0) return;
-        
-        const barsArray = Array.from(this.bars.entries())
-            .sort(([aName], [bName]) => {
-                const aPos = this.barPositions.get(aName) || 0;
-                const bPos = this.barPositions.get(bName) || 0;
-                return aPos - bPos;
-            });
-        
-        // Tampilkan semua progress bars
-        barsArray.forEach(([name, bar]) => {
-            const percent = Math.floor((bar.current / bar.total) * 100);
-            const filled = Math.floor(percent / 5);
-            const barStr = `${name} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
-            console.log(barStr);
-        });
-    }
+    const base = this.logLine + this.offset;
 
-    // Alias untuk kompatibilitas
-    update(name, current, total, text = '') {
-        this.updateProgress(name, current, total, text);
-    }
-}
+    this.slots.forEach((name, i) => {
+      readline.cursorTo(process.stdout, 0, base + i);
+      readline.clearLine(process.stdout, 0);
 
-/* =========================
-   LOG MANAGER (SIMPLE VERSION)
-========================= */
-class LogManager2 {
-    constructor() {
-        this.isTTY = process.stdout.isTTY && !process.env.CI;
-        this.bars = new Map();
-        this.logLines = 0;
-        
-        // Inisialisasi area untuk progress bars
-        if (this.isTTY) {
-            // Beri jarak untuk area progress bars
-            process.stdout.write('\n'.repeat(2));
-        }
-    }
+      const bar = this.bars.get(name);
+      let line;
 
-    // Method untuk log biasa (selalu di atas progress bars)
-    log(...args) {
-      if (this.isTTY) {
-          this.Y_log++;
-          this.moveCursor(0, this.Y_log);
-          this.clearLine();
-          process.stdout.write(...args.join(' '));
-          this.refreshProgressBars();
+      if (!bar) {
+        line = `${name} [░░░░░░░░░░░░░░░░░░] (0/0) 0%`;
       } else {
-          console.log(...args);
+        const percent = bar.total
+          ? Math.floor((bar.current / bar.total) * 100)
+          : 0;
+
+        const filled = Math.floor(percent / 5);
+        line =
+          `${name} [` +
+          "█".repeat(filled) +
+          "░".repeat(20 - filled) +
+          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text}`;
       }
-    }
 
-    // Update progress bar
-    updateProgress(name, current, total, text = '') {
-        this.bars.set(name, { current, total, text });
-        
-        if (this.isTTY) {
-            this.showProgressBars();
-        }
-    }
+      process.stdout.write(line);
+    });
 
-    // Remove progress bar
-    remove(name) {
-        this.bars.delete(name);
-        if (this.isTTY) {
-            this.showProgressBars();
-        }
-    }
-
-    // Clear semua progress bars
-    clearProgressBars() {
-        if (!this.isTTY || this.bars.size === 0) return;
-        
-        // Naik ke posisi progress bars pertama
-        for (let i = 0; i < this.bars.size; i++) {
-            process.stdout.write('\x1b[1A'); // Cursor up 1 line
-            process.stdout.write('\x1b[2K'); // Clear line
-        }
-    }
-
-    // Tampilkan semua progress bars
-    showProgressBars() {
-        if (!this.isTTY || this.bars.size === 0) return;
-        
-        const barsArray = Array.from(this.bars.entries());
-        
-        barsArray.forEach(([name, bar]) => {
-            const percent = Math.floor((bar.current / bar.total) * 100);
-            const filled = Math.floor(percent / 5);
-            const barStr = `⏳ ${name} [${'█'.repeat(filled)}${'░'.repeat(20 - filled)}] ${percent}% ${bar.text}`;
-            console.log(barStr);
-        });
-    }
-
-    // Alias untuk kompatibilitas
-    update(name, current, total, text = '') {
-        this.updateProgress(name, current, total, text);
-    }
+    readline.cursorTo(process.stdout, 0, base + this.slots.length);
+  }
 }
 
 // Singleton instance
@@ -563,8 +614,8 @@ if (isTermux) {
       });
       return res.data;
     } catch (err) {
-      if (err.response) console.error("🚨 Status:", err.response.status);
-      else console.error("🚨 Error:", err.message);
+      if (err.response) log("🚨 Status:", err.response.status);
+      else log("🚨 Error:", err.message);
       return null;
     }
   };
@@ -592,7 +643,7 @@ else {
       await browser.close();
       return html;
     } catch (err) {
-      console.error("Gagal load:", err.message);
+      log("Gagal load:", err.message);
       await browser.close();
       return null;
     }
@@ -736,7 +787,7 @@ class DatabaseQueue {
         .catch(error => {
           reject(error)
           this.failed++
-          console.error("❌ Database task ❌", error.message)
+          log("❌ Database task ❌", error.message)
         })
         .finally(() => {
           this.processing--
@@ -749,8 +800,7 @@ class DatabaseQueue {
   showProgress() {
     const processed = this.completed + this.failed;
     const total = this.total || 1; // Perbaikan: tambahkan deklarasi variabel total
-    
-    logManager.updateProgress("📊 DB Queue", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
+    logManager.update("📊 DB Queue", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
     
     if (processed === total && this.processing === 0) {
       setTimeout(() => {
@@ -797,7 +847,7 @@ class BibleQueue {
           this.completed++
         } catch (error) {
           this.failed++
-          console.error("Task error:", error.message)
+          log("Task error:", error.message)
         } finally {
           this.processing--
           this.showProgress()
@@ -822,7 +872,7 @@ class BibleQueue {
   showProgress() {
     const processed = this.completed + this.failed;
     const total = this.total || 1;
-    logManager.updateProgress("🌐 Scraping", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
+    logManager.update("🌐 Scraping", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
   }
 }
 
@@ -862,7 +912,7 @@ class LexiconQueue {
           this.completed++
         } catch (error) {
           this.failed++
-          console.error(`Lexicon error ${strongNumber}:`, error.message)
+          log(`Lexicon error ${strongNumber}:`, error.message)
         } finally {
           this.processing--
           this.showProgress()
@@ -887,7 +937,7 @@ class LexiconQueue {
   showProgress() {
     const processed = this.completed + this.failed;
     const total = this.total || 1;
-    logManager.updateProgress("📚 Lexicon", processed, total, `${this.currentLexi || '...'} | ⏳ ${this.processing} | ❌ ${this.failed}`);
+    logManager.update("📚 Lexicon", processed, total, `${this.currentLexi || '...'} | ⏳ ${this.processing} | ❌ ${this.failed}`);
   }
 
   getCache() {
@@ -1060,7 +1110,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
       sabdaData = await fetchSabdaData(bookId, chapter, targetVersions)      
       log(`🌐 Sabda: ${bookName} ${chapter} (${sabdaData.totalVerses} ayat)`);
     } catch (error) {
-      console.error(`❌ Gagal ambil dari SABDAweb ${bookId}:${chapter}:`, error.message)
+      log(`❌ Gagal ambil dari SABDAweb ${bookId}:${chapter}:`, error.message)
     }
     
     // Fetch dari JW.org untuk NWT
@@ -1068,7 +1118,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
       nwtData = await fetchJWData(bookId, chapter);      
       log(`🌐 JW: ${bookName} ${chapter} (${nwtData.length} ayat)`);
     } catch (error) {
-      console.error(`❌ Gagal ambil dari NWT ${bookId}:${chapter}:`, error.message)
+      log(`❌ Gagal ambil dari NWT ${bookId}:${chapter}:`, error.message)
     }
     
     // Fetch dari Chabad.org untuk Tanakh
@@ -1080,7 +1130,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
         log(`🌐 Chabad: ${tanakhBook.id} - ${tanakhBook.he} (${tanakhBook.en}) ${chapter} (${chabadData.totalVerses} ayat) Aid ${chabadData.aid}`);
       }
     } catch (error) {
-      console.error(`❌ Gagal ambil dari Chabad ${bookId}:${chapter}:`, error.message)
+      log(`❌ Gagal ambil dari Chabad ${bookId}:${chapter}:`, error.message)
     }
     
     // Gabungkan data dari kedua sumber
@@ -1096,7 +1146,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
       }
     }
   } catch (error) {
-    console.error(`❌ Gagal ambil ${bookId}:${chapter}:`, error.message)
+    log(`❌ Gagal ambil ${bookId}:${chapter}:`, error.message)
     return {
       success: false,
       error: error.message,
@@ -1345,8 +1395,6 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   log(`📖 Memproses kitab ${bookId}: ${bookInfo[0]}`);
   log(`📊 Total pasal: ${totalChapters}, Concurrency: ${concurrency}`);
   log(`📚 Versi: ${targetVersions.map(v => v.id).join(', ')}`);
-  log(`🔄 Mengambil ${totalChapters} pasal...`);
-  log('');
 
   // Buat struktur data untuk kitab
   const createBookBase = () => ({
@@ -1382,6 +1430,8 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
     log(`✅ Semua pasal kitab ${bookId} sudah lengkap`);
     return { success: true, strongNumbers: [] };
   }
+
+  log(`🔄 Mengambil ${chaptersToProcess.length} pasal...`);
 
   // Buat queue untuk pengambilan data
   const webQueue = new BibleQueue(concurrency);
@@ -1429,7 +1479,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
 
   // Tunggu database queue jika mode 1
   if (mode === 1 && dbQueue) {
-    log("⏳ Menunggu operasi database selesai...");
+    log("\n⏳ Menunggu operasi database selesai...");
     await dbQueue.waitUntilEmpty();
   }
 
@@ -1444,7 +1494,8 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   await fs.writeFile(filenameMin, JSON.stringify(bookData));
   const filenameMinNotes = `${DIR_MIN}/Bible_${bookId}.notes.min.json`;
   await fs.writeFile(filenameMinNotes, JSON.stringify(noteData));
-
+  
+  log("")
   log(`✅ Kitab ${bookId} selesai diproses`);
   log(`📊 Statistik: ${webQueue.completed} berhasil, ${webQueue.failed} gagal`);
   log(`📚 Strong's numbers ditemukan: ${bookStrongs.size}`);
@@ -1497,7 +1548,7 @@ async function saveChapterToDB(chapterData, targetVersions) {
         }
         return true;
       } catch (error) {
-        console.error(`❌ Gagal menyimpan ${bookId}:${chapter}:${verseData.verse}:`, error.message);
+        log(`❌ Gagal menyimpan ${bookId}:${chapter}:${verseData.verse}:`, error.message);
         throw error;
       }
     });
@@ -1509,14 +1560,14 @@ async function saveChapterToDB(chapterData, targetVersions) {
 ========================= */
 
 async function migrateJSONtoDB(bookId) {
-  log(`📁 Migrasi kitab ${bookId}...`)
+  log(`\n📁 Migrasi kitab ${bookId}...`)
 
   const filename = `${DIR}/Bible_${bookId}_*.json`
   const files = await fs.readdir(DIR)
   const bookFile = files.find(f => f.startsWith(`Bible_${bookId}_`))
 
   if (!bookFile) {
-    console.error(`❌ File JSON untuk kitab ${bookId} tidak ditemukan`)
+    log(`❌ File JSON untuk kitab ${bookId} tidak ditemukan`)
     return false
   }
 
@@ -1557,7 +1608,7 @@ async function migrateJSONtoDB(bookId) {
         }
 
       } catch (error) {
-        console.error(`\n❌ Gagal migrasi pasal ${chapterData.chapter}:`, error.message)
+        log(`\n❌ Gagal migrasi pasal ${chapterData.chapter}:`, error.message)
         failCount++
       }
     }
@@ -1565,11 +1616,11 @@ async function migrateJSONtoDB(bookId) {
     // Tunggu database queue selesai
     await dbQueue.waitUntilEmpty()
 
-    log(`✅ Migrasi selesai: ${successCount} berhasil, ${failCount} gagal`)
+    log(`\n✅ Migrasi selesai: ${successCount} berhasil, ${failCount} gagal`)
     return failCount === 0
 
   } catch (error) {
-    console.error(`❌ Gagal migrasi kitab ${bookId}:`, error.message)
+    log(`❌ Gagal migrasi kitab ${bookId}:`, error.message)
     return false
   }
 }
@@ -1579,17 +1630,7 @@ async function migrateJSONtoDB(bookId) {
 ========================= */
 
 async function initializeDatabase() {
-  log("📊 Inisialisasi database...")
-
-  // Hitung total task untuk database queue
-  const totalVersions = BibleVersions.length;
-  const totalBooks = BibleBooks.length;
-  const totalTasks = totalVersions + totalBooks;
-  
-  // Set total task untuk database queue
-  if (dbQueue) {
-    dbQueue.total = totalTasks;
-  }
+  log("\n📊 Inisialisasi database...")
 
   // Insert versi-versi Alkitab
   for (const version of BibleVersions) {
@@ -1727,7 +1768,7 @@ async function fetchStrongLexicon(strongNumber) {
     return lexiconData;
 
   } catch (error) {
-    console.error(`❌ Failed to fetch lexicon ${strongNumber}:`, error.message);
+    log(`❌ Failed to fetch lexicon ${strongNumber}:`, error.message);
     return {
       strong: strongNumber,
       error: error.message
@@ -1791,7 +1832,7 @@ async function saveLexiconToDB(lexiconData) {
 
       return true;
     } catch (error) {
-      console.error(`❌ Gagal menyimpan lexicon ${lexiconData.strong}:`, error.message);
+      log(`❌ Gagal menyimpan lexicon ${lexiconData.strong}:`, error.message);
       return false;
     }
   });
@@ -1827,7 +1868,7 @@ async function saveLexiconToJSON(lexiconData, overwrite = true) {
 
     return data;
   } catch (e) {
-    console.error(`❌ Gagal simpan ${lexiconData.strong}:`, e.message);
+    log(`❌ Gagal simpan ${lexiconData.strong}:`, e.message);
     return false;
   }
 }
@@ -1838,7 +1879,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
     return;
   }
   
-  log(`📚 Memproses ${strongNumbers.length} Strong's numbers...`);
+  log(`\n📚 Memproses ${strongNumbers.length} Strong's numbers...`);
   
   const validStrongs = strongNumbers.filter(s => s && s.match(/^[HG]\d+$/));
   
@@ -1882,7 +1923,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
         return null;
       }
     } catch (error) {
-      console.error(`❌ Error mengambil lexicon ${strongNumber}:`, error.message);
+      log(`❌ Error mengambil lexicon ${strongNumber}:`, error.message);
       return null;
     }
   });
@@ -1890,6 +1931,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
   await fs.writeFile(indexPath, JSON.stringify(index, null, 2), 'utf8');
   await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
   
+  log("")
   log(`✅ Lexicon processing selesai`);
   log(`📊 Statistik: ${lexiconQueue.completed} berhasil, ${lexiconQueue.failed} gagal`);
   
@@ -1903,6 +1945,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
       else if (i.strong[0] === 'G') greekCount++;
     }
     
+    log("")
     log(`📚 STATISTIK LEXICON:`);
     log(`   Total: ${index.length} entries`);
     log(`   Hebrew (H): ${hebrewCount}`);
@@ -2011,7 +2054,7 @@ async function updateLexiconIndex(index, lexiconData) {
     
     return index;
   } catch (error) {
-    console.error('❌ Gagal update lexicon index:', error.message);
+    log('❌ Gagal update lexicon index:', error.message);
     return false;
   }
 }
@@ -2051,7 +2094,7 @@ async function main() {
   if (options.versions.length > 0) {
     targetVersions = BibleVersions.filter(v => options.versions.includes(v.id));
     if (targetVersions.length === 0) {
-      console.error("❌ Tidak ada versi yang valid");
+      log("❌ Tidak ada versi yang valid");
       return;
     }
   }
@@ -2073,7 +2116,7 @@ async function main() {
 
   // Buka koneksi database untuk mode 1 & 3
   if (options.mode === 1 || options.mode === 3) {
-    log("🚀 Opening database connection...");
+    log("\n🚀 Opening database connection...");
     db = await openDB(DB_PATH, log);
     dbQueue = new DatabaseQueue(db, 1);
 
@@ -2088,7 +2131,7 @@ async function main() {
       if (options.book >= 1 && options.book <= BibleBooks.length) {
         booksToProcess.push(options.book);
       } else {
-        console.error(`❌ Kitab ${options.book} tidak valid`);
+        log(`❌ Kitab ${options.book} tidak valid`);
         return;
       }
     } else if (options.batch) {
@@ -2108,7 +2151,7 @@ async function main() {
     for (const bookId of booksToProcess) {
       const bookName = BibleBooks[bookId - 1][0];
 
-      log(`📖 ========================================`);
+      log(`\n📖 ========================================`);
       log(`📖 Proses kitab ${bookId}: ${bookName}`);
       log(`📖 ========================================`);
 
@@ -2137,7 +2180,7 @@ async function main() {
             break;
 
           default:
-            console.error(`❌ Mode ${options.mode} tidak dikenali`);
+            log(`❌ Mode ${options.mode} tidak dikenali`);
             return;
         }
 
@@ -2148,27 +2191,31 @@ async function main() {
         }
 
       } catch (error) {
-        console.error(`❌ Error memproses kitab ${bookId}:`, error.message);
+        log(`❌ Error memproses kitab ${bookId}:`, error.message);
         totalFailed++;
       }
 
       if (bookId !== booksToProcess[booksToProcess.length - 1]) {
         const delay = options.mode === 1 || options.mode === 2 ? 5000 : 2000;
+        log("")
         log(`⏳ Menunggu ${delay/1000} detik sebelum kitab berikutnya...`);
         await sleep(delay);
       }
     }
 
     // PROSES LEXICONS
+    log("")
     log("🔍 Mengumpulkan Strong's numbers...");
     
     const commonStrongs = [];
     const allStrongNumbers = [...allStrongs, ...commonStrongs];
     
     if (allStrongNumbers.length > 0) {
+      log("")
       log(`📚 Memproses ${allStrongNumbers.length} Strong's numbers...`);
       await processLexicons(allStrongNumbers, options.concurrency,  options.mode);
     } else {
+      log("")
       log("ℹ️ Tidak ada Strong's numbers yang dikumpulkan.");
     }
 
@@ -2180,13 +2227,14 @@ async function main() {
 
     if (options.mode === 1 || options.mode === 3) {
       log(`💾 Database: ${DB_PATH}`);
-
-      log("\n🔄 Updating FTS tables...");
+      
+      log("")
+      log("🔄 Updating FTS tables...");
       try {
         await db.run("INSERT INTO verses_fts(verses_fts) VALUES ('rebuild')");
         log("✅ FTS tables updated");
       } catch (error) {
-        console.error("❌ Error updating FTS:", error.message);
+        log("❌ Error updating FTS:", error.message);
       }
     }
 
@@ -2201,8 +2249,9 @@ async function main() {
     log("=".repeat(60));
 
   } catch (error) {
-    console.error("\n❌ Error utama:", error.message);
-    console.error(error.stack);
+    log("")
+    log("❌ Error utama:", error.message);
+    log(error.stack);
   } finally {
     // Tutup koneksi database
     if (db) {
