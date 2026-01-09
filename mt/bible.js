@@ -12,106 +12,135 @@ const sleep = async (ms) => {
 /* =========================
    LOG MANAGER (DIPERBAIKI)
 ========================= */
-class LogManager5 {
+class LogManager {
   constructor() {
     this.isTTY = process.stdout.isTTY && !process.env.CI;
 
-    this.headerHeight = 3;
-    this.footerHeight = 4;
+    this.Y_log = 0;
 
-    this.logLine = this.headerHeight + 1;
-    this.logCount = 0;
-
-    this.slots = [
+    this.progressSlots = [
       "🌐 Scraping",
       "📊 DB Queue",
       "📚 Lexicon"
     ];
 
     this.bars = new Map();
+    this.progressOffset = 2;
+
+    this.termRows = process.stdout.rows || 24;
+    this.maxLogLines =
+      this.termRows - this.progressSlots.length - this.progressOffset - 1;
 
     if (this.isTTY) {
-      process.stdout.write("\x1b[2J");
-      process.stdout.write("\x1b[1;1H");
+      process.stdout.write("\x1b[2J");   // clear screen
+      process.stdout.write("\x1b[0;0H"); // cursor home
     }
 
-    this.renderHeader();
-    this.renderFooter();
+    // handle resize terminal
+    process.stdout.on("resize", () => {
+      this.termRows = process.stdout.rows || 24;
+      this.maxLogLines =
+        this.termRows - this.progressSlots.length - this.progressOffset - 1;
+      this.refreshProgressBars();
+    });
   }
 
-  /* ========== HEADER ========== */
-  renderHeader() {
+  moveCursor(x, y) {
+    if (!this.isTTY) return;
+    process.stdout.write(`\x1b[${y};${x}H`);
+  }
+
+  clearLine() {
+    if (!this.isTTY) return;
+    process.stdout.write("\x1b[2K");
+  }
+
+  scrollUp() {
     if (!this.isTTY) return;
 
-    readline.cursorTo(process.stdout, 0, 1);
-    readline.clearLine(process.stdout, 0);
-    process.stdout.write("📘 Bible Scraper UI");
+    // scroll terminal 1 line
+    process.stdout.write("\x1b[1S");
 
-    readline.cursorTo(process.stdout, 0, 2);
-    readline.clearLine(process.stdout, 0);
-    process.stdout.write("━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-
-    readline.cursorTo(process.stdout, 0, 3);
-    readline.clearLine(process.stdout, 0);
-    process.stdout.write("Status: RUNNING");
+    // bersihkan ulang area progress
+    const baseY = this.maxLogLines + this.progressOffset;
+    for (let i = 0; i < this.progressSlots.length; i++) {
+      this.moveCursor(0, baseY + i);
+      this.clearLine();
+    }
   }
 
-  /* ========== LOG AREA ========== */
   log(...args) {
-    console.log(
-      `#${++this.logCount} | ${args.join(" ")}`
-    );
+    if (!this.isTTY) {
+      console.log(...args);
+      return;
+    }
 
-    this.renderFooter();
+    // jika log sudah mentok → scroll manual
+    if (this.Y_log >= this.maxLogLines) {
+      this.scrollUp();
+      this.Y_log = this.maxLogLines - 1;
+    }
+
+    this.Y_log++;
+    this.moveCursor(0, this.Y_log);
+    this.clearLine();
+
+    process.stdout.write(`#${this.Y_log} | ${args.join(" ")}`);
+
+    this.refreshProgressBars();
   }
 
-  /* ========== FOOTER ========== */
   update(name, current, total, text = "") {
     this.bars.set(name, { current, total, text });
-    this.renderFooter();
+    this.refreshProgressBars();
   }
 
-  renderFooter() {
+  remove(name) {
+    this.bars.delete(name);
+    this.refreshProgressBars();
+  }
+
+  refreshProgressBars() {
     if (!this.isTTY) return;
 
-    const rows = process.stdout.rows || 24;
-    const startY = rows - this.footerHeight + 1;
+    const baseY = this.Y_log + this.progressOffset;
 
-    // separator
-    readline.cursorTo(process.stdout, 0, startY - 1);
-    readline.clearLine(process.stdout, 0);
-    process.stdout.write("━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    // clear slot progress
+    for (let i = 0; i < this.progressSlots.length; i++) {
+      this.moveCursor(0, baseY + i);
+      this.clearLine();
+    }
 
-    this.slots.forEach((name, i) => {
-      const y = startY + i;
-
-      readline.cursorTo(process.stdout, 0, y);
-      readline.clearLine(process.stdout, 0);
-
+    // render progress fixed order
+    this.progressSlots.forEach((name, i) => {
       const bar = this.bars.get(name);
-      let line;
 
+      let line;
       if (!bar) {
         line = `${name} [░░░░░░░░░░░░░░░░░░] (0/0) 0%`;
       } else {
         const percent = bar.total
-          ? Math.floor(bar.current / bar.total * 100)
+          ? Math.floor((bar.current / bar.total) * 100)
           : 0;
+
         const filled = Math.floor(percent / 5);
 
         line =
           `${name} [` +
           "█".repeat(filled) +
           "░".repeat(20 - filled) +
-          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text}`;
+          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text || ""}`;
       }
 
+      this.moveCursor(0, baseY + i);
       process.stdout.write(line);
     });
 
-    readline.cursorTo(process.stdout, 0, startY + this.footerHeight);
+    // cursor aman di bawah progress
+    this.moveCursor(0, baseY + this.progressSlots.length);
   }
 }
+
 
 /* =========================
    LOG MANAGER (FIXED)
@@ -170,7 +199,7 @@ class LogManager7 {
   }
 }
 
-class LogManager {
+class LogManager2 {
   constructor() {
     this.isTTY = process.stdout.isTTY && !process.env.CI;
     this.Y_log = 0;
