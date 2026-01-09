@@ -17,6 +17,7 @@ class LogManager {
     this.isTTY = process.stdout.isTTY && !process.env.CI;
 
     this.progressSlots = [
+      "📖 BOOK",
       "🌐 Scraping",
       "📊 DB Queue",
       "📚 Lexicon"
@@ -47,8 +48,8 @@ class LogManager {
   }
 
   remove(name) {
-    // this.bars.delete(name);
-    // this.renderProgress();
+    this.bars.delete(name);
+    this.renderProgress();
   }
 
   renderProgress() {
@@ -1962,8 +1963,13 @@ async function main() {
       if (bookId !== booksToProcess[booksToProcess.length - 1]) {
         const delay = options.mode === 1 || options.mode === 2 ? 5000 : 2000;
         log("")
-        log(`⏳ Menunggu ${delay/1000} detik sebelum kitab berikutnya...`);
+        log(`⏳ Menunggu ${delay/1000} detik sebelum kitab berikutnya...`);        
+        logManager.update("📖 BOOK", bookId, booksToProcess.length);
         await sleep(delay);
+        // Clear progress setelah selesai
+        setTimeout(() => {
+          logManager.remove("🌐 Scraping"); // Perbaikan: ubah removeProgress menjadi remove
+        }, 1000);
       }
     }
 
