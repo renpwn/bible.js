@@ -12,7 +12,7 @@ const sleep = async (ms) => {
 /* =========================
    LOG MANAGER (DIPERBAIKI)
 ========================= */
-class LogManager {
+class LogManager0 {
   constructor() {
     this.isTTY = process.stdout.isTTY && !process.env.CI;
 
@@ -296,62 +296,191 @@ class LogManager2 {
   }
 }
 
-class LogManager3 {
+class LogManagera {
+  constructor() {
+    this.isTTY = process.stdout.isTTY && !process.env.CI
+    this.logLines = [] // Buffer untuk menyimpan log
+    this.bars = new Map() // Progress bars
+    this.maxLogLines = 15 // Maksimal log lines yang ditampilkan
+    this.slots = ["🌐 Scraping", "📊 DB Queue", "📚 Lexicon"]
+    
+    this.lastRenderTime = 0
+    this.renderThrottle = 100 // ms throttle untuk render
+
+    if (this.isTTY) {
+      process.stdout.write("\x1b[2J\x1b[1;1H")
+    }
+
+    // Handle terminal resize
+    process.stdout.on("resize", () => {
+      this.render()
+    })
+  }
+
+  log(...args) {
+    const message = args.join(" ")
+    const timestamp = new Date().toISOString().slice(11, 19)
+    const logEntry = `[${timestamp}] ${message}`
+
+    // Tambahkan ke buffer
+    this.logLines.push(logEntry)
+    
+    // Keep only recent logs
+    if (this.logLines.length > this.maxLogLines * 2) {
+      this.logLines = this.logLines.slice(-this.maxLogLines * 2)
+    }
+
+    // Jika bukan TTY, langsung console.log
+    if (!this.isTTY) {
+      console.log(logEntry)
+      return
+    }
+
+    // Throttle rendering
+    const now = Date.now()
+    if (now - this.lastRenderTime > this.renderThrottle) {
+      this.render()
+      this.lastRenderTime = now
+    } else {
+      // Schedule render jika belum di-throttle
+      if (!this.renderScheduled) {
+        this.renderScheduled = true
+        setTimeout(() => {
+          this.render()
+          this.renderScheduled = false
+          this.lastRenderTime = Date.now()
+        }, this.renderThrottle)
+      }
+    }
+  }
+
+  update(name, cur, total, text = "") {
+    this.bars.set(name, { cur, total, text })
+    this.render()
+  }
+
+  remove(name) {
+    this.bars.delete(name)
+    this.render()
+  }
+
+  render() {
+    if (!this.isTTY) return
+
+    // Get terminal dimensions
+    const rows = process.stdout.rows || 24
+    const cols = process.stdout.columns || 80
+    
+    // Calculate layout
+    const footerHeight = this.slots.length + 1
+    const maxLogs = Math.min(rows - footerHeight - 2, this.maxLogLines)
+    
+    // Move cursor to top and clear
+    readline.cursorTo(process.stdout, 0, 0)
+    readline.clearScreenDown(process.stdout)
+
+    // Show header
+    process.stdout.write("=".repeat(cols) + "\n")
+    process.stdout.write("📖 Bible Scraper - Real-time Log\n")
+    process.stdout.write("=".repeat(cols) + "\n\n")
+
+    // Show recent logs (newest at bottom)
+    const visibleLogs = this.logLines.slice(-maxLogs)
+    visibleLogs.forEach((log, i) => {
+      // Trim log jika terlalu panjang
+      const maxWidth = cols - 10
+      const displayLog = log.length > maxWidth 
+        ? log.slice(0, maxWidth - 3) + "..." 
+        : log
+      
+      const logNum = this.logLines.length - visibleLogs.length + i + 1
+      process.stdout.write(`#${logNum.toString().padStart(3, ' ')} ${displayLog}\n`)
+    })
+
+    // Add separator before progress bars
+    process.stdout.write("\n" + "─".repeat(cols) + "\n")
+
+    // Render progress bars in fixed order
+    this.slots.forEach(name => {
+      const b = this.bars.get(name) || { cur: 0, total: 0, text: "" }
+      const percent = b.total ? Math.round((b.cur / b.total) * 100) : 0
+      const filled = Math.round(percent / 5)
+      
+      // Format progress bar
+      let barText = `${name} [${"█".repeat(filled)}${"░".repeat(20 - filled)}] `
+      barText += `(${b.cur}/${b.total}) ${percent}%`
+      
+      if (b.text) {
+        barText += ` ${b.text}`
+      }
+      
+      // Truncate jika terlalu panjang
+      if (barText.length > cols - 5) {
+        barText = barText.slice(0, cols - 8) + "..."
+      }
+      
+      process.stdout.write(barText + "\n")
+    })
+
+    // Show footer
+    process.stdout.write("─".repeat(cols) + "\n")
+    process.stdout.write("🚀 Running... Press Ctrl+C to stop\n")
+    
+    // Move cursor to safe position
+    readline.cursorTo(process.stdout, 0, rows - 1)
+  }
+}
+
+class LogManager {
   constructor() {
     this.isTTY = process.stdout.isTTY && !process.env.CI;
-    this.logLine = 0;
 
-    this.slots = [
+    this.progressSlots = [
       "🌐 Scraping",
       "📊 DB Queue",
       "📚 Lexicon"
     ];
 
     this.bars = new Map();
-    this.offset = 2;
-
-    if (this.isTTY) {
-      process.stdout.write("\x1b[2J");
-      process.stdout.write("\x1b[1;1H");
-    }
+    this.lastProgressLines = 0;
   }
 
-  log(...msg) {
-    if (!this.isTTY) {
-      console.log(...msg);
-      return;
-    }
+  /* ================= LOG BIASA ================= */
 
-    this.logLine++;
-    readline.cursorTo(process.stdout, 0, this.logLine);
-    readline.clearLine(process.stdout, 0);
-    process.stdout.write(`#${this.logLine} | ${msg.join(" ")}`);
+  log(...args) {
+    // sebelum log → hapus progress
+    this.clearProgress();
 
-    this.render();
+    // log normal (tanpa newline ganda)
+    process.stdout.write(args.join(" ") + "\n");
+
+    // setelah log → tulis ulang progress
+    this.renderProgress();
   }
+
+  /* ================= PROGRESS ================= */
 
   update(name, current, total, text = "") {
     this.bars.set(name, { current, total, text });
-    this.render();
-  }
-  
-  remove(name) {
-    //this.bars.delete(name);
-    //this.refreshProgressBars();
+    this.renderProgress();
   }
 
-  render() {
+  remove(name) {
+    this.bars.delete(name);
+    this.renderProgress();
+  }
+
+  renderProgress() {
     if (!this.isTTY) return;
 
-    const base = this.logLine + this.offset;
-
-    this.slots.forEach((name, i) => {
-      readline.cursorTo(process.stdout, 0, base + i);
-      readline.clearLine(process.stdout, 0);
-
+    // hapus progress lama
+    this.clearProgress();
+    console.log(''); // line kosong sebelum progress
+    // render progress baru pakai console.log
+    this.progressSlots.forEach((name) => {
       const bar = this.bars.get(name);
-      let line;
 
+      let line;
       if (!bar) {
         line = `${name} [░░░░░░░░░░░░░░░░░░] (0/0) 0%`;
       } else {
@@ -360,19 +489,44 @@ class LogManager3 {
           : 0;
 
         const filled = Math.floor(percent / 5);
+
         line =
           `${name} [` +
           "█".repeat(filled) +
           "░".repeat(20 - filled) +
-          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text}`;
+          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text || ""}`;
       }
 
-      process.stdout.write(line);
+      console.log(line);
     });
 
-    readline.cursorTo(process.stdout, 0, base + this.slots.length);
+    this.lastProgressLines = this.progressSlots.length + 1;
+  }
+
+  /* ================= CLEAR ================= */
+
+  clearProgress() {
+    if (!this.isTTY || this.lastProgressLines === 0) return;
+
+    // naik ke atas sebanyak jumlah progress
+    process.stdout.write(`\x1b[${this.lastProgressLines}A`);
+
+    // clear baris progress
+    for (let i = 0; i < this.lastProgressLines; i++) {
+      process.stdout.write("\x1b[2K"); // clear line
+      process.stdout.write("\x1b[1B"); // turun
+    }
+
+    // balik ke posisi awal
+    process.stdout.write(`\x1b[${this.lastProgressLines}A`);
+
+    this.lastProgressLines = 0;
   }
 }
+
+export default LogManager2;
+
+
 
 // Singleton instance
 const logManager = new LogManager();
