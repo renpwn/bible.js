@@ -466,8 +466,8 @@ class LogManager {
   }
 
   remove(name) {
-    this.bars.delete(name);
-    this.renderProgress();
+    // this.bars.delete(name);
+    // this.renderProgress();
   }
 
   renderProgress() {
@@ -985,11 +985,11 @@ class DatabaseQueue {
     const total = this.total || 1; // Perbaikan: tambahkan deklarasi variabel total
     logManager.update("📊 DB Queue", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
     
-    if (processed === total && this.processing === 0) {
-      setTimeout(() => {
-        logManager.remove("📊 DB Queue"); // Perbaikan: ubah removeProgress menjadi remove
-      }, 1000);
-    }
+    // if (processed === total && this.processing === 0) {
+    //   setTimeout(() => {
+    //     logManager.remove("📊 DB Queue"); // Perbaikan: ubah removeProgress menjadi remove
+    //   }, 1000);
+    // }
   }
 
   async waitUntilEmpty() {
@@ -1045,9 +1045,9 @@ class BibleQueue {
     await Promise.all(workers)
     
     // Clear progress setelah selesai
-    setTimeout(() => {
-      logManager.remove("🌐 Scraping"); // Perbaikan: ubah removeProgress menjadi remove
-    }, 1000);
+    // setTimeout(() => {
+    //   logManager.remove("🌐 Scraping"); // Perbaikan: ubah removeProgress menjadi remove
+    // }, 1000);
     
     return this.results
   }
@@ -1110,9 +1110,9 @@ class LexiconQueue {
     await Promise.all(workers)
     
     // Clear progress setelah selesai
-    setTimeout(() => {
-      logManager.remove("📚 Lexicon"); // Perbaikan: ubah removeProgress menjadi remove
-    }, 1000);
+    // setTimeout(() => {
+    //   logManager.remove("📚 Lexicon"); // Perbaikan: ubah removeProgress menjadi remove
+    // }, 1000);
     
     return this.lexiconCache
   }
@@ -1291,7 +1291,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
     // Fetch dari SABDAweb
     try {
       sabdaData = await fetchSabdaData(bookId, chapter, targetVersions)      
-      log(`🌐 Sabda: ${bookName} ${chapter} (${sabdaData.totalVerses} ayat)`);
+      log(`🌐 Sabda: ${bookName} ${chapter} (${sabdaData.totalVerses} ayat) ✔`);
     } catch (error) {
       log(`❌ Gagal ambil dari SABDAweb ${bookId}:${chapter}:`, error.message)
     }
@@ -1299,7 +1299,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
     // Fetch dari JW.org untuk NWT
     try {
       nwtData = await fetchJWData(bookId, chapter);      
-      log(`🌐 JW: ${bookName} ${chapter} (${nwtData.length} ayat)`);
+      log(`🌐 JW: ${bookName} ${chapter} (${nwtData.length} ayat) ✔`);
     } catch (error) {
       log(`❌ Gagal ambil dari NWT ${bookId}:${chapter}:`, error.message)
     }
@@ -1310,7 +1310,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
       if (isTanakh) {
         const tanakhBook = findTanakhBook(bookId);
         chabadData = await fetchChabadData(bookId, chapter);
-        log(`🌐 Chabad: ${tanakhBook.id} - ${tanakhBook.he} (${tanakhBook.en}) ${chapter} (${chabadData.totalVerses} ayat) Aid ${chabadData.aid}`);
+        log(`🌐 Chabad: ${tanakhBook.id} - ${tanakhBook.he} (${tanakhBook.en}) ${chapter} (${chabadData.totalVerses} ayat) | ${chabadData.aid} ✅`);
       }
     } catch (error) {
       log(`❌ Gagal ambil dari Chabad ${bookId}:${chapter}:`, error.message)
@@ -1439,6 +1439,7 @@ async function fetchChabadData(bookId, chapter) {
 
     return await parseChabadHTML(html, bookId, chapter, aid);
   } catch (error) {
+    log(error);
     throw error;
   }
 }
@@ -1867,6 +1868,8 @@ async function fetchStrongLexicon(strongNumber) {
   try {
     const html = await fetchUrl(url);
     const $ = cheerio.load(html);
+    
+    log(`📚 Lexicon: ${strongNumber} ✅`);
 
     // Data dasar
     let lexiconData = {
@@ -2016,6 +2019,7 @@ async function saveLexiconToDB(lexiconData) {
       return true;
     } catch (error) {
       log(`❌ Gagal menyimpan lexicon ${lexiconData.strong}:`, error.message);
+      log(error);
       return false;
     }
   });
@@ -2062,7 +2066,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
     return;
   }
   
-  log(`\n📚 Memproses ${strongNumbers.length} Strong's numbers...`);
+  // log(`\n📚 Memproses ${strongNumbers.length} Strong's numbers...`);
   
   const validStrongs = strongNumbers.filter(s => s && s.match(/^[HG]\d+$/));
   
