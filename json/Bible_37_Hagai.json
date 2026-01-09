@@ -1,0 +1,763 @@
+{
+  "id": 37,
+  "name": "Hagai",
+  "chapters": 2,
+  "totalVerses": 38,
+  "pericopes": 5,
+  "testament": "OT",
+  "data": [
+    [
+      {
+        "bookId": 37,
+        "chapter": 1,
+        "verses": [
+          {
+            "verse": 1,
+            "texts": {
+              "tb": "Pada tahun yang kedua zaman raja Darius, dalam bulan yang keenam, pada hari pertama bulan itu, datanglah firman TUHAN dengan perantaraan nabi Hagai kepada Zerubabel bin Sealtiel, bupati Yehuda, dan kepada Yosua bin Yozadak, imam besar, bunyinya:",
+              "bis": "Pada tahun kedua pemerintahan Raja Darius atas Persia, pada tanggal satu bulan keenam, TUHAN berbicara dengan perantaraan Nabi Hagai. Pesan TUHAN itu ditujukan kepada Zerubabel anak Sealtiel, gubernur Yehuda, dan kepada Imam Agung Yosua anak Yozadak.",
+              "tl": "Sebermula, maka pada tahun yang kedua dari pada kerajaan Darius, pada bulan yang keenam dan pada sehari bulan itu, datanglah firman Tuhan dengan lidah nabi Hajai kepada Zerubbabil bin Sealtiel, raja Yehuda, dan kepada Yosua bin Yozadak, imam besar, katanya:",
+              "ende": "Dalam tahun kedua radja Darios, dalam bulan keenam dan pada tanggal satu bulan itu, disampaikanlah sabda Jahwe dengan pengantaraan nabi Hagai kepada Zerubabel bin Sjealtiel, adipati Juda, dan kepada imam-agung Jesjua' bin Josadak.",
+              "tb_itl_drf": "Pada tahun <08141> yang kedua <08147> zaman raja <04428> Darius <01867>, dalam bulan <02320> yang keenam <08345>, pada hari <03117> pertama <0259> bulan <02320> itu, datanglah <01961> firman <01697> TUHAN <03068> dengan perantaraan <03027> nabi <05030> Hagai <02292> kepada <0413> Zerubabel <02216> bin <01121> Sealtiel <07597>, bupati <06346> Yehuda <03063>, dan kepada <0413> Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>, bunyinya <0559>:",
+              "tl_itl_drf": "Sebermula, maka pada tahun <08141> yang kedua <08147> dari pada kerajaan <04428> Darius <01867>, pada bulan <02320> yang keenam <08345> dan pada sehari <0259> <03117> bulan <02320> itu, datanglah <01961> firman <01697> Tuhan <03068> dengan lidah <03027> nabi <05030> Hajai <02292> kepada <0413> Zerubbabil <02216> bin <01121> Sealtiel <07597>, raja <06346> Yehuda <03063>, dan kepada <0413> Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>, katanya <0559>:",
+              "bbe": "In the second year of Darius the king, in the sixth month, on the first day of the month, came the word of the Lord by Haggai the prophet to Zerubbabel, the son of Shealtiel, ruler of Judah, and to Joshua, the son of Jehozadak, the high priest, saying,",
+              "message": "On the first day of the sixth month of the second year in the reign of King Darius of Persia, GOD's Message was delivered by the prophet Haggai to the governor of Judah, Zerubbabel son of Shealtiel, and to the high priest, Joshua son of Jehozadak:",
+              "nkjv": "In the second year of King Darius, in the sixth month, on the first day of the month, the word of the LORD came by Haggai the prophet to Zerubbabel the son of Shealtiel, governor of Judah, and to Joshua the son of Jehozadak, the high priest, saying,",
+              "net": "On the first day of the sixth month* of King Darius’* second year, the Lord spoke this message through the prophet Haggai* to Zerubbabel son of Shealtiel, governor of Judah, and to the high priest Joshua son of Jehozadak:*",
+              "net2": "**\n\n_The Indifference of the People_\n\nOn the first day of the sixth month⁽¹⁾ of King Darius’⁽²⁾ second year, the Lord spoke this message through the prophet Haggai⁽³⁾ to Zerubbabel son of Shealtiel, governor of Judah, and to the high priest Joshua son of Jehozadak:⁽⁴⁾ The Indifference of the People",
+              "nwt": "Pada tahun kedua pemerintahan Raja Darius, pada hari pertama bulan keenam, Yehuwa berfirman melalui Nabi Hagai kepada gubernur Yehuda, yaitu Zerubabel anak Syealtiel, dan kepada Imam Besar Yosua anak Yehozadak. Inilah pesannya:",
+              "tn_he": "בִּשְׁנַ֚ת שְׁתַּ֙יִם֙ לְדָֽרְיָ֣וֶשׁ הַמֶּ֔לֶךְ בַּחֹ֙דֶשׁ֙ הַשִּׁשִּׁ֔י בְּי֥וֹם אֶחָ֖ד לַחֹ֑דֶשׁ הָיָ֨ה דְבַר־יְהֹוָ֜ה בְּיַד־חַגַּ֣י הַנָּבִ֗יא אֶל־זְרֻבָּבֶ֚ל בֶּן־שְׁאַלְתִּיאֵל֙ פַּחַ֣ת יְהוּדָ֔ה וְאֶל־יְהוֹשֻׁ֧עַ בֶּן־יְהֽוֹצָדָ֛ק הַכֹּהֵ֥ן הַגָּד֖וֹל לֵאמֹֽר:",
+              "tn_en": "In the second year of King Darius, in the sixth month, on the first day of the month, the word of the Lord came to Haggai, the prophet to Zerubbabel son of Shealtiel, governor of Judah, and to Joshua son of Jehozadak the High Priest, saying:"
+            }
+          },
+          {
+            "verse": 2,
+            "texts": {
+              "tb": "\"Beginilah firman TUHAN semesta alam: Bangsa ini berkata: Sekarang belum tiba waktunya untuk membangun kembali rumah TUHAN!\"",
+              "bis": "TUHAN Yang Mahakuasa berkata kepada Hagai, \"Bangsa ini mengatakan bahwa belum waktunya untuk membangun kembali Rumah-Ku.\"",
+              "tl": "Demikianlah firman Tuhan serwa sekalian alam, bunyinya: Bahwa kata bangsa ini: Harinya belum sampai, yaitu hari rumah Tuhan dibangunkan pula.",
+              "ende": "Demikianlah Jahwe Balatentara bersabda: \"Kata bangsa ini: Kini belumlah sampai saatnja untuk membangun rumah Jahwe.\"",
+              "tb_itl_drf": "\"Beginilah <03541> firman <0559> TUHAN <03068> semesta alam <06635>: Bangsa <05971> ini <02088> berkata <0559>: Sekarang <06256> belum <03808> tiba <06256> waktunya <06256> untuk membangun <01129> kembali rumah <01004> TUHAN <03068>!\"",
+              "tl_itl_drf": "Demikianlah <03541> firman <0559> Tuhan <03068> serwa sekalian alam <06635>, bunyinya <0559>: Bahwa kata <0559> bangsa <05971> ini <02088>: Harinya <06256> belum <03808> sampai <0935>, yaitu hari <06256> rumah <01004> Tuhan <03068> dibangunkan <01129> pula.",
+              "bbe": "These are the words of the Lord of armies: These people say, The time has not come for building the Lord�s house.",
+              "message": "A Message from GOD-of-the-Angel-Armies: \"The people procrastinate. They say this isn't the right time to rebuild my Temple, the Temple of GOD.\"",
+              "nkjv": "\"Thus speaks the LORD of hosts, saying: `This people says, \"The time has not come, the time that the LORD'S house should be built.\"'\"",
+              "net": "The Lord who rules over all* says this: “These people have said, ‘The time for rebuilding the Lord’s temple has not yet come.’”*",
+              "net2": "**\n\n__\n\nThe Lord who rules over all⁽⁵⁾ says this: “These people have said, ‘The time for rebuilding the Lord’s temple has not yet come.’”⁽⁶⁾",
+              "nwt": "”Inilah yang dikatakan Yehuwa yang berbala tentara: ’Orang-orang ini berkata, ”Sekarang belum waktunya untuk membangun rumah Yehuwa.”’”",
+              "tn_he": "כֹּ֥ה אָמַ֛ר יְהֹוָ֥ה צְבָא֖וֹת לֵאמֹ֑ר הָעָ֚ם הַזֶּה֙ אָֽמְר֔וּ לֹ֥א עֶת־בֹּ֛א עֶת־בֵּ֥ית יְהֹוָ֖ה לְהִבָּנֽוֹת:",
+              "tn_en": "So said the Lord of Hosts, saying: This people has said, \"The time has not come-the time for the house of the Lord to be built.\""
+            }
+          },
+          {
+            "verse": 3,
+            "texts": {
+              "tb": "Maka datanglah firman TUHAN dengan perantaraan nabi Hagai, bunyinya:",
+              "bis": "Kemudian dengan perantaraan Nabi Hagai, TUHAN berkata kepada umat-Nya,",
+              "tl": "Maka datanglah firman Tuhan dengan lidah nabi Hajai, bunyinya:",
+              "ende": "Tetapi sabda Jahwe disampaikan dengan pengantaraan nabi Hagai:",
+              "tb_itl_drf": "Maka datanglah <01961> firman <01697> TUHAN <03068> dengan perantaraan <03027> nabi <05030> Hagai <02292>, bunyinya <0559>:",
+              "tl_itl_drf": "Maka datanglah <01961> firman <01697> Tuhan <03068> dengan lidah <03027> nabi <05030> Hajai <02292>, bunyinya <0559>:",
+              "bbe": "Then the word of the Lord came by Haggai the prophet, saying,",
+              "message": "Shortly after that, GOD said more and Haggai spoke it:",
+              "nkjv": "Then the word of the LORD came by Haggai the prophet, saying,",
+              "net": "So the Lord spoke through the prophet Haggai as follows:*",
+              "net2": "**\n\n__\n\nSo the Lord spoke through the prophet Haggai as follows:⁽⁷⁾",
+              "nwt": "Yehuwa berfirman lagi melalui Nabi Hagai,",
+              "tn_he": "וַֽיְהִי֙ דְּבַר־יְהֹוָ֔ה בְּיַד־חַגַּ֥י הַנָּבִ֖יא לֵאמֹֽר:",
+              "tn_en": "And the word of the Lord came through Haggai the prophet, saying:"
+            }
+          },
+          {
+            "verse": 4,
+            "texts": {
+              "tb": "\"Apakah sudah tiba waktunya bagi kamu untuk mendiami rumah-rumahmu yang dipapani dengan baik, sedang Rumah ini tetap menjadi reruntuhan?",
+              "bis": "\"Hai umat-Ku, apakah sudah waktunya bagimu untuk tinggal dalam rumah yang kuat dan kokoh, sedangkan Rumah-Ku masih berupa puing-puing?",
+              "tl": "Adakah ketika yang baik pada kamu akan duduk dalam rumah-rumahmu, yang elok perbuatannya, sedang rumah ini lagi rusak?",
+              "ende": "\"Sudahkah sekarang ini saatnja bagi kamu sendiri untuk diam di-rumah2 setjara terhormat, sedangkan Rumah ini tetap hantjur?",
+              "tb_itl_drf": "\"Apakah sudah tiba waktunya <06256> bagi kamu <0859> untuk mendiami <03427> rumah-rumahmu <01004> yang dipapani <05603> dengan baik, sedang Rumah <01004> ini <02088> tetap menjadi reruntuhan <02720>?",
+              "tl_itl_drf": "Adakah ketika <06256> yang baik pada kamu <0859> akan duduk <03427> dalam <01004> rumah-rumahmu <05603>, yang elok perbuatannya, sedang rumah <01004> ini <02088> lagi rusak <02720>?",
+              "bbe": "Is it a time for you to be living in roofed houses while this house is a waste?",
+              "message": "\"How is it that it's the 'right time' for you to live in your fine new homes while the Home, GOD's Temple, is in ruins?\"",
+              "nkjv": "\"[Is it] time for you yourselves to dwell in your paneled houses, and this temple [to lie] in ruins?\"",
+              "net": "“Is it right for you to live in richly paneled houses* while my temple is in ruins?*",
+              "net2": "**\n\n__\n\n“Is it right for you to live in richly paneled houses⁽⁸⁾ while my temple is in ruins?⁽⁹⁾",
+              "nwt": "”Apa sekarang waktunya kalian tinggal di rumah yang dilapisi kayu yang indah, sedangkan rumah-Ku masih hancur?",
+              "tn_he": "הַעֵ֚ת לָכֶם֙ אַתֶּ֔ם לָשֶׁ֖בֶת בְּבָֽתֵּיכֶ֣ם סְפוּנִ֑ים וְהַבַּ֥יִת הַזֶּ֖ה חָרֵֽב:",
+              "tn_en": "Is it [an appropriate] time for you yourselves to sit in your ceiled houses, when this house is in ruins?"
+            }
+          },
+          {
+            "verse": 5,
+            "texts": {
+              "tb": "Oleh sebab itu, beginilah firman TUHAN semesta alam: Perhatikanlah keadaanmu!",
+              "bis": "Coba, perhatikanlah keadaanmu!",
+              "tl": "Sekarangpun, demikianlah firman Tuhan serwa sekalian alam: Perhatikanlah segala jalanmu.",
+              "ende": "Nah sekarang, - demikianlah sabda Jahwe Balatentara - perhatikanlah baik2 pengalamanmu!",
+              "tb_itl_drf": "Oleh sebab <06258> itu, beginilah <03541> firman <0559> TUHAN <03068> semesta alam <06635>: Perhatikanlah <07760> keadaanmu <01870> <03824>!",
+              "tl_itl_drf": "Sekarangpun <06258>, demikianlah <03541> firman <0559> Tuhan <03068> serwa sekalian alam <06635>: Perhatikanlah <03824> segala jalanmu <01870>.",
+              "bbe": "For this cause the Lord of armies has said, Give thought to your ways.",
+              "message": "And then a little later, GOD-of-the-Angel-Armies spoke out again: \"Take a good, hard look at your life. Think it over.",
+              "nkjv": "Now therefore, thus says the LORD of hosts: \"Consider your ways!",
+              "net": "Here then is what the Lord who rules over all says: ‘Think carefully about what you are doing.*",
+              "net2": "**\n\n__\n\nHere then is what the Lord who rules over all says: ‘Think carefully about what you are doing.⁽¹⁰⁾",
+              "nwt": "Inilah yang dikatakan Yehuwa yang berbala tentara: ’Perhatikan apa yang kalian lakukan.",
+              "tn_he": "וְעַתָּ֕ה כֹּ֥ה אָמַ֖ר יְהֹוָ֣ה צְבָא֑וֹת שִׂ֥ימוּ לְבַבְכֶ֖ם עַל־דַּרְכֵיכֶֽם:",
+              "tn_en": "And now, so said the Lord of Hosts: Consider your ways."
+            }
+          },
+          {
+            "verse": 6,
+            "texts": {
+              "tb": "Kamu menabur banyak, tetapi membawa pulang hasil sedikit; kamu makan, tetapi tidak sampai kenyang; kamu minum, tetapi tidak sampai puas; kamu berpakaian, tetapi badanmu tidak sampai panas; dan orang yang bekerja untuk upah, ia bekerja untuk upah yang ditaruh dalam pundi-pundi yang berlobang!",
+              "bis": "Kamu telah menabur banyak benih, namun panenmu sedikit. Kamu ada makanan, tetapi tidak cukup untuk mengenyangkan perutmu. Kamu mempunyai anggur, tetapi tidak cukup untuk memuaskan hatimu. Kamu mempunyai pakaian, tetapi tidak cukup untuk menghangatkan dirimu. Dan upah yang diterima kaum buruh tidak cukup untuk menyambung hidup mereka.",
+              "tl": "Kamu menaburkan banyak, tetapi hasilnya hanya sedikit; kamu makan, tetapi bukan sampai kenyang; kamu minum, tetapi bukan sampai puas hati; kamu berpakai-pakai, tetapi bukan sampai suhu tubuhmu, dan barangsiapa yang menerima upah, ia itu menerima upahnya dalam pundi-pundi yang berpesok.",
+              "ende": "Banjaklah jang telah kamu taburkan, tetapi sedikitlah perolehannja. Kamu telah makan, tetapi tidak sampai mendjadi kenjang. Kamu telah minum, tetapi tidak sampai dipuaskan. Kamu telah berpakaian, tetapi tidak sampai dihangatkan. Orang upahan menerima upahnja dalam pundi2 jang ber-lubang2!",
+              "tb_itl_drf": "Kamu menabur <02232> banyak <07235>, tetapi membawa <0935> pulang hasil sedikit <04592>; kamu makan <0398>, tetapi tidak <0369> sampai kenyang <07654>; kamu minum <08354>, tetapi tidak <0369> sampai puas <07937>; kamu berpakaian <03847>, tetapi badanmu tidak <0369> sampai panas <02527>; dan orang yang bekerja <07936> untuk upah <07936>, ia bekerja <07936> untuk upah <07936> yang ditaruh dalam pundi-pundi <06872> yang berlobang <05344> <07936> <07936>!",
+              "tl_itl_drf": "Kamu menaburkan <02232> banyak <07235>, tetapi hasilnya <0935> hanya sedikit <04592>; kamu makan <0398>, tetapi bukan <0369> sampai kenyang <07654>; kamu minum <08354>, tetapi bukan <0369> sampai <07937> puas hati; kamu berpakai-pakai <0369>, tetapi bukan sampai <0413> suhu tubuhmu, dan barangsiapa <03847> yang menerima upah <07936>, ia itu menerima <07936> upahnya dalam pundi-pundi <06872> yang berpesok <05344> <07936> <07936> <02527> <03847> <07937>.",
+              "bbe": "Much has been planted, but little got in; you take food, but have not enough; you take drink, but are not full; you are clothed, but no one is warm; and he who gets payment for his work, gets it to put it into a bag full of holes.",
+              "message": "You have spent a lot of money, but you haven't much to show for it. You keep filling your plates, but you never get filled up. You keep drinking and drinking and drinking, but you're always thirsty. You put on layer after layer of clothes, but you can't get warm. And the people who work for you, what are they getting out of it? Not much--a leaky, rusted-out bucket, that's what.",
+              "nkjv": "\"You have sown much, and bring in little; You eat, but do not have enough; You drink, but you are not filled with drink; You clothe yourselves, but no one is warm; And he who earns wages, Earns wages [to put] into a bag with holes.\"",
+              "net": "You have planted much, but have harvested little. You eat, but are never filled. You drink, but are still thirsty. You put on clothes, but are not warm. Those who earn wages end up with holes in their money bags.’”*",
+              "net2": "**\n\n_The Instruction of the People_\n\nYou have planted much, but have harvested little. You eat, but are never filled. You drink, but are still thirsty. You put on clothes, but are not warm. Those who earn wages end up with holes in their money bags.’”⁽¹¹⁾ The Instruction of the People",
+              "nwt": "Kalian menabur banyak benih, tapi memanen sedikit. Kalian makan, tapi tidak sampai kenyang. Kalian minum, tapi tidak sampai puas. Kalian memakai baju, tapi tidak menjadi hangat. Orang yang bekerja pun menaruh gajinya dalam kantong yang bolong-bolong.’”",
+              "tn_he": "זְרַעְתֶּ֨ם הַרְבֵּ֜ה וְהָבֵ֣א מְעָ֗ט אָכ֚וֹל וְאֵֽין־לְשָׂבְעָה֙ שָׁת֣וֹ וְאֵֽין־לְשָׁכְרָ֔ה לָב֖וֹשׁ וְאֵֽין־לְחֹ֣ם ל֑וֹ וְהַ֨מִּשְׂתַּכֵּ֔ר מִשְׂתַּכֵּ֖ר אֶל־צְר֥וֹר נָקֽוּב:",
+              "tn_en": "You have sown much and you bring in little. You eat without being satiated. You drink without getting your fill. You dress, and it has no warmth. And he who profits, profits into a bundle with holes."
+            }
+          },
+          {
+            "verse": 7,
+            "texts": {
+              "tb": "Beginilah firman TUHAN semesta alam: Perhatikanlah keadaanmu!",
+              "bis": "Tidak sadarkah kamu, mengapa hal itu terjadi?",
+              "tl": "Demikianlah firman Tuhan serwa sekalian alam: Perhatikanlah segala jalanmu.",
+              "ende": "Demikianlah Jahwe Balatentara bersabda: \"Perhatikanlah baik2 pengalamanmu!",
+              "tb_itl_drf": "Beginilah <03541> firman <0559> TUHAN <03068> semesta alam <06635>: Perhatikanlah <07760> keadaanmu <01870> <03824>!",
+              "tl_itl_drf": "Demikianlah <03541> firman <0559> Tuhan <03068> serwa sekalian alam <06635>: Perhatikanlah <03824> segala jalanmu <01870>.",
+              "bbe": "This is what the Lord of armies has said: Give thought to your ways.",
+              "message": "That's why GOD-of-the-Angel-Armies said: \"Take a good, hard look at your life. Think it over.\"",
+              "nkjv": "Thus says the LORD of hosts: \"Consider your ways!",
+              "net": "“Moreover, the Lord who rules over all says: ‘Pay close attention to these things also.*",
+              "net2": "**\n\n__\n\n“Moreover, the Lord who rules over all says: ‘Pay close attention to these things also.⁽¹²⁾",
+              "nwt": "”Inilah yang dikatakan Yehuwa yang berbala tentara: ’Perhatikan apa yang kalian lakukan.’",
+              "tn_he": "כֹּ֥ה אָמַ֖ר יְהֹוָ֣ה צְבָא֑וֹת שִׂ֥ימוּ לְבַבְכֶ֖ם עַל־דַּרְכֵיכֶֽם:",
+              "tn_en": "So said the Lord of Hosts: Consider your ways."
+            }
+          },
+          {
+            "verse": 8,
+            "texts": {
+              "tb": "Jadi naiklah ke gunung, bawalah kayu dan bangunlah Rumah itu; maka Aku akan berkenan kepadanya dan akan menyatakan kemuliaan-Ku di situ, firman TUHAN.",
+              "bis": "Sekarang, naiklah ke bukit-bukit untuk mengambil kayu, lalu bangunlah Rumah-Ku; maka Aku akan merasa senang dan Aku akan disembah lagi dengan cara yang semestinya. Coba, perhatikanlah keadaanmu!",
+              "tl": "Pergilah kamu ke gunung meramu kayu dan bangunkanlah pula rumah ini, maka Aku kelak berkemah akan dia dan Akupun akan dipermuliakan, demikianlah firman Tuhan.",
+              "ende": "Naiklah kepegunungan untuk mendatangkan kaju, bangunlah Rumah ini. Aku akan berkenan padanja serta dipermuliakan didalamnja,\" - demikianlah sabda Jahwe -",
+              "tb_itl_drf": "Jadi naiklah <05927> ke gunung <02022>, bawalah <0935> kayu <06086> dan bangunlah <01129> Rumah <01004> itu; maka Aku akan berkenan <07521> kepadanya <0> dan akan menyatakan kemuliaan-Ku <03513> di situ, firman <0559> TUHAN <03068>.",
+              "tl_itl_drf": "Pergilah <05927> kamu ke gunung <02022> meramu <0935> kayu <06086> dan bangunkanlah <01129> pula rumah <01004> ini, maka Aku kelak berkemah <07521> akan dia <0> dan Akupun akan dipermuliakan <03513>, demikianlah firman <0559> Tuhan <03068>.",
+              "bbe": "Go up to the hills and get wood and put up the house; and I will take pleasure in it and be honoured, says the Lord.",
+              "message": "Then GOD said: \"Here's what I want you to do: Climb into the hills and cut some timber. Bring it down and rebuild the Temple. Do it just for me. Honor me.",
+              "nkjv": "\"Go up to the mountains and bring wood and build the temple, that I may take pleasure in it and be glorified,\" says the LORD.",
+              "net": "Go up to the hill country and bring back timber to build* the temple.* Then I will be pleased and honored,’* says the Lord.",
+              "net2": "**\n\n__\n\nGo up to the hill country and bring back timber to build⁽¹³⁾ the temple.⁽¹⁴⁾ Then I will be pleased and honored,’⁽¹⁵⁾ says the Lord.",
+              "nwt": "”Yehuwa berkata, ’Pergilah ke gunung dan ambillah kayu. Bangunlah rumah-Ku agar Aku senang dan dimuliakan.’”",
+              "tn_he": "עֲל֥וּ הָהָ֛ר וַֽהֲבֵאתֶ֥ם עֵ֖ץ וּבְנ֣וּ הַבָּ֑יִת וְאֶרְצֶה־בּ֥וֹ וְאֶכָּֽבְדָ֖ה (כתיב וְאֶכָּֽבְדָ֖)  אָמַ֥ר יְהֹוָֽה:",
+              "tn_en": "Ascend the mountain, bring wood, and build the house-and I will accept it, and I will be honored, said the Lord."
+            }
+          },
+          {
+            "verse": 9,
+            "texts": {
+              "tb": "Kamu mengharapkan banyak, tetapi hasilnya sedikit, dan ketika kamu membawanya ke rumah, Aku menghembuskannya. Oleh karena apa? demikianlah firman TUHAN semesta alam. Oleh karena rumah-Ku yang tetap menjadi reruntuhan, sedang kamu masing-masing sibuk dengan urusan rumahnya sendiri.",
+              "bis": "Kamu mengharapkan hasil panen yang berlimpah-limpah, tahu-tahu yang kamu dapat hanya sedikit sekali; kamu membawanya pulang, tetapi hasil panenmu itu Kuhembus, sehingga habis dibawa angin. Mengapa Kulakukan itu? Jawabnya ialah: Karena Rumah-Ku masih berupa puing-puing, sedangkan kamu semua giat membangun rumahmu masing-masing.",
+              "tl": "Bahwa kamu ingin akan banyak, maka kamu beroleh hanya sedikit, dan apabila kamu sudah membawa pulang akan dia, lalu Aku menghembus ke dalamnya. Mengapa maka begitu? demikianlah firman Tuhan serwa sekalian alam: Oleh karena sebab rumah-Ku yang rusak adanya, sedang hatimu bersukacita, masing-masing akan rumahnya sendiri.",
+              "ende": "Banjaklah jang telah kamu harapkan, tetapi sedikitlah djadinja! Djika kamu menghantar (sesuatu) ke Rumah ini, maka Kuembuskan itu! Mengapa gerangan? - itulah firman Jahwe Balatentara. Karena RumahKu masih tetap hantjur sadja, sedangkan kamu masing2 sibuk dengan rumahnja sendiri!",
+              "tb_itl_drf": "Kamu mengharapkan <06437> banyak <07235>, tetapi hasilnya <02009> sedikit <04592>, dan ketika kamu membawanya <0935> ke rumah <01004>, Aku menghembuskannya <05301>. Oleh <03282> karena apa <04100>? demikianlah <05002> firman TUHAN <03069> semesta alam <06635>. Oleh <03282> karena rumah-Ku <01004> yang <0834> tetap menjadi reruntuhan <02720>, sedang kamu <0859> masing-masing <0376> sibuk <07323> dengan urusan <0376> rumahnya <01004> sendiri.",
+              "tl_itl_drf": "Bahwa kamu ingin <06437> akan banyak <07235>, maka <02009> kamu beroleh hanya sedikit <04592>, dan apabila <0935> kamu sudah membawa <0935> pulang <01004> akan dia, lalu Aku menghembus <05301> ke dalamnya <0>. Mengapa <04100> maka begitu? demikianlah <05002> firman Tuhan <03069> serwa sekalian alam <06635>: Oleh karena sebab <03282> rumah-Ku <01004> yang <0834> rusak <02720> adanya, sedang <0859> hatimu bersukacita <07323>, masing-masing <0376> akan rumahnya <01004> sendiri <0859>.",
+              "bbe": "You were looking for much, and it came to little; and when you got it into your house, I took it away with a breath. Why? says the Lord of armies. Because of my house which is a waste, while every man takes care of the house which is his.",
+              "message": "You've had great ambitions for yourselves, but nothing has come of it. The little you have brought to my Temple I've blown away--there was nothing to it. \"And why?\" (This is a Message from GOD-of-the-Angel-Armies, remember.) \"Because while you've run around, caught up with taking care of your own houses, my Home is in ruins.",
+              "nkjv": "\"[You] looked for much, but indeed [it came to] little; and when you brought it home, I blew it away. Why?\" says the LORD of hosts. \"Because of My house that [is in] ruins, while every one of you runs to his own house.",
+              "net": "‘You expected a large harvest, but instead* there was little, and when you brought it home it disappeared right away.* Why?’ asks the Lord who rules over all. ‘Because my temple remains in ruins, thanks to each of you favoring his own house!*",
+              "net2": "**\n\n__\n\n‘You expected a large harvest, but instead⁽¹⁶⁾ there was little, and when you brought it home it disappeared right away.⁽¹⁷⁾ Why?’ asks the Lord who rules over all. ‘Because my temple remains in ruins, thanks to each of you favoring his own house!⁽¹⁸⁾",
+              "nwt": "”Yehuwa yang berbala tentara berkata, ’Kalian ingin mendapat banyak hasil panen, tapi hanya mendapat sedikit. Kalian membawanya ke rumah, tapi Aku meniupnya sampai hilang. Kenapa? Karena rumah-Ku tinggal reruntuhan sementara kalian sibuk mengurus rumah sendiri.",
+              "tn_he": "פָּנֹ֚ה אֶל־הַרְבֵּה֙ וְהִנֵּֽה־לִמְעָ֔ט וַֽהֲבֵאתֶ֥ם הַבַּ֖יִת וְנָפַ֣חְתִּי ב֑וֹ יַ֣עַן מֶ֗ה נְאֻם֙ יְהֹוָ֣ה צְבָא֔וֹת יַ֗עַן בֵּיתִי֙ אֲשֶׁר־ה֣וּא חָרֵ֔ב וְאַתֶּ֥ם רָצִ֖ים אִ֥ישׁ לְבֵיתֽוֹ:",
+              "tn_en": "You looked for much, and behold, it became little. And you brought it home, and I will blow into it. Because of what? says the Lord of Hosts, Because of My house that is lying in ruins. Yet you run, each to his house."
+            }
+          },
+          {
+            "verse": 10,
+            "texts": {
+              "tb": "Itulah sebabnya langit menahan embunnya dan bumi menahan hasilnya,",
+              "bis": "Itulah sebabnya hujan tidak kunjung turun sehingga tak ada tanaman yang bisa tumbuh.",
+              "tl": "Maka sebab itu langitpun menahani air embun dari padamu dan bumipun menahani hasilnya dari padamu.",
+              "ende": "Karena itulah langit menahan hudjan turun diatasmu dan bumipun menahan hasilnja!",
+              "tb_itl_drf": "Itulah <05921> sebabnya <03651> langit <08064> menahan <03607> embunnya <02919> dan bumi <0776> menahan <03607> hasilnya <02981>,",
+              "tl_itl_drf": "Maka sebab <03651> itu langitpun <08064> menahani <03607> air embun <02919> dari padamu dan bumipun <0776> menahani <03607> hasilnya <02981> dari padamu.",
+              "bbe": "For this cause the heaven over you is kept from giving dew, and the earth from giving her fruit.",
+              "message": "That's why. Because of your stinginess. And so I've given you a dry summer and a skimpy crop.",
+              "nkjv": "\"Therefore the heavens above you withhold the dew, and the earth withholds its fruit.",
+              "net": "This is why the sky* has held back its dew and the earth its produce.*",
+              "net2": "**\n\n__\n\nThis is why the sky⁽¹⁹⁾ has held back its dew and the earth its produce.⁽²⁰⁾",
+              "nwt": "Maka embun tidak turun dari langit, dan tanah menahan hasilnya.",
+              "tn_he": "עַל־כֵּ֣ן עֲלֵיכֶ֔ם כָּֽלְא֥וּ שָׁמַ֖יִם מִטָּ֑ל וְהָאָ֖רֶץ כָּֽלְאָ֥ה יְבוּלָֽהּ:",
+              "tn_en": "Therefore because of you the heavens have kept back, so that there is no dew, and the earth has kept back its produce."
+            }
+          },
+          {
+            "verse": 11,
+            "texts": {
+              "tb": "dan Aku memanggil kekeringan datang ke atas negeri, ke atas gunung-gunung, ke atas gandum, ke atas anggur, ke atas minyak, ke atas segala yang dihasilkan tanah, ke atas manusia dan hewan dan ke atas segala hasil usaha.\"",
+              "bis": "Aku telah mendatangkan kekeringan atas tanah dan bukit-bukit, atas ladang-ladang gandum dan kebun-kebun anggur serta kebun-kebun zaitun, dan atas segala tumbuh-tumbuhan di tanah ini, bahkan juga atas manusia dan hewan serta segala sesuatu yang kamu usahakan.\"",
+              "tl": "Karena Aku sudah memanggil suatu kekeringan datang atas tanah itu dan atas segala gunung dan atas gandum dan atas air anggur dan atas minyak dan atas segala hasil bumi dan atas segala manusia dan atas segala binatang dan atas segala perbuatan tangan.",
+              "ende": "Maka Kupanggilkan kekeringan atas negeri dan gunung-gemunung, atas gandum, air anggur dan minjak, atas (segala apa) jang ditumbuhkan tanah, atas manusia dan hewan dan atas segala pekerdjaan tangan!\"",
+              "tb_itl_drf": "dan Aku memanggil <07121> kekeringan <02721> datang ke atas <05921> negeri <0776>, ke atas <05921> gunung-gunung <02022>, ke atas <05921> gandum <01715>, ke atas <05921> anggur <08492>, ke atas <05921> minyak <03323>, ke atas <05921> segala <03605> yang <0834> dihasilkan <03318> tanah <0127>, ke atas <05921> manusia <0120> dan hewan <0929> dan ke atas <05921> segala <03605> hasil <03018> usaha <03709>.\"",
+              "tl_itl_drf": "Karena Aku sudah memanggil <07121> suatu kekeringan <02721> datang atas <05921> tanah <0776> itu dan atas <05921> segala gunung <02022> dan atas <05921> gandum <01715> dan atas <05921> air anggur <08492> dan atas <05921> minyak <03323> dan atas <05921> segala <03605> hasil <03318> bumi <0127> dan atas <05921> segala manusia <0120> dan atas <05921> segala binatang <0929> dan atas <05921> segala <03605> perbuatan <03018> tangan <03709>.",
+              "bbe": "And by my order no rain came on the land or on the mountains or the grain or the wine or the oil or the produce of the earth or on men or cattle or on any work of man�s hands.",
+              "message": "I've matched your tight-fisted stinginess by decreeing a season of drought, drying up fields and hills, withering gardens and orchards, stunting vegetables and fruit. Nothing--not man or woman, not animal or crop--is going to thrive.\"",
+              "nkjv": "\"For I called for a drought on the land and the mountains, on the grain and the new wine and the oil, on whatever the ground brings forth, on men and livestock, and on all the labor of [your] hands.\"",
+              "net": "Moreover, I have called for a drought that will affect the fields, the hill country, the grain, new wine, fresh olive oil, and everything that grows from the ground; it also will harm people, animals, and everything they produce.’”*",
+              "net2": "**\n\n_The Response of the People_\n\nMoreover, I have called for a drought that will affect the fields, the hill country, the grain, new wine, fresh olive oil, and everything that grows from the ground; it also will harm people, animals, and everything they produce.’”⁽²¹⁾ The Response of the People",
+              "nwt": "Aku terus membuat tanah dan gunung kalian menjadi kering, sehingga ada kekurangan biji-bijian, anggur, minyak, dan tanaman. Kalian maupun ternak kalian menderita, dan kerja keras kalian sia-sia.’”",
+              "tn_he": "וָֽאֶקְרָ֨א חֹ֜רֶב עַל־הָאָ֣רֶץ וְעַל־הֶֽהָרִ֗ים וְעַל־הַדָּגָן֙ וְעַל־הַתִּיר֣וֹשׁ וְעַל־הַיִּצְהָ֔ר וְעַ֛ל אֲשֶׁ֥ר תּוֹצִ֖יא הָֽאֲדָמָ֑ה וְעַל־הָֽאָדָם֙ וְעַל־הַבְּהֵמָ֔ה וְעַ֖ל כָּל־יְגִ֥יעַ כַּפָּֽיִם:",
+              "tn_en": "And I called for a drought upon the land, and upon the mountains, and upon the grain, and upon the wine, and upon the oil, and upon everything that the ground will bring forth-and upon man, and upon beast, and upon all the labor of their hands."
+            }
+          },
+          {
+            "verse": 12,
+            "texts": {
+              "tb": "Lalu Zerubabel bin Sealtiel dan Yosua bin Yozadak, imam besar, dan selebihnya dari bangsa itu mendengarkan suara TUHAN, Allah mereka, dan juga perkataan nabi Hagai, sesuai dengan apa yang disuruhkan kepadanya oleh TUHAN, Allah mereka; lalu takutlah bangsa itu kepada TUHAN.",
+              "bis": "Kemudian Zerubabel dan Yosua serta seluruh umat Israel yang telah kembali dari pembuangan di Babel, mentaati kata-kata Hagai, utusan TUHAN itu. Mereka melakukan apa yang diperintahkan TUHAN kepada mereka, karena takut kepada TUHAN.",
+              "tl": "Hata, maka pada masa itu didengarlah oleh Zerubbabil bin Sealtiel dan Yosua bin Yozadak, imam besar, dan segala orang lain itu akan bunyi firman Tuhan, Allahnya, dan akan sabda nabi Hajai, yang telah disuruhkan oleh Tuhan, Allahnya; maka takutlah orang banyak itu di hadapan hadirat Tuhan.",
+              "ende": "Zerubabel bin Sjealtiel dan imam-agung Jesjua' bin Josadak ber-sama2 dengan seluruh rakjat jang tersisa mendengarkan suara Jahwe, Allah mereka, dan perkataan nabi Hagai, sebagaimana ia diutus Jahwe kepada mereka. Dan rakjat merasa takut terhadap Jahwe.",
+              "tb_itl_drf": "Lalu <08085> Zerubabel <02216> bin <01121> Sealtiel <07597> dan Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>, dan selebihnya <07611> dari bangsa <05971> itu mendengarkan <08085> suara <06963> TUHAN <03068>, Allah <0430> mereka, dan juga perkataan <01697> nabi <05030> Hagai <02292>, sesuai dengan apa yang <0834> disuruhkan <07971> kepadanya oleh TUHAN <03068>, Allah <0430> mereka; lalu takutlah <03372> bangsa <05971> itu kepada TUHAN <03068>.",
+              "tl_itl_drf": "Hata <08085>, maka pada masa itu didengarlah <08085> oleh Zerubbabil <02216> bin <01121> Sealtiel <07597> dan Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>, dan segala <03605> orang lain <07611> itu akan bunyi <06963> firman Tuhan <03068>, Allahnya <0430>, dan akan sabda <01697> nabi <05030> Hajai <02292>, yang telah <0834> disuruhkan <07971> oleh Tuhan <03068>, Allahnya <0430>; maka takutlah <03372> orang banyak <05971> itu di hadapan <06440> hadirat Tuhan <03068>.",
+              "bbe": "Then Zerubbabel, the son of Shealtiel, and Joshua, the son of Jehozadak, the high priest, and all the rest of the people, gave ear to the voice of the Lord their God and to the words of Haggai the prophet, because the Lord their God had sent him, and the people were in fear before the Lord.",
+              "message": "Then the governor, Zerubbabel son of Shealtiel, and the high priest, Joshua son of Jehozadak, and all the people with them listened, really listened, to the voice of their GOD. When GOD sent the prophet Haggai to them, they paid attention to him. In listening to Haggai, they honored GOD.",
+              "nkjv": "Then Zerubbabel the son of Shealtiel, and Joshua the son of Jehozadak, the high priest, with all the remnant of the people, obeyed the voice of the LORD their God, and the words of Haggai the prophet, as the LORD their God had sent him; and the people feared the presence of the LORD.",
+              "net": "Then Zerubbabel son of Shealtiel and the high priest Joshua son of Jehozadak,* along with the whole remnant of the people,* obeyed* the Lord their God. They responded favorably to the message of the prophet Haggai, who spoke just as the Lord their God had instructed him,* and the people began to respect the Lord.*",
+              "net2": "**\n\n__\n\nThen Zerubbabel son of Shealtiel and the high priest Joshua son of Jehozadak,⁽²²⁾ along with the whole remnant of the people,⁽²³⁾ obeyed⁽²⁴⁾ the Lord their God. They responded favorably to the message of the prophet Haggai, who spoke just as the Lord their God had instructed him,⁽²⁵⁾ and the people began to respect the Lord.⁽²⁶⁾",
+              "nwt": "Zerubabel anak Syealtiel, Imam Besar Yosua anak Yehozadak, dan seluruh bangsa itu pun menaati kata-kata Yehuwa, Allah mereka, dan kata-kata Nabi Hagai, karena Yehuwa, Allah mereka, telah mengutus dia. Bangsa itu pun mulai takut kepada Yehuwa.",
+              "tn_he": "וַיִּשְׁמַ֣ע זְרֻבָּבֶ֣ל | בֶּן־שַׁלְתִּיאֵ֡ל וִֽיהוֹשֻׁ֣עַ בֶּן־יְהֽוֹצָדָק֩ הַכֹּהֵ֨ן הַגָּד֜וֹל וְכֹ֣ל | שְׁאֵרִ֣ית הָעָ֗ם בְּקוֹל֙ יְהֹוָ֣ה אֱלֹֽהֵיהֶ֔ם וְעַל־דִּבְרֵי֙ חַגַּ֣י הַנָּבִ֔יא כַּֽאֲשֶׁ֥ר שְׁלָח֖וֹ יְהֹוָ֣ה אֱלֹֽהֵיהֶ֑ם וַיִּֽירְא֥וּ הָעָ֖ם מִפְּנֵ֥י יְהֹוָֽה:",
+              "tn_en": "And Zerubbabel the son of Shaltiel, and Joshua the son of Jehozadak the High Priest, and all the remnant of the people heeded the command of the Lord their God and the words of Haggai the prophet, as the Lord their God had sent him, and the people feared the Lord."
+            }
+          },
+          {
+            "verse": 13,
+            "texts": {
+              "tb": "Maka berkatalah Hagai, utusan TUHAN itu, menurut pesan TUHAN kepada bangsa itu, demikian: \"Aku ini menyertai kamu, demikianlah firman TUHAN.\"",
+              "bis": "Lalu Hagai menyampaikan kepada rakyat pesan TUHAN bahwa TUHAN telah berjanji akan melindungi mereka.",
+              "tl": "Maka kata Hajai, utusan Tuhan itu, dengan firman Tuhan kepada orang banyak itu begini: Bahwa Aku adalah menyertai kamu! demikianlah firman Tuhan.",
+              "ende": "Lalu berkatalah Hagai, utusan Jahwe, menurut suruhan Jahwe kepada rakjat: \"Aku beserta dengan kamu\" - itulah firman Jahwe -",
+              "tb_itl_drf": "Maka berkatalah <0559> Hagai <02292>, utusan <04397> TUHAN <03068> itu, menurut pesan <04400> TUHAN <03068> kepada bangsa <05971> itu, demikian <0559>: \"Aku <0589> ini menyertai <0854> kamu, demikianlah <05002> firman TUHAN <03068>.\"",
+              "tl_itl_drf": "Maka kata <0559> Hajai <02292>, utusan <04397> Tuhan <03068> itu, dengan firman <04400> Tuhan <03068> kepada orang banyak <05971> itu begini <0559>: Bahwa Aku <0589> adalah menyertai <0854> kamu! demikianlah <05002> firman Tuhan <03068>.",
+              "bbe": "Then Haggai, whom the Lord had sent to give his words to the people, said, I am with you, says the Lord.",
+              "message": "Then Haggai, GOD's messenger, preached GOD's Message to the people: \"I am with you!\" GOD's Word.",
+              "nkjv": "Then Haggai, the LORD'S messenger, spoke the LORD'S message to the people, saying, \"I [am] with you, says the LORD.\"",
+              "net": "Then Haggai, the Lord’s messenger, spoke the Lord’s word to the people:* “I am with you!” says the Lord.",
+              "net2": "**\n\n__\n\nThen Haggai, the Lord’s messenger, spoke the Lord’s word to the people:⁽²⁷⁾ “I am with you!” says the Lord.",
+              "nwt": "Lalu sesuai dengan perintah Yehuwa, Hagai, utusan Yehuwa itu, menyampaikan pesan ini kepada bangsa itu: ”Yehuwa berkata, ’Aku menyertai kalian.’”",
+              "tn_he": "וַ֠יֹּאמֶר חַגַּ֞י מַלְאַ֧ךְ יְהֹוָ֛ה בְּמַלְאֲכ֥וּת יְהֹוָ֖ה לָעָ֣ם לֵאמֹ֑ר אֲנִ֥י אִתְּכֶ֖ם נְאֻם־יְהֹוָֽה:",
+              "tn_en": "And Haggai, the messenger of the Lord, said in [fulfilling] the Lord's mission to the people, saying: I am with you, says the Lord."
+            }
+          },
+          {
+            "verse": 14,
+            "texts": {
+              "tb": "TUHAN menggerakkan semangat Zerubabel bin Sealtiel, bupati Yehuda, dan semangat Yosua bin Yozadak, imam besar, dan semangat selebihnya dari bangsa itu, maka datanglah mereka, lalu melakukan pekerjaan pembangunan rumah TUHAN semesta alam, Allah mereka,",
+              "bis": "Demikianlah TUHAN menggerakkan hati Gubernur Zerubabel, Imam Agung Yosua serta semua orang yang telah kembali dari pembuangan, supaya mereka semua bekerja membangun Rumah TUHAN Yang Mahakuasa, Allah mereka.",
+              "tl": "Maka dijagakan Tuhan hati Zerubbabil bin Sealtiel, penghulu Yehuda, dan hati Yosua bin Yozadak, imam besar, dan hati segenap orang banyak yang lagi tinggal itu, lalu datanglah mereka itu mengerjakan pekerjaan rumah Tuhan serwa sekalian alam, yaitu Allah mereka itu.",
+              "ende": "Maka Jahwe menggerakkan budi Zerubabel bin Sjealtiel, adipati Juda, budi imam-agung Jesjua' bin Josadak dan djuga budi seluruh rakjat jang tersisa itu, sehingga mereka pergi melaksanakan pekerdjaan pada rumah Jahwe Balatentara, Allah mereka.",
+              "tb_itl_drf": "TUHAN <03068> menggerakkan <05782> semangat <07307> Zerubabel <02216> bin <01121> Sealtiel <07597>, bupati <06346> Yehuda <03063>, dan semangat <07307> Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>, dan semangat <07307> selebihnya <07611> dari bangsa <05971> itu, maka datanglah <0935> mereka, lalu melakukan <06213> pekerjaan <04399> pembangunan rumah <01004> TUHAN <03068> semesta alam <06635>, Allah <0430> mereka,",
+              "tl_itl_drf": "Maka dijagakan <05782> Tuhan <03068> hati <07307> Zerubbabil <02216> bin <01121> Sealtiel <07597>, penghulu <06346> Yehuda <03063>, dan hati <07307> Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>, dan hati <07307> segenap <03605> orang banyak <05971> yang lagi tinggal <07611> itu, lalu datanglah <0935> mereka itu mengerjakan <06213> pekerjaan <04399> rumah <01004> Tuhan <03068> serwa sekalian alam <06635>, yaitu Allah <0430> mereka <0> itu.",
+              "bbe": "And the spirit of Zerubbabel, the son of Shealtiel, ruler of Judah, was moved by the Lord, as was the spirit of Joshua, the son of Jehozadak, the high priest, and the spirit of all the rest of the people; and they came and did work in the house of the Lord of armies, their God.",
+              "message": "This is how GOD got Zerubbabel, Joshua, and all the people moving--got them working on the Temple of GOD-of-the-Angel-Armies.",
+              "nkjv": "So the LORD stirred up the spirit of Zerubbabel the son of Shealtiel, governor of Judah, and the spirit of Joshua the son of Jehozadak, the high priest, and the spirit of all the remnant of the people; and they came and worked on the house of the LORD of hosts, their God,",
+              "net": "So the Lord energized and encouraged* Zerubbabel* son of Shealtiel, governor of Judah, the high priest Joshua son of Jehozadak,* and the whole remnant of the people.* They came and worked on the temple of their God, the Lord who rules over all.",
+              "net2": "**\n\n__\n\nSo the Lord energized and encouraged⁽²⁸⁾ Zerubbabel⁽²⁹⁾ son of Shealtiel, governor of Judah, the high priest Joshua son of Jehozadak,⁽³⁰⁾ and the whole remnant of the people.⁽³¹⁾ They came and worked on the temple of their God, the Lord who rules over all.",
+              "nwt": "Maka, Yehuwa menggerakkan hati Zerubabel anak Syealtiel, gubernur Yehuda itu, dan Yosua anak Yehozadak, imam besar itu, juga seluruh bangsa itu. Mereka pun membangun rumah Yehuwa yang berbala tentara, Allah mereka.",
+              "tn_he": "וַיָּ֣עַר יְהֹוָ֡ה אֶת־רוּחַ֩ זְרֻבָּבֶ֨ל בֶּן־שַׁלְתִּיאֵ֜ל פַּחַ֣ת יְהוּדָ֗ה וְאֶת־ר֙וּחַ֙ יְהוֹשֻׁ֚עַ בֶּן־יְהֽוֹצָדָק֙ הַכֹּהֵ֣ן הַגָּד֔וֹל וְֽאֶ֨ת־ר֔וּחַ כֹּ֖ל שְׁאֵרִ֣ית הָעָ֑ם וַיָּבֹ֙אוּ֙ וַיַּֽעֲשׂ֣וּ מְלָאכָ֔ה בְּבֵֽית־יְהֹוָ֥ה צְבָא֖וֹת אֱלֹהֵיהֶֽם:",
+              "tn_en": "And the Lord inspired the spirit of Zerubbabel the son of Shaltiel, the governor of Judah, and the spirit of Joshua the son of Jehozadak the High Priest, and the spirit of all the remnant of the people, and they came and performed labor in the house of the Lord of Hosts, their God"
+            }
+          },
+          {
+            "verse": 15,
+            "texts": {
+              "tb": "(2-1a) pada hari yang kedua puluh empat dalam bulan yang keenam. (2-1b) Pada tahun yang kedua zaman raja Darius,",
+              "bis": "Mereka mulai bekerja pada tanggal dua puluh empat, bulan enam dalam tahun kedua masa pemerintahan Raja Darius.",
+              "tl": "(2-1) Hata, maka pada empat likur hari bulan, pada bulan yang keenam dan pada tahun yang kedua dari pada kerajaan Darius,",
+              "ende": "Adapun harinja ialah: tanggal dua puluh empat bulan keenam. (2-1) Dalam tahun kedua radja Darios",
+              "tb_itl_drf": "(2-1a) pada hari <03117> yang kedua puluh <06242> empat <0702> dalam bulan <02320> yang keenam <08345>. (2-1b) Pada tahun <08141> yang kedua <08147> zaman raja <04428> Darius <01867>,",
+              "tl_itl_drf": "(2-1) Hata, maka pada empat <0702> likur <06242> hari <03117> bulan, pada bulan <02320> yang keenam <08345> dan pada tahun <08141> yang kedua <08147> dari pada kerajaan <04428> Darius <01867>,",
+              "bbe": "On the twenty-fourth day of the month, in the sixth month, in the second year of Darius the king.",
+              "message": "This happened on the twenty-fourth day of the sixth month in the second year of King Darius.",
+              "nkjv": "on the twentyfourth day of the sixth month, in the second year of King Darius.",
+              "net": "This took place on the twenty-fourth day of the sixth month of King Darius’ second year.*",
+              "net2": "**\n\n_The Glory to Come_\n\nThis took place on the twenty-fourth day of the sixth month of King Darius’ second year.⁽³²⁾ The Glory to Come",
+              "nwt": "Ini terjadi pada hari ke-24 bulan ke-6, pada tahun kedua pemerintahan Raja Darius.",
+              "tn_he": "בְּי֨וֹם עֶשְׂרִ֧ים וְאַרְבָּעָ֛ה לַחֹ֖דֶשׁ בַּשִּׁשִּׁ֑י בִּשְׁנַ֥ת שְׁתַּ֖יִם לְדָֽרְיָ֥וֶשׁ הַמֶּֽלֶךְ:",
+              "tn_en": "on the twenty-fourth day of the month, in the sixth [month], in the second year of King Darius."
+            }
+          }
+        ],
+        "totalVerses": 15,
+        "aid": 16203,
+        "nextAid": 16204,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 37,
+        "chapter": 2,
+        "verses": [
+          {
+            "verse": 1,
+            "texts": {
+              "tb": "(2-2) dalam bulan yang ketujuh, pada tanggal dua puluh satu bulan itu, datanglah firman TUHAN dengan perantaraan nabi Hagai, bunyinya:",
+              "bis": "Pada tanggal dua puluh satu, bulan tujuh dalam tahun itu juga, TUHAN berbicara lagi melalui Nabi Hagai.",
+              "tl": "(2-2) pada bulan yang ketujuh, pada selikur hari bulan itu, datanglah firman Tuhan dengan lidah nabi Hajai, bunyinya:",
+              "ende": "dalam bulan ketudjuh disampaikanlah sabda Jahwe ini dengan pengantaraan nabi Hagai:",
+              "tb_itl_drf": "(2-2) dalam bulan yang ketujuh <07637>, pada tanggal dua puluh <06242> satu <0259> bulan <02320> itu, datanglah <01961> firman <01697> TUHAN <03068> dengan perantaraan <03027> nabi <05030> Hagai <02292>, bunyinya <0559>:",
+              "tl_itl_drf": "(2-2) pada bulan yang ketujuh <07637>, pada selikur <06242> hari bulan <02320> itu, datanglah <01961> firman <01697> Tuhan <03068> dengan lidah <03027> nabi <05030> Hajai <02292>, bunyinya <0559>:",
+              "bbe": "In the seventh month, on the twenty-first day of the month, the word of the Lord came by Haggai the prophet, saying,",
+              "message": "On the twenty-first day of the seventh month, the Word of GOD came through the prophet Haggai: \"Tell Governor Zerubbabel son of Shealtiel and High Priest Joshua son of Jehozadak",
+              "nkjv": "In the seventh [month], on the twentyfirst of the month, the word of the LORD came by Haggai the prophet, saying:",
+              "net": "On the twenty-first day of the seventh month,* the Lord spoke again through the prophet Haggai:*",
+              "net2": "**\n\n__\n\nOn the twenty-first day of the seventh month,⁽³³⁾ the Lord spoke again through the prophet Haggai:⁽³⁴⁾",
+              "nwt": "Pada bulan ke-7, pada hari ke-21 bulan itu, Yehuwa berfirman melalui Nabi Hagai, ”Tanyakanlah kepada Zerubabel anak Syealtiel, gubernur Yehuda itu, dan Imam Besar Yosua anak Yehozadak, juga seluruh bangsa itu:",
+              "tn_he": "בַּשְּׁבִיעִ֕י בְּעֶשְׂרִ֥ים וְאֶחָ֖ד לַחֹ֑דֶשׁ הָיָה֙ דְּבַר־יְהֹוָ֔ה בְּיַד־חַגַּ֥י הַנָּבִ֖יא לֵאמֹֽר:",
+              "tn_en": "In the seventh [month], on the twenty-first of the month, the word of the Lord came through Haggai the prophet, saying:"
+            }
+          },
+          {
+            "verse": 2,
+            "texts": {
+              "tb": "(2-3) \"Katakanlah kepada Zerubabel bin Sealtiel, bupati Yehuda, dan kepada Yosua bin Yozadak, imam besar, dan kepada selebihnya dari bangsa itu, demikian:",
+              "bis": "TUHAN menyuruh Hagai berbicara kepada Gubernur Zerubabel, Imam Agung Yosua, serta rakyat untuk menyampaikan pesan ini,",
+              "tl": "(2-3) Katakanlah sekarang kepada Zerubbabil bin Sealtiel, penghulu Yehuda, dan kepada Yosua bin Yozadak, imam besar, dan kepada orang yang lagi tinggal itu, demikian:",
+              "ende": "\"Katakanlah kepada Zerubabel bin Sjealtiel, adipati Juda, dan kepada imam-agung Jesjua' bin Josadak dan kepada (seluruh) rakjat jang tersisa:",
+              "tb_itl_drf": "(2-3) \"Katakanlah <0559> kepada <0413> Zerubabel <02216> bin <01121> Sealtiel <07597>, bupati <06346> Yehuda <03063>, dan kepada <0413> Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>, dan kepada <0413> selebihnya <07611> dari bangsa <05971> itu, demikian <0559>:",
+              "tl_itl_drf": "(2-3) Katakanlah <0559> sekarang <04994> kepada <0413> Zerubbabil <02216> bin <01121> Sealtiel <07597>, penghulu <06346> Yehuda <03063>, dan kepada <0413> Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>, dan kepada <0413> orang yang lagi tinggal <07611> itu, demikian <0559>:",
+              "bbe": "Say now to Zerubbabel, the son of Shealtiel, ruler of Judah, and to Joshua, the son of Jehozadak, the high priest, and to the rest of the people,",
+              "message": "and all the people:",
+              "nkjv": "\"Speak now to Zerubbabel the son of Shealtiel, governor of Judah, and to Joshua the son of Jehozadak, the high priest, and to the remnant of the people, saying:",
+              "net": "“Ask the following questions to* Zerubbabel son of Shealtiel, governor of Judah, the high priest Joshua son of Jehozadak,* and the remnant of the people:",
+              "net2": "**\n\n__\n\n“Ask the following questions to⁽³⁵⁾ Zerubbabel son of Shealtiel, governor of Judah, the high priest Joshua son of Jehozadak,⁽³⁶⁾ and the remnant of the people:",
+              "nwt": "’Siapa di antara kalian yang pernah melihat betapa megahnya rumah-Ku ini dulu? Bagaimana dengan yang sekarang? Dibanding dulu, yang sekarang tidak ada apa-apanya, kan?’",
+              "tn_he": "אֱמָר־נָ֗א אֶל־זְרֻבָּבֶ֚ל בֶּן־שַׁלְתִּיאֵל֙ פַּחַ֣ת יְהוּדָ֔ה וְאֶל־יְהוֹשֻׁ֥עַ בֶּן־יְהֽוֹצָדָ֖ק הַכֹּהֵ֣ן הַגָּד֑וֹל וְאֶל־שְׁאֵרִ֥ית הָעָ֖ם לֵאמֹֽר:",
+              "tn_en": "Say now to Zerubbabel the son of Shaltiel, the governor of Judah, and to Joshua the son of Jehozadak the High Priest, and to the remnant of the people, saying:"
+            }
+          },
+          {
+            "verse": 3,
+            "texts": {
+              "tb": "(2-4) Masih adakah di antara kamu yang telah melihat Rumah ini dalam kemegahannya semula? Dan bagaimanakah kamu lihat keadaannya sekarang? Bukankah keadaannya di matamu seperti tidak ada artinya?",
+              "bis": "\"Adakah di antara kamu yang masih ingat betapa megahnya Rumah-Ku ini dahulu? Sekarang bagaimana keadaannya, menurut pendapatmu? Bukankah sama sekali tidak memuaskan?",
+              "tl": "(2-4) Siapa yang tinggal di antara kamu, yang telah mengetahui akan rumah ini dengan kemuliaannya yang dahulu itu? Maka bagaimana adanya kamu melihat dia sekarang? Bukankah kepada pemandanganmu seakan-akan satupun tiada adanya?",
+              "ende": "Siapakah dari antara kamu jang masih tersisa itu, telah melihat Rumah ini dalam kemuliaannja jang semula? Dan bagaimana gerangan kamu melihatnja sekarang ini? Tidakkah itu seperti bukan apa2 dalam pandanganmu?",
+              "tb_itl_drf": "(2-4) Masih <07604> adakah <04310> di antara <07604> kamu yang <0834> telah melihat <07200> Rumah <01004> ini <02088> dalam kemegahannya <03519> semula <07223>? Dan bagaimanakah <04100> kamu <0859> lihat <07200> keadaannya <07604> sekarang <06258>? Bukankah <03808> keadaannya <03644> di matamu <05869> seperti tidak <0369> ada artinya?",
+              "tl_itl_drf": "(2-4) Siapa <04310> yang tinggal <07604> di antara kamu, yang telah <0834> mengetahui <07200> akan rumah <01004> ini <02088> dengan kemuliaannya <03519> yang dahulu <07223> itu? Maka bagaimana <04100> adanya kamu <0859> melihat <07200> dia sekarang <06258>? Bukankah <03808> kepada pemandanganmu <05869> seakan-akan <03644> satupun tiada <0369> adanya?",
+              "bbe": "Who is there still among you who saw this house in its first glory? and how do you see it now? is it not in your eyes as nothing?",
+              "message": "'Is there anyone here who saw the Temple the way it used to be, all glorious? And what do you see now? Not much, right?",
+              "nkjv": "`Who is left among you who saw this temple in its former glory? And how do you see it now? In comparison with it, [is this] not in your eyes as nothing?",
+              "net": "‘Who among you survivors saw the former splendor of this temple?* How does it look to you now? Isn’t it nothing by comparison?",
+              "net2": "**\n\n__\n\n‘Who among you survivors saw the former splendor of this temple?⁽³⁷⁾ How does it look to you now? Isn’t it nothing by comparison?",
+              "nwt": "”’Tapi kuatkan dirimu, Zerubabel,’ kata Yehuwa, ’dan kuatkan dirimu, Imam Besar Yosua anak Yehozadak.’ ”Yehuwa berkata, ’Seluruh rakyat negeri ini, kuatkan diri kalian, dan bekerjalah.’ ”’Sebab Aku menyertai kalian,’ kata Yehuwa yang berbala tentara.",
+              "tn_he": "מִ֚י בָכֶם֙ הַנִּשְׁאָ֔ר אֲשֶׁ֚ר רָאָה֙ אֶת־הַבַּ֣יִת הַזֶּ֔ה בִּכְבוֹד֖וֹ הָֽרִאשׁ֑וֹן וּמָ֨ה אַתֶּ֜ם רֹאִ֚ים אֹתוֹ֙ עַ֔תָּה הֲל֥וֹא כָמֹ֛הוּ כְּאַ֖יִן בְּעֵינֵיכֶֽם:",
+              "tn_en": "Who among you is left, who saw this house in its former glory? And as you see it now, is it not as nothing in your eyes?"
+            }
+          },
+          {
+            "verse": 4,
+            "texts": {
+              "tb": "(2-5) Tetapi sekarang, kuatkanlah hatimu, hai Zerubabel, demikianlah firman TUHAN; kuatkanlah hatimu, hai Yosua bin Yozadak, imam besar; kuatkanlah hatimu, hai segala rakyat negeri, demikianlah firman TUHAN; bekerjalah, sebab Aku ini menyertai kamu, demikianlah firman TUHAN semesta alam,",
+              "bis": "Namun, janganlah putus asa, hai kamu semua! Teruskanlah pekerjaan itu, sebab Aku akan tetap membantu kamu.",
+              "tl": "(2-5) Tetapi sekarang pertetapkanlah hatimu, hai Zerubbabil, demikianlah firman Tuhan! Dan beranikanlah hatimu, hai Yosua bin Yozadak, imam besar! Dan pertetapkanlah hatimu, hai segala anak bumi! Demikianlah firman Tuhan, bekerja sahaja, karena Aku adalah menyertai kamu, demikianlah firman Tuhan serwa sekalian alam.",
+              "ende": "Namun demikian tetapkanlah hati, hai Zerubabel, - itulah firman Jahwe -; tetapkanlah hati, hai imam-agung Jesjua' bin Josadek; tetapkanlah hati, kamu, seluruh kaum negeri! - itulah firman Jahwe. Kerdjakanlah terus, sebab Aku beserta dengan kamu, -itulah firman Jahwe Balatentara -,",
+              "tb_itl_drf": "(2-5) Tetapi sekarang <06258>, kuatkanlah <02388> hatimu, hai Zerubabel <02216>, demikianlah <05002> firman TUHAN <03068>; kuatkanlah <02388> hatimu, hai Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>; kuatkanlah <02388> hatimu, hai segala <03605> rakyat <05971> negeri <0776>, demikianlah <05002> firman TUHAN <03068>; bekerjalah <06213>, sebab <03588> Aku ini <0589> menyertai <0854> kamu, demikianlah <05002> firman TUHAN <03068> semesta alam <06635>,",
+              "tl_itl_drf": "(2-5) Tetapi sekarang <06258> pertetapkanlah <02388> hatimu, hai Zerubbabil <02216>, demikianlah <05002> firman Tuhan <03068>! Dan beranikanlah <02388> hatimu, hai Yosua <03091> bin <01121> Yozadak <03087>, imam <03548> besar <01419>! Dan pertetapkanlah <02388> hatimu, hai segala <03605> anak <05971> bumi <0776>! Demikianlah <05002> firman Tuhan <03068>, bekerja <06213> sahaja, karena <03588> Aku <0589> adalah menyertai <0854> kamu, demikianlah <05002> firman Tuhan <03068> serwa sekalian alam <06635>.",
+              "bbe": "But now be strong, O Zerubbabel, says the Lord; and be strong, O Joshua, son of Jehozadak, the high priest; and be strong, all you people of the land, says the Lord, and get to work: for I am with you, says the Lord of armies:",
+              "message": "\"'So get to work, Zerubbabel!'--GOD is speaking. \"'Get to work, Joshua son of Jehozadak--high priest!' \"'Get to work, all you people!'--GOD is speaking. \"'Yes, get to work! For I am with you.' The GOD-of-the-Angel-Armies is speaking!",
+              "nkjv": "`Yet now be strong, Zerubbabel,' says the LORD; `and be strong, Joshua, son of Jehozadak, the high priest; and be strong, all you people of the land,' says the LORD, `and work; for I [am] with you,' says the LORD of hosts.",
+              "net": "Even so, take heart, Zerubbabel,’ says the Lord. ‘Take heart, Joshua son of Jehozadak, the high priest, and* all you citizens of the land,’* says the Lord, ‘and begin to work. For I am with you,’ says the Lord who rules over all.",
+              "net2": "**\n\n__\n\nEven so, take heart, Zerubbabel,’ says the Lord. ‘Take heart, Joshua son of Jehozadak, the high priest, and⁽³⁸⁾ all you citizens of the land,’⁽³⁹⁾ says the Lord, ‘and begin to work. For I am with you,’ says the Lord who rules over all.",
+              "nwt": "’Ingatlah janji-Ku kepada kalian sewaktu kalian keluar dari Mesir, dan Aku masih membimbing kalian dengan kuasa-Ku. Jangan takut.’”",
+              "tn_he": "וְעַתָּ֣ה חֲזַ֣ק זְרֻבָּבֶ֣ל | נְאֻם־יְהֹוָ֡ה וַֽחֲזַ֣ק יְהוֹשֻׁ֣עַ בֶּן־יְהֽוֹצָדָק֩ הַכֹּהֵ֨ן הַגָּד֜וֹל וַֽחֲזַ֨ק כָּל־עַ֥ם הָאָ֛רֶץ נְאֻם־יְהֹוָ֖ה וַֽעֲשׂ֑וּ כִּֽי־אֲנִ֣י אִתְּכֶ֔ם נְאֻ֖ם יְהֹוָ֥ה צְבָאֽוֹת:",
+              "tn_en": "And now, be strong, Zerubbabel, says the Lord; and be strong, Joshua the son of Jehozadak the High Priest; and be strong, all the people of the land, says the Lord. And (for I am with you, says the Lord of Hosts) do"
+            }
+          },
+          {
+            "verse": 5,
+            "texts": {
+              "tb": "(2-6) sesuai dengan janji yang telah Kuikat dengan kamu pada waktu kamu keluar dari Mesir. Dan Roh-Ku tetap tinggal di tengah-tengahmu. Janganlah takut!",
+              "bis": "Ketika kamu keluar dari Mesir, Aku telah berjanji akan selalu melindungi kamu. Dan sekarang pun Aku masih melindungi kamu. Jadi, tak perlu kamu cemas.",
+              "tl": "(2-6) Dengan sama peri seperti tatkala Aku berjanji dengan kamu, tatkala kamu keluar dari Mesir, maka Roh-Ku akan ada di tengah-tengah kamu senantiasa; janganlah kamu takut.",
+              "ende": "sesuai dengan djandji jang telah Kuikat dengan kamu, waktu kamu keluar dari Mesir, dan rohKupun bersemajam di-tengah2 kamu; djanganlah takut!",
+              "tb_itl_drf": "(2-6) sesuai dengan janji <01697> yang <0834> telah Kuikat <03772> dengan <0854> kamu pada waktu kamu keluar <03318> dari Mesir <04714>. Dan Roh-Ku <07307> tetap <05975> tinggal di tengah-tengahmu <08432>. Janganlah <0408> takut <03372>!",
+              "tl_itl_drf": "(2-6) Dengan sama peri <01697> seperti <0834> tatkala Aku berjanji <03772> dengan <0854> kamu, tatkala kamu keluar <03318> dari Mesir <04714>, maka Roh-Ku <07307> akan ada di tengah-tengah <08432> kamu senantiasa <05975>; janganlah <0408> kamu takut <03372>.",
+              "bbe": "The agreement which I made with you when you came out of Egypt, and my spirit, are with you still; have no fear.",
+              "message": "'Put into action the word I covenanted with you when you left Egypt. I'm living and breathing among you right now. Don't be timid. Don't hold back.'",
+              "nkjv": "`[According to] the word that I covenanted with you when you came out of Egypt, so My Spirit remains among you; do not fear!'",
+              "net": "‘Do not fear, because I made a promise to your ancestors when they left Egypt, and my spirit* even now testifies to you.’*",
+              "net2": "**\n\n__\n\n‘Do not fear, because I made a promise to your ancestors when they left Egypt, and my spirit⁽⁴⁰⁾ even now testifies to you.’⁽⁴¹⁾",
+              "nwt": "”Karena inilah yang dikatakan Yehuwa yang berbala tentara: ’Sebentar lagi, masih sekali lagi Aku akan mengguncang langit, bumi, laut, dan darat.’",
+              "tn_he": "אֶת־הַדָּבָ֞ר אֲשֶׁר־כָּרַ֚תִּי אִתְּכֶם֙ בְּצֵֽאתְכֶ֣ם מִמִּצְרַ֔יִם וְרוּחִ֖י עֹמֶ֣דֶת בְּתֽוֹכְכֶ֑ם אַל־תִּירָֽאוּ:",
+              "tn_en": "the thing that I set up with you when you left Egypt. And My spirit stands in your midst; fear not."
+            }
+          },
+          {
+            "verse": 6,
+            "texts": {
+              "tb": "(2-7) Sebab beginilah firman TUHAN semesta alam: Sedikit waktu lagi maka Aku akan menggoncangkan langit dan bumi, laut dan darat;",
+              "bis": "Dalam waktu yang dekat Aku akan menggoncangkan langit dan bumi, darat dan laut.",
+              "tl": "(2-7) Karena demikianlah firman Tuhan serwa sekalian alam: Sekali lagi, seketika juga adanya, maka Aku akan menggentarkan segala langit dan bumi dan laut dan darat.",
+              "ende": "Sebab demikianlah Jahwe Balatentara bersabda: Masih sedjurus lagi, maka Aku akan menggemparkan langit dan bumi, laut dan daratan.",
+              "tb_itl_drf": "(2-7) Sebab <03588> beginilah <03541> firman <0559> TUHAN <03068> semesta alam <06635>: Sedikit <04592> waktu lagi <05750> maka Aku <0589> akan menggoncangkan <07493> langit <08064> dan bumi <0776>, laut <03220> dan darat <02724>;",
+              "tl_itl_drf": "(2-7) Karena <03588> demikianlah <03541> firman <0559> Tuhan <03068> serwa sekalian alam <06635>: Sekali <0259> lagi <05750>, seketika <04592> juga adanya <01931>, maka Aku <0589> akan menggentarkan <07493> segala langit <08064> dan bumi <0776> dan laut <03220> dan darat <02724>.",
+              "bbe": "For this is what the Lord of armies has said: In a short time I will make a shaking of the heavens and the earth and the sea and the dry land;",
+              "message": "\"This is what GOD-of-the-Angel-Armies said: 'Before you know it, I will shake up sky and earth, ocean and fields.",
+              "nkjv": "\"For thus says the LORD of hosts: `Once more (it [is] a little while) I will shake heaven and earth, the sea and dry land;",
+              "net": "Moreover, the Lord who rules over all says: ‘In just a little while* I will once again shake the sky* and the earth, the sea and the dry ground.",
+              "net2": "**\n\n__\n\nMoreover, the Lord who rules over all says: ‘In just a little while⁽⁴²⁾ I will once again shake the sky⁽⁴³⁾ and the earth, the sea and the dry ground.",
+              "nwt": "”Yehuwa yang berbala tentara berkata, ’Aku akan mengguncang semua bangsa, dan harta berharga dari semua bangsa akan masuk ke rumah ini. Aku akan memenuhi rumah ini dengan kemuliaan.’",
+              "tn_he": "כִּ֣י כֹ֚ה אָמַר֙ יְהֹוָ֣ה צְבָא֔וֹת ע֥וֹד אַחַ֖ת מְעַ֣ט הִ֑יא וַֽאֲנִ֗י מַרְעִישׁ֙ אֶת־הַשָּׁמַ֣יִם וְאֶת־הָאָ֔רֶץ וְאֶת־הַיָּ֖ם וְאֶת־הֶחָֽרָבָֽה:",
+              "tn_en": "For so said the Lord of Hosts: [There will rise] another one, and I will shake up the heaven and the earth and the sea and the dry land [for] a little while."
+            }
+          },
+          {
+            "verse": 7,
+            "texts": {
+              "tb": "(2-8) Aku akan menggoncangkan segala bangsa, sehingga barang yang indah-indah kepunyaan segala bangsa datang mengalir, maka Aku akan memenuhi Rumah ini dengan kemegahan, firman TUHAN semesta alam.",
+              "bis": "Semua bangsa akan Kugemparkan dan harta benda mereka akan dibawa ke mari, sehingga Rumah-Ku akan penuh dengan kekayaan mereka.",
+              "tl": "(2-8) Bahkan, Aku akan menggentarkan segala bangsa, maka mereka itu akan datang kepada kegemaran segala bangsa, dan Aku akan memenuhi rumah ini dengan kemuliaan, demikianlah firman Tuhan serwa sekalian alam.",
+              "ende": "Maka Aku akan menggemparkan segala bangsa, sehingga harta-benda segala bangsa datang kemari dan Aku akan memenuhkan Rumah ini dengan kemuliaan! - itulah firman Jahwe Balatentara.",
+              "tb_itl_drf": "(2-8) Aku akan menggoncangkan <07493> segala <03605> bangsa <01471>, sehingga barang yang indah-indah <02532> kepunyaan segala <03605> bangsa <01471> datang mengalir, maka Aku akan memenuhi <04390> Rumah <01004> ini <02088> dengan kemegahan <03519>, firman <0559> TUHAN <03068> semesta alam <06635>.",
+              "tl_itl_drf": "(2-8) Bahkan, Aku akan menggentarkan <07493> segala <03605> bangsa <01471>, maka mereka itu akan datang <0935> kepada kegemaran <02532> segala <03605> bangsa <01471>, dan Aku akan memenuhi <04390> rumah <01004> ini <02088> dengan kemuliaan <03519>, demikianlah firman <0559> Tuhan <03068> serwa sekalian alam <06635>.",
+              "bbe": "And I will make a shaking of all the nations, and the desired things of all nations will come: and I will make this house full of my glory, says the Lord of armies.",
+              "message": "And I'll shake down all the godless nations. They'll bring bushels of wealth and I will fill this Temple with splendor.' GOD-of-the-Angel-Armies says so.",
+              "nkjv": "`and I will shake all nations, and they shall come to the Desire of All Nations, and I will fill this temple with glory,' says the LORD of hosts.",
+              "net": "I will also shake up all the nations, and they* will offer their treasures;* then I will fill this temple with glory,’ says the Lord who rules over all.",
+              "net2": "**\n\n__\n\nI will also shake up all the nations, and they⁽⁴⁴⁾ will offer their treasures;⁽⁴⁵⁾ then I will fill this temple with glory,’ says the Lord who rules over all.",
+              "nwt": "”’Perak adalah milik-Ku, dan emas adalah milik-Ku,’ kata Yehuwa yang berbala tentara.",
+              "tn_he": "וְהִרְעַשְׁתִּי֙ אֶת־כָּל־הַגּוֹיִ֔ם וּבָ֖אוּ חֶמְדַּ֣ת כָּל־הַגּוֹיִ֑ם וּמִלֵּאתִ֞י אֶת־הַבַּ֚יִת הַזֶּה֙ כָּב֔וֹד אָמַ֖ר יְהֹוָ֥ה צְבָאֽוֹת:",
+              "tn_en": "And I will shake up all the nations, and they shall come [with] the precious things of all the nations. And I will fill this House with glory, said the Lord of Hosts."
+            }
+          },
+          {
+            "verse": 8,
+            "texts": {
+              "tb": "(2-9) Kepunyaan-Kulah perak dan kepunyaan-Kulah emas, demikianlah firman TUHAN semesta alam.",
+              "bis": "Segala emas dan perak di dunia ini adalah milik-Ku.",
+              "tl": "(2-9) Aku yang empunya segala perak; Aku yang empunya segala emas; demikianlah firman Tuhan serwa sekalian alam!",
+              "ende": "KepunjaanKulah perak itu dan kepunjaanKulah emas itu! - itulah firman Jahwe Balatentara -",
+              "tb_itl_drf": "(2-9) Kepunyaan-Kulah <0> perak <03701> dan kepunyaan-Kulah <0> emas <02091>, demikianlah <05002> firman TUHAN <03068> semesta alam <06635>.",
+              "tl_itl_drf": "(2-9) Aku yang empunya <0> segala perak <03701>; Aku yang empunya <0> segala emas <02091>; demikianlah <05002> firman Tuhan <03068> serwa sekalian alam <06635>!",
+              "bbe": "The silver is mine and the gold is mine, says the Lord of armies.",
+              "message": "'I own the silver, I own the gold.' Decree of GOD-of-the-Angel-Armies.",
+              "nkjv": "`The silver [is] Mine, and the gold [is] Mine,' says the LORD of hosts.",
+              "net": "‘The silver and gold will be mine,’ says the Lord who rules over all.",
+              "net2": "**\n\n__\n\n‘The silver and gold will be mine,’ says the Lord who rules over all.",
+              "nwt": "”’Kemuliaan rumah ini nantinya akan lebih besar daripada yang sebelumnya,’ kata Yehuwa yang berbala tentara. ”’Dan di tempat ini, Aku akan mendatangkan damai,’ kata Yehuwa yang berbala tentara.”",
+              "tn_he": "לִ֥י הַכֶּ֖סֶף וְלִ֣י הַזָּהָ֑ב נְאֻ֖ם יְהֹוָ֥ה צְבָאֽוֹת:",
+              "tn_en": "The silver is Mine, and the gold is Mine, says the Lord of Hosts."
+            }
+          },
+          {
+            "verse": 9,
+            "texts": {
+              "tb": "(2-10) Adapun Rumah ini, kemegahannya yang kemudian akan melebihi kemegahannya yang semula, firman TUHAN semesta alam, dan di tempat ini Aku akan memberi damai sejahtera, demikianlah firman TUHAN semesta alam.\"",
+              "bis": "Rumah-Ku yang baru akan lebih megah daripada yang dahulu, dan di sini Aku akan memberikan damai dan kemakmuran kepada bangsa-Ku.\" TUHAN Yang Mahakuasa telah berbicara.",
+              "tl": "(2-10) Adapun kemuliaan rumah yang kemudian ini akan lebih besar dari pada kemuliaan rumah yang dahulu itu, demikianlah firman Tuhan serwa sekalian alam; dan dalam tempat ini akan Kukaruniakan selamat, demikianlah firman Tuhan serwa sekalian alam.",
+              "ende": "Besarlah kelak kemuliaan Rumah ini melebihi jang semula, - itulah sabda Jahwe Balatentara. Ditempat ini akan Kuanugerahkan selamat, - itulah firman Jahwe Balatentara!",
+              "tb_itl_drf": "(2-10) Adapun <01961> <01419> Rumah <01004> ini <02088>, kemegahannya <03519> <01419> yang kemudian <0314> akan melebihi <04480> kemegahannya yang semula <07223>, firman <0559> TUHAN <03068> semesta alam <06635>, dan di tempat <04725> ini <02088> Aku akan memberi <05414> damai sejahtera <07965>, demikianlah <05002> firman TUHAN <03068> semesta alam <06635>.\"",
+              "tl_itl_drf": "(2-10) Adapun <01961> kemuliaan <03519> rumah <01004> yang kemudian <0314> ini <02088> akan lebih besar <01419> dari <04480> pada kemuliaan rumah yang dahulu <07223> itu, demikianlah firman <0559> Tuhan <03068> <03068> serwa sekalian alam <06635>; dan dalam tempat <04725> ini <02088> akan Kukaruniakan <05414> selamat <07965>, demikianlah <05002> firman Tuhan <03068> <03068> serwa <06635> sekalian alam <06635>.",
+              "bbe": "The second glory of this house will be greater than the first, says the Lord of armies: and in this place I will give peace, says the Lord of armies.",
+              "message": "\"'This Temple is going to end up far better than it started out, a glorious beginning but an even more glorious finish: a place in which I will hand out wholeness and holiness.' Decree of GOD-of-the-Angel-Armies.\"",
+              "nkjv": "`The glory of this latter temple shall be greater than the former,' says the LORD of hosts. `And in this place I will give peace,' says the LORD of hosts.\"",
+              "net": "‘The future splendor of this temple will be greater than that of former times,’* the Lord who rules over all declares, ‘and in this place I will give peace.’”*",
+              "net2": "**\n\n_The Promised Blessing_\n\n‘The future splendor of this temple will be greater than that of former times,’⁽⁴⁶⁾ the Lord who rules over all declares, ‘and in this place I will give peace.’”⁽⁴⁷⁾ The Promised Blessing",
+              "nwt": "Pada hari ke-24 bulan ke-9, pada tahun kedua Darius berkuasa, Yehuwa berfirman kepada Nabi Hagai,",
+              "tn_he": "גָּד֣וֹל יִֽהְיֶ֡ה כְּבוֹד֩ הַבַּ֨יִת הַזֶּ֚ה הָאַֽחֲרוֹן֙ מִן־הָ֣רִאשׁ֔וֹן אָמַ֖ר יְהֹוָ֣ה צְבָא֑וֹת וּבַמָּק֚וֹם הַזֶּה֙ אֶתֵּ֣ן שָׁל֔וֹם נְאֻ֖ם יְהֹוָ֥ה צְבָאֽוֹת:",
+              "tn_en": "The glory of this last House shall be greater than the first one, said the Lord of Hosts. And in this place I will grant peace, says the Lord of Hosts."
+            }
+          },
+          {
+            "verse": 10,
+            "texts": {
+              "tb": "(2-11) Pada tanggal dua puluh empat bulan yang kesembilan, pada tahun yang kedua zaman Darius, datanglah firman TUHAN kepada nabi Hagai, bunyinya:",
+              "bis": "Pada tanggal dua puluh empat bulan sembilan dalam tahun kedua pemerintahan Raja Darius, TUHAN Yang Mahakuasa berbicara lagi kepada Nabi Hagai.",
+              "tl": "(2-11) Hata, maka pada empat likur hari bulan yang kesembilan, pada tahun yang kedua dari pada kerajaan Darius, datanglah firman Tuhan dengan lidah nabi Hajai, bunyinya:",
+              "ende": "Pada tanggal duapuluh empat bulan kesembilan,dalam tahun kedua radja Darios, sabda Jahwe disampaikan kepada nabi Hagai.",
+              "tb_itl_drf": "(2-11) Pada tanggal dua puluh <06242> empat <0702> bulan yang kesembilan <08671>, pada tahun <08141> yang kedua <08147> zaman Darius <01867>, datanglah <01961> firman <01697> TUHAN <03069> kepada <0413> nabi <05030> Hagai <02292>, bunyinya <0559>:",
+              "tl_itl_drf": "(2-11) Hata, maka pada empat <0702> likur <06242> hari bulan yang kesembilan <08671>, pada tahun <08141> yang kedua <08147> dari pada kerajaan Darius <01867>, datanglah <01961> firman <01697> Tuhan <03069> dengan lidah nabi <05030> Hajai <02292>, bunyinya <0559>:",
+              "bbe": "On the twenty-fourth day of the ninth month, in the second year of Darius, the word of the Lord came by Haggai the prophet, saying,",
+              "message": "On the twenty-fourth day of the ninth month (again, this was in the second year of Darius), GOD's Message came to Haggai:",
+              "nkjv": "On the twentyfourth [day] of the ninth [month], in the second year of Darius, the word of the LORD came by Haggai the prophet, saying,",
+              "net": "On the twenty-fourth day of the ninth month of Darius’ second year,* the Lord spoke again to the prophet Haggai:*",
+              "net2": "**\n\n__\n\nOn the twenty-fourth day of the ninth month of Darius’ second year,⁽⁴⁸⁾ the Lord spoke again to the prophet Haggai:⁽⁴⁹⁾",
+              "nwt": "”Inilah yang dikatakan Yehuwa yang berbala tentara: ’Tanyailah para imam tentang apa yang dikatakan hukum:",
+              "tn_he": "בְּעֶשְׂרִ֚ים וְאַרְבָּעָה֙ לַתְּשִׁיעִ֔י בִּשְׁנַ֥ת שְׁתַּ֖יִם לְדָֽרְיָ֑וֶשׁ הָיָה֙ דְּבַר־יְהֹוָ֔ה בְּיַד־חַגַּ֥י הַנָּבִ֖יא לֵאמֹֽר:",
+              "tn_en": "On the twenty-fourth [day] of the ninth [month], in the second year of Darius, the word of the Lord came to Haggai the prophet, saying:"
+            }
+          },
+          {
+            "verse": 11,
+            "texts": {
+              "tb": "(2-12) \"Beginilah firman TUHAN semesta alam itu: Tanyakanlah pengajaran kepada para imam.",
+              "bis": "Kata-Nya, \"Mintalah keputusan para imam mengenai persoalan ini:",
+              "tl": "(2-12) Demikianlah firman Tuhan serwa sekalian alam: Bertanyakanlah sekarang segala imam akan taurat, katakanlah:",
+              "ende": "Demikianlah Jahwe Balatentara bersabda: \"Mintalah kepada para imam fatwa dalam hal berikut ini:",
+              "tb_itl_drf": "(2-12) \"Beginilah <03541> firman <0559> TUHAN <03068> semesta alam <06635> itu: Tanyakanlah <07592> pengajaran <08451> kepada para imam <03548>.",
+              "tl_itl_drf": "(2-12) Demikianlah <03541> firman <0559> Tuhan <03068> serwa sekalian alam <06635>: Bertanyakanlah <07592> sekarang <04994> segala imam <03548> akan taurat <08451>, katakanlah <0559>:",
+              "bbe": "These are the words of the Lord of armies: Put now a point of law to the priests, saying,",
+              "message": "\"GOD-of-the-Angel-Armies speaks: Consult the priests for a ruling.",
+              "nkjv": "\"Thus says the LORD of hosts: `Now, ask the priests [concerning the] law, saying,",
+              "net": "“The Lord who rules over all says, ‘Ask the priests about the law.*",
+              "net2": "**\n\n__\n\n“The Lord who rules over all says, ‘Ask the priests about the law.⁽⁵⁰⁾",
+              "nwt": "”Misalnya ada orang yang membawa daging yang suci dalam lipatan bajunya. Lalu bajunya itu menyentuh roti atau sup atau anggur atau minyak atau makanan apa saja. Apa makanan itu akan jadi suci juga?”’” Para imam menjawab, ”Tidak!”",
+              "tn_he": "כֹּ֥ה אָמַ֖ר יְהֹוָ֣ה צְבָא֑וֹת שְׁאַל־נָ֧א אֶת־הַכֹּֽהֲנִ֛ים תּוֹרָ֖ה לֵאמֹֽר:",
+              "tn_en": "So said the Lord of Hosts: Now ask the priests the Torah, saying:"
+            }
+          },
+          {
+            "verse": 12,
+            "texts": {
+              "tb": "(2-13) Andaikata seseorang membawa daging kudus dalam punca bajunya, lalu dengan puncanya itu ia menyentuh roti atau sesuatu masakan atau anggur atau minyak atau sesuatu yang dapat dimakan, menjadi kuduskah yang disentuh itu?\" Lalu para imam itu menjawab, katanya: \"Tidak!\"",
+              "bis": "Seandainya ada orang yang mengambil sepotong daging dari kurban yang dipersembahkan kepada TUHAN, lalu dibawanya pulang dalam lipatan jubahnya, dan kemudian dengan jubahnya itu ia menyentuh roti atau sesuatu masakan, atau anggur, atau minyak zaitun, atau makanan apa saja, apakah semuanya itu akan menjadi suci pula?\" Ketika Hagai mengajukan pertanyaan itu, para imam menjawab, \"Tidak.\"",
+              "tl": "(2-13) Apabila seorang membawa akan daging yang suci dalam punca kainnya, maka dengan punca itu terkenalah ia kepada roti atau kepada gulai atau kepada air anggur atau kepada minyak atau kepada barang makanan, bolehkah ia itu jadi suci? Maka sahut segala imam itu, katanya: Tak boleh.",
+              "ende": "Djika seseorang membawa dalam puntja pakaiannja daging sutji dan dengan puntja itu ia lalu menjentuh roti, masakan, anggur, minjak atau makanan apapun sadja, adakah itu lalu mendjadi sutji djuga?\" Djawab para imam: \"Tidak!\"",
+              "tb_itl_drf": "(2-13) Andaikata <02005> seseorang <0376> membawa <05375> daging <01320> kudus <06944> dalam punca <03671> bajunya <0899>, lalu dengan puncanya <03671> itu ia menyentuh <05060> roti <03899> atau sesuatu masakan <05138> atau anggur <03196> atau minyak <08081> atau sesuatu <03605> yang dapat dimakan, menjadi kuduskah <03978> yang disentuh <06030> <06942> itu?\" Lalu <06030> para imam <03548> itu menjawab, katanya <0559>: \"Tidak <03808>!\"",
+              "tl_itl_drf": "(2-13) Apabila seorang <0376> <02005> membawa <05375> akan daging <01320> yang suci <06944> dalam punca <03671> kainnya <0899>, maka dengan punca <03671> itu terkenalah <05060> ia kepada <0413> roti <03899> atau kepada <0413> gulai <05138> atau kepada <0413> air anggur <03196> atau kepada <0413> minyak <08081> atau kepada <0413> barang <03605> makanan <03978>, bolehkah ia itu jadi suci <06942>? Maka sahut <06030> segala imam <03548> itu, katanya <0559>: Tak <03808> boleh.",
+              "bbe": "If anyone has some holy flesh folded in the skirt of his robe, will bread or soup or wine or oil or any other food be made holy if touched by his skirt? And the priests answering said, No.",
+              "message": "If someone carries a piece of sacred meat in his pocket, meat that is set apart for sacrifice on the altar, and the pocket touches a loaf of bread, a dish of stew, a bottle of wine or oil, or any other food, will these foods be made holy by such contact?\" The priests said, \"No.\"",
+              "nkjv": "\"If one carries holy meat in the fold of his garment, and with the edge he touches bread or stew, wine or oil, or any food, will it become holy?\"'\"Then the priests answered and said, \"No.\"",
+              "net": "If someone carries holy meat in a fold of his garment and that fold touches bread, a boiled dish, wine, olive oil, or any other food, will that item become holy?’”* The priests answered, “It will not.”",
+              "net2": "**\n\n__\n\nIf someone carries holy meat in a fold of his garment and that fold touches bread, a boiled dish, wine, olive oil, or any other food, will that item become holy?’”⁽⁵¹⁾ The priests answered, “It will not.”",
+              "nwt": "Lalu Hagai bertanya, ”Sekarang kalau makanan itu disentuh oleh seseorang yang najis karena dia menyentuh mayat, apa makanan itu akan jadi najis juga?” Para imam menjawab, ”Ya, itu akan menjadi najis.”",
+              "tn_he": "הֵ֣ן | יִשָּׂא־אִ֨ישׁ בְּשַׂר־קֹ֜דֶשׁ בִּכְנַ֣ף בִּגְד֗וֹ וְנָגַ֣ע בִּ֠כְנָפוֹ אֶל־הַלֶּ֨חֶם וְאֶל־הַנָּזִ֜יד וְאֶל־הַיַּ֧יִן וְאֶל־שֶׁ֛מֶן וְאֶל־כָּל־מַֽאֲכָ֖ל הֲיִקְדָּ֑שׁ וַיַּֽעֲנ֧וּ הַכֹּֽהֲנִ֛ים וַיֹּֽאמְר֖וּ לֹֽא:",
+              "tn_en": "\"Should a man carry contaminated flesh in the skirt of his garment, if it touches in his skirt the bread and the pottage and the wine and the oil, or any food, will it [the food] become contaminated?\" And the priests replied and said, \"No.\""
+            }
+          },
+          {
+            "verse": 13,
+            "texts": {
+              "tb": "(2-14) Berkatalah pula Hagai: \"Jika seseorang yang najis oleh mayat menyentuh semuanya ini, menjadi najiskah yang disentuh itu?\" Lalu para imam itu menjawab, katanya: \"Tentu!\"",
+              "bis": "Kemudian Hagai bertanya lagi, \"Seandainya ada orang yang menjadi najis karena ia menyentuh mayat, dan kemudian ia menyentuh salah satu dari makanan itu, apakah makanan itu menjadi najis pula?\" Para imam menjawab, \"Ya, tentu saja!\"",
+              "tl": "(2-14) Maka kata Hajai: Jikalau barang seorang najis oleh bangkai, lalu terkena kepada sesuatu dari pada segala perkara itu, bolehkah ia itu jadi najis? Maka sahut segala imam itu, katanya: Ia itu akan najis juga.",
+              "ende": "Hagai berkata pula: \"Djika seseorang jang nadjis karena (menjentuh) majat, menjentuh kesemuanja itu, adakah itu lalu mendjadi nadjis djuga?\" Djawab para imam: \"Nadjislah itu!\"",
+              "tb_itl_drf": "(2-14) Berkatalah <0559> pula Hagai <02292>: \"Jika <0518> seseorang yang najis <02931> oleh mayat menyentuh <05315> menyentuh <05060> semuanya <03605> ini <0428>, menjadi najiskah <02930> yang disentuh <06030> itu?\" Lalu <06030> para imam <03548> itu menjawab, katanya <0559>: \"Tentu <02930>!\"",
+              "tl_itl_drf": "(2-14) Maka kata <0559> Hajai <02292>: Jikalau <0518> barang <05060> seorang najis <02931> oleh bangkai <05315>, lalu terkena <05060> kepada sesuatu <03605> dari pada segala <03605> perkara <0428> itu, bolehkah <0428> ia itu jadi najis <02930>? Maka sahut <06030> segala imam <03548> itu, katanya <0559>: Ia itu akan najis <02930> juga.",
+              "bbe": "Then Haggai said, Will any of these be made unclean by the touch of one who is unclean through touching a dead body? And the priests answering said, It will be made unclean.",
+              "message": "Then Haggai said, \"How about someone who is contaminated by touching a corpse--if that person touches one of these foods, will it be contaminated?\" The priests said, \"Yes, it will be contaminated.\"",
+              "nkjv": "And Haggai said, \"If [one who is] unclean [because] of a dead body touches any of these, will it be unclean?\" So the priests answered and said, \"It shall be unclean.\"",
+              "net": "Then Haggai asked, “If a person who is ritually unclean because of touching a dead body* comes in contact with one of these items, will it become unclean?” The priests answered, “It will be unclean.”",
+              "net2": "**\n\n__\n\nThen Haggai asked, “If a person who is ritually unclean because of touching a dead body⁽⁵²⁾ comes in contact with one of these items, will it become unclean?” The priests answered, “It will be unclean.”",
+              "nwt": "Maka Hagai berkata, ”Yehuwa berkata, ’Bagi-Ku, seperti itulah umat ini dan bangsa ini. Seperti itulah juga pekerjaan tangan mereka. Apa pun yang mereka persembahkan najis.’",
+              "tn_he": "וַיֹּ֣אמֶר חַגַּ֔י אִם־יִגַּ֧ע טְמֵא־נֶ֛פֶשׁ בְּכָל־אֵ֖לֶּה הֲיִטְמָ֑א וַיַּֽעֲנ֧וּ הַכֹּֽהֲנִ֛ים וַיֹּֽאמְר֖וּ יִטְמָֽא:",
+              "tn_en": "And Haggai said, \"If the contamination of a dead body touches all these, will it become contaminated?\" And the priests replied and said, \"It will become contaminated.\""
+            }
+          },
+          {
+            "verse": 14,
+            "texts": {
+              "tb": "(2-15) Maka berbicaralah Hagai, katanya: \"Begitu juga dengan umat ini dan dengan bangsa ini di hadapan-Ku, demikianlah firman TUHAN, dan dengan segala yang dibuat tangan mereka; dan yang dipersembahkan mereka di sana adalah najis.\"",
+              "bis": "Kemudian Hagai berkata lagi, \"TUHAN mengatakan bahwa peraturan itu berlaku juga bagi umat Israel di negeri ini dan bagi segala sesuatu yang mereka hasilkan. Jadi, apa yang mereka persembahkan di mezbah ini adalah najis.\"",
+              "tl": "(2-15) Maka sahut Hajai, katanya: Begitulah hal bangsa ini dan begitulah hal kebanyakan orang ini di hadapan hadirat-Ku, demikianlah firman Tuhan, dan begitulah hal segala perbuatan tangan mereka itu dan barang yang dipersembahkannya di sana, semuanya itu najis adanya!",
+              "ende": "Lalu Hagai angkat bitjara dengan berkata: \"Demikianlah halnja dengan kamu ini! Demikianlah halnja dengan bangsa ini dihadapanKu - itulah firman Jahwe. Demikianpun halnja dengan segala pekerdjaan tangan mereka dan dengan apa jang dikurbankan mereka: nadjis semua!",
+              "tb_itl_drf": "(2-15) Maka berbicaralah <06030> Hagai <02292>, katanya <0559>: \"Begitu juga <03651> dengan umat <05971> ini <02088> dan dengan bangsa <01471> ini <02088> di hadapan-Ku <06440>, demikianlah <05002> firman TUHAN <03068>, dan dengan segala <03605> yang dibuat <04639> tangan <03027> mereka; dan yang <0834> dipersembahkan <07126> mereka di sana <08033> adalah najis <02931>.\"",
+              "tl_itl_drf": "(2-15) Maka sahut <06030> Hajai <02292>, katanya <0559>: Begitulah <03651> hal bangsa <05971> ini <02088> dan begitulah <03651> hal kebanyakan orang <01471> ini <02088> di hadapan hadirat-Ku <06440>, demikianlah <05002> firman Tuhan <03068>, dan begitulah <03651> hal segala <03605> perbuatan <04639> tangan <03027> mereka itu dan barang yang <0834> dipersembahkannya <07126> di sana <08033>, semuanya itu najis <02931> adanya <01931>!",
+              "bbe": "Then Haggai said, So is this people and so is this nation before me, says the Lord; and so is every work of their hands; and the offering they give there is unclean.",
+              "message": "Then Haggai said, \"'So, this people is contaminated. Their nation is contaminated. Everything they do is contaminated. Whatever they do for me is contaminated.' GOD says so.",
+              "nkjv": "Then Haggai answered and said, \"`So is this people, and so is this nation before Me,' says the LORD, `and so is every work of their hands; and what they offer there is unclean.",
+              "net": "Then Haggai responded, “‘The people of this nation are unclean in my sight,’* says the Lord. ‘And so is all their effort; everything they offer is also unclean.*",
+              "net2": "**\n\n__\n\nThen Haggai responded, “‘The people of this nation are unclean in my sight,’⁽⁵³⁾ says the Lord. ‘And so is all their effort; everything they offer is also unclean.⁽⁵⁴⁾",
+              "nwt": "”’Tapi sekarang, mulai hari ini, perhatikanlah baik-baik: Sebelum bait Yehuwa mulai dibangun kembali,",
+              "tn_he": "וַיַּ֨עַן חַגַּ֜י וַיֹּ֗אמֶר כֵּ֣ן הָֽעָם־הַ֠זֶּה וְכֵֽן־הַגּ֨וֹי הַזֶּ֚ה לְפָנַי֙ נְאֻם־יְהֹוָ֔ה וְכֵ֖ן כָּל־מַֽעֲשֵׂ֣ה יְדֵיהֶ֑ם וַֽאֲשֶׁ֥ר יַקְרִ֛יבוּ שָׁ֖ם טָמֵ֥א הֽוּא:",
+              "tn_en": "And Haggai replied and said, \"So is this people, and so is this nation before Me, says the Lord; and so is all the work of their hands, and whatever they sacrifice there is contaminated."
+            }
+          },
+          {
+            "verse": 15,
+            "texts": {
+              "tb": "(2-16) \"Maka sekarang, perhatikanlah mulai dari hari ini dan selanjutnya! Sebelum ditaruh orang batu demi batu untuk pembangunan bait TUHAN,",
+              "bis": "TUHAN berkata, \"Coba, perhatikanlah apa yang telah terjadi sebelum hari ini, yaitu sebelum Rumah-Ku ini diperbaiki! Bagaimanakah keadaanmu waktu itu?",
+              "tl": "(2-16) Maka sekarang, hendaklah kiranya kamu memperhatikan hal itu dari pada hari ini dan yang sudah lalu, dahulu dari pada batu ditumpangkan di atas batu pada kaabah Tuhan.",
+              "ende": "Nah sekarang, perhatikanlah baik2 tanggalnja, sekarang dan selandjutnja! Sebelum orang meletakkan batu jang satu diatas batu jang lain pada bait Jahwe,",
+              "tb_itl_drf": "(2-16) \"Maka sekarang <06258>, perhatikanlah <07760> mulai <03824> dari <04480> hari <03117> ini <02088> dan selanjutnya <04605>! Sebelum <02962> ditaruh <07760> orang batu <068> demi <0413> batu <068> untuk pembangunan bait <01964> TUHAN <03068>,",
+              "tl_itl_drf": "(2-16) Maka sekarang <06258>, hendaklah <07760> kiranya <04994> kamu memperhatikan <03824> hal itu dari <04480> pada hari <03117> ini <02088> dan yang sudah lalu, dahulu <02962> dari pada batu <068> ditumpangkan <07760> di atas <0413> <04605> batu <068> pada kaabah <01964> Tuhan <03068>.",
+              "bbe": "And now, give thought, looking back from this day to the time before one stone was put on another in the Temple of the Lord:",
+              "message": "\"'Think back. Before you set out to lay the first foundation stones for the rebuilding of my Temple,",
+              "nkjv": "`And now, carefully consider from this day forward: from before stone was laid upon stone in the temple of the LORD",
+              "net": "Now therefore reflect carefully on the recent past,* before one stone was laid on another in the Lord’s temple.*",
+              "net2": "**\n\n__\n\nNow therefore reflect carefully on the recent past,⁽⁵⁵⁾ before one stone was laid on another in the Lord’s temple.⁽⁵⁶⁾",
+              "nwt": "bagaimana keadaannya? Saat seseorang datang untuk mengambil gandum sebanyak 20 takaran, yang ada cuma 10. Dan saat seseorang datang ke tempat pemerasan untuk mengambil anggur sebanyak 50 takaran, yang ada cuma 20.",
+              "tn_he": "וְעַתָּה֙ שִֽׂימוּ־נָ֣א לְבַבְכֶ֔ם מִן־הַיּ֥וֹם הַזֶּ֖ה וָמָ֑עְלָה מִטֶּ֧רֶם שֽׂוּם־אֶ֛בֶן אֶל־אֶ֖בֶן בְּהֵיכַ֥ל יְהֹוָֽה:",
+              "tn_en": "And now, consider from this day and before-before placing a stone upon a stone in the Temple of the Lord"
+            }
+          },
+          {
+            "verse": 16,
+            "texts": {
+              "tb": "(2-17) bagaimana keadaanmu? Ketika orang pergi melihat suatu timbunan gandum yang seharusnya sebanyak dua puluh gantang, hanya ada sepuluh; dan ketika orang pergi ke tempat pemerasan anggur untuk mencedok lima puluh takar, hanya ada dua puluh.",
+              "bis": "Kamu telah pergi melihat timbunan gandum dan menyangka akan mendapatkan 200 kilogram gandum, tetapi ternyata hanya ada 100 kilogram. Kamu pergi untuk mencedok 100 liter anggur dari tong anggur, tetapi yang ada hanya 40 liter.",
+              "tl": "(2-17) Pada masa orang belum membuat dia, tatkala datanglah orang kepada timbunan gandum yang dua puluh gantang, maka didapatinya akan hanya sepuluh gantang, dan tatkala ia datang kepada tempat air anggur hendak menciduk lima puluh takar dari dalam apitan, maka didapatinya akan hanya dua puluh.",
+              "ende": "bagaimana keadaanmu ketika itu? Djika orang datang ketumpukan gandum (sebanjak) duapuluh (sukat), maka hanja ada sepuluh; djika orang pergi kepengindjakan anggur untuk mentjiduk limapuluh (takaran) (dari dalam) pasunja, maka hanja ada sepuluh.",
+              "tb_itl_drf": "(2-17) bagaimana keadaanmu <06333>? Ketika <01961> orang pergi <0935> melihat suatu <06333> timbunan <06194> gandum yang seharusnya sebanyak <06333> dua puluh <06242> gantang, hanya <06333> ada <01961> sepuluh <06235>; dan ketika orang pergi <0935> ke <0413> tempat pemerasan <03342> anggur untuk mencedok <02834> lima <02572> puluh takar, hanya <06333> ada <01961> dua puluh <06242>.",
+              "tl_itl_drf": "(2-17) Pada masa <01961> orang belum membuat dia, tatkala <01961> datanglah <0935> orang kepada <0413> timbunan <06194> gandum yang dua puluh <06242> gantang, maka <01961> didapatinya akan hanya sepuluh <06235> gantang, dan tatkala ia datang <0935> kepada <0413> tempat air anggur <03342> hendak menciduk <02834> lima <02572> puluh takar <06333> dari dalam apitan <03342>, maka didapatinya akan hanya dua puluh <06242>.",
+              "bbe": "How, when anyone came to a store of twenty measures, there were only ten: when anyone went to the wine-store to get fifty vessels full, there were only twenty.",
+              "message": "how did it go with you? Isn't it true that your foot-dragging, halfhearted efforts at rebuilding the Temple of GOD were reflected in a sluggish, halfway return on your crops--half the grain you were used to getting, half the wine?",
+              "nkjv": "`since those [days], when [one] came to a heap of twenty ephahs, there were [but] ten; when [one] came to the wine vat to draw out fifty baths from the press, there were [but] twenty.",
+              "net": "From that time* when one came expecting a heap of twenty measures, there were only ten; when one came to the wine vat to draw out fifty measures from it, there were only twenty.",
+              "net2": "**\n\n__\n\nFrom that time⁽⁵⁷⁾ when one came expecting a heap of twenty measures, there were only ten; when one came to the wine vat to draw out fifty measures from it, there were only twenty.",
+              "nwt": "Aku menghantam semua pekerjaan tangan kalian dengan panas yang luar biasa, hama jamur, dan hujan es. Tapi, tidak seorang pun kembali kepada-Ku,’ kata Yehuwa.",
+              "tn_he": "מִֽהְיוֹתָ֥ם בָּא֙ אֶל־עֲרֵמַ֣ת עֶשְׂרִ֔ים וְהָֽיְתָ֖ה עֲשָׂרָ֑ה בָּ֣א אֶל־הַיֶּ֗קֶב לַחְשֹׂף֙ חֲמִשִּׁ֣ים פּוּרָ֔ה וְהָֽיְתָ֖ה עֶשְׂרִֽים:",
+              "tn_en": "so that they should not come to a heap of twenty measures, and there would be ten; [similarly,] when one would come to the winevat to draw off fifty press-measures, and there would be twenty."
+            }
+          },
+          {
+            "verse": 17,
+            "texts": {
+              "tb": "(2-18) Aku telah memukul kamu dengan hama dan penyakit gandum dan segala yang dibuat tanganmu dengan hujan batu; namun kamu tidak berbalik kepada-Ku, demikianlah firman TUHAN.",
+              "bis": "Aku telah menurunkan angin panas dan hujan batu untuk menghancurkan segala hasil ladangmu, tetapi kamu tak mau juga kembali kepada-Ku.",
+              "tl": "(2-18) Maka kamu sudah Kupalu dengan kelayuran dan dengan untutan dan dengan hujan air beku kepada segala perbuatan tanganmu, maka dari padamu seorangpun tiada yang datang kepada-Ku, demikianlah firman Tuhan.",
+              "ende": "Aku telah memukul kamu dengan hama mentek dan hama putih, dan segala pekerdjaan tanganmu dengan hudjan beku, namun kamu tidak beserta dengan Daku, - itulah firman Jahwe.",
+              "tb_itl_drf": "(2-18) Aku telah memukul <05221> kamu <0853> dengan hama <07711> dan penyakit gandum <03420> dan segala <03605> yang dibuat <04639> tanganmu <03027> dengan hujan batu <01259>; namun <03420> kamu tidak <0369> berbalik kepada-Ku <0413>, demikianlah <05002> firman TUHAN <03068>.",
+              "tl_itl_drf": "(2-18) Maka <05221> kamu sudah Kupalu <05221> dengan kelayuran <07711> dan dengan untutan <03420> dan dengan hujan air beku <01259> kepada segala <03605> perbuatan <04639> tanganmu <03027>, maka dari padamu seorangpun <0369> tiada yang datang kepada-Ku <0413>, demikianlah <05002> firman Tuhan <03068>.",
+              "bbe": "And I sent burning and wasting and a rain of ice-drops on all the works of your hands; but still you were not turned to me, says the Lord.",
+              "message": "I hit you with drought and blight and hail. Everything you were doing got hit. But it didn't seem to faze you. You continued to ignore me.' GOD's Decree.",
+              "nkjv": "`I struck you with blight and mildew and hail in all the labors of your hands; yet you did not [turn] to Me,' says the LORD.",
+              "net": "I struck all the products of your labor* with blight, disease, and hail, and yet you brought nothing to me,’* says the Lord.",
+              "net2": "**\n\n__\n\nI struck all the products of your labor⁽⁵⁸⁾ with blight, disease, and hail, and yet you brought nothing to me,’⁽⁵⁹⁾ says the Lord.",
+              "nwt": "”’Tapi perhatikan baik-baik mulai hari ini, yaitu dari hari ke-24 bulan ke-9, dari saatnya kalian membangun fondasi bait Yehuwa. Perhatikanlah:",
+              "tn_he": "הִכֵּ֨יתִי אֶתְכֶ֜ם בַּשִּׁדָּפ֚וֹן וּבַיֵּֽרָקוֹן֙ וּבַבָּרָ֔ד אֵ֖ת כָּל־מַֽעֲשֵׂ֣ה יְדֵיכֶ֑ם וְאֵֽין־אֶתְכֶ֥ם אֵלַ֖י נְאֻם־יְהֹוָֽה:",
+              "tn_en": "I smote you with blast and with yellowing and with hail in all the work of your hands, and you are not [returning] to Me, says the Lord."
+            }
+          },
+          {
+            "verse": 18,
+            "texts": {
+              "tb": "(2-19) Perhatikanlah mulai dari hari ini dan selanjutnya--mulai dari hari yang kedua puluh empat bulan kesembilan. Mulai dari hari diletakkannya dasar bait TUHAN perhatikanlah",
+              "bis": "Pada hari ini, tanggal dua puluh empat bulan sembilan, fondasi Rumah-Ku selesai diletakkan! Perhatikan apa yang akan terjadi mulai saat ini.",
+              "tl": "(2-19) Hendaklah kiranya kamu memperhatikan hal itu, dari pada hari ini dan yang sudah lalu, mulai dari pada empat likur hari bulan yang kesembilan sampai kepada hari dibubuh alas kaabah Tuhan, perhatikanlah itu baik-baik!",
+              "ende": "Perhatikanlah baik2 tanggalnja, sekarang dan selandjutnja, - sedjak tanggal duapuluh empat bulan kesembilan, sedjak hari dasar bait Jahwe diletakkan - perhatikanlah baik2,",
+              "tb_itl_drf": "(2-19) Perhatikanlah <07760> mulai <03824> dari <04480> hari <03117> ini <02088> dan selanjutnya <04605> --mulai dari hari <03117> yang kedua puluh <06242> empat <0702> bulan kesembilan <08671>. Mulai dari <04480> hari <03117> diletakkannya dasar <03245> bait <01964> TUHAN <03068> perhatikanlah <07760>",
+              "tl_itl_drf": "(2-19) Hendaklah <07760> kiranya <04994> kamu memperhatikan <03824> hal itu, dari <04480> pada hari <03117> ini <02088> dan yang sudah lalu, mulai <04605> dari pada <04480> empat <0702> likur <06242> hari <03117> bulan yang kesembilan <08671> sampai kepada hari <03117> dibubuh <03245> alas kaabah <01964> Tuhan <03068>, perhatikanlah <07760> itu baik-baik <03824>!",
+              "bbe": "And now, give thought; looking on from this day, from the twenty-fourth day of the ninth month, from the time when the base of the Lord�s house was put in its place, give thought to it.",
+              "message": "\"'Now think ahead from this same date--this twenty-fourth day of the ninth month. Think ahead from when the Temple rebuilding was launched.",
+              "nkjv": "`Consider now from this day forward, from the twentyfourth day of the ninth month, from the day that the foundation of the LORD'S temple was laidconsider it:",
+              "net": "‘Think carefully about the past:* from today, the twenty-fourth day of the ninth month,* to the day work on the temple of the Lord was resumed,* think about it.*",
+              "net2": "**\n\n__\n\n‘Think carefully about the past:⁽⁶⁰⁾ from today, the twenty-fourth day of the ninth month,⁽⁶¹⁾ to the day work on the temple of the Lord was resumed,⁽⁶²⁾ think about it.⁽⁶³⁾",
+              "nwt": "Apa masih ada benih di gudang-gudang? Tanaman anggur, ara, delima, dan zaitun pun belum berbuah, kan? Mulai hari ini, Aku akan mengirimkan berkat.’”",
+              "tn_he": "שִֽׂימוּ־נָ֣א לְבַבְכֶ֔ם מִן־הַיּ֥וֹם הַזֶּ֖ה וָמָ֑עְלָה מִיּוֹם֩ עֶשְׂרִ֨ים וְאַרְבָּעָ֜ה לַתְּשִׁיעִ֗י לְמִן־הַיּ֛וֹם אֲשֶׁר־יֻסַּ֥ד הֵיכַֽל־יְהֹוָ֖ה שִׂ֥ימוּ לְבַבְכֶֽם:",
+              "tn_en": "Pay attention now, from this day and before-from the twenty-fourth [day] of the ninth [month]- from the day that the Temple of the Lord was founded, pay attention."
+            }
+          },
+          {
+            "verse": 19,
+            "texts": {
+              "tb": "(2-20) apakah benih masih tinggal tersimpan dalam lumbung, dan apakah pohon anggur dan pohon ara, pohon delima dan pohon zaitun belum berbuah? Mulai dari hari ini Aku akan memberi berkat!\"",
+              "bis": "Meskipun tak ada lagi gandum yang tinggal, dan pohon anggur, pohon ara, pohon delima dan pohon zaitun belum berbuah, tetapi mulai saat ini Aku akan memberkati kamu!\"",
+              "tl": "(2-20) Sekarang adakah lagi biji-bijian dalam pelubur? Bahwa baik pokok anggur, atau pokok ara, dan pokok delima dan pokok zait yang belum berbuah, maka mulai dari pada hari ini juga Aku memberkati dia!",
+              "ende": "apa bibit masih djuga (surut) dilumbung dan (apa) pokok anggur dan pohon ara, pohon delima dan pohon zaitun belum djuga berbuah. - Mulai sekarang Aku akan memberkati!\"",
+              "tb_itl_drf": "(2-20) apakah benih <02233> masih <05750> tinggal tersimpan <04035> dalam lumbung <05704>, dan apakah pohon anggur <01612> dan pohon <01612> ara <08384>, pohon delima <07416> dan pohon <06086> zaitun <02132> belum <03808> berbuah <05375>? Mulai <04480> dari hari <03117> ini <02088> Aku akan memberi berkat <01288>!\"",
+              "tl_itl_drf": "(2-20) Sekarang adakah lagi <05750> biji-bijian <02233> dalam pelubur <04035>? Bahwa baik <05704> pokok <01612> anggur, atau pokok ara <08384>, dan pokok delima <07416> dan pokok <06086> zait <02132> yang belum <03808> berbuah <05375>, maka mulai dari <04480> pada hari <03117> ini <02088> juga Aku memberkati <01288> dia!",
+              "bbe": "Is the seed still in the store-house? have the vine and the fig-tree, the pomegranate and the olive-tree, still not given their fruit? from this day I will send my blessing on you.",
+              "message": "Has anything in your fields--vine, fig tree, pomegranate, olive tree--failed to flourish? From now on you can count on a blessing.'\"",
+              "nkjv": "`Is the seed still in the barn? As yet the vine, the fig tree, the pomegranate, and the olive tree have not yielded [fruit. But] from this day I will bless [you].'\"",
+              "net": "The seed is still in the storehouse, isn’t it? And the vine, fig tree, pomegranate, and olive tree have not produced. Nevertheless, from today on I will bless you.’”",
+              "net2": "**\n\n__\n\nThe seed is still in the storehouse, isn’t it? And the vine, fig tree, pomegranate, and olive tree have not produced. Nevertheless, from today on I will bless you.’” Zerubbabel the Chosen One",
+              "nwt": "Lalu Yehuwa berfirman kepada Hagai untuk kedua kalinya pada hari ke-24 bulan itu,",
+              "tn_he": "הַע֚וֹד הַזֶּ֙רַע֙ בַּמְּגוּרָ֔ה וְעַד־הַגֶּ֨פֶן וְהַתְּאֵנָ֧ה וְהָֽרִמּ֛וֹן וְעֵ֥ץ הַזַּ֖יִת לֹ֣א נָשָׂ֑א מִן־הַיּ֥וֹם הַזֶּ֖ה אֲבָרֵֽךְ:",
+              "tn_en": "The seed is still in the granary, and the grapevines, the fig trees, the pomegranate trees, and the olive trees have not yet borne [fruit]-from this day I will bless.\""
+            }
+          },
+          {
+            "verse": 20,
+            "texts": {
+              "tb": "(2-21) Maka datanglah firman TUHAN untuk kedua kalinya kepada Hagai pada tanggal dua puluh empat bulan itu, bunyinya:",
+              "bis": "Pada hari itu juga, yaitu tanggal dua puluh empat bulan sembilan, TUHAN memberikan pesan yang kedua kepada Hagai,",
+              "tl": "(2-21) Maka pada kedua kalinya datanglah firman Tuhan kepada Hajai, pada empat likur hari bulan itu, bunyinya:",
+              "ende": "Sabda Jahwe disampaikan untuk kedua kalinja kepada Hagai pada tanggal duapuluh empat:",
+              "tb_itl_drf": "(2-21) Maka datanglah <01961> firman <01697> TUHAN <03068> untuk kedua kalinya <08145> kepada <0413> Hagai <02292> pada tanggal dua puluh <06242> empat <0702> bulan <02320> itu, bunyinya <0559>:",
+              "tl_itl_drf": "(2-21) Maka pada kedua kalinya <08145> datanglah <01961> firman <01697> Tuhan <03068> kepada <0413> Hajai <02292>, pada empat <0702> likur <06242> hari bulan <02320> itu, bunyinya <0559>:",
+              "bbe": "And the word of the Lord came a second time to Haggai, on the twenty-fourth day of the month, saying,",
+              "message": "GOD's Message came a second time to Haggai on that most memorable day, the twenty-fourth day of the ninth month:",
+              "nkjv": "And again the word of the LORD came to Haggai on the twentyfourth day of the month, saying,",
+              "net": "Then the Lord spoke again to Haggai* on the twenty-fourth day of the month:*",
+              "net2": "**\n\n__\n\nThen the Lord spoke again to Haggai⁽⁶⁴⁾ on the twenty-fourth day of the month:⁽⁶⁵⁾",
+              "nwt": "”Beri tahu Zerubabel, gubernur Yehuda, ’Aku akan mengguncangkan langit dan bumi.",
+              "tn_he": "וַיְהִ֨י דְבַר־יְהֹוָ֚ה | שֵׁנִית֙ אֶל־חַגַּ֔י בְּעֶשְׂרִ֧ים וְאַרְבָּעָ֛ה לַחֹ֖דֶשׁ לֵאמֹֽר:",
+              "tn_en": "And the word of the Lord came to Haggai a second time on the twenty-fourth of the month, saying:"
+            }
+          },
+          {
+            "verse": 21,
+            "texts": {
+              "tb": "(2-22) \"Katakanlah kepada Zerubabel, bupati Yehuda, begini: Aku akan menggoncangkan langit dan bumi",
+              "bis": "untuk disampaikan kepada Gubernur Zerubabel. Kata TUHAN, \"Tak lama lagi langit dan bumi akan Kuguncangkan,",
+              "tl": "(2-22) Katakanlah olehmu ini kepada Zerubbabil, penghulu Yehuda: Bahwa Aku akan menggerakkan segala langit dan bumi.",
+              "ende": "\"Katakan kepada Zerubabel, adipati Juda: Aku akan menggemparkan langit dan bumi,",
+              "tb_itl_drf": "(2-22) \"Katakanlah <0559> kepada <0413> Zerubabel <02216>, bupati <06346> Yehuda <03063>, begini <0559>: Aku <0589> akan menggoncangkan <07493> langit <08064> dan bumi <0776>",
+              "tl_itl_drf": "(2-22) Katakanlah <0559> olehmu ini kepada <0413> Zerubbabil <02216>, penghulu <06346> Yehuda <03063>: Bahwa <0559> Aku <0589> akan menggerakkan <07493> segala langit <08064> dan bumi <0776>.",
+              "bbe": "Say to Zerubbabel, ruler of Judah, I will make a shaking of the heavens and the earth,",
+              "message": "\"Speak to Zerubbabel, the governor of Judah: \"'I am about to shake up everything, to turn everything upside down and start over from top to bottom--",
+              "nkjv": "\"Speak to Zerubbabel, governor of Judah, saying: `I will shake heaven and earth.",
+              "net": "Tell Zerubbabel governor of Judah: ‘I am ready* to shake the sky* and the earth.",
+              "net2": "**\n\n__\n\nTell Zerubbabel governor of Judah: ‘I am ready⁽⁶⁶⁾ to shake the sky⁽⁶⁷⁾ and the earth.",
+              "nwt": "Aku akan menjatuhkan takhta kerajaan-kerajaan dan memusnahkan kekuatan kerajaan bangsa-bangsa. Aku akan membuat kereta perang dan pengendaranya terjungkir balik. Kuda-kuda akan jatuh dan para penunggangnya akan saling membunuh dengan pedang.’”",
+              "tn_he": "אֱמֹ֕ר אֶל־זְרֻבָּבֶ֥ל פַּֽחַת־יְהוּדָ֖ה לֵאמֹ֑ר אֲנִ֣י מַרְעִ֔ישׁ אֶת־הַשָּׁמַ֖יִם וְאֶת־הָאָֽרֶץ:",
+              "tn_en": "Say to Zerubbabel, the governor of Judah, saying: I am shaking up the heaven and the earth."
+            }
+          },
+          {
+            "verse": 22,
+            "texts": {
+              "tb": "(2-23) dan akan menunggangbalikkan takhta raja-raja; Aku akan memunahkan kekuasaan kerajaan bangsa-bangsa dan akan menjungkirbalikkan kereta dan pengendaranya; kuda dan pengendaranya akan mati rebah, masing-masing oleh pedang temannya.",
+              "bis": "kerajaan-kerajaan Kurobohkan dan kuasa mereka Kuhancurkan. Kereta-kereta perang dengan pengemudinya akan Kujungkirbalikkan; semua kuda akan mati dan penunggang-penunggangnya akan saling membunuh.",
+              "tl": "(2-23) Dan Aku akan membongkarbalikkan segala kursi kerajaan dan Aku akan membinasakan kuasa kerajaan segala bangsa, dan Aku akan membalik belah segala kendaraan serta dengan orang yang mengendarainya, dan segala kuda dan segala orang yang mengendarainya itu akan terhembalang masing-masing oleh pedang kawannya.",
+              "ende": "membalikkan tachta keradjaan dan membinasakan kekuatan keradjaan2 kafir. Aku akan membalikkan kereta2 dengan penumpang2nja; kuda2 ber-sama2 dengan penunggangnja akan djatuh binasa; orang (tewas) karena pedang saudaranja!",
+              "tb_itl_drf": "(2-23) dan akan menunggangbalikkan <02015> takhta <03678> raja-raja <04467>; Aku akan memunahkan <08045> kekuasaan <02392> kerajaan <04467> bangsa-bangsa <01471> dan akan menjungkirbalikkan <02015> kereta <04818> dan pengendaranya <07392>; kuda <05483> dan pengendaranya <07392> akan mati rebah, masing-masing <0376> oleh pedang <02719> temannya <0251>.",
+              "tl_itl_drf": "(2-23) Dan Aku akan membongkarbalikkan <02015> segala kursi <03678> kerajaan <04467> dan Aku akan membinasakan <08045> kuasa <02392> kerajaan <04467> segala bangsa <01471>, dan Aku <02015> akan membalik <02015> belah segala kendaraan <04818> serta dengan orang yang mengendarainya <07392>, dan segala kuda <05483> dan segala orang yang mengendarainya <07392> itu akan terhembalang <03381> masing-masing <0376> oleh pedang <02719> kawannya <0251>.",
+              "bbe": "Overturning the power of kingdoms; and I will send destruction on the strength of the kingdoms of the nations; by me war-carriages will be overturned with those who are in them; and the horses and the horsemen will come down, everyone by the sword of his brother.",
+              "message": "overthrow governments, destroy foreign powers, dismantle the world of weapons and armaments, throw armies into confusion, so that they end up killing one another.",
+              "nkjv": "I will overthrow the throne of kingdoms; I will destroy the strength of the Gentile kingdoms. I will overthrow the chariots And those who ride in them; The horses and their riders shall come down, Every one by the sword of his brother.",
+              "net": "I will overthrow royal thrones and shatter the might of earthly kingdoms.* I will overthrow chariots and those who ride them, and horses and their riders will fall as people kill one another.*",
+              "net2": "**\n\n__\n\nI will overthrow royal thrones and shatter the might of earthly kingdoms.⁽⁶⁸⁾ I will overthrow chariots and those who ride them, and horses and their riders will fall as people kill one another.⁽⁶⁹⁾",
+              "nwt": "”Yehuwa yang berbala tentara berkata, ’Pada ­waktu itu Aku akan menggunakanmu, hamba-Ku Zerubabel anak Syealtiel.’ Yehuwa berkata, ’Aku akan menjadikanmu seperti cincin meterai, karena kamulah yang telah Kupilih,’ kata Yehuwa yang berbala tentara.”",
+              "tn_he": "וְהָֽפַכְתִּי֙ כִּסֵּ֣א מַמְלָכ֔וֹת וְהִ֨שְׁמַדְתִּ֔י חֹ֖זֶק מַמְלְכ֣וֹת הַגּוֹיִ֑ם וְהָפַכְתִּ֚י מֶרְכָּבָה֙ וְרֹ֣כְבֶ֔יהָ וְיָֽרְד֚וּ סוּסִים֙ וְרֹ֣כְבֵיהֶ֔ם אִ֖ישׁ בְּחֶ֥רֶב אָחִֽיו:",
+              "tn_en": "And I will overthrow the throne of the kingdoms, and I will destroy the power of the kingdoms of the nations. And I will overthrow the chariots and their riders; and the horses and their riders shall come down, each one by the sword of his brother."
+            }
+          },
+          {
+            "verse": 23,
+            "texts": {
+              "tb": "(2-24) Pada waktu itu, demikianlah firman TUHAN semesta alam, Aku akan mengambil engkau, hai Zerubabel bin Sealtiel, hamba-Ku--demikianlah firman TUHAN--dan akan menjadikan engkau seperti cincin meterai; sebab engkaulah yang Kupilih, demikianlah firman TUHAN semesta alam.\"",
+              "bis": "Pada hari itu engkau Zerubabel, hamba-Ku, akan Kuangkat untuk memerintah atas nama-Ku. Karena engkaulah yang telah Kupilih.\" TUHAN Yang Mahakuasa telah berbicara.",
+              "tl": "(2-24) Maka pada hari itu juga, demikianlah firman Tuhan serwa sekalian alam, Aku kelak mengangkat akan dikau, hai Zerubbabil, hai anak Sealtiel, hamba-Ku! demikianlah firman Tuhan, dan Kujadikan dikau akan cincin meterai, karena engkau yang sudah Kupilih, demikianlah firman Tuhan serwa sekalian alam!",
+              "ende": "Pada hari itu - itulah firman Jahwe Balatentara -Aku mengambil engkau, Zerubabel bin Sjealtiel, hambaKu - itulah firman Jahwe - dan membuat engkau djadi tjintjin meterai, sebab engkau telah Kupilih, - itulah firman Jahwe Balatentara -!",
+              "tb_itl_drf": "(2-24) Pada waktu <03117> itu <01931>, demikianlah <05002> firman TUHAN <03068> semesta alam <06635>, Aku akan mengambil <03947> engkau, hai Zerubabel <02216> bin <01121> Sealtiel <07597>, hamba-Ku <05650> --demikianlah <05002> firman TUHAN <03068>-- dan akan menjadikan <07760> engkau seperti cincin meterai <02368>; sebab <03588> engkaulah yang Kupilih <0977>, demikianlah <05002> firman TUHAN <03068> semesta alam <06635>.\"",
+              "tl_itl_drf": "(2-24) Maka pada hari <03117> itu juga <01931>, demikianlah <05002> firman Tuhan <03068> serwa sekalian alam <06635>, Aku kelak mengangkat <03947> akan dikau, hai Zerubbabil <02216>, hai anak <01121> Sealtiel <07597>, hamba-Ku <05650>! demikianlah <05002> firman Tuhan <03068>, dan Kujadikan <07760> dikau akan cincin meterai <02368>, karena <03588> engkau yang sudah Kupilih <0977>, demikianlah <05002> firman Tuhan <03068> serwa sekalian alam <06635>!",
+              "bbe": "In that day, says the Lord of armies, I will take you, O Zerubbabel, my servant, the son of Shealtiel, says the Lord, and will make you as a jewelled ring: for I have taken you to be mine, says the Lord of armies.",
+              "message": "And on that day'\"--this is GOD's Message--\"'I will take you, O Zerubbabel son of Shealtiel, as my personal servant and I will set you as a signet ring, the sign of my sovereign presence and authority. I've looked over the field and chosen you for this work.'\" The Message of GOD-of-the-Angel-Armies.",
+              "nkjv": "`In that day,' says the LORD of hosts, `I will take you, Zerubbabel My servant, the son of Shealtiel,' says the LORD, `and will make you like a signet [ring]; for I have chosen you,' says the LORD of hosts.\"",
+              "net": "On that day,’* says the Lord who rules over all, ‘I will take you, Zerubbabel son of Shealtiel, my servant,’* says the Lord, ‘and I will make you like a signet ring,* for I have chosen you,’ says the Lord who rules over all.”*",
+              "net2": "*Zechariah*\n\n_Introduction_\n\nOn that day,’⁽⁷⁰⁾ says the Lord who rules over all, ‘I will take you, Zerubbabel son of Shealtiel, my servant,’⁽⁷¹⁾ says the Lord, ‘and I will make you like a signet ring,⁽⁷²⁾ for I have chosen you,’ says the Lord who rules over all.”⁽⁷³⁾ ZechariahIntroduction",
+              "tn_he": "בַּיּ֣וֹם הַה֣וּא נְאֻם־יְהֹוָ֣ה צְבָא֡וֹת אֶ֠קָּֽחֲךָ זְרֻבָּבֶ֨ל בֶּן־שְׁאַלְתִּיאֵ֚ל עַבְדִּי֙ נְאֻם־יְהֹוָ֔ה וְשַׂמְתִּ֖יךָ כַּֽחוֹתָ֑ם כִּֽי־בְךָ֣ בָחַ֔רְתִּי נְאֻ֖ם יְהֹוָ֥ה צְבָאֽוֹת:",
+              "tn_en": "On that day, says the Lord of Hosts, I will take you, O Zerubbabel the son of Shealtiel, My servant; says the Lord, and I will make you as a signet; for I have chosen you, says the Lord of Hosts."
+            }
+          }
+        ],
+        "totalVerses": 23,
+        "aid": 16203,
+        "nextAid": 15768,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ]
+  ]
+}

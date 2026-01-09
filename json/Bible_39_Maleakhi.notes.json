@@ -1,0 +1,979 @@
+{
+  "id": 39,
+  "name": "Maleakhi",
+  "chapters": 4,
+  "totalVerses": 55,
+  "pericopes": 9,
+  "testament": "OT",
+  "data": [
+    [
+      {
+        "bookId": 39,
+        "chapter": 1,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "1": "(tn, Heb): “The burden.” The Hebrew term III מַשָּׂא (massa’), usually translated “oracle” or “utterance” (BDB 672 s.v. מַשָּׂא), is a technical term in prophetic literature introducing a message from the Lord (see Zech 9:1; 12:1). Since it derives from a verb meaning “to carry,” its original nuance was that of a burdensome message, that is, one with ominous content. The grammatical structure here suggests that the term stands alone (so NAB, NRSV) and is not to be joined with what follows, “the burden [or “revelation”] of” (so KJV, NASB, ESV).",
+              "2": "(tn, Heb): “The word of the Lord to Israel by the hand of Malachi.” There is some question as to whether מַלְאָכִי (mal’akhi) should be understood as a personal name (so almost all English versions) or as simply “my messenger” (the literal meaning of the Hebrew). Despite the fact that the word should be understood in the latter sense in 3:1 (where, however, it refers to a different person), to understand it that way here would result in the book being of anonymous authorship, a situation anomalous among all the prophetic literature of the OT."
+            },
+            "rashi": [
+              {
+                "heb": "*משא דבר ה'.* \nפורפור\"ט בלע\"ז דבר הנמסר למלאכי לשאת אותו אל בני ישראל: \n",
+                "eng": "*The burden of the word of the Lord.* Porport in Old French, burden. A word delivered to Malachi to bear to the children of Israel."
+              },
+              {
+                "heb": "*ביד מלאכי.* \nכבר היה מסור בידו זה ימים רבים מכאן דרשו רבותינו בברייתא דמכילתא שכל הנביאים עמדו על הר סיני ושם נמסרו להם הנבואות וכן (ישעיהו מ״ח:ט״ז) אומר מעת היותה שם אני ועתה ה' אלהים שלחני:\n",
+                "eng": "*in the hand of Malachi.* It was already delivered into his hand for many days. From here, our Sages expounded in a baraitha of Mechilta that all the prophets stood on Mount Sinai and there the prophecies were delivered to them, and so [Isaiah (48:16)] says: “From the time it was, there was I, and now, the Lord God has sent me, [and His spirit].”"
+              }
+            ]
+          },
+          {
+            "verse": 2,
+            "rashi": [
+              {
+                "heb": "*ואוהב את יעקב.* \nלתת לו את ארץ חמדה צבי צבאות גוים (ירמיהו ג׳:י״ט) ארץ שצבין כל צבאות העכו\"ם בה:\n",
+                "eng": "*And I loved Jacob.* And I gave him (Jer. 3:19) “a desirable land, an inheritance of the desire of hosts of nations;” a land that all the hosts of nations desire."
+              }
+            ]
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "3": "(tn, Heb): “and I loved Jacob, but Esau I hated.” The context indicates this is technical covenant vocabulary in which “love” and “hate” are synonymous with “choose” and “reject” respectively (see Deut 7:8; Jer 31:3; Hos 3:1; 9:15; 11:1).",
+              "4": "(tn, Heb): “his”; the referent (Esau) has been specified in the translation for clarity.",
+              "5": "(tn, Heb): “I set his mountains as a desolation.”",
+              "6": "(tn): Or “inheritance” (so NIV, NLT)."
+            },
+            "rashi": [
+              {
+                "heb": "*ואת עשו שנאתי.* \nלדוחפו אל ארץ שעיר מפני יעקב אחיו ומנהג שבעולם מי שיש לו שני בנים לבכור הוא בורר לו מנה יפה:\n",
+                "eng": "*And I hated Esau.* to push him off to a land because of Jacob, his brother. Now it is customary in the world that, if one has two sons, he selects a beautiful portion for the firstborn."
+              },
+              {
+                "heb": "*ואשים את הריו שממה.* \nאינן דומין להרי ישראל:\n",
+                "eng": "*and I made his mountains desolate.* They do not compare to the mountains of Israel."
+              },
+              {
+                "heb": "*לתנות מדבר.* \nמעון תנים:\n",
+                "eng": "*for the jackals of the desert.* A den of jackals."
+              }
+            ]
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "7": "(sn): Edom, a “brother” nation to Israel, became almost paradigmatic of hostility toward Israel and God (see Num 20:14-21; Deut 2:8; Jer 49:7-22; Ezek 25:12-14; Amos 1:11-12; Obad 10-12).",
+              "8": "(sn): The epithet Lord who rules over all occurs frequently as a divine title throughout Malachi (24 times total). This name (יְהוָה צְבָאוֹת, y�hvah ts�va’ot), traditionally translated “Lord of hosts” (so KJV, NAB, NASB; cf. NIV NLT “Lord Almighty”; NCV, CEV “Lord All-Powerful”), emphasizes the majestic sovereignty of the Lord, an especially important concept in the postexilic world of great human empires and rulers. For a thorough study of the divine title, see T. N. D. Mettinger, In Search of God, 123-57.",
+              "9": "(tn, Heb): “and they will call them.” The third person plural subject is indefinite; one could translate, “and people will call them.”"
+            },
+            "rashi": [
+              {
+                "heb": "*כי תאמר אדום רוששנו.* \nואם יאמ' מחריבי המקדש' מתחלתינו רשים היינו אבל מעתה שהעשרנו מביזת ירושלים:\n",
+                "eng": "*Should Edom say, “We were poor”.* And if Edom says, “At first we were poor, but from now on we will be rich from the spoils of Jerusalem.”"
+              },
+              {
+                "heb": "*נשוב ונבנה חרבות.* \nשלנו, כה אמר ה' וגו':\n",
+                "eng": "*but we will return and build the ruins.* Our ruins, so said the Lord, etc."
+              }
+            ]
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "10": "(tn): Or “Great is the Lord” (so NAB; similar NIV, NRSV)."
+            },
+            "rashi": [
+              {
+                "heb": "*יגדל ה' מעל לגבול ישראל.* \nיראה גדולתו מעל לגבולינו להודיע כי אנחנו עמו וי\"ת יסגא יקרא דה' ואפתי ית תחו' ארעא דישראל:\n",
+                "eng": "*“The Lord is great beyond the border of Israel.”.* He will show His greatness over our border, to make known that we are His people. And Jonathan rendered: May the glory of the Lord be magnified, and He has widened the border of Israel."
+              }
+            ]
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "11": "(tn): The verb “respects” is not in the Hebrew text but is supplied in the translation for stylistic reasons. It is understood by ellipsis (see “honors” in the preceding line).",
+              "12": "(tn): The pronoun “your” is supplied in the translation for clarification (also a second time before “master” later in this verse)."
+            },
+            "rashi": [
+              {
+                "heb": "*בן.* \nיש עליו לכבד אב וכן עבד אדוניו ואתם קרויין בנים ועבדים ועתה אם אב אני לכם איה כבודי:\n",
+                "eng": "*A son.* is required to honor his father, and so a slave his master and you are called sons and slaves. Now, if I am your father, where is My honor?"
+              },
+              {
+                "heb": "*אמר ה' צבאות לכם.* \nאתם הכהנים הבוזים את שמי:\n",
+                "eng": "*says the Lord of Hosts to you.* You, the priests who despise My Name."
+              },
+              {
+                "heb": "*ואמרתם במה בזינו.* \nכלומר ידעתי שתאמרו לי במה בזינו הרי הבזיון:\n",
+                "eng": "*But you said, “How have we despised”.* I knew that you would say, “How have we despised?” This is the contempt [as follows:]"
+              }
+            ]
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "13": "(sn): The word table, here a synonym for “altar,” has overtones of covenant imagery in which a feast shared by the covenant partners was an important element (see Exod 24:11). It also draws attention to the analogy of sitting down at a common meal with the governor (v. 8)."
+            },
+            "rashi": [
+              {
+                "heb": "*מגישים על מזבחי וגו': ואמרתם.* \nכלומר ואם תאמרון:\n",
+                "eng": "*You offer on My altar, etc., yet you say.* And if you say."
+              },
+              {
+                "heb": "*במה גאלנוך.* \nגאלנו לך את לחם מזבחך אני משיב לכם כי בזאת גאלתם אותי:\n",
+                "eng": "*“How have we defiled You?”.* How have we defiled for You the bread of Your altar? I reply to you that, in this manner you have defiled Me."
+              },
+              {
+                "heb": "*באמרכם שלחן ה' נבזה הוא.* \nבוזים היו לחלוק איש באחיו במנחות ובקדשים ואומר מאחר שהוא אסור לנו לחלוק מנחה כנגד מנחה וזבח כנגד זבח וטורח ועמל הוא לחלוק כל מנחה ומנחה בשביל כזית או כפול המגיע לכל אחד ואחד:\n",
+                "eng": "*By your saying, “God’s table is contemptible.”.* They would look with contempt on sharing equally the meal offerings and the hallowed foods, and they would say, “Since we may not share a meal offering for a meal offering, or a sacrifice for a sacrifice, it is too much bother and toil to divide each meal offering for the olive-sized piece or the bean-sized piece that is apportioned to each one.”"
+              }
+            ]
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "14": "(sn): Offerings of animals that were lame or sick were strictly forbidden by the Mosaic law (see Deut 15:21).",
+              "15": "(tn, Heb): “it” (so NAB, NASB). Contemporary English more naturally uses a plural pronoun to agree with “the lame and sick” in the previous question (cf. NIV, NCV).",
+              "16": "(tc): The LXX and Vulgate read “with it” (which in Hebrew would be הֲיִרְצֵהוּ, hayirtsehu, a reading followed by NAB) rather than “with you” of the MT (הֲיִרְצְךָ, hayirts�kha). The MT (followed here by most English versions) is to be preferred because of the parallel with the following phrase פָנֶיךָ (fanekha, “receive you,” which the present translation renders as “show you favor”)."
+            },
+            "rashi": [
+              {
+                "heb": "*אין רע.* \nוכי אין דבר זה רע:\n",
+                "eng": "*is there nothing wrong?.* Is this thing not bad?"
+              }
+            ]
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "17": "(tn, Heb): “seek the face of God.”",
+              "18": "(tn): After the imperative, the prefixed verbal form with vav conjunction indicates purpose (cf. NASB, NRSV)."
+            },
+            "rashi": [
+              {
+                "heb": "*ועתה חלו נא פני.* \nועתה אתם הכהנים העושים הרע הזאת איך יעלה בלבבכם להיות שלוחי ישראל לבקש עליהם רחמים הרי מידכם היתה זאת הרעה:\n",
+                "eng": "*And now, will you pray before the Lord?.* And now, you priests, who commit this evil, how does it enter your mind that you can be the messengers of Israel, to supplicate God to have compassion on them? Lo, this evil has come from your hand."
+              },
+              {
+                "heb": "*הישא.* \nאת פניכם לשמוע תפלה מפיכם ולחון את שולחיכם:\n",
+                "eng": "*Will He favor any of you.* to hearken to a prayer from your mouth, and to favor those who sent you?"
+              }
+            ]
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "19": "(sn): The rhetorical language suggests that as long as the priesthood and people remain disobedient, the temple doors may as well be closed because God is not “at home” to receive them or their worship there."
+            },
+            "rashi": [
+              {
+                "heb": "*מי גם בכם ויסגור דלתים.* \nהלואי ויקום איש טוב בכם שיסגור דלתי מקדשי לבלתי הביא שם קרבן מתועבה הזאת:\n",
+                "eng": "*O that there were even one among you that would close the doors.* If only a good man would arise among you who would close the doors of My sanctuary so as not to allow this abominable sacrifice there."
+              },
+              {
+                "heb": "*ולא תאירו מזבחי חנם.* \nבאישים שאיני מתרצה בהם שהרי אין לי חפץ בכם ורבותינו דרשו בתורת כהנים אדם אומר לחבירו הגף לי את הדלת הזו אין תובע עליה שכר הדליק לי את הנר הזה אין שואל עליה שכר ואתם מי בכם שסגר דלתי חנם ולא הארתם מזבחי חנם ק\"ו שלא עשיתם חנם דברים שדרכן לעשותן בשכר לפיכך אין לי חפץ בכם:\n",
+                "eng": "*and that you would not kindle fire on My altar in vain.* with fire offerings with which I am not placated, for I have no desire in you. And our Sages expounded in Torath Kohanim (7:154): If a person says to his friend, “Close this door for me,” he does not demand compensation for it; [or if he says,] “Light this candle for me,” he does not request compensation for it. But you - who is there among you who closed My doors, gratis? Neither did you kindle fire on My altar gratis. Surely, things that are customarily done for compensation you did not do gratis. Therefore, I have no desire in you."
+              }
+            ]
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "20": "(sn): My name will be great among the nations. In what is clearly a strongly ironic shift of thought, the Lord contrasts the unbelief and virtual paganism of the postexilic community with the conversion and obedience of the nations that will one day worship the God of Israel."
+            },
+            "rashi": [
+              {
+                "heb": "*גדול שמי בגוים.* \nאמרו רבותינו דקרו לי' אלהא דאלהיא אפילו מי שיש לו עכו\"ם יודע (שיש אלוה) שהוא על כולם ובכל מקום מתנדבים לשמי אף העכו\"ם ורבותינו פירשו אלו תלמידי חכמים העוסקים בהלכות עבודה בכל מקום וכן כל תפלות ישראל שמתפללין בכל מקום הרי הן לי כמנחה טהורה וכן תרגם יונתן וכל עידן דאתון עבדין רעותי אני מקבל צלותכון ושמי רבא מתקדש על ידיכון וצלותכן כקרבן דכי קדמי וכן פירש המקרא ולמה אתם מחללין שמי והלא גדול הוא בגוים ואני אהבתי וחיבתי עליכם שבכל מקום שאתם מתפללין לפני ואף בגולה מוקטר ומוגש הוא לשמי: \n",
+                "eng": "*My Name is great among the nations.* Our Sages stated (Men. 110a): For they call Him the God of the gods. Even one who has an idol knows that He is the God Who is over all of them - and everywhere they donate in My Name. Our Sages, however, explained: These are the Torah scholars who are engaged in the laws of the Temple service everywhere, and likewise, every prayer of Israel that they pray anywhere is to Me as a pure oblation. And so did Jonathan paraphrase: And every time that you do My will, I accept your prayer, and My great Name is sanctified through you, and your prayer is like a pure offering before Me. This is the explanation of the verse: Now why do you profane My Name? Is it not great among the nations? As for Me, My love and My affection are upon you wherever you pray before Me, and even in exile, [offerings are] burnt and offered up to My Name."
+              },
+              {
+                "heb": "*ומנחה טהורה.* \nהוא לי כי על ידכם שמי נורא בגוים ואתם מחללין אותי ואת שמי:\n",
+                "eng": "*yea, a pure oblation.* it is to Me, for through you My Name is feared among the nations. Yet you profane Me and My Name."
+              }
+            ]
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "21": "(tn, Heb): “fruit.” The following word “food” in the Hebrew text (אָכְלוֹ, ’okhlo) appears to be an explanatory gloss to clarify the meaning of the rare word נִיב (niv, “fruit”; see Isa 57:19 Qere; נוֹב, nov, “fruit,” in Kethib). Cf. ASV “the fruit thereof, even its food.” In this cultic context the reference is to the offerings on the altar."
+            },
+            "rashi": [
+              {
+                "heb": "*וניבו נבזה אכלו.* \nניבו של מזבח השגור בשפתותיכ' זהו תמיד נבזה אכלו אתם אומרי' עליו כלומ' כבר הוצאת' עליו דבה זו וניב זה החזקתם למזבחי:\n",
+                "eng": "*and its expression is “Its food is contemptible.”.* The expression of the altar that is fluent on your lips is always, “Its food is contemptible”; that [is all] you say about it. You have already spread this slander, and you have strongly attached this expression to My altar."
+              },
+              {
+                "heb": "*אכלו.* \nמאכלו:\n",
+                "eng": "*its food.* its food."
+              }
+            ]
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "22": "(tn, Heb): “from your hand,” a metonymy of part (the hand) for whole (the person)."
+            },
+            "rashi": [
+              {
+                "heb": "*ואמרתם הנה מתלאה.* \nבהמה כחושה ואנו עניים ואין יכולת להשיג למבחר נדרים וכן ת\"י הא דאייתינא מליאותנא: \n",
+                "eng": "*And you say, “Here is a weary one”.* An emaciated animal, and we are poor and cannot afford the choicest for [our] vows. So did Jonathan render: This is what we have brought from our toil."
+              },
+              {
+                "heb": "*והפחתם אותו.* \nזו אחת מי\"ח תיבות של תיקון סופרי': \n",
+                "eng": "*and you cause it pain.* This is one of the eighteen words [in all of Scripture known as] the emendations of the scribes."
+              },
+              {
+                "heb": "*והפחתם אותו.*  אותי נכתב אלא שכינה הכתוב וכתבו אותו. והפחתם והדאבת' לשון מפח נפש (איוב י\"א): \n",
+                "eng": "*and you cause it pain.*  should have been written: אוֹתִי, and you cause Me pain. Scripture, however, euphemized, writing אוֹתוֹ it. and you cause pain, an expression of despair (Job 11:20)."
+              },
+              {
+                "heb": "*אותי.* \nואת שולחני:\n",
+                "eng": "*it.* My table."
+              }
+            ]
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "23": "(sn): The epithet great king was used to describe the Hittite rulers on their covenant documents and so, in the covenant ideology of Malachi, is an apt description of the Lord."
+            },
+            "rashi": [
+              {
+                "heb": "*נוכל.* \nמתנכל במרמה בדברי שקר לפני לאמר אין לי טובה מזו:\n",
+                "eng": "*he who deals craftily.* Plots deceitfully, with guile, before Me, saying, “I have none better than this. ”"
+              },
+              {
+                "heb": "*ויש בעדרו זכר.* \nאיל ההגון לעולה והוא נודר זבח:\n",
+                "eng": "*a ram.* a ram fit for a burnt offering; and he vows and sacrifices."
+              },
+              {
+                "heb": "*משחת.* \nבעל מום כמו (ויקרא כ\"ב) משחתם בהם:\n",
+                "eng": "*a blemished one.* as in (Lev. 22:25), “their corruption is in them; a blemish is in them.”"
+              }
+            ]
+          }
+        ],
+        "totalVerses": 14,
+        "aid": 16219,
+        "nextAid": 16220,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 39,
+        "chapter": 2,
+        "verses": [
+          {
+            "verse": 1,
+            "rashi": [
+              {
+                "heb": "*אליכם.* \nהכהנים אני מצוה המצוה הזאת שלא תקריבו אלה על מזבחי:\n",
+                "eng": "*to you, etc., O priests.* I charge you with this commandment, that you shall not sacrifice these on My altar."
+              }
+            ]
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "24": "(tn, Heb): “and if you do not place upon [the] heart”; KJV, NAB, NRSV “lay it to heart.”",
+              "25": "(tn, Heb): “the curse” (so NASB, NRSV); NLT “a terrible curse.”"
+            },
+            "rashi": [
+              {
+                "heb": "*וארותי.* \nוקללתי את ברכותיכם מה שצריך לברך לכם הדגן והתירוש והיצהר:\n",
+                "eng": "*and I will curse.* And I will curse your blessings; how I should bless the grain, the wine, and the oil for you."
+              },
+              {
+                "heb": "*וגם ארותיה.* \nובאמת אין לתלות הדבר על תנאי שתליתי באם לא ישמע כי ידעתי שלא תשמעו לפיכך אני מעתה ארותיה:\n",
+                "eng": "*Indeed I have [already] cursed it.* Indeed, it is unnecessary to have the matter depend on the condition upon which I made it depend: if they do not obey. For I know that you will not obey. Therefore, I have already cursed it - from now."
+              }
+            ]
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "26": "(tc): The phrase “discipline your children” is disputed. The LXX and Vulgate suppose זְרוֹעַ (z�roa’, “arm”) for the MT זֶרַע (zera’, “seed”; hence, “children”). Then, for the MT גֹעֵר (go’er, “rebuking”) the same versions suggest גָּרַע (gara’, “take away”). The resulting translation is “I am about to take away your arm” (cf. NAB “deprive you of the shoulder”). However, this reading is unlikely. It is common for a curse (v. 2) to fall on offspring (see, e.g., Deut 28:18, 32, 41, 53, 55, 57), but a curse never takes the form of a broken or amputated arm. It is preferable to retain the reading of the MT here.",
+              "27": "(tn): The Hebrew term פֶרֶשׁ (feresh, “offal”) refers to the entrails as ripped out in preparing a sacrificial victim (BDB 831 s.v. פֶּרֶשׁ). This graphic term has been variously translated: “dung” (KJV, RSV, NRSV, NLT); “refuse” (NKJV, NASB); “offal” (NEB, NIV).",
+              "28": "(sn): See Zech 3:3-4 for similar coarse imagery which reflects cultic disqualification."
+            },
+            "rashi": [
+              {
+                "heb": "*וזריתי פרש.* \nשל בהמות חגיכם על פניכם כלומ' לא תקבלו שכר מאתי כי אם לרעה לבושת ואגעור לכם את זרע השדה:\n",
+                "eng": "*and I will scatter dung.* of the animals of your festive sacrifices; that is to say, you will not receive reward from Me, but [you will receive a curse] for harm and shame. And I will rebuke the seed of the field because of you."
+              },
+              {
+                "heb": "*ונשא אתכם אליו.* \nפרש בהמות קרבנותיכם ישאו אתכם אליו להיות זוללים ונבזים כמוהו:\n",
+                "eng": "*and it shall take you to itself.* The dung of your sacrificial animals will take you to itself to [make you] cheap and despised, as it is."
+              }
+            ]
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "29": "(sn): My covenant refers to the priestly covenant through Aaron and his grandson Phinehas (see Exod 6:16-20; Num 25:10-13; Jer 33:21-22). The point here is to contrast the priestly ideal with the disgraceful manner in which it was being carried out in postexilic times."
+            },
+            "rashi": [
+              {
+                "heb": "*להיות בריתי את לוי.* \nשאני חפץ שתתקיימו (אתי) בברי' שכרתי לשבט לוי:\n",
+                "eng": "*that My covenant be with Levi.* for I wish that you will exist with Me with the covenant that I formed for the tribe of Levi."
+              }
+            ]
+          },
+          {
+            "verse": 5,
+            "rashi": [
+              {
+                "heb": "*החיים והשלום.* \nשנאמר לפנחס את בריתי שלום (במדב' כ\"ה) והובטח לו ולזרעו אחריו הרי שיהא זרעו בחיים: \n",
+                "eng": "*life and peace.* As it was said to Phinehas (Num. 25:12): “My covenant of peace;” and it was promised to him and to his seed after him, thus indicating that his seed will be alive."
+              },
+              {
+                "heb": "*ואתנם לו.* \nשיקבלם במורא וכן עשה וייראני:\n",
+                "eng": "*and I gave them to him.* that he accept them with fear, and so he did, and he feared Me."
+              },
+              {
+                "heb": "*נחת.* \nלשון חתת נתירא:\n",
+                "eng": "*he was over-awed.* an expression of חִתַּת, fear; he was afraid."
+              }
+            ]
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "30": "(tn, Heb): “True teaching was in his mouth”; cf. NASB, NRSV “True instruction (doctrine NAB) was in his mouth.”"
+            },
+            "rashi": [
+              {
+                "heb": "*בשלום ובמישור הלך אתי.* \nאהרן ואלעזר ופנחס וכן במעשה העגל השיבו כל שבטיהם מעון שנאמר ויאספו אליו כל בני לוי (שמות ל״ב:כ״ו):\n",
+                "eng": "*In peace and equity he went with Me.* Aaron, Eleazar, and Phinehas and so in the episode of the calf, they brought back all their tribe from iniquity, as it is said (Ex. 32:26), “all the children of Levi gathered to him.”"
+              }
+            ]
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "31": "(tn, Heb): “from his mouth” (so NAB, NASB, NRSV)."
+            },
+            "rashi": [
+              {
+                "heb": "*כי שפתי כהן.* \nעליהם מוטל לשמור דעת למה שהרי :\n",
+                "eng": "*For a priest’s lips.* It is incumbent upon them to guard knowledge. Why? Because…"
+              },
+              {
+                "heb": "*תורה יבקשו מפיהו.* \nשכבר דבר זה מסור להם יורו משפטיך ליעקב (דברים ל״ג:י׳):\n",
+                "eng": "*teaching should be sought from his mouth.* This matter has already (Deut. 33:10) been delivered to them.“They shall teach Your judgments to Jacob.”"
+              },
+              {
+                "heb": "*כי מלאך.* \nשלוחו של הקב\"ה כמלאכי השרת לשרת לפניו וליכנס לפנים במחיצתו:\n",
+                "eng": "*for he is a messenger.* the agent of the Holy One, blessed be He; like the ministering angels, to serve Him and to enter into His compartment. [I.e., into the place where God’s presence is manifest.]"
+              }
+            ]
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "32": "(tn): The definite article embedded within בַּתּוֹרָה (battorah) may suggest that the Torah is in mind and not just “ordinary” priestly instruction, though it might refer to the instruction previously mentioned (v. 7).",
+              "33": "(tn): Or “the Levitical covenant.”"
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "34": "(tn, Heb): “in the instruction” (so NASB). The Hebrew article is used here as a possessive pronoun (cf. NRSV, NLT)."
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "35": "(sn): The rhetorical question Do we not all have one father? by no means teaches the “universal fatherhood of God,” that is, that all people equally are children of God. The reference to the covenant in v. 10 as well as to Israel and Judah (v. 11) makes it clear that the referent of “we” is God’s elect people."
+            },
+            "rashi": [
+              {
+                "heb": "*לחלל ברית אבותינו.* \nברית שכרת הקב\"ה עם אבותינו בסיני:\n",
+                "eng": "*to profane the covenant of our forefathers.* The covenant that the Holy One, blessed be He, formed with our forefathers at Sinai."
+              }
+            ]
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "36": "(map): For location see Map5-B1; Map6-F3; Map7-E2; Map8-F2; Map10-B3; JP1-F4; JP2-F4; JP3-F4; JP4-F4.",
+              "37": "(tn): Or perhaps “secularized”; cf. NIV “desecrated”; TEV, NLT “defiled”; CEV “disgraced.”",
+              "38": "(tn, Heb): “has married the daughter of a foreign god.” Marriage is used here as a metaphor to describe Judah’s idolatry, that is, her unfaithfulness to the Lord and “remarriage” to pagan gods. But spiritual intermarriage found expression in literal, physical marriage as well, as vv. 14-16 indicate."
+            },
+            "rashi": [
+              {
+                "heb": "*כי חלל יהודה.* \nאת עצמו שהיה קדש לה' ראשית תבואתו (ירמיהו ב׳:ג׳):\n",
+                "eng": "*for Judah has profaned.* himself, who was the holy one of the Lord, the first of His grain."
+              },
+              {
+                "heb": "*ובעל בת אל נכר.* \nשנשאו נשים נכריות בבבל ואפילו הכהנים כמו שמפורש בספר (עזרא ט) ורבותינו אמרו מלאכי זה עזר':\n",
+                "eng": "*and married the daughter of a foreign god.* that they married gentile women in Babylon, and even the priests, as is delineated in the Book of Ezra (chap. 9 and 10). Our Sages said that Malachi is Ezra."
+              }
+            ]
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "39": "(tn, Heb): “tents,” used figuratively for the community here (cf. NCV, TEV); NLT “the nation of Israel.”",
+              "40": "(tc, Heb): “every man who does this, him who is awake and him who answers.” For “answers” the LXX suggests an underlying Hebrew text of עָנָה (’anah, “to be humbled”), and then the whole phrase is modified slightly: “until he is humbled.” This requires also that the MT עֵר (’er, “awake”) be read as עֵד (’ed, “until”; here the LXX reads ἕως, Jews). The reading of the LXX is most likely an alteration to correct what is arguably a difficult text. “every man who does this, him who is awake and him who answers.” The idea seems to be a merism expressing totality, that is, everybody from the awakener to the awakened, thus “every last person who does this” (NLT similar); NIV “whoever he may be.”"
+            },
+            "rashi": [
+              {
+                "heb": "*ער ועונה.* \nער בתלמידים ועונה בחכמים, ער ל' אדם חריף: \n",
+                "eng": "*one of acuity or erudition.* An ingenious one among the students, and one who can answer among the sages. עֵר An expression of an ingenious person."
+              },
+              {
+                "heb": "*ומגיש מנחה.* \nואם כהן הוא לא יהי' לו בן מגיש מנחה:\n",
+                "eng": "*and one who offers up an offering.* And if he is a priest, he will not have a son who offers up an offering."
+              }
+            ]
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "41": "(sn): You cover the altar of the Lord with tears. These tears are the false tears of hypocrisy, not genuine tears of repentance. The people weep because the Lord will not hear them, not because of their sin."
+            },
+            "rashi": [
+              {
+                "heb": "*שנית תעשו.* \nהראשונה שהוכחתי הרב' היא קשה שנשא נכריות ואפי' הוא פנוי וזאת שנית קש' ממנ' שהנשוי ישראלי' נשאו עליהם את הנכריות לפי שנתפחמו הישראלי' ברעב ובגול' ונתגנו עליהם והיה מושיבה בביתו צרורה כאלמנות חיות והנכרית היתה גברת:\n",
+                "eng": "*And this second thing you do.* The first matter concerning which I reproved you is, indeed, very grave, for one to have married a gentile woman even if he was unmarried; but this second matter is graver, for those [who were] married to Israelite women and married gentile women in addition to them. [The men did this] because the Israelite women became black from hunger and from exile, and became repugnant to them. [Such a man] would, therefore, sit her [his Israelite wife] in his house, bound in living widowhood, and the gentile wife would be the chief wife."
+              },
+              {
+                "heb": "*כסות דמעה את מזבח.* \nשהיו באות לפני מזבח ה' ובוכות לפניו ואומרו' מה חטאנו ומה מצאו אנשינו בנו עול הננו לפני המזב' להבדק כסוטות:\n",
+                "eng": "*to cover the altar of the Lord with tears.* For the [Israelite wives] would come before the altar of the Lord and weep before it, saying, “ What have we sinned? And what wrong have our husbands found in us? Behold! We are before the altar to be tested as suspected adulteresses.”"
+              },
+              {
+                "heb": "*מאין עוד פנות וגו'.* \nעד שאינכם כדי שאפנה אל מנחתכם ולקחת ריצוי מידכם:\n",
+                "eng": "*such that he will no longer turn, etc..* So that you are not fit for Me to turn to your offering or take any thing willingly from your hand."
+              },
+              {
+                "heb": "*ואנקה.* \nלשון אנחה שאדם מצטער בלבו דמוניש\"א בלע\"ז ואב לכולם האנק דום (יחזקאל כ״ד:י״ז) ואם אנקה לשון צעקה היכן הדממה ותרגומו דמדנקין וכן תרגם (שם כ\"ד) ונקוטתם בפניכם ותדנקון ל' אדם הנוהם ומצטער בעצמו:\n",
+                "eng": "*and sighing.* an expression of sighing, that a person feels pain in his heart; demonisement in Old French, groaning. The source of all of them is (Ezek. 24:17), “Be silent in groaning” But if אֳנָקָה is an expression of a cry, where is the silence? The Targum of this word is דִמְדַנְקִין, and so did Jonathan translate (ibid. 30:43) “And you shall sigh before yourselves ותְדַנְקוּן.” [This is] an expression of a person who roars and feels pain within himself."
+              }
+            ]
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "42": "(tn, Heb): “the Lord is a witness between you and [between] the wife of your youth.”",
+              "43": "(sn, Heb): Though there is no explicit reference to marriage vows in the OT (but see Job 7:13; Prov 2:17; Ezek 16:8), the term law ( “covenant”) here asserts that such vows or agreements must have existed. References to divorce documents (e.g., Deut 24:1-3; Jer 3:8) also presuppose the existence of marriage documents."
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "44": "(tn, Heb): “and not one has done, and a remnant of the spirit to him.” The very elliptical nature of the statement suggests it is proverbial. The present translation represents an attempt to clarify the meaning of the statement (cf. NASB).",
+              "45": "(tn, Heb): “the one.” This is an oblique reference to Abraham who sought to obtain God’s blessing by circumventing God’s own plan for him by taking Hagar as wife (Gen 16:1-6). The result of this kind of intermarriage was, of course, disastrous (Gen 16:11-12).",
+              "46": "(sn): The wife he took in his youth probably refers to the first wife one married (cf. NCV “the wife you married when you were young”)."
+            },
+            "rashi": [
+              {
+                "heb": "*ולא אחד עשה.* \nהקב\"ה לאדם וחוה תחילה: \n",
+                "eng": "*Now did He not make one.* The Holy One, blessed be He, made Adam and Eve first."
+              },
+              {
+                "heb": "*ושאר.* \nהרוחות והנפשות :\n",
+                "eng": "*the rest of the spirits.* The spirits and the souls."
+              },
+              {
+                "heb": "*לו.* \nהיו מאדם הראשון יצאו כולם:\n",
+                "eng": "*had.* Lit., to him were. They all came our from the first man."
+              },
+              {
+                "heb": "*ומה האחד מבקש.* \nהאחד שבזוג מבקש למצוא עלילות לאשתו שהיא בת זוגו שהוא זרע אלהים מה הוא תועבה שמבזה אותה וזהו ל' תרגום של יונתן אלא שי\"ת ומה האחד מבקש כי אם זרע אלהי' והפירוש נכון אם לא שהא' נקוד בטעם זקף נותק טעם הזקף את תיבת מבקש מלהתחבר עם ומה האחד וסמכו אצל זרע אלהי' ויש פתרון על פי האגדה שנתקבצו נושאי העכו\"ם אל הנביא אמרו לו ולא אברהם עשה כן שנשא הגר על אשתו ואמר להם ושאר רוח לו לא דעתו כדעתכם לא נתן בה עיניו דעת אחרת הית' לו אמרו לו ומה האחד מבקש מה היתה דעתו אמר להם להיות לו זרע אלהים ותרגום של יונתן הוכשר בעיני שלא מצינו לא במקרא ולא במשנה שאר משמש לשון אחר אלא במקום שאדם יכול לפרשו בלשון שיריים כמו (דניאל ז׳:ז׳) אכלה ומדקה ושארה ברגלה רפסה ובלשון משנה ושאר חייבי מיתות חוץ מאותן שפירש אבל ל' שאחר משמש אין שאר משמש: \n",
+                "eng": "*Now what does the one seek.* Now what does the one member of the couple seek to find accusations against his wife, who is his mate, who is the seed of God? What does he claim of her that he disgraces her? This is the wording of Jonathan’s translation, except that Jonathan renders: Now what does the one seek except seed of God? The explanation is correct except for the fact that the word הָאֶחָד is pointed with a “zakef” mark, and the mark of the “zakef” separates the word מְבַקֵּש from joining וּמָה הָאֶחָד. It connects it to זֶרַע א-ֱלֹהִים. He had a different spirit, His intention was not like your intention. He did not cast his eye upon her. He had a different intention. They said to him, “Now what did the one seek?” What was his intention? He said to them: To have seed of the Lord. Jonathan’s translation appeals to me, because neither in Scripture nor in the Mishnah do we find שְׁאָר being used as an expression of “other” - except where a person can explain it as an expression of residue, as in (Dan. 7:19), “which devoured, broke in pieces, and stamped the residue with his feet.” In the language of the Mishnah (Sanh. 8b), “And others liable to death” - outside of those delineated. But in the expression for which אַחֵר is used, שְׁאָר is not used. "
+              },
+              {
+                "heb": "*ונשמרתם ברוחכם.* \nובאשת נעוריך אל יבגד רוחך:\n",
+                "eng": "*and you shall beware of your spirit, that it shall not deal treacherously with the wife of your youth.* Your spirit shall not deal treacherously."
+              }
+            ]
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "47": "(tc): The verb שָׂנֵא (sane’) appears to be a third person form, “he hates,” which makes little sense in the context, unless one emends the following word to a third person verb as well. Then one might translate, “he [who] hates [his wife] [and] divorces her…is guilty of violence.” A similar translation is advocated by M. A. Shields, “Syncretism and Divorce in Malachi 2,10-16,” ZAW 111 (1999): 81-85. However, it is possible that the first person pronoun אָנֹכִי (’anokhi, “I”) has accidentally dropped from the text after כִּי (ki). If one restores the pronoun, the form שָׂנֵא can be taken as a participle and the text translated, “for I hate” (so NAB, NASB, NRSV, NLT). Though the statement “I hate divorce” may (and should) be understood as a comprehensive biblical principle, the immediate context suggests that the divorce in view is that of one Jewish person by another in order to undertake subsequent marriages. The injunction here by no means contradicts Ezra’s commands to Jewish men to divorce their heathen wives (Ezra 9–10).",
+              "48": "(tn, Heb): “him who covers his garment with violence” (similar ASV, NRSV). Here “garment” is a metaphor for appearance and “violence” a metonymy of effect for cause. God views divorce as an act of violence against the victim."
+            },
+            "rashi": [
+              {
+                "heb": "*כי שנא שלח.* \nורבותינו חלוקין בה במס' גיטין יש מהם אומרים אם שנאת שלח אותה בגט ותנשא לאחר:\n",
+                "eng": "*If you hate [her], send [her] away.* Our Sages differ concerning it in tractate Gittin (90b). Some of them say: If you hate her, send her away with a bill of divorcement, so that she can marry someone else."
+              },
+              {
+                "heb": "*וכסה חמס על לבושו.* \nאבל זאת כלום הוגנת לעשות שתפרוס עליה טליתך להחזיקה לך כאשתך והחמס פרוש על אותה טלית שבלבך עליה שנאה ואתה מקניטה ומצערה תמיד:\n",
+                "eng": "*For injustice shall cover his garment.* But this - is it proper to do, that you spread your cloak over her to keep her for you as your wife, and you provoke her and torment her constantly?"
+              }
+            ]
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "49": "(tn, Heb): “in the eyes of the Lord.”"
+            },
+            "rashi": [
+              {
+                "heb": "*באמרכם כל עושה רע וגו': או איה אלהי המשפט.* \nלפי שאתם רואים דרך רשעים צלחה וצדיקים מעונים ונכשלים אומרים אתם בלבבכם אחת מב' דרכים הללו כל עושה רע טוב בעיניו או אין דין ואין דיין ליפרע וכן פתרון ל' המקר' כל עוש' רע טוב בעיניו לכך הוא מצליח אותם או אם אין זאת איה אלהי המשפט שאינו נפרע מהם:\n",
+                "eng": "*By your saying, “Every evildoer, etc., or Where is the God of judgment?”.* Since you see that the way of the wicked prospers, and the righteous are afflicted and stumble, you say to yourselves,\"One of these two ways is true: Either every evildoer is good in His sight, or [else] there is no judgment or judge to requite him. And so is the interpretation of the language of the verse: Every evildoer is good in His sight; therefore, He causes them to prosper. Or, if this is not so, where is the God of judgment, for He does not requite them."
+              }
+            ]
+          }
+        ],
+        "totalVerses": 17,
+        "aid": 16219,
+        "nextAid": 16221,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 39,
+        "chapter": 3,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "50": "(tn): In Hebrew the phrase “my messenger” is מַלְאָכִי (mal’akhi), the same form as the prophet’s name (see note on the name “Malachi” in 1:1). However, here the messenger appears to be an eschatological figure who is about to appear, as the following context suggests. According to 4:5, this messenger is “Elijah the prophet,” whom the NT identifies as John the Baptist (Matt 11:10; Mark 1:2) because he came in the “spirit and power” of Elijah (Matt 11:14; 17:11-12; Lk 1:17).",
+              "51": "(tn): Here the Hebrew term הָאָדוֹן (ha’adon) is used, not יְהוָה (y�hvah, typically rendered Lord). Thus the focus is not on the Lord as the covenant God, but on his role as master.",
+              "52": "(sn): This messenger of the covenant may be equated with my messenger (that is, Elijah) mentioned earlier in the verse, or with the Lord himself. In either case the messenger functions as an enforcer of the covenant. Note the following verses, which depict purifying judgment on a people that has violated the Lord’s covenant."
+            },
+            "rashi": [
+              {
+                "heb": "*הנני שולח מלאכי.* \nלבער את הרשעים:\n",
+                "eng": "*Behold I send My angel.* to put the wicked away."
+              },
+              {
+                "heb": "*ומלאך הברית.* \nנוקם נקם ברית:\n",
+                "eng": "*and he will clear a way.* of the wicked."
+              },
+              {
+                "heb": "*ופנה דרך.* \nמן הרשעים:\n",
+                "eng": "*the Lord Whom you seek.* The God of justice."
+              },
+              {
+                "heb": "*האדון אשר אתם מבקשים.* \nאלהי המשפט:\n",
+                "eng": "*and the angel of the covenant.* who avenges the revenge of the covenant."
+              }
+            ]
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "53": "(sn): The refiner’s fire was used to purify metal and refine it by melting it and allowing the dross, which floated to the top, to be scooped off."
+            },
+            "rashi": [
+              {
+                "heb": "*ומי מכלכל.* \nומי יכיל:\n",
+                "eng": "*Now who can abide.* This is synonymous with; וּמִי יָכִיל"
+              },
+              {
+                "heb": "*ומי העומד.* \nשיוכל לעמוד:\n",
+                "eng": "*and who will stand.* Will be able to stand."
+              },
+              {
+                "heb": "*וכבורית מכבסים.* \nכבורית של מכבסים שמעביר את כל הכתם כן יעביר כל הרשעה:\n",
+                "eng": "*and like fullers’ soap.* Like soap used by the fullers, which removes the entire stain. So will he remove all the wickedness."
+              },
+              {
+                "heb": "*בורית.* \nעשב הוא שמעביר את הכתם בלע\"ז שנייר\"א ולשון בורית ידבר המצחצח ומטהר כמו (תהלים ע\"ג) לברי לבב:\n",
+                "eng": "*and like soap.* It is an herb which removes stains, erbe savonijere in Old French, probably soapwort. The word בֹּרִית signifies a thing that cleans and purifies, as in (Ps. 73:1), “to the pure of heart.”"
+              }
+            ]
+          },
+          {
+            "verse": 3,
+            "rashi": [
+              {
+                "heb": "*וישב מצרף.* \nיפנה מכל עסקיו להיות כצורף המצרף ומטהר כסף:\n",
+                "eng": "*And he shall sit refining.* He will free himself from all his affairs to be like a refiner, who refines and purifies silver."
+              }
+            ]
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "54": "(tn): Or “gift.”",
+              "55": "(map): For location see Map5-B1; Map6-F3; Map7-E2; Map8-F2; Map10-B3; JP1-F4; JP2-F4; JP3-F4; JP4-F4."
+            }
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "56": "(tn): The first person pronoun (a reference to the Lord) indicates that the Lord himself now speaks (see also v. 1). The prophet speaks in vv. 2-4 (see also 2:17).",
+              "57": "(tn, Heb): “those who swear [oaths] falsely.” Cf. NIV “perjurers”; TEV “those who give false testimony”; NLT “liars.”",
+              "58": "(tn, Heb): “and against the oppressors of the worker for a wage, [the] widow and orphan.”",
+              "59": "(tn, Heb): “those who turn aside.”",
+              "60": "(tn): Or “resident foreigner”; NIV “aliens”; NRSV “the alien.”"
+            }
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "61": "(tn, Heb): “do not change.” This refers to God’s ongoing commitment to his covenant promises to Israel."
+            },
+            "rashi": [
+              {
+                "heb": "*כי אני ה' לא שניתי.* \nאע\"פ שאני מאריך אפי לא שינה דעתי עלי מבראשונה לאהוב את הרע ולשנוא את הטוב: \n",
+                "eng": "*For I, the Lord, have not changed.* Although I keep back My anger for a long time, My mind has not changed from the way it was originally, to love evil and to hate good."
+              },
+              {
+                "heb": "*ואתם בני יעקב.* \nאע\"פ שמתים אתם ברעתכם ולא גביתי מן הרשעי' בחיים: \n",
+                "eng": "*and you, the sons of Jacob.* Although you die in your evil, and I have not requited the wicked in their lifetime"
+              },
+              {
+                "heb": "*לא כליתם.* \nאינכם כלים מלפני והנחתי לי הנפשות לגבות מהם דיני בגיהנם וכן ת\"י ואתון דבית יעקב דמאן דמית בעלמא הדין דיניה פסוק כלומר אתם סבורים לומר דיני בטל שאין עוד ליפרע ממנו ורבותינו פירשוהו לא שניתי לא הכיתי את מי ושניתי לו אבל אתכם העמדתי אחר פורענות הרבה וחיצי כלים ואתם אינכם כלים:\n",
+                "eng": "*you have not reached the end.* You are not finished from before Me, for I have left over the souls to be requited in Gehinnom. And so did Jonathan render. And you of the House of Jacob, who think that whoever dies in this world, his verdict has already ended, that is to say, you think that My verdict has been nullified, that he will no longer be punished. Our Sages (Sotah 9a), however, explained it: לֹא שָׁנִיתִי - I did not strike a nation and repeat a blow to it; but as for you, I have kept you up after much punishment, and My arrows are ended, but you are not ended."
+              }
+            ]
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "62": "(tn, Heb): “turned aside from.”",
+              "63": "(tn): Or “statutes” (so NAB, NASB, NRSV); NIV “decrees”; NLT “laws.”"
+            }
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "64": "(tc): The LXX presupposes an underlying Hebrew text of עָקַב (’aqav, “deceive”), a metathesis of קָבַע (qava’, “rob”), in all four uses of the verb here (vv. 8-9). The intent probably is to soften the impact of “robbing” God, but the language of the passage is intentionally bold and there is no reason to go against the reading of the MT (which is followed here by most English versions).",
+              "65": "(sn): The tithes and contributions mentioned here are probably those used to sustain the Levites (see Num 18:8, 11, 19, 21-24)."
+            },
+            "rashi": [
+              {
+                "heb": "*היקבע אדם.* \nרבותינו דרשו לשון גזילה ולשון ארמי הוא:\n",
+                "eng": "*Will a man rob.* Our Sages explained this as an expression of robbery, and it is an Aramaism."
+              },
+              {
+                "heb": "*המעשר והתרומה.* \nשאתם גוזלים מן הכהנים ומן הלוים היא גזילתי:\n",
+                "eng": "*With tithes and with the terumah levy.* The tithes and the terumah - levy that you steal from the priests and the Levites is tantamount to robbing Me."
+              }
+            ]
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "66": "(tn, Heb): “cursed with a curse” that is, “under a curse” (so NIV, NLT, CEV).",
+              "67": "(tn): The phrase “is guilty” is not present in the Hebrew text but is implied, and has been supplied in the translation for clarification and stylistic reasons."
+            },
+            "rashi": [
+              {
+                "heb": "*במארה אתם נארים.* \nעל עון זה שאני שולח קללה במעשה ידיכם ואעפ\"כ אותי אתם קובעים:\n",
+                "eng": "*You are cursed with a curse.* because of this iniquity, for which I send a curse into the work of your hands; but nevertheless, you rob Me."
+              }
+            ]
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "68": "(tn): The Hebrew phrase בֵּית הָאוֹצָר (bet ha’otsar, here translated “storehouse”) refers to a kind of temple warehouse described more fully in Nehemiah (where the term לִשְׁכָּה גְדוֹלָה [lishkah g�dolah, “great chamber”] is used) as a place for storing grain, frankincense, temple vessels, wine, and oil (Neh 13:5). Cf. TEV “to the Temple.”"
+            },
+            "rashi": [
+              {
+                "heb": "*ויהי טרף.* \nיהי מזון מצוי לשמשי:\n",
+                "eng": "*so that there may be nourishment in My House.* There shall be food accessible for My servants."
+              }
+            ]
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "69": "(tn, Heb): “the eater” (אֹכֵל, ’okhel), a general term for any kind of threat to crops and livelihood. This is understood as a reference to a locust plague by a number of English versions: NAB, NRSV “the locust”; NIV “pests”; NCV, TEV “insects.”",
+              "70": "(tn, Heb): “and I will rebuke for you the eater and it will not ruin for you the fruit of the ground.”"
+            },
+            "rashi": [
+              {
+                "heb": "*וגערתי לכם באוכל.* \nבחסיל וגזם האוכל לכם את תבואת השדה והגפן:\n",
+                "eng": "*And I will rebuke the devourer for your sake.* The finishing locusts and the shearing locusts, which devour the grain of your field and your vines."
+              }
+            ]
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "71": "(tn, Heb): “will be” (so NAB, NRSV); TEV “your land will be a good place to live in.”"
+            },
+            "rashi": [
+              {
+                "heb": "*ארץ חפץ.* \nארץ שחפצי בה:\n",
+                "eng": "*a desirable land.* A land that I desire."
+              }
+            ]
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "72": "(tn, Heb): “your words are hard [or “strong”] against me”; cf. NIV “said harsh things against me”; TEV, NLT “said terrible things about me.”"
+            }
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "73": "(tn, Heb): “What [is the] profit”; NIV “What did we gain.”",
+              "74": "(sn): The people’s public display of self-effacing piety has gone unrewarded by the Lord. The reason, of course, is that it was blatantly hypocritical."
+            },
+            "rashi": [
+              {
+                "heb": "*שוא עבוד אלהים.* \nעל חנם נעבדנו כי לא נקבל שכר:\n",
+                "eng": "*“It is futile to serve God”.* We worship Him for nothing, for we will receive no reward."
+              },
+              {
+                "heb": "*קדורנית.* \nבשפל רוח:\n",
+                "eng": "*in anxious worry.* with low spirits."
+              }
+            ]
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "75": "(tn, Heb): “built up” (so NASB); NIV, NRSV “prosper”; NLT “get rich.”",
+              "76": "(tn): Or “test”; NRSV, CEV “put God to the test.”"
+            },
+            "rashi": [
+              {
+                "heb": "*ועתה אנחנו מאשרים וגו'.* \nאנחנו עבדנוהו ושמרנו משמרתו ועתה רואים אלו הרשעי' מצליחים עד כי מאשרי' אנו אותם על מעשה רשעם:\n",
+                "eng": "*And now we praise the bold transgressors, etc..* We worshipped Him and kept His charge, but now we see that the wicked are prospering - to the extent that we praise them for the wicked deeds."
+              },
+              {
+                "heb": "*גם בחנו אלהים.* \nלומר נראה מה יוכל לעשות לנו:\n",
+                "eng": "*Yea, they tempt God,.* saying, “Let us see what He will be able to do to us.”"
+              },
+              {
+                "heb": "*וימלטו.* \nמן הרעה ולא נכשלו:\n",
+                "eng": "*and they have, nevertheless, escaped.* harm, and they have not stumbled."
+              }
+            ]
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "77": "(tn): Or “fear” (so NAB); NRSV “revered”; NCV “honored.”",
+              "78": "(tn, Heb): “heard and listened”; NAB “listened attentively.”",
+              "79": "(sn): The scroll mentioned here is a “memory book” (סֵפֶר זִכָּרוֹן, sefer zikkaron) in which the Lord keeps an ongoing record of the names of all the redeemed (see Exod 32:32; Isa 4:3; Dan 12:1; Rev 20:12-15)."
+            },
+            "rashi": [
+              {
+                "heb": "*אז נדברו וגו'.* \nאני משיב על דבריכם אז בעשות הרשעים רשעם והטובים הלכו קדורני' מפני שנדברו יראי ה' שלא לידבק במעשיהם הרעים ואני לא נשכחו דבריכ' מלפני ואע\"פ שאיני ממהר להשיב גמול כי הקשבתי ושמעתי וצויתי לכתוב להם ספר זכרון והיו לי דבריה' מקוימים:\n",
+                "eng": "*Then the God-fearing men spoke, etc..* I retort upon your words then, when the wicked commit evil and the good go about in anxious worry because of Me. The God-fearing men spoke to one another not to adopt their evil deeds; and, as for Me, their words are not forgotten to Me. And although I do not hasten to visit retribution, I have hearkened and heard, and I have commanded that a book of remembrance be written for them. Their words shall be preserved for Me."
+              }
+            ]
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "80": "(sn): The Hebrew word סְגֻלָּה (s�gullah, “special property”) is a technical term referring to all the recipients of God’s redemptive grace, especially Israel (Exod 19:5; Deut 7:6; 14:2; 26:18). The Lord says here that he will not forget even one individual in the day of judgment and reward."
+            },
+            "rashi": [
+              {
+                "heb": "*ליום אשר אני עושה סגולה.* \nאשר אצרתי והנחתי לשלם בו גמולי שם אראה אתכם מה בין צדיק לרשע:\n",
+                "eng": "*for that day when I make a treasure.* that I have stored and put away, with which to pay My reward. There I will show you what the difference is between a righteous man and a wicked man."
+              },
+              {
+                "heb": "*סגולה.* \nאוצר איישטו\"י בלע\"ז:\n",
+                "eng": "*a treasure.* a treasure; estouj, estui in Old French."
+              }
+            ]
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "81": "(tn, Heb): “you will see between.” Cf. NRSV, TEV, NLT “see the difference.”"
+            }
+          },
+          {
+            "verse": 19,
+            "rashi": [
+              {
+                "heb": "*כי הנה היום בא.* \nיום זה לשון שמש הוא שכך אמרו חכמי' אין גיהנם לעתיד לבא אלא הקב\"ה מוציא חמה מנרתיקה ורשעים נדונים בה וצדיקים מתרפאין בה וזהו שנאמ' וזרחה לכם יראי וגו': \n",
+                "eng": "*For lo, the sun comes.* This instance of יוֹם is an expression of sun, for so did the Sages state that there will be no Gehinnom in the future, but the Holy One, blessed be He, will take the sun out of its case; the wicked will be punished thereby and the righteous will be healed thereby. That is the meaning of what is stated (verse 20): “And the sun of mercy shall rise for you who fear My Name, etc.”"
+              },
+              {
+                "heb": "*שורש וענף.* \nברא ובר ברא:\n",
+                "eng": "*neither root nor branch.* Neither son nor grandson"
+              }
+            ]
+          },
+          {
+            "verse": 20,
+            "rashi": [
+              {
+                "heb": "*ופשתם.* \nלשון שומן כמו (ירמיה כ') כי תפושו כעגלה דשה:\n",
+                "eng": "*and be fat.* an expression of fat, as in (Jer. 50:11), “as you become fat, like a threshing heifer.”"
+              },
+              {
+                "heb": "*מרבק.* \nהנכנסת לרבקה לפטם קופיל\"א בלע\"ז:\n",
+                "eng": "*as fatted calves.* [the calves] that enter the team to be fattened; kopla, cople in Old French: animals tied together."
+              }
+            ]
+          },
+          {
+            "verse": 21,
+            "rashi": [
+              {
+                "heb": "*ועסותם.* \nוכבשתם לשון מיעוך ודומה לו ושם עשו דדי בתוליהון (יחזקאל כ״ג:ג׳):\n",
+                "eng": "*And you shall crush.* and you shall press. This is an expression of pressing, similar to (Ezek. 23:8) “they pressed their virgin breasts.”"
+              }
+            ]
+          },
+          {
+            "verse": 22
+          },
+          {
+            "verse": 23
+          },
+          {
+            "verse": 24,
+            "rashi": [
+              {
+                "heb": "*והשיב לב אבות.* \nלהקב\"ה: \n",
+                "eng": "*that he may turn the heart of the fathers back.* to the Holy One, blessed be He."
+              },
+              {
+                "heb": "*על בנים.* \nע\"י בנים יאמר לבנים דרך אהבה ורצון לכו ודברו אל אבותיכם לאחוז בדרכי המקום וכן ולב בנים על אבותם כך שמעתי משמו של ר' מנחם ור\"ד במס' עדיות לשום שלום בעולם:\n",
+                "eng": "*through the children.* lit., on. He will say to the children affectionately and appeasingly, “Go and speak to your fathers to adopt the ways of the Omnipresent.” So we explain, “and the heart of the children through their fathers.” This I heard in the name of Rabbi Menahem, but our Sages expounded upon it in tractate Eduyoth (8:7), that he will come to make peace in the world."
+              }
+            ]
+          }
+        ],
+        "totalVerses": 24,
+        "aid": 16219,
+        "nextAid": 15748,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 39,
+        "chapter": 4,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "82": "(sn): Beginning with , the verse numbers through in the English Bible differ from the verse numbers in the Hebrew text (BHS), with ET = HT, ET = HT, etc., through ET = HT. Thus the book of Malachi in the Hebrew Bible has only three chapters, with 24 verses in ch. 3.",
+              "83": "(sn): This day is the well-known “day of the Lord” so pervasive in OT eschatological texts (see Joel 2:30-31; Amos 5:18; Obad 15). For the believer it is a day of grace and salvation; for the sinner, a day of judgment and destruction.",
+              "84": "(tn, Heb): “so that it” (so NASB, NRSV). For stylistic reasons a new sentence was begun here in the translation."
+            },
+            "rashi": [
+              {
+                "heb": "*אשרי האיש.* \nבעשרה לשונות של זמר נאמר ספר זה, בנצוח, בנגון, במזמור, בשיר, בהלל, בתפלה, בברכה, בהודאה, באשרי, בהללויה, כנגד עשרה בני אדם שאמרוהו, אדם, מלכי צדק, אברהם, משה, דוד, שלמה, אסף, ושלשה בני קרח, וחלוקין על ידותון י\"א אדם היה כמש\"כ בד\"ה, וי\"א אין ידותון שבספר זה אלא ע\"ש הדתות והדינים של גזירות שעברו עליו ועל ישראל\n",
+                "eng": "*The praises of a man.* This book was composed with ten expressions of song: 1) with conducting, 2) with melody, 3) with musical accompaniment, 4) with song, 5) with praise, 6) with prayer, 7) with blessing, 8) with thanksgiving, 9) with praises, and 10) with “Praise God.” These correspond to the ten men who composed them: 1) Adam, 2) Malchizedek, 3) Abraham, 4) Moses, 5) David, 6) Solomon, 7) Asaph, and 8-10) the three sons of Korah. Concerning Jeduthun, there is a dispute. Some say that Jeduthun was a man, as is written in Chronicles. Others maintain that Jeduthun mentioned in this Book means nothing else but the ordinances (דתות) and laws of the decrees that were passed over him and over Israel."
+              },
+              {
+                "heb": "*אשרי האיש.* \n(לישפלישמנ\"ץ בלעז) אשוריו של איש ותהלותיו של אדם אלו הם אשר לא הלך כי מתוך שלא הלך לא עמד ומתוך שלא עמד לא ישב:\n",
+                "eng": "*The praises of a man.* Heb. אשרי les felicements(?) in Old French. The praises of a man, and these are the praises of a man: that he did not follow, because since he did not follow, he did not stand, and since he did not stand, he did not sit."
+              },
+              {
+                "heb": "*לצים.* \n(גאבור\"ש בלעז. מלה נישנת גאבערס בל\"א שפעטטער:)\n",
+                "eng": "*scorners.* (Old French, gabors.)"
+              }
+            ]
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "85": "(tn): Here the Hebrew word צְדָקָה (ts�daqah), usually translated “righteousness” (so KJV, NIV, NRSV, NLT; cf. NAB “justice”), has been rendered as “vindication” because it is the vindication of God’s people that is in view in the context. Cf. BDB 842 s.v. צְדָקָה 6; “righteousness as vindicated, justification, salvation, etc.” The expression the sun of vindication will rise is a metaphorical way of describing the day of the Lord as a time of restoration when God vindicates his people (see 2 Sam 23:4; Isa 30:26; 60:1, 3). Their vindication and restoration will be as obvious and undeniable as the bright light of the rising sun.",
+              "86": "(sn): The point of the metaphor of healing wings is unclear. The sun seems to be compared to a bird. Perhaps the sun’s “wings” are its warm rays. “Healing” may refer to a reversal of the injury done by evildoers (see Mal 3:5).",
+              "87": "(tn, Heb): “you will go out and skip about.”"
+            },
+            "rashi": [
+              {
+                "heb": "*כי אם בתורת ה' חפצו.* \nהא למדת שמושב הלצים מביאו לידי בטול תורה:\n",
+                "eng": "*But his desire is in the law of the Lord.* Hence you learn that the company of scorners brings one to neglect the study of Torah."
+              },
+              {
+                "heb": "*ובתורתו יהגה.* \nבתחלה היא נקראת תורת ה' ומשעמל בה היא נקראת תורתו:\n",
+                "eng": "*and in His law he meditates.* In the beginning, it is called the law of the Lord, and after he has toiled to master it, it is called his own Torah."
+              },
+              {
+                "heb": "*יהגה.* \nכל ל' הגה בלב הוא כד\"א (לקמן יט) והגיון לבי (ישעיהו ל״ג:י״ח) לבך יהגה אימה, (משלי כ״ד:ב׳) כי שוד יהגה לבם:\n",
+                "eng": "*he meditates.* Heb. יהגה. Every expression of הגה refers to the heart, as you say (below 19:15): “and the meditation (והגיון) of my heart;” (Isa. 33:18), “Your heart shall meditate (יהגה) in fear;” (Prov. 24:2), “For their heart thinks (יהגה) of plunder.”"
+              }
+            ]
+          },
+          {
+            "verse": 3,
+            "rashi": [
+              {
+                "heb": "*שתול.* \nפלנדי\"ץ בלעז:\n",
+                "eng": "*planted.* Heb. שתול, plonte in Old French (plante)."
+              },
+              {
+                "heb": "*פלגי.* \nראויארו\"ש בלעז:\n",
+                "eng": "*rivulets.* ruyseys in Old French, (ruisseaux), brooks (as in Ezek. 32:6)."
+              },
+              {
+                "heb": "*ועלהו לא יבול.* \nאפילו הפסולת שבו לצורך היא שיחתן של תלמידי חכמים לצורך היא וצריכה לימוד:\n",
+                "eng": "*and its leaves do not wilt.* Even the inferior part of it serves a purpose. The conversation of Torah scholars is essential and requires study."
+              },
+              {
+                "heb": "*לא יבול.* \nלשון כמוש פלישטי\"ר בלעז:\n",
+                "eng": "*do not wilt.* Heb. יבול, an expression of wilting, fleistre in Old French."
+              }
+            ]
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "88": "(sn): Horeb is another name for Mount Sinai (cf. Exod 3:1).",
+              "89": "(tn, Heb): “which I commanded him in Horeb concerning all Israel, statutes and ordinances.”"
+            },
+            "rashi": [
+              {
+                "heb": "*כמוץ.* \nל' קש קומבל\"א בלעז:\n",
+                "eng": "*like chaff.* An expression of straw, come bale in Old French (comme paille), like straw."
+              }
+            ]
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "90": "(sn): I will send you Elijah the prophet. In light of the ascension of Elijah to heaven without dying (2 Kgs 2:11), Judaism has always awaited his return as an aspect of the messianic age (see, e.g., John 1:19-28). Jesus identified John the Baptist as Elijah, because he came in the “spirit and power” of his prototype Elijah (Matt 11:14; 17:1-13; Mark 9:2-13; Luke 9:28-36)."
+            },
+            "rashi": [
+              {
+                "heb": "*על כן וגו'.* \nדבוק הוא למקרא של אחריו:\n",
+                "eng": "*Therefore, etc..* This refers to the verse following it."
+              }
+            ]
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "91": "(tn, Heb): “he will turn the heart[s] of [the] fathers to [the] sons, and the heart[s] of [the] sons to their fathers.” This may mean that the messenger will encourage reconciliation of conflicts within Jewish families in the postexilic community (see Mal 2:10; this interpretation is followed by most English versions). Another option is to translate, “he will turn the hearts of the fathers together with those of the children [to me], and the hearts of the children together with those of their fathers [to me].” In this case the prophet encourages both the younger and older generations of sinful society to repent and return to the Lord (cf. Mal 3:7). This option is preferred in the present translation; see Beth Glazier-McDonald, Malachi (SBLDS), 256.",
+              "92": "(tn, Heb): “[the] ban” (חֵרֶם, kherem). God’s prophetic messenger seeks to bring about salvation and restoration, thus avoiding the imposition of the covenant curse, that is, the divine ban that the hopelessly unrepentant must expect (see Deut 7:2; 20:17; Judg 1:21; Zech 14:11). If the wicked repent, the purifying judgment threatened in 4:1-3 will be unnecessary."
+            },
+            "rashi": [
+              {
+                "heb": "*כי יודע ה' וגו'.* \nלפי שהוא יודע דרך צדיקים ולפניו הוא להכירה תמיד ודרך רשעים שנואה בעיניו ומעבירה מלפניו על כן לא תהא הקמת רגל לרשעים ליום הדין ולחטאים ליכתב בעדת צדיקים:\n",
+                "eng": "*For the Lord knows the way, etc..* Because He knows the way of the righteous, and it is before Him to recognize it constantly; the way of the wicked is hateful to Him, and He removes it from before Him. Therefore, the foot of the wicked will not stand up on the day of judgment, neither shall the sinners be written in the congregation of the righteous."
+              }
+            ]
+          }
+        ],
+        "totalVerses": 6,
+        "aid": 16219,
+        "nextAid": 16223,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ]
+  ]
+}

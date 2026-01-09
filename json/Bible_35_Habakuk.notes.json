@@ -1,0 +1,1252 @@
+{
+  "id": 35,
+  "name": "Habakuk",
+  "chapters": 3,
+  "totalVerses": 56,
+  "pericopes": 7,
+  "testament": "OT",
+  "data": [
+    [
+      {
+        "bookId": 35,
+        "chapter": 1,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "1": "(tn, Heb): “The burden” (so KJV, ASV). The Hebrew term מַשָּׂא (masa’), usually translated “oracle” (NAB, NEB, NASB, NIV, NRSV) or “utterance” (BDB 672 s.v. III מַשָּׂא), in prophetic literature is a technical term introducing a message from the Lord (see Zech 9:1; 12:1; Mal 1:1). Since it derives from a verb meaning “to carry,” its original nuance was that of a burdensome message, that is, one with ominous content.",
+              "2": "(tn, Heb): “The message [traditionally, “burden”] which Habakkuk the prophet saw.”"
+            },
+            "rashi": [
+              {
+                "heb": "*המשא אשר חזה.* \nמטל נבואתא מה שנשא וקבל ברוח הקדש:\n",
+                "eng": "*The prophecy.* Heb. הַמַשָּׂא. The burden of prophecy - what he bore and received by the Holy Spirit. [after Jonathan]"
+              }
+            ]
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "3": "(tn): Or “deliver.”"
+            },
+            "rashi": [
+              {
+                "heb": "*עד אנה ה'.* \nצופה היה ברוה\"ק שעתיד נבוכדנצר למלוך בכיפה ולהיות מיצר לישראל כענין שנאמר בנבואתו כי הנני מקים את הכשדים וגו' ועל זאת היה מתאונן ומתפלל: \n",
+                "eng": "*O Lord! How long.* He foresaw with the Holy Spirit that Nebuchadnezzar was destined to be the ruler of the world and to cause trouble for Israel, as the matter is stated in his prophecy (1:6): “For behold, I raise up the Chaldeans, etc.” He was complaining for this."
+              },
+              {
+                "heb": "*אזעק אליך חמס.* \nאזכיר לפניך חמס העשוי לי ואינך מושיע:\n",
+                "eng": "*I cry out to You of violence.* I mention before You the violence committed against me, and You do not save me."
+              }
+            ]
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "4": "(tn, Heb): “Why do you make me see injustice?”",
+              "5": "(tn, Heb): “Why do you look at wrongdoing?” Habakkuk complains that God tolerates social injustice and fails to intervene on behalf of the oppressed (put up with wrongdoing).",
+              "6": "(tn, Heb): “are before.”",
+              "7": "(tn, Heb): “and there is conflict and strife he lifts up.” The present translation takes the verb יִשָּׂא (yisa’) in the sense of “carry, bear,” and understands the subject to be indefinite (“one”)."
+            },
+            "rashi": [
+              {
+                "heb": "*און.* \nביזה וחמס:\n",
+                "eng": "*iniquity.* plunder and violence."
+              },
+              {
+                "heb": "*ועמל תביט.* \nעמל זה אתה מביט ואינך עוזר:\n",
+                "eng": "*and look upon mischief.* You look upon this mischief, but You do not help."
+              },
+              {
+                "heb": "*ויהי ריב ומדון ישא.* \nוזה נבוכדנצר הנושא ריב ומדון הווה ומתקיים ומצליח.\n",
+                "eng": "*and the one who bears quarrel and strife endures.* And this wicked man who bears quarrel and strife, will live, remain in existence, and prosper."
+              },
+              {
+                "heb": "*ויהי.* \nויתקיים אותו אשר ריב ומדון ישא כן תרגום יונתן:\n",
+                "eng": "*endures.* He who bears quarrel and strife will endure. So did Jonathan render."
+              }
+            ]
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "8": "(tn, Heb): “the law is numb,” i.e., like a hand that has “fallen asleep” (see Ps 77:2). Cf. NAB “is benumbed”; NIV “is paralyzed.”",
+              "9": "(tn, Heb): “never goes out.”",
+              "10": "(tn): Or “for.”",
+              "11": "(tn, Heb): “surround” (so NASB, NRSV).",
+              "12": "(tn): Or “righteous” (KJV, NASB, NIV, NRSV, NLT).",
+              "13": "(tn, Heb): “comes out crooked.”"
+            },
+            "rashi": [
+              {
+                "heb": "*על כן תפוג תורה.* \nעל זה שישראל רואין הצלחתו שלו תפיג ותעבור תורה מהם וישמעו לו וישתחוו לצורה בבקעת דורא:\n",
+                "eng": "*Therefore Torah is slackened.* Because of this, that Israel sees his [the wicked man’s] success, the Torah will slacken and leave them; and they [Israel] will obey him [the wicked man] and prostrate themselves before the idol in the valley of Dura."
+              },
+              {
+                "heb": "*ולא יצא לנצח משפט.* \nהדת לאמיתו:\n",
+                "eng": "*and justice does not go out forever.* I.e., the true decision of the Law."
+              },
+              {
+                "heb": "*מכתיר.* \nסובב כמו (תהילים כ״ב:י״ג) אבירי בשן כתרוני:\n",
+                "eng": "*surrounds.* surrounds, as in (Ps. 22:13): “Strong bulls of Bashan have surrounded me (כִּתְּרוּנִי).”"
+              }
+            ]
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "14": "(tn): Or “look among the nations and observe.” The imperatival forms in v. 5 are plural, indicating that the Lord’s message is for the whole nation, not just the prophet.",
+              "15": "(tn): The Hebrew text combines the Hitpael and Qal imperatival forms of the verb תָּמַה (tamah, “be amazed”). A literal translation might read, “Shock yourselves and be shocked!” The repetition of sounds draws attention to the statement. The imperatives here have the force of an emphatic assertion. On this use of the imperative in Hebrew, see GKC 324 �110.c and IBHS 572-73 �34.4c.",
+              "16": "(tc, Heb): “for a work working in your days.” Following the LXX reading, some supply a first person singular pronoun with the participle פֹּעֵל (po’el). Ellipsis of a first singular pronoun before participles is relatively rare (see GKC 360 �116.s); perhaps an original אֲנֹכִי (’anoki; or אֲנִי, ’aniy) followed the initial כִּי (ki) and was omitted by homoioteleuton.",
+              "17": "(tn, Heb): “you will not believe when it is told.” In this context the force of כִּי (ki) may be “when,” “if,” or “even though.”"
+            },
+            "rashi": [
+              {
+                "heb": "*לא תאמינו כי יסופר.* \nזאת לכם אשר אני מקים את הכשדים העם אשר לא היה כדאי להבראות כמו שנאמר (ישעיה כג) זה העם לא היה הם אחד משלשה דברים שהקב\"ה כביכול מתחרט על בריאתם ועתה יקום ויהיה מר ונמהר לרוץ וללכת למרחבי ארצות כל הגוים:\n",
+                "eng": "*You shall not believe when it is told.* When this is told to you, that I am setting up the Chaldeans, the people that did not deserve to be created, as it is written (Isa. 23:13): “This people has never been.” They are one of three things whose creation God regrets, and now [they] will rise, and [they] will be bitter, and [they will be] impetuous to run and to march to the breadth of the lands of all the nations."
+              }
+            ]
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "18": "(tn, Heb): “raise up” (so KJV, ASV).",
+              "19": "(tn, Heb): “bitter.” Other translation options for this word in this context include “fierce” (NASB, NRSV); “savage” (NEB); or “grim.”",
+              "20": "(tn, Heb): “hasty, quick.” Some translate here “impetuous” (so NEB, NASB, NIV, NRSV) or “rash,” but in this context greed may very well be the idea. The Babylonians move quickly and recklessly ahead in their greedy quest to expand their empire.",
+              "21": "(tn, Heb): “the open spaces.”"
+            }
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "22": "(tn, Heb): “from him his justice, even his lifting up, goes out.” In this context שְׂאֵת (s�’et) probably has the nuance “authority.” See R. D. Patterson, Nahum, Habakkuk, Zephaniah (WEC), 150."
+            },
+            "rashi": [
+              {
+                "heb": "*ממנו משפטו ושאתו יצא.* \nממנו שופטים ממנו מלכים המטילין משא ואימה על הכל:\n",
+                "eng": "*from themselves their judgment and their burden shall emanate.* From them are judges; from them are kings, who cast a burden and a fear upon all."
+              },
+              {
+                "heb": "*משפטים.* \nיושטיצי\"א בלע\"ז:\n",
+                "eng": "*their judgment.* joustice in O.F."
+              }
+            ]
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "23": "(tn, Heb): “sharper,” in the sense of “keener” or “more alert.” Some translate “quicker” on the basis of the parallelism with the first line (see HALOT 291 s.v. חדד).",
+              "24": "(tn, Heb): “wolves of the evening,” that is, wolves that prowl at night. The present translation assumes an emendation to עֲרָבָה (’aravah, “desert”). On this phrase see also Zeph 3:3.",
+              "25": "(tn): Or “horsemen,” “cavalry.”",
+              "26": "(tn): The precise nuance of the rare verb פָּוַשׁ (parash) is unclear here. Elsewhere it is used of animals jumping or leaping (see Jer 50:11; Mal 4:2).",
+              "27": "(tn): Or “eagle” (so NASB, NRSV). The term can refer to either eagles or vultures, but in this context of gruesome destruction and death “vulture” is preferred.",
+              "28": "(tn, Heb): “they fly like a vulture/an eagle quickly to devour.” The direct object “their prey” is not included in the Hebrew text but is implied, and has been supplied in the translation for clarity."
+            },
+            "rashi": [
+              {
+                "heb": "*ופשו פרשיו.* \nרבו פרשיו:\n",
+                "eng": "*and their riders shall increase.* Heb. וּפָשוּ."
+              }
+            ]
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "29": "(tn, Heb): “come.”",
+              "30": "(tn, Heb): “The totality of their faces is to the east” (or “is forward”). The precise meaning of the Hebrew term מְגַמַּת (megammat) is unclear. For a discussion of options see J. J. M. Roberts, Nahum, Habakkuk, and Zephaniah (OTL), 93. NEB has “a sea of faces rolls on”; NIV “their hordes advance like a desert wind”; NRSV “with faces pressing forward.”",
+              "31": "(tn, Heb): “and he gathers like sand, prisoners.”"
+            },
+            "rashi": [
+              {
+                "heb": "*לחמס יבוא.* \nלשלול ולבוז:\n",
+                "eng": "*come to commit violence.* to plunder and to spoil."
+              },
+              {
+                "heb": "*מגמת פניהם.* \nלשון הגמיאיני נא (בראשית כד) יגמא ארץ (איוב לט) רץ במרוצה לשעה קלה כברת ארץ כאלו גמא ושתה הארץ שלפניו ואף כאן מגמת פניהם גמיאת שאיפת פניהם דומה לרוח הקדים עזה שברוחות כן תירגם יונתן:\n",
+                "eng": "*the eagerness of their faces.* an expression like (Gen. 24: 17) “Give me to swallow, (הַגְמִיאִינִי) I pray you” and (Job 39:24) “He swallows (יְגַמֶּה) the earth.” He runs swiftly - in a short time a distance of a day’s plowing - as though he had swallowed and drunk the earth that is before him. Here, too, the swallowing of their faces; the swallowing, the longing of their faces resembles the east wind, the fiercest of the winds. So did Jonathan render this."
+              }
+            ]
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "32": "(tn, Heb): “they heap up dirt.” This is a reference to the piling up of earthen ramps in the process of laying siege to a fortified city."
+            },
+            "rashi": [
+              {
+                "heb": "*והוא במלכים יתקלס.* \nמתלוצץ בהם וכל לשון קלסה ל' דבור הנדברים בו יש לטוב יש לרע פרלרי\"ץ בלע\"ז: \n",
+                "eng": "*And they shall mock the kings.* shall mock them. Every expression of קַלָּסָה is an expression for the speech of those speaking about another; some [of these speeches] are for good, and some for bad - parledic in O.F."
+              },
+              {
+                "heb": "*משחק.* \nכמו שחוק כמו משמר מסתר:\n",
+                "eng": "*a laughingstock.* like שְּׂחוֹק, laughter, like מִשְׁמָר, a watch, and מִסְתָּר, a hiding place."
+              },
+              {
+                "heb": "*לכל מבצר ישחק.* \nאם אויבו במבצר חזק ישחוק לו:\n",
+                "eng": "*He shall scoff at every fortress.* If his enemy is in a strong fortress, he scoffs at him."
+              },
+              {
+                "heb": "*ויצבור עפר.* \nעליו ברוב חיילותיו כל אחד נושא משא עפר והרי היא לפני החומה תל גבוה ונלחמים בה על העיר והיא שפיכת סוללה כי כולן מתורגמות ויצבור עלה מליתא ואף היא ל' מילוא שהיה בעיר דוד הוא תל גבוה ונלחמים בה שעל ראשה מגדל בנוי ושיפועו משפע לצדדין וסביבות מרגלותיו חומה נמוכה להחזיק העפר מליפול:\n",
+                "eng": "*he piles up earth.* upon it with his many armies, each one carrying a load of earth. It [the pile] is before the wall as a high mound, and they [the Chaldeans] battle from upon it. This is called שְׁפִיכַתסוֹלְלָה, pouring a siege mound (cf. Isa. 37:33), for all of them are translated into Aramaic: וְיִצְבּוֹר עֲלָה מְלֵיתָא, and he piled upon it a filling. This is an expression of Milo, for in the city of David there was a high mound, and they would battle upon it. Atop the mound was built a tower whose slant was inclined to the sides, and around its base was a low wall to prevent the earth from falling."
+              }
+            ]
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "33": "(tn): The precise meaning of v. 11a is uncertain. The present translation assumes the first line further describes the Babylonian hordes, comparing them to a destructive wind. Another option is to understand רוּחַ (ruakh) as “spirit,” rather than “wind,” and take the form וְאָשֵׁם (v�’ashem) with what precedes (as suggested by the scribal punctuation). Repointing this form as a geminate verb from שָׁמַם (shamam, “be astonished”), one could then translate the line, “The spirit passed on and departed, and I was astonished.” In this case the line would describe the cessation of the divine revelation which began in v. 5. For a detailed defense of this view, see J. J. M. Roberts, Nahum, Habakkuk, and Zephaniah (OTL), 97-100.",
+              "34": "(tn, Heb): “and guilty is the one whose strength is his god.” This assumes that אָשֵׁם (’ashem) is a predicate adjective meaning “guilty” and that it relates to what follows."
+            },
+            "rashi": [
+              {
+                "heb": "*אז חלף רוח.* \nאז בראותו דרכו צלחה רוח חולפת ועוברת עליו רוח אשמה ומהו הרוח זה:\n",
+                "eng": "*Then a spirit goes further.* Then, when they see their way prospering, a spirit of guilt goes further and passes over them. Now what is the spirit?"
+              },
+              {
+                "heb": "*כחו לאלוהו.* \nהכח הזה הוא נותן לאלוהו ואמר אלהי עשה לי כל החיל הזה:\n",
+                "eng": "*this strength they attribute to their god.* This strength they attribute to their god, and they say, “My god acquired all this wealth for me.” Says the prophet, “Now, You, why should You remain silent to all this?”"
+              }
+            ]
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "35": "(tn, Heb): “Are you not from antiquity, O Lord?” The rhetorical question expects the answer, “Yes, of course.” The present translation reflects the force of the rhetorical question, rendering it as an affirmation. When used in a temporal sense the phrase מִקֶדֶם (miqedem) means “from antiquity, ancient times,” often referring to earlier periods in Israel’s history. See its use in Neh 12:46; Pss 74:12; 77:11; Isa 45:21; 46:10; Mic 5:2.",
+              "36": "(tn, Heb): “My God, my holy one.” God’s “holiness” in this context is his sovereign transcendence as the righteous judge of the world (see vv. 12b-13a), thus the translation “My sovereign God.”",
+              "37": "(tc): The MT reads, “we will not die,” but an ancient scribal tradition has “you [i.e., God] will not die.” This is preferred as a more difficult reading that can explain the rise of the other variant. Later scribes who copied the manuscripts did not want to associate the idea of death with God in any way, so they softened the statement to refer to humanity.",
+              "38": "(tn, Heb): “him,” a collective singular referring to the Babylonians. The plural pronoun “them” has been used in the translation in keeping with contemporary English style.",
+              "39": "(tn, Heb): “for judgment.”",
+              "40": "(tn, Heb): “Rock” or “Cliff.” This divine epithet views God as a place where one can go to be safe from danger. The translation “Protector” conveys the force of the metaphor (cf. KJV, NEB “O mighty God”).",
+              "41": "(tn, Heb): “to correct, reprove.”"
+            },
+            "rashi": [
+              {
+                "heb": "*הלא אתה מקדם אלהי קדושי וכו'.* \n,אמר הנביא ואתה למה תחריש לכל זאת וזה שכתוב לא נמות אחד מתיקוני סופרים שבמקרא הוא שכינה הכתוב וכן (מלאכי א׳:י״ג) והפחתם אותו וכן הרבה המפורשים בספרי ולפי תיקון הסופרים זה פירושו הלא אתה אלהי מקדם קדושי אל תתני למות בידו:\n",
+                "eng": "*Are You not from everlasting, O Lord, my God, my Holy One?.* Who shall not die. Now, the reason it is written לֹא נָמוּת we shall not die, is that it is one of the emendations of the scribes in Scripture, by which Scripture euphemizes. Likewise, (Mal. 1:13) “And you sadden it.” And so are many of them [these euphemisms] explained in Sifre (Num. 10:35). According to the emendation of the scribes, this is its explanation: Are you not my God from everlasting, my Holy One? Do not deliver us into their hands to die."
+              },
+              {
+                "heb": "*ה' למשפט שמתו.* \nידעתי כי לא העמדתו לזה אלא לשפוט את המורדים בך ומכל מקום כל זה למה יתקיים הלא\n",
+                "eng": "*O Lord, You have ordained them for judgment.* I know that You have set this one [Nebuchadnezzar] up only to judge those who rebel against You. In any case, why should all this come about? Is it not so that…"
+              }
+            ]
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "42": "(tn, Heb): “[you] are too pure of eyes.” God’s “eyes” here signify what he looks at with approval. His “eyes” are “pure” in that he refuses to tolerate any wrongdoing in his presence.",
+              "43": "(tn, Heb): “to see.” Here “see” is figurative for “tolerate,” “put up with.”",
+              "44": "(tn, Heb): “to look at.” Cf. NEB “who canst not countenance wrongdoing”; NASB “You can not look on wickedness with favor.”",
+              "45": "(tn, Heb): “Why do you look at treacherous ones?” The verb בָּגַד (bagad, “be treacherous”) is often used of those who are disloyal or who violate agreements. See S. Erlandsson, TDOT 1:470-73.",
+              "46": "(tn): Or “swallow up.”",
+              "47": "(tn, Heb): “more innocent than themselves.”"
+            },
+            "rashi": [
+              {
+                "heb": "*טהור עינים.* \nאתה מראות ברע:\n",
+                "eng": "*[You are] of eyes too pure.* to behold evil?"
+              },
+              {
+                "heb": "*והביט.* \nכמו ולהביט אל עמל:\n",
+                "eng": "*gaze.* like וּלְהַבִּיט, and to gaze upon iniquity."
+              },
+              {
+                "heb": "*צדיק ממנו.* \nשהוא מסמא את עיני צדקיהו:\n",
+                "eng": "*one more righteous than he.* that he will blind the eyes of Zedekiah (II Kings 25:7)."
+              }
+            ]
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "48": "(tn): The Hebrew word רֶמֶשׂ (remesh) usually refers to animals that creep, but here the referent seems to be marine animals that glide through the water (note the parallelism in the previous line). See also Ps 104:25."
+            },
+            "rashi": [
+              {
+                "heb": "*ותעשה אדם.* \nלפני נבוכדנצר הפקר כדגי הים שכל הרוצה לצוד צודה מהם:\n",
+                "eng": "*And You have made man.* before this wicked man - free as the fish of the sea, which anyone who wishes may catch."
+              }
+            ]
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "49": "(tn, Heb): “he”; the referent (the Babylonian tyrant) has been specified in the translation for clarity (cf. NASB “The Chaldeans”; NIV “The wicked foe”; NRSV “The enemy”). Babylonian imperialism is here compared to a professional fisherman who repeatedly brings in his catch and has plenty to eat.",
+              "50": "(tn): Apparently two different types of fishing nets are referred to here. The חֵרֶם (kherem, “throw net”) was used by fishermen standing on the shore (see Ezek 47:10), while the מִכְמֶרֶת (mikhmeret, “dragnet”) was used by men in a boat. See R. D. Patterson, Nahum, Habakkuk, Zephaniah (WEC), 165.",
+              "51": "(tn, Heb): “and he gathers.”",
+              "52": "(tn, Heb): “Therefore he is happy and rejoices.” Here two synonyms are joined for emphasis."
+            },
+            "rashi": [
+              {
+                "heb": "*כלה בחכה העלה.* \nכל האדם זה נבוכדנצר העלה בחכה שלו:\n",
+                "eng": "*He takes all of them up with the fishhook.* This wicked man takes up all people with his fishhook."
+              },
+              {
+                "heb": "*יגורהו.* \nלשון אגרה בקציר (משלי י) נהרסו ממגורות (יואל א):\n",
+                "eng": "*catches them.* an expression of (Prov. 6:8) “Gathers (אָגְרָה) her food in the harvest,” and (Joel 1:17) “Granaries (מַמְּגֻרוֹת) are demolished.”"
+              }
+            ]
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "53": "(tn, Heb): “therefore.”",
+              "54": "(sn): The fishing implements (throw net and dragnet) represent Babylonian military might. The prophet depicts the Babylonians as arrogantly worshiping their own power (sacrifices…burns incense, see also v. 11b).",
+              "55": "(tn, Heb): “for by them his portion is full [or, “fat”].”",
+              "56": "(tn, Heb): “and his food is plentiful [or, “fat”].”"
+            },
+            "rashi": [
+              {
+                "heb": "*יזבח לחרמו.* \nלעכו\"ם שהוא אומר שהיא כובשת הכל לפניו: \n",
+                "eng": "*he sacrifices to his net.* To his god, for he says that it conquers everyone before him."
+              },
+              {
+                "heb": "*בהמה.* \nכמו בהם בשבילם:\n",
+                "eng": "*through them.* This is similar to בהם, because of them."
+              },
+              {
+                "heb": "*בריאה.* \nשמנה:\n",
+                "eng": "*a fatling.* fat."
+              }
+            ]
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "57": "(tn): Or “therefore.”",
+              "58": "(tn, Heb): “Will he then empty his throw net?” The words “continue to fill and” are supplied in the translation for clarification.",
+              "59": "(tn): Or “continually.”",
+              "60": "(tn, Heb): “kill.”",
+              "61": "(tn): Or “without showing compassion.”"
+            },
+            "rashi": [
+              {
+                "heb": "*העל כן יריק חרמו.* \nיש תמיהות הרבה המתקיימת כמו הנגלה נגליתי דעלי (ש\"א ב) הרואה אתה (שם ב טו) אף כאן הנראה בעיניך שעל כן הוא מצליח כל שעה שיריק חרמו על הכל ולצוד ציד:\n",
+                "eng": "*Because of this does he arm himself with his net.* There are many interrogative forms that are affirmative, e.g., (I Sam. 2:27) “Did I appear?” concerning Eli, and (II Sam. 15:27) “Do you see?” Here, too: Does it appear in Your eyes that because of this he prospers every time, in that he arms himself with his net over everyone and to hunt game?"
+              },
+              {
+                "heb": "*יריק.* \nכמו (תהלים לה) הרק חנית, וירק את חניכיו (בראשית יד) מזדיין בחרמו:\n",
+                "eng": "*arms himself.* As in (Gen. 14:14) “And he armed רֶק) (וַיָּ his trained men” and (Ps. 35:3): 'Arm yourself (הָרֵק) with a spear.\" He arms himself with his net."
+              }
+            ]
+          }
+        ],
+        "totalVerses": 17,
+        "aid": 16197,
+        "nextAid": 16198,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 35,
+        "chapter": 2,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "62": "(sn): Habakkuk compares himself to a watchman stationed on the city wall who keeps his eyes open for approaching messengers or danger.",
+              "63": "(tn): The word “know” is supplied in the translation for clarification.",
+              "64": "(tn, Heb): “concerning my correction [or, “reproof”].”"
+            },
+            "rashi": [
+              {
+                "heb": "*על משמרתי אעמדה.* \nעג עוגה חבקוק ועמד בתוכה ואמר לא אזוז מכאן עד שאשמע מה ידבר בי על שאלתי זאת למה הוא מביט ורואה בהצלחתו של רשע:\n",
+                "eng": "*On my watch I will stand.* Habakkuk dug a circular hole, stood within it, and said, “I will not budge from here until I hear what He will say to me concerning this, my question why He looks and sees the prosperity of a wicked man.”"
+              },
+              {
+                "heb": "*ומה אשיב.* \nאל הבאים להתווכח לפני:\n",
+                "eng": "*and what I will reply.* to those who come to contend with me."
+              },
+              {
+                "heb": "*תוכחת.* \nמונאיפרובמנ\"ט בלע\"ז:\n",
+                "eng": "*when I am reproved.* mon aprobement in O.F.; the reproach one addresses to me."
+              },
+              {
+                "heb": "*על תוכחתי.* \nשהם מוכיחים אותי בפני שיש להרהר על מדת הדין:\n",
+                "eng": "*when I am reproved.* For they reprove me to my face that one should criticize the Divine standard of justice."
+              }
+            ]
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "65": "(tn, Heb): “the Lord answered and said.” The redundant expression “answered and said” has been simplified in the translation as “responded.”",
+              "66": "(tn, Heb): “[the] vision.”",
+              "67": "(tn): Or “reads from.”",
+              "68": "(tn, Heb): “might run,” which here probably means “run [through it quickly with one’s eyes],” that is, read it easily."
+            },
+            "rashi": [
+              {
+                "heb": "*ויענני ה' ויאמר כתוב: לך חזון.* \nהנגלה לך ובארהו על הלוחות היטב אשר ירוץ הקורא בו לקרותו מהר שלא יכשל וזהו החזון אשר תכתוב:\n",
+                "eng": "*And the Lord answered me and said: Write.* for yourself the vision that will be revealed to you, and explain it well on the tablets so that one may read it swiftly. And this is the vision that you shall write."
+              }
+            ]
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "69": "(tn, Heb): “For the vision is still for the appointed time.” The Hebrew word עוֹד (’od, “still”) is better emended to עֵד (’ed, “witness”) in light of the parallelism (see the note on the word “turn out” in the following line). The “appointed time” refers to the time when the divine judgment anticipated in vv. 6-20 will be realized.",
+              "70": "(tn, Heb): “and a witness to the end and it does not lie.” The Hebrew term יָפֵחַ (yafeakh) has been traditionally understood as a verb form from the root פּוּחַ (puakh, “puff, blow”; cf. NEB “it will come in breathless haste”; NASB “it hastens toward the goal”) but recent scholarship has demonstrated that it is actually a noun meaning “witness” (cf. NIV “it speaks of the end / and will not prove false”; NRSV “it speaks of the end, and does not lie”). See J. J. M. Roberts, Nahum, Habakkuk, and Zephaniah (OTL), 106. “The end” corresponds to “the appointed time” of the preceding line and refers to the time when the prophecy to follow will be fulfilled.",
+              "71": "(tn, Heb): “it”; the referent (the message) has been specified in the translation for clarity.",
+              "72": "(tn, Heb): “If it should delay, wait for it.” The Hebrew word חָזוֹן (khazon, “vision, message”) is the subject of the third person verbs in v. 3 and the antecedent of the pronominal suffix in the phrase “for it.”"
+            },
+            "rashi": [
+              {
+                "heb": "*כי עוד חזון למועד.* \nעוד עתיד לקום נביא לקץ שנים שיתגלה לו חזון למתי יהיה מועד מפלת בבל וגאולת ישראל:\n",
+                "eng": "*For there shall be another vision for the appointed time.* A prophet shall yet arise at the end of the years, to whom a vision shall be revealed concerning when the appointed time shall be for the downfall of Babylon and the redemption of Israel."
+              },
+              {
+                "heb": "*ויפח לקץ.* \nודיבר שיאמ' לו על הקץ של בבל לפי מלאת לבבל שבעים שנה.\n",
+                "eng": "*and He shall speak of the end.* The speech that He shall say to him concerning the end of Babylon, (Jer. 29:10) “For at the completion of seventy years of Babylon.”"
+              },
+              {
+                "heb": "*ולא יכזב אם יתמהמה.* \nלבוא שיאריך לכם אותו מועד:\n",
+                "eng": "*and it shall not fail; though it tarry.* it shall not fail to come, though that appointed time may take long to come."
+              },
+              {
+                "heb": "*חכה לו כי לא יאחר.* \nאחר השבעים כלום, ועוד יש לפרש אם יתמהמה הנביא לבא והוא היה ירמיה, וי\"ת כתיבא נבואתא ומפרשא על ספרא דאורייתא תרגם כתב כמו כתיב כבר נרמז (בתורה) אז תרצה הארץ את שבתותיה שבעים שמיטות קלקלו ישראל ולא שמטו וכנגדן גלו ממנה שבעי' שנה וכן הוא אומ' (בדברי הימים בסוף ב') עד רצתה הארץ את שבתותיה כל ימי השמה למלאות שבעים שנה וכן אתה מוצא (ביחזקאל ד׳:ה׳) ואני נתתי לך את שני עונם שלש מאות ותשעים יום יום לשנה נתתיו לך ואומר ואתה שכב לך על צדך השמאלית וגומ' נמצאת אתה אומר הכעיסו ישראל ש\"צ שנה עד שגלו עשרת השבטים ושבט יהודה קילקלו ארבעים ומשגלו עשרת השבטי' עד חרבות ירושלים הם עשרי' ושתים של מנשה ושאר שנותיו בתשובה שהרי נאמר בו (מלכים ב כ״א:ב׳) ויעש הרע ככל אשר עשה אחאב כמנין שנותיו של אחאב והוא מלך עשרים ושתים שנה שתים של אמון בנו ואחת עשרה של יהויקים ואחת עשרה של צדקיהו הרי ארבעים וששה ונבואה זו נאמרה ליחזקאל בשנה החמשי' לצדקיהו מכל מקום נמצאו ימי קלקולם ארבע מאות ושלשים וששה שנים שלאחר נבואה זו שהוסיף ו' שנים ת' שנים עושים ח' יובלות וכל יובל ז' שמטות הרי נ\"ו שמטות וח' שנים המוקדשות ליובל הרי ס\"ד ובל' ושש שנה יש ה' שמטות הרי ס\"ט שנים מקודשות ושנת יובל זה האחרון נחשב אף הוא במנין שבעונם לא נגמר וכאן ככה אמר לו הקב\"ה לחבקוק כבר כתוב חזון בתורה אבל סתום הוא הוסיף אתה ובאר על הלוחות כי עוד יתגלה חזון למועד זה:\n",
+                "eng": "*wait for it for…; it shall not delay.* at all after the seventy years. This clause can also be explained to mean: though he tarry, meaning the prophet Jeremiah. Jonathan renders: the prophecy is written and explained in the Book of the Torah. He translated כְּתֹב as כָּתוּב. It has already been alluded to in the Torah (Lev. 26:34): “Then shall the land placate [God concerning] its Sabbaths.” Israel sinned by violating seventy Sabbatical Years, in which they did not release the land, and, corresponding to them, they were exiled therefrom for seventy years. And so it is stated in II Chronicles (36:21): “Until the land placated its Sabbaths; all the days it lay waste, it rested to complete seventy years.” And so you find in Ezekiel (4:5): “And I have given you the years of their iniquity according to the number of days, three hundred and ninety days… (verse 6) I gave you a day for a year.” And Scripture says (verse 4): “And you lie on your left side, etc.” You are found saying that Israel provoked God for three hundred and ninety years until the Ten Tribes were exiled, and the tribe of Judah sinned for forty years, and from the time the Ten Tribes were exiled until the destruction of Jerusalem are the twenty-two years of Manasseh. The rest of Manasseh’s years were spent in repentance, for it is stated concerning him (II Kings 21:2f.) “And he did what was evil, etc.,… as Ahab… had made.” Therefore we count Manasseh’s evil years according to the number of Ahab’s years, and he reigned for twenty-two years. With two years of his son Amon’s reign, and eleven of Jehoiakim’s, and eleven of Zedekiah’s, the evil years total forty-six, and this prophecy was said to Ezekiel in the fifth year of Zedekiah. In any case, we find the time of their sinning four hundred and thirty years, for after this prophecy they tarried there six years. [I.e., the two tribes of Judah and Benjamin remained in the land for six more years] In four hundred years, there are eight Jubilee Years, and in every Jubilee cycle there are seven Release Years, making a total of fifty-six Release Years and eight years consecrated as Jubilee Years making all together sixty-four. In thirty-six years there are five Release Years, totaling sixty-nine consecrated years, and this final Jubilee year is also counted in the number, since it was not completed because of their iniquity. And here, this is what the Holy One, blessed be He, said to Habakkuk: A vision is already written in the Torah, but it is sealed. You write and explain on the tablets, for a vision of this appointed time will yet be revealed."
+              },
+              {
+                "heb": "*ויפח.* \nל' דבור הוא והרבה יש בספר משלי ועל שם שהדבור אינו אלא רוח היוצא מן הפה קורהו פיח וקורהו רוח כגון וברוח פיו כל צבאם (תהילים ל״ג:ו׳): \n",
+                "eng": "*and He shall speak.*  וְיָפֵחַ is an expression of speech; and there are many uses of this root with similar meaning in the Book of Proverbs. Since speech is only the wind emanating from the mouth, he [the writer of the Scriptures] calls it פִּיחַ, blowing, and he calls it wind, e.g., (Ps. 33:6) “And with the wind of His mouth all their host.”"
+              }
+            ]
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "73": "(tn): The meaning of this line is unclear, primarily because of the uncertainty surrounding the second word, עֲפְּלָה (’ap�lah). Some read this as an otherwise unattested verb עָפַל (’afal, “swell”) from which are derived nouns meaning “mound” and “hemorrhoid.” This “swelling” is then understood in an abstract sense, “swell with pride.” This would yield a translation, “As for the proud, his desires are not right within him” (cf. NASB “as for the proud one”; NIV “he is puffed up”; NRSV “Look at the proud!”). A multitude of other interpretations of this line, many of which involve emendations of the problematic form, may be found in the commentaries and periodical literature. The present translation assumes an emendation to a Pual form of the verb עָלַף (’alaf, “be faint, exhausted”). (See its use in the Pual in Isa 51:20, and in the Hitpael in Amos 8:13 and Jonah 4:8.) In the antithetical parallelism of the verse, it corresponds to חָיָה (khayah, “live”). The phrase לֹא יָשְׁרָה נַפְשׁוֹ בּוֹ (lo’ yoshrah nafsho bo), literally, “not upright his desire within him,” is taken as a substantival clause that contrasts with צַדִּיק (tsadiq, “the righteous one”) and serves as the subject of the preceding verb. Here נֶפֶשׁ (nefesh) is understood in the sense of “desire” (see BDB 660-61 s.v. נֶפֶשׁ for a list of passages where the word carries this sense).",
+              "74": "(tn): Or “righteous.” The oppressed individuals mentioned in 1:4 are probably in view here.",
+              "75": "(tn): Or “will be preserved.” In the immediate context this probably refers to physical preservation through both the present oppression and the coming judgment (see Hab 3:16-19).",
+              "76": "(tn): Or “loyalty”; or “integrity.” The Hebrew word אֱמוּנָה (’emunah) has traditionally been translated “faith,” but the term nowhere else refers to “belief” as such. When used of human character and conduct it carries the notion of “honesty, integrity, reliability, faithfulness.” The antecedent of the suffix has been understood in different ways. It could refer to God’s faithfulness, but in this case one would expect a first person suffix (the original form of the LXX has “my faithfulness” here). Others understand the “vision” to be the antecedent. In this case the reliability of the prophecy is in view. For a statement of this view, see J. J. M. Roberts, Nahum, Habakkuk, and Zephaniah (OTL), 111-12. The present translation assumes that the preceding word “[the person of] integrity” is the antecedent. In this case the Lord is assuring Habakkuk that those who are truly innocent will be preserved through the coming oppression and judgment by their godly lifestyle, for God ultimately rewards this type of conduct. In contrast to these innocent people, those with impure desires (epitomized by the greedy Babylonians; see v. 5) will not be able to withstand God’s judgment (v. 4a)."
+            },
+            "rashi": [
+              {
+                "heb": "*הנה עופלה.* \nנפש שלו תמיד היא בכעס ובתאוה שואף לבלוע ולא שבע עופלה ל' עזות כמו (מדבר יד) ויעפילו וכן עופל ובוחן (ישעיה לב):\n",
+                "eng": "*Behold, it is puffed up.* The soul of the wicked man is always wroth and full of desire, longing to swallow and never satisfied. עֻפְּלָה is an expression of insolence, as in (Num. 14:44) “And they acted insolently (וַיַעְפִּילוּ);” and (Isa. 32:14) “Rampart (עֹפֶל) and tower.”"
+              },
+              {
+                "heb": "*לא ישרה נפשו בו.* \nאין רוחו מתקררת עליו לומר די במה שקניתי כבר לכן יבא עליו הפורענות:\n",
+                "eng": "*his soul is not upright within him.* His spirit is not satisfied within him, and he does not say, “What I have already acquired is enough.” Therefore, retribution shall come upon him."
+              },
+              {
+                "heb": "*וצדיק באמונתו יחיה.* \nיכניה המלך שעתיד זה להגלותו יעמוד לו צדקו וביום שיושלך זה מקברו ישא אויל מרודך את ראש יהויכין וישם את כסאו מעל לכסא המלכים:\n",
+                "eng": "*but the righteous shall live by his faith.* Jeconiah the king, whom this wicked man is destined to exile - his righteousness shall stand for him, and on the day this one is cast out of his grave, Evil-Merodach shall raise Jehoiachin’s head and place his throne above the thrones of the kings."
+              }
+            ]
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "77": "(tn, Heb): “Indeed wine betrays a proud man and he does not dwell.” The meaning of the last verb, “dwell,” is uncertain. Many take it as a denominative of the noun נָוָה (navah, “dwelling place”). In this case it would carry the idea, “he does not settle down,” and would picture the drunkard as restless (cf. NIV “never at rest”; NASB “does not stay at home”). Some relate the verb to an Arabic cognate and translate the phrase as “he will not succeed, reach his goal.” The Babylonian tyrant is the proud, restless man described in this line as the last line of the verse, with its reference to the conquest of the nations, makes clear. Wine is probably a metaphor for imperialistic success. The more success the Babylonians experience, the more greedy they become just as a drunkard wants more and more wine to satisfy his thirst. But eventually this greed will lead to their downfall, for God will not tolerate such imperialism and will judge the Babylonians appropriately (vv. 6-20).",
+              "78": "(tn, Heb): “who opens wide like Sheol his throat.” Here נֶפֶשׁ (nefesh) is understood in a physical sense, meaning “throat,” which in turn is figurative for the appetite. See H. W. Wolff, Anthropology of the Old Testament, 11-12.",
+              "79": "(sn): Sheol is the proper name of the subterranean world which was regarded as the land of the dead. In ancient Canaanite thought Death was a powerful god whose appetite was never satisfied. In the OT Sheol/Death, though not deified, is personified as greedy and as having a voracious appetite. See Prov 30:15-16; Isa 5:14; also see L. I. J. Stadelmann, The Hebrew Conception of the World, 168.",
+              "80": "(tn, Heb): “he gathers for himself.”",
+              "81": "(tn, Heb): “he collects for himself.”"
+            },
+            "rashi": [
+              {
+                "heb": "*ואף כי היין בוגד.* \nואף כשיבא בלשצר בן בנו של זה שיבגוד בו יינו דלקביל אלפא חמרא שתי (דניאל ה׳:א׳):\n",
+                "eng": "*And surely he, whom wine betrays.* And surely, when Belshazzar, this one’s grandson, comes; the one whose wine shall betray him for he drank as much wine as a thousand (Dan. 5:1)."
+              },
+              {
+                "heb": "*גבר יהיר.* \nהוא. ולא ינוה, לא יתקיים מדורו ונוהו שנתגאה ואמר בטעם חמרא להביא כלי בית המקדש ושתה בהם והיא תגרם לו שיהרג ויכלה זרעו כי גבר יהיר לץ לא ינוה לא יתקיים הוא ונוהו:\n",
+                "eng": "*a haughty man whose dwelling shall not remain.* [Belshazzar’s] dwelling and his residence shall not remain in existence, for he was haughty and said, with the counsel of the wine, to bring the vessels of the Temple; and he drank with them. That shall cause him to be slain, and the seed of Nebuchadnezzar to be destroyed, for a haughty man is a scorner; he shall not have a dwelling. Neither he nor his dwelling shall remain in existence."
+              },
+              {
+                "heb": "*אשר הרחיב.* \nנבוכדנצר:\n",
+                "eng": "*who widened.* Nebuchadnezzar"
+              },
+              {
+                "heb": "*כשאול נפשו.* \nלהשיג כל תאותו ברחב לב:\n",
+                "eng": "*his desire like the nether-world.* to attain all his desire with a full heart."
+              },
+              {
+                "heb": "*והוא כמות.* \nכמלאך המות שאינו שבע מלהמית כך זה אינו שבע בכל קניינו:\n",
+                "eng": "*and he is like death.* Like the angel of death, who is not sated with slaying. So is this one not sated with all his possessions."
+              }
+            ]
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "82": "(tn, Heb): “Will not these, all of them, take up a taunt against him…?” The rhetorical question assumes the response, “Yes, they will.” The present translation brings out the rhetorical force of the question by rendering it as an affirmation.",
+              "83": "(tn, Heb): “and a mocking song, riddles, against him? And one will say.”",
+              "84": "(tn, Heb): “Woe [to] the one who increases [what is] not his.” The Hebrew term הוֹי (hoy, “woe,” “ah”) was used in funeral laments and carries the connotation of death.",
+              "85": "(tn): This question is interjected parenthetically, perhaps to express rhetorically the pain and despair felt by the Babylonians’ victims.",
+              "86": "(tn, Heb): “and the one who makes himself heavy [i.e., wealthy] [by] debts.” Though only appearing in the first line, the term הוֹי (hoy) is to be understood as elliptical in the second line."
+            },
+            "rashi": [
+              {
+                "heb": "*הלא אלה.* \nאשר אסף אליו לעובדו:\n",
+                "eng": "*Shall not all these.* whom he [Belshazzar] collected for himself to pay himself tribute?"
+              },
+              {
+                "heb": "*כולם עליו משל ישאו ומליצה.* \nישאו בפיהם בלשון חידות בשבילו: \n",
+                "eng": "*take up a parable against him and a figure.* they shall take up in their mouth an expression of a riddle concerning him."
+              },
+              {
+                "heb": "*לו.* \nכמו עליו: \n",
+                "eng": "*against him.* like עָלָיו, upon him."
+              },
+              {
+                "heb": "*ויאמר.* \nהאומר את מליצת החידה:\n",
+                "eng": "*And he shall say.* The one who says the figure of the riddle"
+              },
+              {
+                "heb": "*הוי המרבה לא לו.* \nזו היא המליצה חבל על המרבה הון ומלכות ולא לו כי יבאו מלכי מדי ויטלו את הכל:\n",
+                "eng": "*Woe to him who increases what is not his!.* This is the figure: Woe to him who increases wealth and kingdom, and it is not his, for the kings of Media shall come and take everything."
+              },
+              {
+                "heb": "*עד מתי.* \nיהיה הולך ומרבה ואינו אלא מכביד עליו משא עון כעב של טיט עב הוא לשון קורה כבידה כמו שמצינו במשכנא (דיחזקאל מ״א:כ״ו) צלעות הבית והעבים, ועב עץ (שם):\n",
+                "eng": "*How long?.* will he continue to increase when he is only loading upon himself a burden of iniquity like a beam of mud? עַב is an expression of a heavy beam, as we find concerning the Tabernacle of Ezekiel (Ezek. 41:25): “And a wooden beam (וְעָב),” and (ibid. 26) “The casings of the House and the beams (וְהָעֻבִּים).”"
+              }
+            ]
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "87": "(tn, Heb): “Will not your creditors suddenly rise up?” The rhetorical question assumes the response, “Yes, they will.” The present translation brings out the rhetorical force of the question by rendering it as an affirmation. Your creditors will suddenly attack. The Babylonians are addressed directly here. They have robbed and terrorized others, but now the situation will be reversed as their creditors suddenly attack them.",
+              "88": "(tn, Heb): “[Will not] the ones who make you tremble awake?”",
+              "89": "(tn, Heb): “and you will become their plunder.”"
+            },
+            "rashi": [
+              {
+                "heb": "*ויקצו.* \nכמו ויקוצו:\n",
+                "eng": "*awaken.* like וְיָקִּיצוּ"
+              }
+            ]
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "90": "(tn): Or “nations.”",
+              "91": "(tn): Or “peoples.”",
+              "92": "(tn, Heb): “because of the shed blood of humankind and violence against land, city.” The singular forms אֶרֶץ (’erets, “land”) and קִרְיָה (qiryah, “city”) are collective, referring to all the lands and cities terrorized by the Babylonians."
+            },
+            "rashi": [
+              {
+                "heb": "*שלות גוים רבים.* \nהשלכתם ונשלתם ממקומ':\n",
+                "eng": "*Since you have cast away many nations.* You have cast them and thrown them from their place."
+              },
+              {
+                "heb": "*ישלוך כל יתר.* \nפליטת העכו\"ם: \n",
+                "eng": "*all remaining peoples shall cast you away.* The nations that escaped."
+              },
+              {
+                "heb": "*מדמי אדם.* \nבנקמת דמי ישראל הקרוי' אדם שנא' (שם לד) אדם אתם:\n",
+                "eng": "*because of the blood of man.* As revenge for the blood of Israel, called ‘man,’ as it is said (Ezek. 34: 31): “You are man.”"
+              },
+              {
+                "heb": "*וחמס ארץ.* \nארץ ישראל:\n",
+                "eng": "*and the violence done to the land.* The land of Israel."
+              },
+              {
+                "heb": "*קריה.* \nהיא ירושלים:\n",
+                "eng": "*the city.* Jerusalem."
+              }
+            ]
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "93": "(tn, Heb): “Woe [to] the one who profits unjustly by evil unjust gain for his house.” On the term הוֹי (hoy) see the note on the word “dead” in v. 6.",
+              "94": "(tn, Heb): “to place his nest in the heights in order to escape from the hand of disaster.” Here the Babylonians are compared to a bird, perhaps an eagle, that builds its nest in an inaccessible high place where predators cannot reach it."
+            },
+            "rashi": [
+              {
+                "heb": "*הוי בוצע בצע רע לביתו.* \nאונס ממון שהוא רע לו:\n",
+                "eng": "*Woe to him who gains evil gains.* Who robs money which is harmful to him."
+              },
+              {
+                "heb": "*לביתו.* \nלבנות לו בית:\n",
+                "eng": "*for his house.* To build a house for himself"
+              },
+              {
+                "heb": "*לשום במרום קנו.* \nכדכתיב בספר (דניאל ד׳:כ״ז) הלא דא היא בבל רבתא דאנא בניתה לבית מלכו בתקוף חסני וגומר ובשעה שיצא דבר זה מפיו נטרד מן הבריות שנאמר (שם) עוד מלתא בפום מלכא בענין זה:\n",
+                "eng": "*to place his nest on high.* As it is written in the Book of Daniel (4:27): “Is this not the great Babylon, which I built up as a royal residence with the might of my power, etc.?” At the time this statement emanated from his mouth, [Nebuchadnezzar] was driven away from men, as it is said (ibid. 28): “When this word was still in the king’s mouth, etc.”"
+              }
+            ]
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "95": "(tn, Heb): “you planned shame for your house, cutting off many nations, and sinning [against] your life.”"
+            },
+            "rashi": [
+              {
+                "heb": "*יעצת בושת לביתך.* \nאשר יעצת לקצות עמים רבים והפסדת עצמך:\n",
+                "eng": "*With this matter, you advised shame for your house.* For you advised to cut off many peoples, and you caused a loss for yourself."
+              },
+              {
+                "heb": "*קצות.* \nלשון שליפה וקילוף כמו הקצות את הבית (ויקרא י״ד:מ״ג):\n",
+                "eng": "*to cut off.* an expression of stripping and peeling, as in (Lev. 14:43) “Scraping the house.”"
+              },
+              {
+                "heb": "*וחוטא נפשך.* \nכמו (משלי כ׳:ב׳) מתעבר וחוטא נפשו חוטא לאבד נפשו פורפיי\"ט שארמ\"א בלע\"ז:\n",
+                "eng": "*and you have sinned against your life.* As in (Prov. 20:2) “He who provokes him sins against his life.” He sins to lose his life; forsfait sa arme in O.F. he forfeits his soul."
+              }
+            ]
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "96": "(sn): The house mentioned in vv. 9-10 represents the Babylonian empire, which became great through imperialism. Here the materials of this “house” (the stones in the walls, the wooden rafters) are personified as witnesses who testify that the occupants have built the house through wealth stolen from others."
+            },
+            "rashi": [
+              {
+                "heb": "*כי וגו'.* \nכי האבנים אשר גזלת תזעקנה מן הקיר:\n",
+                "eng": "*For a stone.* For the stones that you stole shall cry from the wall."
+              },
+              {
+                "heb": "*וכפיס מעץ יעננה.* \nאל האבן בקול לנגדה שניהם צועקים:\n",
+                "eng": "*and a chip.* of the wood shall answer it [the stone]. It shall answer aloud the stone that is opposite it; hence both of them cry."
+              },
+              {
+                "heb": "*וכפיס מעץ יעננה.* \nת\"י ושיפא מגו מרישא שיפא ל' קיסם שפאין בלשון חכמים דלדור\"ש בלע\"ז מריש הוא הקורה:\n",
+                "eng": "*and a chip shall answer it from a beam.* Jonathan renders: וְשִׁפָּא מִגּוֹמָרֵישָׁא. שִׁפָּא is an expression of a chip; שְׁפָאִים in the language of the Sages; dokldours in O.F. - chips. מָרֵישׁ is a beam."
+              }
+            ]
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "97": "(tn): On the term הוֹי (hoy) see the note on the word “dead” in v. 6.",
+              "98": "(tn): Or “establishes”; or “founds.”"
+            }
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "99": "(tn, Heb): “Is it not, look, from the Lord of hosts that the nations work hard for fire, and the peoples are exhausted for nothing?”"
+            },
+            "rashi": [
+              {
+                "heb": "*הלא הנה מאת ה'.* \nנשתלם פורענות לעושי רשעה:\n",
+                "eng": "*Behold, is it not from the Lord.* that the retribution has been requited to the perpetrators of wickedness?"
+              },
+              {
+                "heb": "*וייגעו עמים בדי אש.* \nכאשר תבואם חמתו כאש עד שיה' דיים, בדי אש איישי\"ץ בלע\"ז:\n",
+                "eng": "*And peoples shall toil until they are sated with fire.* When My wrath, which is like fire, shall come upon them until they are sated. בְּדֵי אֵשׁ - Asec in O.F.; enough; assez in modern French."
+              }
+            ]
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "100": "(tn, Heb): “for the earth will be filled with the knowledge of the glory of the Lord, just as the waters cover over the sea.”"
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "101": "(tn): No direct object is present after “drink” in the Hebrew text. “Wine” is implied, however, and has been supplied in the translation for clarity.",
+              "102": "(tn): On the term הוֹי (hoy) see the note on the word “dead” in v. 6.",
+              "103": "(tc, Heb): “pouring out your anger and also making drunk”; or “pouring out your anger and [by] rage making drunk.” The present translation assumes that the final khet (ח) on מְסַפֵּחַ (misapeakh, “pouring”) is dittographic and that the form should actually be read מִסַּף (missaf, “from a bowl”). Forcing them to drink from the bowl of your furious anger. The Babylonian’s harsh treatment of others is compared to intoxicating wine which the Babylonians force the nations to drink so they can humiliate them. Cf. the imagery in Rev 14:10.",
+              "104": "(tn, Heb): “their nakedness,” a euphemism. Metaphor and reality are probably blended here. This may refer to the practice of publicly humiliating prisoners of war by stripping them naked. See J. J. M. Roberts, Nahum, Habakkuk, and Zephaniah (OTL), 124."
+            },
+            "rashi": [
+              {
+                "heb": "*משקה רעהו.* \nיין, ובאותה השקאה הוא מספח ואוסף את חמתו עליו ואף משכרהו בחמתו וכל זה הוא עושה : \n",
+                "eng": "*Woe to him who gives his friend to drink.* wine; and into that drink he adds and gathers his venom upon him, and also makes him [his friend] drunk with his venom. All this he does…"
+              },
+              {
+                "heb": "*למען הביט על מעוריהם.* \nעל גלויים ולראות את ערותם זה נ\"נ שהיה משקה את המלכים יין ומשכרם ושוכב עמם משכבי אשה כדאמרינן במסכת שבת, ד\"א : \n",
+                "eng": "*in order to gaze upon their nakedness.* Upon their exposure, to see their nakedness. This is the wicked Nebuchadnezzar, who would give the kings wine to drink, intoxicate them, and practice pederasty upon them, as we state in Tractate Shabbath (149b). Another explanation."
+              },
+              {
+                "heb": "*הוי משקה רעהו.* בסדר עולם דורשו כלפי בלשצר שהשקה את השרים בכלי בית המקדש ובהם נספחו ונשתכרו בחמתו של הקב\"ה ובו בלילה נהרג: \n",
+                "eng": "*Woe to him who gives his friend to drink.* In Seder Olam, it [this verse] is expounded regarding Belshazzar, who gave the princes to drink with the vessels of the Temple, because of which they were smitten with zaraath and intoxicated by the wrath of the Holy One, blessed be He. On that night he [Belshazzar] was slain."
+              },
+              {
+                "heb": "*על מעוריהם.* \nלהגלות קלונם וראו שונאיהם בניוולם:\n",
+                "eng": "*upon their nakedness.* So that their disgrace be revealed, and their enemies see their disgrace."
+              }
+            ]
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "105": "(tn, Heb): “are filled.” The translation assumes the verbal form is a perfect of certitude, emphasizing the certainty of Babylon’s coming judgment, which will reduce the majestic empire to shame and humiliation.",
+              "106": "(tn): Or “glory.”",
+              "107": "(tc, Heb): “drink, even you, and show the foreskin.” Instead of הֵעָרֵל (he’arel, “show the foreskin”) one of the Dead Sea scrolls has הֵרָעֵל (hera’el, “stumble”). This reading also has support from several ancient versions and is followed by the NEB (“you too shall drink until you stagger”) and NRSV (“Drink, you yourself, and stagger”). For a defense of the Hebrew text, see P. D. Miller, Jr., Sin and Judgment in the Prophets, 63-64.",
+              "108": "(sn): The Lord’s right hand represents his military power. He will force the Babylonians to experience the same humiliating defeat they inflicted on others."
+            },
+            "rashi": [
+              {
+                "heb": "*והערל.* \nה\"א משמשת בתיבה זו בלשון התפעל כמו (דברים ל״ב:נ׳) האסף אל עמך אף כאן הערל האטם בשממון ובתמהון לב כל ערלה לשון אוטם הוא כמו ערלה אזנם (ירמיהו ו׳:י׳) ערלי לב וערלי בשר (יחזקאל מ״ד:ז׳) וי\"ת ואתערטל לשון ערום ועריה (שם):\n",
+                "eng": "*and become clogged up.* The “he” serves in this word as an expression of the reflexive, as in (Deut. 32:50) “And you shall be gathered to your people.” Here, too, הֵעָרֵל - you shall become clogged up with bewilderment and with astonishment of heart. Every expression of עָרְלָה is an expression of clogging, like (Jer. 6:10) “Their ear is clogged” and (Ezek 44:7) “Of clogged heart and of uncircumcised flesh.” Jonathan rendered: And become naked, an expression of (ibid. 16:7) “Naked and bare.”"
+              }
+            ]
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "109": "(tn, Heb): “for the violence against Lebanon will cover you.”",
+              "110": "(tc): The Hebrew appears to read literally, “and the violence against the animals [which] he terrified.” The verb form יְחִיתַן (y�khitan) appears to be a Hiphil imperfect third masculine singular with third feminine plural suffix (the antecedent being the animals) from חָתַת (khatat, “be terrified”). The translation above follows the LXX and assumes a reading יְחִתֶּךָ (y�khittekha, “[the violence against the animals] will terrify you”; cf. NRSV “the destruction of the animals will terrify you”; NIV “and your destruction of animals will terrify you”). In this case the verb is a Hiphil imperfect third masculine singular with second masculine singular suffix (the antecedent being Babylon). This provides better symmetry with the preceding line, where Babylon’s violence is the subject of the verb “cover.” The language may anticipate Nebuchadnezzar’s utilization of trees from the Lebanon forest in building projects. Lebanon and its animals probably represent the western Palestinian states conquered by the Babylonians."
+            },
+            "rashi": [
+              {
+                "heb": "*חמס לבנון.* \nבית מקדשא:\n",
+                "eng": "*the violence of the Lebanon.* the Temple."
+              },
+              {
+                "heb": "*ושוד בהמות יחיתן.* \nשוד בהמותיך ואוכלוסיך אשר שדדו את עמי ישראל הוא ישברם:\n",
+                "eng": "*and the plunder of cattle.* The plunder of your cattle, and your hordes that plundered My people Israel, shall break you."
+              },
+              {
+                "heb": "*מדמי אדם.* \nמחמס דמי ישראל:\n",
+                "eng": "*because of the blood of man.* Because of the violence done to the blood of Israel."
+              },
+              {
+                "heb": "*וחמס ארץ.* \nארץ ישראל:\n",
+                "eng": "*and the violence of the land.* The land of Israel."
+              },
+              {
+                "heb": "*קריה.* \nירושלים:\n",
+                "eng": "*a city.* Jerusalem."
+              }
+            ]
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "111": "(tn): Or “of what value.”",
+              "112": "(tn, Heb): “so that the one who forms it fashions it?” Here כִּי (ki) is taken as resultative after the rhetorical question. For other examples of this use, see R. J. Williams, Hebrew Syntax, 73, �450.",
+              "113": "(tn, Heb): “or a metal image, a teacher of lies.” The words “What good is” in the translation are supplied from the previous parallel line. “Teacher of lies” refers to the false oracles that the so-called god would deliver through a priest. See J. J. M. Roberts, Nahum, Habakkuk, and Zephaniah (OTL), 126.",
+              "114": "(tn, Heb): “so that the one who forms his image trusts in it?” As earlier in the verse, כִּי (ki) is resultative.",
+              "115": "(tn, Heb): “to make.”"
+            },
+            "rashi": [
+              {
+                "heb": "*מה הועיל.* \nלבבל פסל:\n",
+                "eng": "*What did a graven image avail.* Babylon?"
+              },
+              {
+                "heb": "*כי בטח.* \nהאדם היוצר ויוצרו של אלוהו זה:\n",
+                "eng": "*that the maker of his work trusted.* The man who formed it, who is the maker of this god of his."
+              },
+              {
+                "heb": "*עליו.* \nעל יצירתו זאת הוא בוטח שיעזור לו אשר בא לעשות אלילים אלמים:\n",
+                "eng": "*in it.* He trusts in this creation of his, that it assists him, so he comes to make dumb idols."
+              }
+            ]
+          },
+          {
+            "verse": 19,
+            "notes": {
+              "116": "(tn, Heb): “Woe [to] the one who says.” On the term הוֹי (hoy) see the note on the word “dead” in v. 6.",
+              "117": "(tn): The words “he who says” in the translation are supplied from the previous parallel line.",
+              "118": "(tn): Though the Hebrew text has no formal interrogative marker here, the context indicates that the statement should be taken as a rhetorical question anticipating the answer, “Of course not!” (so also NIV, NRSV)."
+            },
+            "rashi": [
+              {
+                "heb": "*הוא יורה.* \nבתמיה:\n",
+                "eng": "*Shall it teach?.* This is a question."
+              }
+            ]
+          },
+          {
+            "verse": 20,
+            "notes": {
+              "119": "(tn): Or “holy temple.” The Lord’s heavenly palace, rather than the earthly temple, is probably in view here (see Ps 11:4; Mic 1:2-3). The Hebrew word ֹקדֶשׁ (qodesh, “holy”) here refers to the sovereign transcendence associated with his palace.",
+              "120": "(tn): Or “Be quiet before him, all the earth!”"
+            },
+            "rashi": [
+              {
+                "heb": "*וה' בהיכל קדשו.* \nמוכן ליפרע:\n",
+                "eng": "*But the Lord is in His Holy Temple.* ready to exact retribution."
+              },
+              {
+                "heb": "*הס מפניו כל הארץ.* \nהס לשון שיתוק ודמימת חורבן:\n",
+                "eng": "*Silence the whole earth before Him.* הַס is an expression of silencing and the silence of destruction."
+              }
+            ]
+          }
+        ],
+        "totalVerses": 20,
+        "aid": 16197,
+        "nextAid": 16199,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 35,
+        "chapter": 3,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "121": "(tn): The Hebrew text adds עַל שִׁגְיֹנוֹת (’al shigyonot, “upon [or, “according to”] shigyonot”). The meaning of this word is uncertain. It may refer to the literary genre of the prayer or to the musical style to be employed when it is sung. The NEB leaves the term untranslated; several other modern English versions transliterate the term into English, sometimes with explanatory notes (NASB, NRSV “according to Shigionoth”; NIV “On shigyonoth”)."
+            },
+            "rashi": [
+              {
+                "heb": "*על שגיונות.* \nיש פותרו כתרגומו ולפי משמעו בקש רחמים על עצמו שהטיח דברים כמו (לעיל א) ע\"כ תפוג תורה ותעשה אדם כדגי הים קנתר אחר מדת הדין:\n",
+                "eng": "*concerning the errors.* This may be interpreted according to the Targum. However, according to the apparent meaning, Habakkuk is begging for mercy for himself because he spoke rebelliously: (1:4) “Therefore Torah is slackened,” and (verse 14) “You have made man like the fish of the sea.” He criticized the Divine standard of justice."
+              }
+            ]
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "122": "(tn, Heb): “your report,” that is, “the report concerning you.”",
+              "123": "(tn, Heb): “I fear.” Some prefer to read, “I saw, Lord, what you accomplished” (cf. NEB).",
+              "124": "(tn, Heb): “your work.”",
+              "125": "(tn, Heb): “in the midst of years.” The meaning of the phrase, which occurs only here in the OT, is uncertain (cf. NIV “in our day”; NEB, NASB “in the midst of the years”).",
+              "126": "(tn, Heb): “revive it” (i.e., “your work”).",
+              "127": "(tn, Heb): “make known.” The implied object is “your deeds”; the pronoun “them,” referring to “deeds” in the previous line, was employed in the translation to avoid redundancy. The suffix on the form חַיֵּיהוּ (khayyehu, “revive it”) does double duty in the parallelism.",
+              "128": "(tn, Heb): “in turmoil remember [to show] compassion.”"
+            },
+            "rashi": [
+              {
+                "heb": "*שמעתי שמעך.* \nאשר מעולם שנפרעת תמיד ממכעיסיך ואת הרשע הזה אתה סובל:\n",
+                "eng": "*I heard a report of You.* that from days of yore You always inflicted retribution upon those who provoked You, yet You tolerate this wicked man."
+              },
+              {
+                "heb": "*יראתי.* \nאמרתי איך נשתנית מדת הדין בעון ישראל:\n",
+                "eng": "*I feared.* I said, “How has the Divine standard of justice changed because of Israel’s iniquity?”"
+              },
+              {
+                "heb": "*פעלך בקרב שנים חייהו.* \nפעלך הראשון שהייתה נפרע לנו מאויבינו בקרב שני הצרה שאנו שרויים בה:\n",
+                "eng": "*Your deed. In the midst of the years.* Your original deed, that You would wreak vengeance for us upon our enemies in the midst of the years of trouble in which we are found."
+              },
+              {
+                "heb": "*חייהו.* \nכלומר עוררהו והשיבהו:\n",
+                "eng": "*revive it.* Awaken it and restore it."
+              },
+              {
+                "heb": "*בקרב שנים.* \nהללו תודיעהו:\n",
+                "eng": "*in the midst of the years.* And in the midst of these years let it be known."
+              },
+              {
+                "heb": "*ברוגז.* \nשתקצוף על הרשעים:\n",
+                "eng": "*In anger.* In the anger that You will vent upon the wicked, You will remember to have mercy."
+              },
+              {
+                "heb": "*רחם תזכור.* \nרחם כמו לרחם:\n",
+                "eng": "*to have mercy.* like לְרַחֵם, to have mercy."
+              },
+              {
+                "heb": "*תזכור.* \nלרחם את ישראל.\n",
+                "eng": "*You shall remember.* You shall remember to have mercy on Israel."
+              }
+            ]
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "129": "(tn): In vv. 3-15 there is a mixture of eleven prefixed verbal forms (without vav [ו] consecutive or with vav conjunctive), sixteen suffixed forms, and three prefixed forms with vav consecutive. All of the forms are best taken as indicating completed action from the speaker’s standpoint (all of the prefixed forms being regarded as preterites). The forms could be translated with the past tense, but this would be misleading, for this is not a mere recital of God’s deeds in Israel’s past history. Habakkuk here describes, in terms reminiscent of past theophanies, his prophetic vision of a future theophany (see v. 7, “I saw”). From the prophet’s visionary standpoint the theophany is “as good as done.” This translation uses the English present tense throughout these verses to avoid misunderstanding. A similar strategy is followed by the NEB; in contrast note the NIV and NRSV, which consistently use past tenses throughout the section, and the NASB, which employs present tenses in vv. 3-5 and mostly past tenses in vv. 6-15.",
+              "130": "(sn): Teman was a city or region in southern Edom.",
+              "131": "(tn): Or traditionally, “holy one.” The term קָדוֹשׁ (qadosh, “holy [one]”) here refers to God’s sovereignty. See v. 3b.",
+              "132": "(sn): The precise location of Mount Paran is unknown, but like Teman it was located to the southeast of Israel. Habakkuk saw God marching from the direction of Sinai.",
+              "133": "(tn): Selah. The meaning of this musical term (which also appears in vv. 9, 13, and in the Psalms as well) is unknown.",
+              "134": "(tn): Or “heavens.”",
+              "135": "(tn, Heb): “praise.” This could mean that the earth responds in praise as God’s splendor is observed in the skies. However, the Hebrew term תְּהִלָּה (t�hillah, “praise”) can stand by metonymy for what prompts it (i.e., fame, glory, deeds)."
+            },
+            "rashi": [
+              {
+                "heb": "*אלוה מתימן יבוא.* \nעכשיו הוא מזכיר לפניו פעלו הראשון שהוא מבקש לפניו לעוררהו ופועל (ס\"א פועל) חיבתן של ישראל ופורענו' דורו' הראשוני' כשבאת ליתן את התורה חזרת על עשו וישמעאל ולא קבלוה: \n",
+                "eng": "*God.* The prophet now mentions before God His original deed, which he begs Him to revive - the deed of the love of Israel and the retribution of the first generations: When You came to give the Torah, You went around to Esau and Ishmael, and they did not accept it."
+              },
+              {
+                "heb": "*תימן.* \nעשו:\n",
+                "eng": "*Teman.* Esau."
+              },
+              {
+                "heb": "*פארן.* \nישמעאל כדאמר וישב במדבר פארן (בראשית כ״א:כ״א):\n",
+                "eng": "*Paran.* Ishmael, as Scripture states (Gen. 21:21): “And he dwelt in the desert of Paran.”"
+              },
+              {
+                "heb": "*כסה שמים הודו.* \nבסיני לישראל:\n",
+                "eng": "*His glory covered the heavens.* at Sinai for Israel."
+              }
+            ]
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "136": "(tn, Heb): “[His] radiance is like light.” Some see a reference to sunlight, but the Hebrew word אוֹר (’or) here refers to lightning, as the context indicates (see vv. 4b, 9, 11). The word also refers to lightning in Job 36:32 and 37:3, 11, 15.",
+              "137": "(tn, Heb): “two horns from his hand to him.” Sharp, pointed lightning bolts have a “horn-like” appearance. The weapon of “double lightning” appears often in Mesopotamian representations of gods. See Elizabeth Van Buren, Symbols of the Gods in Mesopotamian Art (AnOr), 70-73.",
+              "138": "(tn, Heb): “and there [is] the covering of his strength”; or “and there is his strong covering.” The meaning of this line is unclear. The point may be that the lightning bolts are merely a covering, or outward display, of God’s raw power. In Job 36:32 one reads that God “covers his hands with light [or, “lightning”].”"
+            },
+            "rashi": [
+              {
+                "heb": "*ונוגה.* \nאותו היום:\n",
+                "eng": "*And there was a brightness.* on that day."
+              },
+              {
+                "heb": "*כאור תהיה.* \nכאור המיוחד של שבעת ימי בראשית היה וכן ת\"י: \n",
+                "eng": "*like the light.* Like the special light of the seven days of Creation. So did Jonathan render it."
+              },
+              {
+                "heb": "*קרנים.* \nלשון מאור כשהוא נוקב וזורח דרך הנקב נראה כמין קרנים בולטין וכן (שמות ל״ד:כ״ט) כי קרן עור פניו:\n",
+                "eng": "*rays.* The expression of a light, which, when piercing and shining through a hole, appears like protruding horns. Similarly, (Ex. 34:29) “For the skin of his face shone.”"
+              },
+              {
+                "heb": "*מידו.* \nמידו של הקב\"ה באו להם: \n",
+                "eng": "*from His hand.* From the hand of the Holy One, blessed be He, they came to them."
+              },
+              {
+                "heb": "*ושם חביון עזו.* \nכתרגומו שם נגלה עזו שהיה חבוי למפרע בסתר עליון:\n",
+                "eng": "*and there was His strength hidden.* As the Targum renders: There His strength, which had previously been hidden, was revealed in the secret place of the Most High."
+              }
+            ]
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "139": "(tn): Because of parallelism with the previous line, the meaning “pestilence” is favored for רֶשֶׁף (reshef) here, but usage elsewhere suggests a destructive bolt of fire may be in view. See BDB 958 s.v. There are mythological echoes here, for in Canaanite literature the god Resheph aids Baal in his battles. See J. Day, “New Light on the Mythological Background of the Allusion to Resheph in Habakkuk III 5,” VT 29 (1979): 353-55.",
+              "140": "(tn, Heb): “goes out at his feet.”"
+            },
+            "rashi": [
+              {
+                "heb": "*לפניו ילך דבר.* \nמצאתי במדרש אגדה בשעה שנתן הקב\"ה תורה לישראל טורדו למלאך המות להפליגו לדברים אחרים שלא יעמוד לקנתר ולומר אומה שעתידה לכפור בך לסוף ארבעי' יום ואתה נותן להם את התור': \n",
+                "eng": "*A pestilence went before Him.* I found in a Midrash Aggadah: At the time the Holy One, blessed be He, gave the Torah to Israel, He drove away the Angel of Death to divert him to other things, lest he stand to accuse and say, “You are giving the Torah to a nation that is destined to deny you at the end of forty days?”"
+              },
+              {
+                "heb": "*ויצא רשף לרגליו.* \nמלאכי רשף באו עמו לסיני:\n",
+                "eng": "*and sparks went out at His feet.* Fiery angels came with Him to Sinai."
+              }
+            ]
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "141": "(tn, Heb): “he stands.”",
+              "142": "(tn): This verb has been traditionally understood as “measure” (from מוּד, mud), but the immediately following context (vv. 6b-7) favors the meaning “shake” from מָוד (mavd; see HALOT 555 s.v.).",
+              "143": "(tn, Heb): “makes [the nations] jump [in fear].”",
+              "144": "(tn): Or “crumbled,” broke into pieces.”",
+              "145": "(tn, Heb): “ancient ways [or, “doings”] are his.” The meaning of this line is unclear. Traditionally it has been translated, “his ways are eternal.” However, in this context (see vv. 3, 7) it is more likely that the line speaks of the Lord taking the same route as in the days of Moses and Deborah (see Deut 33:2; Judg 5:4). See J. J. M. Roberts, Nahum, Habakkuk, and Zephaniah (OTL), 154."
+            },
+            "rashi": [
+              {
+                "heb": "*עמד וימודד ארץ.* \nהמתין לדקדק בדין דור המבול למדוד להם מדה כנגד מדה ומדד עומד כדאמר נצב ה' ועומד לדין עמים (ישעיהו ג׳:י״ג) ממתין ומדקדק בדינם:\n",
+                "eng": "*He stood and meted out to the earth.* He waited to examine minutely the case of the generation of the Flood, to mete out to them a measure for a measure, and He meted it out. “He stood” is to be understood in the sense of (Isa. 3:13) “The Lord stands to plead, and He stands to judge the peoples.” He waits and examines their case minutely."
+              },
+              {
+                "heb": "*וימודד ארץ.* \nברותחים קילקלו וברותחים נדונו:\n",
+                "eng": "*and meted out to the earth.* They sinned with heat, and they were judged with boiling water."
+              },
+              {
+                "heb": "*ראה.* \nבדור הפלגה שעל ידי שהיו שפה אחת באו כולם בעצה כדכתיב ויהי כל הארץ שפה אחת (בראשית י״א:א׳):\n",
+                "eng": "*He saw.* the generation of separation, who, since they were of one language, all came upon the plan, as it is written (Gen. 11:1): “And all the earth was of one language.”"
+              },
+              {
+                "heb": "*ויתר גוים.* \nהקפיצם לשבעים לשון כדאמר ויתר ממקומו (איוב לו) לנתר בהם (ויקרא יא):\n",
+                "eng": "*and caused nations to wander.* He caused them to jump into seventy languages as it is said (Lev. 11:21): “To jump with them on the earth,” and (Job 37:1) “My heart trembles and jumps from its place.”"
+              },
+              {
+                "heb": "*הררי עד.* \nשרי העכו\"ם: \n",
+                "eng": "*the everlasting mountains.* The heavenly princes of the nations."
+              },
+              {
+                "heb": "*הליכות עולם לו.* \nהראה להם שכל מהלכו של עולם שלו הוא:\n",
+                "eng": "*the procedures of the world are His.* He demonstrated to them that all the procedures of the world are His."
+              }
+            ]
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "146": "(tn, Heb): “under trouble I saw the tents of Cushan.” Cushan was located in southern Transjordan.",
+              "147": "(tn): R. D. Patterson takes תַּחַת אֲוֶן (takhat ’aven) in the first line as a place name, “Tahath-Aven.” (Nahum, Habakkuk, Zephaniah [WEC], 237.) In this case one may translate the verse as a tricolon: “I look at Tahath-Aven. The tents of Cushan are shaking, the tent curtains of the land of Midian.”"
+            },
+            "rashi": [
+              {
+                "heb": "*תחת און.* \nשנמצא בישראל:\n",
+                "eng": "*Because of iniquity.* that was found in Israel."
+              },
+              {
+                "heb": "*ראיתי אהלי כושן.* \nשעומדים בגלוי ומחבלים את ישראל ובהתכנע' לפניך:\n",
+                "eng": "*I saw the tents of Cushan.* standing in the open and inflicting injury upon Israel, and when they humbled themselves before you…"
+              },
+              {
+                "heb": "*ירגזון יריעות וגו'.* \nהכל כתרגומו:\n",
+                "eng": "*the curtains… quaked.* All is to be understood according to the Targum ."
+              }
+            ]
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "148": "(sn): The following context suggests these questions should be answered, “Yes.” The rivers and the sea, symbolizing here the hostile nations (v. 12), are objects of the Lord’s anger (vv. 10, 15).",
+              "149": "(tn, Heb): “so that.” Here כִּי (ki) is resultative. See the note on the phrase “make it” in 2:18.",
+              "150": "(tn, Heb): “you mount your horses.” As the next line makes clear, the Lord is pictured here as a charioteer, not a cavalryman. Note NRSV here, “when you drove your horses, // your chariots to victory.”",
+              "151": "(tn): Or “chariots of deliverance.”"
+            },
+            "rashi": [
+              {
+                "heb": "*הבנהרים.* \nיש תמיהות שהן קיימות הראינו שכל אלה עשה ופירוש המקרא כתרגומו:\n",
+                "eng": "*Was… with the rivers?.* Some questions are in the affirmative. Have we seen that He performed all these? The explanation of the verse is according to the Targum."
+              },
+              {
+                "heb": "*מרכבותיך.* \nלנו ישועה:\n",
+                "eng": "*Your chariots.* were salvation for us."
+              }
+            ]
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "152": "(tn, Heb): “[into] nakedness your bow is laid bare.”",
+              "153": "(tn, Heb): “sworn in are the arrow-shafts with a word.” The passive participle of שָׁבַע (shava’), “swear an oath,” also occurs in Ezek 21:23 ET (21:28 HT) referencing those who have sworn allegiance. Here the Lord’s arrows are personified and viewed as having received a commission which they have vowed to uphold. In Jer 47:6-7 the Lord’s sword is given such a charge. In the Ugaritic myths Baal’s weapons are formally assigned the task of killing the sea god Yam.",
+              "154": "(tn, Heb): “[with] rivers you split open the earth.” A literal rendering like “You split the earth with rivers” (so NIV, NRSV) suggests geological activity to the modern reader, but in the present context of a violent thunderstorm, the idea of streams swollen to torrents by downpours better fits the imagery. As the Lord comes in a thunderstorm the downpour causes streams to swell to river-like proportions and spread over the surface of the ground, causing flash floods."
+            },
+            "rashi": [
+              {
+                "heb": "*עריה תעור קשתך.* \nנגלה נגלית גבורתך:\n",
+                "eng": "*Your bow revealed itself.* Your might was revealed."
+              },
+              {
+                "heb": "*שבועות מטות.* \nשבועות שנשבעת לשבטים:\n",
+                "eng": "*the oaths to the tribes.* The oaths that You swore to the tribes."
+              },
+              {
+                "heb": "*אומר סלה.* \nמאמר המקוים לעולם, אומר נקוד פתח (ר\"ל סגול) וטעמו למעלה שהוא שם דבר: \n",
+                "eng": "*perpetual statement.* A statement that is to last forever. אֹמֶר is vowelized with a “pattah,” [meaning a “seggol”] and the accent is on the first syllable, making it a noun."
+              },
+              {
+                "heb": "*נהרות תבקע ארץ.* \nכתרגומו:\n",
+                "eng": "*You split the earth into rivers.* According to the Targum."
+              }
+            ]
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "155": "(tn, Heb): “a heavy rain of waters passes by.” Perhaps the flash floods produced by the downpour are in view here.",
+              "156": "(sn): The great deep, which is to be equated with the sea (vv. 8, 15), is a symbol of chaos and represents the Lord’s enemies.",
+              "157": "(sn): Lifting the hands here suggests panic and is accompanied by a cry for mercy (see Ps 28:2; Lam 2:19). The forces of chaos cannot withstand the Lord’s power revealed in the storm."
+            },
+            "rashi": [
+              {
+                "heb": "*ראוך יחילו הרים.* \nהרי נחלי ארנון שנדבקו זה עם זה:\n",
+                "eng": "*Mountains saw You and quaked.* The mountains of the streams of Arnon that cleft to one another."
+              },
+              {
+                "heb": "*זרם מים עבר.* \nבעברם בירדן תמו נכרתו המים ועבר קילוח שטף המים לשפולו של נהר והבאים מלמעלה קמו עמדו:\n",
+                "eng": "*A stream of water passed.* When they crossed the Jordan, the water was “completely cut off,” and the flow of the stream of water passed downstream; the water “which came down from above stood and rose up.”"
+              },
+              {
+                "heb": "*נתן תהום קולו.* \nשבחוהו יושבי הארץ:\n",
+                "eng": "*The deep gave forth its voice.* The inhabitants of the land praised Him."
+              },
+              {
+                "heb": "*רום ידיהו נשא.* \nצבא השמי' הודו לו:\n",
+                "eng": "*The heaven raised up its thanks.* The host of the heaven thanked Him."
+              }
+            ]
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "158": "(tn, Heb): “in their lofty dwelling places.”",
+              "159": "(tn): Or “at the light of your arrows they vanish.”",
+              "160": "(tn, Heb): “at the brightness of the lightning of your spear.”"
+            },
+            "rashi": [
+              {
+                "heb": "*עמד זבולה.* \nבמדוריהון כל תיבה שצריכה למ\"ד בתחלתה הטיל לה ה\"א בסופה ופירשוה על מלחמת גבעון כתרגומו: \n",
+                "eng": "*stood in their dwellings.* in their dwellings. In every word that requires a “lammed” at the beginning - Scripture placed a “he” at the end [meaning “to”]. They explained the phrase as referring to the war of Gibeon, as the Targum paraphrases it."
+              },
+              {
+                "heb": "*לאור חציך יהלכו.* \nישראל:\n",
+                "eng": "*to the light of Your arrows they go.* Israel."
+              }
+            ]
+          },
+          {
+            "verse": 12,
+            "rashi": [
+              {
+                "heb": "*בזעם תצעד ארץ.* \nלגרש שבע' עכו\"ם:\n",
+                "eng": "*With fury You tread the earth.* to drive out the seven nations [the heathens of Canaan]."
+              }
+            ]
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "161": "(tn, Heb): “anointed one.” In light of the parallelism with “your people” in the preceding line this could refer to Israel, but elsewhere the Lord’s anointed one is always an individual. The Davidic king is the more likely referent here.",
+              "162": "(tn, Heb): “you strike the head from the house of wickedness.”",
+              "163": "(tn, Heb): “laying bare [from] foundation to neck.”"
+            },
+            "rashi": [
+              {
+                "heb": "*לישע את משיחך.* \nשאול ודוד:\n",
+                "eng": "*to rescue Your anointed.* Saul and David."
+              },
+              {
+                "heb": "*ערות יסוד.* \nחומות עכו\"ם: \n",
+                "eng": "*uncovering it from the foundation.* The walls of their enemies."
+              },
+              {
+                "heb": "*עד צואר.* \nהוא גובה החומות והמגדלים:\n",
+                "eng": "*to the neck.* The height of the walls and the towers."
+              }
+            ]
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "164": "(tn): Some take “warriors” with the following line, in which case one should translate, “you pierce [his] head with a spear; his warriors storm forward to scatter us” (cf. NIV). The meaning of the Hebrew term פְּרָזוֹ (p�razo), translated here “his warriors,” is uncertain.",
+              "165": "(tc, Heb): “his shafts.” Some emend to “your shafts.” The translation above assumes an emendation to מַטֶּה (matteh, “shaft, spear”), the vav-yod (ו-י) sequence being a corruption of an original he (ה).",
+              "166": "(tn, Heb): “me,” but the author speaks as a representative of God’s people.",
+              "167": "(tn, Heb): “their rejoicing is like devouring the poor in secret.”"
+            },
+            "rashi": [
+              {
+                "heb": "*נקבת במטיו ראש.* \nסנחריב וסיעתו שהיו סוערים ברוח סערה להפיצני והוא הי' מטה שהיית רודה בו את העכו\"ם וכשבא וסער להפיצני נקבת ראשי גייסותיו במטיו שהי' בא לרדות בהם: \n",
+                "eng": "*You pierced the heads… with war clubs.* Sennacherib and his company."
+              },
+              {
+                "heb": "*ראש פרזיו.* \nראשי עריו וטירותיו כמו פרזות תשב ירושלים (זכריה ב׳:ח׳) ערי הפרזי (דברים ג):\n",
+                "eng": "*the heads of his villages.* The heads of his towns and his castles, as in (Deut. 3:5) “The open towns” and (Zech. 2:8) “Jerusalem shall be inhabited without walls.”"
+              },
+              {
+                "heb": "*עליצותם.* \nהיו כשהיו יכולים:\n",
+                "eng": "*they storm.* Who were storming with a tempest to scatter me. [Sennacherib] was the staff with which you chastised the nations. When he came and stormed to scatter me, You pierced the heads of his troops with his staffs, with which he had come to chastise me."
+              },
+              {
+                "heb": "*לאכול עני במסתר.* \nישראל הקרואים עם עני:\n",
+                "eng": "*their joy.* was when they could…"
+              },
+              {
+                "heb": "** ",
+                "eng": "*devour a poor one in secret.* Israel, known as a poor people."
+              }
+            ]
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "168": "(tn, Heb): “the foaming of the mighty [or “many”] waters.”"
+            },
+            "rashi": [
+              {
+                "heb": "*דרכת בים.* \nבחיילותיו הכבדים כחול הים:\n",
+                "eng": "*You trampled in the sea.* You trampled upon [Sennacherib’s] hordes, which were as heavy as the sand by the sea."
+              },
+              {
+                "heb": "*חומר.* \nת\"י בדגור ל' חמרים חמרים (שמות ח):\n",
+                "eng": "*a heap of many waters.* Jonathan renders. upon a heap, an expression of (Exod. 8:10) “many heaps.”"
+              }
+            ]
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "169": "(tn, Heb): “my insides trembled.”",
+              "170": "(tn, Heb): “decay entered my bones.”",
+              "171": "(tc, Heb): “beneath me I shook, which….” The Hebrew term אֲשֶׁר (’asher) appears to be a relative pronoun, but a relative pronoun does not fit here. The translation assumes a reading אֲשֻׁרָי (’ashuray, “my steps”) as well as an emendation of the preceding verb to a third plural form.",
+              "172": "(tn): The translation assumes that אָנוּחַ (’anuakh) is from the otherwise unattested verb נָוָח (navakh, “sigh”; see HALOT 680 s.v. II נוח; so also NEB). Most take this verb as נוּחַ (nuakh, “to rest”) and translate, “I wait patiently” (cf. NIV).",
+              "173": "(tn, Heb): “to come up toward.”"
+            },
+            "rashi": [
+              {
+                "heb": "*שמעתי ותרגז בטני.* \nת\"י אמרת בבל שמעית וזעו מלכיא מן קדם דינא די אתדנו מצראי: \n",
+                "eng": "*I heard, and my inward parts trembled.* Jonathan rendered. Said Babylon, “I heard, and the kings trembled before the judgement meted out upon the Egyptians.”"
+              },
+              {
+                "heb": "*לקול צללו שפתי.* \nלקול השמועה אחזני רעד עד ששפתי נוקשות זו לזו וקולו נשמע:\n",
+                "eng": "*my lips quivered at the sound.* At the sound of the report, trembling took hold of me until my lips knocked one against the other and their sound was heard."
+              },
+              {
+                "heb": "*צללו.* \nלשון מצילות הסוס (זכרי' יד) טינטי\"ר בלע\"ז: \n",
+                "eng": "*quivered.* An expression of (Zech. 14:20) “The bells of the horses.” Tentir in O.F., to tinkle."
+              },
+              {
+                "heb": "*ותחתי ארגז.* \nבמקומי אני מזדעזעת:\n",
+                "eng": "*and I quaked in my place.* In my place, I quake."
+              },
+              {
+                "heb": "*אשר אנוח ליום צרה.* \nאשר מנוחתי זאת מוכנת ליום צרה:\n",
+                "eng": "*that [the time] I would rest is destined for a day of trouble.* That this tranquility of mine is destined for a day of trouble."
+              },
+              {
+                "heb": "*לעלות לעם יגודנו.* \nליום אשר אמר להעלות מתוכו את העם אשר הוא יגודנו עקב לשוב בגדודיו לארצו:\n",
+                "eng": "*to bring up a people that will troop back.* For the day that He said to bring up from there the people that He will cause to troop back, to return with its troops to its land."
+              }
+            ]
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "174": "(tn): Or “though.”",
+              "175": "(tn, Heb): “the produce of the olive disappoints.”",
+              "176": "(tn, Heb): “food.”",
+              "177": "(tn): Or “are cut off.”"
+            },
+            "rashi": [
+              {
+                "heb": "*כי תאנה לא תפרח.* \nכתרגומו ויש לפתרו כמשמעו שוב אין הצלחה לכל מעשה בבל מעתה:\n",
+                "eng": "*For a fig tree shall not blossom.* As the Targum renders. However, the phrase may be interpreted according to its simple meaning: From now on, none of Babylon’s deeds shall succeed."
+              },
+              {
+                "heb": "*ושדמות.* \nשדה לבן:\n",
+                "eng": "*the grain field.* a white field."
+              },
+              {
+                "heb": "*ממכלה.* \nדיר הצאן:\n",
+                "eng": "*from the fold.* a stall for sheep."
+              }
+            ]
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "178": "(tn): Or “in.”"
+            },
+            "rashi": [
+              {
+                "heb": "*ואני.* \nכנסת ישראל, בה' אעלוזה:\n",
+                "eng": "*Yet I.* the nation of Israel, will rejoice in the Lord."
+              }
+            ]
+          },
+          {
+            "verse": 19,
+            "notes": {
+              "179": "(tn): Or perhaps, “is my wall,” that is, “my protector.”",
+              "180": "(tn, Heb): “he makes my feet like those of deer.”",
+              "181": "(tn, Heb): “he makes me walk on my high places.” Difficult times are coming, but Habakkuk is confident the Lord will sustain him. Habakkuk will be able to survive, just as the deer negotiates the difficult rugged terrain of the high places without injury.",
+              "182": "(tn, Heb): “For the leader, on my stringed instruments.”"
+            },
+            "rashi": [
+              {
+                "heb": "*למנצח בנגינותי.* \nלבן לוי המנצח בשיר ב\"ה אנעי' לו בנגינותי והלוי יתן קול כנגדו בכלי השיר: \n",
+                "eng": "*19. To the conductor [to play] with my melodies.* To the Levite who conducts the music in the Temple. I will compose for him [the Levites’ conductor] with my melodies, and the Levite[s] will accompany him with musical instruments."
+              },
+              {
+                "heb": "*למנצח.* \nכמה דאת אמר (עזר' ג) ויעמדו הלוים מבן עשרים שנה ומעלה לנצח על מלאכת וגומר:\n",
+                "eng": "*To the conductor.* As it is stated (Ezra 3:8) “… appointed the Levites from twenty years old and upward to superintend the work of the house of the Lord.”"
+              },
+              {
+                "heb": "*בנגינותי.* \nהוא לשון נעימות קול להרים ולהשפיל אורגנידור\"ש בלע\"ז:\n",
+                "eng": "*with my melodies.* This is an expression of a vocal melody to raise and lower, orgenedors in O.F."
+              }
+            ]
+          }
+        ],
+        "totalVerses": 19,
+        "aid": 16197,
+        "nextAid": 15766,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": true
+        }
+      }
+    ]
+  ]
+}
