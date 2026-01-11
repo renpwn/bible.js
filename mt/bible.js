@@ -341,74 +341,88 @@ const Tanakh = [
 /* =========================
    FUNGSI UMUM
 ========================= */
+const fetchUrl = async(url, options = {}, maxRetries = 3) => {
+  let attempt = 0;
+  let isPuppeteerAvailable = true;
 
-const isTermux = process.platform === "android";
-let fetchUrl;
+  // persiapkan client Axios global supaya tidak re-import setiap retry
+  let axiosClient;
+  try {
+    const axios = await import("axios");
+    const { CookieJar } = await import("tough-cookie");
+    const { wrapper } = await import("axios-cookiejar-support");
+    const jar = new CookieJar();
+    axiosClient = wrapper(axios.default.create({ jar }));
+  } catch (err) {
+    log("🏳️ Gagal import Axios:", err.message);
+    axiosClient = null;
+  }
 
-// ==== Termux → Axios ==== //
-if (isTermux) {
-  log("Platform: Termux (Android) → pakai Axios");
+  while (attempt < maxRetries) {
+    attempt++;
+    const delay = 500 * attempt;
 
-  const axios = await import("axios");
-  const { CookieJar } = await import("tough-cookie");
-  const { wrapper } = await import("axios-cookiejar-support");
-
-  const jar = new CookieJar();
-  const client = wrapper(axios.default.create({ jar }));
-
-  fetchUrl = async (url, options = {}) => {
-    try {
-      const res = await client.get(url, {
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0",
-          Accept:
-            "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-          "Accept-Language": "en-US,en;q=0.9",
-          "Cache-Control": "no-cache",
-          Pragma: "no-cache",
-          ...(options?.headers || {})
-        },
-        maxRedirects: 10,
-        timeout: 20000
-      });
-      return res.data;
-    } catch (err) {
-      if (err.response) log("🚨 Status:", err.response.status);
-      else log("🚨 Error:", err.message);
-      return null;
+    // ==== Coba Axios ====
+    if (axiosClient) {
+      try {
+        const res = await axiosClient.get(url, {
+          headers: {
+            "User-Agent":
+              "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0",
+            Accept:
+              "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",            
+            ...(options?.headers || {})
+          },
+          maxRedirects: 10,
+          timeout: 20000,
+        });
+        return res.data; // sukses → return
+      } catch (err) {
+        log(`🏳️ Axios gagal ${attempt}x:`, err.message);
+      }
     }
-  };
-}
 
-// ==== Desktop → Puppeteer ==== //
-else {
-  log("Platform: Desktop → pakai Puppeteer");
-  const puppeteer = (await import("puppeteer")).default;
+    // ==== Coba Puppeteer jika terinstall ====
+    if(isPuppeteerAvailable){
+      try {
+        let puppeteer = (await import("puppeteer")).default;
+        log("🏳️ Ulang pakai Puppeteer...");
+        const browser = await puppeteer.launch({
+          headless: true,
+          args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        });
+        const page = await browser.newPage();
+        await page.setUserAgent(
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/143.0.0.0 Safari/537.36"
+        );
 
-  fetchUrl = async (url) => {
-    const browserOptions = {
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"]
-    };
-    const browser = await puppeteer.launch(browserOptions);
-    const page = await browser.newPage();
-    await page.setUserAgent(
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/143.0.0.0 Safari/537.36"
-    );
-
-    try {
-      await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
-      const html = await page.content();
-      await browser.close();
-      return html;
-    } catch (err) {
-      log("Gagal load:", err.message);
-      await browser.close();
-      return null;
+        await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
+        const html = await page.content();
+        await browser.close();
+        return html; // sukses → return
+      } catch (err) {
+        if (err.message.includes("Cannot find module") || err.message.includes("not installed")) {
+          log("🏳️ Puppeteer tidak terinstall, ulang pakai Axios...");
+          isPuppeteerAvailable = false;
+        } else {
+          log(`🏳️ Puppeteer gagal ${attempt}x:`, err.message);
+        }
+      }
     }
-  };
-}
+
+    // ==== Sleep sebelum retry ====
+    if (attempt < maxRetries) {
+      log(`🏳️ Tunggu ${delay}ms sebelum retry...`);
+      await sleep(delay);
+    }
+  }
+
+  log("🏳️ Semua percobaan gagal.");
+  return null;
+};
 
 /* =========================
    KONFIGURASI
@@ -517,15 +531,14 @@ class BaseQueue {
         this.completed = 0
         this.failed = 0
         this.total = 0
-
-        this.current = "" // Untuk tracking current lexicon
     }
 
     add(task) {
         this.total++;
         this.queue.push(task)
+        return this
     }
-    
+
     async addAsync(task) {
         this.total++;
         return new Promise((resolve, reject) => {
@@ -542,41 +555,43 @@ class BaseQueue {
         const workers = []
 
         const worker = async () => {
-          while (this.queue.length > 0) {
-            if (this.processing >= this.concurrency) {
-              await sleep(10)
-              continue
+            while (this.queue.length > 0) {
+                if (this.processing >= this.concurrency) {
+                    await sleep(10)
+                    continue
+                }
+
+                const item = this.queue.shift()
+                if (!item) continue
+
+                this.processing++
+                if (typeof item === "string")
+                    this.currentLexi = item
+
+                const isDB = typeof item === "object" && item.task
+                const isFn = typeof item === "function"
+
+                try {
+                    const result = isDB ?
+                        await item.task() :
+                        isFn ?
+                        await item() :
+                        await handler(item)
+
+                    this.completed++
+
+                    if (isDB) item.resolve(result)
+                    else if (this.results) this.results.push(result)
+                    else if (this.lexiconCache) this.lexiconCache.set(item, result)
+                } catch (error) {
+                    this.failed++
+                    if (isDB) item.reject(error)
+                    log(`❌ ${this.name} error:`, error.message)
+                } finally {
+                    this.processing--
+                    this.showProgress()
+                }
             }
-
-            const item = this.queue.shift()
-            if (!item) continue
-
-            this.processing++
-
-            const isDB = typeof item === "object" && item.task
-            const isFn = typeof item === "function"
-
-            try {
-              const result = isDB
-                  ? await item.task()
-                  : isFn
-                      ? await item()
-                      : await handler(item)
-
-              this.completed++
-
-              if (isDB) item.resolve(result)
-              else if (this.results) this.results.push(result)
-              else if (this.lexiconCache) this.lexiconCache.set(item, result)
-            } catch (error) {
-              this.failed++
-              if (isDB) item.reject(error)
-              log(`❌ ${this.name} error:`, error.message)
-            } finally {
-              this.processing--
-              this.showProgress()
-            }
-          }
         }
 
         for (let i = 0; i < this.concurrency; i++) {
@@ -594,15 +609,15 @@ class BaseQueue {
             this.name,
             processed,
             this.total || 1,
-            `${this.current ? "| " + this.current + " " : ""}| ⏳ ${this.processing} | ❌ ${this.failed}`
+            `${this.currentLexi ? "| " + this.currentLexi + " " : ""}| ⏳ ${this.processing} | ❌ ${this.failed}`
         )
     }
 }
 
 class DatabaseQueue extends BaseQueue {
     constructor(db, concurrency = 1) {
-      super(concurrency, "📊 DB Queue")
-      this.db = db
+        super(concurrency, "📊 DB Queue")
+        this.db = db
     }
 
     async waitUntilEmpty() {
@@ -622,18 +637,19 @@ class BibleQueue extends BaseQueue {
 class LexiconQueue extends BaseQueue {
     constructor(concurrency = 2) {
         super(concurrency, "📚 Lexicon")
-        this.results = new Map()
+        this.lexiconCache = new Map()
+        this.currentLexi = ""
     }
 
     add(strongNumber) {
-        if (!this.results.has(strongNumber)) {
-            super.addAsync(strongNumber)
-            this.results.set(strongNumber, null)
+        if (!this.lexiconCache.has(strongNumber)) {
+            super.add(strongNumber)
+            this.lexiconCache.set(strongNumber, null)
         }
     }
 
     getCache() {
-        return this.results
+        return this.lexiconCache
     }
 }
 
@@ -945,7 +961,7 @@ async function fetchChabadData(bookId, chapter) {
     const url = buildChabadUrl(aid+(chapter - 1));
     
     const html = await fetchUrl(url, {headers: {Referer: "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"}});
-
+    
     return await parseChabadHTML(html, bookId, chapter, aid);
   } catch (error) {
     log(error);
@@ -1386,7 +1402,7 @@ async function fetchStrongLexicon(strongNumber) {
     const html = await fetchUrl(url);
     const $ = cheerio.load(html);
     
-    log(`📚 Lexicon: ${strongNumber}`);
+    // log(`📚 Lexicon: ${strongNumber}`);
 
     // Data dasar
     let lexiconData = {
@@ -1593,20 +1609,20 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
   }
 
   if(mode !== 1){
-   // Buat folder output
-   try {
-     await fs.access(DIR);
-    } catch {
-      await fs.mkdir(DIR, { recursive: true });
-    }
-
+    // Buat folder output
     try {
-      await fs.access(DIR_MIN);
-    } catch {
-    await fs.mkdir(DIR_MIN, { recursive: true });
-  }
-  
-  await createLexiconDirectories();
+      await fs.access(DIR);
+      } catch {
+        await fs.mkdir(DIR, { recursive: true });
+      }
+
+      try {
+        await fs.access(DIR_MIN);
+      } catch {
+      await fs.mkdir(DIR_MIN, { recursive: true });
+    }
+    
+    await createLexiconDirectories();
   }
 
   const lexiconQueue = new LexiconQueue(concurrency);
@@ -1616,11 +1632,14 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
   
   uniqueStrongs.forEach(strong => lexiconQueue.add(strong));
   
-  const indexPath = `${DIR_LEXICON}/_index.json`;
-  const indexMinPath = `${DIR_LEXICON_MIN}/_index.json`;
-  let index = await fs.readFile(indexPath, 'utf8')
-    .then(JSON.parse)
-    .catch(() => []);
+  let index, indexPath, indexMinPath;
+  if(mode !== 1){
+    indexPath = `${DIR_LEXICON}/_index.json`;
+    indexMinPath = `${DIR_LEXICON_MIN}/_index.json`;
+    index = await fs.readFile(indexPath, 'utf8')
+      .then(JSON.parse)
+      .catch(() => []);    
+  }
   
   const cache = await lexiconQueue.process(async (strongNumber) => {
     await sleep(300);
@@ -1647,17 +1666,20 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
     }
   });
   
-  await fs.writeFile(indexPath, JSON.stringify(index, null, 2), 'utf8');
-  await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
+  if(mode !== 1){
+  // Simpan index.json
+    await fs.writeFile(indexPath, JSON.stringify(index, null, 2), 'utf8');
+    await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
+  }
   
   log("")
   log(`✅ Lexicon processing selesai`);
   log(`📊 Statistik: ${lexiconQueue.completed} berhasil, ${lexiconQueue.failed} gagal`);
   
   try {
-    const index = JSON.parse(await fs.readFile(indexPath, 'utf8'));
-    
-   let hebrewCount = 0, greekCount = 0;
+    let hebrewCount = 0, greekCount = 0;
+
+    index = mode !== 1 ? JSON.parse(await fs.readFile(indexPath, 'utf8')) : uniqueStrongs.map(s => ({ strong: s }));
 
     for (const i of index) {
       if (i.strong[0] === 'H') hebrewCount++;
@@ -1669,36 +1691,15 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
     log(`   Total: ${index.length} entries`);
     log(`   Hebrew (H): ${hebrewCount}`);
     log(`   Greek (G): ${greekCount}`);
-    log(`   JSON folder: ${DIR_LEXICON}/`);
+    if(mode !== 1){
+      log(`   JSON folder: ${DIR_LEXICON}/`);
+      log(`   JSON min folder: ${DIR_LEXICON_MIN}/`);
+    }
   } catch (error) {
     log('📚 Lexicon index belum dibuat atau error');
   }
   
   return cache;
-}
-
-function extractStrongNumbersFromText(text, bookId) {
-  if (!text) return [];
-  
-  const strongNumbers = [];
-  const language = bookId <= 39 ? 'H' : 'G';
-  
-  const strongPattern = /(?:^|\s)([HG]?\d{3,5})(?:\s|$)/g;
-  let match;
-  
-  while ((match = strongPattern.exec(text)) !== null) {
-    let strong = match[1];
-    
-    if (/^\d+$/.test(strong)) {
-      strong = language + strong;
-    }
-    
-    if (strong.match(/^[HG]\d+$/)) {
-      strongNumbers.push(strong);
-    }
-  }
-  
-  return [...new Set(strongNumbers)];
 }
 
 function findVersionForColumn(columnIndex, targetVersions) {
@@ -1869,10 +1870,10 @@ async function main() {
           case 1:
           case 2:
           case 3:{
-            const result1 = await processBook(bookId, options.concurrency, options.resume, options.mode, targetVersions);
-            success = result1.success;
-            if (result1.strongNumbers) {
-              result1.strongNumbers.forEach(s => allStrongs.add(s));
+            const result = await processBook(bookId, options.concurrency, options.resume, options.mode, targetVersions);
+            success = result.success;
+            if (result.strongNumbers) {
+              result.strongNumbers.forEach(s => allStrongs.add(s));
             }
             break;
           }
@@ -1948,12 +1949,12 @@ async function main() {
     if (options.mode === 2 || options.mode === 3) {
       log(`📁 JSON files: ${DIR}/`);
       log(`📁 Minified JSON: ${DIR_MIN}/`);
+      
+      log(`📁 Lexicon JSON: ${DIR_LEXICON}/`);
+      log(`📁 Lexicon Minified: ${DIR_LEXICON_MIN}/`);
+      
+      log("=".repeat(60));
     }
-
-    log(`📁 Lexicon JSON: ${DIR_LEXICON}/`);
-    log(`📁 Lexicon Minified: ${DIR_LEXICON_MIN}/`);
-
-    log("=".repeat(60));
 
   } catch (error) {
     log("")
