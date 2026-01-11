@@ -1,0 +1,1091 @@
+{
+  "id": 49,
+  "name": "Efesus",
+  "chapters": 6,
+  "totalVerses": 155,
+  "pericopes": 14,
+  "testament": "NT",
+  "data": [
+    [
+      {
+        "bookId": 49,
+        "chapter": 1,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "1": "(tn, Grk): “Paul.” The word “from” is not in the Greek text, but has been supplied to indicate the sender of the letter.",
+              "2": "(tc): The earliest and most important mss omit “in Ephesus” (�46 א* B* 6 1739 [McionT,E]), yet the opening line of this epistle makes little sense without the phrase (“to the saints who are and are faithful…”? or perhaps “to the saints who are also faithful,” though with this sense the οὖσιν [ousin] is redundant and the καί [kai] is treated somewhat unnaturally). What is interesting is Marcion’s canon list which speaks of the letter to the Laodiceans among Paul’s authentic epistles. This, coupled with some internal evidence that the writer did not know his audience personally (cf. 1:15; 3:2; absence of personal names throughout), suggests that Ephesians was an encyclical letter, intended for more than one audience. Does this mean that the shorter reading is to be preferred? Yes and no. A plausible scenario is as follows, assuming Pauline authorship (though this is strongly contested today; for arguments on behalf of Pauline authorship, see M. Barth, Ephesians [AB 34], 1:36-50; P. T. O’Brien, Ephesians, 4-47; and H. W. Hoehner, Ephesians, 2-61): Paul sent the letter from Rome, intending it first to go to Ephesus. At the same time, Colossians was dispatched. Going counterclockwise through Asia Minor, this letter would first come to Ephesus, the port of entry, then to Laodicea, then Colossae. Tychicus’ instructions may well have been for each church to “fill in the blank” on the address line. The church at Ephesus would have certainly made the most copies, being Paul’s home base for nearly three years. Hence, most of the surviving copies have “in Ephesus” in v. 1 (so א2 A B2 D F G Ψ 0278 33 1881 � latt sy co). But one might expect a hint of evidence that Laodicea also made a few copies: Both Marcion’s list and Col 4:16 may well imply this. What is to account for the early Alexandrian evidence, then? These mss were perhaps made from a very early copy, one reflecting the blank line before each church filled it in. Although it is of course only speculation (as is necessary in a historical investigation lacking some of the pieces to the puzzle), this scenario accounts for all of the data: (1) “in Ephesus” in most mss; (2) Laodicea in Marcion’s list and Col 4:16; (3) the lack of an addressee in the earliest witnesses; (4) why the earliest witnesses’ reading must be rejected as too hard; and (5) why the author seems not to know the readership. In sum, is “in Ephesus” original? Yes and no. Some address belongs there; ἐν ᾿Εφέσῳ (en Efesw) is the predominant address, but several other churches also received this circular letter as their own. For this reason the phrase has been placed in single brackets in the translation. NA27 also lists the words in brackets, indicating doubt as to their authenticity. For location see JP1-D2; JP2-D2; JP3-D2; JP4-D2.",
+              "3": "(tn, Grk): “and faithful.” The construction in Greek (as well as Paul’s style [and even if this letter is not by Paul it follows the general style of Paul’s letters, with some modifications]) suggests that the saints are identical to the faithful; hence, the καί (kai) is best left untranslated. See M. Barth, Ephesians (AB 34), 1:68 and ExSyn 282."
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "4": "(tn, Grk): “Grace to you and peace.”"
+            }
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "5": "(sn): Eph 1:3-14 comprises one long sentence in Greek, with three major sections. Each section ends with a note of praise for God (vv. 6, 12, 14), focusing on a different member of the Trinity. After an opening summary of all the saints’ spiritual blessings (v. 3), the first section (vv. 4-6) offers up praise that the Father has chosen us in eternity past; the second section (vv. 7-12) offers up praise that the Son has redeemed us in the historical past (i.e., at the cross); the third section (vv. 13-14) offers up praise that the Holy Spirit has sealed us in our personal past, at the point of conversion.",
+              "6": "(tn): There is no verb in the Greek text; either the optative (“be”) or the indicative (“is”) can be supplied. The meaning of the term εὐλογητός (euloghtos), the author’s intention at this point in the epistle, and the literary genre of this material must all come into play to determine which is the preferred nuance. εὐλογητός as an adjective can mean either that one is praised or that one is blessed, that is, in a place of favor and benefit. The meaning “blessed” would be more naturally paired with an indicative verb here and would suggest that blessedness is an intrinsic part of God’s character. The meaning “praised” would be more naturally paired with an optative verb here and would suggest that God ought to be praised. Pauline style in the epistles generally moves from statements to obligations, expressing the reality first and then the believer’s necessary response, which would favor the indicative. However, many scholars regard Eph 1:3-14 as a berakah psalm (cf. A. T. Lincoln, Ephesians [WBC], 10-11). Rooted in the OT and Jewish worship, berakah psalms were songs of praise in which the worshiper gave praise to God; this would favor the optative (although not all scholars are agreed on this genre classification here; see H. W. Hoehner, Ephesians, 153-59, for discussion and an alternate conclusion). When considered as a whole, although a decision is difficult, the indicative seems to fit all the factors better. The author seems to be pointing to who God is and what he has done for believers in this section; the indicative more naturally fits that emphasis. Cf. also 2 Cor 1:3; 1 Pet 1:3.",
+              "7": "(tn): Or “enriched,” “conferred blessing.”"
+            }
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "8": "(tn, Grk): “just as.” Eph 1:3-14 are one long sentence in Greek that must be broken up in English translation. Verse 4 expresses the reason why God the Father is blessed (cf. BDAG 494 s.v. καθώς 3).",
+              "9": "(tn, Grk): “in him.”",
+              "10": "(sn): The Greek word translated unblemished (ἀμώμους, amwmous) is often used of an acceptable paschal lamb. Christ, as our paschal lamb, is also said to be unblemished (Heb 9:14; 1 Pet 1:19). Since believers are in Christ, God views them positionally and will make them ultimately without blemish as well (Jude 24; Eph 5:27; Col 1:22).",
+              "11": "(tn, Grk): “before him.”",
+              "12": "(tn): The prepositional phrase ἐν ἀγάπῃ (en agaph, “in love”) may modify one of three words or phrases: (1) “chose,” (2) “holy and unblemished,” both in v. 4, or (3) “by predestining” in v. 5. If it modifies “chose,” it refers to God’s motivation in that election, but this option is unlikely because of the placement of the prepositional phrase far away from the verb. The other two options are more likely. If it modifies “holy and unblemished,” it specifies that our holiness cannot be divorced from love. This view is in keeping with the author’s use of ἀγάπη to refer often to human love in Ephesians, but the placement of the prepositional phrase not immediately following the words it modifies would be slightly awkward. If it modifies “by predestining” (v. 5), again the motivation of God’s choice is love. This would fit the focus of the passage on God’s gracious actions toward believers, but it could be considered slightly redundant in that God’s predestination itself proves his love."
+            }
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "13": "(tn, Grk): “by predestining.” Verse 5 begins with an aorist participle dependent on the main verb in v. 4 (“chose”). By predestining. The aorist participle may be translated either causally (“because he predestined,” “having predestined”) or instrumentally (“by predestining”). A causal nuance would suggest that God’s predestination of certain individuals prompted his choice of them. An instrumental nuance would suggest that the means by which God’s choice was accomplished was by predestination. The instrumental view is somewhat more likely in light of normal Greek syntax (i.e., an aorist participle following an aorist main verb is more likely to be instrumental than causal).",
+              "14": "(tn, Grk): “to himself” after “through Jesus Christ.”",
+              "15": "(tn): The Greek term υἱοθεσία (Juioqesia) was originally a legal technical term for adoption as a son with full rights of inheritance. BDAG 1024 s.v. notes, “a legal t.t. of ‘adoption’ of children, in our lit., i.e. in Paul, only in a transferred sense of a transcendent filial relationship between God and humans (with the legal aspect, not gender specificity, as major semantic component).” Although some modern translations remove the filial sense completely and render the term merely “adoption” (cf. NAB, ESV), the retention of this component of meaning was accomplished in the present translation by the phrase “as…sons.” Adoption as his sons is different from spiritual birth as children. All true believers have been born as children of God and will be adopted as sons of God. The adoption is both a future reality, and in some sense, already true. To be adopted as a son means to have the full rights of an heir. Thus, although in the ancient world, only boys could be adopted as sons, in God’s family all children – both male and female – are adopted.",
+              "16": "(tn): Or “good pleasure.”"
+            }
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "17": "(tn): Or “to the praise of his glorious grace.” Many translations translate δόξης τῆς χάριτος αὐτοῦ (doxh\" th\" carito\" autou, literally “of the glory of his grace”) with τῆς χάριτος as an attributed genitive (cf., e.g., NIV, NRSV, ESV). The translation above has retained a literal rendering in order to make clear the relationship of this phrase to the other two similar phrases in v. 12 and 14, which affect the way one divides the material in the passage.",
+              "18": "(tn, Grk): “the beloved.” The term ἠγαπημένῳ (hgaphmenw) means “beloved,” but often bears connotations of “only beloved” in an exclusive sense. “His dearly loved Son” picks up this connotation. God’s grace can be poured out on believers only because of what Christ has done for them. Hence, he bestows his grace on us because we are his dearly loved Son."
+            }
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "19": "(tn, Grk): “in whom” (the relative clause of v. 7 is subordinate to v. 6). The “him” refers to Christ.",
+              "20": "(sn): In this context his blood, the blood of Jesus Christ, refers to the price paid for believers’ redemption, which is the sacrificial death of Christ on the cross."
+            }
+          },
+          {
+            "verse": 8
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "21": "(tn, Grk): Or “He did this by revealing”; “making known, revealing.” Verse 9 begins with a participle dependent on “lavished” in v. 8; the adverbial participle could be understood as temporal (“when he revealed”), which would be contemporaneous to the action of the finite verb “lavished,” or as means (“by revealing”). The participle has been translated here with the temporal nuance to allow for means to also be a possible interpretation. If the translation focused instead upon means, the temporal nuance would be lost as the time frame for the action of the participle would become indistinct.",
+              "22": "(tn): Or “mystery.” In the NT μυστήριον (musthrion) refers to a divine secret previously undisclosed.",
+              "23": "(tn): Or “purposed,” “publicly displayed.” Cf. Rom 3:25.",
+              "24": "(tn, Grk): “in him”; the referent (Christ) has been specified in the translation for the sake of clarity. In Christ. KJV has “in himself” as though the antecedent were God the Father. Although possible, the notion of the verb set forth (Greek προτίθημι, protiqhmi) implies a plan that is carried out in history (cf. Rom 1:13; 3:25) and thus more likely refers to Christ."
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "25": "(tn): The precise meaning of the infinitive ἀνακεφαλαιώσασθαι (anakefalaiwsasqai) in v. 10 is difficult to determine since it was used relatively infrequently in Greek literature and only twice in the NT (here and Rom 13:9). While there have been several suggestions, three deserve mention: (1) “To sum up.” In Rom 13:9, using the same term, the author there says that the law may be “summarized in one command, to love your neighbor as yourself.” The idea then in Eph 1:10 would be that all things in heaven and on earth can be summed up and made sense out of in relation to Christ. (2) “To renew.” If this is the nuance of the verb then all things in heaven and earth, after their plunge into sin and ruin, are renewed by the coming of Christ and his redemption. (3) “To head up.” In this translation the idea is that Christ, in the fullness of the times, has been exalted so as to be appointed as the ruler (i.e., “head”) over all things in heaven and earth (including the church). That this is perhaps the best understanding of the verb is evidenced by the repeated theme of Christ’s exaltation and reign in Ephesians and by the connection to the κεφαλή- (kefalh-) language of 1:22 (cf. Schlier, TDNT 3:682; L&N 63.8; M. Barth, Ephesians [AB 34], 1:89-92; contra A. T. Lincoln, Ephesians [WBC], 32-33).",
+              "26": "(tn, Grk): “the heavens.”",
+              "27": "(sn): And the things on earth. Verse 10 ends with “in him.” The redundancy keeps the focus on Christ at the expense of good Greek style. Verse 11 repeats the reference with a relative pronoun (“in whom”) – again, at the expense of good Greek style. Although the syntax is awkward, the theology is rich. This is not the first time that a NT writer was so overcome with awe for his Lord that he seems to have lost control of his pen. Indeed, it happened frequently enough that some have labeled their christologically motivated solecisms an “apostolic disease.”"
+            }
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "28": "(tn, Grk): “in whom,” as a continuation of the previous verse.",
+              "29": "(tn, Grk): “we were appointed by lot.” The notion of the verb κληρόω (klhrow) in the OT was to “appoint a portion by lot” (the more frequent cognate verb κληρονομέω [klhronomew] meant “obtain a portion by lot”). In the passive, as here, the idea is that “we were appointed [as a portion] by lot” (BDAG 548 s.v. κληρόω 1). The words “God’s own” have been supplied in the translation to clarify this sense of the verb. An alternative interpretation is that believers receive a portion as an inheritance: “In Christ we too have been appointed a portion of the inheritance.” See H. W. Hoehner, Ephesians, 226-27, for discussion on this interpretive issue. God’s own possession. Although God is not mentioned explicitly in the Greek text, it is clear from the context that he has chosen believers for himself. Just as with the nation Israel, the church is God’s chosen portion or possession (cf. Deut 32:8-9)."
+            }
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "30": "(tn): Or “who had already hoped.”",
+              "31": "(tn): Or “the Messiah.”"
+            }
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "32": "(tn, Grk): “in whom you also, when…” (continuing the sentence from v. 12).",
+              "33": "(tn, Grk): “in whom also having believed.” The relative pronoun “whom” has been replaced in the translation with its antecedent (“Christ”) to improve the clarity.",
+              "34": "(tn): Or “you were sealed.”",
+              "35": "(tn, Grk): “the Holy Spirit of promise.” Here ἐπαγγελίας (epangelias, “of promise”) has been translated as an attributive genitive."
+            }
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "36": "(tn): Or “first installment,” “pledge,” “deposit.” Down payment. The Greek word ἀρραβών (arrabwn) denotes the first payment or first installment of money or goods which serves as a guarantee or pledge for the completion of the transaction. In the NT the term is used only figuratively of the Holy Spirit as the down payment of the blessings promised by God (it is used also in 2 Cor 1:22 and 5:5). In the “already – not yet” scheme of the NT the possession of the Spirit now by believers (“already”) can be viewed as a guarantee that God will give them the balance of the promised blessings in the future (“not yet”).",
+              "37": "(tn, Grk): “the possession.”"
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "38": "(sn): The conjunctive phrase For this reason points back to the preceding section, vv. 3-14, which is also summed up in this verse in the expression because I have heard of your faith. In other words, the author’s prayer can be made for his audience because he knows that they are true believers.",
+              "39": "(tn, Grk): “even I.”",
+              "40": "(tn, Grk): “having also heard.”",
+              "41": "(tc): �46 א* A B P 33 1739 1881 2464 Hier lack “your love” (τὴν ἀγάπην, thn agaphn), while various other groups of mss have different arrangements of the phrase “your love toward all the saints” (τὴν ἀγάπην τὴν εἰς πάντας τοὺς ἁγίους, thn agaphn thn ei\" panta\" tou\" Jagiou\"). Most witnesses, especially the later ones (א2 D1 Ψ � latt sa), read τὴν ἀγάπην τὴν εἰς πάντας τοὺς ἁγίους. Externally, the shorter reading is superior. Internally, the omission of τὴν ἀγάπην is a significantly harder reading, for the saints become an object of faith on par with the Lord Jesus. If this reading is authentic, however, the force of πίστις (pisti\") is probably closer to “faithfulness,” a meaning that could perhaps be suitable toward both the Lord and the saints. Nevertheless, if the shorter reading is authentic, later scribes would no doubt have been tempted to alter it. With the parallel in Col 1:4 at hand, τὴν ἀγάπην would have been the most obvious phrase to add. (TCGNT 533 suggests that ἣν ἔχετε would have been added instead of the second τήν if the shorter reading were original, in conformity with Col 1:4, but this is not necessarily so: Scribes often altered the text as minimally as possible, and since the second τήν was already present, replacing it with ἣν ἔχετε, when the meaning was not significantly different from the second τήν, seems unlikely.) Further, ἀγάπην comes after “saints” (thus, τὴν εἰς πάντας τοὺς ἁγίους ἀγάπην) in some witnesses (81 104 326 365 1175), and the second τήν is lacking (thus, τὴν ἀγάπην εἰς πάντας τοὺς ἁγίους) in others (D* F G). Such a floating text normally indicates inauthenticity. On the other hand, τὴν ἀγάπην could easily have dropped out of the text by way of haplography, the Alexandrian scribes’ eyes skipping from τήν to τήν. The weak first declension feminine article-noun-article construction is common enough in the NT, occurring over 40 times, yet in four of these texts there is some ms evidence for an omission similar to Eph 1:15 (Rom 11:17; 2 Tim 3:10; Rev 11:2; 21:9). But in none of these places is the Alexandrian testimony united in the omission as it is here. Further, a wholesale Alexandrian omission of τὴν ἀγάπην presupposes a much stronger genealogical relation among the Alexandrian mss than many scholars would embrace. What seems to tip the scales in favor of the longer reading, however, is the intrinsic evidence: The question of whether πίστις could be used to mean faithfulness in the general sense toward both the Lord and the saints is quite problematic. All in all, a decision is difficult, but the longer reading is, with hesitation, preferred."
+            }
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "42": "(tn, Grk): “making mention [of you].”"
+            }
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "43": "(tn): The words “I pray” are not in the Greek text, but have been supplied to clarify the meaning; v. 17 is a subordinate clause to v. 16 (“I pray” in v. 17 is implied from v. 16). Eph 1:15-23 constitutes one sentence in Greek, but a new sentence was started here in the translation in light of contemporary English usage.",
+              "44": "(tn): Or “glorious Father.” The genitive phrase “of glory” is most likely an attributive genitive. The literal translation “Father of glory” has been retained because of the parallelism with the first line of the verse: “the God of our Lord Jesus Christ, the Father of glory.”",
+              "45": "(tn): Or “the Spirit of wisdom and revelation,” or “a spirit of wisdom and revelation.” Verse 17 involves a complex exegetical problem revolving around the Greek term πνεῦμα (pneuma). Some take it to mean “the Spirit,” others “a spirit,” and still others “spiritual.” (1) If “the Spirit” is meant, the idea must be a metonymy of cause for effect, because the author had just indicated in vv. 13-14 that the Spirit was already given (hence, there is no need for him to pray that he be given again). But the effect of the Spirit is wisdom and revelation. (2) If “a spirit” is meant, the idea may be that the readers will have the ability to gain wisdom and insight as they read Paul’s letters, but the exact meaning of “a spirit” remains ambiguous. (3) To take the genitives following πνεῦμα as attributed genitives (see ExSyn 89-91), in which the head noun (“S/spirit”) functions semantically like an adjective (“spiritual”) is both grammatically probable and exegetically consistent.",
+              "46": "(tn, Grk): “in the knowledge of him.” The point of the knowledge of him has nothing to do with what God knows, but with what believers are to know (hence, “…knowledge”). Further, the author’s prayer is that this knowledge of God would increase, not simply be initiated, since he is writing to believers who already know God (hence, “your knowledge of him”)."
+            }
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "47": "(tc, Grk): ‡ Most witnesses, especially of the Byzantine and Western texttypes, though with a few important Alexandrian witnesses (א A D F G Ψ 0278 � latt sy), add ὑμῶν (Jumwn, “your”) after καρδίας (kardias, “heart”), though it is clearly implied in the shorter (Alexandrian) reading (found in �46 B 6 33 1175 1739 1881 pc). The longer reading thus looks to be a clarifying gloss, as is frequently found in the Byzantine and Western traditions. The translation above also uses “your” because of English requirements, not because of textual basis. “the.”",
+              "48": "(tn): The perfect participle πεφωτισμένους (pefwtismenou\") may either be part of the prayer (“that the eyes of your heart may be enlightened”) or part of the basis of the prayer (“since the eyes of your heart have been enlightened”). Although the participle follows the ἵνα (Jina) of v. 17, it is awkward grammatically in the clause. Further, perfect adverbial participles are usually causal in NT Greek. Finally, the context both here and throughout Ephesians seems to emphasize the motif of light as a property belonging to believers. Thus, it seems that the author is saying, “I know that you are saved, that you have had the blinders of the devil removed; because of this, I can now pray that you will fully understand and see the light of God’s glorious revelation.” Hence, the translation takes the participle to form a part of the basis for the prayer.",
+              "49": "(tn): Or “the hope to which he has called you.” The hope of his calling. The translation is more formally equivalent for this and the following two phrases, because of the apparently intentional literary force of the original. There is a natural cadence to the three genitive expressions (hope his calling, wealth his glorious inheritance, and extraordinary greatness his power). The essence of the prayer is seen here. Paraphrased it reads as follows: “Since you are enlightened by God’s Spirit, I pray that you may comprehend the hope to which he has called you, the spiritual riches that await the saints in glory, and the spiritual power that is available to the saints now.” Thus, the prayer focuses on all three temporal aspects of our salvation as these are embedded in the genitives – the past (calling), the future (inheritance), and the present (power toward us who believe).",
+              "50": "(tn, Grk): “of the glory of his inheritance.” Here “inheritance” is taken as an attributed genitive and the head noun, “glory,” is thus translated as an adjective, “glorious inheritance.”"
+            }
+          },
+          {
+            "verse": 19,
+            "notes": {
+              "51": "(tn): Or “immeasurable, surpassing”",
+              "52": "(tn): Or “for, to”",
+              "53": "(tn, Grk): “according to.”",
+              "54": "(tn, Grk): “according to the exercise of the might of his strength.” What has been translated as exercise is a term used only of supernatural power in the NT, ἐνέργεια (energeia)."
+            }
+          },
+          {
+            "verse": 20,
+            "notes": {
+              "55": "(tn, Grk): “which” (v. 20 is a subordinate clause to v. 19).",
+              "56": "(tn): The verb “exercised” (the aorist of ἐνεργέω, energew) has its nominal cognate in “exercise” in v. 19 (ἐνέργεια, energeia).",
+              "57": "(tn, Grk): Or “This power he exercised in Christ by raising him”; “raising him.” The adverbial participle ἐγείρας (egeiras) could be understood as temporal (“when he raised [him]”), which would be contemporaneous to the action of the finite verb “he exercised” earlier in the verse, or as means (“by raising [him]”). The participle has been translated here with the temporal nuance to allow for means to also be a possible interpretation. If the translation focused instead upon means, the temporal nuance would be lost as the time frame for the action of the participle would become indistinct.",
+              "58": "(tc): The majority of mss, especially the Western and Byzantine mss (D F G Ψ � b r Ambst), have the indicative ἐκάθισεν (ekaqisen, “he seated”) for καθίσας (kaqisa\", “when he seated, by seating”). The indicative is thus coordinate with ἐνήργησεν (enhrghsen, “he exercised”) and provides an additional statement to “he exercised his power.” The participle (found in �92vid א A B 0278 33 81 1175 1505 1739 1881 2464 al), on the other hand, is coordinate with ἐγείρας (egeiras) and as such provides evidence of God’s power: He exercised his power by raising Christ from the dead and by seating him at his right hand. As intriguing as the indicative reading is, it is most likely an intentional alteration of the original wording, accomplished by an early “Western” scribe, which made its way in the Byzantine text.",
+              "59": "(sn): Eph 1:19-20. The point made in these verses is that the power required to live a life pleasing to God is the same power that raised Christ from the dead. For a similar thought, cf. John 15:1-11."
+            }
+          },
+          {
+            "verse": 21
+          },
+          {
+            "verse": 22,
+            "notes": {
+              "60": "(tn, Grk): “he”; the referent (God) has been specified in the translation for clarity.",
+              "61": "(tn, Grk): “subjected.”",
+              "62": "(tn, Grk): “his”; the referent (Christ) has been specified in the translation for clarity.",
+              "63": "(sn): An allusion to Ps 8:6.",
+              "64": "(tn, Grk): “and he gave him as head over all things to the church.”"
+            }
+          },
+          {
+            "verse": 23,
+            "notes": {
+              "65": "(tn, Grk): “which is.” The antecedent of “which” is easily lost in English, though in Greek it is quite clear. In the translation “church” is repeated to clarify the referent.",
+              "66": "(tn): Or perhaps, “who is filled entirely.” The idea of all in all is either related to the universe (hence, he fills the whole universe entirely) or the church universal (hence, Christ fills the church entirely with his presence and power)."
+            }
+          }
+        ],
+        "totalVerses": 23,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 49,
+        "chapter": 2,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "67": "(tn): The adverbial participle “being” (ὄντας, ontas) is taken concessively.",
+              "68": "(sn): Chapter 2 starts off with a participle, although you were dead, that is left dangling. The syntax in Greek for vv. 1-3 constitutes one incomplete sentence, though it seems to have been done intentionally. The dangling participle leaves the readers in suspense while they wait for the solution (in v. 4) to their spiritual dilemma."
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "69": "(sn): The relative pronoun which is feminine as is sins, indicating that sins is the antecedent.",
+              "70": "(tn, Grk): “walked.” The Greek verb translated lived (περιπατέω, peripatew) in the NT letters refers to the conduct of one’s life, not to physical walking.",
+              "71": "(tn): Or possibly “Aeon.” The word translated present path is the same as that which has been translated [this] age in 1:21 (αἰών, aiwn).",
+              "72": "(tn, Grk): “domain, [place of] authority.”",
+              "73": "(tn, Grk): “of” (but see the note on the word “spirit” later in this verse).",
+              "74": "(sn): The ruler of the kingdom of the air is also the ruler of the spirit that is now energizing the sons of disobedience. Although several translations regard the ruler to be the same as the spirit, this is unlikely since the cases in Greek are different (ruler is accusative and spirit is genitive). To get around this, some have suggested that the genitive for spirit is a genitive of apposition. However, the semantics of the genitive of apposition are against such an interpretation (cf. ExSyn 100).",
+              "75": "(tn, Grk): “working in.”",
+              "76": "(sn): Sons of disobedience is a Semitic idiom that means “people characterized by disobedience.” However, it also contains a subtle allusion to vv. 4-10: Some of those sons of disobedience have become sons of God."
+            }
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "77": "(sn): Among whom. The relative pronoun phrase that begins v. 3 is identical, except for gender, to the one that begins v. 2 (ἐν αἵς [en Jais], ἐν οἵς [en Jois]). By the structure, the author is building an argument for our hopeless condition: We lived in sin and we lived among sinful people. Our doom looked to be sealed as well in v. 2: Both the external environment (kingdom of the air) and our internal motivation and attitude (the spirit that is now energizing) were under the devil’s thumb (cf. 2 Cor 4:4).",
+              "78": "(tn, Grk): “we all.”",
+              "79": "(tn): Or “even.”",
+              "80": "(sn): Children of wrath is a Semitic idiom which may mean either “people characterized by wrath” or “people destined for wrath.”",
+              "81": "(sn): Eph 2:1-3. The translation of vv. 1-3 is very literal, even to the point of retaining the awkward syntax of the original. See note on the word dead in 2:1."
+            }
+          },
+          {
+            "verse": 4
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "82": "(tn): Or “by grace you have been saved.” The perfect tense in Greek connotes both completed action (“you have been saved”) and continuing results (“you are saved”)."
+            }
+          },
+          {
+            "verse": 6
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "83": "(tn): Or possibly “to the Aeons who are about to come.”",
+              "84": "(tn): Or “upon.”"
+            }
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "85": "(tn): See note on the same expression in v. 5.",
+              "86": "(tc): The feminine article is found before πίστεως (pistews, “faith”) in the Byzantine text as well as in A Ψ 1881 pc. Perhaps for some scribes the article was intended to imply creedal fidelity as a necessary condition of salvation (“you are saved through the faith”), although elsewhere in the corpus Paulinum the phrase διὰ τῆς πίστεως (dia th\" pistew\") is used for the act of believing rather than the content of faith (cf. Rom 3:30, 31; Gal 3:14; Eph 3:17; Col 2:12). On the other side, strong representatives of the Alexandrian and Western texts (א B D* F G P 0278 6 33 1739 al bo) lack the article. Hence, both text-critically and exegetically, the meaning of the text here is most likely “saved through faith” as opposed to “saved through the faith.” Regarding the textual problem, the lack of the article is the preferred reading."
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "87": "(tn): Or “not as a result of.”",
+              "88": "(tn, Grk): “lest anyone should boast.”"
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "89": "(tn, Grk): “so that we might walk in them” (or “by them”). So that we may do them. Before the devil began to control our walk in sin and among sinful people, God had already planned good works for us to do."
+            }
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "90": "(tn, Grk): “in the flesh.”"
+            }
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "91": "(tn): Or “without Christ.” Both “Christ” (Greek) and “Messiah” (Hebrew and Aramaic) mean “one who has been anointed.” Because the context refers to ancient Israel’s messianic expectation, “Messiah” was employed in the translation at this point rather than “Christ.”",
+              "92": "(tn): Or “covenants of the promise.”"
+            }
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "93": "(tn): Or “have come near in the blood of Christ.” See the note on “his blood” in 1:7."
+            }
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "94": "(tn, Grk): “who made the both one.”"
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "95": "(tn): Or “rendered inoperative.” This is a difficult text to translate because it is not easy to find an English term which communicates well the essence of the author’s meaning, especially since legal terminology is involved. Many other translations use the term “abolish” (so NRSV, NASB, NIV), but this term implies complete destruction which is not the author’s meaning here. The verb καταργέω (katargew) can readily have the meaning “to cause someth. to lose its power or effectiveness” (BDAG 525 s.v. 2, where this passage is listed), and this meaning fits quite naturally here within the author’s legal mindset. A proper English term which communicates this well is “nullify” since this word carries the denotation of “making something legally null and void.” This is not, however, a common English word. An alternate term like “rendered inoperative [or ineffective]” is also accurate but fairly inelegant. For this reason, the translation retains the term “nullify”; it is the best choice of the available options, despite its problems.",
+              "96": "(tn): In this context the author is not referring to a new individual, but instead to a new corporate entity united in Christ (cf. BDAG 497 s.v. καινός 3.b: “All the Christians together appear as κ. ἄνθρωπος Eph 2:15”). This is clear from the comparison made between the Gentiles and Israel in the immediately preceding verses and the assertion in v. 14 that Christ “made both groups into one.” This is a different metaphor than the “new man” of Eph 4:24; in that passage the “new man” refers to the new life a believer has through a relationship to Christ.",
+              "97": "(tn, Grk): “in order to create the two into one new man.” Eph 2:14-16 is one sentence in Greek. A new sentence was started here in the translation for clarity since contemporary English is less tolerant of extended sentences."
+            }
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "98": "(tn, Grk): “by killing the hostility in himself.”"
+            }
+          },
+          {
+            "verse": 17
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "99": "(tn): Or “for.” BDAG gives the consecutive ὅτι (Joti) as a possible category of NT usage (BDAG 732 s.v. 5.c)."
+            }
+          },
+          {
+            "verse": 19
+          },
+          {
+            "verse": 20,
+            "notes": {
+              "100": "(tn, Grk): “having been built.”",
+              "101": "(sn): Apostles and prophets. Because the prophets appear after the mention of the apostles and because they are linked together in 3:5 as recipients of revelation about the church, they are to be regarded not as Old Testament prophets, but as New Testament prophets.",
+              "102": "(tn, Grk): “while Christ Jesus himself is” or “Christ Jesus himself being.”",
+              "103": "(tn): Or perhaps “capstone” (NAB). The meaning of ἀκρογωνιαῖος (akrogwniaio\") is greatly debated. The meaning “capstone” is proposed by J. Jeremias (TDNT 1:792), but the most important text for this meaning (T. Sol. 22:7-23:4) is late and possibly not even an appropriate parallel. The only place ἀκρογωνιαῖος is used in the LXX is Isa 28:16, and there it clearly refers to a cornerstone that is part of a foundation. Furthermore, the imagery in this context has the building growing off the cornerstone upward, whereas if Christ were the capstone, he would not assume his position until the building was finished, which vv. 21-22 argue against."
+            }
+          },
+          {
+            "verse": 21,
+            "notes": {
+              "104": "(tn, Grk): “in whom” (v. 21 is a relative clause, subordinate to v. 20).",
+              "105": "(tc): Although several important witnesses (א1 A C P 6 81 326 1739c 1881) have πᾶσα ἡ οἰκοδομή (pasa Jh oikodomh), instead of πᾶσα οἰκοδομή (the reading of א* B D F G Ψ 33 1739* �), the article is almost surely a scribal addition intended to clarify the meaning of the text, for with the article the meaning is unambiguously “the whole building.” Or “every building.” Although “every building” is a more natural translation of the Greek, it does not fit as naturally into the context, which (with its emphasis on corporate unity) seems to stress the idea of one building."
+            }
+          },
+          {
+            "verse": 22
+          }
+        ],
+        "totalVerses": 22,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 49,
+        "chapter": 3,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "106": "(tc): Several early and important witnesses, chiefly of the Western text (א* D* F G [365]), lack ᾿Ιησοῦ (Ihsou, “Jesus”) here, while most Alexandrian and Byzantine mss (�46 א1 A B [C] D1 Ψ 33 1739 [1881] � lat sy bo) have the word. However, because of the Western text’s proclivities to add or delete to the text, seemingly at whim, serious doubts should be attached to the shorter reading. It is strengthened, however, by א’s support. Nevertheless, since both א and D were corrected with the addition of ᾿Ιησοῦ, their testimony might be questioned. Further, in uncial script the nomina sacra here could have led to missing a word by way of homoioteleuton (cMuiMu). At the same time, in light of the rarity of scribal omission of nomina sacra (see TCGNT 582, n. 1), a decision for inclusion of the word here must be tentative. NA27 rightly places ᾿Ιησοῦ in brackets."
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "107": "(sn): If indeed. The author is not doubting whether his audience has heard, but is rather using provocative language (if indeed) to engage his audience in thinking about the magnificence of God’s grace. However, in English translation, the apodosis (“then”-clause) does not come until v. 13, leaving the protasis (“if”-clause) dangling. Eph 3:2-7 constitute one sentence in Greek.",
+              "108": "(tn): Or “administration,” “dispensation,” “commission.”"
+            }
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "109": "(tn): Or “namely, that is.”",
+              "110": "(tn): Or “mystery.”",
+              "111": "(tn): Or “as I wrote above briefly.” As I wrote briefly may refer to the author’s brief discussion of the divine secret in 1:9."
+            }
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "112": "(tn, Grk): “which, when reading.”",
+              "113": "(tn, Grk): “you are able to.”",
+              "114": "(tn): Or “mystery.”"
+            }
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "115": "(tn, Grk): “which.” Verse 5 is technically a relative clause, subordinate to the thought of v. 4.",
+              "116": "(tn, Grk): “the sons of men” (a Semitic idiom referring to human beings, hence, “people”).",
+              "117": "(tn, Grk): “other.”",
+              "118": "(tn): Or “in.”"
+            }
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "119": "(sn): The phrase through the gospel is placed last in the sentence in Greek for emphasis. It has been moved forward for clarity.",
+              "120": "(tn, Grk): “and fellow members.”"
+            }
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "121": "(tn, Grk): “of which I was made a minister,” “of which I became a servant.”",
+              "122": "(tn, Grk): “according to.”",
+              "123": "(sn): On the exercise of his power see 1:19-20."
+            }
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "124": "(sn): In Pauline writings saints means any true believer. Thus for Paul to view himself as less than the least of all the saints is to view himself as the most unworthy object of Christ’s redemption.",
+              "125": "(sn): The parallel phrases to proclaim and to enlighten which follow indicate why God’s grace was manifested to Paul. Grace was not something just to be received, but to be shared with others (cf. Acts 13:47)."
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "126": "(tn): There is a possible causative nuance in the Greek verb, but this is difficult to convey in the translation.",
+              "127": "(tn, Grk): “what is the plan of the divine secret.” Earlier the author had used οἰκονομία (oikonomia; here “plan”) to refer to his own “stewardship” (v. 2). But now he is speaking about the content of this secret, not his own activity in relation to it.",
+              "128": "(tn): Or “for eternity,” or perhaps “from the Aeons.” Cf. 2:2, 7.",
+              "129": "(tn): Or “by God.” It is possible that ἐν (en) plus the dative here indicates agency, that is, that God has performed the action of hiding the secret. However, this usage of the preposition ἐν is quite rare in the NT, and even though here it does follow a perfect passive verb as in the Classical idiom, it is more likely that a different nuance is intended."
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "130": "(tn, Grk): “that.” Verse 10 is a subordinate clause to the verb “enlighten” in v. 9.",
+              "131": "(tn): Or “manifold wisdom,” “wisdom in its rich variety.”"
+            }
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "132": "(tn, Grk): “according to.” The verse is a prepositional phrase subordinate to v. 10."
+            }
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "133": "(tn, Grk): “access in confidence.”",
+              "134": "(tn): The phrase “to God” is not in the text, but is clearly implied by the preceding, “access.”",
+              "135": "(tn, Grk): “through,” “by way of.”",
+              "136": "(tn, Grk): “his.”",
+              "137": "(tn): Or “faith in him.” A decision is difficult here. Though traditionally translated “faith in Jesus Christ,” an increasing number of NT scholars are arguing that πίστις Χριστοῦ (pisti\" Cristou) and similar phrases in Paul (here and in Rom 3:22, 26; Gal 2:16, 20; 3:22; Phil 3:9) involve a subjective genitive and mean “Christ’s faith” or “Christ’s faithfulness” (cf., e.g., G. Howard, “The ‘Faith of Christ’,” ExpTim 85 [1974]: 212-15; R. B. Hays, The Faith of Jesus Christ [SBLDS]; Morna D. Hooker, “Πίστις Χριστοῦ,” NTS 35 [1989]: 321-42). Noteworthy among the arguments for the subjective genitive view is that when πίστις takes a personal genitive it is almost never an objective genitive (cf. Matt 9:2, 22, 29; Mark 2:5; 5:34; 10:52; Luke 5:20; 7:50; 8:25, 48; 17:19; 18:42; 22:32; Rom 1:8; 12; 3:3; 4:5, 12, 16; 1 Cor 2:5; 15:14, 17; 2 Cor 10:15; Phil 2:17; Col 1:4; 2:5; 1 Thess 1:8; 3:2, 5, 10; 2 Thess 1:3; Titus 1:1; Phlm 6; 1 Pet 1:9, 21; 2 Pet 1:5). On the other hand, the objective genitive view has its adherents: A. Hultgren, “The Pistis Christou Formulations in Paul,” NovT 22 (1980): 248-63; J. D. G. Dunn, “Once More, ΠΙΣΤΙΣ ΧΡΙΣΤΟΥ,” SBL Seminar Papers, 1991, 730-44. Most commentaries on Romans and Galatians usually side with the objective view. Because of Christ’s faithfulness. Though Paul elsewhere teaches justification by faith, this presupposes that the object of our faith is reliable and worthy of such faith."
+            }
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "138": "(tn, Grk): “I ask.” No direct object is given in Greek, leaving room for the possibility that either “God” (since the verb is often associated with prayer) or “you” is in view.",
+              "139": "(tn, Grk): “my trials on your behalf.”",
+              "140": "(sn): Which. The antecedent (i.e., the word or concept to which this clause refers back) may be either “what I am suffering for you” or the larger concept of the recipients not losing heart over Paul’s suffering for them. The relative pronoun “which” is attracted to the predicate nominative “glory” in its gender and number (feminine singular), making the antecedent ambiguous. Paul’s suffering for them could be viewed as their glory (cf. Col 1:24 for a parallel) in that his suffering has brought about their salvation, but if so his suffering must be viewed as more than his present imprisonment in Rome; it would be a general description of his ministry overall (cf. 2 Cor 11:23-27). The other option is that the author is implicitly arguing that the believers have continued to have courage in the midst of his trials (as not to lose heart suggests) and that this is their glory. Philippians 1:27-28 offers an interesting parallel: The believers’ courage in the face of adversity is a sign of their salvation.",
+              "141": "(tn): Or “Or who is your glory?” The relative pronoun ἥτις (Jhti\"), if divided differently, would become ἤ τίς (h ti\"). Since there were no word breaks in the original mss, either word division is possible. The force of the question would be that for the readers to become discouraged over Paul’s imprisonment would mean that they were no longer trusting in God’s sovereignty."
+            }
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "142": "(sn): For this reason resumes the point begun in v. 1, after a long parenthesis.",
+              "143": "(tn, Grk): “I bend my knees.”",
+              "144": "(tc): Most Western and Byzantine witnesses, along with a few others (א2 D F G Ψ 0278 1881 � lat sy), have “of our Lord Jesus Christ” after “Father,” but such an edifying phrase cannot explain the rise of the reading that lacks it, especially when the shorter reading is attested by early and important witnesses such as �46 א* A B C P 6 33 81 365 1175 1739 co Or Hier."
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "145": "(tn): Or “by.”",
+              "146": "(tn): Or “the whole family.”"
+            }
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "147": "(tn, Grk): “that.” In Greek v. 16 is a subordinate clause to vv. 14-15."
+            }
+          },
+          {
+            "verse": 17
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "148": "(sn): The object of these dimensions is not stated in the text. Interpreters have suggested a variety of referents for this unstated object, including the cross of Christ, the heavenly Jerusalem (which is then sometimes linked to the Church), God’s power, the fullness of salvation given in Christ, the Wisdom of God, and the love of Christ. Of these interpretations, the last two are the most plausible. Associations from Wisdom literature favor the Wisdom of God, but the immediate context favors the love of Christ. For detailed discussion of these interpretive options, see A. T. Lincoln, Ephesians (WBC), 207-13, who ultimately favors the love of Christ."
+            }
+          },
+          {
+            "verse": 19,
+            "notes": {
+              "149": "(tn): Or “with.”"
+            }
+          },
+          {
+            "verse": 20,
+            "notes": {
+              "150": "(sn): On the power that is working within us see 1:19-20.",
+              "151": "(tn): Or “infinitely beyond,” “far more abundantly than.”"
+            }
+          },
+          {
+            "verse": 21
+          }
+        ],
+        "totalVerses": 21,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 49,
+        "chapter": 4,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "152": "(tn, Grk): “prisoner in the Lord.”",
+              "153": "(tn, Grk): “walk.” The verb “walk” in the NT letters refers to the conduct of one’s life, not to physical walking.",
+              "154": "(sn): With which you have been called. The calling refers to the Holy Spirit’s prompting that caused them to believe. The author is thus urging his readers to live a life that conforms to their saved status before God."
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "155": "(tn): Or “meekness.” The word is often used in Hellenistic Greek of the merciful execution of justice on behalf of those who have no voice by those who are in a position of authority (Matt 11:29; 21:5).",
+              "156": "(tn): Or “putting up with”; or “forbearing.”"
+            }
+          },
+          {
+            "verse": 3
+          },
+          {
+            "verse": 4
+          },
+          {
+            "verse": 5
+          },
+          {
+            "verse": 6
+          },
+          {
+            "verse": 7
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "157": "(tn, Grk): “he led captive captivity.”",
+              "158": "(sn): A quotation which is perhaps ultimately derived from Ps 68:18. However, the wording here differs from that of Ps 68 in both the Hebrew text and the LXX in a few places, the most significant of which is reading “gave gifts to” in place of “received gifts from” as in HT and LXX. It has sometimes been suggested that the author of Ephesians modified the text he was citing in order to better support what he wanted to say here. Such modifications are sometimes found in rabbinic exegesis from this and later periods, but it is also possible that the author was simply citing a variant of Ps 68 known to him but which has not survived outside its quotation here (W. H. Harris, The Descent of Christ [AGJU 32], 104). Another possibility is that the words here, which strongly resemble Ps 68:19 HT and LXX (68:18 ET), are actually part of an early Christian hymn quoted by the author."
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "159": "(tc): The majority of mss (א2 B C3 Ψ �) read πρῶτον (prwton, “first”) here in conjunction with this verb: “he first descended.” The shorter reading, which lacks πρῶτον, should be considered original on the basis of both external and internal evidence: It has strong external support from the Alexandrian and Western texttypes (�46 א* A C* D F G Ivid 082 6 33 81 1739 1881 pc); internally, the inclusion of πρῶτον is most likely an addition to clarify the sense of the passage.",
+              "160": "(tc): The Western texttype (D* F G it) lacks the plural noun μέρη (merh, “regions”); the shorter reading cannot be dismissed out of hand since it is also supported by �46 (which often has strong affinities, however, with the Western text). The inclusion of the word has strong external support from important, early mss as well as the majority of Byzantine cursives (א A B C D2 I Ψ 33 1739 1881 �). Certain scribes may have deleted the word, thinking it superfluous; in addition, if the shorter reading were original one would expect to see at least a little variation in clarifying additions to the text. For these reasons the inclusion of μέρη should be regarded as original.",
+              "161": "(tn, Grk): “to the lower parts of the earth.” This phrase has been variously interpreted: (1) The traditional view understands it as a reference to the underworld (hell), where Jesus is thought to have descended in the three days between his death and resurrection. In this case, “of the earth” would be a partitive genitive. (2) A second option is to translate the phrase “of the earth” as a genitive of apposition: “to the lower parts, namely, the earth” (as in the present translation). Many recent scholars hold this view and argue that it is a reference to the incarnation. (3) A third option, which also sees the phrase “of the earth” as a genitive of apposition, is that the descent in the passage occurs after the ascent rather than before it, and refers to the descent of the Spirit at Pentecost (cf. Acts 4:11-16). Support for this latter view is found in the intertestamental and rabbinic use of Ps 68:18 (quoted in v. 8), which is consistently and solely interpreted as a reference to Moses’ ascent of Mt. Sinai to “capture” the words of the law. The probability, therefore, is that the comments here in v. 9 reflect a polemic against the interpretation of Ps 68:18 in certain circles as a reference to Moses. See W. H. Harris, The Descent of Christ (AGJU 32), 46-54; 171-204."
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "162": "(tn): The Greek text lays specific emphasis on “He” through the use of the intensive pronoun, αὐτός (autos). This is reflected in the English translation through the use of “the very one.”"
+            }
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "163": "(tn): The emphasis on Christ is continued through the use of the intensive pronoun, αὐτός (autos), and is rendered in English as “it was he” as this seems to lay emphasis on the “he.”",
+              "164": "(sn): Some interpreters have understood the phrase pastors and teachers to refer to one and the same group. This would mean that all pastors are teachers and that all teachers are pastors. This position is often taken because it is recognized that both nouns (i.e., pastors and teachers) are governed by one article in Greek. But because the nouns are plural, it is extremely unlikely that they refer to the same group, but only that the author is linking them closely together. It is better to regard the pastors as a subset of teachers. In other words, all pastors are teachers, but not all teachers are pastors. See ExSyn 284."
+            }
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "165": "(tn): On the translation of πρὸς τὸν καταρτισμὸν τῶν ἁγίων (pro\" ton katartismon twn Jagiwn) as “to equip the saints” see BDAG 526 s.v. καταρτισμός. In this case the genitive is taken as objective and the direct object of the verbal idea implied in καταρτισμός (katartismo\").",
+              "166": "(tn): The εἰς (eis) clause is taken as epexegetical to the previous εἰς clause, namely, εἰς ἔργον διακονίας (ei\" ergon diakonia\")."
+            }
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "167": "(tn): The words “attaining to” were supplied in the translation to pick up the καταντήσωμεν (katanthswmen) mentioned earlier in the sentence and the εἰς (eis) which heads up this clause.",
+              "168": "(tn, Grk): “the measure of the stature of the fullness of Christ.” On this translation of ἡλικία (Jhlikia, “stature”) see BDAG 436 s.v. 3."
+            }
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "169": "(tn): Because of the length and complexity of the Greek sentence, a new sentence was started here in the translation.",
+              "170": "(tn): While the sense of the passage is clear enough, translation in English is somewhat difficult. The Greek says: “by the trickery of men, by craftiness with the scheme of deceit.” The point is that the author is concerned about Christians growing into maturity. He is fearful that certain kinds of very cunning people, who are skilled at deceitful scheming, should come in and teach false doctrines which would in turn stunt the growth of the believers."
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "171": "(tn): The meaning of the participle ἀληθεύοντες (alhqeuonte\"; from the verb ἀληθεύω [alhqeuw]) is debated. In classical times the verb could mean “to speak the truth,” or “to be true, to prove true.” In the LXX it appears five times (Gen 20:16; 42:16; Prov 21:3; Isa 44:26; Sir 34:4) and translates four different Hebrew words; there it is an ethical term used of proving or being true, not with the idea of speaking the truth. In the NT the only other place the verb appears is in Gal 4:16 where it means “to speak the truth.” However, in Ephesians the concept of “being truthful” is the best sense of the word. In contrast to the preceding verse, where there are three prepositional phrases to denote falsehood and deceit, the present word speaks of being real or truthful in both conduct and speech. Their deceit was not only in their words but also in their conduct. In other words, the believers’ conduct should be transparent, revealing the real state of affairs, as opposed to hiding or suppressing the truth through cunning and deceit. See H. W. Hoehner, Ephesians, 564-65, and R. Bultmann, TDNT 1:251."
+            }
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "172": "(tn): The Greek participle συμβιβαζόμενον (sumbibazomenon) translated “held together” also has in different contexts, the idea of teaching implied in it.",
+              "173": "(tn, Grk): “joint of supply.”"
+            }
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "174": "(tn): On the translation of μαρτύρομαι (marturomai) as “insist” see BDAG 619 s.v. 2.",
+              "175": "(tn): On the translation of ματαιότης (mataioth\") as “futility” see BDAG 621 s.v.",
+              "176": "(tn): Or “thoughts,” “mind.”"
+            }
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "177": "(tn): In the Greek text this clause is actually subordinate to περιπατεῖ (peripatei) in v. 17. It was broken up in the English translation so as to avoid an unnecessarily long and cumbersome statement."
+            }
+          },
+          {
+            "verse": 19,
+            "notes": {
+              "178": "(sn): Greediness refers to an increasing desire for more and more. The point is that sinful passions and desires are never satisfied."
+            }
+          },
+          {
+            "verse": 20
+          },
+          {
+            "verse": 21
+          },
+          {
+            "verse": 22,
+            "notes": {
+              "179": "(tn): An alternative rendering for the infinitives in vv. 22-24 (“to lay aside… to be renewed… to put on”) is “that you have laid aside… that you are being renewed… that you have put on.” The three infinitives of vv. 22 (ἀποθέσθαι, apoqesqai), 23 (ἀνανεοῦσθαι, ananeousqai), and 24 (ἐνδύσασθαι, endusasqai), form part of an indirect discourse clause; they constitute the teaching given to the believers addressed in the letter. The problem in translation is that one cannot be absolutely certain whether they go back to indicatives in the original statement (i.e., “you have put off”) or imperatives (i.e., “put off!”). Every other occurrence of an aorist infinitive in indirect discourse in the NT goes back to an imperative, but in all of these examples the indirect discourse is introduced by a verb that implies a command. The verb διδάσκω (didaskw) in the corpus Paulinum may be used to relate the indicatives of the faith as well as the imperatives. This translation implies that the infinitives go back to imperatives, though the alternate view that they refer back to indicatives is also a plausible interpretation. For further discussion, see ExSyn 605."
+            }
+          },
+          {
+            "verse": 23
+          },
+          {
+            "verse": 24,
+            "notes": {
+              "180": "(tn, Grk): Or “in God’s likeness.” “according to God.” The preposition κατά used here denotes a measure of similarity or equality (BDAG 513 s.v. B.5.b.α).",
+              "181": "(tn): Or “in righteousness and holiness which is based on truth” or “originated from truth.”"
+            }
+          },
+          {
+            "verse": 25,
+            "notes": {
+              "182": "(sn): A quotation from Zech 8:16."
+            }
+          },
+          {
+            "verse": 26,
+            "notes": {
+              "183": "(sn): A quotation from Ps 4:4. Although several translations render the phrase Be angry and do not sin as “If you are angry, do not sin” such is unlikely on a grammatical, lexical, and historical level (see D. B. Wallace, “᾿Οργίζεσθε in Ephesians 4:26: Command or Condition?” CTR 3 [1989]: 352-72). The idea of vv. 26-27 is as follows: Christians are to exercise a righteous indignation over sin in the midst of the believing community (v. 26a; note that v. 25 is restricting the discussion to those in the body of Christ). When other believers sin, such people should be gently and quickly confronted (v. 26b), for if the body of Christ does not address sin in its midst, the devil gains a foothold (v. 27). “Entirely opposite of the ‘introspective conscience’ view, this text seems to be a shorthand expression for church discipline, suggesting that there is a biblical warrant for δικαία ὀργή [dikaia orgh] (as the Greeks put it) – righteous indignation” (ExSyn 492).",
+              "184": "(tn): The word παροργισμός (parorgismo\"), typically translated “anger” in most versions is used almost exclusively of the source of anger rather than the results in Greek literature (thus, it refers to an external cause or provocation rather than an internal reaction). The notion of “cause of your anger” is both lexically and historically justified. The apparently proverbial nature of the statement (“Do not let the sun go down on the cause of your anger”) finds several remarkable parallels in Pss. Sol. 8:8-9: “(8) God laid bare their sins in the full light of day; All the earth came to know the righteous judgments of God. (9) In secret places underground their iniquities (were committed) to provoke (Him) to anger” (R. H. Charles’ translation). Not only is παροργισμός used, but righteous indignation against God’s own people and the laying bare of their sins in broad daylight are also seen."
+            }
+          },
+          {
+            "verse": 27
+          },
+          {
+            "verse": 28
+          },
+          {
+            "verse": 29,
+            "notes": {
+              "185": "(tn, Grk): “but if something good for the building up of the need.” The final genitive τῆς χρείας (th\" creia\") may refer to “the need of the moment” or it may refer to the need of a particular person or group of people as the next phrase “give grace to those who hear” indicates."
+            }
+          },
+          {
+            "verse": 30
+          },
+          {
+            "verse": 31
+          },
+          {
+            "verse": 32,
+            "notes": {
+              "186": "(tc): ‡ Although most witnesses have either δέ (de; �49 א A D2 Ψ 33 1739mg � lat) or οὖν (oun; D* F G 1175) here, a few important mss lack a conjunction (�46 B 0278 6 1739* 1881). If either conjunction were originally in the text, it is difficult to explain how the asyndetic construction could have arisen (although the dropping of δέ could have occurred via homoioteleuton). Further, although Hellenistic Greek rarely joined sentences without a conjunction, such does occur in the corpus Paulinum on occasion, especially to underscore a somber point. “Instead” has been supplied in the translation because of stylistic requirements, not textual basis. NA27 places δέ in brackets, indicating some doubt as to its authenticity.",
+              "187": "(tn): Or “forgiving.”"
+            }
+          }
+        ],
+        "totalVerses": 32,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 49,
+        "chapter": 5,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "188": "(tn): Or “become.”"
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "189": "(tn, Grk): “walk.” The NT writers often used the verb “walk” (περιπατέω, peripatew) to refer to ethical conduct (cf. Rom 8:4; Gal 5:16; Col 4:5).",
+              "190": "(tc): A number of important witnesses have ὑμᾶς (Jumas, “you”; e.g., א* A B P 0159 81 1175 al it co as well as several fathers). Other, equally important witnesses read ἡμᾶς (Jhmas, “us”; �46 א2 D F G Ψ 0278 33 1739 1881 al lat sy). It is possible that ἡμᾶς was accidentally introduced via homoioarcton with the previous word (ἠγάπησεν, hgaphsen). On the other hand, ὑμᾶς may have been motivated by the preceding ὑμῖν (Jumin) in 4:32 and second person verbs in 5:1, 2. Further, the flow of argument seems to require the first person pronoun. A decision is difficult to make, but the first person pronoun has a slightly greater probability of being original.",
+              "191": "(tn, Grk): “an offering and sacrifice to God as a smell of fragrance.” The first expression, προσφορὰν καὶ θυσίαν (prosforan kai qusian), is probably a hendiadys and has been translated such that “sacrificial” modifies “offering.” The second expression, εἰς ὀσμὴν εὐωδίας (ei\" osmhn euwdia\", “as a smell of fragrance”) has been translated as “a fragrant offering”; see BDAG 728-29 s.v. ὀσμή 2. Putting these two together in a clear fashion in English yields the translation: “a sacrificial and fragrant offering to God.”"
+            }
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "192": "(tn): The term “But” translates the δέ (de) in a contrastive way in light of the perfect obedience of Jesus in vv. 1-2 and the vices mentioned in v. 3.",
+              "193": "(tn, Grk): “all impurity.”",
+              "194": "(tn, Grk): “just as is fitting for saints.” The καθώς (kaqws) was rendered with “as” and the sense is causal, i.e., “for” or “because.” The negative particle “not” (“for these are not proper for the saints”) in this clause was supplied in English so as to make the sense very clear, i.e., that these vices are not befitting of those who name the name of Christ."
+            }
+          },
+          {
+            "verse": 4
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "195": "(tn, Grk): “be knowing this.” See also 2 Pet 1:20 for a similar phrase: τοῦτο πρῶτον γινώσκοντες (touto prwton ginwskonte\")."
+            }
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "196": "(sn): The expression sons of disobedience is a Semitic idiom that means “people characterized by disobedience.” In this context it refers to “all those who are disobedient.” Cf. Eph 2:2-3."
+            }
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "197": "(tn): The genitive αὐτῶν (autwn) has been translated as a genitive of association because of its use with συμμέτοχοι (summetocoi) – a verb which implies association in the σύν- (sun-) prefix."
+            }
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "198": "(tn): The verb “you are” is implied in the Greek text, but is supplied in the English translation to make it clear."
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "199": "(tc): Several mss (�46 D2 Ψ �) have πνεύματος (pneumatos, “Spirit”) instead of φωτός (fwtos, “light”). Although most today regard φωτός as obviously original (UBS4 gives it an “A” rating), a case could be made that πνεύματος is what the author wrote. First, although this is largely a Byzantine reading (D2 often, if not normally, assimilates to the Byzantine text), �46 gives the reading much greater credibility. Internally, the φωτός at the end of v. 8 could have lined up above the πνεύματος in v. 9 in a scribe’s exemplar, thus occasioning dittography. (It is interesting to note that in both �49 and א the two instances of φωτός line up.) However, written in a contracted form, as a nomen sacrum (pMnMs) – a practice found even in the earliest mss – πνεύματος would not have been easily confused with fwtos (there being only the last letter to occasion homoioteleuton rather than the last three). Further, the external evidence for φωτός is quite compelling (�49 א A B D* F G P 33 81 1739 1881 2464 pc latt co); it is rather doubtful that the early and widespread witnesses all mistook πνεύματος for φωτός. In addition, πνεύματος can be readily explained as harking back to Gal 5:22 (“the fruit of the Spirit”). Thus, on balance, φωτός appears to be original, giving rise to the reading πνεύματος.",
+              "200": "(tn, Grk): “in.” The idea is that the fruit of the light is “expressed in” or “consists of.”"
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "201": "(tn): BDAG 255 s.v. δοκιμάζω 1 translates δοκιμάζοντες (dokimazonte\") in Eph 5:10 as “try to learn.”"
+            }
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "202": "(tn): The Greek conjunction καὶ (kai) seems to be functioning here ascensively, (i.e., “even”), but is difficult to render in this context using good English. It may read something like: “but rather even expose them!”",
+              "203": "(tn, Grk): “rather even expose.”"
+            }
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "204": "(tn): The participle τὰ…γινόμενα (ta…ginomena) usually refers to “things happening” or “things which are,” but with the following genitive phrase ὑπ᾿ αὐτῶν (Jup’ autwn), which indicates agency, the idea seems to be “things being done.” This passive construction was translated as an active one to simplify the English style."
+            }
+          },
+          {
+            "verse": 13
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "205": "(sn): The following passage has been typeset as poetry because many scholars regard this passage as poetic or hymnic. These terms are used broadly to refer to the genre of writing, not to the content. There are two broad criteria for determining if a passage is poetic or hymnic: “(a) stylistic: a certain rhythmical lilt when the passages are read aloud, the presence of parallelismus membrorum (i.e., an arrangement into couplets), the semblance of some metre, and the presence of rhetorical devices such as alliteration, chiasmus, and antithesis; and (b) linguistic: an unusual vocabulary, particularly the presence of theological terms, which is different from the surrounding context” (P. T. O’Brien, Philippians [NIGTC], 188-89). Classifying a passage as hymnic or poetic is important because understanding this genre can provide keys to interpretation. However, not all scholars agree that the above criteria are present in this passage, so the decision to typeset it as poetry should be viewed as a tentative decision about its genre.",
+              "206": "(tn, Grk): “Rise up.”",
+              "207": "(tn): The articular nominative participle ὁ καθεύδων (Jo kaqeudwn) is probably functioning as a nominative for vocative. Thus, it has been translated as “O sleeper.”",
+              "208": "(sn): A composite quotation, possibly from Isa 26:19, 51:17, 52:1, and 60:1."
+            }
+          },
+          {
+            "verse": 15
+          },
+          {
+            "verse": 16
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "209": "(tn, Grk): “become wise by understanding”; “understanding.” The imperative “be wise” is apparently implied by the construction of vv. 15-21. See the following text-critical note for discussion.",
+              "210": "(tc): ‡ The best witnesses read the imperative here (so �46 א A B P 0278 33 81 1739 pc). The participle is found primarily in the Western and Byzantine texttypes (D2 Ψ 1881 � latt [D* F G are slightly different, but support the participial reading]). But the participle is superior on internal grounds: The structure of v. 17 almost requires an imperative after ἀλλά (alla), for this gives balance to the clause: “Do not become foolish, but understand…” If the participle is original, it may be imperatival (and thus should be translated just like an imperative), but such is quite rare in the NT. More likely, there is an implied imperative as follows: “Do not become foolish, but become wise, understanding what the will of the Lord is.” Either way, the participle is the harder reading and ought therefore to be considered original. It is significant that seeing an implied imperative in this verse affords a certain symmetry to the author’s thought in vv. 15-21: There are three main sections (vv. 15-16, v. 17, vv. 18-21), each of which provides a negative injunction, followed by a positive injunction, followed by a present adverbial participle. If συνίετε (suniete) is original, this symmetry is lost. Thus, even though the external evidence for συνιέντες (sunientes) is not nearly as weighty as for the imperative, both the transcriptional and intrinsic evidence support it."
+            }
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "211": "(tn, Grk): “in which.”",
+              "212": "(tn): Or “dissipation.” See BDAG 148 s.v. ἀσωτία.",
+              "213": "(tn): Many have taken ἐν πνεύματι (en pneumati) as indicating content, i.e., one is to be filled with the Spirit. ExSyn 375 states, “There are no other examples in biblical Greek in which ἐν + the dative after πληρόω indicates content. Further, the parallel with οἴνῳ as well as the common grammatical category of means suggest that the idea intended is that believers are to be filled by means of the [Holy] Spirit. If so there seems to be an unnamed agent. The meaning of this text can only be fully appreciated in light of the πληρόω language in Ephesians. Always the term is used in connection with a member of the Trinity. Three considerations seem to be key: (1) In Eph 3:19 the ‘hinge’ prayer introducing the last half of the letter makes a request that the believers ‘be filled with all the fullness of God’ (πληρωθῆτε εἰς πᾶν πλήρωμα τοῦ θεοῦ). The explicit content of πληρόω is thus God’s fullness (probably a reference to his moral attributes). (2) In 4:10 Christ is said to be the agent of filling (with v. 11 adding the specifics of his giving spiritual gifts). (3) The author then brings his argument to a crescendo in 5:18: Believers are to be filled by Christ by means of the Spirit with the content of the fullness of God.”"
+            }
+          },
+          {
+            "verse": 19,
+            "notes": {
+              "214": "(tn): See BDAG 1096 s.v. ψάλλω.",
+              "215": "(tn): Or “with.”"
+            }
+          },
+          {
+            "verse": 20,
+            "notes": {
+              "216": "(tn, Grk): “for all.” The form “all” can be either neuter or masculine."
+            }
+          },
+          {
+            "verse": 21,
+            "notes": {
+              "217": "(sn): Eph 5:19-21. In Eph 5:18 the author gives the command to be filled by means of the Holy Spirit. In 5:19-21 there follows five participles: (1) speaking; (2) singing; (3) making music; (4) giving thanks; (5) submitting. These participles have been variously interpreted, but perhaps the two most likely interpretations are (1) the participles indicate the means by which one is filled by the Spirit; (2) the participles indicate the result of being filled by the Spirit. The fact that the participles are present tense and follow the command (i.e., “be filled”) would tend to support both of these options. But it seems out of Paul’s character to reduce the filling of the Spirit to a formula of some kind. To the extent that this is true, it is unlikely then that the author is here stating the means for being filled by the Spirit. Because it is in keeping with Pauline theology and has good grammatical support, it is better to take the participles as indicating certain results of being filled by the Spirit. See ExSyn 639."
+            }
+          },
+          {
+            "verse": 22,
+            "notes": {
+              "218": "(tn): Many scholars regard Eph 5:21 as the verse which introduces this section, rather than 5:22. This is due in part to the lack of a main verb in this verse (see note which follows). This connection is not likely, however, because it requires the participle ὑποτασσόμενοι (Jupotassomenoi, “submitting”) in 5:21 to act as the main verb of the section, and this participle more likely is linked to the command “be filled by the Spirit” in 5:18 as a participle of result (see above). In any case, 5:21 does form a strong link between 5:18-21 and what follows, so the paragraph division which has been placed between 5:21 and 22 should not be viewed as a complete break in the author’s thought.",
+              "219": "(tc): The witnesses for the shorter reading (in which the verb “submit” is only implied) are minimal (�46 B Cl Hiermss), but significant and early. The rest of the witnesses add one of two verb forms as required by the sense of the passage (picking up the verb from v. 21). Several of these witnesses have ὑποτασσέσθωσαν (Jupotassesqwsan), the third person imperative (so א A I P Ψ 0278 33 81 1175 1739 1881 al lat co), while other witnesses, especially the later Byzantine cursives, read ὑποτάσσεσθε (Jupotassesqe), the second person imperative (D F G � sy). The text virtually begs for one of these two verb forms, but the often cryptic style of Paul’s letters argues for the shorter reading. The chronology of development seems to have been no verb – third person imperative – second person imperative. It is not insignificant that early lectionaries began a new day’s reading with v. 22; these most likely caused copyists to add the verb at this juncture."
+            }
+          },
+          {
+            "verse": 23
+          },
+          {
+            "verse": 24
+          },
+          {
+            "verse": 25,
+            "notes": {
+              "220": "(tn): The Greek article has been translated as a possessive pronoun (ExSyn 215)."
+            }
+          },
+          {
+            "verse": 26,
+            "notes": {
+              "221": "(tn): The direct object “her” is implied, but not found in the Greek text. It has been supplied in the English translation to clarify the sense of the passage."
+            }
+          },
+          {
+            "verse": 27,
+            "notes": {
+              "222": "(tn): The use of the pronoun αὐτός (autos) is intensive and focuses attention on Christ as the one who has made the church glorious.",
+              "223": "(tn, Grk): “but in order that it may be holy and blameless.”"
+            }
+          },
+          {
+            "verse": 28,
+            "notes": {
+              "224": "(tn, Grk): “So also.”"
+            }
+          },
+          {
+            "verse": 29,
+            "notes": {
+              "225": "(tn, Grk): “flesh.”"
+            }
+          },
+          {
+            "verse": 30,
+            "notes": {
+              "226": "(tc): Most Western witnesses, as well as the majority of Byzantine mss and a few others (א2 D F G Ψ 0278 0285vid � lat), add the following words to the end of the verse: ἐκ τῆς σαρκὸς αὐτοῦ καὶ ἐκ τῶν ὀστέων αὐτοῦ (ek th\" sarko\" autou kai ek twn ostewn autou, “of his body and of his bones”). This is a (slightly modified) quotation from Gen 2:23a (LXX). The Alexandrian text is solidly behind the shorter reading (�46 א* A B 048 33 81 1739* 1881 pc). Although it is possible that an early scribe’s eye skipped over the final αὐτοῦ, there is a much greater likelihood that a scribe added the Genesis quotation in order to fill out and make explicit the author’s incomplete reference to Gen 2:23. Further, on intrinsic grounds, it seems unlikely that the author would refer to the physical nature of creation when speaking of the “body of Christ” which is spiritual or mystical. Hence, as is often the case with OT quotations, the scribal clarification missed the point the author was making; the shorter reading stands as original."
+            }
+          },
+          {
+            "verse": 31,
+            "notes": {
+              "227": "(tn, Grk): “the two shall be as one flesh.”",
+              "228": "(sn): A quotation from Gen 2:24."
+            }
+          },
+          {
+            "verse": 32,
+            "notes": {
+              "229": "(tn): The term “actually” is not in the Greek text, but is supplied in the English translation to bring out the heightened sense of the statement."
+            }
+          },
+          {
+            "verse": 33,
+            "notes": {
+              "230": "(tn): The translation of πλήν (plhn) is somewhat difficult in this context, though the overall thrust of the argument is clear. It could be an adversative idea such as “but,” “nevertheless,” or “however” (see NIV, NASB, NRSV), or it could simply be intended to round out and bring to conclusion the author’s discussion. In this latter case it could be translated with the use of “now” (so A. T. Lincoln, Ephesians [WBC], 384).",
+              "231": "(tn, Grk): “Nevertheless, you also, one by one, each his own wife so let him love as himself.” This statement is cumbersome and was cleaned up to reflect better English style.",
+              "232": "(tn): The ἵνα (Jina) clause was taken as imperatival, i.e., “let the wife respect….”",
+              "233": "(tn): The Greek verb φοβέομαι (fobeomai) here has been translated “respect” and the noun form of the word, i.e., φόβος (fobos), has been translated as “reverence” in 5:21."
+            }
+          }
+        ],
+        "totalVerses": 33,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 49,
+        "chapter": 6,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "234": "(tn): The use of the article τά (ta) with τέκνα (tekna) functions in a generic way to distinguish this group from husbands, wives, fathers and slaves and is left, therefore, untranslated. The generic article is used with γύναῖκες (gunaikes) in 5:22, ἄνδρες (andres) in 5:25, δοῦλοι (douloi) in 6:5, and κύριοι (kurioi) in 6:9.",
+              "235": "(tc): B D* F G as well as a few versional and patristic representatives lack “in the Lord” (ἐν κυρίῳ, en kuriw), while the phrase is well represented in �46 א A D1 Ivid Ψ 0278 0285 33 1739 1881 � sy co. Scribes may have thought that the phrase could be regarded a qualifier on the kind of parents a child should obey (viz., only Christian parents), and would thus be tempted to delete the phrase to counter such an interpretation. It is unlikely that the phrase would have been added, since the form used to express such sentiment in this Haustafel is ὡς τῷ κυρίῳ/Χριστῷ (Jw\" tw kuriw/Cristw, “as to the Lord/Christ”; see 5:22; 6:5). Even though the witnesses for the omission are impressive, it is more likely that the phrase was deleted than added by scribal activity."
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "236": "(sn): A quotation from Exod 20:12 and Deut 5:16."
+            }
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "237": "(tn, Grk): “be.”",
+              "238": "(tn, Grk): “will be.”",
+              "239": "(sn): A quotation from Deut 5:16."
+            }
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "240": "(tn): Or perhaps “Parents” (so TEV, CEV). The plural οἱ πατέρες (Joi patere\", “fathers”) can be used to refer to both the male and female parent (BDAG 786 s.v. πατήρ 1.b).",
+              "241": "(tn): Or “do not make your children angry.” BDAG 780 s.v. παροργίζω states “make angry.” The Greek verb in Col 3:21 is a different one with a slightly different nuance."
+            }
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "242": "(tn): Traditionally, “Servants” (KJV). Though δοῦλος (doulos) is often translated “servant,” the word does not bear the connotation of a free individual serving another. BDAG notes that “‘servant’ for ‘slave’ is largely confined to Biblical transl. and early American times…in normal usage at the present time the two words are carefully distinguished” (BDAG 260 s.v.). The most accurate translation is “bondservant” (sometimes found in the ASV for δοῦλος), in that it often indicates one who sells himself into slavery to another. But as this is archaic, few today understand its force.",
+              "243": "(tn, Grk): “the masters according to the flesh.” In the translation above, the article τοῖς (tois) governing κυρίοις (kuriois) is rendered in English as a possessive pronoun (i.e., “your”) and the prepositional phrase κατὰ σάρκα (kata sarka) is taken as modifying κυρίοις (indicating that the author is referring to human masters) and not modifying the imperative ὑπακούετε (Jupakouete, which would indicate that obedience was according to a human standard or limitation)."
+            }
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "244": "(tn, Grk): “not according to eye-service.”",
+              "245": "(tn, Grk): “from the soul.”"
+            }
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "246": "(tn): Though the verb does not appear again at this point in the passage, it is nonetheless implied and supplied in the English translation for the sake of clarity.",
+              "247": "(tn, Grk): “serving as to the Lord.”"
+            }
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "248": "(sn): The pronoun “this” (τοῦτο, touto) stands first in its clause for emphasis, and stresses the fact that God will reward those, who in seeking him, do good."
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "249": "(tn): Here καί (kai) has not been translated because of differences between Greek and English style.",
+              "250": "(tn): Though the Greek text only has αὐτούς (autous, “them”), the antecedent is the slaves of the masters. Therefore, it was translated this way to make it explicit in English.",
+              "251": "(tn, Grk): “do the same things to them.”",
+              "252": "(tn, Grk): “giving up the threat.”",
+              "253": "(tn, Grk): “because of both they and you, the Lord is, in heaven…”"
+            }
+          },
+          {
+            "verse": 10
+          },
+          {
+            "verse": 11,
+            "notes": {
+              "254": "(tn): Or “craftiness.” See BDAG 625 s.v. μεθοδεία."
+            }
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "255": "(tn): BDAG 752 s.v. πάλη says, “struggle against…the opponent is introduced by πρός w. the acc.”",
+              "256": "(tn, Grk): “blood and flesh.”",
+              "257": "(tn): BDAG 561 s.v. κοσμοκράτωρ suggests “the rulers of this sinful world” as a gloss. The phrase world-rulers of this darkness does not refer to human rulers but the evil spirits that rule over the world. The phrase thus stands in apposition to what follows (the spiritual forces of evil in the heavens); see note on heavens at the end of this verse.",
+              "258": "(tn): BDAG 837 s.v. πνευματικός 3 suggests “the spirit-forces of evil” in Ephesians 6:12.",
+              "259": "(sn): The phrase spiritual forces of evil in the heavens serves to emphasize the nature of the forces which oppose believers as well as to indicate the locality from which they originate."
+            }
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "260": "(tn): The term ἀνθίστημι (anqisthmi) carries the idea of resisting or opposing something or someone (BDAG 80 s.v.). In Eph 6:13, when used in combination with στῆναι (sthnai; cf. also στῆτε [sthte] in v. 14) and in a context of battle imagery, it seems to have the idea of resisting, standing firm, and being able to stand your ground."
+            }
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "261": "(sn): The four participles fastening… putting on…fitting…taking up… indicate the means by which believers can take their stand against the devil and his schemes. The imperative take in v. 17 communicates another means by which to accomplish the standing, i.e., by the word of God.",
+              "262": "(tn, Grk): “girding your waist with truth.” In this entire section the author is painting a metaphor for his readers based on the attire of a Roman soldier prepared for battle and its similarity to the Christian prepared to do battle against spiritually evil forces. Behind the expression “with truth” is probably the genitive idea “belt of truth.” Since this is an appositional genitive (i.e., belt which is truth), the author simply left unsaid the idea of the belt and mentioned only his real focus, namely, the truth. (The analogy would have been completely understandable to his 1st century readers.) The idea of the belt is supplied in the translation to clarify the sense in English."
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "263": "(tn): The definite article τοῖς (tois) was taken as a possessive pronoun, i.e., “your,” since it refers to a part of the physical body.",
+              "264": "(tn, Grk): “gospel.” However, this is not a technical term here.",
+              "265": "(tn, Grk): “in preparation of the gospel of peace.” The genitive τοῦ εὐαγγελίου (tou euangeliou) was taken as a genitive of source, i.e., “that comes from….”"
+            }
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "266": "(tn, Grk): “in everything.”",
+              "267": "(sn): The Greek word translated shield (θυρεός, qureos) refers to the Roman soldier’s large rectangular wooden shield, called in Latin scutum, about 4 ft (1.2 m) high, covered with leather on the outside. Before a battle in which flaming arrows might be shot at them, the soldiers wet the leather covering with water to extinguish the arrows. The Roman legionaries could close ranks with these shields, the first row holding theirs edge to edge in front, and the rows behind holding the shields above their heads. In this formation they were practically invulnerable to arrows, rocks, and even spears."
+            }
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "268": "(sn): An allusion to Isa 59:17.",
+              "269": "(sn): The Greek term translated sword (μάχαιρα, macaira) refers to the Roman gladius, a short sword about 2 ft (60 cm) long, used for close hand-to-hand combat. This is the only clearly offensive weapon in the list of armor mentioned by the author (he does not, for example, mention the lance [Latin pilum])."
+            }
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "270": "(tn): Both “pray” and “be alert” are participles in the Greek text (“praying…being alert”). Both are probably instrumental, loosely connected with all of the preceding instructions. As such, they are not additional commands to do but instead are the means through which the prior instructions are accomplished.",
+              "271": "(tn, Grk): “and toward it.”"
+            }
+          },
+          {
+            "verse": 19,
+            "notes": {
+              "272": "(tn): To avoid a lengthy, convoluted sentence in English, the Greek sentence was broken up at this point and the verb “pray” was inserted in the English translation to pick up the participle προσευχόμενοι (proseuxomenoi, “praying”) in v. 18.",
+              "273": "(tn, Grk): “that a word may be given to me in the opening of my mouth.” Here “word” (λόγος, logo\") is used in the sense of “message.”",
+              "274": "(tn): The infinitive γνωρίσαι (gnwrisai, “to make known”) is functioning epexegetically to further explain what the author means by the preceding phrase “that I may be given the message when I begin to speak.”"
+            }
+          },
+          {
+            "verse": 20
+          },
+          {
+            "verse": 21,
+            "notes": {
+              "275": "(tn, Grk): “the.” The Greek article ὁ (Jo) was translated with the possessive pronoun, “my.” See ExSyn 215.",
+              "276": "(tn, Grk): “the things according to me.”"
+            }
+          },
+          {
+            "verse": 22,
+            "notes": {
+              "277": "(tn, Grk): “the things concerning us.”"
+            }
+          },
+          {
+            "verse": 23,
+            "notes": {
+              "278": "(tn, Grk): “brothers,” but the Greek word may be used for “brothers and sisters” or “fellow Christians” as here (cf. BDAG 18 s.v. ἀδελφός 1, where considerable nonbiblical evidence for the plural ἀδελφοί [adelfoi] meaning “brothers and sisters” is cited)."
+            }
+          },
+          {
+            "verse": 24,
+            "notes": {
+              "279": "(tn): Or “is.”",
+              "280": "(tc, Grk): Most witnesses (א2 D Ψ � it sy) have ἀμήν (amhn, “amen”) at the end of the letter. Such a conclusion is routinely added by scribes to NT books because a few of these books originally had such an ending (cf. Rom 16:27; Gal 6:18; Jude 25). A majority of Greek witnesses have the concluding ἀμήν in every NT book except Acts, James, and 3 John (and even in these books, ἀμήν is found in some witnesses). It is thus a predictable variant. The earliest and best witnesses (�46 א* A B F G 0278 6 33 81 1175 1241 1739* 1881 sa) lack the particle, giving firm evidence that Ephesians did not originally conclude with ἀμήν. “without corruption.” The term “love” is not found at the end of the sentence, but is supplied to clarify the sense in English. The term “undying” which modifies it captures the sense of the kind of love the author is referring to here. He is saying that God’s grace will be with those whose love for Jesus never ceases."
+            }
+          }
+        ],
+        "totalVerses": 24,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ]
+  ]
+}

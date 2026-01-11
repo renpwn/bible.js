@@ -1,0 +1,576 @@
+{
+  "id": 52,
+  "name": "1 Tesalonika",
+  "chapters": 5,
+  "totalVerses": 89,
+  "pericopes": 10,
+  "testament": "NT",
+  "data": [
+    [
+      {
+        "bookId": 52,
+        "chapter": 1,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "1": "(tn, Grk): “Paul.” The word “from” is not in the Greek text, but has been supplied to indicate the sender of the letter.",
+              "2": "(map): For the location of Thessalonica see JP1-C1; JP2-C1; JP3-C1; JP4-C1.",
+              "3": "(tc, Grk): The majority of witnesses, including several early and important ones (א A [D] I 33 � bo), have ἀπὸ θεοῦ πατρὸς ἡμῶν καὶ κυριοῦ Ιησοῦ Χριστοῦ (apo qeou patro\" Jhmwn kai kuriou Ihsou Cristou, “from God our Father and the Lord Jesus Christ”) at the end of v. 1. The more abrupt reading (“Grace and peace to you”) without this addition is supported by B F G Ψ 0278 629 1739 1881 pc lat sa. Apart from a desire to omit the redundancy of the mention of God and Christ in this verse, there is no good reason why scribes would have omitted the characteristically Pauline greeting. (Further, if this were the case, why did these same scribes overlook such an opportunity in 2 Thess 1:1-2?) On the other hand, since 1 Thessalonians is one of Paul’s earliest letters, what would become characteristic of his greetings seems to have been still in embryonic form (e.g., he does not yet call his audience “saints” [which will first be used in his address to the Corinthians], nor does he use ἐν (en) plus the dative to refer to the location of the church). Thus, the internal evidence is overwhelming in support of the shorter reading, for scribes would have been strongly motivated to rework this salutation in light of Paul’s style elsewhere. And the external evidence, though not overwhelming, is supportive of this shorter reading, found as it is in some of the best witnesses of the Alexandrian and Western texttypes. “Grace to you and peace.”"
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "4": "(tn): Or “mention you in our prayers, because we recall constantly…”"
+            }
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "5": "(tn, Grk): “making mention…recalling.” The participle ποιούμενοι (poioumenoi) in v. 2 has been translated as temporal, and μνημονεύοντες (mnhmoneuonte\") in v. 3 has been translated as causal.",
+              "6": "(tn): Or the phrase may connect at the end of the verse: “hope…in the presence of our God and Father.”",
+              "7": "(tn): These phrases denote Christian virtues in action: the work produced by faith, labor motivated by love, and endurance that stems from hope in Christ."
+            }
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "8": "(tn, Grk): “knowing.” Because of the length and complexity of the Greek sentence, the participle εἰδότες (eidotes) has been translated as a finite verb and a new sentence started here in the translation.",
+              "9": "(tn, Grk): “brothers,” but the Greek word may be used for “brothers and sisters” or “fellow Christians” as here (cf. BDAG 18 s.v. ἀδελφός 1, where considerable nonbiblical evidence for the plural ἀδελφοί [adelfoi] meaning “brothers and sisters” is cited).",
+              "10": "(tn, Grk): “your election.”"
+            }
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "11": "(tn): Or “because.”",
+              "12": "(tn): Or “speech,” or “an act of speaking.”",
+              "13": "(tn, Grk): “just as you know what sort of people we were among you for your sakes.” Verse 5 reflects on the experience of Paul and his fellow preachers; v. 6 begins to describe the Thessalonians’ response."
+            }
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "14": "(tn): Or “after you received.”"
+            }
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "15": "(tc): Most mss (א A C D2 F G Ψ 0278 �) have the plural τύπους (tupou\", “examples”) here, while a few important witnesses have the singular τύπον (tupon, “example”; B D*,c 6 33 81 104 1739 1881 pc lat). With ὑμᾶς (Jumas, “you”) immediately preceding, the plural form looks motivated: Scribes would be expected to change the singular to the plural here. Although the external evidence for the singular reading is not overwhelming, the internal evidence for it is compelling."
+            }
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "16": "(tn): Or “the word of the Lord.” “The word of the Lord” is a technical expression in OT literature, often referring to a divine prophetic utterance (e.g., Gen 15:1, Isa 1:10, Jonah 1:1). In the NT it occurs 15 times: 3 times as ῥῆμα τοῦ κυρίου (rJhma tou kuriou; Luke 22:61, Acts 11:16, 1 Pet 1:25) and 12 times as λόγος τοῦ κυρίου (logo\" tou kuriou; here and in Acts 8:25; 13:44, 48, 49; 15:35, 36; 16:32; 19:10, 20; 1 Thess 4:15; 2 Thess 3:1). As in the OT, this phrase focuses on the prophetic nature and divine origin of what has been said. Here the phrase has been translated “the message of the Lord” because of the focus upon the spread of the gospel evident in the passage.",
+              "17": "(tn, Grk): “your faith in God has gone out.”"
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "18": "(tn, Grk): “they themselves,” referring to people in the places just mentioned.",
+              "19": "(tn, Grk): “what sort of entrance we had to you” (an idiom for how someone is received)."
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "20": "(sn): The coming wrath. This wrath is an important theme in 1 Thess 5."
+            }
+          }
+        ],
+        "totalVerses": 10,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 52,
+        "chapter": 2,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "21": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4.",
+              "22": "(tn, Grk): “has not become empty.” Paul is defending himself against the charge that he lacked earnestness and personal concern for them, but appeared in their city out of greed or egotism. In his defense he appeals to what they recall of his ministry and what has become of it since he left, all of which demonstrates his God-given earnestness and effectiveness."
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "23": "(map): For location see JP1-C1; JP2-C1; JP3-C1; JP4-C1.",
+              "24": "(tn): The genitive in the phrase τὸ εὐαγγέλιον τοῦ θεοῦ (to euangelion tou qeou, “the gospel of God”) could be translated as either a subjective genitive (“the gospel which God brings”) or an objective genitive (“the gospel about God”). Either is grammatically possible. This is possibly an instance of a plenary genitive (see ExSyn 119-21; M. Zerwick, Biblical Greek, ��36-39). If so, an interplay between the two concepts is intended: The gospel which God brings is in fact the gospel about himself. This same phrase occurs in vv. 8 and 9 as well."
+            }
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "25": "(tn, Grk): “For our exhortation.” Paul here uses παράκλησις (paraklhsis) to speak in broad terms about his preaching of the gospel, in which he urges or appeals to people to respond to God’s salvation (cf. the verb form παρακαλοῦντος [parakalounto\"] in 2 Cor 5:20).",
+              "26": "(tn, Grk): “[is] not” (the verb “to be” is implied in the Greek construction)."
+            }
+          },
+          {
+            "verse": 4
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "27": "(tn): Or “came on the scene,” “came.”"
+            }
+          },
+          {
+            "verse": 6
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "28": "(tn): Punctuating vv. 6 and 7 is difficult. One must consider the difficult textual problem of v. 7 (see note on the word “children” in that verse) as well as the grammar of the verse. In the translation above, “little children” is understood to be a predicate nominative connected to the verb “became.” This allows a full stop to be placed at the end of v. 6 and before the phrase “like a nursing mother” in v. 7. This separates the two metaphors which impact the textual problem and allows for greater clarity in the way the sentence is read.",
+              "29": "(tn): Or “were,” “proved to be.”",
+              "30": "(tc): The variant ἤπιοι (hpioi, “gentle”) has fair support (א2 A C2 D2 Ψc 0278 33 1739 1881 �), but νήπιοι (nhpioi, “little children”) has significantly stronger backing (�65 א* B C* D* F G I Ψ* pc it bo). It is not insignificant that the earliest Alexandrian and Western witnesses in support of ἤπιοι are actually not Alexandrian or Western; they are the second correctors of Alexandrian and Western mss. Such correctors generally follow a Byzantine Vorlage. The reading νήπιοι is thus superior externally. Further, νήπιοι is much harder in this context, for Paul mixes his metaphors (“we became little children in your midst…Like a nursing mother…”). Thus, the scribes would naturally alter this reading to the softer ἤπιοι (“we became gentle…”). Paul is not known for his consistency of figures, however (cf., e.g., Gal 4:19); hence, the intrinsic evidence points to νήπιοι as original. On the other hand, it is possible that νήπιοι was caused by dittography with the preceding -μεν (-men). It is even possible that νήπιοι was caused by an error of hearing right from the beginning: The amanuensis could have heard the apostle incorrectly. But such a supposition cuts both ways; further, Paul would no doubt have corrected the reading in the ms before it was sent out. If so, one would surely have expected both earlier witnesses on the side of ἤπιοι and perhaps a few first correctors to have this reading. The reading “little children” thus stands as most probably original. (For an extended discussion of this problem, see J. A. D. Weima, “‘But We Became Infants Among You’: The Case for NHPIOI in 1 Thess 2.7,” NTS 46 [2000]: 547-64; T. B. Sailors, “Wedding Textual and Rhetorical Criticism to Understand the Text of 1 Thessalonians 2.7,” JSNT 80 [2000]: 81-98.)"
+            }
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "31": "(tn, Grk): “longing for you in this way.”",
+              "32": "(tn): Or “we are happy.” This verb may be past or present tense, but the context favors the past."
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "33": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 10
+          },
+          {
+            "verse": 11
+          },
+          {
+            "verse": 12
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "34": "(tn, Grk): “for this reason,” which seems to look back to Paul’s behavior just described. But it may look forward to v. 13b and mean: “and here is another reason that we constantly thank God: that…”",
+              "35": "(tn, Grk): “God’s word of hearing from us.”",
+              "36": "(tn): Paul’s focus is their attitude toward the message he preached: They received it not as a human message but a message from God."
+            }
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "37": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "38": "(tc): ἰδίους (idious, “their own prophets”) is found in D1 Ψ � sy McionT. This is obviously a secondary reading. Marcion’s influence may stand behind part of the tradition, but the Byzantine text probably added the adjective in light of its mention in v. 14 and as a clarification or interpretation of which prophets were in view.",
+              "39": "(tn): Or “and drove us out” (cf. Acts 17:5-10)."
+            }
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "40": "(tn, Grk): “to fill up their sins always.”",
+              "41": "(tc): The Western text (D F G latt) adds τοῦ θεοῦ (tou qeou) to ὀργή (orgh) to read “the wrath of God,” in emulation of the normal Pauline idiom (cf., e.g., Rom 1:18; Eph 5:6; Col 3:6) and, most likely, to clarify which wrath is in view (since ὀργή is articular). Or “the wrath,” possibly referring back to the mention of wrath in 1:10.",
+              "42": "(tn): Or “at last.”"
+            }
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "43": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4.",
+              "44": "(tn, Grk): “in face, not in heart.”",
+              "45": "(tn, Grk): “with great desire.”",
+              "46": "(tn, Grk): “to see your face.”"
+            }
+          },
+          {
+            "verse": 18,
+            "notes": {
+              "47": "(tn, Grk): Or “several times”; , “both once and twice.” The literal expression “once and twice” is frequently used as a Greek idiom referring to an indefinite low number, but more than once (“several times”); see L&N 60.70."
+            }
+          },
+          {
+            "verse": 19,
+            "notes": {
+              "48": "(sn, Grk): Crown to boast of ( “crown of boasting”). Paul uses boasting or exultation to describe the Christian’s delight in being commended for faithful service by the Lord at his return (1 Cor 9:15-16; 2 Cor 1:12-14; 10:13-18; Phil 2:16; and 1 Cor 3:14; 4:5)."
+            }
+          },
+          {
+            "verse": 20
+          }
+        ],
+        "totalVerses": 20,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 52,
+        "chapter": 3,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "49": "(map): For location see JP1-C2; JP2-C2; JP3-C2; JP4-C2."
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "50": "(tn): Here καί (kai) has not been translated because of differences between Greek and English style.",
+              "51": "(tc): A variety of readings occurs in this verse. Instead of “and fellow worker for God” (καὶ συνεργὸν τοῦ θεοῦ, kai sunergon tou qeou), B has “and fellow worker” (καὶ συνεργόν); א A P Ψ 0278 6 81 629* 1241 1739 1881 2464 lat co read “and servant of God” (καὶ διάκονον τοῦ θεοῦ, kai diakonon tou qeou); D2 � and a few versional witnesses read “and a servant of God and our fellow worker” (καὶ διάκονον τοῦ θεοῦ καὶ συνεργὸν ἡμῶν); and F G have “servant and fellow worker for God” (διάκονον καὶ συνεργὸν τοῦ θεοῦ). The reading of the text (καὶ συνεργὸν τοῦ θεοῦ) is found in D* 33 b {d m o} Ambst {Pel}. It may be argued that all readings that do not collocate συνεργόν with θεοῦ are secondary, as this is certainly the harder reading. Indeed, in only one other place in the NT are human beings said to be συνεργοὶ θεοῦ (sunergoi qeou; 1 Cor 3:9), and the simplest (though by no means the only) interpretation is that the genitive should be taken associatively (“a fellow worker in association with God”). It is difficult to account for συνεργὸν τοῦ θεοῦ here unless it is authentic because of the theological difficulty that would be easily seen in this wording. A genealogy of the readings suggests that various scribes may have deleted τοῦ θεοῦ or swapped διάκονον for συνεργόν to remove the offense. The readings of the Byzantine text and two Western mss (F G) appear to be conflations of earlier readings, but the reading of F G nevertheless indirectly supports καὶ συνεργὸν τοῦ θεοῦ since it does not remove the offense. Although the witnesses for καὶ συνεργὸν τοῦ θεοῦ are minimal, the internal evidence is quite strong in favor of this reading. With hesitation, it is adopted as authentic. Although 1 Thess 3:2 is frequently understood to mean that Timothy is “God’s fellow worker,” such a view assumes that the genitive θεοῦ (qeou) is associative for it is related to συνεργόν (sunergon). However, a genitive of association is not required by the syntax (cf. ExSyn 130)."
+            }
+          },
+          {
+            "verse": 3
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "52": "(tn, Grk): “just as it also occurred and you know.”"
+            }
+          },
+          {
+            "verse": 5,
+            "notes": {
+              "53": "(tn): Or “for this reason.”"
+            }
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "54": "(tn, Grk): “but now Timothy having come,” a subordinate clause leading to the main clause of v. 7.",
+              "55": "(tn, Grk): “you have a good remembrance of us always.”",
+              "56": "(tn, Grk): “just as also we you.”"
+            }
+          },
+          {
+            "verse": 7,
+            "notes": {
+              "57": "(tn): Or “for this reason.”",
+              "58": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "59": "(tn, Grk): “because now we live,” in comparison with his feelings of dread in not knowing how they were doing (cf. 2:17-3:5)."
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "60": "(tn, Grk): “what thanks can we render to God about you.”",
+              "61": "(tn, Grk): “all the joy with which we rejoice.”"
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "62": "(tn, Grk): “to see your face.”"
+            }
+          },
+          {
+            "verse": 11
+          },
+          {
+            "verse": 12
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "63": "(tc): ‡ Important and early witnesses (א* A D* 81 629 lat) have ἀμήν (amhn, “amen”) at the end of this benediction, while the majority of mss, including several excellent witnesses (א2 B D2 F G Ψ 0278 1739 1881 � it sy sa), lack the particle. A decision is difficult, but in light of Paul’s habit of adding the ἀμήν to his notes of praise, even in the middle of his letters (cf. Rom 9:5; 11:36; 15:33; Gal 1:5), one might expect scribes to emulate this practice. Although a decision is difficult, it is probably best to follow the shorter reading. NA27 has the particle in brackets, indicating some doubts as to its authenticity."
+            }
+          }
+        ],
+        "totalVerses": 13,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 52,
+        "chapter": 4,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "64": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4.",
+              "65": "(sn, Grk): As you received instruction from us about how ( “as you received from us how”). The Greek word translated received is used for accepting instructions passed on as fixed traditions from teacher to follower. Paul speaks in these terms about doctrinal traditions as well as ethical instruction that he passes on to his converts and expects them to keep (cf. 1 Cor 11:2, 23; 15:1-3; Gal 1:9; Phil 4:9; 2 Thess 2:15; 3:6).",
+              "66": "(tc): This parenthetical clause is absent in several later witnesses (D2 Ψ �), but it may have been expunged for sounding redundant. The longer text, in this instance, is solidly supported by א A B D* F G 0183vid 0278 33 81 104 326 365 629 al co and should be unquestionably preferred."
+            }
+          },
+          {
+            "verse": 2
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "67": "(tn): Or “your sanctification.”"
+            }
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "68": "(tn, Grk): “to gain [or possess] his own vessel.” “Vessel” is most likely used figuratively for “body” (cf. 2 Cor 4:7). Some take it to mean “wife” (thus, “to take a wife for himself” or “to live with his wife”), but this is less likely. See J. Smith, “1 Thess 4:4 – Breaking the Impasse,” BBR 10 (Fall 2000), who argues that “vessel” in this context is very likely a euphemism for the sexual organs."
+            }
+          },
+          {
+            "verse": 5
+          },
+          {
+            "verse": 6,
+            "notes": {
+              "69": "(tn, Grk): “not to transgress against or defraud his brother in the matter,” continuing the sentence of vv. 3-5.",
+              "70": "(tn, Grk): “concerning all these things.”"
+            }
+          },
+          {
+            "verse": 7
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "71": "(tn, Grk): “rejecting man.”"
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "72": "(tn, Grk): “concerning brotherly love.”"
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "73": "(tn, Grk): “brothers”; this applies to the second occurrence as well. See note on the phrase “brothers and sisters” in 1:4.",
+              "74": "(sn): To do so more and more. See 1 Thess 4:1."
+            }
+          },
+          {
+            "verse": 11
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "75": "(tn, Grk): “that you may live,” continuing the sentence of 4:10b-11.",
+              "76": "(tn, Grk): Or “not be dependent on anyone”; “and have need of nothing,” “of no one.”"
+            }
+          },
+          {
+            "verse": 13,
+            "notes": {
+              "77": "(tn, Grk): “ignorant.”",
+              "78": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4.",
+              "79": "(tn): The verb κοιμάω (koimaw) literally means “sleep,” but it is often used in the Bible as a euphemism for death when speaking of believers. This metaphorical usage by its very nature emphasizes the hope of resurrection: Believers will one day “wake up” out of death. Here the term refers to death, but “sleep” was used in the translation to emphasize the metaphorical, rhetorical usage of the term. This word also occurs in vv. 14 and 15."
+            }
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "80": "(tn, Grk): “we believe that” is understood from the first clause of the verse, which is parallel. “so also God will bring.”",
+              "81": "(tn, Grk): “those who have fallen asleep through Jesus.” It is possible that “through Jesus” describes “bring,” but this gives the unlikely double reference, “through Jesus God will bring them with Jesus.” Instead it describes their “falling sleep,” since through him their death is only sleep and not the threat it once was. Also Christians are those whose total existence – life and death – is in and through and for Christ (1 Cor 8:6)."
+            }
+          },
+          {
+            "verse": 15,
+            "notes": {
+              "82": "(sn): The word of the Lord is a technical expression in OT literature, often referring to a divine prophetic utterance (e.g., Gen 15:1, Isa 1:10, Jonah 1:1). In the NT it occurs 15 times: 3 times as ῥῆμα τοῦ κυρίου (rJhma tou kuriou; Luke 22:61, Acts 11:16, 1 Pet 1:25) and 12 times as λόγος τοῦ κυρίου (logo\" tou kuriou; here and in Acts 8:25; 13:44, 48, 49; 15:35, 36; 16:32; 19:10, 20; 1 Thess 1:8; 2 Thess 3:1). As in the OT, this phrase focuses on the prophetic nature and divine origin of what has been said."
+            }
+          },
+          {
+            "verse": 16,
+            "notes": {
+              "83": "(tn): Neither noun in this phrase (ἐν φωνῇ ἀρχαγγέλου, ejn fwnh ajrcangelou, “with the voice of the archangel”) has the article in keeping with Apollonius’ Canon. Since ἀρχάγγελος (ajrcangelo\") is most likely monadic, both nouns are translated as definite in keeping with Apollonius’ Corollary (see ExSyn 250-51)."
+            }
+          },
+          {
+            "verse": 17,
+            "notes": {
+              "84": "(tc): The words οἱ περιλειπόμενοι (Joi perileipomenoi, “[the ones] who are left”) are lacking in F G {0226vid} ar b as well as a few fathers, but the rest of the textual tradition has the words. Most likely, the Western mss omitted the words because of perceived redundancy with οἱ ζῶντες (Joi zwnte\", “[the ones] who are alive”).",
+              "85": "(tn): Or “snatched up.” The Greek verb ἁρπάζω implies that the action is quick or forceful, so the translation supplied the adverb “suddenly” to make this implicit notion clear.",
+              "86": "(tn): Or “simultaneously,” but this meaning does not fit as well in the parallel in 5:10."
+            }
+          },
+          {
+            "verse": 18
+          }
+        ],
+        "totalVerses": 18,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ],
+    [
+      {
+        "bookId": 52,
+        "chapter": 5,
+        "verses": [
+          {
+            "verse": 1,
+            "notes": {
+              "87": "(tn, Grk): “concerning the times and the seasons,” a reference to future periods of eschatological fulfillment (cf. Acts 1:7).",
+              "88": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 2,
+            "notes": {
+              "89": "(sn): The day of the Lord is the period of time in the future when the Lord will intervene in the events of this earth to consummate his redemption and his judgment (Isa 2:11-12; 13:6-13; Ezek 30:3; Joel 1:15; 2:32; 3:18; Amos 5:18-20; Obad 15-17; Zeph 1:7-18; 2:2-3; Zech 14:1, 13, 20-21; Mal 4:1, 5; 1 Cor 1:8; 5:5; 2 Cor 1:14; 2 Thess 2:2; 2 Pet 3:10). It includes both blessings and curses, though the latter is emphasized here.",
+              "90": "(sn): Jesus used a thief coming at night as an illustration of the unexpected and hostile nature of the coming of God’s judgment in the future. This is repeated in various ways in v. 4; 2 Pet 3:10; Rev 3:3; 16:15."
+            }
+          },
+          {
+            "verse": 3,
+            "notes": {
+              "91": "(tc): ‡ δέ (de, “now”) is found in א2 B D 0226 6 1505 1739 1881 al, but lacking in א* A F G 33 it. γάρ (gar, “for”) is the reading of the Byzantine text and a few other witnesses (Ψ 0278 �). Although normally the shorter reading is to be preferred, the external evidence is superior for δέ (being found in the somewhat better Alexandrian and Western witnesses). What, then, is to explain the γάρ? Scribes were prone to replace δέ with γάρ, especially in sentences suggesting a causal or explanatory idea, thus making the point more explicit. Internally, the omission of δέ looks unintentional, a case of homoioarcton (otandelegwsin). Although a decision is difficult, in this instance δέ has the best credentials for authenticity.",
+              "92": "(tn, Grk): “peace and security,” with “there is” understood in the Greek construction.",
+              "93": "(tn, Grk): a singular “birth pain.”"
+            }
+          },
+          {
+            "verse": 4,
+            "notes": {
+              "94": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 5
+          },
+          {
+            "verse": 6
+          },
+          {
+            "verse": 7
+          },
+          {
+            "verse": 8,
+            "notes": {
+              "95": "(sn): An allusion to Isa 59:17.",
+              "96": "(tn, Grk): “hope of salvation” (“a helmet…for salvation” is an allusion to Isa 59:17)."
+            }
+          },
+          {
+            "verse": 9,
+            "notes": {
+              "97": "(sn): God did not destine us for wrath. In context this refers to the outpouring of God’s wrath on the earth in the day of the Lord (1 Thess 5:2-4)."
+            }
+          },
+          {
+            "verse": 10,
+            "notes": {
+              "98": "(tn, Grk): “the one who died,” describing Jesus Christ (1 Thess 5:9). Because of the length and complexity of the Greek sentence, a new sentence was started at the beginning of v. 10 in the translation.",
+              "99": "(sn): The phrases alert or asleep may be understood (1) of moral alertness (living in faith, love, and hope as vv. 6, 8 call for, versus being unresponsive to God) or (2) of physical life and death (whether alive or dead). The first fits better with the context of 5:1-9, while the second returns to the point Paul started with in 4:13-18 (no disadvantage for the believing dead)."
+            }
+          },
+          {
+            "verse": 11
+          },
+          {
+            "verse": 12,
+            "notes": {
+              "100": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 13
+          },
+          {
+            "verse": 14,
+            "notes": {
+              "101": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 15
+          },
+          {
+            "verse": 16
+          },
+          {
+            "verse": 17
+          },
+          {
+            "verse": 18
+          },
+          {
+            "verse": 19
+          },
+          {
+            "verse": 20
+          },
+          {
+            "verse": 21
+          },
+          {
+            "verse": 22
+          },
+          {
+            "verse": 23
+          },
+          {
+            "verse": 24,
+            "notes": {
+              "102": "(tn, Grk): “who will also do,” with the object understood from v. 23."
+            }
+          },
+          {
+            "verse": 25,
+            "notes": {
+              "103": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 26,
+            "notes": {
+              "104": "(tn, Grk): “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 27,
+            "notes": {
+              "105": "(tn, Grk): “I adjure you by the Lord,” “I put you under oath before the Lord.”",
+              "106": "(tc, Grk): Most witnesses, including some important ones (א2 A Ψ [33] 1739 1881 � ar vg sy bo), read “holy” before “brothers [and sisters]” (ἁγίοις ἀδελφοῖς, Jagioi\" adelfoi\"). It is possible that ἁγίοις dropped out by way of homoioteleuton (in uncial script the words would be written agioisadelfois), but it is equally possible that the adjective was added because of the influence of ἁγίῳ (Jagiw) in v. 26. Another internal consideration is that the expression ἅγιοι ἀδελφοί ({agioi adelfoi, “holy brothers”) is not found elsewhere in the corpus Paulinum, though Col 1:2 comes close. But this fact could be argued either way: It may suggest that such an expression is not Pauline; on the other hand, the unusualness of the expression could have resulted in an alteration by some scribes. At the same time, since 1 Thessalonians is one of the earliest of Paul’s letters, and written well before he addresses Christians as saints (ἅγιοι) in 1 Corinthians for the first time, one might argue that Paul’s own forms of expression were going through something of a metamorphosis. Scribes insensitive to this fact could well impute later Pauline collocations onto his earlier letters. The internal evidence seems to support, albeit slightly, the omission of ἁγίοις here. Externally, most of the better witnesses of the Alexandrian and Western texts (א* B D F G 0278 it sa) combine in having the shorter reading. Although the rating of “A” in UBS4 for the omission seems too generous, this reading is still to be preferred. “brothers.” See note on the phrase “brothers and sisters” in 1:4."
+            }
+          },
+          {
+            "verse": 28,
+            "notes": {
+              "107": "(tc): Most witnesses, including a few important ones (א A D1 Ψ 1739c � lat sy bo), conclude this letter with ἀμήν (amhn, “amen”). Such a conclusion is routinely added by scribes to NT books because a few of these books originally had such an ending (cf. Rom 16:27; Gal 6:18; Jude 25). A majority of Greek witnesses have the concluding ἀμήν in every NT book except Acts, James, and 3 John (and even in these books, ἀμήν is found in some witnesses). It is thus a predictable variant. Further, the witnesses for the omission are sufficiently early and diffuse (B D* F G 0278 6 33 1739* 1881 it sa) to render the verdict against the particle here."
+            }
+          }
+        ],
+        "totalVerses": 28,
+        "sources": {
+          "sabda": true,
+          "jw": true,
+          "chabad": false
+        }
+      }
+    ]
+  ]
+}
