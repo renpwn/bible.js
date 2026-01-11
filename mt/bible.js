@@ -3,7 +3,6 @@ import path from 'path'
 import {fileURLToPath} from 'url'
 import * as cheerio from 'cheerio'
 import {openDB} from './db.js'
-import readline from "node:readline";
 
 const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -1033,15 +1032,15 @@ function findTanakhBook(bookId) {
   
   // Cari di semua bagian Tanakh
   for (const section of Tanakh) {
-    for (const book of section.books) {
-      if (book.id === bookName) {
-        return {
-          aid: book.aid,
-          he: book.he,
-          en: book.en,
-          id: book.id
-        };
-      }
+    const index = section.books.findIndex(b => b.id === bookName);
+    if (index !== -1) {
+      const book = section.books[index];
+      return {
+        ...book,
+        tanakh_id: section.id,
+        name: section.name,
+        pos: index
+      };
     }
   }
   
@@ -1345,21 +1344,6 @@ async function migrateJSONtoDB(bookId) {
     const bookData = JSON.parse(await fs.readFile(filePath, "utf8"))
     log(`📊 Kitab: ${bookData.name}, Total pasal: ${bookData.data.length}`)
 
-    // Simpan informasi kitab
-    await dbQueue.add(async () => {
-      await db.run(`
-        INSERT OR REPLACE INTO books (id, name, chapters, total_verses, pericopes, testament)
-        VALUES (?, ?, ?, ?, ?, ?)
-      `, [
-        bookData.id,
-        bookData.name,
-        bookData.chapters,
-        bookData.totalVerses,
-        bookData.pericopes,
-        bookData.testament
-      ])
-    })
-
     // Proses setiap pasal
     let successCount = 0
     let failCount = 0
@@ -1399,6 +1383,19 @@ async function migrateJSONtoDB(bookId) {
 
 async function initializeDatabase() {
   log("\n📊 Inisialisasi database...")
+  
+  // Insert Tanakh sections
+  for (const section of Tanakh) {
+    await dbQueue.add(async () => {
+      await db.run(`
+        INSERT OR REPLACE INTO tanakh (id, name)
+        VALUES (?, ?)
+      `, [
+        section.id,
+        section.name
+      ])
+    })
+  }
 
   // Insert versi-versi Alkitab
   for (const version of BibleVersions) {
@@ -1420,18 +1417,23 @@ async function initializeDatabase() {
   // Insert data kitab
   for (let i = 0; i < BibleBooks.length; i++) {
     const book = BibleBooks[i]
-    await dbQueue.add(async () => {
+    await dbQueue.add(async () => {      
+      const tnBook = findTanakhBook(i+1);
       await db.run(`
-        INSERT OR REPLACE INTO books (id, name, chapters, total_verses, pericopes, testament, position)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        INSERT OR REPLACE INTO books (id, name, name_en, name_he, chapters, total_verses, pericopes, testament, tanakh_id, tanakh_pos, aid)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `, [
         i + 1,
         book[0],
+        tnBook?.en || null,
+        tnBook?.he || null,
         book[1],
         book[2],
         book[3],
         i < 39 ? 'OT' : 'NT',
-        i + 1
+        tnBook?.tanakh_id || null,
+        tnBook?.pos || null,
+        tnBook?.aid || null
       ])
     })
   }

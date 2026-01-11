@@ -60,6 +60,13 @@ export async function openDB(dbFile = DEFAULT_DB, log = dLog) {
   -- PRAGMA synchronous = NORMAL;
   -- PRAGMA cache_size = -10000; -- 10MB cache
 
+  -- Tabel untuk Tanakh (untuk referensi kitab Ibrani)
+  CREATE TABLE IF NOT EXISTS tanakh (
+    id TEXT PRIMARY KEY,           -- kode singkat
+    name TEXT NOT NULL,            -- nama lengkap
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+
   -- Tabel untuk versi Alkitab (TB, BIS, TL, dll)
   CREATE TABLE IF NOT EXISTS versions (
     id TEXT PRIMARY KEY,           -- kode singkat: tb, bis, tl, etc
@@ -75,12 +82,19 @@ export async function openDB(dbFile = DEFAULT_DB, log = dLog) {
   CREATE TABLE IF NOT EXISTS books (
     id INTEGER PRIMARY KEY,        -- 1-66
     name TEXT NOT NULL,            -- Nama kitab
-    name_short TEXT,               -- Singkatan (optional)
+
+    name_en TEXT,                  -- Nama Inggris
+    name_he TEXT,                  -- Nama Ibrani
+
     chapters INTEGER NOT NULL,     -- Jumlah pasal
     total_verses INTEGER NOT NULL, -- Total ayat
     pericopes INTEGER,             -- Jumlah perikop
     testament TEXT CHECK(testament IN ('OT', 'NT')), -- Perjanjian Lama/Baru
-    position INTEGER,              -- Urutan dalam Alkitab
+
+    tanakh_id TEXT,                -- Kode singkat Tanakh jika ada,
+    tanakh_pos TEXT,               -- Urutan dalam Tanakh jika ada,
+    aid INTEGER DEFAULT 0,         -- 0 jika tidak ada AID
+
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
 
