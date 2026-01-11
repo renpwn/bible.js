@@ -478,9 +478,10 @@ function showHelp() {
 📖 Bible Scraper - SABDAweb
 
 Mode:
-  1: Web → JSON & DB (default)
-  2: Web → JSON
-  3: JSON → DB
+  1: Web → DB (default)
+  2: Web → JSON & DB
+  3: Web → JSON
+  4: JSON → DB
 
 Penggunaan:
   node bible.js [options]
@@ -698,7 +699,7 @@ class LexiconQueue {
   showProgress() {
     const processed = this.completed + this.failed;
     const total = this.total || 1;
-    logManager.update("📚 Lexicon", processed, total, `${this.currentLexi || '...'} | ⏳ ${this.processing} | ❌ ${this.failed}`);
+    logManager.update("📚 Lexicon", processed, total, `| 🔠 ${this.currentLexi || '...'} | ⏳ ${this.processing} | ❌ ${this.failed}`);
   }
 
   getCache() {
@@ -869,7 +870,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
     // Fetch dari SABDAweb
     try {
       sabdaData = await fetchSabdaData(bookId, chapter, targetVersions)      
-      log(`🌐 Sabda: ${bookName} ${chapter} (${sabdaData.totalVerses} ayat) ✔`);
+      log(`📘 Sabda : ${bookName} ${chapter} (${sabdaData.totalVerses} ayat)`);
     } catch (error) {
       log(`❌ Gagal ambil dari SABDAweb ${bookId}:${chapter}:`, error.message)
     }
@@ -877,7 +878,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
     // Fetch dari JW.org untuk NWT
     try {
       nwtData = await fetchJWData(bookId, chapter);      
-      log(`🌐 JW: ${bookName} ${chapter} (${nwtData.length} ayat) ✔`);
+      log(`📗 JW    : ${bookName} ${chapter} (${nwtData.length} ayat)`);
     } catch (error) {
       log(`❌ Gagal ambil dari NWT ${bookId}:${chapter}:`, error.message)
     }
@@ -888,7 +889,7 @@ async function getChapterData(bookId, chapter, targetVersions) {
       if (isTanakh) {
         const tanakhBook = findTanakhBook(bookId);
         chabadData = await fetchChabadData(bookId, chapter);
-        log(`🌐 Chabad: ${tanakhBook.id} - ${tanakhBook.he} (${tanakhBook.en}) ${chapter} (${chabadData.totalVerses} ayat) | ${chabadData.aid} ✅`);
+        log(`📕 Chabad: ${tanakhBook.id} ${chapter} (${chabadData.totalVerses} ayat) | ${tanakhBook.he} (${tanakhBook.en}) | ${chabadData.aid} ✓`);
       }
     } catch (error) {
       log(`❌ Gagal ambil dari Chabad ${bookId}:${chapter}:`, error.message)
@@ -1147,7 +1148,10 @@ async function combineChapterData(sabdaData, nwtData, chabadData, bookId, chapte
 }
 
 /* =========================
-   MODE 1 & 2: WEB → JSON & DB
+   MODE 
+  1: Web → DB (default)
+  2: Web → JSON & DB
+  3: Web → JSON
 ========================= */
 
 async function processBook(bookId, concurrency = 3, resume = false, mode = 1, targetVersions = BibleVersions) {
@@ -1174,7 +1178,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
 
   // Cek pasal yang sudah ada jika resume
   const chaptersToProcess = [];
-  if (mode === 1 && resume) {
+  if (mode !== 3 && resume) {
     // Cek di database
     for (let chapter = 1; chapter <= totalChapters; chapter++) {
       const hasData = await checkChapterInDB(bookId, chapter, targetVersions);
@@ -1227,8 +1231,8 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
         bookData.data[chapter - 1] = stripField(result.data, ['notes', 'rashi']);
         noteData.data[chapter - 1] = stripField(result.data, 'texts');
 
-        // Simpan ke database jika mode 1
-        if (mode === 1) {
+        // Simpan ke database jika mode 1 atau 2
+        if (mode !== 3) {
           await saveChapterToDB(result.data, targetVersions);
         }
       }
@@ -1239,23 +1243,25 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   // Proses queue
   await webQueue.process();
 
-  // Tunggu database queue jika mode 1
-  if (mode === 1 && dbQueue) {
+  // Tunggu database queue jika mode 1 atau 2
+  if (mode !== 3 && dbQueue) {
     log("\n⏳ Menunggu operasi database selesai...");
     await dbQueue.waitUntilEmpty();
   }
 
-  // Simpan ke file JSON
-  const filename = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`;
-  await fs.writeFile(filename, JSON.stringify(bookData, null, 2));
-  const filenameNotes = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.notes.json`;
-  await fs.writeFile(filenameNotes, JSON.stringify(noteData, null, 2));
-
-  // Simpan versi minified
-  const filenameMin = `${DIR_MIN}/Bible_${bookId}.min.json`;
-  await fs.writeFile(filenameMin, JSON.stringify(bookData));
-  const filenameMinNotes = `${DIR_MIN}/Bible_${bookId}.notes.min.json`;
-  await fs.writeFile(filenameMinNotes, JSON.stringify(noteData));
+  if(mode !== 1){
+    // Simpan ke file JSON
+    const filename = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`;
+    await fs.writeFile(filename, JSON.stringify(bookData, null, 2));
+    const filenameNotes = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.notes.json`;
+    await fs.writeFile(filenameNotes, JSON.stringify(noteData, null, 2));
+    
+    // Simpan versi minified
+    const filenameMin = `${DIR_MIN}/Bible_${bookId}.min.json`;
+    await fs.writeFile(filenameMin, JSON.stringify(bookData));
+    const filenameMinNotes = `${DIR_MIN}/Bible_${bookId}.notes.min.json`;
+    await fs.writeFile(filenameMinNotes, JSON.stringify(noteData));
+  }
   
   log("")
   log(`✅ Kitab ${bookId} selesai diproses`);
@@ -1447,7 +1453,7 @@ async function fetchStrongLexicon(strongNumber) {
     const html = await fetchUrl(url);
     const $ = cheerio.load(html);
     
-    log(`📚 Lexicon: ${strongNumber} ✅`);
+    log(`📚 Lexicon: ${strongNumber}`);
 
     // Data dasar
     let lexiconData = {
@@ -1484,7 +1490,7 @@ async function fetchStrongLexicon(strongNumber) {
     }
 
     // 2. Parsing untuk halaman lexicon normal
-    $('span#h').each((_, el) => {
+    $('span#h, span#g').each((_, el) => {
       $(el).replaceWith(`_*${$(el).text()}*_`)
     })
 
@@ -1652,9 +1658,24 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
     log("❌ Tidak ada Strong's numbers yang valid");
     return;
   }
+
+  if(mode !== 1){
+   // Buat folder output
+   try {
+     await fs.access(DIR);
+    } catch {
+      await fs.mkdir(DIR, { recursive: true });
+    }
+
+    try {
+      await fs.access(DIR_MIN);
+    } catch {
+    await fs.mkdir(DIR_MIN, { recursive: true });
+  }
   
   await createLexiconDirectories();
-  
+  }
+
   const lexiconQueue = new LexiconQueue(concurrency);
   const uniqueStrongs = [...new Set(validStrongs)];
   
@@ -1675,8 +1696,8 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
       const lexiconData = await fetchStrongLexicon(strongNumber);
       
       if (lexiconData && (lexiconData.word || lexiconData.is_specialcase)) {
-        const savedData = mode !== 3 && await saveLexiconToJSON(lexiconData);
-        mode !== 2 && await saveLexiconToDB(lexiconData);
+        const savedData = [2,3].includes(mode) && await saveLexiconToJSON(lexiconData);
+        mode !== 3 && await saveLexiconToDB(lexiconData);
         
         if (savedData) {
           index = await updateLexiconIndex(index, savedData);
@@ -1838,9 +1859,10 @@ async function main() {
   log("=".repeat(60));
 
   const modeNames = {
-    1: "Web → JSON & DB",
-    2: "Web → JSON",
-    3: "JSON → DB"
+    1: "Web → DB",
+    2: "Web → JSON & DB",
+    3: "Web → JSON",
+    4: "JSON → DB"
   };
 
   log(`Mode: ${options.mode} (${modeNames[options.mode]})`);
@@ -1864,23 +1886,10 @@ async function main() {
     }
   }
 
-  // Buat folder output
-  try {
-    await fs.access(DIR);
-  } catch {
-    await fs.mkdir(DIR, { recursive: true });
-  }
+  // await createLexiconDirectories();
 
-  try {
-    await fs.access(DIR_MIN);
-  } catch {
-    await fs.mkdir(DIR_MIN, { recursive: true });
-  }
-
-  await createLexiconDirectories();
-
-  // Buka koneksi database untuk mode 1 & 3
-  if (options.mode === 1 || options.mode === 3) {
+  // Buka koneksi database untuk mode 1, 2 & 4
+  if (options.mode !== 3) {
     log("\n🚀 Opening database connection...");
     db = await openDB(DB_PATH, log);
     dbQueue = new DatabaseQueue(db, 1);
@@ -1925,22 +1934,16 @@ async function main() {
       try {
         switch (options.mode) {
           case 1:
+          case 2:
+          case 3:{
             const result1 = await processBook(bookId, options.concurrency, options.resume, options.mode, targetVersions);
             success = result1.success;
             if (result1.strongNumbers) {
               result1.strongNumbers.forEach(s => allStrongs.add(s));
             }
             break;
-
-          case 2:
-            const result2 = await processBook(bookId, options.concurrency, options.resume, options.mode, targetVersions);
-            success = result2.success;
-            if (result2.strongNumbers) {
-              result2.strongNumbers.forEach(s => allStrongs.add(s));
-            }
-            break;
-
-          case 3:
+          }
+          case 4:
             success = await migrateJSONtoDB(bookId);
             break;
 
@@ -1960,11 +1963,12 @@ async function main() {
         totalFailed++;
       }
 
+      logManager.update("📖 BOOK", bookId, booksToProcess.length);
+
       if (bookId !== booksToProcess[booksToProcess.length - 1]) {
-        const delay = options.mode === 1 || options.mode === 2 ? 5000 : 2000;
+        const delay = options.mode !== 4 ? 5000 : 2000;
         log("")
         log(`⏳ Menunggu ${delay/1000} detik sebelum kitab berikutnya...`);        
-        logManager.update("📖 BOOK", bookId, booksToProcess.length);
         await sleep(delay);
         // Clear progress setelah selesai
         setTimeout(() => {
@@ -1995,7 +1999,7 @@ async function main() {
     log(`📊 Statistik: ${totalSuccess} kitab berhasil, ${totalFailed} kitab gagal`);
     log(`📊 Mode: ${modeNames[options.mode]}`);
 
-    if (options.mode === 1 || options.mode === 3) {
+    if (options.mode !== 3) {
       log(`💾 Database: ${DB_PATH}`);
       
       log("")
@@ -2008,7 +2012,7 @@ async function main() {
       }
     }
 
-    if (options.mode === 1 || options.mode === 2) {
+    if (options.mode === 2 || options.mode === 3) {
       log(`📁 JSON files: ${DIR}/`);
       log(`📁 Minified JSON: ${DIR_MIN}/`);
     }
