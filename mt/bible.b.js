@@ -507,134 +507,187 @@ Contoh:
 /* =========================
    SISTEM QUEUE - DIPERBAIKI
 ========================= */
-class BaseQueue {
-    constructor(concurrency = 1, name = "Main") {
-        this.concurrency = concurrency
-        this.name = name
+class DatabaseQueue {
+  constructor(db, maxConcurrent = 1) {
+    this.db = db
+    this.maxConcurrent = maxConcurrent
+    this.queue = []
+    this.processing = 0
+    this.completed = 0
+    this.failed = 0
+    this.total = 0
+  }
 
-        this.queue = []
-        this.processing = 0
-        this.completed = 0
-        this.failed = 0
-        this.total = 0
-
-        this.current = "" // Untuk tracking current lexicon
-    }
-
-    add(task) {
-        this.total++;
-        this.queue.push(task)
-    }
+  async add(task) {
+    this.total++;
     
-    async addAsync(task) {
-        this.total++;
-        return new Promise((resolve, reject) => {
-            this.queue.push({
-                task,
-                resolve,
-                reject
-            })
-            this.process()
+    return new Promise((resolve, reject) => {
+      this.queue.push({
+        task,
+        resolve,
+        reject
+      })
+      this.process()
+    })
+  }
+
+  async process() {
+    while (this.queue.length > 0 && this.processing < this.maxConcurrent) {
+      const {
+        task,
+        resolve,
+        reject
+      } = this.queue.shift()
+      this.processing++
+
+      task()
+        .then(result => {
+          resolve(result)
+          this.completed++
+        })
+        .catch(error => {
+          reject(error)
+          this.failed++
+          log("❌ Database task ❌", error.message)
+        })
+        .finally(() => {
+          this.processing--
+          this.showProgress()
+          this.process()
         })
     }
+  }
+  
+  showProgress() {
+    const processed = this.completed + this.failed;
+    const total = this.total || 1; // Perbaikan: tambahkan deklarasi variabel total
+    logManager.update("📊 DB Queue", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
+  }
 
-    async process(handler) {
-        const workers = []
-
-        const worker = async () => {
-          while (this.queue.length > 0) {
-            if (this.processing >= this.concurrency) {
-              await sleep(10)
-              continue
-            }
-
-            const item = this.queue.shift()
-            if (!item) continue
-
-            this.processing++
-
-            const isDB = typeof item === "object" && item.task
-            const isFn = typeof item === "function"
-
-            try {
-              const result = isDB
-                  ? await item.task()
-                  : isFn
-                      ? await item()
-                      : await handler(item)
-
-              this.completed++
-
-              if (isDB) item.resolve(result)
-              else if (this.results) this.results.push(result)
-              else if (this.lexiconCache) this.lexiconCache.set(item, result)
-            } catch (error) {
-              this.failed++
-              if (isDB) item.reject(error)
-              log(`❌ ${this.name} error:`, error.message)
-            } finally {
-              this.processing--
-              this.showProgress()
-            }
-          }
-        }
-
-        for (let i = 0; i < this.concurrency; i++) {
-            workers.push(worker())
-        }
-
-        await Promise.all(workers)
-
-        return this.results || this.lexiconCache
+  async waitUntilEmpty() {
+    while (this.queue.length > 0 || this.processing > 0) {
+      await sleep(100)
     }
-
-    showProgress() {
-        const processed = this.completed + this.failed
-        logManager.update(
-            this.name,
-            processed,
-            this.total || 1,
-            `${this.current ? "| " + this.current + " " : ""}| ⏳ ${this.processing} | ❌ ${this.failed}`
-        )
-    }
+  }
 }
 
-class DatabaseQueue extends BaseQueue {
-    constructor(db, concurrency = 1) {
-      super(concurrency, "📊 DB Queue")
-      this.db = db
+class BibleQueue {
+  constructor(concurrency = 3) {
+    this.concurrency = concurrency
+    this.queue = []
+    this.processing = 0
+    this.completed = 0
+    this.failed = 0
+    this.total = 0
+    this.results = []
+  }
+
+  add(task) {
+    this.queue.push(task)
+    this.total++
+  }
+
+  async process() {
+    const workers = []
+
+    const worker = async () => {
+      while (this.queue.length > 0) {
+        const task = this.queue.shift()
+        if (!task) continue
+
+        this.processing++
+        try {
+          const result = await task()
+          this.results.push(result)
+          this.completed++
+        } catch (error) {
+          this.failed++
+          log("Task error:", error.message)
+        } finally {
+          this.processing--
+          this.showProgress()
+        }
+      }
     }
 
-    async waitUntilEmpty() {
-        while (this.queue.length > 0 || this.processing > 0) {
-            await sleep(100)
-        }
+    for (let i = 0; i < Math.min(this.concurrency, this.total); i++) {
+      workers.push(worker())
     }
+
+    await Promise.all(workers)
+    
+    return this.results
+  }
+  
+  showProgress() {
+    const processed = this.completed + this.failed;
+    const total = this.total || 1;
+    logManager.update("🌐 Scraping", processed, total, `⏳ ${this.processing} | ❌ ${this.failed}`);
+  }
 }
 
-class BibleQueue extends BaseQueue {
-    constructor(concurrency = 3) {
-        super(concurrency, "🌐 Scraping")
-        this.results = []
-    }
-}
+class LexiconQueue {
+  constructor(concurrency = 2) {
+    this.concurrency = concurrency
+    this.queue = []
+    this.processing = 0
+    this.completed = 0
+    this.failed = 0
+    this.total = 0
+    this.lexiconCache = new Map()
+    this.currentLexi = "" // Tambahkan untuk tracking current lexicon
+  }
 
-class LexiconQueue extends BaseQueue {
-    constructor(concurrency = 2) {
-        super(concurrency, "📚 Lexicon")
-        this.results = new Map()
+  add(strongNumber) {
+    if (!this.lexiconCache.has(strongNumber)) {
+      this.queue.push(strongNumber)
+      this.total++
+      this.lexiconCache.set(strongNumber, null)
     }
+  }
 
-    add(strongNumber) {
-        if (!this.results.has(strongNumber)) {
-            super.addAsync(strongNumber)
-            this.results.set(strongNumber, null)
+  async process(fetchFn) {
+    const workers = []
+
+    const worker = async () => {
+      while (this.queue.length > 0) {
+        const strongNumber = this.queue.shift()
+        if (!strongNumber) continue
+
+        this.processing++
+        this.currentLexi = strongNumber; // Set current lexicon
+        try {
+          const data = await fetchFn(strongNumber)
+          this.lexiconCache.set(strongNumber, data)
+          this.completed++
+        } catch (error) {
+          this.failed++
+          log(`Lexicon error ${strongNumber}:`, error.message)
+        } finally {
+          this.processing--
+          this.showProgress()
         }
+      }
     }
 
-    getCache() {
-        return this.results
+    for (let i = 0; i < Math.min(this.concurrency, this.total); i++) {
+      workers.push(worker())
     }
+
+    await Promise.all(workers)
+    
+    return this.lexiconCache
+  }
+  
+  showProgress() {
+    const processed = this.completed + this.failed;
+    const total = this.total || 1;
+    logManager.update("📚 Lexicon", processed, total, `| 🔠 ${this.currentLexi || '...'} | ⏳ ${this.processing} | ❌ ${this.failed}`);
+  }
+
+  getCache() {
+    return this.lexiconCache
+  }
 }
 
 /* =========================
@@ -1229,7 +1282,7 @@ async function saveChapterToDB(chapterData, targetVersions) {
   const { bookId, chapter, verses } = chapterData;
 
   for (const verseData of verses) {
-    await dbQueue.addAsync(async () => {
+    await dbQueue.add(async () => {
       try {
         // Hanya simpan teks ayat (per versi) ke tabel verses
         for (const version of targetVersions) {
@@ -1317,7 +1370,7 @@ async function initializeDatabase() {
   
   // Insert Tanakh sections
   for (const section of Tanakh) {
-    await dbQueue.addAsync(async () => {
+    await dbQueue.add(async () => {
       await db.run(`
         INSERT OR REPLACE INTO tanakh (id, name)
         VALUES (?, ?)
@@ -1330,7 +1383,7 @@ async function initializeDatabase() {
 
   // Insert versi-versi Alkitab
   for (const version of BibleVersions) {
-    await dbQueue.addAsync(async () => {
+    await dbQueue.add(async () => {
       await db.run(`
         INSERT OR REPLACE INTO versions (id, name, language, category, supports_strong, is_default)
         VALUES (?, ?, ?, ?, ?, ?)
@@ -1348,7 +1401,7 @@ async function initializeDatabase() {
   // Insert data kitab
   for (let i = 0; i < BibleBooks.length; i++) {
     const book = BibleBooks[i]
-    await dbQueue.addAsync(async () => {      
+    await dbQueue.add(async () => {      
       const tnBook = findTanakhBook(i+1);
       await db.run(`
         INSERT OR REPLACE INTO books (id, name, name_en, name_he, chapters, total_verses, pericopes, testament, tanakh_id, tanakh_pos, aid)
@@ -1512,7 +1565,7 @@ function parseTableStructure(rows, lexiconData) {
 async function saveLexiconToDB(lexiconData) {
   if (!lexiconData || !lexiconData.strong) return false;
 
-  return dbQueue.addAsync(async () => {
+  return dbQueue.add(async () => {
     try {
       await db.run(`
         INSERT OR REPLACE INTO strong_lexicon 
