@@ -69,13 +69,20 @@ class LogManager {
           ? Math.floor((bar.current / bar.total) * 100)
           : 0;
 
-        const filled = Math.floor(percent / 5);
+        //bar 20 karakter & percentase 100 / 5 = 20
+        //filled tidak boleh lebih dari 20
+        const BAR_SIZE = 20
+        const safeFilled = Math.min(
+          BAR_SIZE,
+          Math.max(0, Math.floor(percent/5))
+        )
 
         line =
           `${name} [` +
-          "█".repeat(filled) +
-          "░".repeat(20 - filled) +
-          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text || ""}`;
+          "█".repeat(safeFilled) +
+          "░".repeat(BAR_SIZE - safeFilled) +
+          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text || ""}`
+
       }
 
       console.log(line);
@@ -1213,7 +1220,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   log(`✅ Kitab ${bookId} selesai diproses`);
   log(`📊 Statistik: ${webQueue.completed} berhasil, ${webQueue.failed} gagal`);
   log(`📚 Strong's numbers ditemukan: ${bookStrongs.size}`);
-  logManager.update("📚 Lexicon", 0, bookStrongs.size);
+  logManager.update("📚 Lexicon", 0, bookStrongs.size || 0);
 
   return {
     success: webQueue.failed === 0,
