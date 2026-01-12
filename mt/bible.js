@@ -1213,6 +1213,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   log(`✅ Kitab ${bookId} selesai diproses`);
   log(`📊 Statistik: ${webQueue.completed} berhasil, ${webQueue.failed} gagal`);
   log(`📚 Strong's numbers ditemukan: ${bookStrongs.size}`);
+  logManager.update("📚 Lexicon", 0, bookStrongs.size);
 
   return {
     success: webQueue.failed === 0,
