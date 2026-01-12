@@ -887,8 +887,8 @@ async function fetchJWData(bookId, chapter){
 
     // dari <strong>
     const strongNum = $v.find("strong").first().text().trim();
-    if (/^\d+$/.test(strongNum)) {
-      verse = Number(strongNum);
+    if (/^\d+$/.test(strongNum) && versesMap.size === 0) {
+      verse = 1;
     }
 
     // dari <a> (tanpa child)
