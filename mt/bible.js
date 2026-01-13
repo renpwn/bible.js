@@ -820,6 +820,8 @@ async function getChapterData(bookId, chapter, targetVersions) {
     let nwtData = null;
     let chabadData = null;
     
+    logManager.update("🌐 Scraping", 0, BibleBooks[bookId-1][1]);
+    
     // Fetch dari SABDAweb
     try {
       sabdaData = await fetchSabdaData(bookId, chapter, targetVersions)      
@@ -1203,6 +1205,7 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   }
 
   if(mode !== 1){
+    await createDirectories(mode)
     // Simpan ke file JSON
     const filename = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`;
     await fs.writeFile(filename, JSON.stringify(bookData, null, 2));
@@ -1629,9 +1632,9 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
       } catch {
       await fs.mkdir(DIR_MIN, { recursive: true });
     }
-    
-    await createLexiconDirectories();
   }
+  
+  await createLexiconDirectories(mode);
 
   const lexiconQueue = new LexiconQueue(concurrency);
   const uniqueStrongs = [...new Set(validStrongs)];
@@ -1734,7 +1737,8 @@ function findVersionForColumn(columnIndex, targetVersions) {
 }
 
 // Buat folder lexicon dengan struktur H & G
-async function createLexiconDirectories() {
+async function createLexiconDirectories(mode) {
+  if(mode === 1) return false;
   const bases = [DIR_LEXICON, DIR_LEXICON_MIN]
   const subs  = ['H', 'G']
 
@@ -1742,6 +1746,19 @@ async function createLexiconDirectories() {
     for (const sub of subs) {
       const dir = path.join(base, sub)
       await fs.mkdir(dir, { recursive: true })
+    }
+  }
+}
+
+async function createDirectories(mode) {
+  if(mode === 1) return false;
+  const bases = [DIR, DIR_MIN]
+
+  for (const base of bases) {
+    try {
+      await fs.access(base);
+    } catch {
+      await fs.mkdir(base, { recursive: true });
     }
   }
 }
