@@ -820,8 +820,6 @@ async function getChapterData(bookId, chapter, targetVersions) {
     let nwtData = null;
     let chabadData = null;
     
-    logManager.update("🌐 Scraping", 0, BibleBooks[bookId-1][1]);
-    
     // Fetch dari SABDAweb
     try {
       sabdaData = await fetchSabdaData(bookId, chapter, targetVersions)      
@@ -1115,7 +1113,10 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
 
   log(`📖 Memproses kitab ${bookId}: ${bookInfo[0]}`);
   log(`📊 Total pasal: ${totalChapters}, Concurrency: ${concurrency}`);
-  log(`📚 Versi: ${targetVersions.map(v => v.id).join(', ')}`);
+  log(`📚 Versi: ${targetVersions.map(v => v.id).join(', ')}`);  
+  const {
+    tanakh_id, name : tanakh_name, pos: tanakh_pos, he: name_he, en: name_en, aid
+  } = findTanakhBook(bookId);
 
   // Buat struktur data untuk kitab
   const createBookBase = () => ({
@@ -1124,6 +1125,12 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
     chapters: totalChapters,
     totalVerses: bookInfo[2],
     pericopes: bookInfo[3],
+    ...(tanakh_id ?? {}),
+    ...(tanakh_name ?? {}),
+    ...(tanakh_pos ?? {}),
+    ...(name_he ?? {}),
+    ...(name_en ?? {}),
+    ...(aid ?? {}),
     testament: bookId <= 39 ? 'OT' : 'NT',
     data: new Array(totalChapters)
   })
@@ -1171,6 +1178,8 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
       )
     }))
   }
+    
+  logManager.update("🌐 Scraping", 0, chaptersToProcess.length);
 
   for (const chapter of chaptersToProcess) {
     webQueue.add(async () => {
