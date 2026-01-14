@@ -44,10 +44,10 @@ class LogManager {
   /* ================= PROGRESS ================= */
 
   update(name, current, total, text = "") {
-    this.bars.set(name, { current, total, text });
+    this.bars.set(name, { current, total: total < current ? current : total, text });
     this.renderProgress();
   }
-
+  
   remove(name) {
     this.bars.delete(name);
     this.renderProgress();
@@ -517,6 +517,7 @@ Options:
   -r, --resume             Resume proses (cek data yang sudah ada)
   -v, --versions <list>    Filter versi tertentu (comma separated: tb,bis,tl)
   -h, --help               Tampilkan bantuan ini
+  -space <n>, -min <n>     Atur spasi JSON output (default: 2)
 
 Contoh:
   node bible.js                     # Mode 1, kitab 1
