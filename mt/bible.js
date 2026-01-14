@@ -8,6 +8,8 @@ const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+let space = 2;
+
 /* =========================
    LOG MANAGER (DIPERBAIKI)
 ========================= */
@@ -437,9 +439,7 @@ const fetchUrl = async(url, options = {}, maxRetries = 3) => {
 let db = null
 const DB_PATH = "./db/bible.db"
 const DIR = "./json"
-const DIR_MIN = "./json_min"
 const DIR_LEXICON = "./lexicon";
-const DIR_LEXICON_MIN = "./lexicon_min";
 
 // Helper untuk escape string SQL
 function esc(s = "") {
@@ -487,6 +487,8 @@ function parseArgs() {
     } else if (arg === "--help" || arg === "-h") {
       showHelp()
       process.exit(0)
+    }else if (arg === "-space" || arg === "-min") {
+      space = parseInt(args[++i]) ?? 2
     }
   }
 
@@ -1115,8 +1117,8 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
   log(`📊 Total pasal: ${totalChapters}, Concurrency: ${concurrency}`);
   log(`📚 Versi: ${targetVersions.map(v => v.id).join(', ')}`);  
   const {
-    tanakh_id, name : tanakh_name, pos: tanakh_pos, he: name_he, en: name_en, aid
-  } = findTanakhBook(bookId);
+     name : tanakh_name, pos: tanakh_pos, he: tname_he, en: tname_en, aid
+  } = findTanakhBook(bookId) || {};
 
   // Buat struktur data untuk kitab
   const createBookBase = () => ({
@@ -1125,12 +1127,13 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
     chapters: totalChapters,
     totalVerses: bookInfo[2],
     pericopes: bookInfo[3],
-    ...(tanakh_id ?? {}),
-    ...(tanakh_name ?? {}),
-    ...(tanakh_pos ?? {}),
-    ...(name_he ?? {}),
-    ...(name_en ?? {}),
-    ...(aid ?? {}),
+  
+    ...(tanakh_name != null && { tanakh_name }),
+    ...(tanakh_pos != null && { tanakh_pos }),
+    ...(tname_he != null && { tname_he }),
+    ...(tname_en != null && { tname_en }),
+    ...(aid != null && { aid }),
+
     testament: bookId <= 39 ? 'OT' : 'NT',
     data: new Array(totalChapters)
   })
@@ -1217,15 +1220,9 @@ async function processBook(bookId, concurrency = 3, resume = false, mode = 1, ta
     await createDirectories(mode)
     // Simpan ke file JSON
     const filename = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.json`;
-    await fs.writeFile(filename, JSON.stringify(bookData, null, 2));
+    await fs.writeFile(filename, JSON.stringify(bookData, null, space));
     const filenameNotes = `${DIR}/Bible_${bookId}_${bookInfo[0].replace(/\s+/g, '_')}.notes.json`;
-    await fs.writeFile(filenameNotes, JSON.stringify(noteData, null, 2));
-    
-    // Simpan versi minified
-    const filenameMin = `${DIR_MIN}/Bible_${bookId}.min.json`;
-    await fs.writeFile(filenameMin, JSON.stringify(bookData));
-    const filenameMinNotes = `${DIR_MIN}/Bible_${bookId}.notes.min.json`;
-    await fs.writeFile(filenameMinNotes, JSON.stringify(noteData));
+    await fs.writeFile(filenameNotes, JSON.stringify(noteData, null, space));
   }
   
   log("")
@@ -1596,13 +1593,7 @@ async function saveLexiconToJSON(lexiconData, overwrite = true) {
 
     await fs.writeFile(
       path.join(DIR_LEXICON, prefix, file),
-      JSON.stringify(data, null, 2),
-      'utf8'
-    );
-
-    await fs.writeFile(
-      path.join(DIR_LEXICON_MIN, prefix, file),
-      JSON.stringify(data),
+      JSON.stringify(data, null, space),
       'utf8'
     );
 
@@ -1635,12 +1626,6 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
       } catch {
         await fs.mkdir(DIR, { recursive: true });
       }
-
-      try {
-        await fs.access(DIR_MIN);
-      } catch {
-      await fs.mkdir(DIR_MIN, { recursive: true });
-    }
   }
   
   await createLexiconDirectories(mode);
@@ -1655,7 +1640,6 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
   let index, indexPath, indexMinPath;
   if(mode !== 1){
     indexPath = `${DIR_LEXICON}/_index.json`;
-    indexMinPath = `${DIR_LEXICON_MIN}/_index.json`;
     index = await fs.readFile(indexPath, 'utf8')
       .then(JSON.parse)
       .catch(() => []);    
@@ -1688,8 +1672,7 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
   
   if(mode !== 1){
   // Simpan index.json
-    await fs.writeFile(indexPath, JSON.stringify(index, null, 2), 'utf8');
-    await fs.writeFile(indexMinPath, JSON.stringify(index), 'utf8');
+    await fs.writeFile(indexPath, JSON.stringify(index, null, space), 'utf8');
   }
   
   log("")
@@ -1713,7 +1696,6 @@ async function processLexicons(strongNumbers, concurrency = 2, mode) {
     log(`   Greek (G): ${greekCount}`);
     if(mode !== 1){
       log(`   JSON folder: ${DIR_LEXICON}/`);
-      log(`   JSON min folder: ${DIR_LEXICON_MIN}/`);
     }
   } catch (error) {
     log('📚 Lexicon index belum dibuat atau error');
@@ -1748,27 +1730,22 @@ function findVersionForColumn(columnIndex, targetVersions) {
 // Buat folder lexicon dengan struktur H & G
 async function createLexiconDirectories(mode) {
   if(mode === 1) return false;
-  const bases = [DIR_LEXICON, DIR_LEXICON_MIN]
   const subs  = ['H', 'G']
-
-  for (const base of bases) {
     for (const sub of subs) {
-      const dir = path.join(base, sub)
-      await fs.mkdir(dir, { recursive: true })
+      try {
+        await fs.access(path.join(DIR_LEXICON, sub));
+      } catch {
+        await fs.mkdir(path.join(DIR_LEXICON, sub), { recursive: true });
+      }
     }
-  }
 }
 
 async function createDirectories(mode) {
   if(mode === 1) return false;
-  const bases = [DIR, DIR_MIN]
-
-  for (const base of bases) {
-    try {
-      await fs.access(base);
-    } catch {
-      await fs.mkdir(base, { recursive: true });
-    }
+  try {
+    await fs.access(DIR);
+  } catch {
+    await fs.mkdir(DIR, { recursive: true });
   }
 }
 
@@ -1981,12 +1958,9 @@ async function main() {
     }
 
     if (options.mode === 2 || options.mode === 3) {
-      log(`📁 JSON files: ${DIR}/`);
-      log(`📁 Minified JSON: ${DIR_MIN}/`);
-      
-      log(`📁 Lexicon JSON: ${DIR_LEXICON}/`);
-      log(`📁 Lexicon Minified: ${DIR_LEXICON_MIN}/`);
-      
+      log(`📁 JSON files: ${DIR}/`);      
+      log(`📁 Lexicon JSON: ${DIR_LEXICON}/`);      
+      log(`📁 JSON Type: ${space <= 0 ? 'MIN' : 'BEAUTY:' +space}`);
       log("=".repeat(60));
     }
 
