@@ -1,0 +1,137 @@
+{"time":"2026-01-19T19:11:43.104Z","level":"log","message":"============================================================"}
+{"time":"2026-01-19T19:11:43.108Z","level":"log","message":"📖 BIBLE SABDAWEB SCRAPER"}
+{"time":"2026-01-19T19:11:43.108Z","level":"log","message":"============================================================"}
+{"time":"2026-01-19T19:11:43.109Z","level":"log","message":"Mode: 3 (Web → JSON)"}
+{"time":"2026-01-19T19:11:43.109Z","level":"log","message":"Start: kitab 1"}
+{"time":"2026-01-19T19:11:43.110Z","level":"log","message":"Concurrency: 15"}
+{"time":"2026-01-19T19:11:43.110Z","level":"log","message":"Batch mode: false"}
+{"time":"2026-01-19T19:11:43.111Z","level":"log","message":"Resume mode: false"}
+{"time":"2026-01-19T19:11:43.111Z","level":"log","message":"============================================================"}
+{"time":"2026-01-19T19:11:43.111Z","level":"log","message":"📋 Total kitab yang akan diproses: 1"}
+{"time":"2026-01-19T19:11:43.112Z","level":"log","message":"\n📖 ========================================"}
+{"time":"2026-01-19T19:11:43.112Z","level":"log","message":"📖 Proses kitab 1: Kejadian"}
+{"time":"2026-01-19T19:11:43.112Z","level":"log","message":"📖 ========================================"}
+{"time":"2026-01-19T19:11:43.113Z","level":"log","message":"📖 Memproses kitab 1: Kejadian"}
+{"time":"2026-01-19T19:11:43.113Z","level":"log","message":"📊 Total pasal: 50, Concurrency: 15"}
+{"time":"2026-01-19T19:11:43.114Z","level":"log","message":"📚 Versi: tb, bis, tl, ende, tb_itl_drf, tl_itl_drf, bbe, message, nkjv, net, net2, nwt, tn_he, tn_en"}
+{"time":"2026-01-19T19:11:43.115Z","level":"log","message":"🔄 Mengambil 50 pasal..."}
+{"time":"2026-01-19T19:11:43.954Z","level":"log","message":"📘 Sabda : Kejadian 5 (32 ayat)"}
+{"time":"2026-01-19T19:11:44.069Z","level":"log","message":"📘 Sabda : Kejadian 12 (20 ayat)"}
+{"time":"2026-01-19T19:11:44.158Z","level":"log","message":"📘 Sabda : Kejadian 4 (26 ayat)"}
+{"time":"2026-01-19T19:11:44.248Z","level":"log","message":"📘 Sabda : Kejadian 3 (24 ayat)"}
+{"time":"2026-01-19T19:11:44.329Z","level":"log","message":"📘 Sabda : Kejadian 11 (32 ayat)"}
+{"time":"2026-01-19T19:11:44.395Z","level":"log","message":"📘 Sabda : Kejadian 14 (24 ayat)"}
+{"time":"2026-01-19T19:11:44.472Z","level":"log","message":"📘 Sabda : Kejadian 7 (24 ayat)"}
+{"time":"2026-01-19T19:11:44.556Z","level":"log","message":"📘 Sabda : Kejadian 1 (31 ayat)"}
+{"time":"2026-01-19T19:11:44.621Z","level":"log","message":"📘 Sabda : Kejadian 9 (29 ayat)"}
+{"time":"2026-01-19T19:11:44.711Z","level":"log","message":"📘 Sabda : Kejadian 15 (21 ayat)"}
+{"time":"2026-01-19T19:11:44.773Z","level":"log","message":"📘 Sabda : Kejadian 6 (22 ayat)"}
+{"time":"2026-01-19T19:11:44.847Z","level":"log","message":"📘 Sabda : Kejadian 10 (32 ayat)"}
+{"time":"2026-01-19T19:11:44.929Z","level":"log","message":"📘 Sabda : Kejadian 2 (25 ayat)"}
+{"time":"2026-01-19T19:11:44.977Z","level":"log","message":"📘 Sabda : Kejadian 8 (22 ayat)"}
+{"time":"2026-01-19T19:11:45.026Z","level":"log","message":"📘 Sabda : Kejadian 13 (18 ayat)"}
+{"time":"2026-01-19T20:57:47.664Z","level":"log","message":"============================================================"}
+{"time":"2026-01-19T20:57:47.669Z","level":"log","message":"📖 BIBLE SABDAWEB SCRAPER"}
+{"time":"2026-01-19T20:57:47.670Z","level":"log","message":"============================================================"}
+{"time":"2026-01-19T20:57:47.670Z","level":"log","message":"Mode: 2 (Web → JSON & DB)"}
+{"time":"2026-01-19T20:57:47.671Z","level":"log","message":"Start: kitab 1"}
+{"time":"2026-01-19T20:57:47.671Z","level":"log","message":"Concurrency: 15"}
+{"time":"2026-01-19T20:57:47.672Z","level":"log","message":"Batch mode: false"}
+{"time":"2026-01-19T20:57:47.672Z","level":"log","message":"Resume mode: false"}
+{"time":"2026-01-19T20:57:47.672Z","level":"log","message":"============================================================"}
+{"time":"2026-01-19T20:57:47.678Z","level":"log","message":"\n🚀 Opening database connection..."}
+{"time":"2026-01-19T20:57:47.681Z","level":"log","message":"🗑 Removing old database..."}
+{"time":"2026-01-19T20:57:47.682Z","level":"log","message":"🚀 Opening database: /data/data/com.termux/files/home/bible.js/db/bible.db"}
+{"time":"2026-01-19T20:57:47.769Z","level":"log","message":"✅ Database connection OK"}
+{"time":"2026-01-19T20:57:47.770Z","level":"log","message":"📊 Initializing Bible schema..."}
+{"time":"2026-01-19T20:57:47.777Z","level":"log","message":"✅ Main schema created"}
+{"time":"2026-01-19T20:57:47.783Z","level":"log","message":"✅ FTS5 tables created"}
+{"time":"2026-01-19T20:57:47.786Z","level":"log","message":"✅ Indexes created"}
+{"time":"2026-01-19T20:57:47.788Z","level":"log","message":"✅ Triggers created"}
+{"time":"2026-01-19T20:57:47.793Z","level":"log","message":"📋 Database Objects Created:"}
+{"time":"2026-01-19T20:57:47.793Z","level":"log","message":"  TABLE: 18 items"}
+{"time":"2026-01-19T20:57:47.794Z","level":"log","message":"  TRIGGER: 6 items"}
+{"time":"2026-01-19T20:57:47.794Z","level":"log","message":"    - strong_lexicon_ad"}
+{"time":"2026-01-19T20:57:47.795Z","level":"log","message":"    - strong_lexicon_ai"}
+{"time":"2026-01-19T20:57:47.796Z","level":"log","message":"    - strong_lexicon_au"}
+{"time":"2026-01-19T20:57:47.796Z","level":"log","message":"    - verses_ad"}
+{"time":"2026-01-19T20:57:47.797Z","level":"log","message":"    - verses_ai"}
+{"time":"2026-01-19T20:57:47.797Z","level":"log","message":"    - verses_au"}
+{"time":"2026-01-19T20:57:47.798Z","level":"log","message":""}
+{"time":"2026-01-19T20:57:47.799Z","level":"log","message":"\n📊 Inisialisasi database..."}
+{"time":"2026-01-19T20:57:47.879Z","level":"log","message":"✅ Database initialized"}
+{"time":"2026-01-19T20:57:48.884Z","level":"log","message":"📋 Total kitab yang akan diproses: 1"}
+{"time":"2026-01-19T20:57:48.885Z","level":"log","message":"\n📖 ========================================"}
+{"time":"2026-01-19T20:57:48.885Z","level":"log","message":"📖 Proses kitab 1: Kejadian"}
+{"time":"2026-01-19T20:57:48.886Z","level":"log","message":"📖 ========================================"}
+{"time":"2026-01-19T20:57:48.887Z","level":"log","message":"📖 Memproses kitab 1: Kejadian"}
+{"time":"2026-01-19T20:57:48.888Z","level":"log","message":"📊 Total pasal: 50, Concurrency: 15"}
+{"time":"2026-01-19T20:57:48.888Z","level":"log","message":"📚 Versi: tb, bis, tl, ende, tb_itl_drf, tl_itl_drf, bbe, message, nkjv, net, net2, nwt, tn_he, tn_en"}
+{"time":"2026-01-19T20:57:48.889Z","level":"log","message":"🔄 Mengambil 50 pasal..."}
+{"time":"2026-01-19T20:57:49.946Z","level":"log","message":"📘 Sabda : Kejadian 1 (31 ayat)"}
+{"time":"2026-01-19T20:57:50.042Z","level":"log","message":"📘 Sabda : Kejadian 4 (26 ayat)"}
+{"time":"2026-01-19T20:57:50.122Z","level":"log","message":"📘 Sabda : Kejadian 9 (29 ayat)"}
+{"time":"2026-01-19T20:57:50.182Z","level":"log","message":"📘 Sabda : Kejadian 13 (18 ayat)"}
+{"time":"2026-01-19T20:57:50.276Z","level":"log","message":"📘 Sabda : Kejadian 10 (32 ayat)"}
+{"time":"2026-01-19T20:57:50.353Z","level":"log","message":"📘 Sabda : Kejadian 7 (24 ayat)"}
+{"time":"2026-01-19T20:57:50.403Z","level":"log","message":"📘 Sabda : Kejadian 5 (32 ayat)"}
+{"time":"2026-01-19T20:57:50.461Z","level":"log","message":"📘 Sabda : Kejadian 8 (22 ayat)"}
+{"time":"2026-01-19T20:57:50.519Z","level":"log","message":"📘 Sabda : Kejadian 14 (24 ayat)"}
+{"time":"2026-01-19T20:57:50.601Z","level":"log","message":"📘 Sabda : Kejadian 6 (22 ayat)"}
+{"time":"2026-01-19T20:57:50.682Z","level":"log","message":"📘 Sabda : Kejadian 12 (20 ayat)"}
+{"time":"2026-01-19T20:57:50.743Z","level":"log","message":"📘 Sabda : Kejadian 3 (24 ayat)"}
+{"time":"2026-01-19T20:57:50.802Z","level":"log","message":"📘 Sabda : Kejadian 15 (21 ayat)"}
+{"time":"2026-01-19T20:57:50.875Z","level":"log","message":"📘 Sabda : Kejadian 2 (25 ayat)"}
+{"time":"2026-01-19T20:57:50.926Z","level":"log","message":"📘 Sabda : Kejadian 11 (32 ayat)"}
+{"time":"2026-01-20T08:19:33.704Z","level":"log","message":"============================================================"}
+{"time":"2026-01-20T08:19:33.731Z","level":"log","message":"📖 BIBLE SABDAWEB SCRAPER"}
+{"time":"2026-01-20T08:19:33.732Z","level":"log","message":"============================================================"}
+{"time":"2026-01-20T08:19:33.732Z","level":"log","message":"Mode: 2 (Web → JSON & DB)"}
+{"time":"2026-01-20T08:19:33.733Z","level":"log","message":"Start: kitab 1"}
+{"time":"2026-01-20T08:19:33.734Z","level":"log","message":"Concurrency: 15"}
+{"time":"2026-01-20T08:19:33.735Z","level":"log","message":"Batch mode: false"}
+{"time":"2026-01-20T08:19:33.735Z","level":"log","message":"Resume mode: false"}
+{"time":"2026-01-20T08:19:33.736Z","level":"log","message":"============================================================"}
+{"time":"2026-01-20T08:19:33.737Z","level":"log","message":"\n🚀 Opening database connection..."}
+{"time":"2026-01-20T08:19:33.740Z","level":"log","message":"🗑 Removing old database..."}
+{"time":"2026-01-20T08:19:33.742Z","level":"log","message":"🚀 Opening database: /data/data/com.termux/files/home/bible.js/db/bible.db"}
+{"time":"2026-01-20T08:19:33.850Z","level":"log","message":"✅ Database connection OK"}
+{"time":"2026-01-20T08:19:33.851Z","level":"log","message":"📊 Initializing Bible schema..."}
+{"time":"2026-01-20T08:19:33.861Z","level":"log","message":"✅ Main schema created"}
+{"time":"2026-01-20T08:19:33.865Z","level":"log","message":"✅ FTS5 tables created"}
+{"time":"2026-01-20T08:19:33.868Z","level":"log","message":"✅ Indexes created"}
+{"time":"2026-01-20T08:19:33.871Z","level":"log","message":"✅ Triggers created"}
+{"time":"2026-01-20T08:19:33.878Z","level":"log","message":"📋 Database Objects Created:"}
+{"time":"2026-01-20T08:19:33.880Z","level":"log","message":"  TABLE: 18 items"}
+{"time":"2026-01-20T08:19:33.881Z","level":"log","message":"  TRIGGER: 6 items"}
+{"time":"2026-01-20T08:19:33.882Z","level":"log","message":"    - strong_lexicon_ad"}
+{"time":"2026-01-20T08:19:33.882Z","level":"log","message":"    - strong_lexicon_ai"}
+{"time":"2026-01-20T08:19:33.883Z","level":"log","message":"    - strong_lexicon_au"}
+{"time":"2026-01-20T08:19:33.884Z","level":"log","message":"    - verses_ad"}
+{"time":"2026-01-20T08:19:33.885Z","level":"log","message":"    - verses_ai"}
+{"time":"2026-01-20T08:19:33.886Z","level":"log","message":"    - verses_au"}
+{"time":"2026-01-20T08:19:33.887Z","level":"log","message":""}
+{"time":"2026-01-20T08:19:33.893Z","level":"log","message":"\n📊 Inisialisasi database..."}
+{"time":"2026-01-20T08:19:34.006Z","level":"log","message":"✅ Database initialized"}
+{"time":"2026-01-20T08:19:35.013Z","level":"log","message":"📋 Total kitab yang akan diproses: 1"}
+{"time":"2026-01-20T08:19:35.014Z","level":"log","message":"\n📖 ========================================"}
+{"time":"2026-01-20T08:19:35.015Z","level":"log","message":"📖 Proses kitab 1: Kejadian"}
+{"time":"2026-01-20T08:19:35.016Z","level":"log","message":"📖 ========================================"}
+{"time":"2026-01-20T08:19:35.017Z","level":"log","message":"📖 Memproses kitab 1: Kejadian"}
+{"time":"2026-01-20T08:19:35.018Z","level":"log","message":"📊 Total pasal: 50, Concurrency: 15"}
+{"time":"2026-01-20T08:19:35.019Z","level":"log","message":"📚 Versi: tb, bis, tl, ende, tb_itl_drf, tl_itl_drf, bbe, message, nkjv, net, net2, nwt, tn_he, tn_en"}
+{"time":"2026-01-20T08:19:35.020Z","level":"log","message":"🔄 Mengambil 50 pasal..."}
+{"time":"2026-01-20T08:19:36.844Z","level":"log","message":"📘 Sabda : Kejadian 8 (22 ayat)"}
+{"time":"2026-01-20T08:19:37.021Z","level":"log","message":"📘 Sabda : Kejadian 2 (25 ayat)"}
+{"time":"2026-01-20T08:19:37.141Z","level":"log","message":"📘 Sabda : Kejadian 10 (32 ayat)"}
+{"time":"2026-01-20T08:19:37.238Z","level":"log","message":"📘 Sabda : Kejadian 15 (21 ayat)"}
+{"time":"2026-01-20T08:19:37.358Z","level":"log","message":"📘 Sabda : Kejadian 4 (26 ayat)"}
+{"time":"2026-01-20T08:19:37.452Z","level":"log","message":"📘 Sabda : Kejadian 12 (20 ayat)"}
+{"time":"2026-01-20T08:19:37.522Z","level":"log","message":"📘 Sabda : Kejadian 7 (24 ayat)"}
+{"time":"2026-01-20T08:19:37.632Z","level":"log","message":"📘 Sabda : Kejadian 3 (24 ayat)"}
+{"time":"2026-01-20T08:19:37.726Z","level":"log","message":"📘 Sabda : Kejadian 13 (18 ayat)"}
+{"time":"2026-01-20T08:19:37.809Z","level":"log","message":"📘 Sabda : Kejadian 14 (24 ayat)"}
+{"time":"2026-01-20T08:19:37.914Z","level":"log","message":"📘 Sabda : Kejadian 9 (29 ayat)"}
+{"time":"2026-01-20T08:19:38.010Z","level":"log","message":"📘 Sabda : Kejadian 6 (22 ayat)"}
+{"time":"2026-01-20T08:19:38.080Z","level":"log","message":"📘 Sabda : Kejadian 11 (32 ayat)"}
+{"time":"2026-01-20T08:19:38.184Z","level":"log","message":"📘 Sabda : Kejadian 1 (31 ayat)"}

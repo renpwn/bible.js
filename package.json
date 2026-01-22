@@ -56,15 +56,17 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "@renpwn/simplelog": "^0.0.2",
     "@renpwn/termux-sqlite3": "^1.0.3",
     "axios": "^1.13.2",
     "axios-cookiejar-support": "^6.0.5",
     "cheerio": "^1.1.2",
     "got": "^14.6.6",
     "playwright": "^1.57.0",
+    "simplelog": "^0.0.3",
     "tough-cookie": "^6.0.0"
   },
-  "optionalDependencies": {    
+  "optionalDependencies": {
     "puppeteer": "^24.34.0"
   },
   "files": [

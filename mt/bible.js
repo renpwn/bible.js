@@ -8,12 +8,42 @@ const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+import { simpleLog } from '@renpwn/simplelog'
+import { simpleFetch as fetchUrl } from '@renpwn/simplefetch'
+
+const logger = simpleLog({
+  file: {
+    path: 'logs/app.json',
+    format: 'json'
+  },
+  progress: {
+    slots: [
+      '📖 BOOK',
+      ['🌐 Scraping', "auto"],
+      ['📊 DB Queue', [{color: "magenta"}, {color: "red"}]],
+      '📚 Lexicon'
+    ],
+  theme: {style: {color: "blue"}}
+  },
+  color: true
+})
+
+const logManager = {
+  log: (...args) => logger.log(...args),
+  update: (name, cur, total, text, style) =>
+    logger.update(name, cur, total, text, style),
+  remove: (name) => logger.remove(name),
+  clearProgress: () => logger.clearProgress()
+}
+
+const log = (...args) => logManager.log(...args)
+
 let space = 2;
 
 /* =========================
    LOG MANAGER (DIPERBAIKI)
 ========================= */
-class LogManager {
+class LogManager0 {
   constructor() {
     this.isTTY = process.stdout.isTTY && !process.env.CI;
 
@@ -115,8 +145,8 @@ class LogManager {
 }
 
 // Singleton instance
-const logManager = new LogManager();
-const log = (...args) => {logManager.log(...args);}
+const logManager0 = new LogManager0();
+const log0 = (...args) => {logManager0.log(...args);}
 
 /* =========================
    DAFTAR KITAB ALKITAB
@@ -350,7 +380,7 @@ const Tanakh = [
 /* =========================
    FUNGSI UMUM
 ========================= */
-const fetchUrl = async(url, options = {}, maxRetries = 3) => {
+const fetchUrl0 = async(url, options = {}, maxRetries = 3) => {
   let attempt = 0;
   let isPuppeteerAvailable = true;
 

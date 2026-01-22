@@ -1,0 +1,39 @@
+[2026-01-19T19:10:28.238Z] LOG ============================================================
+[2026-01-19T19:10:28.259Z] LOG 📖 BIBLE SABDAWEB SCRAPER
+[2026-01-19T19:10:28.260Z] LOG ============================================================
+[2026-01-19T19:10:28.260Z] LOG Mode: 3 (Web → JSON)
+[2026-01-19T19:10:28.261Z] LOG Start: kitab 1
+[2026-01-19T19:10:28.262Z] LOG Concurrency: 15
+[2026-01-19T19:10:28.262Z] LOG Batch mode: false
+[2026-01-19T19:10:28.262Z] LOG Resume mode: false
+[2026-01-19T19:10:28.263Z] LOG ============================================================
+[2026-01-19T19:10:28.264Z] LOG 📋 Total kitab yang akan diproses: 1
+[2026-01-19T19:10:28.264Z] LOG 
+📖 ========================================
+[2026-01-19T19:10:28.264Z] LOG 📖 Proses kitab 1: Kejadian
+[2026-01-19T19:10:28.265Z] LOG 📖 ========================================
+[2026-01-19T19:10:28.266Z] LOG 📖 Memproses kitab 1: Kejadian
+[2026-01-19T19:10:28.266Z] LOG 📊 Total pasal: 50, Concurrency: 15
+[2026-01-19T19:10:28.267Z] LOG 📚 Versi: tb, bis, tl, ende, tb_itl_drf, tl_itl_drf, bbe, message, nkjv, net, net2, nwt, tn_he, tn_en
+[2026-01-19T19:10:28.268Z] LOG 🔄 Mengambil 50 pasal...
+[2026-01-19T19:10:29.281Z] LOG 📘 Sabda : Kejadian 4 (26 ayat)
+[2026-01-19T19:10:29.397Z] LOG 📘 Sabda : Kejadian 3 (24 ayat)
+[2026-01-19T19:10:29.485Z] LOG 📘 Sabda : Kejadian 2 (25 ayat)
+[2026-01-19T19:10:29.561Z] LOG 📘 Sabda : Kejadian 15 (21 ayat)
+[2026-01-19T19:10:29.631Z] LOG 📘 Sabda : Kejadian 13 (18 ayat)
+[2026-01-19T19:10:29.694Z] LOG 📘 Sabda : Kejadian 5 (32 ayat)
+[2026-01-19T19:10:29.762Z] LOG 📘 Sabda : Kejadian 7 (24 ayat)
+[2026-01-19T19:10:29.833Z] LOG 📘 Sabda : Kejadian 9 (29 ayat)
+[2026-01-19T19:10:29.887Z] LOG 📘 Sabda : Kejadian 11 (32 ayat)
+[2026-01-19T19:10:29.961Z] LOG 📘 Sabda : Kejadian 6 (22 ayat)
+[2026-01-19T19:10:30.022Z] LOG 📘 Sabda : Kejadian 8 (22 ayat)
+[2026-01-19T19:10:30.105Z] LOG 📘 Sabda : Kejadian 10 (32 ayat)
+[2026-01-19T19:10:30.156Z] LOG 📘 Sabda : Kejadian 12 (20 ayat)
+[2026-01-19T19:10:30.230Z] LOG 📘 Sabda : Kejadian 1 (31 ayat)
+[2026-01-19T19:10:30.292Z] LOG 📘 Sabda : Kejadian 14 (24 ayat)
+[2026-01-19T19:10:38.435Z] LOG 📗 JW    : Kejadian 15 (21 ayat)
+[2026-01-19T19:10:38.462Z] LOG 📗 JW    : Kejadian 8 (22 ayat)
+[2026-01-19T19:10:38.518Z] LOG 📗 JW    : Kejadian 2 (25 ayat)
+[2026-01-19T19:10:38.548Z] LOG 📗 JW    : Kejadian 3 (24 ayat)
+[2026-01-19T19:10:38.572Z] LOG 📗 JW    : Kejadian 6 (22 ayat)
+[2026-01-19T19:10:38.604Z] LOG 📗 JW    : Kejadian 1 (31 ayat)
