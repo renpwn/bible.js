@@ -8,8 +8,68 @@ const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-import { simpleLog } from '@renpwn/simplelog'
-import { simpleFetch as fetchUrl } from '@renpwn/simplefetch'
+import { simpleLog } from '@renpwn/simpleLog'
+import { simpleFetch } from '@renpwn/simplefetch'
+
+const sourceRules = [
+  {
+    source: "sabda",
+    match: (url) => url.includes("sabda.org")
+  },
+  {
+    source: "jw",
+    match: (url) => url.includes("jw.org")
+  },
+  {
+    source: "chabad",
+    match: (url) => url.includes("chabad.org")
+  }
+]
+
+const detectSource = (url) => {
+  for (const rule of sourceRules) {
+    if (rule.match(url)) {
+      return rule.source
+    }
+  }
+  return null
+}
+
+const sources = {
+  sabda: {
+    engine: "native",
+  },
+  jw: {
+    engine: "axios-cookie",
+    maxRedirects: 10,
+    timeout: 20000,
+  },
+  chabad: {
+    engine: "native",
+    retries: 1,
+    maxRedirects: 10,
+    timeout: 20000
+  }
+}
+
+const fetchUrl = async(url, options = {}) => {
+  const source = detectSource(url)
+
+  const baseConfig = source ? sources[source] : {}
+
+  return await simpleFetch(url, {
+    ...baseConfig,
+    ...options,
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0",
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Cache-Control": "no-cache",
+      Pragma: "no-cache",            
+      ...(options?.headers || {})
+    },
+  })
+}
 
 const logger = simpleLog({
   file: {
@@ -20,7 +80,7 @@ const logger = simpleLog({
     slots: [
       '📖 BOOK',
       ['🌐 Scraping', "auto"],
-      ['📊 DB Queue', [{color: "magenta"}, {color: "red"}]],
+      ['📊 DB Queue', [{color: [255, 255, 0]}, {color: "red"}]],
       '📚 Lexicon'
     ],
   theme: {style: {color: "blue"}}
@@ -39,114 +99,6 @@ const logManager = {
 const log = (...args) => logManager.log(...args)
 
 let space = 2;
-
-/* =========================
-   LOG MANAGER (DIPERBAIKI)
-========================= */
-class LogManager0 {
-  constructor() {
-    this.isTTY = process.stdout.isTTY && !process.env.CI;
-
-    this.progressSlots = [
-      "📖 BOOK",
-      "🌐 Scraping",
-      "📊 DB Queue",
-      "📚 Lexicon"
-    ];
-
-    this.bars = new Map();
-    this.lastProgressLines = 0;
-  }
-
-  /* ================= LOG BIASA ================= */
-
-  log(...args) {
-    // sebelum log → hapus progress
-    this.clearProgress();
-
-    // log normal (tanpa newline ganda)
-    process.stdout.write(args.join(" ") + "\n");
-
-    // setelah log → tulis ulang progress
-    this.renderProgress();
-  }
-
-  /* ================= PROGRESS ================= */
-
-  update(name, current, total, text = "") {
-    this.bars.set(name, { current, total: total < current ? current : total, text });
-    this.renderProgress();
-  }
-  
-  remove(name) {
-    this.bars.delete(name);
-    this.renderProgress();
-  }
-
-  renderProgress() {
-    if (!this.isTTY) return;
-
-    // hapus progress lama
-    this.clearProgress();
-    console.log(''); // line kosong sebelum progress
-    // render progress baru pakai console.log
-    this.progressSlots.forEach((name) => {
-      const bar = this.bars.get(name);
-
-      let line;
-      if (!bar) {
-        line = `${name} [░░░░░░░░░░░░░░░░░░] (0/0) 0%`;
-      } else {
-        const percent = bar.total
-          ? Math.floor((bar.current / bar.total) * 100)
-          : 0;
-
-        //bar 20 karakter & percentase 100 / 5 = 20
-        //filled tidak boleh lebih dari 20
-        const BAR_SIZE = 20
-        const safeFilled = Math.min(
-          BAR_SIZE,
-          Math.max(0, Math.floor(percent/5))
-        )
-
-        line =
-          `${name} [` +
-          "█".repeat(safeFilled) +
-          "░".repeat(BAR_SIZE - safeFilled) +
-          `] (${bar.current}/${bar.total}) ${percent}% ${bar.text || ""}`
-
-      }
-
-      console.log(line);
-    });
-
-    this.lastProgressLines = this.progressSlots.length + 1;
-  }
-
-  /* ================= CLEAR ================= */
-
-  clearProgress() {
-    if (!this.isTTY || this.lastProgressLines === 0) return;
-
-    // naik ke atas sebanyak jumlah progress
-    process.stdout.write(`\x1b[${this.lastProgressLines}A`);
-
-    // clear baris progress
-    for (let i = 0; i < this.lastProgressLines; i++) {
-      process.stdout.write("\x1b[2K"); // clear line
-      process.stdout.write("\x1b[1B"); // turun
-    }
-
-    // balik ke posisi awal
-    process.stdout.write(`\x1b[${this.lastProgressLines}A`);
-
-    this.lastProgressLines = 0;
-  }
-}
-
-// Singleton instance
-const logManager0 = new LogManager0();
-const log0 = (...args) => {logManager0.log(...args);}
 
 /* =========================
    DAFTAR KITAB ALKITAB
