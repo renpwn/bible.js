@@ -173,6 +173,70 @@ const BibleBooks = [
   ["Wahyu", 22, 405, 48]
 ]
 
+const B = BibleBooks;
+/* =========================
+    DAFTAR KITAB TANAKH
+========================= */
+const Tanakh = [
+  {
+    id: "torah",
+    name: "Torah",
+    books: [
+      { he: "Bereshit", en: "Genesis",      id: B[0][0],  aid: 8165 },
+      { he: "Shemot", en: "Exodus",         id: B[1][0],  aid: 9862 },
+      { he: "Vayikra", en: "Leviticus",     id: B[2][0],  aid: 9902 },
+      { he: "Bamidbar", en: "Numbers",      id: B[3][0],  aid: 9929 },
+      { he: "Devarim", en: "Deuteronomy",   id: B[4][0],  aid: 9965 }
+    ]
+  },
+  {
+    id: "neviim",
+    name: "Nevi'im",
+    books: [
+      { he: "Yehoshua", en: "Joshua",       id: B[5][0],  aid: 15785 },
+      { he: "Shoftim", en: "Judges",        id: B[6][0],  aid: 15809 },
+      { he: "Shmuel I", en: "I Samuel",     id: B[8][0],  aid: 15830 },
+      { he: "Shmuel II", en: "II Samuel",   id: B[9][0],  aid: 15861 },
+      { he: "Melachim I", en: "I Kings",    id: B[10][0], aid: 15885 },
+      { he: "Melachim II", en: "II Kings",  id: B[11][0], aid: 15907 },
+      { he: "Yeshayahu", en: "Isaiah",      id: B[22][0], aid: 15932 },
+      { he: "Yirmiyahu", en: "Jeremiah",    id: B[23][0], aid: 15998 },
+      { he: "Yechezkel", en: "Ezekiel",     id: B[25][0], aid: 16099 },
+      { he: "Hoshea", en: "Hosea",          id: B[27][0], aid: 16155 },
+      { he: "Yoel", en: "Joel",             id: B[28][0], aid: 16169 },
+      { he: "Amos", en: "Amos",             id: B[29][0], aid: 16173 },
+      { he: "Ovadiah", en: "Obadiah",       id: B[30][0], aid: 16182 },
+      { he: "Yonah", en: "Jonah",           id: B[31][0], aid: 16183 },
+      { he: "Michah", en: "Micah",          id: B[32][0], aid: 16187 },
+      { he: "Nachum", en: "Nahum",          id: B[33][0], aid: 16194 },
+      { he: "Chavakuk", en: "Habakkuk",     id: B[34][0], aid: 16197 },
+      { he: "Tzefaniah", en: "Zephaniah",   id: B[35][0], aid: 16200 },
+      { he: "Chaggai", en: "Haggai",        id: B[36][0], aid: 16203 },
+      { he: "Zechariah", en: "Zechariah",   id: B[37][0], aid: 16205 },
+      { he: "Malachi", en: "Malachi",       id: B[38][0], aid: 16219 }
+    ]
+  },
+  {
+    id: "ketuvim",
+    name: "Ketuvim",
+    books: [
+      { he: "Tehillim", en: "Psalms",               id: B[18][0], aid: 16222 },
+      { he: "Mishlei", en: "Proverbs",              id: B[19][0], aid: 16372 },
+      { he: "Iyov", en: "Job",                      id: B[17][0], aid: 16403 },
+      { he: "Shir Hashirim", en: "Song of Songs",   id: B[21][0], aid: 16445 },
+      { he: "Rut", en: "Ruth",                      id: B[7][0],  aid: 16453 },
+      { he: "Eichah", en: "Lamentations",           id: B[24][0], aid: 16457 },
+      { he: "Kohelet", en: "Ecclesiastes",          id: B[20][0], aid: 16462 },
+      { he: "Esther", en: "Esther",                 id: B[16][0], aid: 16474 },
+      { he: "Daniel", en: "Daniel",                 id: B[26][0], aid: 16484 },
+      { he: "Ezra", en: "Ezra",                     id: B[14][0], aid: 16498 },
+      { he: "Nechemiah", en: "Nehemiah",            id: B[15][0], aid: 16508 },
+      { he: "Divrei Hayamim I", en: "Chronicles I", id: B[12][0], aid: 16521 },
+      { he: "Divrei Hayamim II", en: "Chronicles II", id: B[13][0], aid: 16550 }
+    ]
+  }
+];
+
 /* =========================
    VERSI ALKITAB YANG AKAN DIAMBIL
 ========================= */
@@ -265,69 +329,6 @@ const BibleVersions = [{
     category: 'core'
   }
 ]
-
-/* =========================
-    DAFTAR KITAB TANAKH
-========================= */
-const Tanakh = [
-  {
-    "id": "torah",
-    "name": "Torah",
-    "books": [
-      { "he": "Bereshit", "en": "Genesis", "id": "Kejadian", "aid": 8165 },
-      { "he": "Shemot", "en": "Exodus", "id": "Keluaran", "aid": 9862 },
-      { "he": "Vayikra", "en": "Leviticus", "id": "Imamat", "aid": 9902 },
-      { "he": "Bamidbar", "en": "Numbers", "id": "Bilangan", "aid": 9929 },
-      { "he": "Devarim", "en": "Deuteronomy", "id": "Ulangan", "aid": 9965 }
-    ]
-  },
-  {
-    "id": "neviim",
-    "name": "Nevi'im",
-    "books": [
-      { "he": "Yehoshua", "en": "Joshua", "id": "Yosua", "aid": 15785 },
-      { "he": "Shoftim", "en": "Judges", "id": "Hakim-hakim", "aid": 15809 },
-      { "he": "Shmuel I", "en": "I Samuel", "id": "1 Samuel", "aid": 15830 },
-      { "he": "Shmuel II", "en": "II Samuel", "id": "2 Samuel", "aid": 15861 },
-      { "he": "Melachim I", "en": "I Kings", "id": "1 Raja-raja", "aid": 15885 },
-      { "he": "Melachim II", "en": "II Kings", "id": "2 Raja-raja", "aid": 15907 },
-      { "he": "Yeshayahu", "en": "Isaiah", "id": "Yesaya", "aid": 15932 },
-      { "he": "Yirmiyahu", "en": "Jeremiah", "id": "Yeremia", "aid": 15998 },
-      { "he": "Yechezkel", "en": "Ezekiel", "id": "Yehezkiel", "aid": 16099 },
-      { "he": "Hoshea", "en": "Hosea", "id": "Hosea", "aid": 16155 },
-      { "he": "Yoel", "en": "Joel", "id": "Yoel", "aid": 16169 },
-      { "he": "Amos", "en": "Amos", "id": "Amos", "aid": 16173 },
-      { "he": "Ovadiah", "en": "Obadiah", "id": "Obaja", "aid": 16182 },
-      { "he": "Yonah", "en": "Jonah", "id": "Yunus", "aid": 16183 },
-      { "he": "Michah", "en": "Micah", "id": "Mikha", "aid": 16187 },
-      { "he": "Nachum", "en": "Nahum", "id": "Nahum", "aid": 16194 },
-      { "he": "Chavakuk", "en": "Habakkuk", "id": "Habakuk", "aid": 16197 },
-      { "he": "Tzefaniah", "en": "Zephaniah", "id": "Zefanya", "aid": 16200 },
-      { "he": "Chaggai", "en": "Haggai", "id": "Hagai", "aid": 16203 },
-      { "he": "Zechariah", "en": "Zechariah", "id": "Zakharia", "aid": 16205 },
-      { "he": "Malachi", "en": "Malachi", "id": "Maleakhi", "aid": 16219 }
-    ]
-  },
-  {
-    "id": "ketuvim",
-    "name": "Ketuvim",
-    "books": [
-      { "he": "Tehillim", "en": "Psalms", "id": "Mazmur", "aid": 16222 },
-      { "he": "Mishlei", "en": "Proverbs", "id": "Amsal", "aid": 16372 },
-      { "he": "Iyov", "en": "Job", "id": "Ayub", "aid": 16403 },
-      { "he": "Shir Hashirim", "en": "Song of Songs", "id": "Kidung Agung", "aid": 16445 },
-      { "he": "Rut", "en": "Ruth", "id": "Rut", "aid": 16453 },
-      { "he": "Eichah", "en": "Lamentations", "id": "Ratapan", "aid": 16457 },
-      { "he": "Kohelet", "en": "Ecclesiastes", "id": "Pengkhotbah", "aid": 16462 },
-      { "he": "Esther", "en": "Esther", "id": "Ester", "aid": 16474 },
-      { "he": "Daniel", "en": "Daniel", "id": "Daniel", "aid": 16484 },
-      { "he": "Ezra", "en": "Ezra", "id": "Ezra", "aid": 16498 },
-      { "he": "Nechemiah", "en": "Nehemiah", "id": "Nehemia", "aid": 16508 },
-      { "he": "Divrei Hayamim I", "en": "Chronicles I", "id": "1 Tawarikh", "aid": 16521 },
-      { "he": "Divrei Hayamim II", "en": "Chronicles II", "id": "2 Tawarikh", "aid": 16550 }
-    ]
-  }
-];
 
 /* =========================
    FUNGSI UMUM
@@ -445,6 +446,7 @@ function parseArgs() {
     concurrency: 3,
     batch: false,
     resume: false,
+    fresh: false,
     versions: [] // filter versi tertentu
   }
 
@@ -464,12 +466,14 @@ function parseArgs() {
       options.batch = true
     } else if (arg === "--resume" || arg === "-r") {
       options.resume = true
+    } else if (arg === "--fresh") {
+      options.fresh = true
     } else if (arg === "--versions" || arg === "-v") {
       options.versions = args[++i].split(',')
     } else if (arg === "--help" || arg === "-h") {
       showHelp()
       process.exit(0)
-    }else if (arg === "-space" || arg === "-min") {
+    } else if (arg === "-space" || arg === "-min") {
       space = parseInt(args[++i]) ?? 2
     }
   }
@@ -1819,7 +1823,7 @@ async function main() {
   // Buka koneksi database untuk mode 1, 2 & 4
   if (options.mode !== 3) {
     log("\n🚀 Opening database connection...");
-    db = await openDB(DB_PATH, log);
+    db = await openDB(DB_PATH, log, { fresh: options.fresh });
     dbQueue = new DatabaseQueue(db, 1);
 
     await initializeDatabase();

@@ -42,12 +42,12 @@
   },
   "scripts": {
     "start": "node index.js",
-    "scrape:all": "node mt/bible.js -m 1 -b -c 5",
-    "scrape:surah": "node mt/bible.js -m 1 -S",
-    "migrate:json": "node mt/bible.js -m 3 -b",
+    "download:db": "node mt/download.js",
+    "compress:db": "node -e \"import('fs').then(fs => import('zlib').then(z => fs.createReadStream('db/bible.db').pipe(z.createGzip({ level: 9 })).pipe(fs.createWriteStream('db/bible.db.gz'))))\"",
+    "scrape:all": "node mt/bible.js -m 1 -B -c 5",
+    "migrate:json": "node mt/bible.js -m 4 -B",
     "test": "node examples/test_lib.js",
-    "init-db": "node mt/db.js",
-    "rebuild-fts": "node -e \"import('./index.js').then(m => m.default('', {rebuildFTS: true}))\""
+    "init-db": "node mt/db.js"
   },
   "bin": {
     "bible-scrape": "./mt/bible.js"

@@ -9,7 +9,7 @@ const dLog = (...args) => {
   console.log(...args);
 }
 
-export async function openDB(dbFile = DEFAULT_DB, log = dLog) {
+export async function openDB(dbFile = DEFAULT_DB, log = dLog, options = {}) {
   const __filename = fileURLToPath(import.meta.url)
   const __dirname = path.dirname(__filename)
 
@@ -22,10 +22,12 @@ export async function openDB(dbFile = DEFAULT_DB, log = dLog) {
     fs.mkdirSync(dbDir, { recursive: true })
     log('📁 Created DB directory:', dbDir)
   }
-    if (fs.existsSync(dbPath)) {
-      log('🗑 Removing old database...')
-      fs.unlinkSync(dbPath)
-    }
+
+  // Hanya hapus database jika opsi fresh === true
+  if (options.fresh && fs.existsSync(dbPath)) {
+    log('🗑 Removing old database (--fresh)...')
+    fs.unlinkSync(dbPath)
+  }
 
   log('🚀 Opening database:', dbPath)
 
