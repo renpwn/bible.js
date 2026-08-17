@@ -1,4 +1,6 @@
-import Database from '@renpwn/termux-sqlite3'
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const Database = require('@renpwn/termux-sqlite3');
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'

@@ -8,8 +8,15 @@ const sleep = async (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-import { simpleLog } from '@renpwn/simpleLog'
-import { simpleFetch } from '@renpwn/simplefetch'
+import { simpleLog } from '@renpwn/simplelog'
+
+let simpleFetch = null;
+try {
+  const mod = await import('@renpwn/simplefetch');
+  simpleFetch = mod.simpleFetch || mod.default;
+} catch (_) {
+  // Fallback to fetchUrl0 below if simpleFetch is not available
+}
 
 const sourceRules = [
   {
@@ -53,22 +60,23 @@ const sources = {
 }
 
 const fetchUrl = async(url, options = {}) => {
-  const source = detectSource(url)
-
-  const baseConfig = source ? sources[source] : {}
-
-  return await simpleFetch(url, {
-    ...baseConfig,
-    ...options,
-    headers: {
-      "User-Agent": "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0",
-      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-      "Accept-Language": "en-US,en;q=0.9",
-      "Cache-Control": "no-cache",
-      Pragma: "no-cache",            
-      ...(options?.headers || {})
-    },
-  })
+  if (simpleFetch) {
+    const source = detectSource(url)
+    const baseConfig = source ? sources[source] : {}
+    return await simpleFetch(url, {
+      ...baseConfig,
+      ...options,
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0",
+        Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Cache-Control": "no-cache",
+        Pragma: "no-cache",            
+        ...(options?.headers || {})
+      },
+    });
+  }
+  return await fetchUrl0(url, options);
 }
 
 const logger = simpleLog({
@@ -82,17 +90,16 @@ const logger = simpleLog({
       ['🌐 Scraping', "auto"],
       ['📊 DB Queue', [{color: [255, 255, 0]}, {color: "red"}]],
       '📚 Lexicon'
-    ],
-  theme: {style: {color: "blue"}}
+    ]
   },
   color: true
 })
 
 const logManager = {
   log: (...args) => logger.log(...args),
-  update: (name, cur, total, text, style) =>
-    logger.update(name, cur, total, text, style),
-  remove: (name) => logger.remove(name),
+  update: (name, cur, total, text) =>
+    logger.updateProgress(name, cur, total, text),
+  remove: (name) => logger.removeProgress(name),
   clearProgress: () => logger.clearProgress()
 }
 
@@ -939,8 +946,18 @@ async function fetchJWData(bookId, chapter){
 }
 
 /* =========================
-   FETCH CHABAD DATA
+   FETCH TANAKH DATA (SEFARIA + RASHI)
 ========================= */
+const SEFARIA_NAME_MAP = {
+  "Shmuel I": "I Samuel",
+  "Shmuel II": "II Samuel",
+  "Melachim I": "I Kings",
+  "Melachim II": "II Kings",
+  "Divrei Hayamim I": "I Chronicles",
+  "Divrei Hayamim II": "II Chronicles",
+  "Chronicles I": "I Chronicles",
+  "Chronicles II": "II Chronicles"
+};
 
 async function fetchChabadData(bookId, chapter) {
   // Cari book info dari struktur Tanakh
@@ -951,16 +968,67 @@ async function fetchChabadData(bookId, chapter) {
   }
   
   const { aid, he, en } = tanakhBook;
+  const sefariaBook = SEFARIA_NAME_MAP[en] || en;
   
   try {
-    // Bangun URL Chabad
-    const url = buildChabadUrl(aid+(chapter - 1));
-    
-    const html = await fetchUrl(url, {headers: {Referer: "https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm"}});
-    
-    return await parseChabadHTML(html, bookId, chapter, aid);
+    // 1. Ambil teks Tanakh (Hebrew + English JPS) dari Sefaria API
+    const tanakhUrl = `https://www.sefaria.org/api/texts/${encodeURIComponent(sefariaBook)}.${chapter}?context=0`;
+    const tanakhRes = await fetch(tanakhUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+    if (!tanakhRes.ok) {
+      throw new Error(`Sefaria HTTP ${tanakhRes.status}`);
+    }
+    const tanakhData = await tanakhRes.json();
+
+    // 2. Ambil komentar Rabbi Rashi untuk pasal ini
+    let rashiData = null;
+    try {
+      const rashiUrl = `https://www.sefaria.org/api/texts/Rashi_on_${encodeURIComponent(sefariaBook)}.${chapter}?context=0`;
+      const rashiRes = await fetch(rashiUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+      if (rashiRes.ok) {
+        rashiData = await rashiRes.json();
+      }
+    } catch (_) {}
+
+    const stripTags = (str) => typeof str === 'string' ? str.replace(/<[^>]*>/g, '').replace(/[\s\u200B]+/g, ' ').trim() : '';
+
+    const verses = (tanakhData.he || []).map((hebRaw, idx) => {
+      const verseNum = idx + 1;
+      const engRaw = tanakhData.text?.[idx] || '';
+
+      const rashiHeb = rashiData?.he?.[idx] || [];
+      const rashiEng = rashiData?.text?.[idx] || [];
+
+      const hebArr = Array.isArray(rashiHeb) ? rashiHeb : (rashiHeb ? [rashiHeb] : []);
+      const engArr = Array.isArray(rashiEng) ? rashiEng : (rashiEng ? [rashiEng] : []);
+
+      const maxComments = Math.max(hebArr.length, engArr.length);
+      const rashiList = [];
+      for (let c = 0; c < maxComments; c++) {
+        const h = hebArr[c] ? stripTags(hebArr[c]) : '';
+        const e = engArr[c] ? stripTags(engArr[c]) : '';
+        if (h || e) {
+          rashiList.push({ heb: h, eng: e });
+        }
+      }
+
+      return {
+        verse: verseNum,
+        tn_he: stripTags(hebRaw),
+        tn_en: stripTags(engRaw),
+        rashi: rashiList
+      };
+    });
+
+    return {
+      bookId,
+      chapter,
+      aid: aid || 0,
+      nextAid: null,
+      verses,
+      totalVerses: verses.length
+    };
   } catch (error) {
-    log(error);
+    log(`⚠️ Error Tanakh ${bookId}:${chapter}:`, error.message);
     throw error;
   }
 }
@@ -988,64 +1056,6 @@ function findTanakhBook(bookId) {
   }
   
   return null;
-}
-
-/* =========================
-   PARSE CHABAD HTML
-========================= */
-
-async function parseChabadHTML(html, bookId, chapter, aid) {
-  const $ = cheerio.load(html);
-  const verses = [];
-  
-  const getRashi = (root) => {
-    const title = root.find("span.co_RashiTitle").text().trim()
-    const text  = root.find("span.co_RashiText").text()
-    return `*${title}* ${text}`
- }
-  
-  // Ekstrak teks Ibrani dan Inggris dari tabel Chabad
-  $('.Co_TanachTable tr').each((index, row) => {
-    if ($(row).hasClass("Co_Verse")) {
-      const cells = $(row).find('td');
-      
-      // Kolom 0: Inggris, Kolom 2: Ibrani
-      const englishCell = $(cells[0]);
-      const hebrewCell = $(cells[2]);
-      
-      // Ekstrak nomor ayat
-      const verseNumElement = englishCell.find('a.co_VerseNum');
-      const verseNum = parseInt(verseNumElement.attr('id')?.replace('v', '') || verseNumElement.text()) || (index + 1);
-      
-      // Ekstrak teks
-      const englishText = englishCell.find('.co_VerseText').text().trim();
-      const hebrewText = hebrewCell.find('.co_VerseText').text().trim();
-      
-      verses.push({
-        verse: verseNum,
-        tn_he: hebrewText,
-        tn_en: englishText,
-        rashi: []
-      });
-    }else if($(row).hasClass("Co_Rashi")){
-      const eng = getRashi($(row).find("td:first-child > span"))
-      const heb = getRashi($(row).find("td.hebrew > span"))
-      
-      verses.at(-1).rashi.push({ heb, eng })
-    }
-  });
-  
-  // Ekstrak next aid untuk navigasi
-  const nextAid = $('a.next_article').attr('href')?.match(/\/aid\/(\d+)/)?.[1] * 1 || null
-  
-  return {
-    bookId,
-    chapter,
-    aid,
-    nextAid,
-    verses,
-    totalVerses: verses.length
-  };
 }
 
 /* =========================
