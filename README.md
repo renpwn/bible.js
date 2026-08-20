@@ -630,7 +630,9 @@ CREATE VIRTUAL TABLE strong_lexicon_fts USING fts5(
 **Keterangan kolom:**
 - **Strong's / Lexicon** — Versi interlinear menyisipkan tag nomor Strong (`<07225>`) langsung di teks. Lookup otomatis ke tabel `strong_lexicon`. Untuk versi non-interlinear, lexicon tetap muncul saat ada versi interlinear di database untuk kitab yang sama.
 - **Study Notes** — Catatan studi akademis & eksegesis dari NET Bible per ayat, muncul dengan modifier `+` (contoh: `Yoh 3:16 tb+`). Tersedia untuk 66 kitab.
-  - `(tn)` : **Translator's Note** — Catatan penerjemah tentang aspek tata bahasa (linguistik/gramatikal), nuansa kata Ibrani/Yunani, alasan pemilihan kata, dan alternatif terjemahan.
+  - `(tn)` : **Translator's Note** — Catatan penerjemah tentang aspek tata bahasa (linguistik/gramatikal), alasan pemilihan kata, dan alternatif terjemahan secara umum.
+  - `(tn, Heb)` : **Translator's Note (Hebrew)** — Catatan penerjemah khusus untuk teks asli bahasa **Ibrani** pada Perjanjian Lama (menjelaskan struktur kata, idiom, dan tata bahasa Ibrani).
+  - `(tn, Grk)` : **Translator's Note (Greek)** — Catatan penerjemah khusus untuk teks asli bahasa **Yunani** pada Perjanjian Baru.
   - `(sn)` : **Study Note** — Catatan studi tentang latar belakang sejarah, budaya, konteks teologis, penjelasan doktrin, dan relevansi makna ayat.
   - `(tc)` : **Textual Criticism** — Catatan kritik tekstual mengenai variasi manuskrip kuno (Masoretic Text [MT], Septuaginta [LXX], Naskah Laut Mati [DSS], Peshitta, dll) dan pertimbangan bacaan teks asli.
   - `(map)` : **Map Reference** — Referensi lokasi geografis dan peta Alkitab terkait (misal: `Map5-B1`).
