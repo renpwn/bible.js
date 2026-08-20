@@ -205,10 +205,10 @@ node index "tanakh+"
 node index "random 3 tn+"
 node index "random 5 jb+"
 
-# Acak Alkitab + Study Notes & Leksikon Strong's
-node index "bible+"
-node index "alkitab+"
-node index "random 3 bible+"
+# Acak Alkitab + Study Notes & Leksikon Strong's (pakai versi acak TB / TB_ITL_DRF+)
+node index "bible"
+node index "alkitab"
+node index "random 3 bible"
 
 # Mengambil ayat spesifik dengan versi Alkitab / Tanakh / All
 node index "Yoh 1:5 all"
@@ -605,22 +605,46 @@ CREATE VIRTUAL TABLE strong_lexicon_fts USING fts5(
 
 ## 🔧 Versi Alkitab yang Tersedia
 
-| Kode | Nama Lengkap | Bahasa | Kategori | Strong's |
-|------|-------------|--------|----------|----------|
-| `tb` | Alkitab Terjemahan Baru - LAI | 🇮🇩 Indonesia | Core | ❌ |
-| `bis` | Alkitab Kabar Baik (BIS-LAI) | 🇮🇩 Indonesia | Core | ❌ |
-| `tl` | Alkitab Terjemahan Lama | 🇮🇩 Indonesia | Global | ❌ |
-| `ende` | Alkitab Ende | 🇮🇩 Indonesia | Global | ❌ |
-| `nwt` | Terjemahan Dunia Baru | 🇮🇩 Indonesia | Core | ❌ |
-| `tb_itl_drf` | TB Interlinear *(draft)* | 🇮🇩 Indonesia | Advance | ✅ |
-| `tl_itl_drf` | TL Interlinear *(draft)* | 🇮🇩 Indonesia | Advance | ✅ |
-| `bbe` | Bible in Basic English | 🇬🇧 Inggris | Global | ❌ |
-| `message` | The Message Bible | 🇬🇧 Inggris | Global | ❌ |
-| `nkjv` | New King James Version | 🇬🇧 Inggris | Global | ❌ |
-| `net` | NET Bible *(draft)* | 🇬🇧 Inggris | Advance | ✅ |
-| `net2` | NET Bible Lab *(draft)* | 🇬🇧 Inggris | Advance | ✅ |
-| `tn_he` | Tanakh Hebrew | 🇮🇱 Ibrani | Core | ❌ |
-| `tn_en` | Tanakh English (Jewish JPS) | 🇬🇧 Inggris | Core | ❌ |
+> **Strong's Concordance = Leksikon Ibrani/Yunani** — sistem yang sama, beda nama. Nomor `H` (Ibrani/OT) dan `G` (Yunani/NT) tertanam di versi interlinear, lalu di-lookup ke tabel leksikon internal (8.570 entri H + 5.383 entri G).
+>
+> **Study Notes** = Catatan studi akademis dari NET Bible, tersedia untuk seluruh 66 kitab (OT + NT) melalui modifier `+`.
+
+| Kode | Nama Lengkap | Bahasa | Kategori | Strong's/Lexicon | Study Notes |
+|------|-------------|--------|----------|------------------|-------------|
+| `tb` | Alkitab Terjemahan Baru - LAI | 🇮🇩 Indonesia | Core | ❌ | ✅ *(via `+`)* |
+| `bis` | Alkitab Kabar Baik (BIS-LAI) | 🇮🇩 Indonesia | Core | ❌ | ✅ *(via `+`)* |
+| `tl` | Alkitab Terjemahan Lama | 🇮🇩 Indonesia | Global | ❌ | ✅ *(via `+`)* |
+| `ende` | Alkitab Ende | 🇮🇩 Indonesia | Global | ❌ | ✅ *(via `+`)* |
+| `nwt` | Terjemahan Dunia Baru | 🇮🇩 Indonesia | Core | ❌ | ✅ *(via `+`)* |
+| `tb_itl_drf` | TB Interlinear *(draft)* | 🇮🇩 Indonesia | Advance | ✅ H+G (66 kitab) | ✅ *(via `+`)* |
+| `tl_itl_drf` | TL Interlinear *(draft)* | 🇮🇩 Indonesia | Advance | ✅ H+G (66 kitab) | ✅ *(via `+`)* |
+| `bbe` | Bible in Basic English | 🇬🇧 Inggris | Global | ❌ | ✅ *(via `+`)* |
+| `message` | The Message Bible | 🇬🇧 Inggris | Global | ❌ | ✅ *(via `+`)* |
+| `nkjv` | New King James Version | 🇬🇧 Inggris | Global | ❌ | ✅ *(via `+`)* |
+| `net` | NET Bible *(draft)* | 🇬🇧 Inggris | Advance | ✅ H+G (66 kitab) | ✅ *(via `+`)* |
+| `net2` | NET Bible Lab *(draft)* | 🇬🇧 Inggris | Advance | ✅ H+G (66 kitab) | ✅ *(via `+`)* |
+| `tn` / `jb` | Tanakh / Jewish Bible *(paket)* | 🇮🇱+🇬🇧 | Core | ❌ | ✅ Rashi *(via `+`)* |
+| `tn_he` | Tanakh Hebrew | 🇮🇱 Ibrani | Core | ❌ | ✅ Rashi *(via `+`)* |
+| `tn_en` | Tanakh English (Jewish JPS) | 🇬🇧 Inggris | Core | ❌ | ✅ Rashi *(via `+`)* |
+
+**Keterangan kolom:**
+- **Strong's / Lexicon** — Versi interlinear menyisipkan tag nomor Strong (`<07225>`) langsung di teks. Lookup otomatis ke tabel `strong_lexicon`. Untuk versi non-interlinear, lexicon tetap muncul saat ada versi interlinear di database untuk kitab yang sama.
+- **Study Notes** — Catatan studi akademis & eksegesis dari NET Bible per ayat, muncul dengan modifier `+` (contoh: `Yoh 3:16 tb+`). Tersedia untuk 66 kitab.
+  - `(tn)` : **Translator's Note** — Catatan penerjemah tentang aspek tata bahasa (linguistik/gramatikal), nuansa kata Ibrani/Yunani, alasan pemilihan kata, dan alternatif terjemahan.
+  - `(sn)` : **Study Note** — Catatan studi tentang latar belakang sejarah, budaya, konteks teologis, penjelasan doktrin, dan relevansi makna ayat.
+  - `(tc)` : **Textual Criticism** — Catatan kritik tekstual mengenai variasi manuskrip kuno (Masoretic Text [MT], Septuaginta [LXX], Naskah Laut Mati [DSS], Peshitta, dll) dan pertimbangan bacaan teks asli.
+  - `(map)` : **Map Reference** — Referensi lokasi geografis dan peta Alkitab terkait (misal: `Map5-B1`).
+- **Rashi** — Komentar klasik Rabbi Rashi (abad ke-11 M), khusus untuk 39 kitab Tanakh/OT, aktif dengan `tn+` / `jb+`.
+
+**Alias versi yang didukung:**
+| Alias | Diarahkan ke | Keterangan |
+|-------|-------------|------------|
+| `kjv` | `nkjv` | King James Version → NKJV |
+| `msg` | `message` | Singkatan The Message |
+| `tn` / `jb` / `tanakh` / `jewish` | paket Tanakh | Mengembalikan `tn_he` + `tn_en` dalam 1 respon |
+| `he` / `hebrew` / `ibrani` | `tn_he` | Teks Ibrani Tanakh saja |
+| `jps` | `tn_en` | Jewish Publication Society (Inggris) |
+| `all` / `semua` | semua versi | Mengembalikan dictionary semua versi sekaligus |
 
 ---
 

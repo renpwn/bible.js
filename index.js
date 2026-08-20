@@ -46,8 +46,8 @@ export function getVerseNotesAndRashi(bookId, chapter, verse) {
   };
 }
 
-export async function getVerseLexicon(database, bookId, chapter, verse, testament = 'OT') {
-  if (!database) return null;
+export async function getVerseLexicon(database, bookId, chapter, verse, isNeedLexi, testament = 'OT') {
+  if (!database || !isNeedLexi) return null;
   try {
     const itlRows = await database.all(`
       SELECT text FROM verses
@@ -321,27 +321,28 @@ function resolveBookId(input, books) {
 ===================================== */
 export default async function bibleHandler(input = '', options = {}) {
   let autoClose = false;
-
+  
   if (!manualDB && !db) {
     db = await _openDB(options);
     autoClose = true;
   }
-
+  
   try {
     const rawInput = input.trim();
-    const defaultVersion = options.version || 'tb'; // this need random?
-
-
+    // random default option & drf should hasplus
+    const defaultVersion = options.version || ['tb','tb_itl_drf'][Math.floor(Math.random() * 2)];
+    
+    
     // 0. Command: RANDOM / ACAK AYAT
     // Mendukung:
     // - Tanakh / Jewish Bible: "random tn", "random jb", "random tanakh", "random 5 tn", "tn+", "jb+", "random 3 torah+"
     //   -> Mengembalikan paket tn_he + tn_en. Jika terdapat "+", menyertakan komentar Rabbi (Rashi).
     // - Bible / Alkitab: "random", "random 5", "bible+", "alkitab+", "random 3 bible+", "random nkjv+"
     //   -> Mengembalikan ayat Alkitab. Jika terdapat "+", menyertakan notes & leksikon Strong's.
-    const hasPlus = rawInput.includes('+') || options.plus === true || options.commentary === true || options.notes === true;
+    const hasPlus = rawInput.includes('+') || options.plus === true || options.commentary === true || options.notes === true || defaultVersion.includes('_');
     const cleanInput = rawInput.replace(/\+/g, ' ').replace(/\s+/g, ' ').trim();
     const randomTokens = cleanInput.toLowerCase().split(/\s+/).filter(Boolean);
-
+    
     const hasVerseColon = /\d+:\d+/.test(cleanInput);
     const isExplicitRandom = randomTokens.includes('random') || randomTokens.includes('acak');
     const isSingleKeyword = !hasVerseColon && (
@@ -354,12 +355,13 @@ export default async function bibleHandler(input = '', options = {}) {
       ))
     );
     const isTanakh = randomTokens.includes('tanakh') || randomTokens.includes('tanak') ||
-      randomTokens.includes('torah') || randomTokens.includes('neviim') || randomTokens.includes('ketuvim') ||
-      randomTokens.includes('tn') || randomTokens.includes('jb') ||
-      randomTokens.includes('tn_he') || randomTokens.includes('tn_en') ||
-      options.tanakh || options.tanakh_id ||
-      options.version === 'tn' || options.version === 'jb' || options.version === 'tanakh';
+    randomTokens.includes('torah') || randomTokens.includes('neviim') || randomTokens.includes('ketuvim') ||
+    randomTokens.includes('tn') || randomTokens.includes('jb') ||
+    randomTokens.includes('tn_he') || randomTokens.includes('tn_en') ||
+    options.tanakh || options.tanakh_id ||
+    options.version === 'tn' || options.version === 'jb' || options.version === 'tanakh';
     const isRandom = (!cleanInput || isExplicitRandom || isSingleKeyword || options.random) && !hasVerseColon;
+    const isInterlinearVersion = (ver) => ['tb_itl_drf', 'tl_itl_drf', 'net'].includes(ver);
 
     if (isRandom) {
       let range = options.range || 1;
@@ -549,7 +551,7 @@ export default async function bibleHandler(input = '', options = {}) {
           };
           if (hasPlus) {
             const notesData = getVerseNotesAndRashi(anchor.book_id, anchor.chapter, v.verse);
-            const lexiconData = await getVerseLexicon(db, anchor.book_id, anchor.chapter, v.verse, anchor.testament);
+            const lexiconData = await getVerseLexicon(db, anchor.book_id, anchor.chapter, v.verse, true, anchor.testament);
             if (notesData.notes) item.notes = notesData.notes;
             if (notesData.rashi) item.rashi = notesData.rashi;
             if (lexiconData) item.lexicon = lexiconData;
@@ -639,7 +641,7 @@ export default async function bibleHandler(input = '', options = {}) {
         };
         if (hasPlus) {
           const notesData = getVerseNotesAndRashi(anchor.book_id, anchor.chapter, v.verse);
-          const lexiconData = await getVerseLexicon(db, anchor.book_id, anchor.chapter, v.verse, anchor.testament);
+          const lexiconData = await getVerseLexicon(db, anchor.book_id, anchor.chapter, v.verse, isInterlinearVersion(v.version || selectedVersion), anchor.testament);
           if (notesData.notes) item.notes = notesData.notes;
           if (lexiconData) item.lexicon = lexiconData;
         }
@@ -882,7 +884,7 @@ export default async function bibleHandler(input = '', options = {}) {
             };
             if (hasPlus) {
               const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
-              const lexiconData = await getVerseLexicon(db, bookId, chapterNum, v.verse, bookInfo.testament);
+              const lexiconData = await getVerseLexicon(db, bookId, chapterNum, v.verse, true, bookInfo.testament);
               if (notesData.notes) item.notes = notesData.notes;
               if (notesData.rashi) item.rashi = notesData.rashi;
               if (lexiconData) item.lexicon = lexiconData;
@@ -939,7 +941,7 @@ export default async function bibleHandler(input = '', options = {}) {
               if (notesData.rashi) item.rashi = notesData.rashi;
             } else {
               const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
-              const lexiconData = await getVerseLexicon(db, bookId, chapterNum, v.verse, bookInfo.testament);
+              const lexiconData = await getVerseLexicon(db, bookId, chapterNum, v.verse, isInterlinearVersion(selectedVersion), bookInfo.testament);
               if (notesData.notes) item.notes = notesData.notes;
               if (lexiconData) item.lexicon = lexiconData;
             }
