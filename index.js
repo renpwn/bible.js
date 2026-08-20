@@ -91,11 +91,10 @@ export async function getVerseLexicon(database, bookId, chapter, verse, testamen
   }
 }
 
-export const TANAKH_SECTIONS = [
-  "Torah (Taurat Musa) : Genesis (Kejadian), Exodus (Keluaran), Leviticus (Imamat), Numbers (Bilangan), Deuteronomy (Ulangan)",
-  "Nevi'im (Nabi-nabi) : Joshua (Yosua), Judges (Hakim-hakim), I Samuel (1 Samuel), II Samuel (2 Samuel), I Kings (1 Raja-raja), II Kings (2 Raja-raja), Isaiah (Yesaya), Jeremiah (Yeremia), Ezekiel (Yehezkiel), Hosea, Joel (Yoel), Amos (Amos), Obadiah (Obaja), Jonah (Yunus), Micah (Mikha), Nahum, Habakkuk (Habakuk), Zephaniah (Zefanya), Haggai (Hagai), Zechariah (Zakharia), Malachi (Maleakhi)",
-  "Ketuvim (Tulisan-tulisan / Sastra) : Psalms (Mazmur), Proverbs (Amsal), Job (Ayub), Song of Songs (Kidung Agung), Ruth (Rut), Lamentations (Ratapan), Ecclesiastes (Pengkhotbah), Esther (Ester), Daniel, Ezra, Nehemiah (Nehemia), I Chronicles (1 Tawarikh), II Chronicles (2 Tawarikh)"
-];
+export const TANAKH_SECTIONS = 
+  "\n1. Torah (Taurat Musa) : Genesis (Kejadian), Exodus (Keluaran), Leviticus (Imamat), Numbers (Bilangan), Deuteronomy (Ulangan)\n" +
+  "2. Nevi'im (Nabi-nabi) : Joshua (Yosua), Judges (Hakim-hakim), I Samuel (1 Samuel), II Samuel (2 Samuel), I Kings (1 Raja-raja), II Kings (2 Raja-raja), Isaiah (Yesaya), Jeremiah (Yeremia), Ezekiel (Yehezkiel), Hosea, Joel (Yoel), Amos (Amos), Obadiah (Obaja), Jonah (Yunus), Micah (Mikha), Nahum, Habakkuk (Habakuk), Zephaniah (Zefanya), Haggai (Hagai), Zechariah (Zakharia), Malachi (Maleakhi)\n" +
+  "3. Ketuvim (Tulisan-tulisan / Sastra) : Psalms (Mazmur), Proverbs (Amsal), Job (Ayub), Song of Songs (Kidung Agung), Ruth (Rut), Lamentations (Ratapan), Ecclesiastes (Pengkhotbah), Esther (Ester), Daniel, Ezra, Nehemiah (Nehemia), I Chronicles (1 Tawarikh), II Chronicles (2 Tawarikh)";
 
 export const VERSION_ALIASES = {
   tb: 'tb',
@@ -480,7 +479,105 @@ export default async function bibleHandler(input = '', options = {}) {
       }
 
       // ==========================================
-      // KASUS B: BIBLE / ALKITAB (Notes + Lexicon)
+      // KASUS B: ALL VERSIONS (random all / random 5 all+)
+      // ==========================================
+      if (selectedVersion === 'all') {
+        const whereParts = ["v.version = 'tb'"];
+        const queryParams = [];
+
+        if (selectedTestament) {
+          whereParts.push('b.testament = ?');
+          queryParams.push(selectedTestament.toUpperCase());
+        }
+        if (selectedTanakhId) {
+          whereParts.push('b.tanakh_id = ?');
+          queryParams.push(selectedTanakhId.toLowerCase());
+        }
+        const whereSql = whereParts.join(' AND ');
+
+        const anchor = await db.get(`
+          SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.chapters, b.testament, v.chapter, v.verse
+          FROM verses v
+          JOIN books b ON v.book_id = b.id
+          WHERE ${whereSql}
+          ORDER BY RANDOM()
+        `, queryParams);
+
+        if (!anchor) {
+          return { mode: 'random', type: 'all_versions', error: 'Tidak ada data ayat untuk versi: all' };
+        }
+
+        const chapterInfo = await db.get(`
+          SELECT MIN(verse) as min_verse, MAX(verse) as max_verse
+          FROM verses
+          WHERE book_id = ? AND chapter = ?
+        `, [anchor.book_id, anchor.chapter]);
+
+        const maxVerse = chapterInfo.max_verse;
+        const minVerse = chapterInfo.min_verse;
+
+        let startVerse = anchor.verse;
+        let endVerse = startVerse + range - 1;
+
+        if (endVerse > maxVerse) {
+          endVerse = maxVerse;
+          startVerse = Math.max(minVerse, endVerse - range + 1);
+        }
+
+        const rows = await db.all(`
+          SELECT v.verse, v.version, v.text
+          FROM verses v
+          WHERE v.book_id = ? AND v.chapter = ?
+            AND v.verse BETWEEN ? AND ?
+          ORDER BY v.verse ASC, v.version ASC
+        `, [anchor.book_id, anchor.chapter, startVerse, endVerse]);
+
+        const verseMap = new Map();
+        for (const r of rows) {
+          if (!verseMap.has(r.verse)) {
+            verseMap.set(r.verse, { verse: r.verse, versions: {} });
+          }
+          verseMap.get(r.verse).versions[r.version] = r.text;
+        }
+
+        const allVerses = [];
+        for (const v of verseMap.values()) {
+          const item = {
+            verse: v.verse,
+            total_versions: Object.keys(v.versions).length,
+            versions: v.versions
+          };
+          if (hasPlus) {
+            const notesData = getVerseNotesAndRashi(anchor.book_id, anchor.chapter, v.verse);
+            const lexiconData = await getVerseLexicon(db, anchor.book_id, anchor.chapter, v.verse, anchor.testament);
+            if (notesData.notes) item.notes = notesData.notes;
+            if (notesData.rashi) item.rashi = notesData.rashi;
+            if (lexiconData) item.lexicon = lexiconData;
+          }
+          allVerses.push(item);
+        }
+
+        return {
+          mode: 'random',
+          type: 'all_versions',
+          book: {
+            id: anchor.book_id,
+            name: anchor.book_name,
+            name_en: anchor.book_name_en,
+            chapters: anchor.chapters
+          },
+          chapter: anchor.chapter,
+          anchor: anchor.verse,
+          verseRange: startVerse === endVerse ? `${startVerse}` : `${startVerse}-${endVerse}`,
+          version: 'all',
+          count: allVerses.length,
+          hasNotes: hasPlus,
+          verses: allVerses
+        };
+      }
+
+      // ==========================================
+      // KASUS C: BIBLE / ALKITAB (Notes + Lexicon)
       // ==========================================
       const whereParts = ['v.version = ?'];
       const queryParams = [selectedVersion];
@@ -681,8 +778,7 @@ export default async function bibleHandler(input = '', options = {}) {
               type: 'tanakh',
               query: cleanInput,
               error: `Kitab "${bookInfo.name}" (Perjanjian Baru) tidak termasuk dalam Tanakh / Kitab Suci Ibrani (Jewish Bible).`,
-              message: 'Tanakh hanya mencakup 39 kitab Perjanjian Lama yang terbagi menjadi 3 bagian: Torah (Taurat Musa), Nevi\'im (Nabi-nabi), dan Ketuvim (Tulisan-tulisan / Sastra).',
-              tanakh_sections: TANAKH_SECTIONS
+              message: 'Tanakh hanya mencakup 39 kitab Perjanjian Lama yang terbagi menjadi 3 bagian: ' + TANAKH_SECTIONS
             };
           }
 

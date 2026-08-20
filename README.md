@@ -143,8 +143,10 @@ Anda dapat mengombinasikan query acak maupun pencarian referensi dengan berbagai
    - Menambahkan **Komentar Rabbi Rashi** lengkap dalam bahasa Ibrani & Inggris (`rashi: [{ heb, eng }]`).
 3. **Modifier `+` untuk Bible / Alkitab (`bible+`, `alkitab+`, `tb+`, `nkjv+`)**:
    - Menambahkan **Study Notes & Leksikon Strong's Ibrani / Yunani** (`notes` dan `lexicon`).
-4. **Range Ayat Berturutan (Auto-Shift Boundary)**:
-   - Misal `random 5 tn` atau `random 3 bible+` (nomor awal otomatis geser mundur jika mendekati akhir pasal).
+4. **Acak Seluruh Versi Sekaligus (`random all`, `random 5 all+`)**:
+   - Menampilkan komparasi **seluruh versi yang tersedia** (12-14 versi) per ayat yang diacak.
+5. **Range Ayat Berturutan (Auto-Shift Boundary)**:
+   - Misal `random 5 tn`, `random 3 bible+`, `random 5 all` (nomor awal otomatis geser mundur jika mendekati akhir pasal).
 
 ### Contoh di Kode JavaScript:
 ```javascript
@@ -164,15 +166,24 @@ tanakhRashi.verses.forEach(v => {
   if (v.rashi) console.log('Rashi:', v.rashi);
 });
 
-// 3. Acak ayat Alkitab + Study Notes & Leksikon Strong's
+// 3. Acak 5 ayat dengan SEMUA VERSI sekaligus (+ notes & lexicon jika pakai +)
+const randomAll = await bibleHandler('random 5 all');
+console.log(`Ayat acak: ${randomAll.book.name} ${randomAll.chapter}:${randomAll.verseRange}`);
+randomAll.verses.forEach(v => {
+  console.log(`Ayat ${v.verse} TB: ${v.versions.tb}`);
+  console.log(`Ayat ${v.verse} NKJV: ${v.versions.nkjv}`);
+});
+
+// 4. Acak ayat Alkitab + Study Notes & Leksikon Strong's
 const biblePlus = await bibleHandler('bible+'); // atau 'random 5 bible+'
 console.log(biblePlus.verses[0].text);
 console.log('Notes:', biblePlus.verses[0].notes);
 console.log('Lexicon:', biblePlus.verses[0].lexicon);
 
-// 4. Referensi ayat spesifik dengan versi dan modifier +
+// 5. Referensi ayat spesifik dengan versi dan modifier +
 const yohNKJV = await bibleHandler('Yoh 1:5 nkjv'); // atau 'Yoh 1:5 kjv'
 const kejTanakh = await bibleHandler('Kejadian 1:1 tn+'); // 1 paket + Rashi
+const allVersi = await bibleHandler('Yoh 1:5 all'); // 12 versi
 ```
 
 ### Contoh di Terminal / CLI:
@@ -180,6 +191,10 @@ const kejTanakh = await bibleHandler('Kejadian 1:1 tn+'); // 1 paket + Rashi
 # Acak 1 ayat standar (default: TB)
 npm start
 node index
+
+# Acak 5 ayat dengan SEMUA VERSI sekaligus
+node index "random 5 all"
+node index "random 3 all+"
 
 # Acak Tanakh (1 paket: Ibrani + English)
 node index "random tn"
@@ -195,7 +210,8 @@ node index "bible+"
 node index "alkitab+"
 node index "random 3 bible+"
 
-# Mengambil ayat spesifik dengan versi Alkitab / Tanakh
+# Mengambil ayat spesifik dengan versi Alkitab / Tanakh / All
+node index "Yoh 1:5 all"
 node index "Yoh 1:5 nkjv"
 node index "Yoh 1:5 ende"
 node index "Kejadian 1:1 tn"
@@ -348,50 +364,100 @@ const options = {
 ### Struktur Return Object
 
 ```javascript
-// Mode: 'random' atau 'verse'
+// Mode: 'verse' (Tipe: 'tanakh' - Paket tn_he + tn_en)
 {
-  mode: 'random', // atau 'verse'
-  book: {
-    id: 43,
-    name: 'Yohanes',
-    name_en: 'John',
-    chapters: 21
+  "mode": "verse",
+  "type": "tanakh",
+  "book": {
+    "id": 1,
+    "name": "Kejadian",
+    "name_en": "Genesis",
+    "name_he": "Bereshit",
+    "tanakh_id": "torah",
+    "chapters": 50
   },
-  chapter: 3,
-  verseRange: '16',
-  version: 'tb',
-  count: 1,
-  verses: [
+  "chapter": 1,
+  "verseRange": "1",
+  "version": "tn",
+  "count": 1,
+  "hasCommentary": false,
+  "verses": [
     {
-      verse: 16,
-      text: 'Karena begitu besar kasih Allah akan dunia ini...',
-      version: 'tb'
+      "verse": 1,
+      "tn_he": "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃",
+      "tn_en": "When God began to create heaven and earth—"
     }
   ]
 }
 
+// Mode: 'verse' (Tipe: 'all_versions' - Menampilkan seluruh versi)
+{
+  "mode": "verse",
+  "type": "all_versions",
+  "book": {
+    "id": 43,
+    "name": "Yohanes",
+    "name_en": "John",
+    "chapters": 21
+  },
+  "chapter": 1,
+  "verseRange": "5",
+  "version": "all",
+  "count": 1,
+  "hasNotes": false,
+  "verses": [
+    {
+      "verse": 5,
+      "total_versions": 12,
+      "versions": {
+        "tb": "Terang itu bercahaya di dalam kegelapan...",
+        "bis": "Terang itu bercahaya dalam kegelapan...",
+        "tl": "Maka terang itu bercahaya di dalam gelap...",
+        "ende": "dan tjahaja itu bersinar didalam kegelapan...",
+        "nkjv": "And the light shines in the darkness...",
+        "bbe": "And the light goes on shining in the dark...",
+        "message": "The Life-Light blazed out of the darkness...",
+        "nwt": "Terang itu bersinar dalam kegelapan...",
+        "net": "And the light shines on in the darkness...",
+        "net2": "And the light shines on in the darkness...",
+        "tb_itl_drf": "Terang <5457> itu bercahaya <5316>...",
+        "tl_itl_drf": "Maka <2532> terang <5457>..."
+      }
+    }
+  ]
+}
+
+// Mode: 'not_found' (Validasi Tanakh untuk Kitab Perjanjian Baru)
+{
+  "mode": "not_found",
+  "type": "tanakh",
+  "query": "Yoh 1:5 tn",
+  "error": "Kitab \"Yohanes\" (Perjanjian Baru) tidak termasuk dalam Tanakh / Kitab Suci Ibrani (Jewish Bible).",
+  "message": "Tanakh hanya mencakup 39 kitab Perjanjian Lama yang terbagi menjadi 3 bagian: \n1. Torah (Taurat Musa) : Genesis (Kejadian), Exodus (Keluaran), Leviticus (Imamat), Numbers (Bilangan), Deuteronomy (Ulangan)\n2. Nevi'im (Nabi-nabi) : Joshua (Yosua), Judges (Hakim-hakim), I Samuel (1 Samuel), II Samuel (2 Samuel), I Kings (1 Raja-raja), II Kings (2 Raja-raja), Isaiah (Yesaya), Jeremiah (Yeremia), Ezekiel (Yehezkiel), Hosea, Joel (Yoel), Amos (Amos), Obadiah (Obaja), Jonah (Yunus), Micah (Mikha), Nahum, Habakkuk (Habakuk), Zephaniah (Zefanya), Haggai (Hagai), Zechariah (Zakharia), Malachi (Maleakhi)\n3. Ketuvim (Tulisan-tulisan / Sastra) : Psalms (Mazmur), Proverbs (Amsal), Job (Ayub), Song of Songs (Kidung Agung), Ruth (Rut), Lamentations (Ratapan), Ecclesiastes (Pengkhotbah), Esther (Ester), Daniel, Ezra, Nehemiah (Nehemia), I Chronicles (1 Tawarikh), II Chronicles (2 Tawarikh)"
+}
+
 // Mode: 'search'
 {
-  mode: 'search',
-  query: 'kasih karunia',
-  version: 'tb',
-  totalResults: 15,
-  results: [
+  "mode": "search",
+  "query": "kasih karunia",
+  "version": "tb",
+  "totalResults": 15,
+  "results": [
     {
-      book_id: 49,
-      book_name: 'Efesus',
-      chapter: 2,
-      verse: 8,
-      version: 'tb',
-      text: 'Sebab karena kasih karunia kamu diselamatkan...'
+      "book_id": 49,
+      "book_name": "Efesus",
+      "chapter": 2,
+      "verse": 8,
+      "version": "tb",
+      "text": "Sebab karena kasih karunia kamu diselamatkan..."
     }
   ]
 }
 
 // Mode: 'lexicon'
 {
-  mode: 'lexicon',
-  data: {
+  "mode": "lexicon",
+  "data": {
     strong: 'H7225',
     word: 'רֵאשִׁית',
     pronunciation: 'ray-sheeth',
