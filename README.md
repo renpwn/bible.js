@@ -45,7 +45,7 @@ Proyek ini lahir dari kerinduan untuk membawa firman Tuhan lebih dekat ke dalam 
 
 - ✅ **Database SQLite + FTS5** — Pencarian teks super cepat di seluruh Alkitab
 - ✅ **14 Versi Alkitab** — TB, BIS, TL, Ende, NKJV, BBE, The Message, NWT, NET, dan lebih
-- ✅ **Tanakh Ibrani & Inggris** — Teks Hebrew + terjemahan Jewish Bible
+- ✅ **Tanakh & Jewish Bible** — Teks asli Ibrani (Hebrew) + terjemahan English Jewish Bible untuk kitab suci Yahudi.
 - ✅ **Leksikon Strong's** — 8.674 kata Ibrani (H) + 5.624 kata Yunani (G)
 - ✅ **Interlinear Draft** — Versi TB & TL dengan Strong's numbers
 - ✅ **Fuzzy Matching** — Auto-detect nama kitab (singkatan, typo, bahasa Inggris)
