@@ -1092,6 +1092,8 @@ SOFTWARE.
 ### Sosial Media & Sponsor
 - **YouTube**: [@RenPwn](https://www.youtube.com/@RenPwn)
 - **Instagram**: [@renpwn_ren](https://instagram.com/renpwn_ren)
+- **Tokopedia**: [tokopedia.com/renpwn](https://tokopedia.com/renpwn)
+- **Shopee**: [shopee.co.id/renpwn](https://shopee.co.id/renpwn)
 - **TikTok**: [tiktok.com/@renpwn](https://tiktok.com/@renpwn)
 
 ### Support Development

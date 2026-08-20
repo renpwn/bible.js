@@ -329,7 +329,7 @@ export default async function bibleHandler(input = '', options = {}) {
 
   try {
     const rawInput = input.trim();
-    const defaultVersion = options.version || 'tb';
+    const defaultVersion = options.version || 'tb'; // this need random?
 
 
     // 0. Command: RANDOM / ACAK AYAT
