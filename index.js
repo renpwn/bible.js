@@ -371,3 +371,24 @@ export default async function bibleHandler(input = '', options = {}) {
     }
   }
 }
+
+// Support direct CLI execution: node index.js [query]
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+if (process.argv[1] && (
+  fileURLToPath(import.meta.url) === path.resolve(process.argv[1]) ||
+  process.argv[1].endsWith('index.js') ||
+  process.argv[1].endsWith('index')
+)) {
+  const query = process.argv.slice(2).join(' ') || 'Yohanes 3:16';
+  bibleHandler(query)
+    .then((res) => {
+      console.log(JSON.stringify(res, null, 2));
+      process.exit(0);
+    })
+    .catch((err) => {
+      console.error('❌ Error:', err.message);
+      process.exit(1);
+    });
+}

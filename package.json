@@ -42,8 +42,9 @@
   },
   "scripts": {
     "start": "node index.js",
+    "compress:db": "node mt/download.js --compress",
+    "extract:db": "node mt/download.js --extract",
     "download:db": "node mt/download.js",
-    "compress:db": "node -e \"import('fs').then(fs => import('zlib').then(z => fs.createReadStream('db/bible.db').pipe(z.createGzip({ level: 9 })).pipe(fs.createWriteStream('db/bible.db.gz'))))\"",
     "scrape:all": "node mt/bible.js -m 1 -B -c 5",
     "migrate:json": "node mt/bible.js -m 4 -B",
     "test": "node examples/test_lib.js",
