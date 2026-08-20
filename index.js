@@ -196,64 +196,105 @@ export default async function bibleHandler(input = '', options = {}) {
     const rawInput = input.trim();
     const defaultVersion = options.version || 'tb';
 
-    // 0. Command: RANDOM / ACAK AYAT (contoh: "", "random", "acak")
-    const isRandom = !rawInput || rawInput.toLowerCase() === 'random' || rawInput.toLowerCase() === 'acak' || options.random;
+
+    // 0. Command: RANDOM / ACAK AYAT (contoh: "", "random", "acak", "random 5", "acak 3")
+    const randomMatch = rawInput.match(/^(random|acak)\s*(\d+)?$/i);
+    const isRandom = !rawInput || randomMatch || options.random;
     if (isRandom) {
       const selectedVersion = options.version || defaultVersion;
-      const count = options.limit || 1;
 
-      const rows = await db.all(`
-        SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.chapters, v.chapter, v.verse, v.version, v.text
+      // Ambil angka range dari input (misal "random 5" → range=5) atau options.range
+      const rangeArg = randomMatch?.[2] ? parseInt(randomMatch[2], 10) : null;
+      const range = rangeArg || options.range || null;
+
+      if (!range) {
+        // Mode tunggal: 1 ayat acak (atau sejumlah limit ayat dari pasal berbeda)
+        const count = options.limit || 1;
+        const rows = await db.all(`
+          SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.chapters, v.chapter, v.verse, v.version, v.text
+          FROM verses v
+          JOIN books b ON v.book_id = b.id
+          WHERE v.version = ?
+          ORDER BY RANDOM()
+          LIMIT ?
+        `, [selectedVersion, count]);
+
+        if (rows.length === 0) {
+          return { mode: 'random', error: `Tidak ada data ayat untuk versi: ${selectedVersion}` };
+        }
+
+        if (count === 1) {
+          const row = rows[0];
+          return {
+            mode: 'random',
+            book: { id: row.book_id, name: row.book_name, name_en: row.book_name_en, chapters: row.chapters },
+            chapter: row.chapter,
+            verseRange: String(row.verse),
+            version: row.version,
+            count: 1,
+            verses: [{ verse: row.verse, text: row.text, version: row.version }]
+          };
+        }
+
+        return {
+          mode: 'random',
+          total: rows.length,
+          version: selectedVersion,
+          verses: rows.map(r => ({ book_id: r.book_id, book_name: r.book_name, chapter: r.chapter, verse: r.verse, text: r.text, version: r.version }))
+        };
+      }
+
+      // Mode range: pilih 1 ayat anchor secara acak, lalu ambil sejumlah `range` ayat
+      // berturutan dari pasal yang sama, geser mundur jika mendekati akhir pasal
+      const anchor = await db.get(`
+        SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.chapters, v.chapter, v.verse, v.version
         FROM verses v
         JOIN books b ON v.book_id = b.id
         WHERE v.version = ?
         ORDER BY RANDOM()
-        LIMIT ?
-      `, [selectedVersion, count]);
+      `, [selectedVersion]);
 
-      if (rows.length === 0) {
-        return {
-          mode: 'random',
-          error: `Tidak ada data ayat untuk versi: ${selectedVersion}`
-        };
+      if (!anchor) {
+        return { mode: 'random', error: `Tidak ada data ayat untuk versi: ${selectedVersion}` };
       }
 
-      if (count === 1) {
-        const row = rows[0];
-        return {
-          mode: 'random',
-          book: {
-            id: row.book_id,
-            name: row.book_name,
-            name_en: row.book_name_en,
-            chapters: row.chapters
-          },
-          chapter: row.chapter,
-          verseRange: String(row.verse),
-          version: row.version,
-          count: 1,
-          verses: [
-            {
-              verse: row.verse,
-              text: row.text,
-              version: row.version
-            }
-          ]
-        };
+      // Batas ayat di pasal yang ditentukan anchor
+      const chapterInfo = await db.get(`
+        SELECT MIN(verse) as min_verse, MAX(verse) as max_verse
+        FROM verses
+        WHERE book_id = ? AND chapter = ? AND version = ?
+      `, [anchor.book_id, anchor.chapter, selectedVersion]);
+
+      const maxVerse = chapterInfo.max_verse;
+      const minVerse = chapterInfo.min_verse;
+
+      // Tentukan rentang: mulai dari anchor, akhiri di anchor+range-1
+      // Jika melebihi akhir pasal → geser start ke belakang agar count selalu terpenuhi
+      let startVerse = anchor.verse;
+      let endVerse = startVerse + range - 1;
+
+      if (endVerse > maxVerse) {
+        endVerse = maxVerse;
+        startVerse = Math.max(minVerse, endVerse - range + 1);
       }
+
+      const rangeVerses = await db.all(`
+        SELECT v.verse, v.text, v.version
+        FROM verses v
+        WHERE v.book_id = ? AND v.chapter = ? AND v.version = ?
+          AND v.verse BETWEEN ? AND ?
+        ORDER BY v.verse ASC
+      `, [anchor.book_id, anchor.chapter, selectedVersion, startVerse, endVerse]);
 
       return {
         mode: 'random',
-        total: rows.length,
+        book: { id: anchor.book_id, name: anchor.book_name, name_en: anchor.book_name_en, chapters: anchor.chapters },
+        chapter: anchor.chapter,
+        anchor: anchor.verse,
+        verseRange: `${startVerse}-${endVerse}`,
         version: selectedVersion,
-        verses: rows.map(r => ({
-          book_id: r.book_id,
-          book_name: r.book_name,
-          chapter: r.chapter,
-          verse: r.verse,
-          text: r.text,
-          version: r.version
-        }))
+        count: rangeVerses.length,
+        verses: rangeVerses
       };
     }
 
@@ -396,6 +437,7 @@ export default async function bibleHandler(input = '', options = {}) {
         };
       }
     }
+
 
     // 6. Jika tidak cocok format referensi kitab & panjang input cukup panjang, jalankan pencarian teks
     if (rawInput.length >= 3) {
