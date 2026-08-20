@@ -132,49 +132,74 @@ npm run download:db
 
 Setiap kali input berupa **string kosong `""`**, kata `'random'`, `'acak'`, opsi `{ random: true }`, atau tanpa argumen di CLI, library akan **secara otomatis mengambil ayat acak** yang selalu berganti setiap kali dijalankan.
 
-### 🔄 Opsi Range Ayat Berturutan (Auto-Shift Boundary)
-Anda dapat menentukan jumlah ayat berturutan yang ingin diambil, misalnya `random 5` atau `acak 3`:
-- Library akan memilih **1 ayat anchor secara acak** di suatu pasal, lalu mengambil rentang ayat berturutan dari pasal tersebut.
-- **Auto-Shift Boundary**: Jika rentang melebihi jumlah ayat terakhir di pasal tersebut, nomor awal otomatis **bergeser mundur** agar jumlah ayat yang diminta tetap terpenuhi (misal di pasal yang hanya punya 10 ayat, jika acak jatuh di ayat 8 dengan range 5, ayat yang diambil otomatis ayat 6 sampai 10).
+### 🔄 Opsi Range, Versi (Tanakh / Bible), & Modifier `+` (Rashi / Notes / Lexicon)
+
+Anda dapat mengombinasikan query acak maupun pencarian referensi dengan berbagai opsi:
+
+1. **Paket Tanakh / Jewish Bible (`tn` atau `jb`)**:
+   - Cukup gunakan kode **`tn`** atau **`jb`** (misal: `random tn`, `random 5 jb`, `Kejadian 1:1 tn`).
+   - Otomatis menghasilkan **1 paket lengkap**: teks asli Ibrani (**`tn_he`**) dan terjemahan Inggris (**`tn_en`**).
+2. **Modifier `+` untuk Tanakh (`tanakh+`, `tn+`, `jb+`, `torah+`)**:
+   - Menambahkan **Komentar Rabbi Rashi** lengkap dalam bahasa Ibrani & Inggris (`rashi: [{ heb, eng }]`).
+3. **Modifier `+` untuk Bible / Alkitab (`bible+`, `alkitab+`, `tb+`, `nkjv+`)**:
+   - Menambahkan **Study Notes & Leksikon Strong's Ibrani / Yunani** (`notes` dan `lexicon`).
+4. **Range Ayat Berturutan (Auto-Shift Boundary)**:
+   - Misal `random 5 tn` atau `random 3 bible+` (nomor awal otomatis geser mundur jika mendekati akhir pasal).
 
 ### Contoh di Kode JavaScript:
 ```javascript
 import bibleHandler from '@renpwn/bible.js';
 
-// 1. String kosong otomatis menghasilkan 1 ayat acak
-const acak1 = await bibleHandler('');
-console.log(`${acak1.book.name} ${acak1.chapter}:${acak1.verseRange}`);
-console.log(acak1.verses[0].text);
+// 1. Acak 1 ayat Tanakh lengkap (Ibrani tn_he + Inggris tn_en)
+const tanakh1 = await bibleHandler('random tn'); // atau 'random jb'
+console.log(`${tanakh1.book.name} ${tanakh1.chapter}:${tanakh1.verseRange}`);
+console.log('Hebrew:', tanakh1.verses[0].tn_he);
+console.log('English:', tanakh1.verses[0].tn_en);
 
-// 2. Menggunakan keyword 'random' atau 'acak'
-const acak2 = await bibleHandler('random');
+// 2. Acak 3 ayat Tanakh + Komentar Rabbi Rashi
+const tanakhRashi = await bibleHandler('random 3 tn+'); // atau 'random 3 jb+'
+tanakhRashi.verses.forEach(v => {
+  console.log(`[${v.verse}] HE: ${v.tn_he}`);
+  console.log(`[${v.verse}] EN: ${v.tn_en}`);
+  if (v.rashi) console.log('Rashi:', v.rashi);
+});
 
-// 3. Mengambil rentang 5 ayat berturutan dari pasal yang sama
-const limaAyat = await bibleHandler('random 5');
-console.log(`Kitab: ${limaAyat.book.name} ${limaAyat.chapter}:${limaAyat.verseRange}`);
-limaAyat.verses.forEach(v => console.log(`[${v.verse}] ${v.text}`));
+// 3. Acak ayat Alkitab + Study Notes & Leksikon Strong's
+const biblePlus = await bibleHandler('bible+'); // atau 'random 5 bible+'
+console.log(biblePlus.verses[0].text);
+console.log('Notes:', biblePlus.verses[0].notes);
+console.log('Lexicon:', biblePlus.verses[0].lexicon);
 
-// 4. Menggunakan opsi parameter { range: 3 }
-const tigaAyat = await bibleHandler('acak', { range: 3 });
-
-// 5. Ayat acak dalam versi bahasa Inggris (NKJV / BBE)
-const randomEnglish = await bibleHandler('random 3', { version: 'nkjv' });
-console.log(randomEnglish.verses[0].text);
+// 4. Referensi ayat spesifik dengan versi dan modifier +
+const yohNKJV = await bibleHandler('Yoh 1:5 nkjv'); // atau 'Yoh 1:5 kjv'
+const kejTanakh = await bibleHandler('Kejadian 1:1 tn+'); // 1 paket + Rashi
 ```
 
 ### Contoh di Terminal / CLI:
 ```bash
-# Menjalankan acak 1 ayat (default)
+# Acak 1 ayat standar (default: TB)
 npm start
-
-# Atau via node
 node index
-node index random
-node index acak
 
-# Mengambil rentang ayat acak berturutan (misal: 5 ayat)
-node index "random 5"
-node index "acak 3"
+# Acak Tanakh (1 paket: Ibrani + English)
+node index "random tn"
+node index "random jb"
+
+# Acak Tanakh + Komentar Rabbi Rashi
+node index "tanakh+"
+node index "random 3 tn+"
+node index "random 5 jb+"
+
+# Acak Alkitab + Study Notes & Leksikon Strong's
+node index "bible+"
+node index "alkitab+"
+node index "random 3 bible+"
+
+# Mengambil ayat spesifik dengan versi Alkitab / Tanakh
+node index "Yoh 1:5 nkjv"
+node index "Yoh 1:5 ende"
+node index "Kejadian 1:1 tn"
+node index "Kejadian 1:1 tn+"
 ```
 
 ---
@@ -285,12 +310,17 @@ await closeDB();
 | **`""` (Kosong)** | `""` | **1 Ayat acak (Random Verse)** | `random` |
 | **`"random"` / `"acak"`** | `"random"` | **1 Ayat acak** | `random` |
 | **`"random <N>"` / `"acak <N>"`** | `"random 5"`, `"acak 3"` | **N Ayat acak berturutan (auto-shift boundary)** | `random` |
+| **`"random tn"` / `"random jb"`** | `"random tn"`, `"random 5 jb"` | **Tanakh acak (paket lengkap `tn_he` + `tn_en`)** | `random` |
+| **`"tanakh+"` / `"tn+"` / `"jb+"`** | `"tn+"`, `"random 3 jb+"` | **Tanakh + Komentar Rabbi (Rashi)** | `random` / `verse` |
+| **`"bible+"` / `"alkitab+"`** | `"bible+"`, `"random 3 bible+"` | **Alkitab + Study Notes & Leksikon Strong's** | `random` / `verse` |
 | **`Kitab Pasal:Ayat`** | `"Yohanes 3:16"` | Satu ayat spesifik | `verse` |
 | **`Kitab Pasal:Mulai-Selesai`** | `"Kejadian 1:1-5"` | Rentang ayat | `verse` |
 | **`Kitab Pasal`** | `"Mazmur 23"` | Satu pasal penuh | `verse` |
 | **`Singkatan`** | `"yoh 3:16"`, `"1kor 13"` | Singkatan nama kitab | `verse` |
 | **`Bahasa Inggris`** | `"John 3:16"`, `"Genesis 1"` | Nama kitab dalam bahasa Inggris | `verse` |
-| **`... versi`** | `"Yoh 3:16 nkjv"` | Menentukan versi terjemahan di akhir | `verse` |
+| **`... all`** | `"Yoh 1:5 all"`, `"Kej 1:1 all"` | **Menampilkan SEMUA 12-14 versi sekaligus** | `verse` (`all_versions`) |
+| **`... versi`** | `"Yoh 1:5 nkjv"`, `"Kej 1:1 tn"` | Menentukan versi / paket terjemahan di akhir | `verse` |
+| **`... +`** | `"Kejadian 1:1+"`, `"Yoh 1:1+"` | Menambahkan notes/lexicon/rashi pada ayat | `verse` |
 | **`search:kata`** | `"search:kasih karunia"` | Pencarian Full-Text Search (FTS5) | `search` |
 | **`cari:kata`** | `"cari:anugerah"` | Alias pencarian bahasa Indonesia | `search` |
 | **`strong:Kode`** | `"strong:H7225"`, `"G26"` | Lookup leksikon Strong's Ibrani / Yunani | `lexicon` |
@@ -302,10 +332,12 @@ await closeDB();
 ```javascript
 const options = {
   version: 'tb',          // Kode versi terjemahan (default: 'tb')
-                          // Pilihan: 'tb', 'bis', 'tl', 'ende', 'nkjv', 'bbe',
-                          //          'message', 'nwt', 'net', 'tn_he', 'tn_en',
-                          //          'tb_itl_drf', 'tl_itl_drf', 'net2'
+                          // Pilihan: 'all' (semua versi), 'tb', 'bis', 'tl', 'ende',
+                          //          'nkjv' (alias: 'kjv'), 'bbe', 'message' (alias: 'msg'),
+                          //          'nwt', 'net', 'net2', 'tn' / 'jb' (Tanakh he+en),
+                          //          'tn_he', 'tn_en', 'tb_itl_drf', 'tl_itl_drf'
   range: null,            // Jumlah rentang ayat acak berturutan (misal: 5)
+  plus: false,            // Sertakan Rashi (Tanakh) atau Notes & Lexicon (Bible)
   limit: 20,              // Batas hasil pencarian atau jumlah ayat acak
   search: false,          // Paksa mode pencarian teks (boolean)
   random: false,          // Paksa mode random

@@ -1,7 +1,143 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { openDB as _openDB } from './setting.db.js';
 
 let db = null;         // Global DB instance
 let manualDB = false;  // Flag: apakah user membuka DB manual?
+
+// Cache file notes in-memory
+const notesCache = new Map();
+
+function getNotesFileForBook(bookId) {
+  if (notesCache.has(bookId)) return notesCache.get(bookId);
+  const jsonDir = path.join(process.cwd(), 'json');
+  if (!fs.existsSync(jsonDir)) {
+    notesCache.set(bookId, null);
+    return null;
+  }
+  try {
+    const files = fs.readdirSync(jsonDir);
+    const targetFile = files.find(f => f.startsWith(`Bible_${bookId}_`) && f.endsWith('.notes.json'));
+    if (!targetFile) {
+      notesCache.set(bookId, null);
+      return null;
+    }
+    const content = JSON.parse(fs.readFileSync(path.join(jsonDir, targetFile), 'utf8'));
+    notesCache.set(bookId, content);
+    return content;
+  } catch (_) {
+    notesCache.set(bookId, null);
+    return null;
+  }
+}
+
+export function getVerseNotesAndRashi(bookId, chapter, verse) {
+  const fileData = getNotesFileForBook(bookId);
+  if (!fileData || !fileData.data) return { notes: null, rashi: null };
+
+  const chapterData = fileData.data.find(chArr => chArr[0]?.chapter === chapter);
+  if (!chapterData || !chapterData[0]?.verses) return { notes: null, rashi: null };
+
+  const verseData = chapterData[0].verses.find(v => v.verse === verse);
+  return {
+    notes: verseData?.notes && Object.keys(verseData.notes).length > 0 ? verseData.notes : null,
+    rashi: verseData?.rashi && verseData.rashi.length > 0 ? verseData.rashi : null
+  };
+}
+
+export async function getVerseLexicon(database, bookId, chapter, verse, testament = 'OT') {
+  if (!database) return null;
+  try {
+    const itlRows = await database.all(`
+      SELECT text FROM verses
+      WHERE book_id = ? AND chapter = ? AND verse = ?
+        AND version IN ('tb_itl_drf', 'tl_itl_drf', 'net')
+    `, [bookId, chapter, verse]);
+
+    if (!itlRows || itlRows.length === 0) return null;
+
+    const strongSet = new Set();
+    const isNT = testament === 'NT' || bookId >= 40;
+
+    for (const row of itlRows) {
+      const matches = row.text.match(/<(\d+)>/g);
+      if (matches) {
+        for (const m of matches) {
+          const rawNum = m.replace(/[<>]/g, '');
+          const intNum = parseInt(rawNum, 10);
+          if (isNT) {
+            strongSet.add(`G${intNum}`);
+          } else {
+            strongSet.add(`H${rawNum.padStart(5, '0')}`);
+            strongSet.add(`H${intNum}`);
+          }
+        }
+      }
+    }
+
+    if (strongSet.size === 0) return null;
+
+    const placeholders = Array.from(strongSet).map(() => '?').join(',');
+    const lexiconEntries = await database.all(`
+      SELECT strong, word, pronunciation, partOfSpeech, definition, avSummary
+      FROM strong_lexicon
+      WHERE strong IN (${placeholders})
+    `, Array.from(strongSet));
+
+    return lexiconEntries && lexiconEntries.length > 0 ? lexiconEntries : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+export const TANAKH_SECTIONS = [
+  "Torah (Taurat Musa) : Genesis (Kejadian), Exodus (Keluaran), Leviticus (Imamat), Numbers (Bilangan), Deuteronomy (Ulangan)",
+  "Nevi'im (Nabi-nabi) : Joshua (Yosua), Judges (Hakim-hakim), I Samuel (1 Samuel), II Samuel (2 Samuel), I Kings (1 Raja-raja), II Kings (2 Raja-raja), Isaiah (Yesaya), Jeremiah (Yeremia), Ezekiel (Yehezkiel), Hosea, Joel (Yoel), Amos (Amos), Obadiah (Obaja), Jonah (Yunus), Micah (Mikha), Nahum, Habakkuk (Habakuk), Zephaniah (Zefanya), Haggai (Hagai), Zechariah (Zakharia), Malachi (Maleakhi)",
+  "Ketuvim (Tulisan-tulisan / Sastra) : Psalms (Mazmur), Proverbs (Amsal), Job (Ayub), Song of Songs (Kidung Agung), Ruth (Rut), Lamentations (Ratapan), Ecclesiastes (Pengkhotbah), Esther (Ester), Daniel, Ezra, Nehemiah (Nehemia), I Chronicles (1 Tawarikh), II Chronicles (2 Tawarikh)"
+];
+
+export const VERSION_ALIASES = {
+  tb: 'tb',
+  bis: 'bis',
+  bimk: 'bis',
+  tl: 'tl',
+  ende: 'ende',
+  nwt: 'nwt',
+  tdb: 'nwt',
+  tb_itl_drf: 'tb_itl_drf',
+  tl_itl_drf: 'tl_itl_drf',
+  bbe: 'bbe',
+  message: 'message',
+  msg: 'message',
+  nkjv: 'nkjv',
+  kjv: 'nkjv',
+  net: 'net',
+  net2: 'net2',
+  ayt: 'tb',
+  fayh: 'bis',
+  tsi: 'bis',
+  vmd: 'bis',
+  tn: 'tn',
+  jb: 'tn',
+  tanakh: 'tn',
+  tanak: 'tn',
+  jewish: 'tn',
+  tn_he: 'tn_he',
+  he: 'tn_he',
+  hebrew: 'tn_he',
+  ibrani: 'tn_he',
+  tn_en: 'tn_en',
+  jps: 'tn_en',
+  all: 'all',
+  semua: 'all'
+};
+
+export function resolveVersion(str, defaultVer = 'tb') {
+  if (!str) return defaultVer;
+  const lower = str.toLowerCase().trim();
+  return VERSION_ALIASES[lower] || lower;
+}
 
 // Buka DB manual
 export async function openDB(options = {}) {
@@ -197,68 +333,180 @@ export default async function bibleHandler(input = '', options = {}) {
     const defaultVersion = options.version || 'tb';
 
 
-    // 0. Command: RANDOM / ACAK AYAT (contoh: "", "random", "acak", "random 5", "acak 3")
-    const randomMatch = rawInput.match(/^(random|acak)\s*(\d+)?$/i);
-    const isRandom = !rawInput || randomMatch || options.random;
+    // 0. Command: RANDOM / ACAK AYAT
+    // Mendukung:
+    // - Tanakh / Jewish Bible: "random tn", "random jb", "random tanakh", "random 5 tn", "tn+", "jb+", "random 3 torah+"
+    //   -> Mengembalikan paket tn_he + tn_en. Jika terdapat "+", menyertakan komentar Rabbi (Rashi).
+    // - Bible / Alkitab: "random", "random 5", "bible+", "alkitab+", "random 3 bible+", "random nkjv+"
+    //   -> Mengembalikan ayat Alkitab. Jika terdapat "+", menyertakan notes & leksikon Strong's.
+    const hasPlus = rawInput.includes('+') || options.plus === true || options.commentary === true || options.notes === true;
+    const cleanInput = rawInput.replace(/\+/g, ' ').replace(/\s+/g, ' ').trim();
+    const randomTokens = cleanInput.toLowerCase().split(/\s+/).filter(Boolean);
+
+    const hasVerseColon = /\d+:\d+/.test(cleanInput);
+    const isExplicitRandom = randomTokens.includes('random') || randomTokens.includes('acak');
+    const isSingleKeyword = !hasVerseColon && (
+      randomTokens.length === 0 ||
+      (randomTokens.length <= 3 && (
+        randomTokens.includes('tanakh') || randomTokens.includes('tanak') ||
+        randomTokens.includes('torah') || randomTokens.includes('neviim') || randomTokens.includes('ketuvim') ||
+        randomTokens.includes('bible') || randomTokens.includes('alkitab') ||
+        randomTokens.includes('tn') || randomTokens.includes('jb')
+      ))
+    );
+    const isTanakh = randomTokens.includes('tanakh') || randomTokens.includes('tanak') ||
+      randomTokens.includes('torah') || randomTokens.includes('neviim') || randomTokens.includes('ketuvim') ||
+      randomTokens.includes('tn') || randomTokens.includes('jb') ||
+      randomTokens.includes('tn_he') || randomTokens.includes('tn_en') ||
+      options.tanakh || options.tanakh_id ||
+      options.version === 'tn' || options.version === 'jb' || options.version === 'tanakh';
+    const isRandom = (!cleanInput || isExplicitRandom || isSingleKeyword || options.random) && !hasVerseColon;
+
     if (isRandom) {
-      const selectedVersion = options.version || defaultVersion;
+      let range = options.range || 1;
+      let selectedVersion = resolveVersion(options.version, defaultVersion);
+      let selectedTestament = options.testament || null;
+      let selectedTanakhId = options.tanakh_id || (typeof options.tanakh === 'string' ? options.tanakh : null);
 
-      // Ambil angka range dari input (misal "random 5" → range=5) atau options.range
-      const rangeArg = randomMatch?.[2] ? parseInt(randomMatch[2], 10) : null;
-      const range = rangeArg || options.range || null;
+      if (randomTokens.length > 0) {
+        for (const tok of randomTokens) {
+          if (tok === 'random' || tok === 'acak' || tok === 'bible' || tok === 'alkitab') continue;
 
-      if (!range) {
-        // Mode tunggal: 1 ayat acak (atau sejumlah limit ayat dari pasal berbeda)
-        const count = options.limit || 1;
-        const rows = await db.all(`
-          SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.chapters, v.chapter, v.verse, v.version, v.text
+          if (/^\d+$/.test(tok)) {
+            range = parseInt(tok, 10);
+          } else if (VERSION_ALIASES[tok]) {
+            selectedVersion = resolveVersion(tok);
+          } else if (tok === 'ot' || tok === 'pl' || tok === 'old') {
+            selectedTestament = 'OT';
+          } else if (tok === 'nt' || tok === 'pb' || tok === 'new') {
+            selectedTestament = 'NT';
+          } else if (['torah', 'neviim', 'ketuvim'].includes(tok)) {
+            selectedTanakhId = tok;
+          }
+        }
+      }
+
+      // ==========================================
+      // KASUS A: TANAKH / TORAH (tn_he + tn_en + Rashi)
+      // ==========================================
+      if (isTanakh) {
+        let tanakhWhere = ["v.version = 'tn_he'", "b.testament = 'OT'"];
+        let tanakhParams = [];
+
+        if (selectedTanakhId) {
+          tanakhWhere.push("b.tanakh_id = ?");
+          tanakhParams.push(selectedTanakhId.toLowerCase());
+        }
+
+        const anchor = await db.get(`
+          SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.name_he as book_name_he, b.chapters, b.tanakh_id, b.testament, v.chapter, v.verse
           FROM verses v
           JOIN books b ON v.book_id = b.id
-          WHERE v.version = ?
+          WHERE ${tanakhWhere.join(' AND ')}
           ORDER BY RANDOM()
-          LIMIT ?
-        `, [selectedVersion, count]);
+        `, tanakhParams);
 
-        if (rows.length === 0) {
-          return { mode: 'random', error: `Tidak ada data ayat untuk versi: ${selectedVersion}` };
+        if (!anchor) {
+          return { mode: 'random', type: 'tanakh', error: 'Tidak ada data ayat Tanakh yang ditemukan.' };
         }
 
-        if (count === 1) {
-          const row = rows[0];
-          return {
-            mode: 'random',
-            book: { id: row.book_id, name: row.book_name, name_en: row.book_name_en, chapters: row.chapters },
-            chapter: row.chapter,
-            verseRange: String(row.verse),
-            version: row.version,
-            count: 1,
-            verses: [{ verse: row.verse, text: row.text, version: row.version }]
+        const chapterInfo = await db.get(`
+          SELECT MIN(verse) as min_verse, MAX(verse) as max_verse
+          FROM verses
+          WHERE book_id = ? AND chapter = ? AND version = 'tn_he'
+        `, [anchor.book_id, anchor.chapter]);
+
+        const maxVerse = chapterInfo.max_verse;
+        const minVerse = chapterInfo.min_verse;
+
+        let startVerse = anchor.verse;
+        let endVerse = startVerse + range - 1;
+
+        if (endVerse > maxVerse) {
+          endVerse = maxVerse;
+          startVerse = Math.max(minVerse, endVerse - range + 1);
+        }
+
+        const rows = await db.all(`
+          SELECT v.verse, v.version, v.text
+          FROM verses v
+          WHERE v.book_id = ? AND v.chapter = ? AND v.version IN ('tn_he', 'tn_en')
+            AND v.verse BETWEEN ? AND ?
+          ORDER BY v.verse ASC, v.version ASC
+        `, [anchor.book_id, anchor.chapter, startVerse, endVerse]);
+
+        const verseMap = new Map();
+        for (let vNum = startVerse; vNum <= endVerse; vNum++) {
+          verseMap.set(vNum, { verse: vNum, tn_he: '', tn_en: '' });
+        }
+        for (const r of rows) {
+          const item = verseMap.get(r.verse);
+          if (item) {
+            item[r.version] = r.text;
+          }
+        }
+
+        const combinedVerses = Array.from(verseMap.values()).map(v => {
+          const entry = {
+            verse: v.verse,
+            tn_he: v.tn_he,
+            tn_en: v.tn_en
           };
-        }
+          if (hasPlus) {
+            const notesData = getVerseNotesAndRashi(anchor.book_id, anchor.chapter, v.verse);
+            entry.rashi = notesData.rashi || null;
+          }
+          return entry;
+        });
 
         return {
           mode: 'random',
-          total: rows.length,
-          version: selectedVersion,
-          verses: rows.map(r => ({ book_id: r.book_id, book_name: r.book_name, chapter: r.chapter, verse: r.verse, text: r.text, version: r.version }))
+          type: 'tanakh',
+          book: {
+            id: anchor.book_id,
+            name: anchor.book_name,
+            name_en: anchor.book_name_en,
+            name_he: anchor.book_name_he,
+            tanakh_id: anchor.tanakh_id,
+            chapters: anchor.chapters
+          },
+          chapter: anchor.chapter,
+          anchor: anchor.verse,
+          verseRange: startVerse === endVerse ? `${startVerse}` : `${startVerse}-${endVerse}`,
+          count: combinedVerses.length,
+          hasCommentary: hasPlus,
+          verses: combinedVerses
         };
       }
 
-      // Mode range: pilih 1 ayat anchor secara acak, lalu ambil sejumlah `range` ayat
-      // berturutan dari pasal yang sama, geser mundur jika mendekati akhir pasal
+      // ==========================================
+      // KASUS B: BIBLE / ALKITAB (Notes + Lexicon)
+      // ==========================================
+      const whereParts = ['v.version = ?'];
+      const queryParams = [selectedVersion];
+
+      if (selectedTestament) {
+        whereParts.push('b.testament = ?');
+        queryParams.push(selectedTestament.toUpperCase());
+      }
+      if (selectedTanakhId) {
+        whereParts.push('b.tanakh_id = ?');
+        queryParams.push(selectedTanakhId.toLowerCase());
+      }
+      const whereSql = whereParts.join(' AND ');
+
       const anchor = await db.get(`
-        SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.chapters, v.chapter, v.verse, v.version
+        SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.chapters, b.testament, v.chapter, v.verse, v.version
         FROM verses v
         JOIN books b ON v.book_id = b.id
-        WHERE v.version = ?
+        WHERE ${whereSql}
         ORDER BY RANDOM()
-      `, [selectedVersion]);
+      `, queryParams);
 
       if (!anchor) {
-        return { mode: 'random', error: `Tidak ada data ayat untuk versi: ${selectedVersion}` };
+        return { mode: 'random', type: 'bible', error: `Tidak ada data ayat untuk versi: ${selectedVersion}` };
       }
 
-      // Batas ayat di pasal yang ditentukan anchor
       const chapterInfo = await db.get(`
         SELECT MIN(verse) as min_verse, MAX(verse) as max_verse
         FROM verses
@@ -268,8 +516,6 @@ export default async function bibleHandler(input = '', options = {}) {
       const maxVerse = chapterInfo.max_verse;
       const minVerse = chapterInfo.min_verse;
 
-      // Tentukan rentang: mulai dari anchor, akhiri di anchor+range-1
-      // Jika melebihi akhir pasal → geser start ke belakang agar count selalu terpenuhi
       let startVerse = anchor.verse;
       let endVerse = startVerse + range - 1;
 
@@ -286,15 +532,39 @@ export default async function bibleHandler(input = '', options = {}) {
         ORDER BY v.verse ASC
       `, [anchor.book_id, anchor.chapter, selectedVersion, startVerse, endVerse]);
 
+      // Enrich with Notes & Lexicon jika terdapat flag '+'
+      const enrichedVerses = [];
+      for (const v of rangeVerses) {
+        const item = {
+          verse: v.verse,
+          text: v.text,
+          version: v.version
+        };
+        if (hasPlus) {
+          const notesData = getVerseNotesAndRashi(anchor.book_id, anchor.chapter, v.verse);
+          const lexiconData = await getVerseLexicon(db, anchor.book_id, anchor.chapter, v.verse, anchor.testament);
+          if (notesData.notes) item.notes = notesData.notes;
+          if (lexiconData) item.lexicon = lexiconData;
+        }
+        enrichedVerses.push(item);
+      }
+
       return {
         mode: 'random',
-        book: { id: anchor.book_id, name: anchor.book_name, name_en: anchor.book_name_en, chapters: anchor.chapters },
+        type: 'bible',
+        book: {
+          id: anchor.book_id,
+          name: anchor.book_name,
+          name_en: anchor.book_name_en,
+          chapters: anchor.chapters
+        },
         chapter: anchor.chapter,
         anchor: anchor.verse,
-        verseRange: `${startVerse}-${endVerse}`,
+        verseRange: startVerse === endVerse ? `${startVerse}` : `${startVerse}-${endVerse}`,
         version: selectedVersion,
-        count: rangeVerses.length,
-        verses: rangeVerses
+        count: enrichedVerses.length,
+        hasNotes: hasPlus,
+        verses: enrichedVerses
       };
     }
 
@@ -373,17 +643,17 @@ export default async function bibleHandler(input = '', options = {}) {
       };
     }
 
-    // 5. PARSE AYAT REFERENCE (contoh: "Yohanes 3:16", "Kejadian 1:1-5", "1 Kor 13:4-7 tb", "Mazmur 23")
-    const books = await db.all(`SELECT id, name, name_en, chapters, total_verses FROM books ORDER BY id`);
+    // 5. PARSE AYAT REFERENCE (contoh: "Yohanes 3:16", "Kejadian 1:1-5", "1 Kor 13:4-7 tb", "Mazmur 23", "Kejadian 1:1+", "Kej 1:1 tn", "Gen 1:1 jb+")
+    const books = await db.all(`SELECT id, name, name_en, name_he, tanakh_id, chapters, total_verses, testament FROM books ORDER BY id`);
     
-    // Ekstrak versi di akhir jika ada (misal: "Yoh 3:16 kjv")
-    let workingStr = rawInput;
+    // Ekstrak versi di akhir jika ada (misal: "Yoh 3:16 nkjv", "Kej 1:1 tn", "Kej 1:1 jb+")
+    let workingStr = cleanInput;
     let selectedVersion = defaultVersion;
     const tokens = workingStr.split(/\s+/);
     const lastToken = tokens[tokens.length - 1]?.toLowerCase();
     
-    if (tokens.length > 1 && ['tb', 'bis', 'tl', 'ayt', 'fayh', 'net', 'kjv', 'tsi', 'vmd'].includes(lastToken)) {
-      selectedVersion = lastToken;
+    if (tokens.length > 1 && VERSION_ALIASES[lastToken]) {
+      selectedVersion = resolveVersion(lastToken, defaultVersion);
       workingStr = tokens.slice(0, -1).join(' ');
     }
 
@@ -402,6 +672,147 @@ export default async function bibleHandler(input = '', options = {}) {
       if (bookId) {
         const bookInfo = books.find(b => b.id === bookId);
 
+        // KASUS 1: Versi Tanakh / Jewish Bible (tn / jb / tn_he / tn_en)
+        if (selectedVersion === 'tn' || selectedVersion === 'tn_he' || selectedVersion === 'tn_en') {
+          // Validasi: Tanakh hanya mencakup 39 kitab Perjanjian Lama
+          if (bookInfo.testament === 'NT' || bookId > 39) {
+            return {
+              mode: 'not_found',
+              type: 'tanakh',
+              query: cleanInput,
+              error: `Kitab "${bookInfo.name}" (Perjanjian Baru) tidak termasuk dalam Tanakh / Kitab Suci Ibrani (Jewish Bible).`,
+              message: 'Tanakh hanya mencakup 39 kitab Perjanjian Lama yang terbagi menjadi 3 bagian: Torah (Taurat Musa), Nevi\'im (Nabi-nabi), dan Ketuvim (Tulisan-tulisan / Sastra).',
+              tanakh_sections: TANAKH_SECTIONS
+            };
+          }
+
+          if (selectedVersion === 'tn') {
+            let sql = `
+              SELECT v.verse, v.version, v.text
+              FROM verses v
+              WHERE v.book_id = ? AND v.chapter = ? AND v.version IN ('tn_he', 'tn_en')
+            `;
+            const params = [bookId, chapterNum];
+            if (startVerse && endVerse) {
+              sql += ` AND v.verse BETWEEN ? AND ? ORDER BY v.verse ASC, v.version ASC`;
+              params.push(startVerse, endVerse);
+            } else if (startVerse) {
+              sql += ` AND v.verse = ? ORDER BY v.verse ASC, v.version ASC`;
+              params.push(startVerse);
+            } else {
+              sql += ` ORDER BY v.verse ASC, v.version ASC`;
+            }
+
+            const rows = await db.all(sql, params);
+            const minV = startVerse || (rows.length > 0 ? rows[0].verse : 1);
+            const maxV = endVerse || (rows.length > 0 ? rows[rows.length - 1].verse : minV);
+
+            const verseMap = new Map();
+            for (let vNum = minV; vNum <= maxV; vNum++) {
+              verseMap.set(vNum, { verse: vNum, tn_he: '', tn_en: '' });
+            }
+            for (const r of rows) {
+              const item = verseMap.get(r.verse);
+              if (item) item[r.version] = r.text;
+            }
+
+            const combinedVerses = Array.from(verseMap.values()).map(v => {
+              const entry = {
+                verse: v.verse,
+                tn_he: v.tn_he,
+                tn_en: v.tn_en
+              };
+              if (hasPlus) {
+                const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
+                if (notesData.rashi) entry.rashi = notesData.rashi;
+              }
+              return entry;
+            });
+
+            return {
+              mode: 'verse',
+              type: 'tanakh',
+              book: {
+                id: bookInfo.id,
+                name: bookInfo.name,
+                name_en: bookInfo.name_en,
+                name_he: bookInfo.name_he,
+                tanakh_id: bookInfo.tanakh_id,
+                chapters: bookInfo.chapters
+              },
+              chapter: chapterNum,
+              verseRange: startVerse ? (endVerse && endVerse !== startVerse ? `${startVerse}-${endVerse}` : `${startVerse}`) : 'all',
+              version: 'tn',
+              count: combinedVerses.length,
+              hasCommentary: hasPlus,
+              verses: combinedVerses
+            };
+          }
+        }
+
+        // KASUS 2: Versi 'all' -> Mengembalikan semua versi Alkitab & Tanakh yang tersedia
+        if (selectedVersion === 'all') {
+          let sql = `
+            SELECT v.verse, v.version, v.text
+            FROM verses v
+            WHERE v.book_id = ? AND v.chapter = ?
+          `;
+          const params = [bookId, chapterNum];
+          if (startVerse && endVerse) {
+            sql += ` AND v.verse BETWEEN ? AND ? ORDER BY v.verse ASC, v.version ASC`;
+            params.push(startVerse, endVerse);
+          } else if (startVerse) {
+            sql += ` AND v.verse = ? ORDER BY v.verse ASC, v.version ASC`;
+            params.push(startVerse);
+          } else {
+            sql += ` ORDER BY v.verse ASC, v.version ASC`;
+          }
+
+          const rows = await db.all(sql, params);
+          const verseMap = new Map();
+          for (const r of rows) {
+            if (!verseMap.has(r.verse)) {
+              verseMap.set(r.verse, { verse: r.verse, versions: {} });
+            }
+            verseMap.get(r.verse).versions[r.version] = r.text;
+          }
+
+          const allVerses = [];
+          for (const v of verseMap.values()) {
+            const item = {
+              verse: v.verse,
+              total_versions: Object.keys(v.versions).length,
+              versions: v.versions
+            };
+            if (hasPlus) {
+              const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
+              const lexiconData = await getVerseLexicon(db, bookId, chapterNum, v.verse, bookInfo.testament);
+              if (notesData.notes) item.notes = notesData.notes;
+              if (notesData.rashi) item.rashi = notesData.rashi;
+              if (lexiconData) item.lexicon = lexiconData;
+            }
+            allVerses.push(item);
+          }
+
+          return {
+            mode: 'verse',
+            type: 'all_versions',
+            book: {
+              id: bookInfo.id,
+              name: bookInfo.name,
+              name_en: bookInfo.name_en,
+              chapters: bookInfo.chapters
+            },
+            chapter: chapterNum,
+            verseRange: startVerse ? (endVerse && endVerse !== startVerse ? `${startVerse}-${endVerse}` : `${startVerse}`) : 'all',
+            version: 'all',
+            count: allVerses.length,
+            hasNotes: hasPlus,
+            verses: allVerses
+          };
+        }
+
+        // KASUS 3: Versi Alkitab standar (tb, nkjv, ende, bbe, bis, tl, nwt, net, tn_he, tn_en, dll.)
         let sql = `
           SELECT v.verse, v.text, v.version
           FROM verses v
@@ -421,6 +832,25 @@ export default async function bibleHandler(input = '', options = {}) {
 
         const verses = await db.all(sql, params);
 
+        let enrichedVerses = verses;
+        if (hasPlus) {
+          enrichedVerses = [];
+          const isTanakhSingle = selectedVersion === 'tn_he' || selectedVersion === 'tn_en';
+          for (const v of verses) {
+            const item = { ...v };
+            if (isTanakhSingle) {
+              const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
+              if (notesData.rashi) item.rashi = notesData.rashi;
+            } else {
+              const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
+              const lexiconData = await getVerseLexicon(db, bookId, chapterNum, v.verse, bookInfo.testament);
+              if (notesData.notes) item.notes = notesData.notes;
+              if (lexiconData) item.lexicon = lexiconData;
+            }
+            enrichedVerses.push(item);
+          }
+        }
+
         return {
           mode: 'verse',
           book: {
@@ -432,8 +862,9 @@ export default async function bibleHandler(input = '', options = {}) {
           chapter: chapterNum,
           verseRange: startVerse ? (endVerse && endVerse !== startVerse ? `${startVerse}-${endVerse}` : `${startVerse}`) : 'all',
           version: selectedVersion,
-          count: verses.length,
-          verses
+          count: enrichedVerses.length,
+          hasNotes: hasPlus,
+          verses: enrichedVerses
         };
       }
     }
@@ -476,9 +907,6 @@ export default async function bibleHandler(input = '', options = {}) {
 }
 
 // Support direct CLI execution: node index.js [query]
-import { fileURLToPath } from 'url';
-import path from 'path';
-
 if (process.argv[1] && (
   fileURLToPath(import.meta.url) === path.resolve(process.argv[1]) ||
   process.argv[1].endsWith('index.js') ||
