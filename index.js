@@ -196,8 +196,69 @@ export default async function bibleHandler(input = '', options = {}) {
     const rawInput = input.trim();
     const defaultVersion = options.version || 'tb';
 
+    // 0. Command: RANDOM / ACAK AYAT (contoh: "", "random", "acak")
+    const isRandom = !rawInput || rawInput.toLowerCase() === 'random' || rawInput.toLowerCase() === 'acak' || options.random;
+    if (isRandom) {
+      const selectedVersion = options.version || defaultVersion;
+      const count = options.limit || 1;
+
+      const rows = await db.all(`
+        SELECT b.id as book_id, b.name as book_name, b.name_en as book_name_en, b.chapters, v.chapter, v.verse, v.version, v.text
+        FROM verses v
+        JOIN books b ON v.book_id = b.id
+        WHERE v.version = ?
+        ORDER BY RANDOM()
+        LIMIT ?
+      `, [selectedVersion, count]);
+
+      if (rows.length === 0) {
+        return {
+          mode: 'random',
+          error: `Tidak ada data ayat untuk versi: ${selectedVersion}`
+        };
+      }
+
+      if (count === 1) {
+        const row = rows[0];
+        return {
+          mode: 'random',
+          book: {
+            id: row.book_id,
+            name: row.book_name,
+            name_en: row.book_name_en,
+            chapters: row.chapters
+          },
+          chapter: row.chapter,
+          verseRange: String(row.verse),
+          version: row.version,
+          count: 1,
+          verses: [
+            {
+              verse: row.verse,
+              text: row.text,
+              version: row.version
+            }
+          ]
+        };
+      }
+
+      return {
+        mode: 'random',
+        total: rows.length,
+        version: selectedVersion,
+        verses: rows.map(r => ({
+          book_id: r.book_id,
+          book_name: r.book_name,
+          chapter: r.chapter,
+          verse: r.verse,
+          text: r.text,
+          version: r.version
+        }))
+      };
+    }
+
     // 1. Command: LIST / KITAB (Daftar semua kitab)
-    if (!rawInput || rawInput.toLowerCase() === 'list' || rawInput.toLowerCase() === 'kitab') {
+    if (rawInput.toLowerCase() === 'list' || rawInput.toLowerCase() === 'kitab') {
       const books = await db.all(`SELECT id, name, name_en, chapters, total_verses, pericopes, testament FROM books ORDER BY id`);
       return {
         mode: 'list_books',
@@ -381,7 +442,7 @@ if (process.argv[1] && (
   process.argv[1].endsWith('index.js') ||
   process.argv[1].endsWith('index')
 )) {
-  const query = process.argv.slice(2).join(' ') || 'Yohanes 3:16';
+  const query = process.argv.slice(2).join(' ') || 'random';
   bibleHandler(query)
     .then((res) => {
       console.log(JSON.stringify(res, null, 2));
