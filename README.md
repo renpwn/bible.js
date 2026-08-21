@@ -1,4 +1,4 @@
-# @renpwn/bible.js - Complete Bible Library for Node.js
+# @renpwn/bible.js - Comprehensive Scripture Library (Tanakh & Christian Bible) for Node.js
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)
@@ -1121,6 +1121,7 @@ SOFTWARE.
 - **Tokopedia**: [tokopedia.com/renpwn](https://tokopedia.com/renpwn)
 - **Shopee**: [shopee.co.id/renpwn](https://shopee.co.id/renpwn)
 - **TikTok**: [tiktok.com/@renpwn](https://tiktok.com/@renpwn)
+- **𝓘💖𝓤 𝓥𝓲𝓮𝓽𝓪**
 
 ### Support Development
 ```
