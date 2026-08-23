@@ -32,7 +32,27 @@ function getNotesFileForBook(bookId) {
   }
 }
 
-export function getVerseNotesAndRashi(bookId, chapter, verse) {
+export async function getVerseNotesAndRashi(database, bookId, chapter, verse) {
+  // 1. Coba ambil dari Database SQLite terlebih dahulu
+  if (database) {
+    try {
+      const row = await database.get(`
+        SELECT notes, rashi FROM verses_notes
+        WHERE book_id = ? AND chapter = ? AND verse = ?
+      `, [bookId, chapter, verse]);
+
+      if (row) {
+        return {
+          notes: row.notes ? JSON.parse(row.notes) : null,
+          rashi: row.rashi ? JSON.parse(row.rashi) : null
+        };
+      }
+    } catch (_) {
+      // Jika tabel tidak ada atau error, fallback ke file JSON di bawah
+    }
+  }
+
+  // 2. Fallback ke file JSON lokal (jika ada)
   const fileData = getNotesFileForBook(bookId);
   if (!fileData || !fileData.data) return { notes: null, rashi: null };
 
@@ -447,18 +467,19 @@ export default async function bibleHandler(input = '', options = {}) {
           }
         }
 
-        const combinedVerses = Array.from(verseMap.values()).map(v => {
+        const combinedVerses = [];
+        for (const v of verseMap.values()) {
           const entry = {
             verse: v.verse,
             tn_he: v.tn_he,
             tn_en: v.tn_en
           };
           if (hasPlus) {
-            const notesData = getVerseNotesAndRashi(anchor.book_id, anchor.chapter, v.verse);
+            const notesData = await getVerseNotesAndRashi(db, anchor.book_id, anchor.chapter, v.verse);
             entry.rashi = notesData.rashi || null;
           }
-          return entry;
-        });
+          combinedVerses.push(entry);
+        }
 
         return {
           mode: 'random',
@@ -550,7 +571,7 @@ export default async function bibleHandler(input = '', options = {}) {
             versions: v.versions
           };
           if (hasPlus) {
-            const notesData = getVerseNotesAndRashi(anchor.book_id, anchor.chapter, v.verse);
+            const notesData = await getVerseNotesAndRashi(db, anchor.book_id, anchor.chapter, v.verse);
             const lexiconData = await getVerseLexicon(db, anchor.book_id, anchor.chapter, v.verse, true, anchor.testament);
             if (notesData.notes) item.notes = notesData.notes;
             if (notesData.rashi) item.rashi = notesData.rashi;
@@ -640,7 +661,7 @@ export default async function bibleHandler(input = '', options = {}) {
           version: v.version
         };
         if (hasPlus) {
-          const notesData = getVerseNotesAndRashi(anchor.book_id, anchor.chapter, v.verse);
+          const notesData = await getVerseNotesAndRashi(db, anchor.book_id, anchor.chapter, v.verse);
           const lexiconData = await getVerseLexicon(db, anchor.book_id, anchor.chapter, v.verse, isInterlinearVersion(v.version || selectedVersion), anchor.testament);
           if (notesData.notes) item.notes = notesData.notes;
           if (lexiconData) item.lexicon = lexiconData;
@@ -814,18 +835,19 @@ export default async function bibleHandler(input = '', options = {}) {
               if (item) item[r.version] = r.text;
             }
 
-            const combinedVerses = Array.from(verseMap.values()).map(v => {
+            const combinedVerses = [];
+            for (const v of verseMap.values()) {
               const entry = {
                 verse: v.verse,
                 tn_he: v.tn_he,
                 tn_en: v.tn_en
               };
               if (hasPlus) {
-                const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
+                const notesData = await getVerseNotesAndRashi(db, bookId, chapterNum, v.verse);
                 if (notesData.rashi) entry.rashi = notesData.rashi;
               }
-              return entry;
-            });
+              combinedVerses.push(entry);
+            }
 
             return {
               mode: 'verse',
@@ -883,7 +905,7 @@ export default async function bibleHandler(input = '', options = {}) {
               versions: v.versions
             };
             if (hasPlus) {
-              const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
+              const notesData = await getVerseNotesAndRashi(db, bookId, chapterNum, v.verse);
               const lexiconData = await getVerseLexicon(db, bookId, chapterNum, v.verse, true, bookInfo.testament);
               if (notesData.notes) item.notes = notesData.notes;
               if (notesData.rashi) item.rashi = notesData.rashi;
@@ -937,10 +959,10 @@ export default async function bibleHandler(input = '', options = {}) {
           for (const v of verses) {
             const item = { ...v };
             if (isTanakhSingle) {
-              const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
+              const notesData = await getVerseNotesAndRashi(db, bookId, chapterNum, v.verse);
               if (notesData.rashi) item.rashi = notesData.rashi;
             } else {
-              const notesData = getVerseNotesAndRashi(bookId, chapterNum, v.verse);
+              const notesData = await getVerseNotesAndRashi(db, bookId, chapterNum, v.verse);
               const lexiconData = await getVerseLexicon(db, bookId, chapterNum, v.verse, isInterlinearVersion(selectedVersion), bookInfo.testament);
               if (notesData.notes) item.notes = notesData.notes;
               if (lexiconData) item.lexicon = lexiconData;
