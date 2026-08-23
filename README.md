@@ -496,13 +496,16 @@ const options = {
 Database sudah otomatis siap pakai melalui download/arsip. Jika Anda ingin melakukan scraping mandiri dari sumber web:
 
 ```bash
-# 1. Scrape semua 66 kitab ke database
+# 1. Install dependensi khusus maintenance/scraper (cheerio, axios, dll.)
+npm run mt:install
+
+# 2. Scrape semua 66 kitab ke database
 npm run scrape:all
 
-# 2. Migrasi data JSON ke database (jika ada)
+# 3. Migrasi data JSON ke database (jika ada)
 npm run migrate:json
 
-# 3. Scrape kitab tertentu melalui CLI (contoh: Kitab ke-43 Yohanes)
+# 4. Scrape kitab tertentu melalui CLI (contoh: Kitab ke-43 Yohanes)
 node mt/bible.js -b 43
 ```
 
@@ -582,6 +585,16 @@ CREATE TABLE cross_references (
   target_verse INTEGER,
   strength INTEGER,
   type TEXT
+);
+
+-- 7. Catatan Studi & Komentar Rabbi Rashi
+CREATE TABLE verses_notes (
+  book_id INTEGER NOT NULL,
+  chapter INTEGER NOT NULL,
+  verse INTEGER NOT NULL,
+  notes TEXT,                  -- JSON string: Study Notes (sn, tn, tc, map)
+  rashi TEXT,                  -- JSON string: Komentar Rabbi Rashi [{ heb, eng }]
+  PRIMARY KEY (book_id, chapter, verse)
 );
 ```
 

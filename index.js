@@ -1027,11 +1027,7 @@ export default async function bibleHandler(input = '', options = {}) {
 }
 
 // Support direct CLI execution: node index.js [query]
-if (process.argv[1] && (
-  fileURLToPath(import.meta.url) === path.resolve(process.argv[1]) ||
-  process.argv[1].endsWith('index.js') ||
-  process.argv[1].endsWith('index')
-)) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   const query = process.argv.slice(2).join(' ') || 'random';
   bibleHandler(query)
     .then((res) => {
