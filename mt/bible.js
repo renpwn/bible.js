@@ -497,12 +497,13 @@ Mode:
   2: Web → JSON & DB
   3: Web → JSON
   4: JSON → DB
+  5: DB → JSON
 
 Penggunaan:
   node bible.js [options]
 
 Options:
-  -m, --mode <mode>        Mode pengambilan data (1-3)
+  -m, --mode <mode>        Mode pengambilan data (1-5)
   -s, --start <no>         Mulai dari kitab ke-n (default: 1)
   -b, --book <no>          Proses satu kitab saja
   -c, --concurrency <n>    Jumlah request paralel (default: 3)
@@ -517,6 +518,8 @@ Contoh:
   node bible.js -m 1 -s 40 -B       # Mode 1, mulai kitab 40, semua
   node bible.js -m 2 -b 1           # Mode 2, hanya kitab 1
   node bible.js -m 3 -c 3 -B        # Mode 3, 3 paralel, semua kitab
+  node bible.js -m 4 -B             # Mode 4, migrasi semua JSON ke DB
+  node bible.js -m 5 -B             # Mode 5, ekspor semua kitab dari DB ke JSON
   node bible.js -m 1 -v tb,bis -B   # Mode 1, hanya versi TB dan BIS
   `)
 }
@@ -1290,52 +1293,104 @@ async function saveChapterToDB(chapterData, targetVersions) {
 async function migrateJSONtoDB(bookId) {
   log(`\n📁 Migrasi kitab ${bookId}...`)
 
-  const filename = `${DIR}/Bible_${bookId}_*.json`
   const files = await fs.readdir(DIR)
-  const bookFile = files.find(f => f.startsWith(`Bible_${bookId}_`))
+  const bookFile = files.find(f => f.startsWith(`Bible_${bookId}_`) && f.endsWith('.json') && !f.endsWith('.notes.json'))
+  const notesFile = files.find(f => f.startsWith(`Bible_${bookId}_`) && f.endsWith('.notes.json'))
 
-  if (!bookFile) {
-    log(`❌ File JSON untuk kitab ${bookId} tidak ditemukan`)
+  if (!bookFile && !notesFile) {
+    log(`❌ File JSON / Notes untuk kitab ${bookId} tidak ditemukan`)
     return false
   }
 
-  const filePath = `${DIR}/${bookFile}`
+  let success = true
 
-  try {
-    const bookData = JSON.parse(await fs.readFile(filePath, "utf8"))
-    log(`📊 Kitab: ${bookData.name}, Total pasal: ${bookData.data.length}`)
+  if (bookFile) {
+    const filePath = `${DIR}/${bookFile}`
+    try {
+      const bookData = JSON.parse(await fs.readFile(filePath, "utf8"))
+      log(`📊 Kitab: ${bookData.name}, Total pasal: ${bookData.data.length}`)
 
-    // Proses setiap pasal
-    let successCount = 0
-    let failCount = 0
+      // Proses setiap pasal
+      let successCount = 0
+      let failCount = 0
 
-    for (const chapterData of bookData.data) {
-      try {
-        await saveChapterToDB(chapterData, BibleVersions)
-        successCount++
+      for (const chapterData of bookData.data) {
+        try {
+          await saveChapterToDB(chapterData, BibleVersions)
+          successCount++
 
-        // Tampilkan progress
-        if (successCount % 5 === 0 || successCount === bookData.data.length) {
-          const progress = Math.round(successCount / bookData.data.length * 100)
-          process.stdout.write(`📊 Progress: ${successCount}/${bookData.data.length} pasal (${progress}%)\n`)
+          // Tampilkan progress
+          if (successCount % 5 === 0 || successCount === bookData.data.length) {
+            const progress = Math.round(successCount / bookData.data.length * 100)
+            process.stdout.write(`📊 Progress Verses: ${successCount}/${bookData.data.length} pasal (${progress}%)\n`)
+          }
+
+        } catch (error) {
+          log(`\n❌ Gagal migrasi pasal ${chapterData.chapter}:`, error.message)
+          failCount++
         }
+      }
 
-      } catch (error) {
-        log(`\n❌ Gagal migrasi pasal ${chapterData.chapter}:`, error.message)
-        failCount++
+      // Tunggu database queue selesai
+      await dbQueue.waitUntilEmpty()
+
+      log(`\n✅ Migrasi Verses selesai: ${successCount} berhasil, ${failCount} gagal`)
+      if (failCount > 0) success = false
+
+    } catch (error) {
+      log(`❌ Gagal migrasi verses kitab ${bookId}:`, error.message)
+      success = false
+    }
+  }
+
+  if (notesFile) {
+    const notesPath = `${DIR}/${notesFile}`
+    try {
+      const notesData = JSON.parse(await fs.readFile(notesPath, "utf8"))
+      log(`📊 Migrasi Notes Kitab: ${notesData.name}`)
+      await saveNotesToDB(notesData)
+      log(`✅ Migrasi Notes selesai untuk kitab ${bookId}`)
+    } catch (error) {
+      log(`❌ Gagal migrasi notes kitab ${bookId}:`, error.message)
+      success = false
+    }
+  }
+
+  return success
+}
+
+async function saveNotesToDB(notesData) {
+  if (!db) return
+  const bookId = notesData.id
+
+  for (const chArr of notesData.data) {
+    const chData = chArr[0]
+    if (!chData || !chData.verses) continue
+    const chapter = chData.chapter
+
+    for (const vData of chData.verses) {
+      const verse = vData.verse
+      const notesStr = vData.notes && Object.keys(vData.notes).length > 0 ? JSON.stringify(vData.notes) : null
+      const rashiStr = vData.rashi && vData.rashi.length > 0 ? JSON.stringify(vData.rashi) : null
+
+      if (notesStr || rashiStr) {
+        await dbQueue.addAsync(async () => {
+          try {
+            await db.run(
+              `INSERT OR REPLACE INTO verses_notes (book_id, chapter, verse, notes, rashi)
+               VALUES (?, ?, ?, ?, ?)`,
+              [bookId, chapter, verse, notesStr, rashiStr]
+            );
+          } catch (error) {
+            log(`❌ Gagal menyimpan notes ${bookId}:${chapter}:${verse}:`, error.message)
+            throw error
+          }
+        })
       }
     }
-
-    // Tunggu database queue selesai
-    await dbQueue.waitUntilEmpty()
-
-    log(`\n✅ Migrasi selesai: ${successCount} berhasil, ${failCount} gagal`)
-    return failCount === 0
-
-  } catch (error) {
-    log(`❌ Gagal migrasi kitab ${bookId}:`, error.message)
-    return false
   }
+
+  await dbQueue.waitUntilEmpty()
 }
 
 /* =========================
@@ -1746,6 +1801,161 @@ async function createDirectories(mode) {
   }
 }
 
+// Ekspor database SQLite ke file JSON
+async function exportDBtoJSON(bookId) {
+  log(`\n📤 Mengekspor kitab ${bookId} dari DB ke JSON...`)
+  
+  // 1. Get book metadata
+  const bookInfo = await db.get("SELECT * FROM books WHERE id = ?", [bookId])
+  if (!bookInfo) {
+    log(`❌ Kitab dengan ID ${bookId} tidak ditemukan di database.`)
+    return false
+  }
+
+  const bookNameFormatted = bookInfo.name.replace(/\s+/g, '_')
+  const baseJsonFilename = `Bible_${bookId}_${bookNameFormatted}.json`
+  const notesJsonFilename = `Bible_${bookId}_${bookNameFormatted}.notes.json`
+
+  const tanakhNameMap = {
+    'torah': 'Torah',
+    'neviim': "Nevi'im",
+    'ketuvim': 'Ketuvim'
+  }
+
+  // 2. Fetch verses
+  const verses = await db.all(
+    "SELECT chapter, verse, version, text FROM verses WHERE book_id = ? ORDER BY chapter ASC, verse ASC, version ASC",
+    [bookId]
+  )
+
+  // 3. Fetch notes & rashi
+  const notes = await db.all(
+    "SELECT chapter, verse, notes, rashi FROM verses_notes WHERE book_id = ? ORDER BY chapter ASC, verse ASC",
+    [bookId]
+  )
+
+  // Map notes & rashi by chapter-verse
+  const notesMap = new Map()
+  for (const n of notes) {
+    const key = `${n.chapter}:${n.verse}`
+    notesMap.set(key, {
+      notes: n.notes ? JSON.parse(n.notes) : null,
+      rashi: n.rashi ? JSON.parse(n.rashi) : null
+    })
+  }
+
+  // Build structure for verses JSON
+  const versesByChapter = new Map()
+  for (const v of verses) {
+    if (!versesByChapter.has(v.chapter)) {
+      versesByChapter.set(v.chapter, new Map())
+    }
+    const chapterMap = versesByChapter.get(v.chapter)
+    if (!chapterMap.has(v.verse)) {
+      chapterMap.set(v.verse, {})
+    }
+    chapterMap.get(v.verse)[v.version] = v.text
+  }
+
+  const versesDataArray = []
+  const notesDataArray = []
+
+  // Loop through chapters
+  for (let ch = 1; ch <= bookInfo.chapters; ch++) {
+    const chVersesMap = versesByChapter.get(ch)
+    if (!chVersesMap) continue
+
+    const chVersesList = []
+    const chNotesList = []
+
+    const sortedVerses = Array.from(chVersesMap.keys()).sort((a, b) => a - b)
+
+    for (const vNum of sortedVerses) {
+      const texts = chVersesMap.get(vNum)
+      chVersesList.push({
+        verse: vNum,
+        texts: texts
+      })
+
+      const noteKey = `${ch}:${vNum}`
+      if (notesMap.has(noteKey)) {
+        const { notes: vNotes, rashi: vRashi } = notesMap.get(noteKey)
+        const noteEntry = { verse: vNum }
+        if (vNotes) noteEntry.notes = vNotes
+        if (vRashi) noteEntry.rashi = vRashi
+        chNotesList.push(noteEntry)
+      } else {
+        chNotesList.push({ verse: vNum })
+      }
+    }
+
+    if (chVersesList.length > 0) {
+      versesDataArray.push([
+        {
+          bookId: bookId,
+          chapter: ch,
+          verses: chVersesList
+        }
+      ])
+    }
+
+    if (chNotesList.length > 0) {
+      notesDataArray.push([
+        {
+          bookId: bookId,
+          chapter: ch,
+          verses: chNotesList
+        }
+      ])
+    }
+  }
+
+  const baseJsonContent = {
+    id: bookInfo.id,
+    name: bookInfo.name,
+    chapters: bookInfo.chapters,
+    totalVerses: bookInfo.total_verses,
+    pericopes: bookInfo.pericopes || 0,
+    tanakh_name: tanakhNameMap[bookInfo.tanakh_id] || null,
+    tanakh_pos: bookInfo.tanakh_pos ? parseInt(bookInfo.tanakh_pos, 10) : null,
+    tname_he: bookInfo.name_he || null,
+    tname_en: bookInfo.name_en || null,
+    aid: bookInfo.aid || 0,
+    testament: bookInfo.testament,
+    data: versesDataArray
+  }
+
+  const notesJsonContent = {
+    id: bookInfo.id,
+    name: bookInfo.name,
+    chapters: bookInfo.chapters,
+    totalVerses: bookInfo.total_verses,
+    pericopes: bookInfo.pericopes || 0,
+    tanakh_name: tanakhNameMap[bookInfo.tanakh_id] || null,
+    tanakh_pos: bookInfo.tanakh_pos ? parseInt(bookInfo.tanakh_pos, 10) : null,
+    tname_he: bookInfo.name_he || null,
+    tname_en: bookInfo.name_en || null,
+    aid: bookInfo.aid || 0,
+    testament: bookInfo.testament,
+    data: notesDataArray
+  }
+
+  const baseJsonPath = path.join(DIR, baseJsonFilename)
+  const notesJsonPath = path.join(DIR, notesJsonFilename)
+
+  await fs.mkdir(DIR, { recursive: true })
+  await fs.writeFile(baseJsonPath, JSON.stringify(baseJsonContent, null, space), "utf8")
+  log(`💾 File utama berhasil ditulis: ${baseJsonPath}`)
+
+  const hasAnyNotes = notes.length > 0
+  if (hasAnyNotes) {
+    await fs.writeFile(notesJsonPath, JSON.stringify(notesJsonContent, null, space), "utf8")
+    log(`💾 File catatan berhasil ditulis: ${notesJsonPath}`)
+  }
+
+  return true
+}
+
 // Update index.json
 async function updateLexiconIndex(index, lexiconData) {
   try {
@@ -1804,7 +2014,8 @@ async function main() {
     1: "Web → DB",
     2: "Web → JSON & DB",
     3: "Web → JSON",
-    4: "JSON → DB"
+    4: "JSON → DB",
+    5: "DB → JSON"
   };
 
   log(`Mode: ${options.mode} (${modeNames[options.mode]})`);
@@ -1828,9 +2039,7 @@ async function main() {
     }
   }
 
-  // await createLexiconDirectories();
-
-  // Buka koneksi database untuk mode 1, 2 & 4
+  // Buka koneksi database untuk mode 1, 2, 4 & 5
   if (options.mode !== 3) {
     log("\n🚀 Opening database connection...");
     db = await openDB(DB_PATH, log, { fresh: options.fresh });
@@ -1888,6 +2097,9 @@ async function main() {
           case 4:
             success = await migrateJSONtoDB(bookId);
             break;
+          case 5:
+            success = await exportDBtoJSON(bookId);
+            break;
 
           default:
             log(`❌ Mode ${options.mode} tidak dikenali`);
@@ -1908,31 +2120,33 @@ async function main() {
       logManager.update("📖 BOOK", bookId, booksToProcess.length);
 
       if (bookId !== booksToProcess[booksToProcess.length - 1]) {
-        const delay = options.mode !== 4 ? 5000 : 2000;
+        const delay = (options.mode === 4 || options.mode === 5) ? 1000 : 5000;
         log("")
         log(`⏳ Menunggu ${delay/1000} detik sebelum kitab berikutnya...`);        
         await sleep(delay);
         // Clear progress setelah selesai
         setTimeout(() => {
-          logManager.remove("🌐 Scraping"); // Perbaikan: ubah removeProgress menjadi remove
+          logManager.remove("🌐 Scraping");
         }, 1000);
       }
     }
 
     // PROSES LEXICONS
-    log("")
-    log("🔍 Mengumpulkan Strong's numbers...");
-    
-    const commonStrongs = [];
-    const allStrongNumbers = [...allStrongs, ...commonStrongs];
-    
-    if (allStrongNumbers.length > 0) {
+    if (options.mode !== 4 && options.mode !== 5) {
       log("")
-      log(`📚 Memproses ${allStrongNumbers.length} Strong's numbers...`);
-      await processLexicons(allStrongNumbers, options.concurrency,  options.mode);
-    } else {
-      log("")
-      log("ℹ️ Tidak ada Strong's numbers yang dikumpulkan.");
+      log("🔍 Mengumpulkan Strong's numbers...");
+      
+      const commonStrongs = [];
+      const allStrongNumbers = [...allStrongs, ...commonStrongs];
+      
+      if (allStrongNumbers.length > 0) {
+        log("")
+        log(`📚 Memproses ${allStrongNumbers.length} Strong's numbers...`);
+        await processLexicons(allStrongNumbers, options.concurrency,  options.mode);
+      } else {
+        log("")
+        log("ℹ️ Tidak ada Strong's numbers yang dikumpulkan.");
+      }
     }
 
     log("=".repeat(60));
@@ -1954,7 +2168,7 @@ async function main() {
       }
     }
 
-    if (options.mode === 2 || options.mode === 3) {
+    if (options.mode === 2 || options.mode === 3 || options.mode === 5) {
       log(`📁 JSON files: ${DIR}/`);      
       log(`📁 Lexicon JSON: ${DIR_LEXICON}/`);      
       log(`📁 JSON Type: ${space <= 0 ? 'MIN' : 'BEAUTY:' +space}`);

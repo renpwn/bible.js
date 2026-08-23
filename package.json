@@ -43,6 +43,7 @@
   "scripts": {
     "start": "node index.js",
     "compress:db": "node mt/download.js --compress",
+    "mt:install": "npm install --include=dev",
     "extract:db": "node mt/download.js --extract",
     "download:db": "node mt/download.js",
     "scrape:all": "node mt/bible.js -m 1 -B -c 5",
@@ -57,14 +58,13 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "@renpwn/termux-sqlite3": "^1.0.3"
+  },
+  "devDependencies": {
     "@renpwn/simplelog": "^0.0.2",
-    "@renpwn/termux-sqlite3": "^1.0.3",
     "axios": "^1.13.2",
     "axios-cookiejar-support": "^6.0.5",
     "cheerio": "^1.1.2",
-    "got": "^14.6.6",
-    "playwright": "^1.57.0",
-    "simplelog": "^0.0.3",
     "tough-cookie": "^6.0.0"
   },
   "optionalDependencies": {

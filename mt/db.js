@@ -163,6 +163,17 @@ export async function openDB(dbFile = DEFAULT_DB, log = dLog, options = {}) {
     FOREIGN KEY (source_book_id) REFERENCES books(id),
     FOREIGN KEY (target_book_id) REFERENCES books(id)
   );
+
+  -- Tabel untuk Study Notes (NET) dan Rashi Commentary
+  CREATE TABLE IF NOT EXISTS verses_notes (
+    book_id INTEGER NOT NULL,
+    chapter INTEGER NOT NULL,
+    verse INTEGER NOT NULL,
+    notes TEXT,                      -- JSON string dari dictionary notes
+    rashi TEXT,                      -- JSON string dari array rashi
+    PRIMARY KEY (book_id, chapter, verse),
+    FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
+  );
   `
 
   const ftsSQL = `

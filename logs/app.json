@@ -8011,3 +8011,31 @@
 {"time":"2026-08-16T21:28:29.020Z","level":"log","message":"📁 JSON Type: BEAUTY:2"}
 {"time":"2026-08-16T21:28:29.037Z","level":"log","message":"============================================================"}
 {"time":"2026-08-16T21:28:29.062Z","level":"log","message":"✅ Database closed"}
+{"time":"2026-08-23T18:29:15.099Z","level":"log","message":"============================================================"}
+{"time":"2026-08-23T18:29:15.106Z","level":"log","message":"📖 BIBLE SABDAWEB SCRAPER"}
+{"time":"2026-08-23T18:29:15.112Z","level":"log","message":"============================================================"}
+{"time":"2026-08-23T18:29:15.116Z","level":"log","message":"Mode: 1 (Web → DB)"}
+{"time":"2026-08-23T18:29:15.120Z","level":"log","message":"Start: kitab 1"}
+{"time":"2026-08-23T18:29:15.124Z","level":"log","message":"Concurrency: 3"}
+{"time":"2026-08-23T18:29:15.128Z","level":"log","message":"Batch mode: false"}
+{"time":"2026-08-23T18:29:15.131Z","level":"log","message":"Resume mode: false"}
+{"time":"2026-08-23T18:29:15.135Z","level":"log","message":"============================================================"}
+{"time":"2026-08-23T18:29:15.139Z","level":"log","message":"\n🚀 Opening database connection..."}
+{"time":"2026-08-23T18:29:15.143Z","level":"log","message":"🚀 Opening database: D:\\zproject\\bible.js\\db\\bible.db"}
+{"time":"2026-08-23T18:29:15.201Z","level":"log","message":"✅ Database connection OK"}
+{"time":"2026-08-23T18:29:15.206Z","level":"log","message":"📊 Initializing Bible schema..."}
+{"time":"2026-08-23T18:29:15.211Z","level":"log","message":"✅ Main schema created"}
+{"time":"2026-08-23T18:29:15.215Z","level":"log","message":"✅ FTS5 tables created"}
+{"time":"2026-08-23T18:29:15.218Z","level":"log","message":"✅ Indexes created"}
+{"time":"2026-08-23T18:29:15.223Z","level":"log","message":"✅ Triggers created"}
+{"time":"2026-08-23T18:29:15.229Z","level":"log","message":"📋 Database Objects Created:"}
+{"time":"2026-08-23T18:29:15.233Z","level":"log","message":"  TABLE: 19 items"}
+{"time":"2026-08-23T18:29:15.236Z","level":"log","message":"  TRIGGER: 6 items"}
+{"time":"2026-08-23T18:29:15.240Z","level":"log","message":"    - strong_lexicon_ad"}
+{"time":"2026-08-23T18:29:15.243Z","level":"log","message":"    - strong_lexicon_ai"}
+{"time":"2026-08-23T18:29:15.247Z","level":"log","message":"    - strong_lexicon_au"}
+{"time":"2026-08-23T18:29:15.250Z","level":"log","message":"    - verses_ad"}
+{"time":"2026-08-23T18:29:15.254Z","level":"log","message":"    - verses_ai"}
+{"time":"2026-08-23T18:29:15.257Z","level":"log","message":"    - verses_au"}
+{"time":"2026-08-23T18:29:15.260Z","level":"log","message":""}
+{"time":"2026-08-23T18:29:15.264Z","level":"log","message":"\n📊 Inisialisasi database..."}
