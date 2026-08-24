@@ -1,3 +1,22 @@
+/**
+ * @fileoverview @renpwn/bible.js - SQLite Database Schema & Initializer
+ * 
+ * Copyright (C) 2026 RENPWN (ARDY RENDRA R) <renpwn.ch@gmail.com>
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const Database = require('@renpwn/termux-sqlite3');
@@ -5,7 +24,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-const DEFAULT_DB = './bible.db' // Ganti dari quran.db ke bible.db
+const DEFAULT_DB = './bible.js.db' // Ganti dari quran.db ke bible.js.db
 
 const dLog = (...args) => {
   console.log(...args);
@@ -63,13 +82,6 @@ export async function openDB(dbFile = DEFAULT_DB, log = dLog, options = {}) {
   -- PRAGMA journal_mode = WAL;
   -- PRAGMA synchronous = NORMAL;
   -- PRAGMA cache_size = -10000; -- 10MB cache
-
-  -- Tabel untuk Tanakh (untuk referensi kitab Ibrani)
-  CREATE TABLE IF NOT EXISTS tanakh (
-    id TEXT PRIMARY KEY,           -- kode singkat
-    name TEXT NOT NULL,            -- nama lengkap
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  );
 
   -- Tabel untuk versi Alkitab (TB, BIS, TL, dll)
   CREATE TABLE IF NOT EXISTS versions (
@@ -134,36 +146,6 @@ export async function openDB(dbFile = DEFAULT_DB, log = dLog, options = {}) {
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
 
-  -- Tabel perikop (opsional, untuk struktur pembagian)
-  CREATE TABLE IF NOT EXISTS pericopes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    book_id INTEGER NOT NULL,
-    start_chapter INTEGER NOT NULL,
-    start_verse INTEGER NOT NULL,
-    end_chapter INTEGER NOT NULL,
-    end_verse INTEGER NOT NULL,
-    title TEXT NOT NULL,           -- Judul perikop
-    subtitle TEXT,                 -- Subjudul (opsional)
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
-  );
-
-  -- Tabel pencarian silang (cross-references)
-  CREATE TABLE IF NOT EXISTS cross_references (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    source_book_id INTEGER NOT NULL,
-    source_chapter INTEGER NOT NULL,
-    source_verse INTEGER NOT NULL,
-    target_book_id INTEGER NOT NULL,
-    target_chapter INTEGER NOT NULL,
-    target_verse INTEGER NOT NULL,
-    strength INTEGER DEFAULT 1,    -- 1=weak, 2=medium, 3=strong
-    type TEXT,                     -- quotation, allusion, theme, etc
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (source_book_id) REFERENCES books(id),
-    FOREIGN KEY (target_book_id) REFERENCES books(id)
-  );
-
   -- Tabel untuk Study Notes (NET) dan Rashi Commentary
   CREATE TABLE IF NOT EXISTS verses_notes (
     book_id INTEGER NOT NULL,
@@ -211,15 +193,6 @@ export async function openDB(dbFile = DEFAULT_DB, log = dLog, options = {}) {
 
   CREATE INDEX IF NOT EXISTS idx_strong_reference 
     ON strong_lexicon(strong_reference);
-
-  CREATE INDEX IF NOT EXISTS idx_pericopes_book 
-    ON pericopes(book_id, start_chapter, start_verse);
-
-  CREATE INDEX IF NOT EXISTS idx_cross_references_source 
-    ON cross_references(source_book_id, source_chapter, source_verse);
-
-  CREATE INDEX IF NOT EXISTS idx_cross_references_target 
-    ON cross_references(target_book_id, target_chapter, target_verse);
   `
 
   const triggerSQL = `

@@ -27,8 +27,8 @@
     "type": "git",
     "url": "git+https://github.com/renpwn/bible.js.git"
   },
-  "license": "MIT",
-  "author": "Ardy Ren <renpwn@proton.me>",
+  "license": "LGPL-3.0",
+  "author": "RENPWN (ARDY RENDRA R) <renpwn.ch@gmail.com>",
   "type": "module",
   "main": "index.js",
   "exports": {

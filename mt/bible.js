@@ -1,3 +1,22 @@
+/**
+ * @fileoverview @renpwn/bible.js - Scraper & Scripture Maintenance Engine
+ * 
+ * Copyright (C) 2026 RENPWN (ARDY RENDRA R) <renpwn.ch@gmail.com>
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 import fs from 'fs/promises'
 import path from 'path'
 import {fileURLToPath} from 'url'
@@ -427,7 +446,7 @@ const fetchUrl0 = async(url, options = {}, maxRetries = 3) => {
    KONFIGURASI
 ========================= */
 let db = null
-const DB_PATH = "./db/bible.db"
+const DB_PATH = "./db/bible.js.db"
 const DIR = "./json"
 const DIR_LEXICON = "./lexicon";
 
@@ -1053,7 +1072,7 @@ function findTanakhBook(bookId) {
         ...book,
         tanakh_id: section.id,
         name: section.name,
-        pos: index
+        pos: index + 1
       };
     }
   }
@@ -1264,10 +1283,10 @@ async function saveChapterToDB(chapterData, targetVersions) {
   for (const verseData of verses) {
     await dbQueue.addAsync(async () => {
       try {
-        // Hanya simpan teks ayat (per versi) ke tabel verses
+        // 1. Simpan teks ayat (per versi) ke tabel verses
         for (const version of targetVersions) {
           const versionId = version.id;
-          const text = verseData.texts[versionId];
+          const text = verseData.texts?.[versionId];
 
           if (text && text.trim()) {
             await db.run(
@@ -1277,6 +1296,23 @@ async function saveChapterToDB(chapterData, targetVersions) {
             );
           }
         }
+
+        // 2. Simpan Study Notes & Rashi Commentary ke tabel verses_notes
+        const notesStr = (verseData.notes && Object.keys(verseData.notes).length > 0)
+          ? JSON.stringify(verseData.notes)
+          : null;
+        const rashiStr = (verseData.rashi && verseData.rashi.length > 0)
+          ? JSON.stringify(verseData.rashi)
+          : null;
+
+        if (notesStr || rashiStr) {
+          await db.run(
+            `INSERT OR REPLACE INTO verses_notes (book_id, chapter, verse, notes, rashi)
+             VALUES (?, ?, ?, ?, ?)`,
+            [bookId, chapter, verseData.verse, notesStr, rashiStr]
+          );
+        }
+
         return true;
       } catch (error) {
         log(`❌ Gagal menyimpan ${bookId}:${chapter}:${verseData.verse}:`, error.message);
@@ -1399,19 +1435,6 @@ async function saveNotesToDB(notesData) {
 
 async function initializeDatabase() {
   log("\n📊 Inisialisasi database...")
-  
-  // Insert Tanakh sections
-  for (const section of Tanakh) {
-    await dbQueue.addAsync(async () => {
-      await db.run(`
-        INSERT OR REPLACE INTO tanakh (id, name)
-        VALUES (?, ?)
-      `, [
-        section.id,
-        section.name
-      ])
-    })
-  }
 
   // Insert versi-versi Alkitab
   for (const version of BibleVersions) {
@@ -1447,9 +1470,9 @@ async function initializeDatabase() {
         book[2],
         book[3],
         i < 39 ? 'OT' : 'NT',
-        tnBook?.tanakh_id || null,
-        tnBook?.pos || null,
-        tnBook?.aid || null
+        tnBook?.tanakh_id ?? null,
+        tnBook?.pos ?? null,
+        tnBook?.aid ?? null
       ])
     })
   }

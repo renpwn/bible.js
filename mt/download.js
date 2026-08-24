@@ -1,3 +1,22 @@
+/**
+ * @fileoverview @renpwn/bible.js - Database Auto-Downloader & Gzip Stream Extractor
+ * 
+ * Copyright (C) 2026 RENPWN (ARDY RENDRA R) <renpwn.ch@gmail.com>
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 import fs from 'fs';
 import path from 'path';
 import https from 'https';
@@ -9,17 +28,17 @@ import { pipeline } from 'stream/promises';
 // Default URL download (mencoba raw folder db di master/main repo, lalu fallback ke Releases)
 export const DEFAULT_DOWNLOAD_URLS = [
   process.env.BIBLE_DB_URL,
-  'https://raw.githubusercontent.com/renpwn/bible.js/master/db/bible.db.gz',
-  'https://github.com/renpwn/bible.js/raw/master/db/bible.db.gz',
-  'https://raw.githubusercontent.com/renpwn/bible.js/main/db/bible.db.gz',
-  'https://github.com/renpwn/bible.js/releases/latest/download/bible.db.gz'
+  'https://raw.githubusercontent.com/renpwn/bible.js/master/db/bible.js.db.gz',
+  'https://github.com/renpwn/bible.js/raw/master/db/bible.js.db.gz',
+  'https://raw.githubusercontent.com/renpwn/bible.js/main/db/bible.js.db.gz',
+  'https://github.com/renpwn/bible.js/releases/latest/download/bible.js.db.gz'
 ].filter(Boolean);
 
 export const DEFAULT_RELEASE_URL = DEFAULT_DOWNLOAD_URLS[0];
 
 export const DEFAULT_DB_PATH = 
   process.env.BIBLE_DB_PATH || 
-  path.join(process.cwd(), 'db/bible.db');
+  path.join(process.cwd(), 'db/bible.js.db');
 
 /**
  * Format bytes ke ukuran yang mudah dibaca (KB/MB/GB)
@@ -58,6 +77,14 @@ export async function compressDatabase(srcDbPath = DEFAULT_DB_PATH, targetGzPath
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir, { recursive: true });
   }
+
+  // Jalankan VACUUM untuk defragmentasi dan meminimalkan ukuran file
+  try {
+    const { openDB } = await import('../setting.db.js');
+    const db = await openDB({ path: src, timeout: 60000 });
+    await db.run('VACUUM;');
+    await db.close();
+  } catch (_) {}
 
   const srcStat = fs.statSync(src);
   console.log(`\n📦 Mengompresi database SQLite:`);
@@ -133,7 +160,7 @@ export async function extractLocalGz(archivePath, targetDbPath = DEFAULT_DB_PATH
 }
 
 /**
- * Cari file arsip database lokal di folder target (misal db/bible.db.gz atau db/bible.db.zip)
+ * Cari file arsip database lokal di folder target (misal db/bible.js.db.gz atau db/bible.js.db.zip)
  */
 export function findLocalArchive(dbPath = DEFAULT_DB_PATH) {
   const base = path.resolve(dbPath);
@@ -141,10 +168,10 @@ export function findLocalArchive(dbPath = DEFAULT_DB_PATH) {
   const filename = path.basename(base);
 
   const possibleNames = [
-    `${base}.gz`,            // db/bible.db.gz
+    `${base}.gz`,            // db/bible.js.db.gz
     path.join(dir, `${filename}.gz`),
     path.join(dir, 'bible.gz'),
-    path.join(dir, 'bible.db.gz'),
+    path.join(dir, 'bible.js.db.gz'),
     path.join(dir, 'bible.zip'),
     `${base}.zip`
   ];
@@ -282,9 +309,9 @@ function downloadFileWithProgress(url, targetFilePath, isGzip = true, maxRedirec
 }
 
 /**
- * Memastikan database bible.db tersedia saat init aplikasi:
- * 1. Cek apakah bible.db sudah ada di lokal.
- * 2. Jika belum, cek apakah ada file arsip lokal (bible.db.gz) di folder db/ lalu ekstrak.
+ * Memastikan database bible.js.db tersedia saat init aplikasi:
+ * 1. Cek apakah bible.js.db sudah ada di lokal.
+ * 2. Jika belum, cek apakah ada file arsip lokal (bible.js.db.gz) di folder db/ lalu ekstrak.
  * 3. Jika arsip lokal tidak ada, baru download dari GitHub dengan live progress bar.
  */
 export async function ensureDatabase(options = {}) {
@@ -304,7 +331,7 @@ export async function ensureDatabase(options = {}) {
     fs.mkdirSync(dbDir, { recursive: true });
   }
 
-  // 2. Cek apakah ada file arsip terkompresi lokal di folder db/ (misal: db/bible.db.gz)
+  // 2. Cek apakah ada file arsip terkompresi lokal di folder db/ (misal: db/bible.js.db.gz)
   const localArchive = findLocalArchive(dbPath);
   if (localArchive && !force) {
     console.log(`📦 Ditemukan file arsip lokal di repository: ${path.basename(localArchive)}`);
@@ -312,7 +339,7 @@ export async function ensureDatabase(options = {}) {
   }
 
   // 3. Fallback: Download dari GitHub jika file lokal tidak ada
-  console.log('📦 Database Alkitab (bible.db) belum ditemukan di lokal.');
+  console.log('📦 Database Alkitab (bible.js.db) belum ditemukan di lokal.');
   const downloadUrls = options.urls || (options.url ? [options.url] : DEFAULT_DOWNLOAD_URLS);
 
   let lastError = null;

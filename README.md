@@ -1,6 +1,6 @@
 # @renpwn/bible.js - Comprehensive Scripture Library (Tanakh & Christian Bible) for Node.js
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](LICENSE)
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)
 [![npm version](https://img.shields.io/npm/v/@renpwn/bible.js.svg)](https://www.npmjs.com/package/@renpwn/bible.js)
 ![Database](https://img.shields.io/badge/Database-SQLite%20%2B%20FTS5-blue)
@@ -84,42 +84,42 @@ Library ini menggunakan basis data SQLite terpadu (`~265 MB`). Agar package NPM 
 │             Saat Aplikasi Dijalankan (Init)            │
 └──────────────────────────┬─────────────────────────────┘
                            ▼
-               [ db/bible.db sudah ada? ]
+               [ db/bible.js.db sudah ada? ]
                  /                    \
               (Ya)                    (Tidak)
                /                        \
               ▼                          ▼
-      [ Langsung Digunakan ]     [ Cek db/bible.db.gz di lokal ]
+      [ Langsung Digunakan ]     [ Cek db/bible.js.db.gz di lokal ]
                                    /                       \
                                 (Ada)                    (Tidak)
                                  /                           \
                                 ▼                             ▼
-                     [ Ekstrak bible.db.gz ]         [ Download dari GitHub ]
+                     [ Ekstrak bible.js.db.gz ]         [ Download dari GitHub ]
                                 │                    (Live Progress Bar)
                                 ▼                             │
-                     [ Hapus bible.db.gz ]                    ▼
-                     (Hemat ruang disk)              [ Ekstrak bible.db ]
+                     [ Hapus bible.js.db.gz ]                    ▼
+                     (Hemat ruang disk)              [ Ekstrak bible.js.db ]
 ```
 
 ### 1. Ekstraksi Otomatis dari File Lokal
-Jika Anda meng-clone repositori dari GitHub dan terdapat file `db/bible.db.gz`, library akan **langsung mengekstraknya secara lokal** tanpa membutuhkan koneksi internet. Setelah berhasil diekstrak, file `bible.db.gz` **otomatis dihapus** untuk menghemat ruang penyimpanan.
+Jika Anda meng-clone repositori dari GitHub dan terdapat file `db/bible.js.db.gz`, library akan **langsung mengekstraknya secara lokal** tanpa membutuhkan koneksi internet. Setelah berhasil diekstrak, file `bible.js.db.gz` **otomatis dihapus** untuk menghemat ruang penyimpanan.
 
 ### 2. Download Otomatis dari GitHub (Live Progress Bar)
 Jika library diinstall melalui `npm install` (file lokal tidak ada), library otomatis mengunduh database dari GitHub dengan tampilan progress bar interaktif:
 
 ```text
-📦 Database Alkitab (bible.db) belum ditemukan di lokal.
-🌐 Mengunduh dari: https://raw.githubusercontent.com/renpwn/bible.js/master/db/bible.db.gz
-📂 Menyimpan ke: D:\zproject\bible.js\db\bible.db
+📦 Database Alkitab (bible.js.db) belum ditemukan di lokal.
+🌐 Mengunduh dari: https://raw.githubusercontent.com/renpwn/bible.js/master/db/bible.js.db.gz
+📂 Menyimpan ke: D:\zproject\bible.js\db\bible.js.db
 ⏳ Download [████████████░░░░░░░░] 60% (58.12 MB / 96.88 MB) | 7.45 MB/s | ETA: 5s
 ```
 
 ### 3. Perintah CLI Pengembang
 ```bash
-# Kompres db/bible.db menjadi db/bible.db.gz sebelum commit ke repo
+# Kompres db/bible.js.db menjadi db/bible.js.db.gz sebelum commit ke repo
 npm run compress:db
 
-# Ekstrak manual db/bible.db.gz menjadi db/bible.db
+# Ekstrak manual db/bible.js.db.gz menjadi db/bible.js.db
 npm run extract:db
 
 # Download manual database dari GitHub
@@ -282,7 +282,7 @@ const listKitab = await bibleHandler('list');
 ```
 @renpwn/bible.js/
 ├── 📁 db/                    # Database SQLite
-│   └── bible.db              # File database utama SQLite (~265MB)
+│   └── bible.js.db              # File database utama SQLite (~265MB)
 ├── 📁 json/                  # Raw JSON data per kitab (opsional)
 ├── 📁 lexicon/               # JSON leksikon Strong's (cache lokal)
 │   ├── H/                    # Kosakata Ibrani (H0001 - H9999)
@@ -1086,38 +1086,30 @@ npm test
 # Unduh database manual
 npm run download:db
 
-# Kompres bible.db sebelum upload ke GitHub Release
+# Kompres bible.js.db sebelum upload ke GitHub Release
 npm run compress:db
 
-# Ekstrak bible.db.gz secara lokal
+# Ekstrak bible.js.db.gz secara lokal
 npm run extract:db
 ```
 
 ---
 
-## 📄 License
+## 📄 License & Kebijakan Lisensi
 
-MIT License
+Proyek ini dilisensikan di bawah **[GNU Lesser General Public License v3.0 (LGPL-3.0)](LICENSE)**.
 
-Copyright (c) 2024 Ardy Ren
+**Copyright (C) 2026 RENPWN (ARDY RENDRA R) <renpwn.ch@gmail.com>**
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+### 💡 Mengapa Memilih LGPL-3.0? (Alasan & Rasionalisasi)
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. 🛡️ **Perlindungan Inti Library (Copyleft pada Core Library)**:
+   - Jika seseorang memodifikasi, mem-fork, atau memperbaiki source code internal dari library `@renpwn/bible.js` ini, modifikasi tersebut **wajib tetap open source** dan dibagikan kembali di bawah lisensi yang sama. Hal ini mencegah pihak lain mengunci perbaikan engine Alkitab ini secara proprietary tanpa membagikannya ke komunitas.
+2. 🚀 **Kebebasan Bagi Pengembang Aplikasi (Linking Freedom)**:
+   - Berbeda dengan GPL biasa yang bersifat "viral" (memaksa seluruh aplikasi turunan menjadi GPL), **LGPL-3.0 mengizinkan Anda menggunakan library ini sebagai dependensi/modul** di dalam proyek apa pun (baik bot Telegram/WhatsApp, aplikasi web gereja, API backend, maupun aplikasi mobile komersial/closed-source) **tanpa mewajibkan Anda membuka kode aplikasi utama Anda**.
+   - Selama Anda hanya mengimpor library (`import bibleHandler from '@renpwn/bible.js'`), aplikasi Anda tetap bebas menggunakan lisensi apa pun pilihan Anda.
+3. 🤝 **Integritas Firman & Penghargaan Pembuat**:
+   - Memastikan atribusi hak cipta dan nama pengembang asli (**RENPWN**) selalu tercantum secara sah, sekaligus menjaga integritas data teks Kitab Suci agar tetap terbuka dan bermanfaat bagi seluruh komunitas developer Kristiani.
 
 ---
 

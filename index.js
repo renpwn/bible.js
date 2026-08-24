@@ -1,3 +1,22 @@
+/**
+ * @fileoverview @renpwn/bible.js - Comprehensive Scripture Library (Tanakh & Christian Bible) for Node.js
+ * 
+ * Copyright (C) 2026 RENPWN (ARDY RENDRA R) <renpwn.ch@gmail.com>
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -5,6 +24,9 @@ import { openDB as _openDB } from './setting.db.js';
 
 let db = null;         // Global DB instance
 let manualDB = false;  // Flag: apakah user membuka DB manual?
+
+export const getTafsirUrl = (bookId, chapter, verse) =>
+  `https://alkitab.sabda.org/verse_commentary.php?book=${bookId}&chapter=${chapter}&verse=${verse}`;
 
 // Cache file notes in-memory
 const notesCache = new Map();
@@ -359,7 +381,7 @@ export default async function bibleHandler(input = '', options = {}) {
     //   -> Mengembalikan paket tn_he + tn_en. Jika terdapat "+", menyertakan komentar Rabbi (Rashi).
     // - Bible / Alkitab: "random", "random 5", "bible+", "alkitab+", "random 3 bible+", "random nkjv+"
     //   -> Mengembalikan ayat Alkitab. Jika terdapat "+", menyertakan notes & leksikon Strong's.
-    const hasPlus = rawInput.includes('+') || options.plus === true || options.commentary === true || options.notes === true || defaultVersion.includes('_');
+    const hasPlus = rawInput.includes('+') || options.plus === true || options.commentary === true || options.notes === true;
     const cleanInput = rawInput.replace(/\+/g, ' ').replace(/\s+/g, ' ').trim();
     const randomTokens = cleanInput.toLowerCase().split(/\s+/).filter(Boolean);
     
@@ -568,7 +590,8 @@ export default async function bibleHandler(input = '', options = {}) {
           const item = {
             verse: v.verse,
             total_versions: Object.keys(v.versions).length,
-            versions: v.versions
+            versions: v.versions,
+            tafsir: getTafsirUrl(anchor.book_id, anchor.chapter, v.verse)
           };
           if (hasPlus) {
             const notesData = await getVerseNotesAndRashi(db, anchor.book_id, anchor.chapter, v.verse);
@@ -653,12 +676,16 @@ export default async function bibleHandler(input = '', options = {}) {
       `, [anchor.book_id, anchor.chapter, selectedVersion, startVerse, endVerse]);
 
       // Enrich with Notes & Lexicon jika terdapat flag '+'
+      const isTanakhSingle = selectedVersion === 'tn_he' || selectedVersion === 'tn_en';
       const enrichedVerses = [];
       for (const v of rangeVerses) {
         const item = {
           verse: v.verse,
           text: v.text,
-          version: v.version
+          version: v.version,
+          ...(!isTanakhSingle && {
+            tafsir: getTafsirUrl(anchor.book_id, anchor.chapter, v.verse)
+          })
         };
         if (hasPlus) {
           const notesData = await getVerseNotesAndRashi(db, anchor.book_id, anchor.chapter, v.verse);
@@ -711,8 +738,18 @@ export default async function bibleHandler(input = '', options = {}) {
     // 3. Command: STRONG / LEXICON (contoh: "strong:H7225" atau "H7225" / "G746")
     const strongMatch = rawInput.match(/^(?:strong:)?([HG]\d+)$/i);
     if (strongMatch) {
-      const strongId = strongMatch[1].toUpperCase();
-      const lexicon = await db.get(`SELECT * FROM strong_lexicon WHERE strong = ?`, [strongId]);
+      const rawMatch = strongMatch[1].toUpperCase();
+      const prefix = rawMatch[0];
+      const numStr = rawMatch.slice(1);
+      const intNum = parseInt(numStr, 10);
+      const candidates = [
+        rawMatch,
+        `${prefix}${intNum}`,
+        `${prefix}${numStr.padStart(5, '0')}`,
+        `${prefix}${numStr.padStart(4, '0')}`
+      ];
+      const placeholders = candidates.map(() => '?').join(',');
+      const lexicon = await db.get(`SELECT * FROM strong_lexicon WHERE strong IN (${placeholders})`, candidates);
       if (lexicon) {
         return {
           mode: 'lexicon',
@@ -721,7 +758,7 @@ export default async function bibleHandler(input = '', options = {}) {
       }
       return {
         mode: 'lexicon',
-        error: `Strong number ${strongId} tidak ditemukan.`
+        error: `Strong number ${rawMatch} tidak ditemukan.`
       };
     }
 
@@ -902,7 +939,8 @@ export default async function bibleHandler(input = '', options = {}) {
             const item = {
               verse: v.verse,
               total_versions: Object.keys(v.versions).length,
-              versions: v.versions
+              versions: v.versions,
+              tafsir: getTafsirUrl(bookId, chapterNum, v.verse)
             };
             if (hasPlus) {
               const notesData = await getVerseNotesAndRashi(db, bookId, chapterNum, v.verse);
@@ -952,12 +990,16 @@ export default async function bibleHandler(input = '', options = {}) {
 
         const verses = await db.all(sql, params);
 
-        let enrichedVerses = verses;
-        if (hasPlus) {
-          enrichedVerses = [];
-          const isTanakhSingle = selectedVersion === 'tn_he' || selectedVersion === 'tn_en';
-          for (const v of verses) {
-            const item = { ...v };
+        const isTanakhSingle = selectedVersion === 'tn_he' || selectedVersion === 'tn_en';
+        const enrichedVerses = [];
+        for (const v of verses) {
+          const item = {
+            ...v,
+            ...(!isTanakhSingle && {
+              tafsir: getTafsirUrl(bookId, chapterNum, v.verse)
+            })
+          };
+          if (hasPlus) {
             if (isTanakhSingle) {
               const notesData = await getVerseNotesAndRashi(db, bookId, chapterNum, v.verse);
               if (notesData.rashi) item.rashi = notesData.rashi;
@@ -967,8 +1009,8 @@ export default async function bibleHandler(input = '', options = {}) {
               if (notesData.notes) item.notes = notesData.notes;
               if (lexiconData) item.lexicon = lexiconData;
             }
-            enrichedVerses.push(item);
           }
+          enrichedVerses.push(item);
         }
 
         return {
