@@ -1,6 +1,6 @@
 {
   "name": "@renpwn/bible.js",
-  "version": "0.14.11",
+  "version": "0.14.12",
   "description": "Node.js library untuk mengakses Bible dengan database SQLite + FTS5. Dilengkapi 12 Versi Bible & 1 Versi Jewish Bible (Hebrew & English), Lexicon beserta artinya, dan audio. Ideal untuk bot WhatsApp/Telegram, aplikasi mobile, dan website Kristiani.",
   "keywords": [
     "bible",
